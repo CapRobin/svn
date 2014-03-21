@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">android使用百度地图定位示例</string>
+    <string name="load_tips">正在地址加载...</string>
+</resources>
