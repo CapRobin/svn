@@ -18,30 +18,40 @@ import com.ab.view.titlebar.AbTitleBar;
 import com.xibeiwuliu.global.MyApplication;
 import com.xibeiwuliu.view.MyImgScroll;
 
-public class MainActivity extends AbActivity implements OnClickListener{
+/**
+ * Copyright (c) 2013 All rights reserved
+ * 
+ * @Name：MainActivity.java
+ * @Describe：物流首页
+ * @Author: yfr5734@gmail.com
+ * @Date：2014年4月28日 下午4:32:30
+ * @Version v1.0 *
+ * 
+ */
+public class MainActivity extends AbActivity implements OnClickListener {
 
 	private MyApplication application = null;
 	private MyImgScroll myPager; // 图片容器
 	private LinearLayout ovalLayout; // 圆点容器
-	private LinearLayout layoutItem01, layoutItem02, layoutItem03, layoutItem04, layoutItem05, layoutItem06,layoutItem07,layoutItem08; 
 	private List<View> listViews; // 图片组
+	private LinearLayout layoutItem01, layoutItem02, layoutItem03, layoutItem04, layoutItem05, layoutItem06, layoutItem07, layoutItem08;
 
 	@Override
-	public void onCreate(Bundle savedInstanceState) { 
+	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setAbContentView(R.layout.activity_main);
-//		application = (MyApplication) abApplication;
+		application = (MyApplication) abApplication;
 		initTitleLayout();
 		initView();
 
 	}
 
 	/**
-	 * 描述：初始化View
 	 * 
-	 * @throws
-	 * @date：2013-4-25 上午10:21:18
-	 * @version v1.0
+	 * @Describe：初始化View
+	 * @Throws:
+	 * @Date：2014年4月28日 上午11:07:32
+	 * @Version v1.0
 	 */
 	private void initView() {
 		myPager = (MyImgScroll) findViewById(R.id.myvp);
@@ -54,13 +64,6 @@ public class MainActivity extends AbActivity implements OnClickListener{
 		layoutItem06 = (LinearLayout) findViewById(R.id.layoutItem06);
 		layoutItem07 = (LinearLayout) findViewById(R.id.layoutItem07);
 		layoutItem08 = (LinearLayout) findViewById(R.id.layoutItem08);
-		
-		InitViewPager();// 初始化图片
-		// 开始滚动
-		myPager.start(this, listViews, 4000, ovalLayout,
-				R.layout.ad_bottom_item, R.id.ad_item_v,
-				R.drawable.dot_focused, R.drawable.dot_normal);
-
 		layoutItem01.setOnClickListener(this);
 		layoutItem02.setOnClickListener(this);
 		layoutItem03.setOnClickListener(this);
@@ -69,6 +72,11 @@ public class MainActivity extends AbActivity implements OnClickListener{
 		layoutItem06.setOnClickListener(this);
 		layoutItem07.setOnClickListener(this);
 		layoutItem08.setOnClickListener(this);
+
+		// 初始化图片
+		InitViewPager();
+		// 开始滚动
+		myPager.start(this, listViews, 4000, ovalLayout, R.layout.ad_bottom_item, R.id.ad_item_v, R.drawable.dot_focused, R.drawable.dot_normal);
 	}
 
 	/**
@@ -104,6 +112,123 @@ public class MainActivity extends AbActivity implements OnClickListener{
 		});
 	}
 
+	/**
+	 * @Describe：初始化广告图片
+	 * @Throws:
+	 * @Date：2014年4月28日 下午3:29:10
+	 * @Version v1.0
+	 */
+	private void InitViewPager() {
+		listViews = new ArrayList<View>();
+		int[] imageResId = new int[] { R.drawable.a, R.drawable.b, R.drawable.c, R.drawable.d, R.drawable.e };
+		for (int i = 0; i < imageResId.length; i++) {
+			final int imageItem = i;
+			ImageView imageView = new ImageView(this);
+			imageView.setImageResource(imageResId[i]);
+			// 设置图片点击事件
+			imageView.setOnClickListener(new OnClickListener() {
+				public void onClick(View v) {
+					Intent intent = new Intent();
+					switch (imageItem) {
+					case 0:
+						// intent.setData(Uri.parse("http://dl.5671.cc/"));
+						// intent = Intent.createChooser(intent, null);
+						// startActivity(intent);
+						intent.setClass(MainActivity.this, MyWebView.class);
+						intent.putExtra("url", "http://dl.5671.cc/");
+						startActivity(intent);
+						break;
+					case 1:
+						intent.setClass(MainActivity.this, MyWebView.class);
+						intent.putExtra("url", "http://qy.58.com/17195629821703/");
+						startActivity(intent);
+						break;
+					case 2:
+						intent.setClass(MainActivity.this, MyWebView.class);
+						intent.putExtra("url", "http://www.cnpc.com.cn/cn/");
+						startActivity(intent);
+						break;
+					case 3:
+						intent.setClass(MainActivity.this, MyWebView.class);
+						intent.putExtra("url", "http://csl.chinawuliu.com.cn/");
+						startActivity(intent);
+						break;
+					case 4:
+						intent.setClass(MainActivity.this, MyWebView.class);
+						intent.putExtra("url", "http://www.189.cn/");
+						startActivity(intent);
+						break;
+					}
+					Toast.makeText(MainActivity.this, "您点击了第" + (myPager.getCurIndex() + 1) + "个广告位", Toast.LENGTH_SHORT).show();
+				}
+			});
+
+			imageView.setScaleType(ScaleType.CENTER_CROP);
+			listViews.add(imageView);
+		}
+	}
+
+	/**
+	 * @Describe：项目点击事件
+	 * @see android.view.View.OnClickListener#onClick(android.view.View)
+	 * @Author: zhanglei
+	 * @Date：2014年4月28日 下午4:21:50
+	 * @Version v1.0
+	 */
+	public void onClick(View v) {
+		Intent intent = new Intent();
+		String Msg = null;
+		switch (v.getId()) {
+		case R.id.layoutItem01:
+			Msg = "货源信息";
+			// Toast.makeText(MainActivity.this, Msg, 5).show();
+			intent.setClass(MainActivity.this, CargoListActivity.class);
+			intent.putExtra("msg", Msg);
+			startActivity(intent);
+			break;
+		case R.id.layoutItem02:
+			Msg = "车源信息";
+			// Toast.makeText(MainActivity.this, Msg, 5).show();
+			intent.setClass(MainActivity.this, LorryListActivity.class);
+			intent.putExtra("msg", Msg);
+			startActivity(intent);
+			break;
+		case R.id.layoutItem03:
+			Msg = "信息发布";
+			intent.setClass(MainActivity.this, PublishInfoActivity.class);
+			intent.putExtra("msg", Msg);
+			startActivity(intent);
+			break;
+		case R.id.layoutItem04:
+			Msg = "物流专线";
+			intent.setClass(MainActivity.this, SpecialLineActivity.class);
+			intent.putExtra("msg", Msg);
+			startActivity(intent);
+			break;
+		case R.id.layoutItem05:
+			Msg = "预约查询";
+			intent.setClass(MainActivity.this, TestActivity.class);
+			intent.putExtra("msg", Msg);
+			startActivity(intent);
+			break;
+		case R.id.layoutItem06:
+			Msg = "行业资讯";
+			intent.setClass(MainActivity.this, TestActivity.class);
+			intent.putExtra("msg", Msg);
+			startActivity(intent);
+			break;
+		case R.id.layoutItem07:
+			startActivity(new Intent(MainActivity.this, SettingCenterActivity.class));
+			break;
+		case R.id.layoutItem08:
+			Msg = "更多";
+			intent.setClass(MainActivity.this, TestActivity.class);
+			intent.putExtra("msg", Msg);
+			startActivity(intent);
+			break;
+		}
+	}
+
 	@Override
 	protected void onRestart() {
 		myPager.startTimer();
@@ -118,88 +243,6 @@ public class MainActivity extends AbActivity implements OnClickListener{
 
 	public void stop(View v) {
 		myPager.stopTimer();
-	}
-
-	/**
-	 * 初始化图片
-	 */
-	private void InitViewPager() {
-		listViews = new ArrayList<View>();
-		int[] imageResId = new int[] { R.drawable.a, R.drawable.b,
-				R.drawable.c, R.drawable.d, R.drawable.e };
-		for (int i = 0; i < imageResId.length; i++) {
-			ImageView imageView = new ImageView(this);
-			imageView.setOnClickListener(new OnClickListener() {
-				public void onClick(View v) {// 设置图片点击事件
-					Toast.makeText(MainActivity.this,
-							"点击了:" + myPager.getCurIndex(), Toast.LENGTH_SHORT)
-							.show();
-				}
-			});
-			imageView.setImageResource(imageResId[i]);
-			imageView.setScaleType(ScaleType.CENTER_CROP);
-			listViews.add(imageView);
-		}
-	}
-
-	public void onClick(View v) {
-		Intent intent = new Intent();
-		String Msg = null;
-		switch (v.getId()) {
-		case R.id.layoutItem01:
-			Msg = "货源信息";
-//			Toast.makeText(MainActivity.this, Msg, 5).show();
-			intent.setClass(MainActivity.this, TestActivity.class);
-			intent.putExtra("msg", Msg);
-			startActivity(intent);
-			break;
-		case R.id.layoutItem02:
-			Msg = "车源信息";
-//			Toast.makeText(MainActivity.this, Msg, 5).show();
-			intent.setClass(MainActivity.this, TestActivity.class);
-			intent.putExtra("msg", Msg);
-			startActivity(intent);
-			break;
-		case R.id.layoutItem03:
-			Msg = "信息发布";
-//			Toast.makeText(MainActivity.this, Msg, 5).show();
-			intent.setClass(MainActivity.this, TestActivity.class);
-			intent.putExtra("msg", Msg);
-			startActivity(intent);
-			break;
-		case R.id.layoutItem04:
-			Msg = "物流专线";
-//			Toast.makeText(MainActivity.this, Msg, 5).show();
-			intent.setClass(MainActivity.this, TestActivity.class);
-			intent.putExtra("msg", Msg);
-			startActivity(intent);
-			break;
-		case R.id.layoutItem05:
-			Msg = "预约查询";
-//			Toast.makeText(MainActivity.this, Msg, 5).show();
-			intent.setClass(MainActivity.this, TestActivity.class);
-			intent.putExtra("msg", Msg);
-			startActivity(intent);
-			break;
-		case R.id.layoutItem06:
-			Msg = "行业资讯";
-//			Toast.makeText(MainActivity.this, Msg, 5).show();
-			intent.setClass(MainActivity.this, TestActivity.class);
-			intent.putExtra("msg", Msg);
-			startActivity(intent);
-			break;
-		case R.id.layoutItem07:
-//			Toast.makeText(MainActivity.this, "个人中心", 5).show();
-			startActivity(new Intent(MainActivity.this, SettingCenterActivity.class));
-			break;
-		case R.id.layoutItem08:
-			Msg = "更多";
-//			Toast.makeText(MainActivity.this, Msg, 5).show();
-			intent.setClass(MainActivity.this, TestActivity.class);
-			intent.putExtra("msg", Msg);
-			startActivity(intent);
-			break;
-		}
 	}
 
 }

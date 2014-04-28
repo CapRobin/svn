@@ -63,7 +63,7 @@
                     android:layout_height="wrap_content"
                     android:text="货源信息"
                     android:textColor="@color/white"
-                    android:textSize="20sp" />
+                    android:textSize="18sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -79,7 +79,7 @@
                     android:layout_height="wrap_content"
                     android:text="车源信息"
                     android:textColor="@color/white"
-                    android:textSize="20sp" />
+                    android:textSize="18sp" />
             </LinearLayout>
         </LinearLayout>
 
@@ -104,7 +104,7 @@
                     android:layout_height="wrap_content"
                     android:text="信息发布"
                     android:textColor="@color/white"
-                    android:textSize="20sp" />
+                    android:textSize="18sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -131,7 +131,7 @@
                         android:layout_height="wrap_content"
                         android:text="物流专线"
                         android:textColor="@color/white"
-                        android:textSize="20sp" />
+                        android:textSize="18sp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -204,7 +204,7 @@
                     android:layout_height="wrap_content"
                     android:text="个人中心"
                     android:textColor="@color/white"
-                    android:textSize="20sp" />
+                    android:textSize="18sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -221,7 +221,7 @@
                     android:layout_height="wrap_content"
                     android:text="更		多"
                     android:textColor="@color/white"
-                    android:textSize="20sp" />
+                    android:textSize="18sp" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

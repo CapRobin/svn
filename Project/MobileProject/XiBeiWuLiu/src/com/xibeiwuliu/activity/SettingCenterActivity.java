@@ -12,23 +12,21 @@ import com.xibeiwuliu.global.MyApplication;
 
 /**
  * 
- * Copyright (c) 2012 All rights reserved
- * @Name：SettingCenterActivity.java 
- * @Describe：设置中心
- * @Author Administrator  yfr5734@gmail.com
- * @Date：2013-11-13 下午12:53:01
- * @Version v1.0
+  * Copyright (c) 2013 All rights reserved
+  * @Name：SettingCenterActivity.java 
+  * @Describe：设置中心
+  * @Author:  yfr5734@gmail.com
+  * @Date：2014年4月28日 下午4:48:29
+  * @Version v1.0 *
+  *
  */
 public class SettingCenterActivity extends AbActivity implements OnClickListener {
 	private MyApplication application = null;
 	private RelativeLayout layout_01, layout_02, layout_03, layout_04, layout_05, layout_06 ;
-//	private TranObject msg;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		// requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setAbContentView(R.layout.setting_center);
-//		msg = (TranObject) getIntent().getSerializableExtra(Constants.MSGKEY);
 		initTitleRightLayout();
 		initView();
 
@@ -49,8 +47,7 @@ public class SettingCenterActivity extends AbActivity implements OnClickListener
         mAbTitleBar.setTitleBarBackground(R.drawable.top_bg);
 		mAbTitleBar.setTitleTextMargin(10, 0, 0, 0);
 		mAbTitleBar.setLogoLine(R.drawable.line);
-
-//		application = (MyApplication) abApplication;
+		application = (MyApplication) abApplication;
 
 	}
 

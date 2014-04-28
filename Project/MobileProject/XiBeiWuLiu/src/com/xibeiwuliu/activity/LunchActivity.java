@@ -18,6 +18,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -30,20 +31,19 @@ import com.xibeiwuliu.gps.GPSManager;
 import com.xibeiwuliu.util.MethodUtil;
 
 /**
- * 
- * Copyright (c) 2012 All rights reserved
+ * Copyright (c) 2013 All rights reserved
  * 
  * @Name：LunchActivity.java
- * @Describe：启动页面
- * @Author FaRong——yfr5734@gmail.com
- * @Date：2013-12-6 下午2:42:10
+ * @Describe：程序启动页面
+ * @Author: yfr5734@gmail.com
+ * @Date：2014年4月28日 下午2:47:29
  * @Version v1.0
  */
 public class LunchActivity extends Activity {
 	private GPSManager gpsManager;
 	private Coordinate coordinate;
 	private AlertDialog dialog;
-	private MyApplication application = new MyApplication();
+	private MyApplication application = null;
 	private String action = null;
 	public int INTENTWIFI = 1;
 	private int INTENTGPS = 2;
@@ -57,14 +57,15 @@ public class LunchActivity extends Activity {
 				break;
 			case 1:
 				coordinate = gpsManager.getCoordinate();
-				
-				Toast.makeText(LunchActivity.this, "GPS位置位置信息：\n经度为：" + "" + "" + "" + "" + coordinate.Longitude + "\n维度为：" + coordinate.Latitude, 5).show();
+
+				Toast.makeText(LunchActivity.this, "GPS位置位置信息：\n经度为：" + "" + "" + "" + "" + coordinate.Longitude + "\n维度为：" + coordinate.Latitude, 5)
+						.show();
 				System.out.println("GPS位置位置信息：\n经度为：" + coordinate.Longitude + "\n维度为：" + coordinate.Latitude);
-				
-				
-//				startActivity(new Intent(LunchActivity.this, MainActivity.class));
-				
-				Intent intent = new Intent(LunchActivity.this,MainActivity.class);
+
+				// startActivity(new Intent(LunchActivity.this,
+				// MainActivity.class));
+
+				Intent intent = new Intent(LunchActivity.this, MainActivity.class);
 				intent.putExtra("longitude", coordinate.Longitude);
 				intent.putExtra("latitude", coordinate.Latitude);
 				startActivity(intent);
@@ -79,8 +80,11 @@ public class LunchActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		requestWindowFeature(Window.FEATURE_NO_TITLE);
+		//去掉任务栏
+		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		setContentView(R.layout.lunch);
+		application = (MyApplication) getApplication();
+		application.isBoot = true;
 		audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 
 		// 检测网络
@@ -128,7 +132,7 @@ public class LunchActivity extends Activity {
 		}
 		return ret;
 	}
-	
+
 	private void checkIntent() {
 		gpsManager = GPSManager.getGPSManagerInstance();
 		gpsManager.registerGPS(this, new GPSLocationListener() {
@@ -145,8 +149,6 @@ public class LunchActivity extends Activity {
 			audioManager.setRingerMode(AudioManager.RINGER_MODE_NORMAL);
 		}
 
-		
-		
 		/**
 		 * 启动线程加载
 		 */
@@ -156,24 +158,24 @@ public class LunchActivity extends Activity {
 				super.run();
 				try {
 					sleep(3000);
-					
-	    				//检测数据库是否存在
-    				File f = new File(Constant.dbPath);
-    				if (!f.exists()) {
-    					boolean ret = MethodUtil.importDatabase(LunchActivity.this,f);
-						if(ret){
-							//sendMsgUpdateUI(1,"数据库加载成功...");
-						}else{
-							sendMsgUpdateUI(0,"数据库加载失败!");
+
+					// 检测数据库是否存在
+					File f = new File(Constant.dbPath);
+					if (!f.exists()) {
+						boolean ret = MethodUtil.importDatabase(LunchActivity.this, f);
+						if (ret) {
+							// sendMsgUpdateUI(1,"数据库加载成功...");
+						} else {
+							sendMsgUpdateUI(0, "数据库加载失败!");
 							finish();
 						}
-    				}else{
-    					//sendMsgUpdateUI(1,"数据库加载成功...");
-    				}
-					//检测数据库是否存在
-//					boolean b = isExist();
-//					System.out.println(b);
-					
+					} else {
+						// sendMsgUpdateUI(1,"数据库加载成功...");
+					}
+					// 检测数据库是否存在
+					// boolean b = isExist();
+					// System.out.println(b);
+
 					sendMsgUpdateUI(1, null);
 				} catch (Exception e) {
 					e.printStackTrace();
