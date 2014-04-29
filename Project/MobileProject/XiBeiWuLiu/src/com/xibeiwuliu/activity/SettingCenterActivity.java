@@ -1,5 +1,6 @@
 package com.xibeiwuliu.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -24,12 +25,13 @@ public class SettingCenterActivity extends BaseActivity implements OnClickListen
 	private MyApplication application = null;
 	private RelativeLayout layout_01, layout_02, layout_03, layout_04, layout_05, layout_06 ;
 	private String getMsg;
+	private boolean isShowRightBut = true;		//是否显示右边按钮
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setAbContentView(R.layout.setting_center);
 		getMsg = getIntent().getStringExtra("msg");
-		initTitleLayout(getMsg, false);
+		initTitleLayout(getMsg, isShowRightBut);
 		initView();
 
 	}
@@ -63,12 +65,25 @@ public class SettingCenterActivity extends BaseActivity implements OnClickListen
 		layout_05.setOnClickListener(this);
 		layout_06.setOnClickListener(this);
 
+		if (isShowRightBut) {
+			this.rightTitleBut.setOnClickListener(new OnClickListener() {
+				
+				@Override
+				public void onClick(View v) {
+					Toast.makeText(SettingCenterActivity.this, "个人中心设置", 5).show();
+				}
+			});
+		}
 	}
 
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.layout_01:
+			Intent intent = new Intent(SettingCenterActivity.this, PersonalDriverInfoActivity.class);
+			String Msg = "个人信息";
+			intent.putExtra("msg", Msg);
+			startActivity(intent);
 //			if (application.isLogin) {
 //				if (application.userInfo.getUserType() == 1) {
 //					Intent intent1 = new Intent(SettingCenterActivity.this, PersonalDriverInfoActivity.class);

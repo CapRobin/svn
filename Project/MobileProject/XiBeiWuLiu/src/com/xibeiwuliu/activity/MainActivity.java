@@ -7,14 +7,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import com.ab.activity.AbActivity;
-import com.ab.view.titlebar.AbTitleBar;
+import com.xibeiwuliu.database.SqliteDaoArea;
 import com.xibeiwuliu.global.MyApplication;
 import com.xibeiwuliu.view.MyImgScroll;
 
@@ -35,13 +33,15 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 	private LinearLayout ovalLayout; // 圆点容器
 	private List<View> listViews; // 图片组
 	private LinearLayout layoutItem01, layoutItem02, layoutItem03, layoutItem04, layoutItem05, layoutItem06, layoutItem07, layoutItem08;
+	private boolean isShowRightBut = true; // 是否显示右边按钮
+	private SqliteDaoArea daoArea = null;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setAbContentView(R.layout.activity_main);
 		application = (MyApplication) abApplication;
-		initTitleLayout("首页", false);
+		initTitleLayout("首页", isShowRightBut);
 		initView();
 
 	}
@@ -54,6 +54,7 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 	 * @Version v1.0
 	 */
 	private void initView() {
+		daoArea = SqliteDaoArea.getInstance(MainActivity.this);
 		myPager = (MyImgScroll) findViewById(R.id.myvp);
 		ovalLayout = (LinearLayout) findViewById(R.id.vb);
 		layoutItem01 = (LinearLayout) findViewById(R.id.layoutItem01);
@@ -64,6 +65,7 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 		layoutItem06 = (LinearLayout) findViewById(R.id.layoutItem06);
 		layoutItem07 = (LinearLayout) findViewById(R.id.layoutItem07);
 		layoutItem08 = (LinearLayout) findViewById(R.id.layoutItem08);
+//		TextView wlzxText = (TextView) findViewById(R.id.wlzxText);
 		layoutItem01.setOnClickListener(this);
 		layoutItem02.setOnClickListener(this);
 		layoutItem03.setOnClickListener(this);
@@ -72,11 +74,29 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 		layoutItem06.setOnClickListener(this);
 		layoutItem07.setOnClickListener(this);
 		layoutItem08.setOnClickListener(this);
+//		wlzxText.setText("物\/流\/专\/线");
+
+		if (isShowRightBut) {
+			this.rightTitleBut.setOnClickListener(new OnClickListener() {
+				
+				@Override
+				public void onClick(View v) {
+//					Toast.makeText(SettingCenterActivity.this, "个人中心设置", 5).show();
+					String Msg = "行业资讯";
+					Intent intent = new Intent(MainActivity.this, SettingCenterActivity.class);
+					intent.putExtra("msg", Msg);
+					startActivity(intent);
+				}
+			});
+		}
 
 		// 初始化图片
 		InitViewPager();
 		// 开始滚动
 		myPager.start(this, listViews, 4000, ovalLayout, R.layout.ad_bottom_item, R.id.ad_item_v, R.drawable.dot_focused, R.drawable.dot_normal);
+		
+		List<String> strList = daoArea.getAreaInfo(100);
+		Toast.makeText(MainActivity.this, strList.get(0), 5).show();
 	}
 
 	/**
@@ -188,37 +208,37 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 			break;
 		case R.id.layoutItem02:
 			Msg = "车源信息";
-			intent.setClass(MainActivity.this, LorryListActivity.class);
+			intent.setClass(MainActivity.this, VehicleListActivity.class);
 			intent.putExtra("msg", Msg);
 			startActivity(intent);
 			break;
 		case R.id.layoutItem03:
-			Msg = "信息发布";
-			intent.setClass(MainActivity.this, PublishInfoActivity.class);
-			intent.putExtra("msg", Msg);
-			startActivity(intent);
-			break;
-		case R.id.layoutItem04:
 			Msg = "物流专线";
 			intent.setClass(MainActivity.this, SpecialLineActivity.class);
 			intent.putExtra("msg", Msg);
 			startActivity(intent);
 			break;
-		case R.id.layoutItem05:
+		case R.id.layoutItem04:
 			Msg = "预约查询";
 			intent.setClass(MainActivity.this, TestActivity.class);
 			intent.putExtra("msg", Msg);
 			startActivity(intent);
 			break;
+		case R.id.layoutItem05:
+			Msg = "发布货源";
+			intent.setClass(MainActivity.this, PublishCargoActivity.class);
+			intent.putExtra("msg", Msg);
+			startActivity(intent);
+			break;
 		case R.id.layoutItem06:
-			Msg = "行业资讯";
-			intent.setClass(MainActivity.this, TestActivity.class);
+			Msg = "发布车源";
+			intent.setClass(MainActivity.this, PublishVehicleActivity.class);
 			intent.putExtra("msg", Msg);
 			startActivity(intent);
 			break;
 		case R.id.layoutItem07:
-			Msg = "个人中心";
-			intent.setClass(MainActivity.this, SettingCenterActivity.class);
+			Msg = "行业资讯";
+			intent.setClass(MainActivity.this, TestActivity.class);
 			intent.putExtra("msg", Msg);
 			startActivity(intent);
 			break;

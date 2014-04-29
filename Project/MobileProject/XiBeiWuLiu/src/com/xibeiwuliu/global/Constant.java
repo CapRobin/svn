@@ -45,7 +45,8 @@ public class Constant {
 	public static final int GPSUCCESSFUL = 22;
 //	public static final String dbPath = "/data/data/com.haohuotong/databases/echengdb.s3db"; 
 //	public static final String dbPath = "/data/data/com.haohuotong/databases/area"; 
-	public static final String dbPath = "/data/data/com.haohuotong/databases/logistics"; 
+//	public static final String dbPath = "/data/data/com.haohuotong/databases/logistics"; 
+	public static final String dbPath = "/data/data/com.xibeiwuliu.activity/databases/logistics"; 
 //	
 //	public class PanelIds{
 //		public static final int Splash = 0;
