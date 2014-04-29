@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/selectBut"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/province_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="30dip"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="5dip"
+            android:background="@drawable/exist_selector"
+            android:text="@string/province_btn" />
+
+        <Button
+            android:id="@+id/city_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="30dip"
+            android:layout_weight="1"
+            android:layout_marginLeft="5dip"
+            android:layout_marginRight="5dip"
+            android:background="@drawable/exist_selector"
+            android:text="@string/city_btn" />
+
+        <Button
+            android:id="@+id/area_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="30dip"
+            android:layout_weight="1"
+            android:layout_marginLeft="5dip"
+            android:layout_marginRight="10dip"
+            android:background="@drawable/exist_selector"
+            android:text="@string/area_btn" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/startOrStopAddress"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dip"
+        android:layout_marginLeft="20dip"
+        android:layout_marginRight="20dip"
+        android:textSize="18sp" />
+
+    <com.haohuotong.other.ExpandableGridView
+        android:id="@+id/locations"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/selectBut"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:columnWidth="90dp"
+        android:gravity="center"
+        android:horizontalSpacing="5dp"
+        android:numColumns="auto_fit"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="5dip" />
+
+</RelativeLayout>
