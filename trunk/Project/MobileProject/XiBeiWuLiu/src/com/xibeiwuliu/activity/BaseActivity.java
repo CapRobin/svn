@@ -15,6 +15,7 @@ import com.ab.view.titlebar.AbTitleBar;
 
 public class BaseActivity extends AbActivity {
 
+	public Button rightTitleBut = null;
 	public Handler mBaseHandler = new Handler() {
 
 		@Override
@@ -62,13 +63,14 @@ public class BaseActivity extends AbActivity {
 		mAbTitleBar.setTitleBarBackground(R.drawable.top_bg);
 		mAbTitleBar.setTitleTextMargin(10, 0, 0, 0);
 		mAbTitleBar.setLogoLine(R.drawable.line);
+		mAbTitleBar.setTitleTextSize(16);
 
 		// 添加右侧布局文件
 		if (isShowRightBar) {
 			View rightViewMore = mInflater.inflate(R.layout.more_btn, null);
 			mAbTitleBar.addRightView(rightViewMore);
-			Button about = (Button) rightViewMore.findViewById(R.id.moreBtn);
-			about.setOnClickListener(new View.OnClickListener() {
+			rightTitleBut = (Button) rightViewMore.findViewById(R.id.moreBtn);
+			rightTitleBut.setOnClickListener(new View.OnClickListener() {
 
 				public void onClick(View v) {
 					Toast.makeText(BaseActivity.this, "点击事件", 5).show();

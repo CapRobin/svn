@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+
 import com.ab.global.AbConstant;
 
 /**
@@ -30,6 +31,11 @@ public class MyApplication extends Application {
 
 	}
 
+//    public static void SetMyContext() {
+//        logisticsDB = new LogisticsDB(context);
+//        logisticsDB.open().close(); // to initialize
+//      }
+	
 	/**
 	 * 上次登录参数
 	 */

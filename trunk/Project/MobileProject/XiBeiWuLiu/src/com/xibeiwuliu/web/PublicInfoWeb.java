@@ -22,6 +22,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.xibeiwuliu.entity.CargoInfo;
 import com.xibeiwuliu.entity.Parameter;
+import com.xibeiwuliu.entity.VehicleInfo;
 import com.xibeiwuliu.global.Constant;
 import com.xibeiwuliu.util.MethodUtil;
 
@@ -161,65 +162,65 @@ public class PublicInfoWeb {
 	 * @Date：2013-12-27 上午10:10:09
 	 * @Version v1.0
 	 */
-//	public static List<VehicleInfo> vehicleInfoList(String portName, List<Parameter> parameterList) throws AbAppException {
-//		boolean isUpdate = false;
-//		String resultString = null;
-//		String interfaceName = "InvokeForMobile";
-//		List<VehicleInfo> vehicleInfoList = new ArrayList<VehicleInfo>();
-//		VehicleInfo vehicleInfo = null;
-//		try {
-//			String xml = MethodUtil.getParameterString(portName, parameterList);
-//			// 根据内容来源地址创建一个Http请求
-//			HttpPost request = new HttpPost(Constant.HOSTURL + interfaceName);
-//			List<BasicNameValuePair> params = new ArrayList<BasicNameValuePair>();
-//			// 添加必须的参数
-//			params.add(new BasicNameValuePair("Xml", xml));
-//			params.add(new BasicNameValuePair("DeviceMark", "aaa"));
-//			params.add(new BasicNameValuePair("Token", "bbb"));
-//			params.add(new BasicNameValuePair("ArrayTables", "vehicleList"));
-//			// 设置参数的编码
-//			request.setEntity(new UrlEncodedFormEntity(params, HTTP.UTF_8));
-//			// 发送请求并获取反馈
-//			HttpResponse httpResponse = new DefaultHttpClient().execute(request);
-//
-//			// 解析返回的内容
-//			if (httpResponse.getStatusLine().getStatusCode() == 200) {
-//				resultString = EntityUtils.toString(httpResponse.getEntity());
-//
-//				// 解析Xml文件返回Json结果集
-//				InputStream is = new ByteArrayInputStream(resultString.getBytes("UTF-8"));
-//				String resultJson = MethodUtil.parse(is);
-//				Log.d("UserInfoWeb", "UserInfoWeb_UserRegister is ------------>>" + resultJson);
-//
-//				// 解析结果
-//				JSONObject jsonObject = new JSONObject(resultJson);
-//				boolean resultTag = jsonObject.getBoolean("resultTag");
-//				if (resultTag) {
-//
-//					JSONObject cargoList = jsonObject.getJSONObject("vehicleList");
-//					JSONArray jsonArray = cargoList.getJSONArray("data");
-//					for (int i = 0; i < jsonArray.length(); i++) {
-//						JSONObject objectItem = jsonArray.getJSONObject(i);
-//						GsonBuilder gBuilder = new GsonBuilder();
-//						Gson gson = gBuilder.create();
-//						vehicleInfo = gson.fromJson(String.valueOf(objectItem), VehicleInfo.class);
-//						vehicleInfoList.add(vehicleInfo);
-//					}
-//					
-//					
-//					isUpdate = resultTag;
-//				} else {
-//					String exMsg = jsonObject.getString("msg");
-//					AbAppException mAppException = new AbAppException(exMsg);
-//					throw mAppException;
-//				}
-//			}
-//		} catch (Exception e) {
-//			AbAppException mAppException = new AbAppException(e);
-//			throw mAppException;
-//		}
-//		return vehicleInfoList;
-//	}
+	public static List<VehicleInfo> vehicleInfoList(String portName, List<Parameter> parameterList) throws AbAppException {
+		boolean isUpdate = false;
+		String resultString = null;
+		String interfaceName = "InvokeForMobile";
+		List<VehicleInfo> vehicleInfoList = new ArrayList<VehicleInfo>();
+		VehicleInfo vehicleInfo = null;
+		try {
+			String xml = MethodUtil.getParameterString(portName, parameterList);
+			// 根据内容来源地址创建一个Http请求
+			HttpPost request = new HttpPost(Constant.HOSTURL + interfaceName);
+			List<BasicNameValuePair> params = new ArrayList<BasicNameValuePair>();
+			// 添加必须的参数
+			params.add(new BasicNameValuePair("Xml", xml));
+			params.add(new BasicNameValuePair("DeviceMark", "aaa"));
+			params.add(new BasicNameValuePair("Token", "bbb"));
+			params.add(new BasicNameValuePair("ArrayTables", "vehicleList"));
+			// 设置参数的编码
+			request.setEntity(new UrlEncodedFormEntity(params, HTTP.UTF_8));
+			// 发送请求并获取反馈
+			HttpResponse httpResponse = new DefaultHttpClient().execute(request);
+
+			// 解析返回的内容
+			if (httpResponse.getStatusLine().getStatusCode() == 200) {
+				resultString = EntityUtils.toString(httpResponse.getEntity());
+
+				// 解析Xml文件返回Json结果集
+				InputStream is = new ByteArrayInputStream(resultString.getBytes("UTF-8"));
+				String resultJson = MethodUtil.parse(is);
+				Log.d("UserInfoWeb", "UserInfoWeb_UserRegister is ------------>>" + resultJson);
+
+				// 解析结果
+				JSONObject jsonObject = new JSONObject(resultJson);
+				boolean resultTag = jsonObject.getBoolean("resultTag");
+				if (resultTag) {
+
+					JSONObject cargoList = jsonObject.getJSONObject("vehicleList");
+					JSONArray jsonArray = cargoList.getJSONArray("data");
+					for (int i = 0; i < jsonArray.length(); i++) {
+						JSONObject objectItem = jsonArray.getJSONObject(i);
+						GsonBuilder gBuilder = new GsonBuilder();
+						Gson gson = gBuilder.create();
+						vehicleInfo = gson.fromJson(String.valueOf(objectItem), VehicleInfo.class);
+						vehicleInfoList.add(vehicleInfo);
+					}
+					
+					
+					isUpdate = resultTag;
+				} else {
+					String exMsg = jsonObject.getString("msg");
+					AbAppException mAppException = new AbAppException(exMsg);
+					throw mAppException;
+				}
+			}
+		} catch (Exception e) {
+			AbAppException mAppException = new AbAppException(e);
+			throw mAppException;
+		}
+		return vehicleInfoList;
+	}
 	
     
 //	public static boolean publicCargoInfo(String portName, List<Parameter> parameterList) throws AbAppException {
