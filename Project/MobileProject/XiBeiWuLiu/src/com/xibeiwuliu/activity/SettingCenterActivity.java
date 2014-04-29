@@ -20,34 +20,17 @@ import com.xibeiwuliu.global.MyApplication;
   * @Version v1.0 *
   *
  */
-public class SettingCenterActivity extends AbActivity implements OnClickListener {
+public class SettingCenterActivity extends BaseActivity implements OnClickListener {
 	private MyApplication application = null;
 	private RelativeLayout layout_01, layout_02, layout_03, layout_04, layout_05, layout_06 ;
+	private String getMsg;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setAbContentView(R.layout.setting_center);
-		initTitleRightLayout();
+		getMsg = getIntent().getStringExtra("msg");
+		initTitleLayout(getMsg, false);
 		initView();
-
-	}
-
-	/**
-	 * 描述：初始化标题栏
-	 * 
-	 * @throws
-	 * @date：2013-4-25 上午10:21:18
-	 * @version v1.0
-	 */
-	private void initTitleRightLayout() {
-		AbTitleBar mAbTitleBar = this.getTitleBar();
-		mAbTitleBar.setTitleText("设置中心");
-		mAbTitleBar.setLogo(R.drawable.button_selector_back);
-//		mAbTitleBar.setTitleLayoutBackground(R.drawable.top_bg);
-        mAbTitleBar.setTitleBarBackground(R.drawable.top_bg);
-		mAbTitleBar.setTitleTextMargin(10, 0, 0, 0);
-		mAbTitleBar.setLogoLine(R.drawable.line);
-		application = (MyApplication) abApplication;
 
 	}
 
