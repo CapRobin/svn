@@ -17,7 +17,7 @@ import com.xibeiwuliu.global.MyApplication;
  * @Version v1.0 *
  * 
  */
-public class PublishInfoActivity extends AbActivity {
+public class PublishInfoActivity extends BaseActivity {
 	private MyApplication application = null;
 	private TextView text;
 	private String getMsg;
@@ -26,28 +26,10 @@ public class PublishInfoActivity extends AbActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setAbContentView(R.layout.test);
-		getMsg = getIntent().getStringExtra("msg");
-		initTitleRightLayout();
-		initView();
-
-	}
-
-	/**
-	 * 描述：初始化标题栏
-	 * 
-	 * @throws
-	 * @date：2013-4-25 上午10:21:18
-	 * @version v1.0
-	 */
-	private void initTitleRightLayout() {
-		AbTitleBar mAbTitleBar = this.getTitleBar();
-		mAbTitleBar.setTitleText("信息发布");
-		mAbTitleBar.setLogo(R.drawable.button_selector_back);
-		// mAbTitleBar.setTitleLayoutBackground(R.drawable.top_bg);
-		mAbTitleBar.setTitleBarBackground(R.drawable.top_bg);
-		mAbTitleBar.setTitleTextMargin(10, 0, 0, 0);
-		mAbTitleBar.setLogoLine(R.drawable.line);
 		application = (MyApplication) abApplication;
+		getMsg = getIntent().getStringExtra("msg");
+		initTitleLayout(getMsg, false);
+		initView();
 
 	}
 

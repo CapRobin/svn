@@ -28,7 +28,7 @@ import com.xibeiwuliu.view.MyImgScroll;
  * @Version v1.0 *
  * 
  */
-public class MainActivity extends AbActivity implements OnClickListener {
+public class MainActivity extends BaseActivity implements OnClickListener {
 
 	private MyApplication application = null;
 	private MyImgScroll myPager; // 图片容器
@@ -41,7 +41,7 @@ public class MainActivity extends AbActivity implements OnClickListener {
 		super.onCreate(savedInstanceState);
 		setAbContentView(R.layout.activity_main);
 		application = (MyApplication) abApplication;
-		initTitleLayout();
+		initTitleLayout("首页", false);
 		initView();
 
 	}
@@ -86,31 +86,31 @@ public class MainActivity extends AbActivity implements OnClickListener {
 	 * @date：2013-4-25 上午10:21:18
 	 * @version v1.0
 	 */
-	private void initTitleLayout() {
-		AbTitleBar mAbTitleBar = this.getTitleBar();
-
-		// 添加左侧布局文件
-		mAbTitleBar.setTitleText("首      页");
-		mAbTitleBar.setLogo(R.drawable.button_selector_back);
-		// mAbTitleBar.setTitleLayoutBackground(R.drawable.top_bg);
-		mAbTitleBar.setTitleBarBackground(R.drawable.top_bg);
-		mAbTitleBar.setTitleTextMargin(10, 0, 0, 0);
-		mAbTitleBar.setLogoLine(R.drawable.line);
-
-		// 添加右侧布局文件
-		// View rightViewApp = mInflater.inflate(R.layout.app_btn, null);
-		View rightViewMore = mInflater.inflate(R.layout.more_btn, null);
-		mAbTitleBar.addRightView(rightViewMore);
-		Button about = (Button) rightViewMore.findViewById(R.id.moreBtn);
-		about.setOnClickListener(new View.OnClickListener() {
-
-			public void onClick(View v) {
-				// Intent intent = new Intent(MainActivity.this,
-				// RegisterActivity.class);
-				// startActivity(intent);
-			}
-		});
-	}
+	// private void initTitleLayout() {
+	// AbTitleBar mAbTitleBar = this.getTitleBar();
+	//
+	// // 添加左侧布局文件
+	// mAbTitleBar.setTitleText("首      页");
+	// mAbTitleBar.setLogo(R.drawable.button_selector_back);
+	// // mAbTitleBar.setTitleLayoutBackground(R.drawable.top_bg);
+	// mAbTitleBar.setTitleBarBackground(R.drawable.top_bg);
+	// mAbTitleBar.setTitleTextMargin(10, 0, 0, 0);
+	// mAbTitleBar.setLogoLine(R.drawable.line);
+	//
+	// // 添加右侧布局文件
+	// // View rightViewApp = mInflater.inflate(R.layout.app_btn, null);
+	// View rightViewMore = mInflater.inflate(R.layout.more_btn, null);
+	// mAbTitleBar.addRightView(rightViewMore);
+	// Button about = (Button) rightViewMore.findViewById(R.id.moreBtn);
+	// about.setOnClickListener(new View.OnClickListener() {
+	//
+	// public void onClick(View v) {
+	// // Intent intent = new Intent(MainActivity.this,
+	// // RegisterActivity.class);
+	// // startActivity(intent);
+	// }
+	// });
+	// }
 
 	/**
 	 * @Describe：初始化广告图片
@@ -188,7 +188,6 @@ public class MainActivity extends AbActivity implements OnClickListener {
 			break;
 		case R.id.layoutItem02:
 			Msg = "车源信息";
-			// Toast.makeText(MainActivity.this, Msg, 5).show();
 			intent.setClass(MainActivity.this, LorryListActivity.class);
 			intent.putExtra("msg", Msg);
 			startActivity(intent);
@@ -218,7 +217,10 @@ public class MainActivity extends AbActivity implements OnClickListener {
 			startActivity(intent);
 			break;
 		case R.id.layoutItem07:
-			startActivity(new Intent(MainActivity.this, SettingCenterActivity.class));
+			Msg = "个人中心";
+			intent.setClass(MainActivity.this, SettingCenterActivity.class);
+			intent.putExtra("msg", Msg);
+			startActivity(intent);
 			break;
 		case R.id.layoutItem08:
 			Msg = "更多";

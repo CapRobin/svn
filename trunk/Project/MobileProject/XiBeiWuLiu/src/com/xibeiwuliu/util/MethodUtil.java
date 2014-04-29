@@ -19,6 +19,7 @@ import android.net.NetworkInfo;
 import android.util.Xml;
 
 import com.xibeiwuliu.activity.R;
+import com.xibeiwuliu.entity.Parameter;
 
 /**
  * 
@@ -224,16 +225,16 @@ public class MethodUtil {
 	 * @Date£º2013-12-23 ÏÂÎç5:08:55
 	 * @Version v1.0
 	 */
-//	public static String getParameterString(String portName, List<Parameter> parameterList) {
-//		int size = parameterList.size();
-//		StringBuilder sb = new StringBuilder();
-//		for (int i = 0; i < size; i++) {
-//			String string2 = "<" + parameterList.get(i).getParameterKey() + ">" + parameterList.get(i).getParameterValue() + "</"
-//					+ parameterList.get(i).getParameterKey() + ">";
-//			sb.append(string2);
-//		}
-//		return "<Request><data code='" + portName + "'><no>" + sb + "</no></data></Request>";
-//	}
+	public static String getParameterString(String portName, List<Parameter> parameterList) {
+		int size = parameterList.size();
+		StringBuilder sb = new StringBuilder();
+		for (int i = 0; i < size; i++) {
+			String string2 = "<" + parameterList.get(i).getParameterKey() + ">" + parameterList.get(i).getParameterValue() + "</"
+					+ parameterList.get(i).getParameterKey() + ">";
+			sb.append(string2);
+		}
+		return "<Request><data code='" + portName + "'><no>" + sb + "</no></data></Request>";
+	}
  	
 	
 
