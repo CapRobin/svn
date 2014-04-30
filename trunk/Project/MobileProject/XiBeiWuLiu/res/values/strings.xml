@@ -1,9 +1,7 @@
 <resources>
 
-    <string name="app_name">XiBeiWuLiu</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="app_name">西北物流</string>
     <string name="menu_settings">Settings</string>
-    <string name="title_activity_main">MainActivity</string>
     <string name="wlzx">物\n流\n专\n线</string>
 
     
