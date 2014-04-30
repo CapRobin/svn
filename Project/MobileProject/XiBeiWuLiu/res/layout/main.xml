@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+	android:background="@drawable/index_800_480"    
     android:orientation="vertical" >
 
     <RelativeLayout
@@ -55,7 +56,7 @@
                 android:layout_height="fill_parent"
                 android:layout_marginRight="10dip"
                 android:layout_weight="1"
-                android:background="#1492C5"
+                android:background="#1195F9"
                 android:gravity="center" >
 
                 <TextView
@@ -71,7 +72,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_weight="2"
-                android:background="#8E388E"
+                android:background="#027F90"
                 android:gravity="center" >
 
                 <TextView
@@ -96,7 +97,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_weight="2"
-                android:background="#16B7E5"
+                android:background="#008A00"
                 android:gravity="center" >
 
                 <TextView
@@ -124,7 +125,7 @@
                     android:layout_height="fill_parent"
                     android:layout_marginBottom="5dip"
                     android:layout_weight="1"
-                    android:background="#607B8B"
+                    android:background="#631CBD"
                     android:gravity="center"
                     android:orientation="vertical" >
 
@@ -151,7 +152,7 @@
                         android:layout_height="fill_parent"
                         android:layout_marginRight="5dip"
                         android:layout_weight="1"
-                        android:background="#218868"
+                        android:background="#1BA0E1"
                         android:gravity="center"
                         android:orientation="horizontal" >
 
@@ -169,7 +170,7 @@
                         android:layout_height="fill_parent"
                         android:layout_marginLeft="5dip"
                         android:layout_weight="1"
-                        android:background="#218868"
+                        android:background="#1BA0E1"
                         android:gravity="center"
                         android:orientation="horizontal" >
 
@@ -198,7 +199,7 @@
                 android:layout_height="fill_parent"
                 android:layout_marginRight="5dip"
                 android:layout_weight="1"
-                android:background="#FF00FF"
+                android:background="#A600AC"
                 android:gravity="center" >
 
                 <TextView
@@ -215,7 +216,7 @@
                 android:layout_height="fill_parent"
                 android:layout_marginLeft="5dip"
                 android:layout_weight="1"
-                android:background="#117E9D"
+                android:background="#8CCF20"
                 android:gravity="center" >
 
                 <TextView
