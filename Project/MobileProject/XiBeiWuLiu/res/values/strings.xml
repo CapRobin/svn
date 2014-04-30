@@ -9,6 +9,8 @@
     <string name="city_btn">城市</string>
     <string name="area_btn">区县</string>
     <string name="loc_warning">请先选择</string>
+    <string name="smsText">欢迎使用好货通物流软件，下载地址为：http://dl.5671.cc/;</string>
+    <string name="error_phone">手机号码格式不正确！</string>
     
     
 
