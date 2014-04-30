@@ -3,8 +3,11 @@ package com.xibeiwuliu.activity;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.widget.TextView;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 
 import com.ab.task.AbTaskItem;
 import com.ab.task.AbTaskListener;
@@ -73,21 +76,19 @@ public class VehicleListActivity extends BaseActivity {
 		cargoList.setAdapter(myListViewAdapter);
 		// item被点击事件
 
-		// cargoList.setOnItemClickListener(new OnItemClickListener() {
-		// @Override
-		// public void onItemClick(AdapterView<?> parent, View view, int
-		// position, long id) {
-		// VehicleInfo vehicleInfo = (VehicleInfo)
-		// myListViewAdapter.getItem(position-1);
-		// Intent intent = new Intent(LorryListActivity.this,
-		// FragmentVehicleInfoDetail.class);
-		// Bundle bundle = new Bundle();
-		// bundle.putSerializable("vehicleInfo", vehicleInfo);
-		// intent.putExtra("bundle",bundle);
-		// startActivity(intent);
-		// }
-		// });
+		cargoList.setOnItemClickListener(new OnItemClickListener() {
 
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+				VehicleInfo vehicleInfo = (VehicleInfo) myListViewAdapter.getItem(position - 1);
+				Intent intent = new Intent(VehicleListActivity.this, VehicleListDetailActivity.class);
+				Bundle bundle = new Bundle();
+				bundle.putSerializable("vehicleInfo", vehicleInfo);
+				intent.putExtra("bundle", bundle);
+				startActivity(intent);
+
+			}
+		});
 	}
 
 	/**

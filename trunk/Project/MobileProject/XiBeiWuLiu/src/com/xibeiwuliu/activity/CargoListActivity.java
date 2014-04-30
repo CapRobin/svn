@@ -3,7 +3,11 @@ package com.xibeiwuliu.activity;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 
 import com.ab.task.AbTaskItem;
 import com.ab.task.AbTaskListener;
@@ -71,24 +75,19 @@ public class CargoListActivity extends BaseActivity {
 		// 使用自定义的Adapter
 		myListViewAdapter = new CommonalityInfoAdapter(CargoListActivity.this, mCargoInfoList);
 		cargoList.setAdapter(myListViewAdapter);
-		// cargoList.setOnItemClickListener(new OnItemClickListener() {
-		// @Override
-		// public void onItemClick(AdapterView<?> parent, View view, int
-		// position, long id) {
-		// CargoInfo cargoInfo = (CargoInfo)
-		// myListViewAdapter.getItem(position-1);
-		// Intent intent = new Intent(CargoListActivity.this,
-		// FragmentCargoInfoDetail.class);
-		// Bundle bundle = new Bundle();
-		// bundle.putSerializable("cargoInfo", cargoInfo);
-		// intent.putExtra("bundle",bundle);
-		// // int cargoInfoId=
-		// Integer.valueOf(mCargoInfoList.get(position).getAdd_id());
-		// // intent.putExtra("cargoInfoId", cargoInfoId);
-		// startActivity(intent);
-		//
-		// }
-		// });
+		
+		cargoList.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+				CargoInfo cargoInfo = (CargoInfo) myListViewAdapter.getItem(position - 1);
+				Intent intent = new Intent(CargoListActivity.this, CargoListDetailActivity.class);
+				Bundle bundle = new Bundle();
+				bundle.putSerializable("cargoInfo", cargoInfo);
+				intent.putExtra("bundle", bundle);
+				startActivity(intent);
+			}
+		});
 
 	}
 
