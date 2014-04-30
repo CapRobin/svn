@@ -39,7 +39,7 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setAbContentView(R.layout.activity_main);
+		setAbContentView(R.layout.main);
 		application = (MyApplication) abApplication;
 		initTitleLayout("首页", isShowRightBut);
 		initView();
