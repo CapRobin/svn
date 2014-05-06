@@ -84,9 +84,9 @@ public class ContactListActivity extends AbActivity implements OnClickListener {
 		case R.id.backImage:
 			finish();
 			break;
-		case R.id.addNumber:
-			startActivity(new Intent(ContactListActivity.this, ContactListActivity.class));
-			break;
+//		case R.id.addNumber:
+//			startActivity(new Intent(ContactListActivity.this, ContactListActivity.class));
+//			break;
 		case R.id.sendBtn:
 
 			// ªÒ»° ‰»Î∫≈¬Î

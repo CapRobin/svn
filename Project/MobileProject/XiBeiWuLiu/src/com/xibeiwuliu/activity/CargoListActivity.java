@@ -101,7 +101,7 @@ public class CargoListActivity extends BaseActivity {
 	 */
 	private void getListData() {
 		getParameterList = new ArrayList<Parameter>();
-		showDialog(0);
+		showProgressDialog();
 
 		// 定义两种查询的事件
 		final AbTaskItem item1 = new AbTaskItem();
@@ -109,7 +109,7 @@ public class CargoListActivity extends BaseActivity {
 
 			@Override
 			public void update() {
-				removeDialog(0);
+				removeProgressDialog();
 				mCargoInfoList.clear();
 				if (mNewCargoInfoList != null && mNewCargoInfoList.size() > 0) {
 					mCargoInfoList.addAll(mNewCargoInfoList);

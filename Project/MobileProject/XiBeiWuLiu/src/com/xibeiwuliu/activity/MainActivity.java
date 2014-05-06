@@ -13,6 +13,7 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.xibeiwuliu.database.SqliteDaoArea;
+import com.xibeiwuliu.entity.AreaInfo;
 import com.xibeiwuliu.global.MyApplication;
 import com.xibeiwuliu.view.MyImgScroll;
 
@@ -95,8 +96,9 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 		// 开始滚动
 		myPager.start(this, listViews, 4000, ovalLayout, R.layout.ad_bottom_item, R.id.ad_item_v, R.drawable.dot_focused, R.drawable.dot_normal);
 		
-		List<String> strList = daoArea.getAreaInfo(100);
-		Toast.makeText(MainActivity.this, strList.get(0), 5).show();
+		List<AreaInfo> strList = daoArea.getAreaInfo(0);
+//		Toast.makeText(MainActivity.this, strList.get(0), 5).show();
+		Toast.makeText(MainActivity.this, strList.get(0).getCcityName(), 5).show();
 	}
 
 	/**

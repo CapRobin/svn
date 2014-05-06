@@ -3,6 +3,8 @@ package com.xibeiwuliu.database;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.xibeiwuliu.entity.AreaInfo;
+
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -82,18 +84,27 @@ public class SqliteDaoArea {
 	 * @date：2014年1月17日 上午7:27:35
 	 * @version v1.0
 	 */
-	public synchronized List<String> getAreaInfo(int docId) {
-		List<String> list = new ArrayList<String>();
-		String sql_1 = "SELECT * FROM LocationTable WHERE id = " + docId + "";
+	public synchronized List<AreaInfo> getAreaInfo(int ParentID) {
+//		List<String> list = new ArrayList<String>();
+		List<AreaInfo> areaList = new ArrayList<AreaInfo>();
+		AreaInfo areaInfo =null;
+//		String sql_1 = "SELECT * FROM LocationTable WHERE id = " + docId + "";
+		String sql_1 = "SELECT * FROM LocationTable WHERE ParentID = " + ParentID + "";
 		Cursor cursor = null;
 		try {
 			db = openHelper.getReadableDatabase();
 			cursor = db.rawQuery(sql_1, null);
 			if (cursor != null) {
 				while (cursor.moveToNext()) {
-
-					String string = cursor.getString(cursor.getColumnIndex("Location"));
-					list.add(string);
+					areaInfo = new AreaInfo();
+					int cityId = Integer.valueOf(cursor.getString(cursor.getColumnIndex("ID")));
+					String cityName = cursor.getString(cursor.getColumnIndex("Location"));
+					int parentID = Integer.valueOf(cursor.getString(cursor.getColumnIndex("ParentID")));
+					areaInfo.setCcityId(cityId);
+					areaInfo.setCcityName(cityName);
+					areaInfo.setParentId(parentID);
+					areaList.add(areaInfo);
+//					list.add(string);
 				}
 			}
 		} catch (Exception e) {
@@ -101,7 +112,7 @@ public class SqliteDaoArea {
 		} finally {
 			closeDB(cursor, db);
 		}
-		return list;
+		return areaList;
 	}
 
 }
