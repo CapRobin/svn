@@ -1,0 +1,483 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white" >
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+
+            <RelativeLayout
+                android:id="@+id/layout_2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:background="@color/white" >
+
+                <fragment
+                    android:id="@+id/fragment_start_area"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="6dip"
+                    class="com.xibeiwuliu.other.LocationSelector" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_3"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_2"
+                android:layout_marginBottom="10dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:background="@color/white" >
+
+                <TextView
+                    android:id="@+id/shdzText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="到"
+                    android:textColor="@color/balck"
+                    android:textSize="20sp" />
+
+                <fragment
+                    android:id="@+id/fragment_stop_area"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/shdzText"
+                    android:layout_margin="6dip"
+                    class="com.xibeiwuliu.other.LocationSelector" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_0"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_3"
+                android:layout_marginBottom="10dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:background="@color/white" >
+
+                <TextView
+                    android:id="@+id/hwlxText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="有"
+                    android:textColor="@color/balck"
+                    android:textSize="20sp" />
+
+                <Spinner
+                    android:id="@+id/hwlxSpinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="6dip"
+                    android:layout_toRightOf="@+id/hwlxText"
+                    android:entries="@array/pub_cargo_typelist" />
+
+                <Spinner
+                    android:id="@+id/hwmcSpinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="6dip"
+                    android:layout_toRightOf="@+id/hwlxSpinner"
+                    android:entries="@array/cargo_name" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/pub_cargo_weight_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_0"
+                android:layout_marginBottom="10dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:background="@color/white" >
+
+                <EditText
+                    android:id="@+id/zltjEdit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/myedit_bg"
+                    android:inputType="number"
+                    android:singleLine="true"
+                    android:textColor="@color/balck"
+                    android:textSize="15sp" />
+
+                <Spinner
+                    android:id="@+id/zltjSpinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dip"
+                    android:layout_toRightOf="@+id/zltjEdit"
+                    android:entries="@array/pub_cargo_weight_unit_list" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_111"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/pub_cargo_weight_layout"
+                android:layout_marginBottom="10dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:background="@color/white" >
+
+                <TextView
+                    android:id="@+id/zhdzText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="装货地址为"
+                    android:textColor="@color/balck"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/zhdzEdit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/zhdzText"
+                    android:background="@drawable/myedit_bg"
+                    android:singleLine="true"
+                    android:textColor="@color/balck"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/zhdzImage"
+                    android:layout_width="30dip"
+                    android:layout_height="30dip"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dip"
+                    android:layout_toRightOf="@+id/zhdzEdit"
+                    android:background="@drawable/custom_loc"
+                    android:textColor="@color/balck"
+                    android:textSize="20sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_04"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_111"
+                android:layout_marginBottom="10dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:background="@color/white" >
+
+                <TextView
+                    android:id="@+id/qcslText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="求"
+                    android:textColor="@color/balck"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/qcslEdit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/qcslText"
+                    android:background="@drawable/myedit_bg"
+                    android:inputType="number"
+                    android:singleLine="true"
+                    android:textColor="@color/balck"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/qcslTextStr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dip"
+                    android:layout_toRightOf="@+id/qcslEdit"
+                    android:text="辆"
+                    android:textColor="@color/balck"
+                    android:textSize="20sp" />
+
+                <Spinner
+                    android:id="@+id/qclxSpinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="6dip"
+                    android:layout_toRightOf="@+id/qcslTextStr"
+                    android:entries="@array/pub_truck_typelist" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_7"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_04"
+                android:layout_marginBottom="10dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:background="@color/white" >
+
+                <TextView
+                    android:id="@+id/jsfsText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="结算方式为"
+                    android:textColor="@color/balck"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/jsfsEdit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/jsfsText"
+                    android:background="@drawable/myedit_bg"
+                    android:singleLine="true"
+                    android:textColor="@color/balck"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_24"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_7"
+                android:layout_marginBottom="10dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:background="@color/white" >
+
+                <TextView
+                    android:id="@+id/zxsjText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="装车时间为"
+                    android:textColor="@color/balck"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/zxsjEdit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/zxsjText"
+                    android:background="@drawable/myedit_bg"
+                    android:singleLine="true"
+                    android:textColor="@color/balck"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_25"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_24"
+                android:layout_marginBottom="10dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:background="@color/white" >
+
+                <TextView
+                    android:id="@+id/ddsjText1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="要求在"
+                    android:textColor="@color/balck"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/ddsjEdit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/ddsjText1"
+                    android:background="@drawable/myedit_bg"
+                    android:singleLine="true"
+                    android:textColor="@color/balck"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/ddsjText2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/ddsjEdit"
+                    android:text="前到达"
+                    android:textColor="@color/balck"
+                    android:textSize="20sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_4"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_25"
+                android:layout_marginBottom="10dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:background="@color/white" >
+
+                <TextView
+                    android:id="@+id/ysjlText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="运输距离："
+                    android:textColor="@color/balck"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/ysjlEdit"
+                    android:layout_width="80dip"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/ysjlText"
+                    android:background="@drawable/myedit_bg"
+                    android:inputType="number"
+                    android:singleLine="true"
+                    android:textColor="@color/balck"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/tyfText3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dip"
+                    android:layout_toRightOf="@+id/ysjlEdit"
+                    android:text="公里"
+                    android:textColor="@color/balck"
+                    android:textSize="20sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_5"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_4"
+                android:layout_marginBottom="10dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:background="@color/white" >
+
+                <TextView
+                    android:id="@+id/ysfyText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="运输费用："
+                    android:textColor="@color/balck"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/ysfyEdit"
+                    android:layout_width="80dip"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/ysfyText"
+                    android:background="@drawable/myedit_bg"
+                    android:inputType="number"
+                    android:singleLine="true"
+                    android:textColor="@color/balck"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/tyfText3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dip"
+                    android:layout_toRightOf="@+id/ysfyEdit"
+                    android:text="元/吨"
+                    android:textColor="@color/balck"
+                    android:textSize="20sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_8"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_5"
+                android:layout_margin="10dip"
+                android:background="@color/white" >
+
+                <TextView
+                    android:id="@+id/fwfyText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:inputType="number"
+                    android:text="服务费用："
+                    android:textColor="@color/balck"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/fwfyEdit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/fwfyText"
+                    android:background="@drawable/myedit_bg"
+                    android:inputType="number"
+                    android:singleLine="true"
+                    android:textColor="@color/balck"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_21"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_8"
+                android:layout_marginBottom="10dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:background="@color/white" >
+
+                <TextView
+                    android:id="@+id/bcsmText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="补充说明："
+                    android:textColor="@color/balck"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/bcsmEdit"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/bcsmText"
+                    android:background="@drawable/myedit_bg"
+                    android:textColor="@color/balck"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_33"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_21"
+                android:layout_marginBottom="10dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:background="@color/white" >
+
+                <Button
+                    android:id="@+id/publicInfoBut"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/exist_selector"
+                    android:text="发        布"
+                    android:textColor="@color/balck"
+                    android:textSize="20sp" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>
