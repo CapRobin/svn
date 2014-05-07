@@ -237,7 +237,7 @@
 
             <include
                 android:id="@+id/cfdLayout"
-                layout="@layout/public_cargo_info" />
+                layout="@layout/public_vehicle_info" />
         </LinearLayout>
     </ScrollView>
 

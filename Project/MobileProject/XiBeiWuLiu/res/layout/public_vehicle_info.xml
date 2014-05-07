@@ -83,76 +83,76 @@
             <!-- class="com.haohuotong.other.LocationSelector" /> -->
             <!-- </RelativeLayout> -->
 
-            <RelativeLayout
-                android:id="@+id/layout_x"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dip"
-                android:layout_marginRight="10dip"
-                android:layout_marginTop="15dip"
-                android:background="@color/white"
-                android:orientation="vertical" >
+<!--             <RelativeLayout -->
+<!--                 android:id="@+id/layout_x" -->
+<!--                 android:layout_width="fill_parent" -->
+<!--                 android:layout_height="wrap_content" -->
+<!--                 android:layout_marginLeft="10dip" -->
+<!--                 android:layout_marginRight="10dip" -->
+<!--                 android:layout_marginTop="15dip" -->
+<!--                 android:background="@color/white" -->
+<!--                 android:orientation="vertical" > -->
 
-                <TextView
-                    android:id="@+id/fhdText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:singleLine="true"
-                    android:text="发货地："
-                    android:textColor="@color/balck"
-                    android:textSize="18sp" />
+<!--                 <TextView -->
+<!--                     android:id="@+id/fhdText" -->
+<!--                     android:layout_width="wrap_content" -->
+<!--                     android:layout_height="wrap_content" -->
+<!--                     android:layout_centerVertical="true" -->
+<!--                     android:singleLine="true" -->
+<!--                     android:text="发货地：" -->
+<!--                     android:textColor="@color/balck" -->
+<!--                     android:textSize="18sp" /> -->
 
-                <EditText
-                    android:id="@+id/fhdEdit"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="5dip"
-                    android:layout_marginRight="25dip"
-                    android:layout_toRightOf="@+id/fhdText"
-                    android:background="@drawable/myedit_bg"
-                    android:inputType="number"
-                    android:singleLine="true"
-                    android:textColor="@color/balck"
-                    android:textSize="15sp" />
-            </RelativeLayout>
+<!--                 <EditText -->
+<!--                     android:id="@+id/fhdEdit" -->
+<!--                     android:layout_width="fill_parent" -->
+<!--                     android:layout_height="wrap_content" -->
+<!--                     android:layout_centerVertical="true" -->
+<!--                     android:layout_marginLeft="5dip" -->
+<!--                     android:layout_marginRight="25dip" -->
+<!--                     android:layout_toRightOf="@+id/fhdText" -->
+<!--                     android:background="@drawable/myedit_bg" -->
+<!--                     android:inputType="number" -->
+<!--                     android:singleLine="true" -->
+<!--                     android:textColor="@color/balck" -->
+<!--                     android:textSize="15sp" /> -->
+<!--             </RelativeLayout> -->
 
-            <RelativeLayout
-                android:id="@+id/layout_y"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/layout_x"
-                android:layout_marginLeft="10dip"
-                android:layout_marginRight="10dip"
-                android:layout_marginTop="5dip"
-                android:background="@color/white"
-                android:orientation="vertical" >
+<!--             <RelativeLayout -->
+<!--                 android:id="@+id/layout_y" -->
+<!--                 android:layout_width="fill_parent" -->
+<!--                 android:layout_height="wrap_content" -->
+<!--                 android:layout_below="@+id/layout_x" -->
+<!--                 android:layout_marginLeft="10dip" -->
+<!--                 android:layout_marginRight="10dip" -->
+<!--                 android:layout_marginTop="5dip" -->
+<!--                 android:background="@color/white" -->
+<!--                 android:orientation="vertical" > -->
 
-                <TextView
-                    android:id="@+id/chdText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:singleLine="true"
-                    android:text="收货地："
-                    android:textColor="@color/balck"
-                    android:textSize="18sp" />
+<!--                 <TextView -->
+<!--                     android:id="@+id/chdText" -->
+<!--                     android:layout_width="wrap_content" -->
+<!--                     android:layout_height="wrap_content" -->
+<!--                     android:layout_centerVertical="true" -->
+<!--                     android:singleLine="true" -->
+<!--                     android:text="收货地：" -->
+<!--                     android:textColor="@color/balck" -->
+<!--                     android:textSize="18sp" /> -->
 
-                <EditText
-                    android:id="@+id/shdEdit"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="5dip"
-                    android:layout_marginRight="25dip"
-                    android:layout_toRightOf="@+id/chdText"
-                    android:background="@drawable/myedit_bg"
-                    android:inputType="number"
-                    android:singleLine="true"
-                    android:textColor="@color/balck"
-                    android:textSize="15sp" />
-            </RelativeLayout>
+<!--                 <EditText -->
+<!--                     android:id="@+id/shdEdit" -->
+<!--                     android:layout_width="fill_parent" -->
+<!--                     android:layout_height="wrap_content" -->
+<!--                     android:layout_centerVertical="true" -->
+<!--                     android:layout_marginLeft="5dip" -->
+<!--                     android:layout_marginRight="25dip" -->
+<!--                     android:layout_toRightOf="@+id/chdText" -->
+<!--                     android:background="@drawable/myedit_bg" -->
+<!--                     android:inputType="number" -->
+<!--                     android:singleLine="true" -->
+<!--                     android:textColor="@color/balck" -->
+<!--                     android:textSize="15sp" /> -->
+<!--             </RelativeLayout> -->
 
             <RelativeLayout
                 android:id="@+id/layout_04"

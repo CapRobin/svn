@@ -14,7 +14,6 @@ import com.ab.activity.AbActivity;
 import com.ab.view.titlebar.AbTitleBar;
 
 public class BaseActivity extends AbActivity {
-
 	public Button rightTitleBut = null;
 	public Handler mBaseHandler = new Handler() {
 

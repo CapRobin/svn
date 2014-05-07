@@ -83,7 +83,11 @@
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar" />
         <activity
-            android:name=".LocationActivity"
+            android:name=".PublishCargoActivity_x"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" />
+        <activity
+            android:name=".PublishVehicleActivity_x"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar" />
     </application>

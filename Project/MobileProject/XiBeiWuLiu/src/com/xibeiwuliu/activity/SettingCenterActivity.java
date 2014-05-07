@@ -123,9 +123,7 @@ public class SettingCenterActivity extends BaseActivity implements OnClickListen
 			Toast.makeText(SettingCenterActivity.this, "关于公司", 5).show();
 			break;
 		case R.id.layout_06:
-//			Toast.makeText(SettingCenterActivity.this, "更多应用", 5).show();
-//			startActivity(new Intent(SettingCenterActivity.this, PublicActivity.class));
-			startActivity(new Intent(SettingCenterActivity.this, LocationActivity.class));
+			startActivity(new Intent(SettingCenterActivity.this, PublishCargoActivity.class));
 			
 			break;
 		}
