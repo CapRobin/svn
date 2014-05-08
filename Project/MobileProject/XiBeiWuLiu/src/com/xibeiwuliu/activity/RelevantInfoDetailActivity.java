@@ -1,23 +1,28 @@
 package com.xibeiwuliu.activity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.ab.activity.AbActivity;
 import com.ab.view.titlebar.AbTitleBar;
 import com.xibeiwuliu.global.MyApplication;
 
+
 /**
- * Copyright (c) 2013 All rights reserved
  * 
- * @Name：PublishVehicleActivity.java
- * @Describe：发布车源
- * @Author: yfr5734@gmail.com
- * @Date：2014年4月28日 下午4:42:44
- * @Version v1.0 *
- * 
+  * Copyright (c) 2013 All rights reserved
+  * @Name：RelevantInfoActivity.java 
+  * @Describe：行业资讯
+  * @Author:  yfr5734@gmail.com
+  * @Date：2014年5月8日 下午3:20:15
+  * @Version v1.0 *
+  *
  */
-public class PublishVehicleActivity_x extends BaseActivity {
+public class RelevantInfoDetailActivity extends BaseActivity {
 	private MyApplication application = null;
 	private TextView text;
 	private String getMsg;
@@ -25,7 +30,7 @@ public class PublishVehicleActivity_x extends BaseActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setAbContentView(R.layout.public_vehicle_info);
+		setAbContentView(R.layout.relevant_info_detail);
 		application = (MyApplication) abApplication;
 		getMsg = getIntent().getStringExtra("msg");
 		initTitleLayout(getMsg, false);
@@ -42,8 +47,8 @@ public class PublishVehicleActivity_x extends BaseActivity {
 	 * @version v1.0
 	 */
 	private void initView() {
-//		text = (TextView) findViewById(R.id.text);
-//		text.setText(getMsg);
+		text = (TextView) findViewById(R.id.text);
+		text.setText(getMsg);
 
 	}
 }
