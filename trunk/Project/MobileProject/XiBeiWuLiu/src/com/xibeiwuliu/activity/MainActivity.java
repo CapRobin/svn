@@ -240,7 +240,7 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 			break;
 		case R.id.layoutItem07:
 			Msg = "行业资讯";
-			intent.setClass(MainActivity.this, TestActivity.class);
+			intent.setClass(MainActivity.this, RelevantInfoActivity.class);
 			intent.putExtra("msg", Msg);
 			startActivity(intent);
 			break;
