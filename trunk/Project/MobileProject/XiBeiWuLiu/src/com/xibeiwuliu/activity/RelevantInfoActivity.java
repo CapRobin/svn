@@ -89,7 +89,7 @@ public class RelevantInfoActivity extends BaseActivity implements OnClickListene
 		for (int i = 0; i < 50; i++) {
 			info = new RelevantInfo();
 			info.setTitleName("资讯"+ i);
-			info.setContent("资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容"+i);
+			info.setContent(getResources().getString(R.string.contentText)+i);
 			info.setTime(String.valueOf(2001+i)+"_05_08");
 			mRelevantInfoList.add(info);
 		}
@@ -104,13 +104,18 @@ public class RelevantInfoActivity extends BaseActivity implements OnClickListene
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 				RelevantInfo cargoInfo = (RelevantInfo) myListViewAdapter.getItem(position - 1);
-				String getContent = cargoInfo.getContent();
-				Toast.makeText(RelevantInfoActivity.this, getContent, 5).show();
-//				Intent intent = new Intent(CargoListActivity.this, CargoListDetailActivity.class);
+				String infoName = cargoInfo.getTitleName();
+				String infoContent = cargoInfo.getContent();
+				String infoTime = cargoInfo.getTime();
+//				Toast.makeText(RelevantInfoActivity.this, infoContent, 5).show();
+				Intent intent = new Intent(RelevantInfoActivity.this, RelevantInfoDetailActivity.class);
 //				Bundle bundle = new Bundle();
 //				bundle.putSerializable("cargoInfo", cargoInfo);
 //				intent.putExtra("bundle", bundle);
-//				startActivity(intent);
+				intent.putExtra("infoName", infoName);
+				intent.putExtra("infoContent", infoContent);
+				intent.putExtra("infoTime", infoTime);
+				startActivity(intent);
 			}
 		});
 	}
