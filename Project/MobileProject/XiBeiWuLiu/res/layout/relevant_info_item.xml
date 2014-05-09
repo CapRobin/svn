@@ -27,7 +27,9 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/msg_title"
             android:layout_marginTop="5dip"
-            android:text="数据加载中数据加载中数据加载中数据加载中数据加载中数据加载中数据加载中数据加载中数据加载中"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="数据加载中......"
             android:textColor="@color/gray_black"
             android:textSize="11sp" />
 

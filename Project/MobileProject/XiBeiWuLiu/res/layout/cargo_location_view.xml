@@ -8,6 +8,8 @@
 
     <ScrollView
         android:layout_width="fill_parent"
+        android:fadingEdge="none"
+        android:fastScrollEnabled="true"
         android:layout_height="fill_parent" >
 
         <LinearLayout

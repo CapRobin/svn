@@ -8,7 +8,9 @@
 
     <ScrollView
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent" >
+        android:layout_height="fill_parent"
+        android:fadingEdge="none"
+        android:fastScrollEnabled="true" >
 
         <LinearLayout
             android:layout_width="fill_parent"
@@ -96,37 +98,37 @@
                     android:visibility="gone" />
             </LinearLayout>
 
-<!--             <LinearLayout -->
-<!--                 android:id="@+id/textlayout" -->
-<!--                 android:layout_width="fill_parent" -->
-<!--                 android:layout_height="wrap_content" -->
-<!--                 android:layout_marginLeft="10dip" -->
-<!--                 android:layout_marginRight="10dip" -->
-<!--                 android:layout_marginTop="10dip" -->
-<!--                 android:orientation="horizontal" -->
-<!--                 android:padding="5dip" -->
-<!--                 android:visibility="gone" > -->
-
-<!--                 <TextView -->
-<!--                     android:id="@+id/cfdext" -->
-<!--                     android:layout_width="wrap_content" -->
-<!--                     android:layout_height="wrap_content" -->
-<!--                     android:text="出发地：" -->
-<!--                     android:textColor="@color/black" -->
-<!--                     android:textSize="20dip" /> -->
-
-<!--                 <TextView -->
-<!--                     android:id="@+id/addressText" -->
-<!--                     android:layout_width="wrap_content" -->
-<!--                     android:layout_height="wrap_content" -->
-<!--                     android:text="显示选择地址信息" -->
-<!--                     android:textColor="@color/black" -->
-<!--                     android:textSize="20dip" /> -->
-<!--             </LinearLayout> -->
+            <!-- <LinearLayout -->
+            <!-- android:id="@+id/textlayout" -->
+            <!-- android:layout_width="fill_parent" -->
+            <!-- android:layout_height="wrap_content" -->
+            <!-- android:layout_marginLeft="10dip" -->
+            <!-- android:layout_marginRight="10dip" -->
+            <!-- android:layout_marginTop="10dip" -->
+            <!-- android:orientation="horizontal" -->
+            <!-- android:padding="5dip" -->
+            <!-- android:visibility="gone" > -->
 
 
-                
-             <LinearLayout
+            <!-- <TextView -->
+            <!-- android:id="@+id/cfdext" -->
+            <!-- android:layout_width="wrap_content" -->
+            <!-- android:layout_height="wrap_content" -->
+            <!-- android:text="出发地：" -->
+            <!-- android:textColor="@color/black" -->
+            <!-- android:textSize="20dip" /> -->
+
+
+            <!-- <TextView -->
+            <!-- android:id="@+id/addressText" -->
+            <!-- android:layout_width="wrap_content" -->
+            <!-- android:layout_height="wrap_content" -->
+            <!-- android:text="显示选择地址信息" -->
+            <!-- android:textColor="@color/black" -->
+            <!-- android:textSize="20dip" /> -->
+            <!-- </LinearLayout> -->
+
+            <LinearLayout
                 android:id="@+id/mddLayout2"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
@@ -207,33 +209,35 @@
                     android:visibility="gone" />
             </LinearLayout>
 
-<!--             <LinearLayout -->
-<!--                 android:id="@+id/textlayout2" -->
-<!--                 android:layout_width="fill_parent" -->
-<!--                 android:layout_height="wrap_content" -->
-<!--                 android:layout_marginLeft="10dip" -->
-<!--                 android:layout_marginRight="10dip" -->
-<!--                 android:layout_marginTop="10dip" -->
-<!--                 android:orientation="horizontal" -->
-<!--                 android:padding="5dip" -->
-<!--                 android:visibility="gone" > -->
+            <!-- <LinearLayout -->
+            <!-- android:id="@+id/textlayout2" -->
+            <!-- android:layout_width="fill_parent" -->
+            <!-- android:layout_height="wrap_content" -->
+            <!-- android:layout_marginLeft="10dip" -->
+            <!-- android:layout_marginRight="10dip" -->
+            <!-- android:layout_marginTop="10dip" -->
+            <!-- android:orientation="horizontal" -->
+            <!-- android:padding="5dip" -->
+            <!-- android:visibility="gone" > -->
 
-<!--                 <TextView -->
-<!--                     android:id="@+id/cfdext2" -->
-<!--                     android:layout_width="wrap_content" -->
-<!--                     android:layout_height="wrap_content" -->
-<!--                     android:text="出发地：" -->
-<!--                     android:textColor="@color/black" -->
-<!--                     android:textSize="20dip" /> -->
 
-<!--                 <TextView -->
-<!--                     android:id="@+id/addressText2" -->
-<!--                     android:layout_width="wrap_content" -->
-<!--                     android:layout_height="wrap_content" -->
-<!--                     android:text="显示选择地址信息" -->
-<!--                     android:textColor="@color/black" -->
-<!--                     android:textSize="20dip" /> -->
-<!--             </LinearLayout> -->
+            <!-- <TextView -->
+            <!-- android:id="@+id/cfdext2" -->
+            <!-- android:layout_width="wrap_content" -->
+            <!-- android:layout_height="wrap_content" -->
+            <!-- android:text="出发地：" -->
+            <!-- android:textColor="@color/black" -->
+            <!-- android:textSize="20dip" /> -->
+
+
+            <!-- <TextView -->
+            <!-- android:id="@+id/addressText2" -->
+            <!-- android:layout_width="wrap_content" -->
+            <!-- android:layout_height="wrap_content" -->
+            <!-- android:text="显示选择地址信息" -->
+            <!-- android:textColor="@color/black" -->
+            <!-- android:textSize="20dip" /> -->
+            <!-- </LinearLayout> -->
 
             <include
                 android:id="@+id/cfdLayout"
