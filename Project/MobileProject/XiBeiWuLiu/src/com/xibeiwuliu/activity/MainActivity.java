@@ -82,8 +82,7 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 				
 				@Override
 				public void onClick(View v) {
-//					Toast.makeText(SettingCenterActivity.this, "个人中心设置", 5).show();
-					String Msg = "行业资讯";
+					String Msg = "个人中心";
 					Intent intent = new Intent(MainActivity.this, SettingCenterActivity.class);
 					intent.putExtra("msg", Msg);
 					startActivity(intent);
@@ -246,7 +245,7 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 			break;
 		case R.id.layoutItem08:
 			Msg = "更多";
-			intent.setClass(MainActivity.this, TestActivity.class);
+			intent.setClass(MainActivity.this, MoreActivity.class);
 			intent.putExtra("msg", Msg);
 			startActivity(intent);
 			break;
