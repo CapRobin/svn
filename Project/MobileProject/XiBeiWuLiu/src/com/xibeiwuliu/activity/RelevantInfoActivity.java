@@ -88,7 +88,7 @@ public class RelevantInfoActivity extends BaseActivity implements OnClickListene
 		RelevantInfo info = null;
 		for (int i = 0; i < 50; i++) {
 			info = new RelevantInfo();
-			info.setTitleName("资讯"+ i);
+			info.setTitleName("资讯"+ i );
 			info.setContent(getResources().getString(R.string.contentText)+i);
 			info.setTime(String.valueOf(2001+i)+"_05_08");
 			mRelevantInfoList.add(info);
