@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/app_bg"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:fadingEdge="none"
+        android:fastScrollEnabled="true" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dip" >
+
+                <EditText
+                    android:id="@+id/searchText"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginRight="80dip"
+                    android:background="@drawable/myedit_bg"
+                    android:hint="请输入搜索关键字"
+                    android:textSize="15dip" />
+
+                <Button
+                    android:id="@+id/searchBut"
+                    android:layout_width="60dip"
+                    android:layout_height="40dip"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dip"
+                    android:text="搜索"
+                    android:textSize="15dip" />
+            </RelativeLayout>
+
+            <com.xibeiwuliu.view.MyView
+                android:id="@+id/myView"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dip" />
+
+            <RelativeLayout
+                android:id="@+id/layout_00"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip" >
+
+                <TextView
+                    android:id="@+id/hwlxText"
+                    android:layout_width="90dip"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="货物类型"
+                    android:textColor="@color/balck"
+                    android:textSize="18sp" />
+
+                <Spinner
+                    android:id="@+id/pub_cargo_type"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="100dip"
+                    android:entries="@array/pub_cargo_typelist" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_00"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip" >
+
+                <TextView
+                    android:id="@+id/ysfsText"
+                    android:layout_width="90dip"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="运输方式"
+                    android:textColor="@color/balck"
+                    android:textSize="18sp" />
+
+                <Spinner
+                    android:id="@+id/pub_ysfs_type"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="100dip"
+                    android:entries="@array/ysfs" />
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/startSearch"
+                android:layout_width="fill_parent"
+                android:layout_height="45dp"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:layout_marginTop="100dip"
+                android:text="开始搜索" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

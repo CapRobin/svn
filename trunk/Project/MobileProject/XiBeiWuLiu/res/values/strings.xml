@@ -38,6 +38,14 @@
         <item>台</item>
         <item>箱</item>
     </string-array>
+    
+    
+    <string-array name="ysfs">
+        <item>不限</item>
+        <item>物流公司</item>
+        <item>整车配货</item>
+        <item>件零担配货</item>
+    </string-array>
 
     <string name="pub_truck_type">车型：</string>
 

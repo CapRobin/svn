@@ -23,7 +23,7 @@ import com.xibeiwuliu.view.MyImgScroll;
  * @Name：MainActivity.java
  * @Describe：物流首页
  * @Author: yfr5734@gmail.com
- * @Date：2014年4月28日 下午4:32:30  
+ * @Date：2014年4月28日 下午4:32:30
  * @Version v1.0 *
  * 
  */
@@ -32,7 +32,7 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 	private MyApplication application = null;
 	private MyImgScroll myPager; // 图片容器
 	private LinearLayout ovalLayout; // 圆点容器
-	private List<View> listViews; // 图片组  
+	private List<View> listViews; // 图片组
 	private LinearLayout layoutItem01, layoutItem02, layoutItem03, layoutItem04, layoutItem05, layoutItem06, layoutItem07, layoutItem08;
 	private boolean isShowRightBut = true; // 是否显示右边按钮
 	private SqliteDaoArea daoArea = null;
@@ -66,7 +66,7 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 		layoutItem06 = (LinearLayout) findViewById(R.id.layoutItem06);
 		layoutItem07 = (LinearLayout) findViewById(R.id.layoutItem07);
 		layoutItem08 = (LinearLayout) findViewById(R.id.layoutItem08);
-//		TextView wlzxText = (TextView) findViewById(R.id.wlzxText);
+		// TextView wlzxText = (TextView) findViewById(R.id.wlzxText);
 		layoutItem01.setOnClickListener(this);
 		layoutItem02.setOnClickListener(this);
 		layoutItem03.setOnClickListener(this);
@@ -75,11 +75,11 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 		layoutItem06.setOnClickListener(this);
 		layoutItem07.setOnClickListener(this);
 		layoutItem08.setOnClickListener(this);
-//		wlzxText.setText("物\/流\/专\/线");
+		// wlzxText.setText("物\/流\/专\/线");
 
 		if (isShowRightBut) {
 			this.rightTitleBut.setOnClickListener(new OnClickListener() {
-				
+
 				@Override
 				public void onClick(View v) {
 					String Msg = "个人中心";
@@ -94,9 +94,9 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 		InitViewPager();
 		// 开始滚动
 		myPager.start(this, listViews, 4000, ovalLayout, R.layout.ad_bottom_item, R.id.ad_item_v, R.drawable.dot_focused, R.drawable.dot_normal);
-		
+
 		List<AreaInfo> strList = daoArea.getAreaInfo(0);
-//		Toast.makeText(MainActivity.this, strList.get(0), 5).show();
+		// Toast.makeText(MainActivity.this, strList.get(0), 5).show();
 		Toast.makeText(MainActivity.this, strList.get(0).getCcityName(), 5).show();
 	}
 
