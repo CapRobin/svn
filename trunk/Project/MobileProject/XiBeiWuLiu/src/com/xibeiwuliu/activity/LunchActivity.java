@@ -33,10 +33,10 @@ import com.xibeiwuliu.util.MethodUtil;
 /**
  * Copyright (c) 2013 All rights reserved
  * 
- * @Name£ºLunchActivity.java
- * @Describe£º³ÌĞòÆô¶¯Ò³Ãæ
+ * @Nameï¼šLunchActivity.java
+ * @Describeï¼šç¨‹åºå¯åŠ¨é¡µé¢
  * @Author: yfr5734@gmail.com
- * @Date£º2014Äê4ÔÂ28ÈÕ ÏÂÎç2:47:29
+ * @Dateï¼š2014å¹´4æœˆ28æ—¥ ä¸‹åˆ2:47:29
  * @Version v1.0
  */
 public class LunchActivity extends Activity {
@@ -58,9 +58,9 @@ public class LunchActivity extends Activity {
 			case 1:
 				coordinate = gpsManager.getCoordinate();
 
-				Toast.makeText(LunchActivity.this, "GPSÎ»ÖÃÎ»ÖÃĞÅÏ¢£º\n¾­¶ÈÎª£º" + "" + "" + "" + "" + coordinate.Longitude + "\nÎ¬¶ÈÎª£º" + coordinate.Latitude, 5)
+				Toast.makeText(LunchActivity.this, "GPSä½ç½®ä½ç½®ä¿¡æ¯ï¼š\nç»åº¦ä¸ºï¼š" + "" + "" + "" + "" + coordinate.Longitude + "\nç»´åº¦ä¸ºï¼š" + coordinate.Latitude, 5)
 						.show();
-				System.out.println("GPSÎ»ÖÃÎ»ÖÃĞÅÏ¢£º\n¾­¶ÈÎª£º" + coordinate.Longitude + "\nÎ¬¶ÈÎª£º" + coordinate.Latitude);
+				System.out.println("GPSä½ç½®ä½ç½®ä¿¡æ¯ï¼š\nç»åº¦ä¸ºï¼š" + coordinate.Longitude + "\nç»´åº¦ä¸ºï¼š" + coordinate.Latitude);
 
 				// startActivity(new Intent(LunchActivity.this,
 				// MainActivity.class));
@@ -80,28 +80,28 @@ public class LunchActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		//È¥µôÈÎÎñÀ¸
+		//å»æ‰ä»»åŠ¡æ 
 		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		setContentView(R.layout.lunch);
 		application = (MyApplication) getApplication();
 		application.isBoot = true;
 		audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 
-		// ¼ì²âÍøÂç
+		// æ£€æµ‹ç½‘ç»œ
 		if (MethodUtil.getNetworkState(LunchActivity.this)) {
 
-			// ¼ì²âGPS¹¦ÄÜ
+			// æ£€æµ‹GPSåŠŸèƒ½
 			// boolean gpsEnabled =
 			// Settings.Secure.isLocationProviderEnabled(getContentResolver(),
 			// LocationManager.GPS_PROVIDER);
 			// if (gpsEnabled) {
-			// Toast.makeText(LunchActivity.this, "GPSÒÑ´ò¿ªÏÖÔÚ¹Ø±Õ£¡", 5).show();
+			// Toast.makeText(LunchActivity.this, "GPSå·²æ‰“å¼€ç°åœ¨å…³é—­ï¼", 5).show();
 			// Settings.Secure.setLocationProviderEnabled(getContentResolver(),
 			// LocationManager.GPS_PROVIDER, false);
 			// Settings.Secure.setLocationProviderEnabled(getContentResolver(),
 			// LocationManager.GPS_PROVIDER, false);
 			// } else {
-			// Toast.makeText(LunchActivity.this, "GPSÒÑ¹Ø±ÕÏÖÔÚ´ò¿ª£¡", 5).show();
+			// Toast.makeText(LunchActivity.this, "GPSå·²å…³é—­ç°åœ¨æ‰“å¼€ï¼", 5).show();
 			// Settings.Secure.setLocationProviderEnabled(getContentResolver(),
 			// LocationManager.GPS_PROVIDER, true);
 			// }
@@ -117,18 +117,18 @@ public class LunchActivity extends Activity {
 
 	public boolean isExist() {
 		boolean ret = false;
-		// ¼ì²âÊı¾İ¿âÊÇ·ñ´æÔÚ
+		// æ£€æµ‹æ•°æ®åº“æ˜¯å¦å­˜åœ¨
 		File f = new File(Constant.dbPath);
 		if (!f.exists()) {
 			ret = MethodUtil.importDatabase(LunchActivity.this, f);
 			if (ret) {
-				// sendMsgUpdateUI(1,"Êı¾İ¿â¼ÓÔØ³É¹¦...");
+				// sendMsgUpdateUI(1,"æ•°æ®åº“åŠ è½½æˆåŠŸ...");
 			} else {
-				sendMsgUpdateUI(0, "Êı¾İ¿â¼ÓÔØÊ§°Ü!");
+				sendMsgUpdateUI(0, "æ•°æ®åº“åŠ è½½å¤±è´¥!");
 				finish();
 			}
 		} else {
-			// sendMsgUpdateUI(1,"Êı¾İ¿â¼ÓÔØ³É¹¦...");
+			// sendMsgUpdateUI(1,"æ•°æ®åº“åŠ è½½æˆåŠŸ...");
 		}
 		return ret;
 	}
@@ -139,18 +139,18 @@ public class LunchActivity extends Activity {
 
 			@Override
 			public void onLocationChanged(Location location) {
-				// »ñÈ¡Location¼àÌı
+				// è·å–Locationç›‘å¬
 			}
 		});
 
-		// ¼ì²âÊÇ·ñÎª¾²ÒôÄ£Ê½
+		// æ£€æµ‹æ˜¯å¦ä¸ºé™éŸ³æ¨¡å¼
 		if (audioManager.getRingerMode() != AudioManager.RINGER_MODE_NORMAL) {
-			// ´ò¿ªÉùÒôÄ£Ê½
+			// æ‰“å¼€å£°éŸ³æ¨¡å¼
 			audioManager.setRingerMode(AudioManager.RINGER_MODE_NORMAL);
 		}
 
 		/**
-		 * Æô¶¯Ïß³Ì¼ÓÔØ
+		 * å¯åŠ¨çº¿ç¨‹åŠ è½½
 		 */
 		new Thread() {
 			@Override
@@ -159,20 +159,20 @@ public class LunchActivity extends Activity {
 				try {
 					sleep(3000);
 
-					// ¼ì²âÊı¾İ¿âÊÇ·ñ´æÔÚ
+					// æ£€æµ‹æ•°æ®åº“æ˜¯å¦å­˜åœ¨
 					File f = new File(Constant.dbPath);
 					if (!f.exists()) {
 						boolean ret = MethodUtil.importDatabase(LunchActivity.this, f);
 						if (ret) {
-							// sendMsgUpdateUI(1,"Êı¾İ¿â¼ÓÔØ³É¹¦...");
+							// sendMsgUpdateUI(1,"æ•°æ®åº“åŠ è½½æˆåŠŸ...");
 						} else {
-							sendMsgUpdateUI(0, "Êı¾İ¿â¼ÓÔØÊ§°Ü!");
+							sendMsgUpdateUI(0, "æ•°æ®åº“åŠ è½½å¤±è´¥!");
 							finish();
 						}
 					} else {
-						// sendMsgUpdateUI(1,"Êı¾İ¿â¼ÓÔØ³É¹¦...");
+						// sendMsgUpdateUI(1,"æ•°æ®åº“åŠ è½½æˆåŠŸ...");
 					}
-					// ¼ì²âÊı¾İ¿âÊÇ·ñ´æÔÚ
+					// æ£€æµ‹æ•°æ®åº“æ˜¯å¦å­˜åœ¨
 					// boolean b = isExist();
 					// System.out.println(b);
 
@@ -186,10 +186,10 @@ public class LunchActivity extends Activity {
 
 	/**
 	 * 
-	 * ÃèÊö£ºÏÔÊ¾ÌáÊ¾¶Ô»°¿ò
+	 * æè¿°ï¼šæ˜¾ç¤ºæç¤ºå¯¹è¯æ¡†
 	 * 
 	 * @throws
-	 * @date£º2013-11-19 ÉÏÎç10:36:52
+	 * @dateï¼š2013-11-19 ä¸Šåˆ10:36:52
 	 * @version v1.0
 	 */
 	private void showMyDialog(int unConnectType) {
@@ -203,13 +203,13 @@ public class LunchActivity extends Activity {
 		Button unAcceptBtn = (Button) retieve.findViewById(R.id.unAcceptBtn);
 		TextView dialogTitleText1 = (TextView) retieve.findViewById(R.id.dialogTitleText1);
 		TextView setMessage = (TextView) retieve.findViewById(R.id.setMessage);
-		dialogTitleText1.setText("ÎÂÜ°ÌáÊ¾");
+		dialogTitleText1.setText("æ¸©é¦¨æç¤º");
 
 		if (connectType == 1) {
-			titleInfo = "Äú»¹Î´¿ªÆôÍøÂç£¬ÇëÉèÖÃÍøÂç£¡";
+			titleInfo = "æ‚¨è¿˜æœªå¼€å¯ç½‘ç»œï¼Œè¯·è®¾ç½®ç½‘ç»œï¼";
 			action = Settings.ACTION_WIRELESS_SETTINGS;
 		} else if (connectType == 2) {
-			titleInfo = "±¾Èí¼şĞèÒª¿ªÆô¶¨Î»¹¦ÄÜ£¬ÒÔ±ãÎªÄúÕÒ³µ»òÕÒ»õ£¬²»¿ªÆôGPS¹¦ÄÜÄú½«ÎŞ·¨Ê¹ÓÃ±¾Èí¼ş£¬×£ÄúÉúÒâĞËÂ¡£¡";
+			titleInfo = "æœ¬è½¯ä»¶éœ€è¦å¼€å¯å®šä½åŠŸèƒ½ï¼Œä»¥ä¾¿ä¸ºæ‚¨æ‰¾è½¦æˆ–æ‰¾è´§ï¼Œä¸å¼€å¯GPSåŠŸèƒ½æ‚¨å°†æ— æ³•ä½¿ç”¨æœ¬è½¯ä»¶ï¼Œç¥æ‚¨ç”Ÿæ„å…´éš†ï¼";
 			action = Settings.ACTION_LOCATION_SOURCE_SETTINGS;
 		}
 		setMessage.setText(titleInfo);
@@ -258,7 +258,7 @@ public class LunchActivity extends Activity {
 
 				@Override
 				public void onLocationChanged(Location location) {
-					// »ñÈ¡Location¼àÌı
+					// è·å–Locationç›‘å¬
 				}
 			});
 			sendMsgUpdateUI(1, null);
@@ -270,12 +270,12 @@ public class LunchActivity extends Activity {
 	}
 
 	/**
-	 * ÃèÊö£º·¢ËÍÏûÏ¢Ë¢ĞÂUI µÚÒ»²ÎÊıÊÇ0
+	 * æè¿°ï¼šå‘é€æ¶ˆæ¯åˆ·æ–°UI ç¬¬ä¸€å‚æ•°æ˜¯0
 	 * 
 	 * @param what
 	 * @param toast
 	 * @throws
-	 * @date£º2013-11-19 ÏÂÎç1:28:08
+	 * @dateï¼š2013-11-19 ä¸‹åˆ1:28:08
 	 * @version v1.0
 	 */
 	public void sendMsgUpdateUI(int what, String toast) {

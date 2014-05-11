@@ -24,10 +24,10 @@ import com.xibeiwuliu.web.PublicInfoWeb;
  * 
  * Copyright (c) 2013 All rights reserved
  * 
- * @Name£ºCargoListActivity.java
- * @Describe£º»õÔ´ĞÅÏ¢
+ * @Nameï¼šCargoListActivity.java
+ * @Describeï¼šè´§æºä¿¡æ¯
  * @Author: yfr5734@gmail.com
- * @Date£º2014Äê4ÔÂ28ÈÕ ÏÂÎç4:40:30
+ * @Dateï¼š2014å¹´4æœˆ28æ—¥ ä¸‹åˆ4:40:30
  * @Version v1.0 *
  * 
  */
@@ -55,24 +55,24 @@ public class CargoListActivity extends BaseActivity {
 
 	/**
 	 * 
-	 * @Describe£º³õÊ¼»¯View
+	 * @Describeï¼šåˆå§‹åŒ–View
 	 * @Throws:
-	 * @Date£º2014Äê4ÔÂ29ÈÕ ÉÏÎç10:52:17
+	 * @Dateï¼š2014å¹´4æœˆ29æ—¥ ä¸Šåˆ10:52:17
 	 * @Version v1.0
 	 * 
 	 */
 	private void initView() {
 		mAbTaskQueue = AbTaskQueue.getInstance();
 
-		// »ñÈ¡ListView¶ÔÏó
+		// è·å–ListViewå¯¹è±¡
 		cargoList = (AbPullListView) findViewById(R.id.cargoList);
-		// ´ò¿ª¹Ø±ÕÏÂÀ­Ë¢ĞÂ¼ÓÔØ¸ü¶à¹¦ÄÜ
+		// æ‰“å¼€å…³é—­ä¸‹æ‹‰åˆ·æ–°åŠ è½½æ›´å¤šåŠŸèƒ½
 		cargoList.setPullRefreshEnable(true);
 		cargoList.setPullLoadEnable(true);
 
 		mCargoInfoList = new ArrayList<CargoInfo>();
 
-		// Ê¹ÓÃ×Ô¶¨ÒåµÄAdapter
+		// ä½¿ç”¨è‡ªå®šä¹‰çš„Adapter
 		myListViewAdapter = new CommonalityInfoAdapter(CargoListActivity.this, mCargoInfoList);
 		cargoList.setAdapter(myListViewAdapter);
 		
@@ -93,17 +93,17 @@ public class CargoListActivity extends BaseActivity {
 
 	/**
 	 * 
-	 * ÃèÊö£º»ñÈ¡ÁĞ±íÊı¾İ
+	 * æè¿°ï¼šè·å–åˆ—è¡¨æ•°æ®
 	 * 
 	 * @throws
-	 * @date£º2013-11-18 ÏÂÎç5:54:26
+	 * @dateï¼š2013-11-18 ä¸‹åˆ5:54:26
 	 * @version v1.0
 	 */
 	private void getListData() {
 		getParameterList = new ArrayList<Parameter>();
 		showProgressDialog();
 
-		// ¶¨ÒåÁ½ÖÖ²éÑ¯µÄÊÂ¼ş
+		// å®šä¹‰ä¸¤ç§æŸ¥è¯¢çš„äº‹ä»¶
 		final AbTaskItem item1 = new AbTaskItem();
 		item1.listener = new AbTaskListener() {
 
@@ -182,18 +182,18 @@ public class CargoListActivity extends BaseActivity {
 
 		});
 
-		// µÚÒ»´ÎÏÂÔØÊı¾İ
+		// ç¬¬ä¸€æ¬¡ä¸‹è½½æ•°æ®
 		mAbTaskQueue.execute(item1);
 	}
 
 	/**
 	 * 
-	 * ÃèÊö£º·¢²¼»õÔ´ĞÅÏ¢²ÎÊı
+	 * æè¿°ï¼šå‘å¸ƒè´§æºä¿¡æ¯å‚æ•°
 	 * 
 	 * @param string
 	 * @param lprId
 	 * @throws
-	 * @date£º2013Äê12ÔÂ27ÈÕ ÉÏÎç3:37:10
+	 * @dateï¼š2013å¹´12æœˆ27æ—¥ ä¸Šåˆ3:37:10
 	 * @version v1.0
 	 */
 	private void setParameterList(String key, String value) {

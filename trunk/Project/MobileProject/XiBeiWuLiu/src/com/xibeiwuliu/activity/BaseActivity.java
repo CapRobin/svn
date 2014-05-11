@@ -44,18 +44,18 @@ public class BaseActivity extends AbActivity {
 
 	/**
 	 * 
-	 * @Describe£ºTODO
-	 * @param titleMsg					±êÌâÃû³Æ
-	 * @param isShowRightBar		ÊÇ·ñÏÔÊ¾ÓÒ±ßµÄ°´Å¥
+	 * @Describeï¼šTODO
+	 * @param titleMsg					æ ‡é¢˜åç§°
+	 * @param isShowRightBar		æ˜¯å¦æ˜¾ç¤ºå³è¾¹çš„æŒ‰é’®
 	 * @Throws:
-	 * @Date£º2014Äê4ÔÂ29ÈÕ ÉÏÎç10:38:04
+	 * @Dateï¼š2014å¹´4æœˆ29æ—¥ ä¸Šåˆ10:38:04
 	 * @Version v1.0
 	 * 
 	 */
 	protected void initTitleLayout(String titleMsg, boolean isShowRightBar) {
 		AbTitleBar mAbTitleBar = this.getTitleBar();
 
-		// Ìí¼Ó×ó²à²¼¾ÖÎÄ¼ş
+		// æ·»åŠ å·¦ä¾§å¸ƒå±€æ–‡ä»¶
 		mAbTitleBar.setTitleText(titleMsg);
 		mAbTitleBar.setLogo(R.drawable.button_selector_back);
 		// mAbTitleBar.setTitleLayoutBackground(R.drawable.top_bg);
@@ -64,7 +64,7 @@ public class BaseActivity extends AbActivity {
 		mAbTitleBar.setLogoLine(R.drawable.line);
 		mAbTitleBar.setTitleTextSize(16);
 
-		// Ìí¼ÓÓÒ²à²¼¾ÖÎÄ¼ş
+		// æ·»åŠ å³ä¾§å¸ƒå±€æ–‡ä»¶
 		if (isShowRightBar) {
 			View rightViewMore = mInflater.inflate(R.layout.more_btn, null);
 			mAbTitleBar.addRightView(rightViewMore);
@@ -72,7 +72,7 @@ public class BaseActivity extends AbActivity {
 			rightTitleBut.setOnClickListener(new View.OnClickListener() {
 
 				public void onClick(View v) {
-					Toast.makeText(BaseActivity.this, "µã»÷ÊÂ¼ş", 5).show();
+					Toast.makeText(BaseActivity.this, "ç‚¹å‡»äº‹ä»¶", 5).show();
 				}
 			});
 		}
@@ -80,15 +80,15 @@ public class BaseActivity extends AbActivity {
 
 	/**
 	 * 
-	 * ÃèÊö£º»ñÈ¡ÍøÂç×´Ì¬
+	 * æè¿°ï¼šè·å–ç½‘ç»œçŠ¶æ€
 	 * 
 	 * @return
 	 * @throws
-	 * @date£º2012-8-30 ÉÏÎç11:01:52
+	 * @dateï¼š2012-8-30 ä¸Šåˆ11:01:52
 	 * @version v1.0
 	 */
 	public boolean getNetworkState() {
-		// ¼ì²âÍøÂç
+		// æ£€æµ‹ç½‘ç»œ
 		ConnectivityManager connectivity = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
 		NetworkInfo netWork = connectivity.getActiveNetworkInfo();
 		if (netWork != null) {
@@ -98,12 +98,12 @@ public class BaseActivity extends AbActivity {
 	}
 
 	/**
-	 * ÃèÊö£º·¢ËÍÏûÏ¢Ë¢ĞÂUI µÚÒ»²ÎÊıÊÇ0
+	 * æè¿°ï¼šå‘é€æ¶ˆæ¯åˆ·æ–°UI ç¬¬ä¸€å‚æ•°æ˜¯0
 	 * 
 	 * @param what
 	 * @param toast
 	 * @throws
-	 * @date£º2013-11-19 ÏÂÎç1:28:08
+	 * @dateï¼š2013-11-19 ä¸‹åˆ1:28:08
 	 * @version v1.0
 	 */
 	public void sendMsgUpdateUI(int what, String toast) {

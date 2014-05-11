@@ -11,10 +11,10 @@ import com.xibeiwuliu.global.MyApplication;
  * 
  * Copyright (c) 2013 All rights reserved
  * 
- * @Name£ºSpecialLineActivity.java
- * @Describe£º×¨Ïß²éÑ¯
+ * @Nameï¼šSpecialLineActivity.java
+ * @Describeï¼šä¸“çº¿æŸ¥è¯¢
  * @Author: yfr5734@gmail.com
- * @Date£º2014Äê4ÔÂ28ÈÕ ÏÂÎç4:45:22
+ * @Dateï¼š2014å¹´4æœˆ28æ—¥ ä¸‹åˆ4:45:22
  * @Version v1.0 *
  * 
  */
@@ -36,10 +36,10 @@ public class SpecialLineActivity extends BaseActivity {
 
 	/**
 	 * 
-	 * ÃèÊö£º³õÊ¼»¯View
+	 * æè¿°ï¼šåˆå§‹åŒ–View
 	 * 
 	 * @throws
-	 * @date£º2013-11-13 ÉÏÎç10:21:24
+	 * @dateï¼š2013-11-13 ä¸Šåˆ10:21:24
 	 * @version v1.0
 	 */
 	private void initView() {
