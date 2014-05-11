@@ -12,10 +12,10 @@ import com.xibeiwuliu.global.MyApplication;
  * 
  * Copyright (c) 2013 All rights reserved
  * 
- * @Name£ºSettingCenterActivity.java
- * @Describe£ºÉèÖÃÖĞĞÄ
+ * @Nameï¼šSettingCenterActivity.java
+ * @Describeï¼šè®¾ç½®ä¸­å¿ƒ
  * @Author: yfr5734@gmail.com
- * @Date£º2014Äê4ÔÂ28ÈÕ ÏÂÎç4:48:29
+ * @Dateï¼š2014å¹´4æœˆ28æ—¥ ä¸‹åˆ4:48:29
  * @Version v1.0 *
  * 
  */
@@ -23,7 +23,7 @@ public class MoreActivity extends BaseActivity implements OnClickListener {
 	private MyApplication application = null;
 	private RelativeLayout layout_01, layout_02, layout_03, layout_04, layout_05, layout_06;
 	private String getMsg;
-	private boolean isShowRightBut = true; // ÊÇ·ñÏÔÊ¾ÓÒ±ß°´Å¥
+	private boolean isShowRightBut = true; // æ˜¯å¦æ˜¾ç¤ºå³è¾¹æŒ‰é’®
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -37,10 +37,10 @@ public class MoreActivity extends BaseActivity implements OnClickListener {
 
 	/**
 	 * 
-	 * ÃèÊö£º³õÊ¼»¯View
+	 * æè¿°ï¼šåˆå§‹åŒ–View
 	 * 
 	 * @throws
-	 * @date£º2013-11-13 ÉÏÎç10:21:24
+	 * @dateï¼š2013-11-13 ä¸Šåˆ10:21:24
 	 * @version v1.0
 	 */
 	private void initView() {
@@ -63,7 +63,7 @@ public class MoreActivity extends BaseActivity implements OnClickListener {
 
 				@Override
 				public void onClick(View v) {
-					Toast.makeText(MoreActivity.this, "¸öÈËÖĞĞÄÉèÖÃ", 5).show();
+					Toast.makeText(MoreActivity.this, "ä¸ªäººä¸­å¿ƒè®¾ç½®", 5).show();
 				}
 			});
 		}
@@ -73,26 +73,26 @@ public class MoreActivity extends BaseActivity implements OnClickListener {
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.layout_01:
-			Toast.makeText(MoreActivity.this, "¸½½ü¼ìË÷", 5).show();
+			Toast.makeText(MoreActivity.this, "é™„è¿‘æ£€ç´¢", 5).show();
 			break;
 		case R.id.layout_02:
-			Toast.makeText(MoreActivity.this, "¿ì½İµ¼º½", 5).show();
+			Toast.makeText(MoreActivity.this, "å¿«æ·å¯¼èˆª", 5).show();
 			break;
 		case R.id.layout_03:
-			Toast.makeText(MoreActivity.this, "ÔÚÏßÍ¶±£", 5).show();
+			Toast.makeText(MoreActivity.this, "åœ¨çº¿æŠ•ä¿", 5).show();
 			break;
 		case R.id.layout_04:
-			Toast.makeText(MoreActivity.this, "Ò»¼üÅä»õ", 5).show();
+			Toast.makeText(MoreActivity.this, "ä¸€é”®é…è´§", 5).show();
 			break;
 		case R.id.layout_05:
-			Toast.makeText(MoreActivity.this, "¿ìµİ²éÑ¯", 5).show();
+			Toast.makeText(MoreActivity.this, "å¿«é€’æŸ¥è¯¢", 5).show();
 			break;
 		case R.id.layout_06:
-			Toast.makeText(MoreActivity.this, "Ó¦ÓÃÍÆ¼ö", 5).show();
-			// Toast.makeText(MoreActivity.this, "°æ±¾¸üĞÂ", 5).show();
-			// Toast.makeText(MoreActivity.this, "ÓÃ»§·´À¡", 5).show();
-			// Toast.makeText(MoreActivity.this, "ÓÃ»§·´À¡", 5).show();
-			// Toast.makeText(MoreActivity.this, "Ò»¼ü·ÖÏí", 5).show();
+			Toast.makeText(MoreActivity.this, "åº”ç”¨æ¨è", 5).show();
+			// Toast.makeText(MoreActivity.this, "ç‰ˆæœ¬æ›´æ–°", 5).show();
+			// Toast.makeText(MoreActivity.this, "ç”¨æˆ·åé¦ˆ", 5).show();
+			// Toast.makeText(MoreActivity.this, "ç”¨æˆ·åé¦ˆ", 5).show();
+			// Toast.makeText(MoreActivity.this, "ä¸€é”®åˆ†äº«", 5).show();
 			break;
 		}
 	}

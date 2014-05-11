@@ -16,10 +16,10 @@ import com.xibeiwuliu.global.MyApplication;
  * 
  * Copyright (c) 2013 All rights reserved
  * 
- * @Name£ºRelevantInfoActivity.java
- * @Describe£ºĞĞÒµ×ÊÑ¶
+ * @Nameï¼šRelevantInfoActivity.java
+ * @Describeï¼šè¡Œä¸šèµ„è®¯
  * @Author: yfr5734@gmail.com
- * @Date£º2014Äê5ÔÂ8ÈÕ ÏÂÎç3:20:15
+ * @Dateï¼š2014å¹´5æœˆ8æ—¥ ä¸‹åˆ3:20:15
  * @Version v1.0 *
  * 
  */
@@ -27,7 +27,7 @@ public class RelevantInfoDetailActivity extends BaseActivity {
 	private MyApplication application = null;
 	private TextView infoTitleName, infoTime, infoContent;
 	private ImageView infoImage = null;
-	private String getMsg = "ĞÅÏ¢ÏêÇé";
+	private String getMsg = "ä¿¡æ¯è¯¦æƒ…";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -41,10 +41,10 @@ public class RelevantInfoDetailActivity extends BaseActivity {
 
 	/**
 	 * 
-	 * ÃèÊö£º³õÊ¼»¯View
+	 * æè¿°ï¼šåˆå§‹åŒ–View
 	 * 
 	 * @throws
-	 * @date£º2013-11-13 ÉÏÎç10:21:24
+	 * @dateï¼š2013-11-13 ä¸Šåˆ10:21:24
 	 * @version v1.0
 	 */
 	private void initView() {

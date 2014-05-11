@@ -9,9 +9,9 @@ import android.webkit.WebView;
 /**
  * Copyright (c) 2013 All rights reserved
  * 
- * @Name£ºÍøÒ³ÏÔÊ¾½çÃæ
+ * @Nameï¼šç½‘é¡µæ˜¾ç¤ºç•Œé¢
  * @Author: yfr5734@gmail.com
- * @Date£º2014Äê4ÔÂ28ÈÕ ÏÂÎç4:17:08
+ * @Dateï¼š2014å¹´4æœˆ28æ—¥ ä¸‹åˆ4:17:08
  * @Version v1.0
  */
 public class MyWebView extends Activity {
@@ -21,19 +21,19 @@ public class MyWebView extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		// È¡Ïû±êÌâ
+		// å–æ¶ˆæ ‡é¢˜
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-		// ½øĞĞÈ«ÆÁ
+		// è¿›è¡Œå…¨å±
 		this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		setContentView(R.layout.web_view);
-		// »ñÈ¡URLµØÖ·
+		// è·å–URLåœ°å€
 		getURL = getIntent().getStringExtra("url");
 
-		// ÊµÀı»¯WebView
+		// å®ä¾‹åŒ–WebView
 		webView = (WebView) this.findViewById(R.id.wv_oauth);
-		// µ÷ÓÃloadUrl()·½·¨½øĞĞ¼ÓÔØÄÚÈİ
+		// è°ƒç”¨loadUrl()æ–¹æ³•è¿›è¡ŒåŠ è½½å†…å®¹
 		webView.loadUrl(getURL);
-		// ÉèÖÃWebViewµÄÊôĞÔ£¬´ËÊ±¿ÉÒÔÈ¥Ö´ĞĞJavaScript½Å±¾
+		// è®¾ç½®WebViewçš„å±æ€§ï¼Œæ­¤æ—¶å¯ä»¥å»æ‰§è¡ŒJavaScriptè„šæœ¬
 		webView.getSettings().setJavaScriptEnabled(true);
 	}
 }

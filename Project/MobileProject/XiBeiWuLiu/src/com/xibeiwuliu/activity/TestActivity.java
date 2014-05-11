@@ -29,10 +29,10 @@ public class TestActivity extends BaseActivity {
 
 	/**
 	 * 
-	 * ÃèÊö£º³õÊ¼»¯View
+	 * æè¿°ï¼šåˆå§‹åŒ–View
 	 * 
 	 * @throws
-	 * @date£º2013-11-13 ÉÏÎç10:21:24
+	 * @dateï¼š2013-11-13 ä¸Šåˆ10:21:24
 	 * @version v1.0
 	 */
 	private void initView() {

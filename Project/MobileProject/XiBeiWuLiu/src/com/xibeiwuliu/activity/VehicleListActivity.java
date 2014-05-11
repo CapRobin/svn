@@ -23,17 +23,17 @@ import com.xibeiwuliu.web.PublicInfoWeb;
 /**
  * Copyright (c) 2013 All rights reserved
  * 
- * @Name£ºLorryListActivity.java
- * @Describe£º³µÔ´ĞÅÏ¢
+ * @Nameï¼šLorryListActivity.java
+ * @Describeï¼šè½¦æºä¿¡æ¯
  * @Author: yfr5734@gmail.com
- * @Date£º2014Äê4ÔÂ28ÈÕ ÏÂÎç4:42:04
+ * @Dateï¼š2014å¹´4æœˆ28æ—¥ ä¸‹åˆ4:42:04
  * @Version v1.0 *
  * 
  */
 public class VehicleListActivity extends BaseActivity {
 	private MyApplication application = null;
 	private String getMsg;
-	private boolean isShowRightBut = false; // ÊÇ·ñÏÔÊ¾ÓÒ±ß°´Å¥
+	private boolean isShowRightBut = false; // æ˜¯å¦æ˜¾ç¤ºå³è¾¹æŒ‰é’®
 	private AbTaskQueue mAbTaskQueue = null;
 	private AbPullListView cargoList = null;
 	private List<VehicleInfo> mVehicleInfoList = null;
@@ -55,26 +55,26 @@ public class VehicleListActivity extends BaseActivity {
 
 	/**
 	 * 
-	 * ÃèÊö£º³õÊ¼»¯View
+	 * æè¿°ï¼šåˆå§‹åŒ–View
 	 * 
 	 * @throws
-	 * @date£º2013-11-13 ÉÏÎç10:21:24
+	 * @dateï¼š2013-11-13 ä¸Šåˆ10:21:24
 	 * @version v1.0
 	 */
 	private void initView() {
 		mAbTaskQueue = AbTaskQueue.getInstance();
 
-		// »ñÈ¡ListView¶ÔÏó
+		// è·å–ListViewå¯¹è±¡
 		cargoList = (AbPullListView) findViewById(R.id.lorryList);
-		// ´ò¿ª¹Ø±ÕÏÂÀ­Ë¢ĞÂ¼ÓÔØ¸ü¶à¹¦ÄÜ
+		// æ‰“å¼€å…³é—­ä¸‹æ‹‰åˆ·æ–°åŠ è½½æ›´å¤šåŠŸèƒ½
 		cargoList.setPullRefreshEnable(true);
 		cargoList.setPullLoadEnable(true);
 
 		mVehicleInfoList = new ArrayList<VehicleInfo>();
-		// Ê¹ÓÃ×Ô¶¨ÒåµÄAdapter
+		// ä½¿ç”¨è‡ªå®šä¹‰çš„Adapter
 		myListViewAdapter = new VehicleInfoInfoAdapter(VehicleListActivity.this, mVehicleInfoList);
 		cargoList.setAdapter(myListViewAdapter);
-		// item±»µã»÷ÊÂ¼ş
+		// itemè¢«ç‚¹å‡»äº‹ä»¶
 
 		cargoList.setOnItemClickListener(new OnItemClickListener() {
 
@@ -93,17 +93,17 @@ public class VehicleListActivity extends BaseActivity {
 
 	/**
 	 * 
-	 * ÃèÊö£º»ñÈ¡ÁĞ±íÊı¾İ
+	 * æè¿°ï¼šè·å–åˆ—è¡¨æ•°æ®
 	 * 
 	 * @throws
-	 * @date£º2013-11-18 ÏÂÎç5:54:26
+	 * @dateï¼š2013-11-18 ä¸‹åˆ5:54:26
 	 * @version v1.0
 	 */
 	private void getListData() {
 		getParameterList = new ArrayList<Parameter>();
 		showProgressDialog();
 
-		// ¶¨ÒåÁ½ÖÖ²éÑ¯µÄÊÂ¼ş
+		// å®šä¹‰ä¸¤ç§æŸ¥è¯¢çš„äº‹ä»¶
 		final AbTaskItem item1 = new AbTaskItem();
 		item1.listener = new AbTaskListener() {
 
@@ -187,18 +187,18 @@ public class VehicleListActivity extends BaseActivity {
 
 		});
 
-		// µÚÒ»´ÎÏÂÔØÊı¾İ
+		// ç¬¬ä¸€æ¬¡ä¸‹è½½æ•°æ®
 		mAbTaskQueue.execute(item1);
 	}
 
 	/**
 	 * 
-	 * ÃèÊö£ºÉèÖÃĞÅÏ¢²ÎÊı
+	 * æè¿°ï¼šè®¾ç½®ä¿¡æ¯å‚æ•°
 	 * 
 	 * @param string
 	 * @param lprId
 	 * @throws
-	 * @date£º2013Äê12ÔÂ27ÈÕ ÉÏÎç3:37:10
+	 * @dateï¼š2013å¹´12æœˆ27æ—¥ ä¸Šåˆ3:37:10
 	 * @version v1.0
 	 */
 	private void setParameterList(String key, String value) {

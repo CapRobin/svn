@@ -25,10 +25,10 @@ import com.xibeiwuliu.util.MethodUtil;
  * 
  * Copyright (c) 2012 All rights reserved
  * 
- * @Name£ºContactListActivity.java
- * @Describe£ºÁªÏµÈËÁĞ±í
+ * @Nameï¼šContactListActivity.java
+ * @Describeï¼šè”ç³»äººåˆ—è¡¨
  * @Author Administrator yfr5734@gmail.com
- * @Date£º2013-12-2 ÏÂÎç8:37:24
+ * @Dateï¼š2013-12-2 ä¸‹åˆ8:37:24
  * @Version v1.0
  */
 public class ContactListActivity extends AbActivity implements OnClickListener {
@@ -52,10 +52,10 @@ public class ContactListActivity extends AbActivity implements OnClickListener {
 
 	/**
 	 * 
-	 * ÃèÊö£º³õÊ¼»¯View
+	 * æè¿°ï¼šåˆå§‹åŒ–View
 	 * 
 	 * @throws
-	 * @date£º2013-11-13 ÉÏÎç10:21:24
+	 * @dateï¼š2013-11-13 ä¸Šåˆ10:21:24
 	 * @version v1.0
 	 */
 	private void initView() {
@@ -89,7 +89,7 @@ public class ContactListActivity extends AbActivity implements OnClickListener {
 //			break;
 		case R.id.sendBtn:
 
-			// »ñÈ¡ÊäÈëºÅÂë
+			// è·å–è¾“å…¥å·ç 
 			String inputPhone = phoneEdit.getText().toString().trim();
 			if (!TextUtils.isEmpty(inputPhone)) {
 				if (!MethodUtil.isMobileNo(inputPhone)) {
@@ -101,7 +101,7 @@ public class ContactListActivity extends AbActivity implements OnClickListener {
 				}
 			}
 
-			// »ñÈ¡Ñ¡ÔñÁªÏµÈË
+			// è·å–é€‰æ‹©è”ç³»äºº
 			listItemID.clear();
 			for (int i = 0; i < adapter.mChecked.size(); i++) {
 				if (adapter.mChecked.get(i)) {
@@ -111,12 +111,12 @@ public class ContactListActivity extends AbActivity implements OnClickListener {
 			int userSize = listItemID.size();
 			if ((userSize > 0 && listItemID != null) || !TextUtils.isEmpty(inputPhone)) {
 				try {
-					// ÊäÈëºÅÂë·¢ËÍ
+					// è¾“å…¥å·ç å‘é€
 					if (!TextUtils.isEmpty(inputPhone)) {
 						sendSms(inputPhone);
 					}
 
-					// Ñ¡ÔñºÅÂë·¢ËÍ
+					// é€‰æ‹©å·ç å‘é€
 					if (userSize > 0 && listItemID != null) {
 						for (int i = 0; i < userSize; i++) {
 							String phoneNumber = lists.get(listItemID.get(i)).getPhone();
@@ -126,11 +126,11 @@ public class ContactListActivity extends AbActivity implements OnClickListener {
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-				Toast.makeText(ContactListActivity.this, "·¢ËÍÍê³É", Toast.LENGTH_SHORT).show();
+				Toast.makeText(ContactListActivity.this, "å‘é€å®Œæˆ", Toast.LENGTH_SHORT).show();
 				finish();
 
 			} else {
-				Toast.makeText(ContactListActivity.this, "ÇëÊäÈë»òÑ¡ÔñÁªÏµÈË", Toast.LENGTH_LONG).show();
+				Toast.makeText(ContactListActivity.this, "è¯·è¾“å…¥æˆ–é€‰æ‹©è”ç³»äºº", Toast.LENGTH_LONG).show();
 			}
 			break;
 		}
@@ -138,11 +138,11 @@ public class ContactListActivity extends AbActivity implements OnClickListener {
 
 	/**
 	 * 
-	 * ÃèÊö£º·¢ËÍ¶ÌĞÅ
+	 * æè¿°ï¼šå‘é€çŸ­ä¿¡
 	 * 
 	 * @param phoneNumber
 	 * @throws
-	 * @date£º2013-12-4 ÉÏÎç9:25:49
+	 * @dateï¼š2013-12-4 ä¸Šåˆ9:25:49
 	 * @version v1.0
 	 */
 	private void sendSms(String phoneNumber) {

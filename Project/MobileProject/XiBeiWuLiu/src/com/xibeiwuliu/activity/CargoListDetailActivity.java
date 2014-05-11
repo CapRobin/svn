@@ -22,10 +22,10 @@ import com.xibeiwuliu.global.MyApplication;
  * 
  * Copyright (c) 2013 All rights reserved
  * 
- * @Name£ºCargoListDetailActivity.java
- * @Describe£º»õÎïĞÅÏ¢ÏêÇé
+ * @Nameï¼šCargoListDetailActivity.java
+ * @Describeï¼šè´§ç‰©ä¿¡æ¯è¯¦æƒ…
  * @Author: yfr5734@gmail.com
- * @Date£º2014Äê4ÔÂ30ÈÕ ÏÂÎç2:47:12
+ * @Dateï¼š2014å¹´4æœˆ30æ—¥ ä¸‹åˆ2:47:12
  * @Version v1.0 *
  * 
  */
@@ -45,22 +45,22 @@ public class CargoListDetailActivity extends BaseActivity implements OnClickList
 		super.onCreate(savedInstanceState);
 		setAbContentView(R.layout.info_detail);
 
-		// »ñÈ¡Intent´«µİµÄÊı¾İ
+		// è·å–Intentä¼ é€’çš„æ•°æ®
 		Intent intent = getIntent();
 		Bundle bundle = intent.getBundleExtra("bundle");
 		cargoInfo = (CargoInfo) bundle.get("cargoInfo");
 		carInfoId = Integer.parseInt(cargoInfo.getInfo_ADDID());
-		initTitleLayout("ĞÅÏ¢ÏêÇé", true);
+		initTitleLayout("ä¿¡æ¯è¯¦æƒ…", true);
 		initView();
 
 	}
 
 	/**
 	 * 
-	 * ÃèÊö£º³õÊ¼»¯View
+	 * æè¿°ï¼šåˆå§‹åŒ–View
 	 * 
 	 * @throws
-	 * @date£º2013-11-13 ÉÏÎç10:21:24
+	 * @dateï¼š2013-11-13 ä¸Šåˆ10:21:24
 	 * @version v1.0
 	 */
 	private void initView() {
@@ -112,12 +112,12 @@ public class CargoListDetailActivity extends BaseActivity implements OnClickList
 		case 0:
 			if (application.isLogin) {
 				// Toast.makeText(FragmentCargoInfoDetail.this,
-				// "¸ÃÄ£¿éÕıÔÚ¿ª·¢ÖĞ£¬ÇëÉÔºó...", 5).show();
+				// "è¯¥æ¨¡å—æ­£åœ¨å¼€å‘ä¸­ï¼Œè¯·ç¨å...", 5).show();
 			}
 			break;
 		case 1:
 			// Toast.makeText(CommonalityInfoDetailActivity.this,
-			// "¸ÃÄ£¿éÕıÔÚ¿ª·¢ÖĞ£¬ÇëÉÔºó...", 5).show();
+			// "è¯¥æ¨¡å—æ­£åœ¨å¼€å‘ä¸­ï¼Œè¯·ç¨å...", 5).show();
 
 			if (application.isLogin) {
 				if (phoneSize > 0) {
@@ -130,7 +130,7 @@ public class CargoListDetailActivity extends BaseActivity implements OnClickList
 					}
 				} else {
 					// Toast.makeText(FragmentCargoInfoDetail.this,
-					// "¸Ã¶©µ¥ÔİÊ±Ã»ÓĞÁªÏµµç»°£¡", 5).show();
+					// "è¯¥è®¢å•æš‚æ—¶æ²¡æœ‰è”ç³»ç”µè¯ï¼", 5).show();
 				}
 			}
 			break;
@@ -143,7 +143,7 @@ public class CargoListDetailActivity extends BaseActivity implements OnClickList
 		case R.id.phoneBut:
 			// getData();
 			if (application.isLogin) {
-				myDialog(this, "ÎÂÜ°ÌáÊ¾", "Äú»¹²»ÊÇËûµÄºÃÓÑ£¬ÊÇ·ñ¼ÓËûÎªºÃÓÑ£¿");
+				myDialog(this, "æ¸©é¦¨æç¤º", "æ‚¨è¿˜ä¸æ˜¯ä»–çš„å¥½å‹ï¼Œæ˜¯å¦åŠ ä»–ä¸ºå¥½å‹ï¼Ÿ");
 			} else {
 			}
 			break;
@@ -159,7 +159,7 @@ public class CargoListDetailActivity extends BaseActivity implements OnClickList
 
 	public void myDialog(Context context, String title, String msg) {
 		AlertDialog dialog = new AlertDialog.Builder(context).setTitle(title).setMessage(msg)
-				.setPositiveButton("È·¶¨", new DialogInterface.OnClickListener() {
+				.setPositiveButton("ç¡®å®š", new DialogInterface.OnClickListener() {
 
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
@@ -174,7 +174,7 @@ public class CargoListDetailActivity extends BaseActivity implements OnClickList
 						// startActivity(intent);
 						dialog.dismiss();
 					}
-				}).setNegativeButton("È¡Ïû", new DialogInterface.OnClickListener() {
+				}).setNegativeButton("å–æ¶ˆ", new DialogInterface.OnClickListener() {
 
 					@Override
 					public void onClick(DialogInterface dialog, int which) {

@@ -21,10 +21,10 @@ import com.xibeiwuliu.global.MyApplication;
  * 
  * Copyright (c) 2013 All rights reserved
  * 
- * @Name£ºVehicleListDetailActivity.java
- * @Describe£ºĞÅÏ¢ÏêÇé
+ * @Nameï¼šVehicleListDetailActivity.java
+ * @Describeï¼šä¿¡æ¯è¯¦æƒ…
  * @Author: yfr5734@gmail.com
- * @Date£º2014Äê4ÔÂ30ÈÕ ÏÂÎç3:40:08
+ * @Dateï¼š2014å¹´4æœˆ30æ—¥ ä¸‹åˆ3:40:08
  * @Version v1.0 *
  * 
  */
@@ -45,23 +45,23 @@ public class VehicleListDetailActivity extends BaseActivity implements OnClickLi
 		super.onCreate(savedInstanceState);
 		setAbContentView(R.layout.info_detail);
 
-		// »ñÈ¡Intent´«µİµÄÊı¾İ
+		// è·å–Intentä¼ é€’çš„æ•°æ®
 		Intent intent = getIntent();
 		Bundle bundle = intent.getBundleExtra("bundle");
 		vehicleInfo = (VehicleInfo) bundle.get("vehicleInfo");
 		vehicleInfoId = Integer.parseInt(vehicleInfo.getAdd_id());
 		Log.i("tag", "------------>vehicleInfoId=" + vehicleInfoId);
-		initTitleLayout("ĞÅÏ¢ÏêÇé", true);
+		initTitleLayout("ä¿¡æ¯è¯¦æƒ…", true);
 		initView();
 
 	}
 
 	/**
 	 * 
-	 * ÃèÊö£º³õÊ¼»¯View
+	 * æè¿°ï¼šåˆå§‹åŒ–View
 	 * 
 	 * @throws
-	 * @date£º2013-11-13 ÉÏÎç10:21:24
+	 * @dateï¼š2013-11-13 ä¸Šåˆ10:21:24
 	 * @version v1.0
 	 */
 	private void initView() {
@@ -112,12 +112,12 @@ public class VehicleListDetailActivity extends BaseActivity implements OnClickLi
 		switch (requestCode) {
 		case 0:
 			if (application.isLogin) {
-				Toast.makeText(VehicleListDetailActivity.this, "¸ÃÄ£¿éÕıÔÚ¿ª·¢ÖĞ£¬ÇëÉÔºó...", 5).show();
+				Toast.makeText(VehicleListDetailActivity.this, "è¯¥æ¨¡å—æ­£åœ¨å¼€å‘ä¸­ï¼Œè¯·ç¨å...", 5).show();
 			}
 			break;
 		case 1:
 			// Toast.makeText(CommonalityInfoDetailActivity.this,
-			// "¸ÃÄ£¿éÕıÔÚ¿ª·¢ÖĞ£¬ÇëÉÔºó...", 5).show();
+			// "è¯¥æ¨¡å—æ­£åœ¨å¼€å‘ä¸­ï¼Œè¯·ç¨å...", 5).show();
 
 			if (application.isLogin) {
 				if (phoneSize > 0) {
@@ -129,7 +129,7 @@ public class VehicleListDetailActivity extends BaseActivity implements OnClickLi
 						isClink = true;
 					}
 				} else {
-					Toast.makeText(VehicleListDetailActivity.this, "¸Ã¶©µ¥ÔİÊ±Ã»ÓĞÁªÏµµç»°£¡", 5).show();
+					Toast.makeText(VehicleListDetailActivity.this, "è¯¥è®¢å•æš‚æ—¶æ²¡æœ‰è”ç³»ç”µè¯ï¼", 5).show();
 				}
 			}
 			break;
@@ -151,10 +151,10 @@ public class VehicleListDetailActivity extends BaseActivity implements OnClickLi
 						isClink = true;
 					}
 				} else {
-					Toast.makeText(VehicleListDetailActivity.this, "¸Ã¶©µ¥ÔİÊ±Ã»ÓĞÁªÏµµç»°£¡", 5).show();
+					Toast.makeText(VehicleListDetailActivity.this, "è¯¥è®¢å•æš‚æ—¶æ²¡æœ‰è”ç³»ç”µè¯ï¼", 5).show();
 				}
 			} else {
-				Toast.makeText(VehicleListDetailActivity.this, "µÇÂ¼ºó²ÅÄÜ²é¿´ÁªÏµ·½Ê½£¡", 5).show();
+				Toast.makeText(VehicleListDetailActivity.this, "ç™»å½•åæ‰èƒ½æŸ¥çœ‹è”ç³»æ–¹å¼ï¼", 5).show();
 				// startActivityForResult(new
 				// Intent(VehicleListDetailActivity.this, LoginActivity.class),
 				// SHOWPHONE);
@@ -163,9 +163,9 @@ public class VehicleListDetailActivity extends BaseActivity implements OnClickLi
 		case R.id.addFriendBut:
 			// boolean isLogin = application.isLogin;
 			if (application.isLogin) {
-				Toast.makeText(VehicleListDetailActivity.this, "¸ÃÄ£¿éÕıÔÚ¿ª·¢ÖĞ£¬ÇëÉÔºó...", 5).show();
+				Toast.makeText(VehicleListDetailActivity.this, "è¯¥æ¨¡å—æ­£åœ¨å¼€å‘ä¸­ï¼Œè¯·ç¨å...", 5).show();
 			} else {
-				Toast.makeText(VehicleListDetailActivity.this, "µÇÂ¼ºó²ÅÄÜÌí¼ÓºÃÓÑ£¡", 5).show();
+				Toast.makeText(VehicleListDetailActivity.this, "ç™»å½•åæ‰èƒ½æ·»åŠ å¥½å‹ï¼", 5).show();
 				// startActivityForResult(new
 				// Intent(VehicleListDetailActivity.this, LoginActivity.class),
 				// ADDFRIENDINTENT);
@@ -176,12 +176,12 @@ public class VehicleListDetailActivity extends BaseActivity implements OnClickLi
 			break;
 		case R.id.myFriendBut:
 
-			// Toast.makeText(CommonalityInfoDetailActivity.this, "ÎÒµÄºÃÓÑÁĞ±í",
+			// Toast.makeText(CommonalityInfoDetailActivity.this, "æˆ‘çš„å¥½å‹åˆ—è¡¨",
 			// 5).show();
 			if (application.isLogin) {
 				// showMyDialog();
 			} else {
-				Toast.makeText(VehicleListDetailActivity.this, "ÇëÏÈµÇÂ¼£¡", 5).show();
+				Toast.makeText(VehicleListDetailActivity.this, "è¯·å…ˆç™»å½•ï¼", 5).show();
 			}
 			break;
 		}

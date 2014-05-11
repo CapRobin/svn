@@ -12,10 +12,10 @@ import com.xibeiwuliu.global.MyApplication;
 /**
  * 
   * Copyright (c) 2013 All rights reserved
-  * @Name£ºSettingCenterActivity.java 
-  * @Describe£ºÉèÖÃÖĞĞÄ
+  * @Nameï¼šSettingCenterActivity.java 
+  * @Describeï¼šè®¾ç½®ä¸­å¿ƒ
   * @Author:  yfr5734@gmail.com
-  * @Date£º2014Äê4ÔÂ28ÈÕ ÏÂÎç4:48:29
+  * @Dateï¼š2014å¹´4æœˆ28æ—¥ ä¸‹åˆ4:48:29
   * @Version v1.0 *
   *
  */
@@ -23,7 +23,7 @@ public class SettingCenterActivity extends BaseActivity implements OnClickListen
 	private MyApplication application = null;
 	private RelativeLayout layout_01, layout_02, layout_03, layout_04, layout_05, layout_06 ;
 	private String getMsg;
-	private boolean isShowRightBut = true;		//ÊÇ·ñÏÔÊ¾ÓÒ±ß°´Å¥
+	private boolean isShowRightBut = true;		//æ˜¯å¦æ˜¾ç¤ºå³è¾¹æŒ‰é’®
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -36,10 +36,10 @@ public class SettingCenterActivity extends BaseActivity implements OnClickListen
 
 	/**
 	 * 
-	 * ÃèÊö£º³õÊ¼»¯View
+	 * æè¿°ï¼šåˆå§‹åŒ–View
 	 * 
 	 * @throws
-	 * @date£º2013-11-13 ÉÏÎç10:21:24
+	 * @dateï¼š2013-11-13 ä¸Šåˆ10:21:24
 	 * @version v1.0
 	 */
 	private void initView() {
@@ -68,7 +68,7 @@ public class SettingCenterActivity extends BaseActivity implements OnClickListen
 				
 				@Override
 				public void onClick(View v) {
-					Toast.makeText(SettingCenterActivity.this, "¸öÈËÖĞĞÄÉèÖÃ", 5).show();
+					Toast.makeText(SettingCenterActivity.this, "ä¸ªäººä¸­å¿ƒè®¾ç½®", 5).show();
 				}
 			});
 		}
@@ -79,7 +79,7 @@ public class SettingCenterActivity extends BaseActivity implements OnClickListen
 		switch (v.getId()) {
 		case R.id.layout_01:
 			Intent intent = new Intent(SettingCenterActivity.this, PersonalDriverInfoActivity.class);
-			String Msg = "¸öÈËĞÅÏ¢";
+			String Msg = "ä¸ªäººä¿¡æ¯";
 			intent.putExtra("msg", Msg);
 			startActivity(intent);
 //			if (application.isLogin) {
@@ -91,36 +91,36 @@ public class SettingCenterActivity extends BaseActivity implements OnClickListen
 //					startActivity(intent2);
 //				}
 //			} else {
-//				Toast.makeText(SettingCenterActivity.this, "µÇÂ¼ºó²ÅÄÜ²é¿´¸öÈËĞÅÏ¢£¡", 5).show();
+//				Toast.makeText(SettingCenterActivity.this, "ç™»å½•åæ‰èƒ½æŸ¥çœ‹ä¸ªäººä¿¡æ¯ï¼", 5).show();
 //				Intent intent3 = new Intent(SettingCenterActivity.this, LoginActivity.class);
 //				startActivity(intent3);
 //			}
-			Toast.makeText(SettingCenterActivity.this, "¸öÈËĞÅÏ¢£¡", 5).show();
+			Toast.makeText(SettingCenterActivity.this, "ä¸ªäººä¿¡æ¯ï¼", 5).show();
 			break;
 		case R.id.layout_02:
-			Toast.makeText(SettingCenterActivity.this, "»áÔ±¹ÜÀí", 5).show();
+			Toast.makeText(SettingCenterActivity.this, "ä¼šå‘˜ç®¡ç†", 5).show();
 //			if (application.isLogin) {
 ////				Intent intent1 = new Intent(SettingCenterActivity.this, FriendListActivity.class);
 //				Intent intent1 = new Intent(SettingCenterActivity.this, FriendActivity.class);
 //				intent1.putExtra(Constants.MSGKEY, msg);
 //				startActivity(intent1);
 //			} else {
-//				Toast.makeText(SettingCenterActivity.this, "µÇÂ¼ºó²ÅÄÜ²é¿´¸öÈËĞÅÏ¢£¡", 5).show();
+//				Toast.makeText(SettingCenterActivity.this, "ç™»å½•åæ‰èƒ½æŸ¥çœ‹ä¸ªäººä¿¡æ¯ï¼", 5).show();
 //				Intent intent3 = new Intent(SettingCenterActivity.this, LoginActivity.class);
 //				startActivity(intent3);
 //			}
 			break;
 		case R.id.layout_03:
-			Toast.makeText(SettingCenterActivity.this, "Èí¼şÉèÖÃ", 5).show();
+			Toast.makeText(SettingCenterActivity.this, "è½¯ä»¶è®¾ç½®", 5).show();
 //			Intent intent = new Intent(SettingCenterActivity.this, CommonalityActivity.class);
 //			intent.putExtra("intentType", 0);
 //			startActivity(intent);
 			break;
 		case R.id.layout_04:
-			Toast.makeText(SettingCenterActivity.this, "¼ì²â¸üĞÂ", 5).show();
+			Toast.makeText(SettingCenterActivity.this, "æ£€æµ‹æ›´æ–°", 5).show();
 			break;
 		case R.id.layout_05:
-			Toast.makeText(SettingCenterActivity.this, "¹ØÓÚ¹«Ë¾", 5).show();
+			Toast.makeText(SettingCenterActivity.this, "å…³äºå…¬å¸", 5).show();
 			break;
 		case R.id.layout_06:
 			startActivity(new Intent(SettingCenterActivity.this, PublishCargoActivity.class));
