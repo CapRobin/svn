@@ -53,7 +53,7 @@ public class PublishCargoActivity extends BaseActivity implements OnClickListene
 	 * @Version v1.0
 	 * 
 	 */
-	private void initView() {
+	private void initView() {  
 		daoArea = SqliteDaoArea.getInstance(PublishCargoActivity.this);
 		gridViewlayout = (LinearLayout) findViewById(R.id.gridViewlayout);
 		textlayout = (LinearLayout) findViewById(R.id.textlayout);
