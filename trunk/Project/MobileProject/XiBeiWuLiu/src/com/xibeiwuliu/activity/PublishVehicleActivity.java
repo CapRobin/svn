@@ -52,7 +52,7 @@ public class PublishVehicleActivity extends BaseActivity implements OnClickListe
 	 * @Version v1.0
 	 * 
 	 */
-	private void initView() {
+	private void initView() { 
 		daoArea = SqliteDaoArea.getInstance(PublishVehicleActivity.this);
 		gridViewlayout = (LinearLayout) findViewById(R.id.gridViewlayout);
 		textlayout = (LinearLayout) findViewById(R.id.textlayout);
