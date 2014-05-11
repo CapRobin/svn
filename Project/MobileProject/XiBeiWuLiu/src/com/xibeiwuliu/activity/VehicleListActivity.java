@@ -6,6 +6,7 @@ import java.util.List;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 
@@ -33,7 +34,7 @@ import com.xibeiwuliu.web.PublicInfoWeb;
 public class VehicleListActivity extends BaseActivity {
 	private MyApplication application = null;
 	private String getMsg;
-	private boolean isShowRightBut = false; // 是否显示右边按钮
+	private boolean isShowRightBut = true; // 是否显示右边按钮
 	private AbTaskQueue mAbTaskQueue = null;
 	private AbPullListView cargoList = null;
 	private List<VehicleInfo> mVehicleInfoList = null;
@@ -89,6 +90,20 @@ public class VehicleListActivity extends BaseActivity {
 
 			}
 		});
+
+		//右侧按钮的点击事件
+		if (isShowRightBut) {
+			this.rightTitleBut.setOnClickListener(new OnClickListener() {
+				
+				@Override
+				public void onClick(View v) {
+					String Msg = "找车源";
+					Intent intent = new Intent(VehicleListActivity.this, SearchVehicleActivity.class);
+					intent.putExtra("msg", Msg);
+					startActivity(intent);
+				}
+			});
+		}
 	}
 
 	/**

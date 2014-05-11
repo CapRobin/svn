@@ -6,6 +6,7 @@ import java.util.List;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 
@@ -41,13 +42,14 @@ public class CargoListActivity extends BaseActivity {
 	private List<CargoInfo> mNewCargoInfoList = null;
 	private int currentPage = 1;
 	private String getMsg;
+	private boolean isShowRightBut = true; // 是否显示右边按钮
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setAbContentView(R.layout.cargo_list);
 		getMsg = getIntent().getStringExtra("msg");
-		initTitleLayout(getMsg, false);
+		initTitleLayout(getMsg, isShowRightBut);
 		initView();
 		getListData();
 
@@ -88,6 +90,22 @@ public class CargoListActivity extends BaseActivity {
 				startActivity(intent);
 			}
 		});
+		
+
+
+		//右侧按钮的点击事件
+		if (isShowRightBut) {
+			this.rightTitleBut.setOnClickListener(new OnClickListener() {
+				
+				@Override
+				public void onClick(View v) {
+					String Msg = "找货源";
+					Intent intent = new Intent(CargoListActivity.this, SearchCargoActivity.class);
+					intent.putExtra("msg", Msg);
+					startActivity(intent);
+				}
+			});
+		}
 
 	}
 

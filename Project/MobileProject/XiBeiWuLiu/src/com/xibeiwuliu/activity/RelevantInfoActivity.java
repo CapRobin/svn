@@ -26,13 +26,13 @@ import com.xibeiwuliu.view.MyImgScroll;
  * 
   * Copyright (c) 2013 All rights reserved
   * @Name：RelevantInfoActivity.java 
-  * @Describe：TODO
+  * @Describe：行业资讯
   * @Author:  yfr5734@gmail.com
   * @Date：2014年5月8日 下午3:21:49
   * @Version v1.0 *
   *
  */
-public class RelevantInfoActivity extends BaseActivity implements OnClickListener {
+public class RelevantInfoActivity extends BaseActivity {
 
 	private MyApplication application = null;
 	private MyImgScroll myPager; // 图片容器
@@ -107,7 +107,6 @@ public class RelevantInfoActivity extends BaseActivity implements OnClickListene
 				String infoName = cargoInfo.getTitleName();
 				String infoContent = cargoInfo.getContent();
 				String infoTime = cargoInfo.getTime();
-//				Toast.makeText(RelevantInfoActivity.this, infoContent, 5).show();
 				Intent intent = new Intent(RelevantInfoActivity.this, RelevantInfoDetailActivity.class);
 //				Bundle bundle = new Bundle();
 //				bundle.putSerializable("cargoInfo", cargoInfo);
@@ -119,39 +118,6 @@ public class RelevantInfoActivity extends BaseActivity implements OnClickListene
 			}
 		});
 	}
-
-	/**
-	 * 描述：初始化标题栏
-	 * 
-	 * @throws
-	 * @date：2013-4-25 上午10:21:18
-	 * @version v1.0
-	 */
-	// private void initTitleLayout() {
-	// AbTitleBar mAbTitleBar = this.getTitleBar();
-	//
-	// // 添加左侧布局文件
-	// mAbTitleBar.setTitleText("首      页");
-	// mAbTitleBar.setLogo(R.drawable.button_selector_back);
-	// // mAbTitleBar.setTitleLayoutBackground(R.drawable.top_bg);
-	// mAbTitleBar.setTitleBarBackground(R.drawable.top_bg);
-	// mAbTitleBar.setTitleTextMargin(10, 0, 0, 0);
-	// mAbTitleBar.setLogoLine(R.drawable.line);
-	//
-	// // 添加右侧布局文件
-	// // View rightViewApp = mInflater.inflate(R.layout.app_btn, null);
-	// View rightViewMore = mInflater.inflate(R.layout.more_btn, null);
-	// mAbTitleBar.addRightView(rightViewMore);
-	// Button about = (Button) rightViewMore.findViewById(R.id.moreBtn);
-	// about.setOnClickListener(new View.OnClickListener() {
-	//
-	// public void onClick(View v) {
-	// // Intent intent = new Intent(MainActivity.this,
-	// // RegisterActivity.class);
-	// // startActivity(intent);
-	// }
-	// });
-	// }
 
 	/**
 	 * @Describe：初始化广告图片
@@ -172,9 +138,6 @@ public class RelevantInfoActivity extends BaseActivity implements OnClickListene
 					Intent intent = new Intent();
 					switch (imageItem) {
 					case 0:
-						// intent.setData(Uri.parse("http://dl.5671.cc/"));
-						// intent = Intent.createChooser(intent, null);
-						// startActivity(intent);
 						intent.setClass(RelevantInfoActivity.this, MyWebView.class);
 						intent.putExtra("url", "http://dl.5671.cc/");
 						startActivity(intent);
@@ -206,69 +169,6 @@ public class RelevantInfoActivity extends BaseActivity implements OnClickListene
 
 			imageView.setScaleType(ScaleType.CENTER_CROP);
 			listViews.add(imageView);
-		}
-	}
-
-	/**
-	 * @Describe：项目点击事件
-	 * @see android.view.View.OnClickListener#onClick(android.view.View)
-	 * @Author: zhanglei
-	 * @Date：2014年4月28日 下午4:21:50
-	 * @Version v1.0
-	 */
-	public void onClick(View v) {
-		Intent intent = new Intent();
-		String Msg = null;
-		switch (v.getId()) {
-		case R.id.layoutItem01:
-			Msg = "货源信息";
-			// Toast.makeText(MainActivity.this, Msg, 5).show();
-			intent.setClass(RelevantInfoActivity.this, CargoListActivity.class);
-			intent.putExtra("msg", Msg);
-			startActivity(intent);
-			break;
-		case R.id.layoutItem02:
-			Msg = "车源信息";
-			intent.setClass(RelevantInfoActivity.this, VehicleListActivity.class);
-			intent.putExtra("msg", Msg);
-			startActivity(intent);
-			break;
-		case R.id.layoutItem03:
-			Msg = "物流专线";
-			intent.setClass(RelevantInfoActivity.this, SpecialLineActivity.class);
-			intent.putExtra("msg", Msg);
-			startActivity(intent);
-			break;
-		case R.id.layoutItem04:
-			Msg = "预约查询";
-			intent.setClass(RelevantInfoActivity.this, TestActivity.class);
-			intent.putExtra("msg", Msg);
-			startActivity(intent);
-			break;
-		case R.id.layoutItem05:
-			Msg = "发布货源";
-			intent.setClass(RelevantInfoActivity.this, PublishCargoActivity.class);
-			intent.putExtra("msg", Msg);
-			startActivity(intent);
-			break;
-		case R.id.layoutItem06:
-			Msg = "发布车源";
-			intent.setClass(RelevantInfoActivity.this, PublishVehicleActivity.class);
-			intent.putExtra("msg", Msg);
-			startActivity(intent);
-			break;
-		case R.id.layoutItem07:
-			Msg = "行业资讯";
-			intent.setClass(RelevantInfoActivity.this, TestActivity.class);
-			intent.putExtra("msg", Msg);
-			startActivity(intent);
-			break;
-		case R.id.layoutItem08:
-			Msg = "更多";
-			intent.setClass(RelevantInfoActivity.this, TestActivity.class);
-			intent.putExtra("msg", Msg);
-			startActivity(intent);
-			break;
 		}
 	}
 
