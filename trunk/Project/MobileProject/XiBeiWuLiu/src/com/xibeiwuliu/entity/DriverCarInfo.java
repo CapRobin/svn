@@ -4,30 +4,30 @@ package com.xibeiwuliu.entity;
  * 
  * Copyright (c) 2012 All rights reserved
  * 
- * @Name£ºDriverCarInfo.java
- * @Describe£ºË¾»ú³µÁ¾ĞÅÏ¢
+ * @Nameï¼šDriverCarInfo.java
+ * @Describeï¼šå¸æœºè½¦è¾†ä¿¡æ¯
  * @Author yufarong_yfr5734@163.com
- * @Date£º2013-12-19 ÏÂÎç6:57:00
+ * @Dateï¼š2013-12-19 ä¸‹åˆ6:57:00
  * @Version v1.0
  */
 public class DriverCarInfo {
 
 	private String Add_id; 				// id
-	private String Duser_id; 				// ³µÖ÷_id
-	private String Car_key; 				// ³µÅÆ
-	private String Car_type; 				// ³µĞÍ
-	private String Car_length; 			// ³µ³¤(M)
+	private String Duser_id; 				// è½¦ä¸»_id
+	private String Car_key; 				// è½¦ç‰Œ
+	private String Car_type; 				// è½¦å‹
+	private String Car_length; 			// è½¦é•¿(M)
 
-	private String Car_height; 			// ³µ¸ß
-	private String Car_max_dun; 	// ×î´ó³ĞÔØ¶ÖÎ»(Kg)
-	private String Car_bulk; 				// Èİ»ı(M3)
-	private String Car_Fkey; 			// ·¢¶¯»úºÅ
-	private String Car_Jkey; 			// ³µ¼ÜºÅÂë
+	private String Car_height; 			// è½¦é«˜
+	private String Car_max_dun; 	// æœ€å¤§æ‰¿è½½å¨ä½(Kg)
+	private String Car_bulk; 				// å®¹ç§¯(M3)
+	private String Car_Fkey; 			// å‘åŠ¨æœºå·
+	private String Car_Jkey; 			// è½¦æ¶å·ç 
 
-	private String Car_Ykey; 			// ÔËÓªÖ¤ºÅ
-	private String Car_Bkey; 			// ±£ÏÕ¿¨ºÅ
-	private String Car_Gunit; 			// ¹Ò¿¿µ¥Î»
-	private String Add_time; 			// Ìí¼ÓÊ±¼ä
+	private String Car_Ykey; 			// è¿è¥è¯å·
+	private String Car_Bkey; 			// ä¿é™©å¡å·
+	private String Car_Gunit; 			// æŒ‚é å•ä½
+	private String Add_time; 			// æ·»åŠ æ—¶é—´
 
 	public String getAdd_id() {
 		return Add_id;

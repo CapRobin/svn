@@ -10,7 +10,7 @@ import android.widget.ListView;
 * Created by IntelliJ IDEA.
 * User: zhUser
 * Date: 13-1-24
-* Time: ÏÂÎç6:53
+* Time: ä¸‹åˆ6:53
 */
 public class NoScrollGridView extends GridView{
 
@@ -27,7 +27,7 @@ public class NoScrollGridView extends GridView{
 * Created by IntelliJ IDEA.
 * User: zhUser
 * Date: 13-1-24
-* Time: ÏÂÎç6:53
+* Time: ä¸‹åˆ6:53
 */
 class NoScrollListView extends ListView{
 

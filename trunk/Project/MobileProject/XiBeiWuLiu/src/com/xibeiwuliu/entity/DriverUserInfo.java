@@ -3,30 +3,30 @@ package com.xibeiwuliu.entity;
 /**
  * 
  * Copyright (c) 2012 All rights reserved
- * @Name£ºDriverUserInfo.java 
- * @Describe£ºË¾»ú¸öÈËĞÅÏ¢ÊµÌåÀà
+ * @Nameï¼šDriverUserInfo.java 
+ * @Describeï¼šå¸æœºä¸ªäººä¿¡æ¯å®ä½“ç±»
  * @Author yufarong_yfr5734@163.com
- * @Date£º2013-12-20 ÉÏÎç11:05:42
+ * @Dateï¼š2013-12-20 ä¸Šåˆ11:05:42
  * @Version v1.0
  */
 public class DriverUserInfo {
 
-	private String Duser_id; 					// ÓÃ»§ID
-	private String Duser_name; 			// Ë¾»úĞÕÃû
-	private String Duser_mobile; 			// Ë¾»úµç»°
-	private String Duser_pwd; 				// Ë¾»úµÇÂ¼ÃÜÂë
-	private String Duser_tle; 				// Ë¾»úËæ³µµç»°
-	private String Duser_key; 				// Ë¾»úÉí·İÖ¤ºÅ
-	private String Duser_tleJI; 			// Ë¾»ú½ô¼±ÁªÏµµç»°
-	private String Duser_photo; 			// Ë¾»úÕÕÆ¬(Éí·İÖ¤¼şÕÕÆ¬)
-	private String Duser_sex; 				// Ë¾»úĞÔ±ğ
-	private String Duser_Addr; 			// Ë¾»ú¼ÒÍ¥µØÖ·
-	private String RoutePath; 			// ³µÁ¾Â·Ïß¸ú³µÁ¾Â·Ïß±í(LPR_Duser_area)¹ØÁª
-	private String Duser_J_key; 			// ¼İÊ»Ö´ÕÕºÅ
-	private String Duser_level; 				// ÓÃ»§¼¶±ğ(Ïê¼ûË¾»ú»ú±ğ±í)
-	private String Duser_PJ; 				// Ë¾»úÆÀ¼Û
-	private String Duser_reamrk; 		// ±¸×¢
-	private String Add_time; 				// Ìí¼Ó»òĞŞÊ±¼ä
+	private String Duser_id; 					// ç”¨æˆ·ID
+	private String Duser_name; 			// å¸æœºå§“å
+	private String Duser_mobile; 			// å¸æœºç”µè¯
+	private String Duser_pwd; 				// å¸æœºç™»å½•å¯†ç 
+	private String Duser_tle; 				// å¸æœºéšè½¦ç”µè¯
+	private String Duser_key; 				// å¸æœºèº«ä»½è¯å·
+	private String Duser_tleJI; 			// å¸æœºç´§æ€¥è”ç³»ç”µè¯
+	private String Duser_photo; 			// å¸æœºç…§ç‰‡(èº«ä»½è¯ä»¶ç…§ç‰‡)
+	private String Duser_sex; 				// å¸æœºæ€§åˆ«
+	private String Duser_Addr; 			// å¸æœºå®¶åº­åœ°å€
+	private String RoutePath; 			// è½¦è¾†è·¯çº¿è·Ÿè½¦è¾†è·¯çº¿è¡¨(LPR_Duser_area)å…³è”
+	private String Duser_J_key; 			// é©¾é©¶æ‰§ç…§å·
+	private String Duser_level; 				// ç”¨æˆ·çº§åˆ«(è¯¦è§å¸æœºæœºåˆ«è¡¨)
+	private String Duser_PJ; 				// å¸æœºè¯„ä»·
+	private String Duser_reamrk; 		// å¤‡æ³¨
+	private String Add_time; 				// æ·»åŠ æˆ–ä¿®æ—¶é—´
 
 	public String getDuser_id() {
 		return Duser_id;

@@ -1,118 +1,37 @@
 package com.xibeiwuliu.database;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import com.xibeiwuliu.entity.AreaInfo;
-
 import android.content.Context;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 
 /**
  * 
- * Copyright (c) 2012 All rights reserved Ãû³Æ£ºSqliteDaoArea.java ÃèÊö£º²é¿´µØÇøÊı¾İ
+ * Copyright (c) 2012 All rights reserved åç§°ï¼šSqliteDaoHelperArea.java
+ * æè¿°ï¼šåœ°åŒºæ•°æ®åº“ç®¡ç†ç±»
  * 
  * @author Yu Farong - yfr5734@gmail.com
- * @date£º2014Äê1ÔÂ17ÈÕ ÉÏÎç7:14:33
+ * @dateï¼š2014å¹´1æœˆ17æ—¥ ä¸Šåˆ7:29:10
  * @version v1.0
  */
-public class SqliteDaoArea {
+public class SqliteDaoHelperArea extends SQLiteOpenHelper {
+	// æ•°æ®åº“åç§°
+	private static final String DATABASE_NAME = "logistics";
+	// æ•°æ®åº“ç‰ˆæœ¬
+	private static final int DATABASE_VERSION = 1;
+	private Context mContext;
 
-	private SqliteDaoHelperArea openHelper;
-	private SQLiteDatabase db;
-	public static SqliteDaoArea doctorDao = null;
-
-	public static SqliteDaoArea getInstance(Context context) {
-		if (doctorDao == null) {
-			doctorDao = new SqliteDaoArea(context);
-		}
-		return doctorDao;
+	public SqliteDaoHelperArea(Context context) {
+		// è°ƒç”¨çˆ¶ç±»çš„æ„é€ å™¨
+		super(context, DATABASE_NAME, null, DATABASE_VERSION);
+		this.mContext = context;
 	}
 
-	public SqliteDaoArea(Context context) {
-		this.openHelper = new SqliteDaoHelperArea(context);
+	@Override
+	public void onCreate(SQLiteDatabase db) {
 	}
 
-	/**
-	 * µÃµ½ÁĞÖµ
-	 * 
-	 * @param columnName
-	 * @param cursor
-	 */
-	public String getStringColumnValue(String columnName, Cursor cursor) {
-		return cursor.getString(cursor.getColumnIndex(columnName));
+	@Override
+	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+		onCreate(db);
 	}
-
-	/**
-	 * µÃµ½ÁĞÖµ
-	 * 
-	 * @param columnName
-	 * @param cursor
-	 */
-	public int getIntColumnValue(String columnName, Cursor cursor) {
-		return cursor.getInt(cursor.getColumnIndex(columnName));
-	}
-
-	/**
-	 * ÃèÊö£º¹Ø±ÕÏà¹ØÊı¾İ¿âµÈ
-	 * 
-	 * @param cursor
-	 * @param db
-	 * @throws
-	 * @date£º2013-5-16 ÏÂÎç5:32:47
-	 * @version v1.0
-	 */
-	public void closeDB(Cursor cursor, SQLiteDatabase db) {
-		if (cursor != null) {
-			cursor.close();
-			cursor = null;
-		}
-		if (db != null && db.isOpen()) {
-			db.close();
-			db = null;
-		}
-	}
-
-	/**
-	 * 
-	 * ÃèÊö£º²âÊÔµØÇøÊı¾İ¿â
-	 * 
-	 * @param docId
-	 * @return
-	 * @throws
-	 * @date£º2014Äê1ÔÂ17ÈÕ ÉÏÎç7:27:35
-	 * @version v1.0
-	 */
-	public synchronized List<AreaInfo> getAreaInfo(int ParentID) {
-//		List<String> list = new ArrayList<String>();
-		List<AreaInfo> areaList = new ArrayList<AreaInfo>();
-		AreaInfo areaInfo =null;
-//		String sql_1 = "SELECT * FROM LocationTable WHERE id = " + docId + "";
-		String sql_1 = "SELECT * FROM LocationTable WHERE ParentID = " + ParentID + "";
-		Cursor cursor = null;
-		try {
-			db = openHelper.getReadableDatabase();
-			cursor = db.rawQuery(sql_1, null);
-			if (cursor != null) {
-				while (cursor.moveToNext()) {
-					areaInfo = new AreaInfo();
-					int cityId = Integer.valueOf(cursor.getString(cursor.getColumnIndex("ID")));
-					String cityName = cursor.getString(cursor.getColumnIndex("Location"));
-					int parentID = Integer.valueOf(cursor.getString(cursor.getColumnIndex("ParentID")));
-					areaInfo.setCcityId(cityId);
-					areaInfo.setCcityName(cityName);
-					areaInfo.setParentId(parentID);
-					areaList.add(areaInfo);
-//					list.add(string);
-				}
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			closeDB(cursor, db);
-		}
-		return areaList;
-	}
-
 }

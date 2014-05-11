@@ -6,7 +6,7 @@ import android.support.v4.view.ViewPager;
 import android.view.animation.Interpolator;
 import android.widget.Scroller;
  /**
-  * Í¼Æ¬»¬¶¯¶¯»­Ê±¼ä¿ØÖÆÀà  ,Èç¹ûÓÃÄ¬ÈÏÊ±¼ä¿ÉÓÃ²»Õâ¸öÀà
+  * å›¾ç‰‡æ»‘åŠ¨åŠ¨ç”»æ—¶é—´æ§åˆ¶ç±»  ,å¦‚æœç”¨é»˜è®¤æ—¶é—´å¯ç”¨ä¸è¿™ä¸ªç±»
   * @author Administrator
   * 
   *	FixedSpeedScroller scroller = new FixedSpeedScroller(context,new AccelerateInterpolator());
@@ -24,9 +24,9 @@ public class FixedSpeedScroller extends Scroller {
         this.context=context;
     } 
     /**
-     *  ÉèÖÃ»¬¶¯Ê±¼ä  ,Èç¹ûÓÃÄ¬ÈÏÊ±¼ä¿É²»ÓÃÕâ¸öÀà ,·´Éä¼¼ÊõÊµÏÖ
-     * @param vp  ViewPager ¶ÔÏó
-     * @param time  Ê±¼ä
+     *  è®¾ç½®æ»‘åŠ¨æ—¶é—´  ,å¦‚æœç”¨é»˜è®¤æ—¶é—´å¯ä¸ç”¨è¿™ä¸ªç±» ,åå°„æŠ€æœ¯å®ç°
+     * @param vp  ViewPager å¯¹è±¡
+     * @param time  æ—¶é—´
      */
  
     public void setDuration(ViewPager vp,int time) {

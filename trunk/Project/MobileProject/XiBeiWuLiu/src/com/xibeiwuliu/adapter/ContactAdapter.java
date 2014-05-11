@@ -21,10 +21,10 @@ import com.xibeiwuliu.entity.ContactInfo;
  * 
  * Copyright (c) 2012 All rights reserved
  * 
- * @Name£ºContactAdapter.java
- * @Describe£ºÁªÏµÈËÊı¾İÊÊÅä
+ * @Nameï¼šContactAdapter.java
+ * @Describeï¼šè”ç³»äººæ•°æ®é€‚é…
  * @Author Administrator yfr5734@gmail.com
- * @Date£º2013-11-29 ÏÂÎç4:40:51
+ * @Dateï¼š2013-11-29 ä¸‹åˆ4:40:51
  * @Version v1.0
  */
 public class ContactAdapter extends BaseAdapter {
