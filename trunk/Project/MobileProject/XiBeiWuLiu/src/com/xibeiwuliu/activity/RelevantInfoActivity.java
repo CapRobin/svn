@@ -59,7 +59,7 @@ public class RelevantInfoActivity extends BaseActivity implements OnClickListene
 
 	/**
 	 * 
-	 * @Describe：初始化View
+	 * @Describe：初始化View 
 	 * @Throws:
 	 * @Date：2014年4月28日 上午11:07:32
 	 * @Version v1.0
