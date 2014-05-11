@@ -18,10 +18,10 @@ import com.xibeiwuliu.entity.CargoInfo;
  * 
  * Copyright (c) 2012 All rights reserved
  * 
- * @Name£ºCommonalityInfoAdapter.java
- * @Describe£º¹«¹²ĞÅÏ¢Êı¾İÊÊÅä
+ * @Nameï¼šCommonalityInfoAdapter.java
+ * @Describeï¼šå…¬å…±ä¿¡æ¯æ•°æ®é€‚é…
  * @Author Administrator yfr5734@gmail.com
- * @Date£º2013-11-18 ÏÂÎç6:13:47
+ * @Dateï¼š2013-11-18 ä¸‹åˆ6:13:47
  * @Version v1.0
  */
 public class CommonalityInfoAdapter extends BaseAdapter {
@@ -35,7 +35,7 @@ public class CommonalityInfoAdapter extends BaseAdapter {
 	private List<CargoInfo> mData;
 
 	/**
-	 * ¹¹Ôì·½·¨
+	 * æ„é€ æ–¹æ³•
 	 * 
 	 * @param context
 	 * @param data
@@ -65,11 +65,11 @@ public class CommonalityInfoAdapter extends BaseAdapter {
 	public View getView(int position, View convertView, ViewGroup parent) {
 		final ViewHolder holder;
 		if (convertView == null) {
-			// Ê¹ÓÃ×Ô¶¨ÒåµÄlist_items×÷ÎªLayout
+			// ä½¿ç”¨è‡ªå®šä¹‰çš„list_itemsä½œä¸ºLayout
 			convertView = mInflater.inflate(R.layout.partial_row, parent, false);
-			// ¼õÉÙfindViewµÄ´ÎÊı
+			// å‡å°‘findViewçš„æ¬¡æ•°
 			holder = new ViewHolder();
-			// ³õÊ¼»¯²¼¾ÖÖĞµÄÔªËØ
+			// åˆå§‹åŒ–å¸ƒå±€ä¸­çš„å…ƒç´ 
 			holder.msg_content = ((TextView) convertView.findViewById(R.id.msg_content));
 			holder.msg_date = ((TextView) convertView.findViewById(R.id.msg_date));
 			convertView.setTag(holder);
@@ -78,9 +78,9 @@ public class CommonalityInfoAdapter extends BaseAdapter {
 		}
 
 		String addTime = mData.get(position).getInfo_AddTime();
-		// »ñÈ¡¸ÃĞĞµÄÊı¾İ
+		// è·å–è¯¥è¡Œçš„æ•°æ®
 //		if (addTime == null) {
-//			Date   curDate   =   new   Date(System.currentTimeMillis());//»ñÈ¡µ±Ç°Ê±¼ä     
+//			Date   curDate   =   new   Date(System.currentTimeMillis());//è·å–å½“å‰æ—¶é—´     
 //			addTime   =   formatter.format(curDate);    
 //		}
 		holder.msg_content.setText(mData.get(position).getInfo_connect());
@@ -90,7 +90,7 @@ public class CommonalityInfoAdapter extends BaseAdapter {
 	}
 
 	/**
-	 * ViewÔªËØ
+	 * Viewå…ƒç´ 
 	 */
 	static class ViewHolder {
 		TextView msg_content;

@@ -4,10 +4,10 @@ package com.xibeiwuliu.global;
  * 
  * Copyright (c) 2012 All rights reserved
  * 
- * @Name£ºConstant.java
- * @Describe£º»ù´¡³£Á¿
+ * @Nameï¼šConstant.java
+ * @Describeï¼šåŸºç¡€å¸¸é‡
  * @Author Administrator yfr5734@gmail.com
- * @Date£º2013-11-26 ÏÂÎç2:01:18
+ * @Dateï¼š2013-11-26 ä¸‹åˆ2:01:18
  * @Version v1.0
  */
 public class Constant {
@@ -30,10 +30,10 @@ public class Constant {
 //	//Search radius used for nearby search example
 //	public static final double SearchRadiusKM = 10;
 //	
-//	//Minimum distance a user must move in meters before GPS location updates on map     ¿ÉĞŞ¸Ä²ÎÊıÒ»
+//	//Minimum distance a user must move in meters before GPS location updates on map     å¯ä¿®æ”¹å‚æ•°ä¸€
 	public static final int GPSDistanceDelta = 50;
 //	
-//	//Minimum time that must past in ms before GPS will update users location			  ¿ÉĞŞ¸Ä²ÎÊı¶ş
+//	//Minimum time that must past in ms before GPS will update users location			  å¯ä¿®æ”¹å‚æ•°äºŒ
 	public static final int GPSTimeDelta = 20 * 500;
 //	
 //	//Amount of time to display splash screen as map loads in seconds.

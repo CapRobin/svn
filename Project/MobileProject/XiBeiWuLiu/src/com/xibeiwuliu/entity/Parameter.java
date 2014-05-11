@@ -3,8 +3,8 @@ package com.xibeiwuliu.entity;
 
 public class Parameter {
 
-	private String parameterKey;				// ²ÎÊı¼ü
-	private String parameterValue;			// ²ÎÊıÖµ
+	private String parameterKey;				// å‚æ•°é”®
+	private String parameterValue;			// å‚æ•°å€¼
 	
 	public String getParameterKey() {
 		return parameterKey;

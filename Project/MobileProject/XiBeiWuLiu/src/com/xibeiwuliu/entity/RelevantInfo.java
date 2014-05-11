@@ -4,20 +4,20 @@ package com.xibeiwuliu.entity;
  * 
  * Copyright (c) 2013 All rights reserved
  * 
- * @Name£ºRelevantInfo.java
- * @Describe£ºĞĞÒµ×ÊÑ¶ÊµÌåÀà
+ * @Nameï¼šRelevantInfo.java
+ * @Describeï¼šè¡Œä¸šèµ„è®¯å®ä½“ç±»
  * @Author: yfr5734@gmail.com
- * @Date£º2014Äê5ÔÂ8ÈÕ ÏÂÎç3:37:02
+ * @Dateï¼š2014å¹´5æœˆ8æ—¥ ä¸‹åˆ3:37:02
  * @Version v1.0 *
  * 
  */
 public class RelevantInfo {
 
-	private int msgId; // ĞÅÏ¢ID
-	private String titleName; // ĞÅÏ¢±êÌâ
-	private String content; // ĞÅÏ¢ÄÚÈİ
-	private String time; // ·¢²¼Ê±¼ä
-	private String imageUrl; // Í¼Æ¬µØÖ·
+	private int msgId; // ä¿¡æ¯ID
+	private String titleName; // ä¿¡æ¯æ ‡é¢˜
+	private String content; // ä¿¡æ¯å†…å®¹
+	private String time; // å‘å¸ƒæ—¶é—´
+	private String imageUrl; // å›¾ç‰‡åœ°å€
 
 	public int getMsgId() {
 		return msgId;

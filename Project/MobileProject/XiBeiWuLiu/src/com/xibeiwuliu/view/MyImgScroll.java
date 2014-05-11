@@ -16,14 +16,14 @@ import android.view.View;
 import android.widget.LinearLayout;
 
 /**
- * Í¼Æ¬¹ö¶¯Àà
+ * å›¾ç‰‡æ»šåŠ¨ç±»
  * 
  * @author Administrator
  * 
  */
 public class MyImgScroll extends ViewPager {
-	Activity mActivity; // ÉÏÏÂÎÄ
-	List<View> mListViews; // Í¼Æ¬×é
+	Activity mActivity; // ä¸Šä¸‹æ–‡
+	List<View> mListViews; // å›¾ç‰‡ç»„
 	int mScrollTime = 0;
 	Timer timer;
 	int oldIndex = 0;
@@ -34,24 +34,24 @@ public class MyImgScroll extends ViewPager {
 	}
 
 	/**
-	 * ¿ªÊ¼¹ã¸æ¹ö¶¯
+	 * å¼€å§‹å¹¿å‘Šæ»šåŠ¨
 	 * 
 	 * @param mainActivity
-	 *            ÏÔÊ¾¹ã¸æµÄÖ÷½çÃæ
+	 *            æ˜¾ç¤ºå¹¿å‘Šçš„ä¸»ç•Œé¢
 	 * @param imgList
-	 *            Í¼Æ¬ÁĞ±í, ²»ÄÜÎªnull ,×îÉÙÒ»ÕÅ
+	 *            å›¾ç‰‡åˆ—è¡¨, ä¸èƒ½ä¸ºnull ,æœ€å°‘ä¸€å¼ 
 	 * @param scrollTime
-	 *            ¹ö¶¯¼ä¸ô ,0Îª²»¹ö¶¯
+	 *            æ»šåŠ¨é—´éš” ,0ä¸ºä¸æ»šåŠ¨
 	 * @param ovalLayout
-	 *            Ô²µãÈİÆ÷,¿ÉÎª¿Õ,LinearLayoutÀàĞÍ
+	 *            åœ†ç‚¹å®¹å™¨,å¯ä¸ºç©º,LinearLayoutç±»å‹
 	 * @param ovalLayoutId
-	 *            ovalLayoutÎª¿ÕÊ± Ğ´0, Ô²µãlayout XMl
+	 *            ovalLayoutä¸ºç©ºæ—¶ å†™0, åœ†ç‚¹layout XMl
 	 * @param ovalLayoutItemId
-	 *            ovalLayoutÎª¿ÕÊ± Ğ´0,Ô²µãlayout XMl Ô²µãXMlÏÂView ID
+	 *            ovalLayoutä¸ºç©ºæ—¶ å†™0,åœ†ç‚¹layout XMl åœ†ç‚¹XMlä¸‹View ID
 	 * @param focusedId
-	 *            ovalLayoutÎª¿ÕÊ± Ğ´0, Ô²µãlayout XMl Ñ¡ÖĞÊ±µÄ¶¯»­
+	 *            ovalLayoutä¸ºç©ºæ—¶ å†™0, åœ†ç‚¹layout XMl é€‰ä¸­æ—¶çš„åŠ¨ç”»
 	 * @param normalId
-	 *            ovalLayoutÎª¿ÕÊ± Ğ´0, Ô²µãlayout XMl Õı³£Ê±±³¾°
+	 *            ovalLayoutä¸ºç©ºæ—¶ å†™0, åœ†ç‚¹layout XMl æ­£å¸¸æ—¶èƒŒæ™¯
 	 */
 	public void start(Activity mainActivity, List<View> imgList,
 			int scrollTime, LinearLayout ovalLayout, int ovalLayoutId,
@@ -59,16 +59,16 @@ public class MyImgScroll extends ViewPager {
 		mActivity = mainActivity;
 		mListViews = imgList;
 		mScrollTime = scrollTime;
-		// ÉèÖÃÔ²µã
+		// è®¾ç½®åœ†ç‚¹
 		setOvalLayout(ovalLayout, ovalLayoutId, ovalLayoutItemId, focusedId,
 				normalId);
-		this.setAdapter(new MyPagerAdapter());// ÉèÖÃÊÊÅäÆ÷
+		this.setAdapter(new MyPagerAdapter());// è®¾ç½®é€‚é…å™¨
 		if (scrollTime != 0 && imgList.size() > 1) {
-			// ÉèÖÃ»¬¶¯¶¯»­Ê±¼ä  ,Èç¹ûÓÃÄ¬ÈÏ¶¯»­Ê±¼ä¿É²»ÓÃ ,·´Éä¼¼ÊõÊµÏÖ
+			// è®¾ç½®æ»‘åŠ¨åŠ¨ç”»æ—¶é—´  ,å¦‚æœç”¨é»˜è®¤åŠ¨ç”»æ—¶é—´å¯ä¸ç”¨ ,åå°„æŠ€æœ¯å®ç°
 			 new FixedSpeedScroller(mActivity).setDuration(this, 700);
 	
 			startTimer();
-			// ´¥ÃşÊ±Í£Ö¹¹ö¶¯
+			// è§¦æ‘¸æ—¶åœæ­¢æ»šåŠ¨
 			this.setOnTouchListener(new OnTouchListener() {
 				public boolean onTouch(View v, MotionEvent event) {
 					if (event.getAction() == MotionEvent.ACTION_UP) {
@@ -82,11 +82,11 @@ public class MyImgScroll extends ViewPager {
 		} 
 		if (mListViews.size() > 1) {
 			this.setCurrentItem((Integer.MAX_VALUE / 2)
-					- (Integer.MAX_VALUE / 2) % mListViews.size());// ÉèÖÃÑ¡ÖĞÎªÖĞ¼ä/Í¼Æ¬ÎªºÍµÚ0ÕÅÒ»Ñù
+					- (Integer.MAX_VALUE / 2) % mListViews.size());// è®¾ç½®é€‰ä¸­ä¸ºä¸­é—´/å›¾ç‰‡ä¸ºå’Œç¬¬0å¼ ä¸€æ ·
 		}
 	}
 
-	// ÉèÖÃÔ²µã
+	// è®¾ç½®åœ†ç‚¹
 	private void setOvalLayout(final LinearLayout ovalLayout, int ovalLayoutId,
 			final int ovalLayoutItemId, final int focusedId, final int normalId) {
 		if (ovalLayout != null) {
@@ -95,16 +95,16 @@ public class MyImgScroll extends ViewPager {
 				ovalLayout.addView(inflater.inflate(ovalLayoutId, null));
 				
 			}
-			//Ñ¡ÖĞµÚÒ»¸ö
+			//é€‰ä¸­ç¬¬ä¸€ä¸ª
 			ovalLayout.getChildAt(0).findViewById(ovalLayoutItemId)
 			.setBackgroundResource(focusedId);
 			this.setOnPageChangeListener(new OnPageChangeListener() {
 				public void onPageSelected(int i) {
 					curIndex = i % mListViews.size();
-                    //È¡ÏûÔ²µãÑ¡ÖĞ
+                    //å–æ¶ˆåœ†ç‚¹é€‰ä¸­
 					ovalLayout.getChildAt(oldIndex).findViewById(ovalLayoutItemId)
 							.setBackgroundResource(normalId);
-					 //Ô²µãÑ¡ÖĞ
+					 //åœ†ç‚¹é€‰ä¸­
 					ovalLayout.getChildAt(curIndex).findViewById(ovalLayoutItemId)
 					.setBackgroundResource(focusedId);
 					oldIndex = curIndex;
@@ -119,14 +119,14 @@ public class MyImgScroll extends ViewPager {
 		}
 	}
 	/**
-	 * È¡µÃµ±Ã÷Ñ¡ÖĞÏÂ±ê
+	 * å–å¾—å½“æ˜é€‰ä¸­ä¸‹æ ‡
 	 * @return
 	 */
     public int getCurIndex() {
 		return curIndex;
 	}
 	/**
-	 * Í£Ö¹¹ö¶¯
+	 * åœæ­¢æ»šåŠ¨
 	 */
 	public void stopTimer() {
 		if (timer != null) {
@@ -136,7 +136,7 @@ public class MyImgScroll extends ViewPager {
 	}
 
 	/**
-	 * ¿ªÊ¼¹ö¶¯
+	 * å¼€å§‹æ»šåŠ¨
 	 */
 	public void startTimer() {
 		timer = new Timer();
@@ -152,7 +152,7 @@ public class MyImgScroll extends ViewPager {
 		}, mScrollTime, mScrollTime);
 	}
 
-	// ÊÊÅäÆ÷ //Ñ­»·ÉèÖÃ
+	// é€‚é…å™¨ //å¾ªç¯è®¾ç½®
 	private class MyPagerAdapter extends PagerAdapter {
 		public void finishUpdate(View arg0) {
 		}
@@ -162,7 +162,7 @@ public class MyImgScroll extends ViewPager {
 		}
 
 		public int getCount() {
-			if (mListViews.size() == 1) {// Ò»ÕÅÍ¼Æ¬Ê±²»ÓÃÁ÷¶¯
+			if (mListViews.size() == 1) {// ä¸€å¼ å›¾ç‰‡æ—¶ä¸ç”¨æµåŠ¨
 				return mListViews.size();
 			}
 			return Integer.MAX_VALUE;

@@ -16,10 +16,10 @@ import com.xibeiwuliu.entity.CargoInfo;
  * 
  * Copyright (c) 2013 All rights reserved
  * 
- * @Name£ºLocationAdapter.java
- * @Describe£ºµØÀíÊı¾İÊÊÅäÆ÷
+ * @Nameï¼šLocationAdapter.java
+ * @Describeï¼šåœ°ç†æ•°æ®é€‚é…å™¨
  * @Author: yfr5734@gmail.com
- * @Date£º2014Äê5ÔÂ5ÈÕ ÉÏÎç11:18:08
+ * @Dateï¼š2014å¹´5æœˆ5æ—¥ ä¸Šåˆ11:18:08
  * @Version v1.0 *
  * 
  */
@@ -30,7 +30,7 @@ public class LocationAdapter extends BaseAdapter {
 	private List<CargoInfo> mData;
 
 	/**
-	 * ¹¹Ôì·½·¨
+	 * æ„é€ æ–¹æ³•
 	 * 
 	 * @param context
 	 * @param data
@@ -60,11 +60,11 @@ public class LocationAdapter extends BaseAdapter {
 	public View getView(int position, View convertView, ViewGroup parent) {
 		final ViewHolder holder;
 		if (convertView == null) {
-			// Ê¹ÓÃ×Ô¶¨ÒåµÄlist_items×÷ÎªLayout
+			// ä½¿ç”¨è‡ªå®šä¹‰çš„list_itemsä½œä¸ºLayout
 			convertView = mInflater.inflate(R.layout.partial_row, parent, false);
-			// ¼õÉÙfindViewµÄ´ÎÊı
+			// å‡å°‘findViewçš„æ¬¡æ•°
 			holder = new ViewHolder();
-			// ³õÊ¼»¯²¼¾ÖÖĞµÄÔªËØ
+			// åˆå§‹åŒ–å¸ƒå±€ä¸­çš„å…ƒç´ 
 			holder.msg_content = ((TextView) convertView.findViewById(R.id.msg_content));
 			holder.msg_date = ((TextView) convertView.findViewById(R.id.msg_date));
 			convertView.setTag(holder);
@@ -80,7 +80,7 @@ public class LocationAdapter extends BaseAdapter {
 	}
 
 	/**
-	 * ViewÔªËØ
+	 * Viewå…ƒç´ 
 	 */
 	static class ViewHolder {
 		TextView msg_content;

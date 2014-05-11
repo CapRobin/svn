@@ -3,18 +3,18 @@ package com.xibeiwuliu.entity;
 /**
  * 
   * Copyright (c) 2013 All rights reserved
-  * @Name£ºAreaInfo.java 
-  * @Describe£ºµØÀíÇøÓòĞÅÏ¢
+  * @Nameï¼šAreaInfo.java 
+  * @Describeï¼šåœ°ç†åŒºåŸŸä¿¡æ¯
   * @Author:  yfr5734@gmail.com
-  * @Date£º2014Äê5ÔÂ5ÈÕ ÉÏÎç10:53:44
+  * @Dateï¼š2014å¹´5æœˆ5æ—¥ ä¸Šåˆ10:53:44
   * @Version v1.0 *
   *
  */
 public class AreaInfo {
 
-	private int ccityId; 							// 	³ÇÊĞID
-	private String ccityName; 				// 	³ÇÊĞÃû³Æ
-	private int	parentId; 						// 	¸¸½ÚµãID
+	private int ccityId; 							// 	åŸå¸‚ID
+	private String ccityName; 				// 	åŸå¸‚åç§°
+	private int	parentId; 						// 	çˆ¶èŠ‚ç‚¹ID
 	
 	public int getCcityId() {
 		return ccityId;

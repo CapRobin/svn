@@ -25,24 +25,24 @@ import com.xibeiwuliu.entity.Parameter;
  * 
  * Copyright (c) 2012 All rights reserved
  * 
- * @Name£ºMethodUtil.java
- * @Describe£º³£ÓÃ·½·¨
+ * @Nameï¼šMethodUtil.java
+ * @Describeï¼šå¸¸ç”¨æ–¹æ³•
  * @Author Administrator yfr5734@gmail.com
- * @Date£º2013-11-19 ÉÏÎç11:13:25
+ * @Dateï¼š2013-11-19 ä¸Šåˆ11:13:25
  * @Version v1.0
  */
 public class MethodUtil {
 	/**
 	 * 
-	 * ÃèÊö£º»ñÈ¡ÍøÂç×´Ì¬
+	 * æè¿°ï¼šè·å–ç½‘ç»œçŠ¶æ€
 	 * 
 	 * @return
 	 * @throws
-	 * @date£º2012-8-30 ÉÏÎç11:01:52
+	 * @dateï¼š2012-8-30 ä¸Šåˆ11:01:52
 	 * @version v1.0
 	 */
 	public static boolean getNetworkState(Context context) {
-		// ¼ì²âÍøÂç
+		// æ£€æµ‹ç½‘ç»œ
 		ConnectivityManager connectivity = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
 		NetworkInfo netWork = connectivity.getActiveNetworkInfo();
 		if (netWork != null) {
@@ -53,11 +53,11 @@ public class MethodUtil {
 
 	/**
 	 * 
-	 * ÃèÊö£ºÅĞ¶ÏGPS¶¨Î»¹¦ÄÜÊÇ·ñ¿ªÆô
+	 * æè¿°ï¼šåˆ¤æ–­GPSå®šä½åŠŸèƒ½æ˜¯å¦å¼€å¯
 	 * 
 	 * @return
 	 * @throws
-	 * @date£º2013-11-19 ÉÏÎç10:37:39
+	 * @dateï¼š2013-11-19 ä¸Šåˆ10:37:39
 	 * @version v1.0
 	 */
 	public static boolean isGpsEnable(Context context) {
@@ -66,12 +66,12 @@ public class MethodUtil {
 	}
 
 	/**
-	 * ÃèÊö£ºÊÖ»úºÅ¸ñÊ½ÑéÖ¤
+	 * æè¿°ï¼šæ‰‹æœºå·æ ¼å¼éªŒè¯
 	 * 
 	 * @param mobile
 	 * @return
 	 * @throws
-	 * @date£º2012-7-20 ÉÏÎç9:07:58
+	 * @dateï¼š2012-7-20 ä¸Šåˆ9:07:58
 	 * @version v1.0
 	 */
 	public static Boolean isMobileNo(String mobile) {
@@ -99,12 +99,12 @@ public class MethodUtil {
 	}
 
 	/**
-	 * ÃèÊö£ºÓÊÏä¸ñÊ½ÑéÖ¤
+	 * æè¿°ï¼šé‚®ç®±æ ¼å¼éªŒè¯
 	 * 
 	 * @param mail
 	 * @return
 	 * @throws
-	 * @date£º2012-7-20 ÉÏÎç9:09:58
+	 * @dateï¼š2012-7-20 ä¸Šåˆ9:09:58
 	 * @version v1.0
 	 */
 	public static boolean isEmail(String mail) {
@@ -115,25 +115,25 @@ public class MethodUtil {
 	}
 
 	/**
-	 * »ñÈ¡×Ö·û´®µÄ³¤¶È£¬Èç¹ûÓĞÖĞÎÄ£¬ÔòÃ¿¸öÖĞÎÄ×Ö·û¼ÆÎª2Î»
+	 * è·å–å­—ç¬¦ä¸²çš„é•¿åº¦ï¼Œå¦‚æœæœ‰ä¸­æ–‡ï¼Œåˆ™æ¯ä¸ªä¸­æ–‡å­—ç¬¦è®¡ä¸º2ä½
 	 * 
 	 * @param value
-	 *            Ö¸¶¨µÄ×Ö·û´®
-	 * @return ×Ö·û´®µÄ³¤¶È
+	 *            æŒ‡å®šçš„å­—ç¬¦ä¸²
+	 * @return å­—ç¬¦ä¸²çš„é•¿åº¦
 	 */
 	public static int chineseLength(String value) {
 		int valueLength = 0;
 		String chinese = "[\u0391-\uFFE5]";
-		/* »ñÈ¡×Ö¶ÎÖµµÄ³¤¶È£¬Èç¹ûº¬ÖĞÎÄ×Ö·û£¬ÔòÃ¿¸öÖĞÎÄ×Ö·û³¤¶ÈÎª2£¬·ñÔòÎª1 */
+		/* è·å–å­—æ®µå€¼çš„é•¿åº¦ï¼Œå¦‚æœå«ä¸­æ–‡å­—ç¬¦ï¼Œåˆ™æ¯ä¸ªä¸­æ–‡å­—ç¬¦é•¿åº¦ä¸º2ï¼Œå¦åˆ™ä¸º1 */
 		for (int i = 0; i < value.length(); i++) {
-			/* »ñÈ¡Ò»¸ö×Ö·û */
+			/* è·å–ä¸€ä¸ªå­—ç¬¦ */
 			String temp = value.substring(i, i + 1);
-			/* ÅĞ¶ÏÊÇ·ñÎªÖĞÎÄ×Ö·û */
+			/* åˆ¤æ–­æ˜¯å¦ä¸ºä¸­æ–‡å­—ç¬¦ */
 			if (temp.matches(chinese)) {
-				/* ÖĞÎÄ×Ö·û³¤¶ÈÎª2 */
+				/* ä¸­æ–‡å­—ç¬¦é•¿åº¦ä¸º2 */
 				valueLength += 2;
 			} else {
-				/* ÆäËû×Ö·û³¤¶ÈÎª1 */
+				/* å…¶ä»–å­—ç¬¦é•¿åº¦ä¸º1 */
 				valueLength += 1;
 			}
 		}
@@ -162,19 +162,19 @@ public class MethodUtil {
  	
 	/**
 	 * 
-	 * @Describe£ºPull½âÎöXmlÎÄ¼ş
+	 * @Describeï¼šPullè§£æXmlæ–‡ä»¶
 	 * @param is
 	 * @return
 	 * @throws Exception
 	 * @Throws 
-	 * @Date£º2013-12-19 ÏÂÎç3:30:01
+	 * @Dateï¼š2013-12-19 ä¸‹åˆ3:30:01
 	 * @Version v1.0
 	 */
 	public static String parse(InputStream is) throws Exception {
 		String getResultStr = null;
 		String resultStr = null;
-		XmlPullParser parser = Xml.newPullParser(); // ÓÉandroid.util.Xml´´½¨Ò»¸öXmlPullParserÊµÀı
-		parser.setInput(is, "UTF-8"); // ÉèÖÃÊäÈëÁ÷ ²¢Ö¸Ã÷±àÂë·½Ê½
+		XmlPullParser parser = Xml.newPullParser(); // ç”±android.util.Xmlåˆ›å»ºä¸€ä¸ªXmlPullParserå®ä¾‹
+		parser.setInput(is, "UTF-8"); // è®¾ç½®è¾“å…¥æµ å¹¶æŒ‡æ˜ç¼–ç æ–¹å¼
 
 		int eventType = parser.getEventType();
 		while (eventType != XmlPullParser.END_DOCUMENT) {
@@ -200,11 +200,11 @@ public class MethodUtil {
 	
 	/**
 	 * 
-	 * ÃèÊö£º·¢²¼»õÔ´ĞÅÏ¢²ÎÊı
+	 * æè¿°ï¼šå‘å¸ƒè´§æºä¿¡æ¯å‚æ•°
 	 * @param string
 	 * @param lprId
 	 * @throws 
-	 * @date£º2013Äê12ÔÂ27ÈÕ ÉÏÎç3:37:10
+	 * @dateï¼š2013å¹´12æœˆ27æ—¥ ä¸Šåˆ3:37:10
 	 * @version v1.0
 	 */
 //	private void setParameterList(String key, String value) {
@@ -217,12 +217,12 @@ public class MethodUtil {
 	
 	/**
 	 * 
-	 * @Describe£º²ÎÊı×ª»»
+	 * @Describeï¼šå‚æ•°è½¬æ¢
 	 * @param portName
 	 * @param parameterList
 	 * @return
 	 * @Throws
-	 * @Date£º2013-12-23 ÏÂÎç5:08:55
+	 * @Dateï¼š2013-12-23 ä¸‹åˆ5:08:55
 	 * @Version v1.0
 	 */
 	public static String getParameterString(String portName, List<Parameter> parameterList) {
@@ -240,7 +240,7 @@ public class MethodUtil {
 
 
     /**
-     * µ¼ÈëÊı¾İ¿â
+     * å¯¼å…¥æ•°æ®åº“
      * @param context
      * @param dbfile
      * @return
@@ -251,9 +251,9 @@ public class MethodUtil {
 		FileOutputStream fos = null;
 		boolean flag = false;
 		try {
-			//ÅĞ¶ÏÊı¾İ¿âÎÄ¼şÊÇ·ñ´æÔÚ£¬Èô²»´æÔÚÔòÖ´ĞĞµ¼Èë£¬·ñÔòÖ±½Ó´ò¿ªÊı¾İ¿â
+			//åˆ¤æ–­æ•°æ®åº“æ–‡ä»¶æ˜¯å¦å­˜åœ¨ï¼Œè‹¥ä¸å­˜åœ¨åˆ™æ‰§è¡Œå¯¼å…¥ï¼Œå¦åˆ™ç›´æ¥æ‰“å¼€æ•°æ®åº“
 			if (!dbfile.exists()) {
-				//Óûµ¼ÈëµÄÊı¾İ¿â
+				//æ¬²å¯¼å…¥çš„æ•°æ®åº“
 				if(!dbfile.getParentFile().exists()){
 					dbfile.getParentFile().mkdirs();
 				}

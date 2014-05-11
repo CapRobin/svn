@@ -18,10 +18,10 @@ import com.xibeiwuliu.entity.RelevantInfo;
  * 
  * Copyright (c) 2013 All rights reserved
  * 
- * @Name£ºRelevantInfoAdapter.java
- * @Describe£ºĞĞÒµ×ÊÑ¶Êı¾İÊÊÅä
+ * @Nameï¼šRelevantInfoAdapter.java
+ * @Describeï¼šè¡Œä¸šèµ„è®¯æ•°æ®é€‚é…
  * @Author: yfr5734@gmail.com
- * @Date£º2014Äê5ÔÂ8ÈÕ ÏÂÎç3:39:17
+ * @Dateï¼š2014å¹´5æœˆ8æ—¥ ä¸‹åˆ3:39:17
  * @Version v1.0 *
  * 
  */
@@ -32,7 +32,7 @@ public class RelevantInfoAdapter extends BaseAdapter {
 	private List<RelevantInfo> mData;
 
 	/**
-	 * ¹¹Ôì·½·¨
+	 * æ„é€ æ–¹æ³•
 	 * 
 	 * @param context
 	 * @param data
@@ -62,11 +62,11 @@ public class RelevantInfoAdapter extends BaseAdapter {
 	public View getView(int position, View convertView, ViewGroup parent) {
 		final ViewHolder holder;
 		if (convertView == null) {
-			// Ê¹ÓÃ×Ô¶¨ÒåµÄlist_items×÷ÎªLayout
+			// ä½¿ç”¨è‡ªå®šä¹‰çš„list_itemsä½œä¸ºLayout
 			convertView = mInflater.inflate(R.layout.relevant_info_item, parent, false);
-			// ¼õÉÙfindViewµÄ´ÎÊı
+			// å‡å°‘findViewçš„æ¬¡æ•°
 			holder = new ViewHolder();
-			// ³õÊ¼»¯²¼¾ÖÖĞµÄÔªËØ
+			// åˆå§‹åŒ–å¸ƒå±€ä¸­çš„å…ƒç´ 
 			holder.titleName = ((TextView) convertView.findViewById(R.id.msg_title));
 			holder.context = ((TextView) convertView.findViewById(R.id.msg_content));
 			holder.time = ((TextView) convertView.findViewById(R.id.msg_time));
@@ -88,7 +88,7 @@ public class RelevantInfoAdapter extends BaseAdapter {
 	}
 
 	/**
-	 * ViewÔªËØ
+	 * Viewå…ƒç´ 
 	 */
 	static class ViewHolder {
 		TextView titleName;

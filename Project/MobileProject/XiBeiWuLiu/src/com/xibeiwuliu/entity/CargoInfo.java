@@ -5,48 +5,48 @@ import java.io.Serializable;
 /**
  * 
  * Copyright (c) 2012 All rights reserved
- * @Name£ºCargoInfo.java 
- * @Describe£º»õÔ´ĞÅÏ¢ÊµÌåÀà
+ * @Nameï¼šCargoInfo.java 
+ * @Describeï¼šè´§æºä¿¡æ¯å®ä½“ç±»
  * @Author yufarong_yfr5734@163.com
- * @Date£º2014-1-7 ÏÂÎç5:56:45
+ * @Dateï¼š2014-1-7 ä¸‹åˆ5:56:45
  * @Version v1.0
  */
 public class CargoInfo implements Serializable {
 	
 	private String Info_ADDID; // ID
-	private String Info_LPR_ID; // ÎïÁ÷¹«Ë¾ID
-	private String Info_connect; // ·¢²¼µÄĞÅÏ¢
-	private String Info_AddTime; // ·¢²¼Ê±¼ä
-	private String Info_AddErID; // ·¢²¼ÈËID
+	private String Info_LPR_ID; // ç‰©æµå…¬å¸ID
+	private String Info_connect; // å‘å¸ƒçš„ä¿¡æ¯
+	private String Info_AddTime; // å‘å¸ƒæ—¶é—´
+	private String Info_AddErID; // å‘å¸ƒäººID
 
-	private String Info_AddErname; // ·¢²¼Ê±¼ä
-	private String Info_price; // ·¢²¼Ê±¼ä
-	private String Info_BAddTime; // ·¢²¼Ê±¼ä
-	private String Info_Status; // ·¢²¼Ê±¼ä
-	private String Info_BArea; // ·¢²¼Ê±¼ä
+	private String Info_AddErname; // å‘å¸ƒæ—¶é—´
+	private String Info_price; // å‘å¸ƒæ—¶é—´
+	private String Info_BAddTime; // å‘å¸ƒæ—¶é—´
+	private String Info_Status; // å‘å¸ƒæ—¶é—´
+	private String Info_BArea; // å‘å¸ƒæ—¶é—´
 
-	private String Info_BAreaX; // ·¢²¼Ê±¼ä
-	private String Info_BAreaY; // ·¢²¼Ê±¼ä
-	private String Info_BAddr; // ·¢²¼Ê±¼ä
-	private String Info_BLinkEr; // ·¢²¼Ê±¼ä
-	private String Info_BLinkTle; // ·¢²¼Ê±¼ä
+	private String Info_BAreaX; // å‘å¸ƒæ—¶é—´
+	private String Info_BAreaY; // å‘å¸ƒæ—¶é—´
+	private String Info_BAddr; // å‘å¸ƒæ—¶é—´
+	private String Info_BLinkEr; // å‘å¸ƒæ—¶é—´
+	private String Info_BLinkTle; // å‘å¸ƒæ—¶é—´
 
-	private String Info_EArea; // ·¢²¼Ê±¼ä
-	private String Info_EAreaX; // ·¢²¼Ê±¼ä
-	private String Info_EAreaY; // ·¢²¼Ê±¼ä
-	private String Info_EAddr; // ·¢²¼Ê±¼ä
-	private String Info_ELinkEr; // ·¢²¼Ê±¼ä
+	private String Info_EArea; // å‘å¸ƒæ—¶é—´
+	private String Info_EAreaX; // å‘å¸ƒæ—¶é—´
+	private String Info_EAreaY; // å‘å¸ƒæ—¶é—´
+	private String Info_EAddr; // å‘å¸ƒæ—¶é—´
+	private String Info_ELinkEr; // å‘å¸ƒæ—¶é—´
 
-	private String Info_ELinkTle; // ·¢²¼Ê±¼ä
-	private String Info_Etime; // ·¢²¼Ê±¼ä
-	private String Info_trade_price; // ·¢²¼Ê±¼ä
-	private String Car_type; // ·¢²¼Ê±¼ä
-	private String Clearing_type; // ·¢²¼Ê±¼ä
+	private String Info_ELinkTle; // å‘å¸ƒæ—¶é—´
+	private String Info_Etime; // å‘å¸ƒæ—¶é—´
+	private String Info_trade_price; // å‘å¸ƒæ—¶é—´
+	private String Car_type; // å‘å¸ƒæ—¶é—´
+	private String Clearing_type; // å‘å¸ƒæ—¶é—´
 
-	private String Transport_DIS; // ·¢²¼Ê±¼ä
-	private String InfoXX_price; // ·¢²¼Ê±¼ä
-	private String Car_count; // ·¢²¼Ê±¼ä
-	private String Info_ReMark; // ·¢²¼Ê±¼ä
+	private String Transport_DIS; // å‘å¸ƒæ—¶é—´
+	private String InfoXX_price; // å‘å¸ƒæ—¶é—´
+	private String Car_count; // å‘å¸ƒæ—¶é—´
+	private String Info_ReMark; // å‘å¸ƒæ—¶é—´
 
 	
 	public String getInfo_ADDID() {

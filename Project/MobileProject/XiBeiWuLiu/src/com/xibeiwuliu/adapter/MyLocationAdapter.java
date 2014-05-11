@@ -20,10 +20,10 @@ import android.widget.TextView;
  * 
  * Copyright (c) 2013 All rights reserved
  * 
- * @Name£ºUserAuctionAdapter.java
- * @Describe£ºÇøÓòÏÔÊ¾ÊÊÅäÆ÷
+ * @Nameï¼šUserAuctionAdapter.java
+ * @Describeï¼šåŒºåŸŸæ˜¾ç¤ºé€‚é…å™¨
  * @Author: yfr5734@gmail.com
- * @Date£º2014Äê5ÔÂ6ÈÕ ÏÂÎç2:07:59
+ * @Dateï¼š2014å¹´5æœˆ6æ—¥ ä¸‹åˆ2:07:59
  * @Version v1.0 *
  * 
  */
@@ -89,10 +89,10 @@ public class MyLocationAdapter extends BaseAdapter {
 	}
 
 	/**
-	 * ÃèÊö£º³ÉÔ±ÉùÃ÷
+	 * æè¿°ï¼šæˆå‘˜å£°æ˜
 	 * 
 	 * @author Yu Farong - yfr5734@gmail.com
-	 * @date£º2013-5-9 ÏÂÎç2:37:28
+	 * @dateï¼š2013-5-9 ä¸‹åˆ2:37:28
 	 * @version v1.0
 	 */
 	public class HeadView {

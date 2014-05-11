@@ -27,12 +27,12 @@ import com.xibeiwuliu.global.Constant;
 import com.xibeiwuliu.util.MethodUtil;
 
 /**
- * ·¢²¼ĞÅÏ¢½Ó¿Úµ÷ÓÃ
+ * å‘å¸ƒä¿¡æ¯æ¥å£è°ƒç”¨
  * Copyright (c) 2012 All rights reserved
- * Ãû³Æ£ºPublicInfoWeb.java 
- * ÃèÊö£ºTODO
+ * åç§°ï¼šPublicInfoWeb.java 
+ * æè¿°ï¼šTODO
  * @author Yu Farong - yfr5734@gmail.com
- * @date£º2013Äê12ÔÂ27ÈÕ ÉÏÎç3:05:06
+ * @dateï¼š2013å¹´12æœˆ27æ—¥ ä¸Šåˆ3:05:06
  * @version v1.0
  */
 public class PublicInfoWeb {
@@ -45,7 +45,7 @@ public class PublicInfoWeb {
 //	}
 //	public EntitySet getPagedInfoListSync2(String city, String keywords, InfoEntity.Type type, int page) {
 //		String url = mUrlBase + "estar/mclient2/GetMInfo.asp";
-////		http://nmgclient2.net188.net//estar/mclient2/GetmInfo.asp?action=GetDatas&Code=Òø´¨&KeyWords=&inType=8&pag=1
+////		http://nmgclient2.net188.net//estar/mclient2/GetmInfo.asp?action=GetDatas&Code=é“¶å·&KeyWords=&inType=8&pag=1
 //		Map<Object, Object> params = new HashMap<Object, Object>();
 //		params.put("action", "GetDatas");
 //		params.put("Code", city);
@@ -54,7 +54,7 @@ public class PublicInfoWeb {
 //		params.put("pag", page);
 //		HttpResultEx res = mHttp.getHttpData(url, params);
 //		// http://nmgclient2.net188.net/estar/mclient/GetMInfo.asp
-//		// {action=GetDatas, inType=8, pag=1, Code=Òø´¨, Keywords=}
+//		// {action=GetDatas, inType=8, pag=1, Code=é“¶å·, Keywords=}
 //		int pageNum = 0;
 //		int totalNum = 0;
 //		EntitySet es = new EntitySet();
@@ -83,13 +83,13 @@ public class PublicInfoWeb {
 //	}
 	
 	/**
-	 * @Describe£º»õÔ´ĞÅÏ¢ÁĞ±í
+	 * @Describeï¼šè´§æºä¿¡æ¯åˆ—è¡¨
 	 * @param portName
 	 * @param parameterList
 	 * @return
 	 * @throws AbAppException
 	 * @Throws 
-	 * @Date£º2013-12-27 ÉÏÎç10:10:09
+	 * @Dateï¼š2013-12-27 ä¸Šåˆ10:10:09
 	 * @Version v1.0
 	 */
 	public static List<CargoInfo> cargoInfoList(String portName, List<Parameter> parameterList) throws AbAppException {
@@ -100,29 +100,29 @@ public class PublicInfoWeb {
 		CargoInfo cargoInfo = null;
 		try {
 			String xml = MethodUtil.getParameterString(portName, parameterList);
-			// ¸ù¾İÄÚÈİÀ´Ô´µØÖ·´´½¨Ò»¸öHttpÇëÇó
+			// æ ¹æ®å†…å®¹æ¥æºåœ°å€åˆ›å»ºä¸€ä¸ªHttpè¯·æ±‚
 			HttpPost request = new HttpPost(Constant.HOSTURL + interfaceName);
 			List<BasicNameValuePair> params = new ArrayList<BasicNameValuePair>();
-			// Ìí¼Ó±ØĞëµÄ²ÎÊı
+			// æ·»åŠ å¿…é¡»çš„å‚æ•°
 			params.add(new BasicNameValuePair("Xml", xml));
 			params.add(new BasicNameValuePair("DeviceMark", "aaa"));
 			params.add(new BasicNameValuePair("Token", "bbb"));
 			params.add(new BasicNameValuePair("ArrayTables", "cargoList"));
-			// ÉèÖÃ²ÎÊıµÄ±àÂë
+			// è®¾ç½®å‚æ•°çš„ç¼–ç 
 			request.setEntity(new UrlEncodedFormEntity(params, HTTP.UTF_8));
-			// ·¢ËÍÇëÇó²¢»ñÈ¡·´À¡
+			// å‘é€è¯·æ±‚å¹¶è·å–åé¦ˆ
 			HttpResponse httpResponse = new DefaultHttpClient().execute(request);
 
-			// ½âÎö·µ»ØµÄÄÚÈİ
+			// è§£æè¿”å›çš„å†…å®¹
 			if (httpResponse.getStatusLine().getStatusCode() == 200) {
 				resultString = EntityUtils.toString(httpResponse.getEntity());
 
-				// ½âÎöXmlÎÄ¼ş·µ»ØJson½á¹û¼¯
+				// è§£æXmlæ–‡ä»¶è¿”å›Jsonç»“æœé›†
 				InputStream is = new ByteArrayInputStream(resultString.getBytes("UTF-8"));
 				String resultJson = MethodUtil.parse(is);
 				Log.d("UserInfoWeb", "UserInfoWeb_UserRegister is ------------>>" + resultJson);
 
-				// ½âÎö½á¹û
+				// è§£æç»“æœ
 				JSONObject jsonObject = new JSONObject(resultJson);
 				boolean resultTag = jsonObject.getBoolean("resultTag");
 				if (resultTag) {
@@ -153,13 +153,13 @@ public class PublicInfoWeb {
 	}
 	
 	/**
-	 * @Describe£º³µÔ´ĞÅÏ¢ÁĞ±í
+	 * @Describeï¼šè½¦æºä¿¡æ¯åˆ—è¡¨
 	 * @param portName
 	 * @param parameterList
 	 * @return
 	 * @throws AbAppException
 	 * @Throws 
-	 * @Date£º2013-12-27 ÉÏÎç10:10:09
+	 * @Dateï¼š2013-12-27 ä¸Šåˆ10:10:09
 	 * @Version v1.0
 	 */
 	public static List<VehicleInfo> vehicleInfoList(String portName, List<Parameter> parameterList) throws AbAppException {
@@ -170,29 +170,29 @@ public class PublicInfoWeb {
 		VehicleInfo vehicleInfo = null;
 		try {
 			String xml = MethodUtil.getParameterString(portName, parameterList);
-			// ¸ù¾İÄÚÈİÀ´Ô´µØÖ·´´½¨Ò»¸öHttpÇëÇó
+			// æ ¹æ®å†…å®¹æ¥æºåœ°å€åˆ›å»ºä¸€ä¸ªHttpè¯·æ±‚
 			HttpPost request = new HttpPost(Constant.HOSTURL + interfaceName);
 			List<BasicNameValuePair> params = new ArrayList<BasicNameValuePair>();
-			// Ìí¼Ó±ØĞëµÄ²ÎÊı
+			// æ·»åŠ å¿…é¡»çš„å‚æ•°
 			params.add(new BasicNameValuePair("Xml", xml));
 			params.add(new BasicNameValuePair("DeviceMark", "aaa"));
 			params.add(new BasicNameValuePair("Token", "bbb"));
 			params.add(new BasicNameValuePair("ArrayTables", "vehicleList"));
-			// ÉèÖÃ²ÎÊıµÄ±àÂë
+			// è®¾ç½®å‚æ•°çš„ç¼–ç 
 			request.setEntity(new UrlEncodedFormEntity(params, HTTP.UTF_8));
-			// ·¢ËÍÇëÇó²¢»ñÈ¡·´À¡
+			// å‘é€è¯·æ±‚å¹¶è·å–åé¦ˆ
 			HttpResponse httpResponse = new DefaultHttpClient().execute(request);
 
-			// ½âÎö·µ»ØµÄÄÚÈİ
+			// è§£æè¿”å›çš„å†…å®¹
 			if (httpResponse.getStatusLine().getStatusCode() == 200) {
 				resultString = EntityUtils.toString(httpResponse.getEntity());
 
-				// ½âÎöXmlÎÄ¼ş·µ»ØJson½á¹û¼¯
+				// è§£æXmlæ–‡ä»¶è¿”å›Jsonç»“æœé›†
 				InputStream is = new ByteArrayInputStream(resultString.getBytes("UTF-8"));
 				String resultJson = MethodUtil.parse(is);
 				Log.d("UserInfoWeb", "UserInfoWeb_UserRegister is ------------>>" + resultJson);
 
-				// ½âÎö½á¹û
+				// è§£æç»“æœ
 				JSONObject jsonObject = new JSONObject(resultJson);
 				boolean resultTag = jsonObject.getBoolean("resultTag");
 				if (resultTag) {
@@ -229,29 +229,29 @@ public class PublicInfoWeb {
 //		String interfaceName = "InvokeForMobile";
 //		try {
 //			String xml = MethodUtil.getParameterString(portName, parameterList);
-//			// ¸ù¾İÄÚÈİÀ´Ô´µØÖ·´´½¨Ò»¸öHttpÇëÇó
+//			// æ ¹æ®å†…å®¹æ¥æºåœ°å€åˆ›å»ºä¸€ä¸ªHttpè¯·æ±‚
 //			HttpPost request = new HttpPost(Constant.HOSTURL + interfaceName);
 //			List<BasicNameValuePair> params = new ArrayList<BasicNameValuePair>();
-//			// Ìí¼Ó±ØĞëµÄ²ÎÊı
+//			// æ·»åŠ å¿…é¡»çš„å‚æ•°
 //			params.add(new BasicNameValuePair("Xml", xml));
 //			params.add(new BasicNameValuePair("DeviceMark", "aaa"));
 //			params.add(new BasicNameValuePair("Token", "bbb"));
 //			params.add(new BasicNameValuePair("ArrayTables", "driver|car"));
-//			// ÉèÖÃ²ÎÊıµÄ±àÂë
+//			// è®¾ç½®å‚æ•°çš„ç¼–ç 
 //			request.setEntity(new UrlEncodedFormEntity(params, HTTP.UTF_8));
-//			// ·¢ËÍÇëÇó²¢»ñÈ¡·´À¡
+//			// å‘é€è¯·æ±‚å¹¶è·å–åé¦ˆ
 //			HttpResponse httpResponse = new DefaultHttpClient().execute(request);
 //
-//			// ½âÎö·µ»ØµÄÄÚÈİ
+//			// è§£æè¿”å›çš„å†…å®¹
 //			if (httpResponse.getStatusLine().getStatusCode() == 200) {
 //				resultString = EntityUtils.toString(httpResponse.getEntity());
 //
-//				// ½âÎöXmlÎÄ¼ş·µ»ØJson½á¹û¼¯
+//				// è§£æXmlæ–‡ä»¶è¿”å›Jsonç»“æœé›†
 //				InputStream is = new ByteArrayInputStream(resultString.getBytes("UTF-8"));
 //				String resultJson = MethodUtil.parse(is);
 //				Log.d("UserInfoWeb", "UserInfoWeb_UserRegister is ------------>>" + resultJson);
 //
-//				// ½âÎö½á¹û
+//				// è§£æç»“æœ
 //				JSONObject jsonObject = new JSONObject(resultJson);
 //				boolean resultTag = jsonObject.getBoolean("resultTag");
 //				if (resultTag) {
@@ -271,13 +271,13 @@ public class PublicInfoWeb {
 	
 	
 	/**
-	 * @Describe£ºÌáÈ¡¾º¼ÛÈËĞÅÏ¢ÁĞ±í
+	 * @Describeï¼šæå–ç«ä»·äººä¿¡æ¯åˆ—è¡¨
 	 * @param portName
 	 * @param parameterList
 	 * @return
 	 * @throws AbAppException
 	 * @Throws 
-	 * @Date£º2013-12-31 ÉÏÎç10:10:09
+	 * @Dateï¼š2013-12-31 ä¸Šåˆ10:10:09
 	 * @Version v1.0
 	 */
 //	public static List<AuctionInfo> driverInfoList(String portName, List<Parameter> parameterList) throws AbAppException {
@@ -288,29 +288,29 @@ public class PublicInfoWeb {
 //		AuctionInfo auctionInfo = null;
 //		try {
 //			String xml = MethodUtil.getParameterString(portName, parameterList);
-//			// ¸ù¾İÄÚÈİÀ´Ô´µØÖ·´´½¨Ò»¸öHttpÇëÇó
+//			// æ ¹æ®å†…å®¹æ¥æºåœ°å€åˆ›å»ºä¸€ä¸ªHttpè¯·æ±‚
 //			HttpPost request = new HttpPost(Constant.HOSTURL + interfaceName);
 //			List<BasicNameValuePair> params = new ArrayList<BasicNameValuePair>();
-//			// Ìí¼Ó±ØĞëµÄ²ÎÊı
+//			// æ·»åŠ å¿…é¡»çš„å‚æ•°
 //			params.add(new BasicNameValuePair("Xml", xml));
 //			params.add(new BasicNameValuePair("DeviceMark", "aaa"));
 //			params.add(new BasicNameValuePair("Token", "bbb"));
 //			params.add(new BasicNameValuePair("ArrayTables", "cargoList"));
-//			// ÉèÖÃ²ÎÊıµÄ±àÂë
+//			// è®¾ç½®å‚æ•°çš„ç¼–ç 
 //			request.setEntity(new UrlEncodedFormEntity(params, HTTP.UTF_8));
-//			// ·¢ËÍÇëÇó²¢»ñÈ¡·´À¡
+//			// å‘é€è¯·æ±‚å¹¶è·å–åé¦ˆ
 //			HttpResponse httpResponse = new DefaultHttpClient().execute(request);
 //
-//			// ½âÎö·µ»ØµÄÄÚÈİ
+//			// è§£æè¿”å›çš„å†…å®¹
 //			if (httpResponse.getStatusLine().getStatusCode() == 200) {
 //				resultString = EntityUtils.toString(httpResponse.getEntity());
 //
-//				// ½âÎöXmlÎÄ¼ş·µ»ØJson½á¹û¼¯
+//				// è§£æXmlæ–‡ä»¶è¿”å›Jsonç»“æœé›†
 //				InputStream is = new ByteArrayInputStream(resultString.getBytes("UTF-8"));
 //				String resultJson = MethodUtil.parse(is);
 //				Log.i("PublicWeb", "AuctionInfoWeb is ------------>>" + resultJson);
 //
-//				// ½âÎö½á¹û
+//				// è§£æç»“æœ
 //				JSONObject jsonObject = new JSONObject(resultJson);
 //				boolean resultTag = jsonObject.getBoolean("resultTag");
 //				if (resultTag) {
@@ -340,13 +340,13 @@ public class PublicInfoWeb {
 	
 	
 	/**
-	 * @Describe£º·¢ËÍ¾º¼ÛĞÅÏ¢
+	 * @Describeï¼šå‘é€ç«ä»·ä¿¡æ¯
 	 * @param portName
 	 * @param parameterList
 	 * @return
 	 * @throws AbAppException
 	 * @Throws 
-	 * @Date£º2013-12-31 ÉÏÎç10:10:09
+	 * @Dateï¼š2013-12-31 ä¸Šåˆ10:10:09
 	 * @Version v1.0
 	 */
 //	public static boolean sendAuction(String portName, List<Parameter> parameterList) throws AbAppException {
@@ -357,29 +357,29 @@ public class PublicInfoWeb {
 ////		AuctionInfo auctionInfo = null;
 //		try {
 //			String xml = MethodUtil.getParameterString(portName, parameterList);
-//			// ¸ù¾İÄÚÈİÀ´Ô´µØÖ·´´½¨Ò»¸öHttpÇëÇó
+//			// æ ¹æ®å†…å®¹æ¥æºåœ°å€åˆ›å»ºä¸€ä¸ªHttpè¯·æ±‚
 //			HttpPost request = new HttpPost(Constant.HOSTURL + interfaceName);
 //			List<BasicNameValuePair> params = new ArrayList<BasicNameValuePair>();
-//			// Ìí¼Ó±ØĞëµÄ²ÎÊı
+//			// æ·»åŠ å¿…é¡»çš„å‚æ•°
 //			params.add(new BasicNameValuePair("Xml", xml));
 //			params.add(new BasicNameValuePair("DeviceMark", "aaa"));
 //			params.add(new BasicNameValuePair("Token", "bbb"));
 //			params.add(new BasicNameValuePair("ArrayTables", "cargoList"));
-//			// ÉèÖÃ²ÎÊıµÄ±àÂë
+//			// è®¾ç½®å‚æ•°çš„ç¼–ç 
 //			request.setEntity(new UrlEncodedFormEntity(params, HTTP.UTF_8));
-//			// ·¢ËÍÇëÇó²¢»ñÈ¡·´À¡
+//			// å‘é€è¯·æ±‚å¹¶è·å–åé¦ˆ
 //			HttpResponse httpResponse = new DefaultHttpClient().execute(request);
 //
-//			// ½âÎö·µ»ØµÄÄÚÈİ
+//			// è§£æè¿”å›çš„å†…å®¹
 //			if (httpResponse.getStatusLine().getStatusCode() == 200) {
 //				resultString = EntityUtils.toString(httpResponse.getEntity());
 //
-//				// ½âÎöXmlÎÄ¼ş·µ»ØJson½á¹û¼¯
+//				// è§£æXmlæ–‡ä»¶è¿”å›Jsonç»“æœé›†
 //				InputStream is = new ByteArrayInputStream(resultString.getBytes("UTF-8"));
 //				String resultJson = MethodUtil.parse(is);
 //				Log.i("PublicWeb", "AuctionInfoWeb is ------------>>" + resultJson);
 //
-//				// ½âÎö½á¹û
+//				// è§£æç»“æœ
 //				JSONObject jsonObject = new JSONObject(resultJson);
 //				boolean resultTag = jsonObject.getBoolean("resultTag");
 //				if (resultTag) {
@@ -411,13 +411,13 @@ public class PublicInfoWeb {
 
 	/**
 	 * 
-	 * @Describe£º»ñÈ¡»õÔ´ĞÅÏ¢ÏêÇéÊı¾İ
+	 * @Describeï¼šè·å–è´§æºä¿¡æ¯è¯¦æƒ…æ•°æ®
 	 * @param portName
 	 * @param parameterList
 	 * @return
 	 * @throws AbAppException
 	 * @Throws 
-	 * @Date£º2014-1-7 ÏÂÎç3:52:01
+	 * @Dateï¼š2014-1-7 ä¸‹åˆ3:52:01
 	 * @Version v1.0
 	 */
 //	public static CargoInfo cargoInfoDetail(String portName, List<Parameter> parameterList) throws AbAppException {
@@ -428,29 +428,29 @@ public class PublicInfoWeb {
 //		CargoInfo cargoInfo = null;
 //		try {
 //			String xml = MethodUtil.getParameterString(portName, parameterList);
-//			// ¸ù¾İÄÚÈİÀ´Ô´µØÖ·´´½¨Ò»¸öHttpÇëÇó
+//			// æ ¹æ®å†…å®¹æ¥æºåœ°å€åˆ›å»ºä¸€ä¸ªHttpè¯·æ±‚
 //			HttpPost request = new HttpPost(Constant.HOSTURL + interfaceName);
 //			List<BasicNameValuePair> params = new ArrayList<BasicNameValuePair>();
-//			// Ìí¼Ó±ØĞëµÄ²ÎÊı
+//			// æ·»åŠ å¿…é¡»çš„å‚æ•°
 //			params.add(new BasicNameValuePair("Xml", xml));
 //			params.add(new BasicNameValuePair("DeviceMark", "aaa"));
 //			params.add(new BasicNameValuePair("Token", "bbb"));
 //			params.add(new BasicNameValuePair("ArrayTables", "cargoDetail"));
-//			// ÉèÖÃ²ÎÊıµÄ±àÂë
+//			// è®¾ç½®å‚æ•°çš„ç¼–ç 
 //			request.setEntity(new UrlEncodedFormEntity(params, HTTP.UTF_8));
-//			// ·¢ËÍÇëÇó²¢»ñÈ¡·´À¡
+//			// å‘é€è¯·æ±‚å¹¶è·å–åé¦ˆ
 //			HttpResponse httpResponse = new DefaultHttpClient().execute(request);
 //
-//			// ½âÎö·µ»ØµÄÄÚÈİ
+//			// è§£æè¿”å›çš„å†…å®¹
 //			if (httpResponse.getStatusLine().getStatusCode() == 200) {
 //				resultString = EntityUtils.toString(httpResponse.getEntity());
 //
-//				// ½âÎöXmlÎÄ¼ş·µ»ØJson½á¹û¼¯
+//				// è§£æXmlæ–‡ä»¶è¿”å›Jsonç»“æœé›†
 //				InputStream is = new ByteArrayInputStream(resultString.getBytes("UTF-8"));
 //				String resultJson = MethodUtil.parse(is);
 //				Log.d("UserInfoWeb", "UserInfoWeb_UserRegister is ------------>>" + resultJson);
 //
-//				// ½âÎö½á¹û
+//				// è§£æç»“æœ
 //				JSONObject jsonObject = new JSONObject(resultJson);
 //				boolean resultTag = jsonObject.getBoolean("resultTag");
 //				if (resultTag) {
@@ -481,13 +481,13 @@ public class PublicInfoWeb {
 
 	/**
 	 * 
-	 * @Describe£º»ñÈ¡³µÔ´ĞÅÏ¢ÏêÇéÊı¾İ
+	 * @Describeï¼šè·å–è½¦æºä¿¡æ¯è¯¦æƒ…æ•°æ®
 	 * @param portName
 	 * @param parameterList
 	 * @return
 	 * @throws AbAppException
 	 * @Throws 
-	 * @Date£º2014-1-7 ÏÂÎç4:58:16
+	 * @Dateï¼š2014-1-7 ä¸‹åˆ4:58:16
 	 * @Version v1.0
 	 */
 //	public static String vehicleInfoDetail(String portName, List<Parameter> parameterList) throws AbAppException {
@@ -498,29 +498,29 @@ public class PublicInfoWeb {
 //		AuctionInfo auctionInfo = null;
 //		try {
 //			String xml = MethodUtil.getParameterString(portName, parameterList);
-//			// ¸ù¾İÄÚÈİÀ´Ô´µØÖ·´´½¨Ò»¸öHttpÇëÇó
+//			// æ ¹æ®å†…å®¹æ¥æºåœ°å€åˆ›å»ºä¸€ä¸ªHttpè¯·æ±‚
 //			HttpPost request = new HttpPost(Constant.HOSTURL + interfaceName);
 //			List<BasicNameValuePair> params = new ArrayList<BasicNameValuePair>();
-//			// Ìí¼Ó±ØĞëµÄ²ÎÊı
+//			// æ·»åŠ å¿…é¡»çš„å‚æ•°
 //			params.add(new BasicNameValuePair("Xml", xml));
 //			params.add(new BasicNameValuePair("DeviceMark", "aaa"));
 //			params.add(new BasicNameValuePair("Token", "bbb"));
 //			params.add(new BasicNameValuePair("ArrayTables", "cargoList"));
-//			// ÉèÖÃ²ÎÊıµÄ±àÂë
+//			// è®¾ç½®å‚æ•°çš„ç¼–ç 
 //			request.setEntity(new UrlEncodedFormEntity(params, HTTP.UTF_8));
-//			// ·¢ËÍÇëÇó²¢»ñÈ¡·´À¡
+//			// å‘é€è¯·æ±‚å¹¶è·å–åé¦ˆ
 //			HttpResponse httpResponse = new DefaultHttpClient().execute(request);
 //
-//			// ½âÎö·µ»ØµÄÄÚÈİ
+//			// è§£æè¿”å›çš„å†…å®¹
 //			if (httpResponse.getStatusLine().getStatusCode() == 200) {
 //				resultString = EntityUtils.toString(httpResponse.getEntity());
 //
-//				// ½âÎöXmlÎÄ¼ş·µ»ØJson½á¹û¼¯
+//				// è§£æXmlæ–‡ä»¶è¿”å›Jsonç»“æœé›†
 //				InputStream is = new ByteArrayInputStream(resultString.getBytes("UTF-8"));
 //				String resultJson = MethodUtil.parse(is);
 //				Log.i("PublicWeb", "AuctionInfoWeb is ------------>>" + resultJson);
 //
-//				// ½âÎö½á¹û
+//				// è§£æç»“æœ
 //				JSONObject jsonObject = new JSONObject(resultJson);
 //				boolean resultTag = jsonObject.getBoolean("resultTag");
 //				if (resultTag) {
@@ -552,13 +552,13 @@ public class PublicInfoWeb {
 	
 	/**
 	 * 
-	 * @Describe£º¸ù¾İÓÃ»§User_id»ñÈ¡Ë¾»úÏêÇéÊı¾İ
+	 * @Describeï¼šæ ¹æ®ç”¨æˆ·User_idè·å–å¸æœºè¯¦æƒ…æ•°æ®
 	 * @param portName
 	 * @param parameterList
 	 * @return
 	 * @throws AbAppException
 	 * @Throws 
-	 * @Date£º2014-1-7 ÏÂÎç3:52:01
+	 * @Dateï¼š2014-1-7 ä¸‹åˆ3:52:01
 	 * @Version v1.0
 	 */
 //	public static DriverUserInfo DriverUserInfoDetail(String portName, List<Parameter> parameterList) throws AbAppException {
@@ -569,29 +569,29 @@ public class PublicInfoWeb {
 //		DriverUserInfo driverUserInfo = null;
 //		try {
 //			String xml = MethodUtil.getParameterString(portName, parameterList);
-//			// ¸ù¾İÄÚÈİÀ´Ô´µØÖ·´´½¨Ò»¸öHttpÇëÇó
+//			// æ ¹æ®å†…å®¹æ¥æºåœ°å€åˆ›å»ºä¸€ä¸ªHttpè¯·æ±‚
 //			HttpPost request = new HttpPost(Constant.HOSTURL + interfaceName);
 //			List<BasicNameValuePair> params = new ArrayList<BasicNameValuePair>();
-//			// Ìí¼Ó±ØĞëµÄ²ÎÊı
+//			// æ·»åŠ å¿…é¡»çš„å‚æ•°
 //			params.add(new BasicNameValuePair("Xml", xml));
 //			params.add(new BasicNameValuePair("DeviceMark", "aaa"));
 //			params.add(new BasicNameValuePair("Token", "bbb"));
 //			params.add(new BasicNameValuePair("ArrayTables", "cargoDetail"));
-//			// ÉèÖÃ²ÎÊıµÄ±àÂë
+//			// è®¾ç½®å‚æ•°çš„ç¼–ç 
 //			request.setEntity(new UrlEncodedFormEntity(params, HTTP.UTF_8));
-//			// ·¢ËÍÇëÇó²¢»ñÈ¡·´À¡
+//			// å‘é€è¯·æ±‚å¹¶è·å–åé¦ˆ
 //			HttpResponse httpResponse = new DefaultHttpClient().execute(request);
 //
-//			// ½âÎö·µ»ØµÄÄÚÈİ
+//			// è§£æè¿”å›çš„å†…å®¹
 //			if (httpResponse.getStatusLine().getStatusCode() == 200) {
 //				resultString = EntityUtils.toString(httpResponse.getEntity());
 //
-//				// ½âÎöXmlÎÄ¼ş·µ»ØJson½á¹û¼¯
+//				// è§£æXmlæ–‡ä»¶è¿”å›Jsonç»“æœé›†
 //				InputStream is = new ByteArrayInputStream(resultString.getBytes("UTF-8"));
 //				String resultJson = MethodUtil.parse(is);
 //				Log.d("DriverUserInfo", "DriverUserInfo is ------------>>" + resultJson);
 //
-//				// ½âÎö½á¹û
+//				// è§£æç»“æœ
 //				JSONObject jsonObject = new JSONObject(resultJson);
 //				boolean resultTag = jsonObject.getBoolean("resultTag");
 //				if (resultTag) {
@@ -621,13 +621,13 @@ public class PublicInfoWeb {
 	
 	/**
 	 * 
-	 * @Describe£º¸ù¾İ³µÁ¾Car_Id»ñÈ¡³µÁ¾ÏêÇéÊı¾İ
+	 * @Describeï¼šæ ¹æ®è½¦è¾†Car_Idè·å–è½¦è¾†è¯¦æƒ…æ•°æ®
 	 * @param portName
 	 * @param parameterList
 	 * @return
 	 * @throws AbAppException
 	 * @Throws 
-	 * @Date£º2014-1-7 ÏÂÎç3:52:01
+	 * @Dateï¼š2014-1-7 ä¸‹åˆ3:52:01
 	 * @Version v1.0
 	 */
 //	public static DriverCarInfo DriverCarInfoDetail(String portName, List<Parameter> parameterList) throws AbAppException {
@@ -637,29 +637,29 @@ public class PublicInfoWeb {
 //		DriverCarInfo driverCarInfo = null;
 //		try {
 //			String xml = MethodUtil.getParameterString(portName, parameterList);
-//			// ¸ù¾İÄÚÈİÀ´Ô´µØÖ·´´½¨Ò»¸öHttpÇëÇó
+//			// æ ¹æ®å†…å®¹æ¥æºåœ°å€åˆ›å»ºä¸€ä¸ªHttpè¯·æ±‚
 //			HttpPost request = new HttpPost(Constant.HOSTURL + interfaceName);
 //			List<BasicNameValuePair> params = new ArrayList<BasicNameValuePair>();
-//			// Ìí¼Ó±ØĞëµÄ²ÎÊı
+//			// æ·»åŠ å¿…é¡»çš„å‚æ•°
 //			params.add(new BasicNameValuePair("Xml", xml));
 //			params.add(new BasicNameValuePair("DeviceMark", "aaa"));
 //			params.add(new BasicNameValuePair("Token", "bbb"));
 //			params.add(new BasicNameValuePair("ArrayTables", "cargoDetail"));
-//			// ÉèÖÃ²ÎÊıµÄ±àÂë
+//			// è®¾ç½®å‚æ•°çš„ç¼–ç 
 //			request.setEntity(new UrlEncodedFormEntity(params, HTTP.UTF_8));
-//			// ·¢ËÍÇëÇó²¢»ñÈ¡·´À¡
+//			// å‘é€è¯·æ±‚å¹¶è·å–åé¦ˆ
 //			HttpResponse httpResponse = new DefaultHttpClient().execute(request);
 //
-//			// ½âÎö·µ»ØµÄÄÚÈİ
+//			// è§£æè¿”å›çš„å†…å®¹
 //			if (httpResponse.getStatusLine().getStatusCode() == 200) {
 //				resultString = EntityUtils.toString(httpResponse.getEntity());
 //
-//				// ½âÎöXmlÎÄ¼ş·µ»ØJson½á¹û¼¯
+//				// è§£æXmlæ–‡ä»¶è¿”å›Jsonç»“æœé›†
 //				InputStream is = new ByteArrayInputStream(resultString.getBytes("UTF-8"));
 //				String resultJson = MethodUtil.parse(is);
 //				Log.d("DriverCarInfo", "DriverCarInfo is ------------>>" + resultJson);
 //
-//				// ½âÎö½á¹û
+//				// è§£æç»“æœ
 //				JSONObject jsonObject = new JSONObject(resultJson);
 //				boolean resultTag = jsonObject.getBoolean("resultTag");
 //				if (resultTag) {
