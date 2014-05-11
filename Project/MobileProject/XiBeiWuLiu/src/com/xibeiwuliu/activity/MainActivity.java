@@ -32,7 +32,7 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 	private MyApplication application = null;
 	private MyImgScroll myPager; // 图片容器
 	private LinearLayout ovalLayout; // 圆点容器
-	private List<View> listViews; // 图片组
+	private List<View> listViews; // 图片组  
 	private LinearLayout layoutItem01, layoutItem02, layoutItem03, layoutItem04, layoutItem05, layoutItem06, layoutItem07, layoutItem08;
 	private boolean isShowRightBut = true; // 是否显示右边按钮
 	private SqliteDaoArea daoArea = null;
