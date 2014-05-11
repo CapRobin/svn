@@ -23,7 +23,7 @@ import com.xibeiwuliu.view.MyImgScroll;
  * @Name：MainActivity.java
  * @Describe：物流首页
  * @Author: yfr5734@gmail.com
- * @Date：2014年4月28日 下午4:32:30
+ * @Date：2014年4月28日 下午4:32:30  
  * @Version v1.0 *
  * 
  */
