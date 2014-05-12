@@ -10,7 +10,7 @@
         android:icon="@drawable/logo"
         android:label="@string/app_name" >
         <activity
-            android:name=".MainActivity"
+            android:name="zxing.standopen.TwoDimensionCodeActivity"
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Translucent" >
             <intent-filter>
@@ -26,7 +26,7 @@
 <!--             android:windowSoftInputMode="adjustPan" > -->
 <!--         </activity> -->
         <activity
-            android:name=".ShowView"
+            android:name="zxing.standopen.TwoDimensionCodeShowActivity"
             android:label="@string/app_name" >
         </activity>
         <activity
