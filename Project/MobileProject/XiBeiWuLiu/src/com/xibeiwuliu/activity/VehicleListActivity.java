@@ -22,12 +22,13 @@ import com.xibeiwuliu.global.MyApplication;
 import com.xibeiwuliu.web.PublicInfoWeb;
 
 /**
+ * 
  * Copyright (c) 2013 All rights reserved
  * 
- * @Name：LorryListActivity.java
+ * @Name：VehicleListActivity.java
  * @Describe：车源信息
  * @Author: yfr5734@gmail.com
- * @Date：2014年4月28日 下午4:42:04
+ * @Date：2014年5月12日 上午9:33:55
  * @Version v1.0 *
  * 
  */
@@ -91,10 +92,10 @@ public class VehicleListActivity extends BaseActivity {
 			}
 		});
 
-		//右侧按钮的点击事件
+		// 右侧按钮的点击事件
 		if (isShowRightBut) {
 			this.rightTitleBut.setOnClickListener(new OnClickListener() {
-				
+
 				@Override
 				public void onClick(View v) {
 					String Msg = "找车源";

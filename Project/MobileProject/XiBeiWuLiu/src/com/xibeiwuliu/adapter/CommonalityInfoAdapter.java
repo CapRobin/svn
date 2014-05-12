@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import com.xibeiwuliu.activity.R;
 import com.xibeiwuliu.entity.CargoInfo;
-//import com.andbase.global.Constant;
+
 
 /**
  * 
@@ -27,8 +27,7 @@ import com.xibeiwuliu.entity.CargoInfo;
 public class CommonalityInfoAdapter extends BaseAdapter {
 
 	private static String TAG = "ImageListAdapter";
-	private SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");	 
-//	private static final boolean D = Constant.DEBUG;
+	private SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
 
 	private Context mContext;
 	private LayoutInflater mInflater;
@@ -79,10 +78,10 @@ public class CommonalityInfoAdapter extends BaseAdapter {
 
 		String addTime = mData.get(position).getInfo_AddTime();
 		// 获取该行的数据
-//		if (addTime == null) {
-//			Date   curDate   =   new   Date(System.currentTimeMillis());//获取当前时间     
-//			addTime   =   formatter.format(curDate);    
-//		}
+		// if (addTime == null) {
+		// Date curDate = new Date(System.currentTimeMillis());//获取当前时间
+		// addTime = formatter.format(curDate);
+		// }
 		holder.msg_content.setText(mData.get(position).getInfo_connect());
 		holder.msg_date.setText(addTime);
 

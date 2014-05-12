@@ -24,13 +24,14 @@ import com.xibeiwuliu.view.MyImgScroll;
 
 /**
  * 
-  * Copyright (c) 2013 All rights reserved
-  * @Name：RelevantInfoActivity.java 
-  * @Describe：行业资讯
-  * @Author:  yfr5734@gmail.com
-  * @Date：2014年5月8日 下午3:21:49
-  * @Version v1.0 *
-  *
+ * Copyright (c) 2013 All rights reserved
+ * 
+ * @Name：RelevantInfoActivity.java
+ * @Describe：行业资讯
+ * @Author: yfr5734@gmail.com
+ * @Date：2014年5月8日 下午3:21:49
+ * @Version v1.0 *
+ * 
  */
 public class RelevantInfoActivity extends BaseActivity {
 
@@ -59,7 +60,7 @@ public class RelevantInfoActivity extends BaseActivity {
 
 	/**
 	 * 
-	 * @Describe：初始化View 
+	 * @Describe：初始化View
 	 * @Throws:
 	 * @Date：2014年4月28日 上午11:07:32
 	 * @Version v1.0
@@ -68,12 +69,12 @@ public class RelevantInfoActivity extends BaseActivity {
 		daoArea = SqliteDaoArea.getInstance(RelevantInfoActivity.this);
 		myPager = (MyImgScroll) findViewById(R.id.myvp);
 		ovalLayout = (LinearLayout) findViewById(R.id.vb);
-//		cargoList = (AbPullListView) findViewById(R.id.cargoList);
+		// cargoList = (AbPullListView) findViewById(R.id.cargoList);
 		// 初始化图片
 		InitViewPager();
 		// 开始滚动
 		myPager.start(this, listViews, 4000, ovalLayout, R.layout.ad_bottom_item, R.id.ad_item_v, R.drawable.dot_focused, R.drawable.dot_normal);
-		
+
 		mAbTaskQueue = AbTaskQueue.getInstance();
 
 		// 获取ListView对象
@@ -83,22 +84,21 @@ public class RelevantInfoActivity extends BaseActivity {
 		cargoList.setPullLoadEnable(true);
 
 		mRelevantInfoList = new ArrayList<RelevantInfo>();
-		
-		//构造数据
+
+		// 构造数据
 		RelevantInfo info = null;
 		for (int i = 0; i < 50; i++) {
 			info = new RelevantInfo();
-			info.setTitleName("资讯"+ i );
-			info.setContent(getResources().getString(R.string.contentText)+i);
-			info.setTime(String.valueOf(2001+i)+"_05_08");
+			info.setTitleName("资讯" + i);
+			info.setContent(getResources().getString(R.string.contentText) + i);
+			info.setTime(String.valueOf(2001 + i) + "_05_08");
 			mRelevantInfoList.add(info);
 		}
-		
 
 		// 使用自定义的Adapter
 		myListViewAdapter = new RelevantInfoAdapter(RelevantInfoActivity.this, mRelevantInfoList);
 		cargoList.setAdapter(myListViewAdapter);
-		
+
 		cargoList.setOnItemClickListener(new OnItemClickListener() {
 
 			@Override
@@ -108,9 +108,9 @@ public class RelevantInfoActivity extends BaseActivity {
 				String infoContent = cargoInfo.getContent();
 				String infoTime = cargoInfo.getTime();
 				Intent intent = new Intent(RelevantInfoActivity.this, RelevantInfoDetailActivity.class);
-//				Bundle bundle = new Bundle();
-//				bundle.putSerializable("cargoInfo", cargoInfo);
-//				intent.putExtra("bundle", bundle);
+				// Bundle bundle = new Bundle();
+				// bundle.putSerializable("cargoInfo", cargoInfo);
+				// intent.putExtra("bundle", bundle);
 				intent.putExtra("infoName", infoName);
 				intent.putExtra("infoContent", infoContent);
 				intent.putExtra("infoTime", infoTime);
@@ -127,7 +127,8 @@ public class RelevantInfoActivity extends BaseActivity {
 	 */
 	private void InitViewPager() {
 		listViews = new ArrayList<View>();
-		int[] imageResId = new int[] { R.drawable.hyzx_01, R.drawable.hyzx_02, R.drawable.hyzx_03, R.drawable.hyzx_04, R.drawable.hyzx_05, R.drawable.hyzx_06 };
+		int[] imageResId = new int[] { R.drawable.hyzx_01, R.drawable.hyzx_02, R.drawable.hyzx_03, R.drawable.hyzx_04, R.drawable.hyzx_05,
+				R.drawable.hyzx_06 };
 		for (int i = 0; i < imageResId.length; i++) {
 			final int imageItem = i;
 			ImageView imageView = new ImageView(this);

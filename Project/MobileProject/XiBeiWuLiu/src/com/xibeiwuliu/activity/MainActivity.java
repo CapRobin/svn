@@ -83,7 +83,7 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 				@Override
 				public void onClick(View v) {
 					String Msg = "个人中心";
-					Intent intent = new Intent(MainActivity.this, SettingCenterActivity.class);
+					Intent intent = new Intent(MainActivity.this, PersonalCenterActivity.class);
 					intent.putExtra("msg", Msg);
 					startActivity(intent);
 				}
@@ -221,7 +221,7 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 			break;
 		case R.id.layoutItem04:
 			Msg = "预约查询";
-			intent.setClass(MainActivity.this, TestActivity.class);
+			intent.setClass(MainActivity.this, OrderSearchActivity.class);
 			intent.putExtra("msg", Msg);
 			startActivity(intent);
 			break;

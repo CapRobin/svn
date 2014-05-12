@@ -22,9 +22,9 @@ import com.xibeiwuliu.global.MyApplication;
  * Copyright (c) 2013 All rights reserved
  * 
  * @Name：VehicleListDetailActivity.java
- * @Describe：信息详情
+ * @Describe：车源信息
  * @Author: yfr5734@gmail.com
- * @Date：2014年4月30日 下午3:40:08
+ * @Date：2014年5月12日 上午9:34:11
  * @Version v1.0 *
  * 
  */

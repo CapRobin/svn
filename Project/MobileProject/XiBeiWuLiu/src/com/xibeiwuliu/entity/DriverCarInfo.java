@@ -12,22 +12,22 @@ package com.xibeiwuliu.entity;
  */
 public class DriverCarInfo {
 
-	private String Add_id; 				// id
-	private String Duser_id; 				// 车主_id
-	private String Car_key; 				// 车牌
-	private String Car_type; 				// 车型
-	private String Car_length; 			// 车长(M)
+	private String Add_id; // id
+	private String Duser_id; // 车主_id
+	private String Car_key; // 车牌
+	private String Car_type; // 车型
+	private String Car_length; // 车长(M)
 
-	private String Car_height; 			// 车高
-	private String Car_max_dun; 	// 最大承载吨位(Kg)
-	private String Car_bulk; 				// 容积(M3)
-	private String Car_Fkey; 			// 发动机号
-	private String Car_Jkey; 			// 车架号码
+	private String Car_height; // 车高
+	private String Car_max_dun; // 最大承载吨位(Kg)
+	private String Car_bulk; // 容积(M3)
+	private String Car_Fkey; // 发动机号
+	private String Car_Jkey; // 车架号码
 
-	private String Car_Ykey; 			// 运营证号
-	private String Car_Bkey; 			// 保险卡号
-	private String Car_Gunit; 			// 挂靠单位
-	private String Add_time; 			// 添加时间
+	private String Car_Ykey; // 运营证号
+	private String Car_Bkey; // 保险卡号
+	private String Car_Gunit; // 挂靠单位
+	private String Add_time; // 添加时间
 
 	public String getAdd_id() {
 		return Add_id;

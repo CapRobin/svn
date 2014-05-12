@@ -77,7 +77,7 @@ public class CargoListActivity extends BaseActivity {
 		// 使用自定义的Adapter
 		myListViewAdapter = new CommonalityInfoAdapter(CargoListActivity.this, mCargoInfoList);
 		cargoList.setAdapter(myListViewAdapter);
-		
+
 		cargoList.setOnItemClickListener(new OnItemClickListener() {
 
 			@Override
@@ -90,13 +90,11 @@ public class CargoListActivity extends BaseActivity {
 				startActivity(intent);
 			}
 		});
-		
 
-
-		//右侧按钮的点击事件
+		// 右侧按钮的点击事件
 		if (isShowRightBut) {
 			this.rightTitleBut.setOnClickListener(new OnClickListener() {
-				
+
 				@Override
 				public void onClick(View v) {
 					String Msg = "找货源";

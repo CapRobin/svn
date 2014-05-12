@@ -2,6 +2,16 @@ package com.xibeiwuliu.entity;
 
 import android.graphics.Bitmap;
 
+/**
+ * 
+  * Copyright (c) 2013 All rights reserved
+  * @Name：ContactInfo.java 
+  * @Describe：联系人实体类
+  * @Author:  yfr5734@gmail.com
+  * @Date：2014年5月12日 上午9:44:23
+  * @Version v1.0 *
+  *
+ */
 public class ContactInfo {
 	private String name;
 	private String phone;

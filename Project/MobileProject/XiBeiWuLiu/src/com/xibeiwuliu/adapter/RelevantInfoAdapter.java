@@ -11,7 +11,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.xibeiwuliu.activity.R;
-import com.xibeiwuliu.entity.CargoInfo;
 import com.xibeiwuliu.entity.RelevantInfo;
 
 /**

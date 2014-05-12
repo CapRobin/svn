@@ -13,6 +13,17 @@ import android.widget.Toast;
 import com.ab.activity.AbActivity;
 import com.ab.view.titlebar.AbTitleBar;
 
+/**
+ * 
+ * Copyright (c) 2013 All rights reserved
+ * 
+ * @Name：BaseActivity.java
+ * @Describe：Activity基类
+ * @Author: yfr5734@gmail.com
+ * @Date：2014年5月12日 上午9:23:10
+ * @Version v1.0 *
+ * 
+ */
 public class BaseActivity extends AbActivity {
 	public Button rightTitleBut = null;
 	public Handler mBaseHandler = new Handler() {
@@ -45,8 +56,10 @@ public class BaseActivity extends AbActivity {
 	/**
 	 * 
 	 * @Describe：TODO
-	 * @param titleMsg					标题名称
-	 * @param isShowRightBar		是否显示右边的按钮
+	 * @param titleMsg
+	 *            标题名称
+	 * @param isShowRightBar
+	 *            是否显示右边的按钮
 	 * @Throws:
 	 * @Date：2014年4月29日 上午10:38:04
 	 * @Version v1.0

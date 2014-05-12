@@ -9,6 +9,17 @@ import android.widget.Toast;
 
 import com.xibeiwuliu.view.MyView;
 
+/**
+ * 
+ * Copyright (c) 2013 All rights reserved
+ * 
+ * @Name：PublishVehicleActivity.java
+ * @Describe：发布车源
+ * @Author: yfr5734@gmail.com
+ * @Date：2014年5月12日 上午9:29:41
+ * @Version v1.0 *
+ * 
+ */
 public class PublishVehicleActivity extends BaseActivity implements OnClickListener {
 	private boolean isShowRightBut = false;
 	private Button publicInfoBut, isYuYueBut;

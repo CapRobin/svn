@@ -3,7 +3,6 @@ package com.xibeiwuliu.activity;
 import java.util.ArrayList;
 import java.util.List;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.telephony.SmsManager;
 import android.text.TextUtils;
@@ -84,9 +83,10 @@ public class ContactListActivity extends AbActivity implements OnClickListener {
 		case R.id.backImage:
 			finish();
 			break;
-//		case R.id.addNumber:
-//			startActivity(new Intent(ContactListActivity.this, ContactListActivity.class));
-//			break;
+		// case R.id.addNumber:
+		// startActivity(new Intent(ContactListActivity.this,
+		// ContactListActivity.class));
+		// break;
 		case R.id.sendBtn:
 
 			// 获取输入号码

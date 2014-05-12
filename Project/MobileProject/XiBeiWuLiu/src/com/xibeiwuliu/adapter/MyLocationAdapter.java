@@ -2,28 +2,27 @@ package com.xibeiwuliu.adapter;
 
 import java.util.List;
 
-import com.xibeiwuliu.activity.R;
-import com.xibeiwuliu.entity.AreaInfo;
-
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.xibeiwuliu.activity.R;
+import com.xibeiwuliu.entity.AreaInfo;
+
 /**
  * 
  * Copyright (c) 2013 All rights reserved
  * 
- * @Name：UserAuctionAdapter.java
+ * @Name：MyLocationAdapter.java
  * @Describe：区域显示适配器
  * @Author: yfr5734@gmail.com
- * @Date：2014年5月6日 下午2:07:59
+ * @Date：2014年5月12日 上午9:38:17
  * @Version v1.0 *
  * 
  */
@@ -69,16 +68,16 @@ public class MyLocationAdapter extends BaseAdapter {
 
 		String itemTextStr = itemList.get(position).getCcityName();
 		head.itemText.setText(itemTextStr);
-		
-//		head.itemText.setOnClickListener(new OnClickListener() {
-//			
-//			@Override
-//			public void onClick(View v) {
-//				head.layout.setBackgroundResource(R.drawable.view_item_bg);
-//			}
-//		});
+
+		// head.itemText.setOnClickListener(new OnClickListener() {
+		//
+		// @Override
+		// public void onClick(View v) {
+		// head.layout.setBackgroundResource(R.drawable.view_item_bg);
+		// }
+		// });
 		head.layout.setOnTouchListener(new OnTouchListener() {
-			
+
 			@Override
 			public boolean onTouch(View v, MotionEvent event) {
 				head.layout.setBackgroundResource(R.drawable.view_item_bg);

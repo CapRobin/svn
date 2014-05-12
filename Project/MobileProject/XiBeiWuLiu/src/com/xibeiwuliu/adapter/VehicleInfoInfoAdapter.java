@@ -12,12 +12,12 @@ import android.widget.TextView;
 
 import com.xibeiwuliu.activity.R;
 import com.xibeiwuliu.entity.VehicleInfo;
-//import com.andbase.global.Constant;
 
 /**
  * 
  * Copyright (c) 2012 All rights reserved
- * @Name：VehicleInfoInfoAdapter.java 
+ * 
+ * @Name：VehicleInfoInfoAdapter.java
  * @Describe：车辆信息数据适配
  * @Author yufarong_yfr5734@163.com
  * @Date：2014-1-3 下午2:44:28
@@ -26,8 +26,7 @@ import com.xibeiwuliu.entity.VehicleInfo;
 public class VehicleInfoInfoAdapter extends BaseAdapter {
 
 	private static String TAG = "ImageListAdapter";
-	private SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");	 
-//	private static final boolean D = Constant.DEBUG;
+	private SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
 
 	private Context mContext;
 	private LayoutInflater mInflater;
@@ -77,10 +76,10 @@ public class VehicleInfoInfoAdapter extends BaseAdapter {
 		}
 
 		// 获取该行的数据
-//		if (addTime == null) {
-//			Date   curDate   =   new   Date(System.currentTimeMillis());//获取当前时间     
-//			addTime   =   formatter.format(curDate);    
-//		}
+		// if (addTime == null) {
+		// Date curDate = new Date(System.currentTimeMillis());//获取当前时间
+		// addTime = formatter.format(curDate);
+		// }
 		holder.msg_content.setText(mData.get(position).getInfo_connect());
 		holder.msg_date.setText(mData.get(position).getCar_InfoAddTime());
 

@@ -3,19 +3,22 @@ package com.xibeiwuliu.database;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.xibeiwuliu.entity.AreaInfo;
-
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.xibeiwuliu.entity.AreaInfo;
+
 /**
  * 
- * Copyright (c) 2012 All rights reserved 名称：SqliteDaoArea.java 描述：查看地区数据
+ * Copyright (c) 2013 All rights reserved
  * 
- * @author Yu Farong - yfr5734@gmail.com
- * @date：2014年1月17日 上午7:14:33
- * @version v1.0
+ * @Name：SqliteDaoArea.java
+ * @Describe：查看地区数据
+ * @Author: yfr5734@gmail.com
+ * @Date：2014年5月12日 上午9:39:19
+ * @Version v1.0 *
+ * 
  */
 public class SqliteDaoArea {
 
@@ -85,10 +88,11 @@ public class SqliteDaoArea {
 	 * @version v1.0
 	 */
 	public synchronized List<AreaInfo> getAreaInfo(int ParentID) {
-//		List<String> list = new ArrayList<String>();
+		// List<String> list = new ArrayList<String>();
 		List<AreaInfo> areaList = new ArrayList<AreaInfo>();
-		AreaInfo areaInfo =null;
-//		String sql_1 = "SELECT * FROM LocationTable WHERE id = " + docId + "";
+		AreaInfo areaInfo = null;
+		// String sql_1 = "SELECT * FROM LocationTable WHERE id = " + docId +
+		// "";
 		String sql_1 = "SELECT * FROM LocationTable WHERE ParentID = " + ParentID + "";
 		Cursor cursor = null;
 		try {
@@ -104,7 +108,7 @@ public class SqliteDaoArea {
 					areaInfo.setCcityName(cityName);
 					areaInfo.setParentId(parentID);
 					areaList.add(areaInfo);
-//					list.add(string);
+					// list.add(string);
 				}
 			}
 		} catch (Exception e) {

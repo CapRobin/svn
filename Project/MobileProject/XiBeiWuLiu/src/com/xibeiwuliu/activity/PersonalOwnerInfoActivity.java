@@ -1,25 +1,20 @@
 package com.xibeiwuliu.activity;
 
 import android.os.Bundle;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.ab.activity.AbActivity;
-import com.ab.view.titlebar.AbTitleBar;
 import com.xibeiwuliu.global.MyApplication;
 
 /**
  * 
-  * Copyright (c) 2013 All rights reserved
-  * @Name：PersonalOwnerInfoActivity.java 
-  * @Describe：货主个人信息
-  * @Author:  yfr5734@gmail.com
-  * @Date：2014年4月29日 下午4:56:11
-  * @Version v1.0 *
-  *
+ * Copyright (c) 2013 All rights reserved
+ * 
+ * @Name：PersonalOwnerInfoActivity.java
+ * @Describe：货主个人信息
+ * @Author: yfr5734@gmail.com
+ * @Date：2014年5月12日 上午9:28:43
+ * @Version v1.0 *
+ * 
  */
 public class PersonalOwnerInfoActivity extends BaseActivity {
 	private MyApplication application = null;
@@ -46,8 +41,8 @@ public class PersonalOwnerInfoActivity extends BaseActivity {
 	 * @version v1.0
 	 */
 	private void initView() {
-//		text = (TextView) findViewById(R.id.text);
-//		text.setText(getMsg);
+		// text = (TextView) findViewById(R.id.text);
+		// text.setText(getMsg);
 
 	}
 }
