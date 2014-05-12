@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/cfdLayout2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:layout_marginTop="10dip"
+                android:padding="5dip" >
+
+                <TextView
+                    android:id="@+id/cfdext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="出发地："
+                    android:textColor="@color/black"
+                    android:textSize="20dip" />
+
+                <LinearLayout
+                    android:id="@+id/textlayout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone" >
+
+                    <TextView
+                        android:id="@+id/addressText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="显示选择地址信息"
+                        android:textColor="@color/black"
+                        android:textSize="20dip" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/gridViewlayout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:layout_marginTop="10dip"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <Button
+                        android:id="@+id/sfBtn"
+                        android:layout_width="60dip"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:text="省份" />
+
+                    <Button
+                        android:id="@+id/shiBtn"
+                        android:layout_width="60dip"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:text="城市" />
+
+                    <Button
+                        android:id="@+id/qxBtn"
+                        android:layout_width="60dip"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:text="区县" />
+                </LinearLayout>
+
+                <com.xibeiwuliu.view.NoScrollGridView
+                    android:id="@+id/gridview"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dip"
+                    android:background="@drawable/input_box_n"
+                    android:horizontalSpacing="2dp"
+                    android:numColumns="3"
+                    android:verticalSpacing="2dp"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+<!--             <LinearLayout -->
+<!--                 android:id="@+id/textlayout" -->
+<!--                 android:layout_width="fill_parent" -->
+<!--                 android:layout_height="wrap_content" -->
+<!--                 android:layout_marginLeft="10dip" -->
+<!--                 android:layout_marginRight="10dip" -->
+<!--                 android:layout_marginTop="10dip" -->
+<!--                 android:orientation="horizontal" -->
+<!--                 android:padding="5dip" -->
+<!--                 android:visibility="gone" > -->
+
+<!--                 <TextView -->
+<!--                     android:id="@+id/cfdext" -->
+<!--                     android:layout_width="wrap_content" -->
+<!--                     android:layout_height="wrap_content" -->
+<!--                     android:text="出发地：" -->
+<!--                     android:textColor="@color/black" -->
+<!--                     android:textSize="20dip" /> -->
+
+<!--                 <TextView -->
+<!--                     android:id="@+id/addressText" -->
+<!--                     android:layout_width="wrap_content" -->
+<!--                     android:layout_height="wrap_content" -->
+<!--                     android:text="显示选择地址信息" -->
+<!--                     android:textColor="@color/black" -->
+<!--                     android:textSize="20dip" /> -->
+<!--             </LinearLayout> -->
+
+
+                
+             <LinearLayout
+                android:id="@+id/mddLayout2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:layout_marginTop="10dip"
+                android:padding="5dip" >
+
+                <TextView
+                    android:id="@+id/mddText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="目的地："
+                    android:textColor="@color/black"
+                    android:textSize="20dip" />
+
+                <LinearLayout
+                    android:id="@+id/textlayout2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone" >
+
+                    <TextView
+                        android:id="@+id/addressText2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="显示选择地址信息"
+                        android:textColor="@color/black"
+                        android:textSize="20dip" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/gridViewlayout2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:layout_marginTop="10dip"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <Button
+                        android:id="@+id/sfBtn2"
+                        android:layout_width="60dip"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:text="省份" />
+
+                    <Button
+                        android:id="@+id/shiBtn2"
+                        android:layout_width="60dip"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:text="城市" />
+
+                    <Button
+                        android:id="@+id/qxBtn2"
+                        android:layout_width="60dip"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:text="区县" />
+                </LinearLayout>
+
+                <com.xibeiwuliu.view.NoScrollGridView
+                    android:id="@+id/gridview2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dip"
+                    android:background="@drawable/input_box_n"
+                    android:horizontalSpacing="2dp"
+                    android:numColumns="3"
+                    android:verticalSpacing="2dp"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+<!--             <LinearLayout -->
+<!--                 android:id="@+id/textlayout2" -->
+<!--                 android:layout_width="fill_parent" -->
+<!--                 android:layout_height="wrap_content" -->
+<!--                 android:layout_marginLeft="10dip" -->
+<!--                 android:layout_marginRight="10dip" -->
+<!--                 android:layout_marginTop="10dip" -->
+<!--                 android:orientation="horizontal" -->
+<!--                 android:padding="5dip" -->
+<!--                 android:visibility="gone" > -->
+
+<!--                 <TextView -->
+<!--                     android:id="@+id/cfdext2" -->
+<!--                     android:layout_width="wrap_content" -->
+<!--                     android:layout_height="wrap_content" -->
+<!--                     android:text="出发地：" -->
+<!--                     android:textColor="@color/black" -->
+<!--                     android:textSize="20dip" /> -->
+
+<!--                 <TextView -->
+<!--                     android:id="@+id/addressText2" -->
+<!--                     android:layout_width="wrap_content" -->
+<!--                     android:layout_height="wrap_content" -->
+<!--                     android:text="显示选择地址信息" -->
+<!--                     android:textColor="@color/black" -->
+<!--                     android:textSize="20dip" /> -->
+<!--             </LinearLayout> -->
+
+            <include
+                android:id="@+id/cfdLayout"
+                layout="@layout/public_cargo_info" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

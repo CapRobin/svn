@@ -1,0 +1,779 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mShare"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/app_bg" >
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:fadingEdge="none" >
+
+        <RelativeLayout
+            android:id="@+id/listLinear"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:id="@+id/infoLayout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dip"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:id="@+id/docImage"
+                    android:layout_width="60dip"
+                    android:layout_height="60dip"
+                    android:background="@drawable/head" />
+
+                <TextView
+                    android:id="@+id/nameEdit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dip"
+                    android:layout_toRightOf="@+id/docImage"
+                    android:textColor="@color/balck"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/docMobileEdit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/nameEdit"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginTop="10dip"
+                    android:layout_toRightOf="@+id/docImage"
+                    android:textColor="@color/text_color3"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/infoLayout2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/infoLayout"
+                android:layout_marginBottom="20dip"
+                android:layout_marginLeft="20dip"
+                android:layout_marginRight="20dip"
+                android:orientation="vertical" >
+
+                <RelativeLayout
+                    android:id="@+id/treatyFamilyTop"
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dip"
+                    android:background="@drawable/center_rail_n"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        android:id="@+id/imageleft"
+                        android:layout_width="25dip"
+                        android:layout_height="25dip"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dip"
+                        android:background="@drawable/appraise" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dip"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:layout_toRightOf="@+id/imageleft"
+                        android:gravity="center_vertical"
+                        android:text="物流公司信息"
+                        android:textColor="@color/text_color3"
+                        android:textSize="18sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/majorLayout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/setting_bg_center_selector_login"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/userAccountText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="10dip"
+                        android:paddingLeft="10dip"
+                        android:paddingTop="10dip"
+                        android:text="用户账号"
+                        android:textColor="@color/balck"
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/userAccountEdit"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginRight="10dip"
+                        android:layout_toRightOf="@+id/userAccountText"
+                        android:background="@color/transparent"
+                        android:textColor="@color/text_color3" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/docInfoLayout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/setting_bg_center_selector_login"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/realNameText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="10dip"
+                        android:paddingLeft="10dip"
+                        android:paddingTop="10dip"
+                        android:text="真实姓名"
+                        android:textColor="@color/balck"
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/realNameEdit"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginRight="10dip"
+                        android:layout_toRightOf="@+id/realNameText"
+                        android:background="@color/transparent"
+                        android:textColor="@color/text_color3" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/docInfoLayout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/setting_bg_center_selector_login"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/userSexText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="10dip"
+                        android:paddingLeft="10dip"
+                        android:paddingTop="10dip"
+                        android:text="用户性别"
+                        android:textColor="@color/balck"
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/userSexEdit"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginRight="10dip"
+                        android:layout_toRightOf="@+id/userSexText"
+                        android:background="@color/transparent"
+                        android:textColor="@color/text_color3" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/docInfoLayout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/setting_bg_center_selector_login"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/userPostText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="10dip"
+                        android:paddingLeft="10dip"
+                        android:paddingTop="10dip"
+                        android:text="用户职位"
+                        android:textColor="@color/balck"
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/userPostEdit"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginRight="10dip"
+                        android:layout_toRightOf="@+id/userPostText"
+                        android:background="@color/transparent"
+                        android:textColor="@color/text_color3" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/docInfoLayout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/setting_bg_down_selector_login"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/userMobileText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="10dip"
+                        android:paddingLeft="10dip"
+                        android:paddingTop="10dip"
+                        android:text="用户电话"
+                        android:textColor="@color/balck"
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/userMobileEdit"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginRight="10dip"
+                        android:layout_toRightOf="@+id/userMobileText"
+                        android:background="@color/transparent"
+                        android:textColor="@color/text_color3" />
+                </RelativeLayout>
+
+<!--                 <RelativeLayout -->
+<!--                     android:id="@+id/docInfoLayout" -->
+<!--                     android:layout_width="fill_parent" -->
+<!--                     android:layout_height="wrap_content" -->
+<!--                     android:background="@drawable/setting_bg_center_selector_login" -->
+<!--                     android:orientation="horizontal" > -->
+
+<!--                     <TextView -->
+<!--                         android:id="@+id/docInfoText" -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:paddingBottom="10dip" -->
+<!--                         android:paddingLeft="10dip" -->
+<!--                         android:paddingTop="10dip" -->
+<!--                         android:text="司机性别" -->
+<!--                         android:textColor="@color/balck" -->
+<!--                         android:textSize="18sp" /> -->
+
+<!--                     <EditText -->
+<!--                         android:id="@+id/docInfoEdit" -->
+<!--                         android:layout_width="fill_parent" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:layout_centerVertical="true" -->
+<!--                         android:layout_marginLeft="10dip" -->
+<!--                         android:layout_marginRight="10dip" -->
+<!--                         android:layout_toRightOf="@+id/docInfoText" -->
+<!--                         android:background="@color/transparent" -->
+<!--                         android:textColor="@color/text_color3" /> -->
+<!--                 </RelativeLayout> -->
+
+<!--                 <RelativeLayout -->
+<!--                     android:id="@+id/docInfoLayout" -->
+<!--                     android:layout_width="fill_parent" -->
+<!--                     android:layout_height="wrap_content" -->
+<!--                     android:background="@drawable/setting_bg_center_selector_login" -->
+<!--                     android:orientation="horizontal" > -->
+
+<!--                     <TextView -->
+<!--                         android:id="@+id/docInfoText" -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:paddingBottom="10dip" -->
+<!--                         android:paddingLeft="10dip" -->
+<!--                         android:paddingTop="10dip" -->
+<!--                         android:text="家庭地址" -->
+<!--                         android:textColor="@color/balck" -->
+<!--                         android:textSize="18sp" /> -->
+
+<!--                     <EditText -->
+<!--                         android:id="@+id/docInfoEdit" -->
+<!--                         android:layout_width="fill_parent" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:layout_centerVertical="true" -->
+<!--                         android:layout_marginLeft="10dip" -->
+<!--                         android:layout_marginRight="10dip" -->
+<!--                         android:layout_toRightOf="@+id/docInfoText" -->
+<!--                         android:background="@color/transparent" -->
+<!--                         android:textColor="@color/text_color3" /> -->
+<!--                 </RelativeLayout> -->
+
+<!--                 <RelativeLayout -->
+<!--                     android:id="@+id/docInfoLayout" -->
+<!--                     android:layout_width="fill_parent" -->
+<!--                     android:layout_height="wrap_content" -->
+<!--                     android:background="@drawable/setting_bg_center_selector_login" -->
+<!--                     android:orientation="horizontal" > -->
+
+<!--                     <TextView -->
+<!--                         android:id="@+id/docInfoText" -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:paddingBottom="10dip" -->
+<!--                         android:paddingLeft="10dip" -->
+<!--                         android:paddingTop="10dip" -->
+<!--                         android:text="期望流向" -->
+<!--                         android:textColor="@color/balck" -->
+<!--                         android:textSize="18sp" /> -->
+
+<!--                     <EditText -->
+<!--                         android:id="@+id/docInfoEdit" -->
+<!--                         android:layout_width="fill_parent" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:layout_centerVertical="true" -->
+<!--                         android:layout_marginLeft="10dip" -->
+<!--                         android:layout_marginRight="10dip" -->
+<!--                         android:layout_toRightOf="@+id/docInfoText" -->
+<!--                         android:background="@color/transparent" -->
+<!--                         android:textColor="@color/text_color3" /> -->
+<!--                 </RelativeLayout> -->
+
+<!--                 <RelativeLayout -->
+<!--                     android:id="@+id/docInfoLayout" -->
+<!--                     android:layout_width="fill_parent" -->
+<!--                     android:layout_height="wrap_content" -->
+<!--                     android:background="@drawable/setting_bg_down_selector_login" -->
+<!--                     android:orientation="horizontal" > -->
+
+<!--                     <TextView -->
+<!--                         android:id="@+id/docInfoText" -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:paddingBottom="10dip" -->
+<!--                         android:paddingLeft="10dip" -->
+<!--                         android:paddingTop="10dip" -->
+<!--                         android:text="驾驶执照" -->
+<!--                         android:textColor="@color/balck" -->
+<!--                         android:textSize="18sp" /> -->
+
+<!--                     <EditText -->
+<!--                         android:id="@+id/docInfoEdit" -->
+<!--                         android:layout_width="fill_parent" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:layout_centerVertical="true" -->
+<!--                         android:layout_marginLeft="10dip" -->
+<!--                         android:layout_marginRight="10dip" -->
+<!--                         android:layout_toRightOf="@+id/docInfoText" -->
+<!--                         android:background="@color/transparent" -->
+<!--                         android:textColor="@color/text_color3" /> -->
+<!--                 </RelativeLayout> -->
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/infoLayout3"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/infoLayout2"
+                android:layout_marginBottom="20dip"
+                android:layout_marginLeft="20dip"
+                android:layout_marginRight="20dip"
+                android:orientation="vertical" >
+
+                <RelativeLayout
+                    android:id="@+id/treatyFamilyTop"
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dip"
+                    android:background="@drawable/center_rail_n"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        android:id="@+id/imageleft"
+                        android:layout_width="25dip"
+                        android:layout_height="25dip"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dip"
+                        android:background="@drawable/appraise" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dip"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:layout_toRightOf="@+id/imageleft"
+                        android:gravity="center_vertical"
+                        android:text="物流公司用户信息"
+                        android:textColor="@color/text_color3"
+                        android:textSize="18sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/majorLayout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/setting_bg_center_selector_login"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/companyNameText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="10dip"
+                        android:paddingLeft="10dip"
+                        android:paddingTop="10dip"
+                        android:text="公司名称"
+                        android:textColor="@color/balck"
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/companyNameEdit"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginRight="10dip"
+                        android:layout_toRightOf="@+id/companyNameText"
+                        android:background="@color/transparent"
+                        android:textColor="@color/text_color3" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/docInfoLayout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/setting_bg_center_selector_login"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/companyAddressText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="10dip"
+                        android:paddingLeft="10dip"
+                        android:paddingTop="10dip"
+                        android:text="公司地址"
+                        android:textColor="@color/balck"
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/companyAddressEdit"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginRight="10dip"
+                        android:layout_toRightOf="@+id/companyAddressText"
+                        android:background="@color/transparent"
+                        android:textColor="@color/text_color3" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/docInfoLayout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/setting_bg_center_selector_login"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/specialPlaneText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="10dip"
+                        android:paddingLeft="10dip"
+                        android:paddingTop="10dip"
+                        android:text="固定电话"
+                        android:textColor="@color/balck"
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/specialPlaneEdit"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginRight="10dip"
+                        android:layout_toRightOf="@+id/specialPlaneText"
+                        android:background="@color/transparent"
+                        android:textColor="@color/text_color3" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/docInfoLayout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/setting_bg_center_selector_login"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/shopCardText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="10dip"
+                        android:paddingLeft="10dip"
+                        android:paddingTop="10dip"
+                        android:text="营业照号"
+                        android:textColor="@color/balck"
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/shopCardEdit"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginRight="10dip"
+                        android:layout_toRightOf="@+id/shopCardText"
+                        android:background="@color/transparent"
+                        android:textColor="@color/text_color3" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/docInfoLayout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/setting_bg_center_selector_login"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/enterpriseNumberText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="10dip"
+                        android:paddingLeft="10dip"
+                        android:paddingTop="10dip"
+                        android:text="企业编码"
+                        android:textColor="@color/balck"
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/enterpriseNumberEdit"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginRight="10dip"
+                        android:layout_toRightOf="@+id/enterpriseNumberText"
+                        android:background="@color/transparent"
+                        android:textColor="@color/text_color3" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/docInfoLayout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/setting_bg_down_selector_login"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/enterpriseReputationText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="10dip"
+                        android:paddingLeft="10dip"
+                        android:paddingTop="10dip"
+                        android:text="企业信誉"
+                        android:textColor="@color/balck"
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/enterpriseReputationEdit"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginRight="10dip"
+                        android:layout_toRightOf="@+id/enterpriseReputationText"
+                        android:background="@color/transparent"
+                        android:textColor="@color/text_color3" />
+                </RelativeLayout>
+
+<!--                 <RelativeLayout -->
+<!--                     android:id="@+id/docInfoLayout" -->
+<!--                     android:layout_width="fill_parent" -->
+<!--                     android:layout_height="wrap_content" -->
+<!--                     android:background="@drawable/setting_bg_center_selector_login" -->
+<!--                     android:orientation="horizontal" > -->
+
+<!--                     <TextView -->
+<!--                         android:id="@+id/docInfoText" -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:paddingBottom="10dip" -->
+<!--                         android:paddingLeft="10dip" -->
+<!--                         android:paddingTop="10dip" -->
+<!--                         android:text="货运状态" -->
+<!--                         android:textColor="@color/balck" -->
+<!--                         android:textSize="18sp" /> -->
+
+<!--                     <EditText -->
+<!--                         android:id="@+id/docInfoEdit" -->
+<!--                         android:layout_width="fill_parent" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:layout_centerVertical="true" -->
+<!--                         android:layout_marginLeft="10dip" -->
+<!--                         android:layout_marginRight="10dip" -->
+<!--                         android:layout_toRightOf="@+id/docInfoText" -->
+<!--                         android:background="@color/transparent" -->
+<!--                         android:textColor="@color/text_color3" /> -->
+<!--                 </RelativeLayout> -->
+
+<!--                 <RelativeLayout -->
+<!--                     android:id="@+id/docInfoLayout" -->
+<!--                     android:layout_width="fill_parent" -->
+<!--                     android:layout_height="wrap_content" -->
+<!--                     android:background="@drawable/setting_bg_center_selector_login" -->
+<!--                     android:orientation="horizontal" > -->
+
+<!--                     <TextView -->
+<!--                         android:id="@+id/docInfoText" -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:paddingBottom="10dip" -->
+<!--                         android:paddingLeft="10dip" -->
+<!--                         android:paddingTop="10dip" -->
+<!--                         android:text="发动机号" -->
+<!--                         android:textColor="@color/balck" -->
+<!--                         android:textSize="18sp" /> -->
+
+<!--                     <EditText -->
+<!--                         android:id="@+id/docInfoEdit" -->
+<!--                         android:layout_width="fill_parent" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:layout_centerVertical="true" -->
+<!--                         android:layout_marginLeft="10dip" -->
+<!--                         android:layout_marginRight="10dip" -->
+<!--                         android:layout_toRightOf="@+id/docInfoText" -->
+<!--                         android:background="@color/transparent" -->
+<!--                         android:textColor="@color/text_color3" /> -->
+<!--                 </RelativeLayout> -->
+
+<!--                 <RelativeLayout -->
+<!--                     android:id="@+id/docInfoLayout" -->
+<!--                     android:layout_width="fill_parent" -->
+<!--                     android:layout_height="wrap_content" -->
+<!--                     android:background="@drawable/setting_bg_center_selector_login" -->
+<!--                     android:orientation="horizontal" > -->
+
+<!--                     <TextView -->
+<!--                         android:id="@+id/docInfoText" -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:paddingBottom="10dip" -->
+<!--                         android:paddingLeft="10dip" -->
+<!--                         android:paddingTop="10dip" -->
+<!--                         android:text="车架号码" -->
+<!--                         android:textColor="@color/balck" -->
+<!--                         android:textSize="18sp" /> -->
+
+<!--                     <EditText -->
+<!--                         android:id="@+id/docInfoEdit" -->
+<!--                         android:layout_width="fill_parent" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:layout_centerVertical="true" -->
+<!--                         android:layout_marginLeft="10dip" -->
+<!--                         android:layout_marginRight="10dip" -->
+<!--                         android:layout_toRightOf="@+id/docInfoText" -->
+<!--                         android:background="@color/transparent" -->
+<!--                         android:textColor="@color/text_color3" /> -->
+<!--                 </RelativeLayout> -->
+
+<!--                 <RelativeLayout -->
+<!--                     android:id="@+id/docInfoLayout" -->
+<!--                     android:layout_width="fill_parent" -->
+<!--                     android:layout_height="wrap_content" -->
+<!--                     android:background="@drawable/setting_bg_center_selector_login" -->
+<!--                     android:orientation="horizontal" > -->
+
+<!--                     <TextView -->
+<!--                         android:id="@+id/docInfoText" -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:paddingBottom="10dip" -->
+<!--                         android:paddingLeft="10dip" -->
+<!--                         android:paddingTop="10dip" -->
+<!--                         android:text="运营证号" -->
+<!--                         android:textColor="@color/balck" -->
+<!--                         android:textSize="18sp" /> -->
+
+<!--                     <EditText -->
+<!--                         android:id="@+id/docInfoEdit" -->
+<!--                         android:layout_width="fill_parent" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:layout_centerVertical="true" -->
+<!--                         android:layout_marginLeft="10dip" -->
+<!--                         android:layout_marginRight="10dip" -->
+<!--                         android:layout_toRightOf="@+id/docInfoText" -->
+<!--                         android:background="@color/transparent" -->
+<!--                         android:textColor="@color/text_color3" /> -->
+<!--                 </RelativeLayout> -->
+
+<!--                 <RelativeLayout -->
+<!--                     android:id="@+id/docInfoLayout" -->
+<!--                     android:layout_width="fill_parent" -->
+<!--                     android:layout_height="wrap_content" -->
+<!--                     android:background="@drawable/setting_bg_center_selector_login" -->
+<!--                     android:orientation="horizontal" > -->
+
+<!--                     <TextView -->
+<!--                         android:id="@+id/docInfoText" -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:paddingBottom="10dip" -->
+<!--                         android:paddingLeft="10dip" -->
+<!--                         android:paddingTop="10dip" -->
+<!--                         android:text="保险卡号" -->
+<!--                         android:textColor="@color/balck" -->
+<!--                         android:textSize="18sp" /> -->
+
+<!--                     <EditText -->
+<!--                         android:id="@+id/docInfoEdit" -->
+<!--                         android:layout_width="fill_parent" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:layout_centerVertical="true" -->
+<!--                         android:layout_marginLeft="10dip" -->
+<!--                         android:layout_marginRight="10dip" -->
+<!--                         android:layout_toRightOf="@+id/docInfoText" -->
+<!--                         android:background="@color/transparent" -->
+<!--                         android:textColor="@color/text_color3" /> -->
+<!--                 </RelativeLayout> -->
+
+<!--                 <RelativeLayout -->
+<!--                     android:id="@+id/docInfoLayout" -->
+<!--                     android:layout_width="fill_parent" -->
+<!--                     android:layout_height="wrap_content" -->
+<!--                     android:background="@drawable/setting_bg_down_selector_login" -->
+<!--                     android:orientation="horizontal" > -->
+
+<!--                     <TextView -->
+<!--                         android:id="@+id/docInfoText" -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:paddingBottom="10dip" -->
+<!--                         android:paddingLeft="10dip" -->
+<!--                         android:paddingTop="10dip" -->
+<!--                         android:text="挂靠单位" -->
+<!--                         android:textColor="@color/balck" -->
+<!--                         android:textSize="18sp" /> -->
+
+<!--                     <EditText -->
+<!--                         android:id="@+id/docInfoEdit" -->
+<!--                         android:layout_width="fill_parent" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:layout_centerVertical="true" -->
+<!--                         android:layout_marginLeft="10dip" -->
+<!--                         android:layout_marginRight="10dip" -->
+<!--                         android:layout_toRightOf="@+id/docInfoText" -->
+<!--                         android:background="@color/transparent" -->
+<!--                         android:textColor="@color/text_color3" /> -->
+<!--                 </RelativeLayout> -->
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/updateSubmit"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/infoLayout3"
+                android:layout_marginBottom="20dip"
+                android:background="@drawable/exist_selector"
+                android:layout_marginLeft="20dip"
+                android:layout_marginRight="20dip"
+                android:text="提交" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="1dip"
+                android:layout_below="@+id/updateSubmit" >
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>
