@@ -1,0 +1,120 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/app_bg"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/contactTitleView"
+        android:layout_width="fill_parent"
+        android:layout_height="53dip"
+        android:background="@drawable/top_bg" >
+
+        <ImageView
+            android:id="@+id/backImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@drawable/button_selector_back" />
+
+        <ImageView
+            android:id="@+id/lineImage"
+            android:layout_width="1dip"
+            android:layout_height="fill_parent"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="2dip"
+            android:layout_marginTop="2dip"
+            android:layout_toRightOf="@+id/backImage"
+            android:background="@drawable/line" />
+
+        <TextView
+            android:id="@+id/titleText"
+            android:layout_width="wrap_content"
+            android:layout_height="40dip"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="10dip"
+            android:layout_toRightOf="@+id/lineImage"
+            android:gravity="center_vertical"
+            android:text="信息分享"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/numberEdit"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/contactTitleView"
+        android:layout_marginBottom="5dip"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:layout_marginTop="5dip" >
+
+        <EditText
+            android:id="@+id/numberContent"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@drawable/myedit_bg"
+            android:hint="请输入号码"
+            android:singleLine="false"
+            android:textColor="@color/gray"
+            android:textSize="13sp" />
+
+    </RelativeLayout>
+    
+            <ImageView
+            android:id="@+id/lineImage"
+            android:layout_width="fill_parent"
+            android:layout_height="1dip"
+            android:layout_below="@+id/numberEdit"
+            android:background="@drawable/line2" />
+
+    <ListView
+        android:id="@+id/contacts_list_view"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lineImage"
+        android:layout_marginBottom="55dip"
+        android:cacheColorHint="#00000000"
+        android:divider="@drawable/line2"
+        android:dividerHeight="1dip"
+        android:fadingEdge="none"
+        android:focusable="false" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="55dip"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/top_bg" >
+
+        <EditText
+            android:id="@+id/smsContent"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="80dip"
+            android:background="@drawable/myedit_bg"
+            android:hint="请输入分享信息"
+            android:padding="3dip"
+            android:focusable="false"
+            android:textColor="@color/balck"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/sendBtn"
+            android:layout_width="60dip"
+            android:layout_height="40dip"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dip"
+            android:background="@drawable/exist_selector"
+            android:text="发送"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+    </RelativeLayout>
+
+</RelativeLayout>

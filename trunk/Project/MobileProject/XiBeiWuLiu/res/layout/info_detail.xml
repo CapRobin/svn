@@ -1,0 +1,176 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/app_bg" >
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+
+            <RelativeLayout
+                android:id="@+id/layout_1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dip" >
+
+                <TextView
+                    android:id="@+id/info_context"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="信息内容："
+                    android:textColor="@color/balck"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/info_contextStr"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/info_context"
+                    android:layout_marginLeft="30dip"
+                    android:layout_marginTop="5dip"
+                    android:text="信息内容：信息内容：信息内容：信息内容：信息内容：信息内容：信息内容：信息内容：信息内容：信息内容："
+                    android:textColor="@color/balck"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_1"
+                android:layout_marginBottom="10dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip" >
+
+                <TextView
+                    android:id="@+id/publicTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="发布时间："
+                    android:textColor="@color/balck"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/publicTimeStr"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/publicTime"
+                    android:text="2013.11.12"
+                    android:textColor="@color/balck"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/phoneBut"
+                android:layout_width="wrap_content"
+                android:layout_height="35dip"
+                android:layout_below="@+id/layout_2"
+                android:layout_marginLeft="10dip"
+                android:background="@drawable/exist_selector"
+                android:paddingLeft="3dip"
+                android:text="查看更多信息："
+                android:textColor="@color/balck" />
+
+            <RelativeLayout
+                android:id="@+id/layout_3"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/phoneBut"
+                android:layout_marginBottom="10dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:background="@color/white"
+                android:visibility="invisible" >
+
+                <TextView
+                    android:id="@+id/phoneStr1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dip"
+                    android:layout_marginTop="5dip"
+                    android:autoLink="phone"
+                    android:textColor="@color/balck"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/phoneStr2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/phoneStr1"
+                    android:layout_marginLeft="30dip"
+                    android:layout_marginTop="5dip"
+                    android:autoLink="phone"
+                    android:textColor="@color/balck"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/phoneStr3"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/phoneStr2"
+                    android:layout_marginLeft="30dip"
+                    android:layout_marginTop="5dip"
+                    android:autoLink="phone"
+                    android:textColor="@color/balck"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/spinnerLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="40dip"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="10dip"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/addFriendBut"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@drawable/exist_selector"
+            android:text="添加好友" />
+
+        <Button
+            android:id="@+id/shareInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="10dip"
+            android:layout_weight="1"
+            android:background="@drawable/exist_selector"
+            android:text="信息分享" />
+
+        <Button
+            android:id="@+id/myFriendBut"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@drawable/exist_selector"
+            android:text="竞价" />
+    </LinearLayout>
+
+    <!-- <Button -->
+    <!-- android:id="@+id/addFriendBut" -->
+    <!-- android:layout_width="fill_parent" -->
+    <!-- android:layout_height="40dip" -->
+    <!-- android:layout_alignParentBottom="true" -->
+    <!-- android:layout_marginBottom="20dip" -->
+    <!-- android:layout_marginLeft="20dip" -->
+    <!-- android:layout_marginRight="20dip" -->
+    <!-- android:layout_marginTop="10dip" -->
+    <!-- android:background="@drawable/exist_selector" -->
+    <!-- android:text="@string/addFriend" -->
+    <!-- android:textColor="@color/gray_black" -->
+    <!-- android:textSize="20sp" /> -->
+
+</RelativeLayout>

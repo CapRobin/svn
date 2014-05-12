@@ -1,0 +1,40 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_bg"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/layout_01"
+        android:layout_width="fill_parent"
+        android:layout_height="100dp" >
+
+        <com.xibeiwuliu.view.MyImgScroll
+            android:id="@+id/myvp"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" />
+
+        <LinearLayout
+            android:id="@+id/vb"
+            android:layout_width="fill_parent"
+            android:layout_height="10dp"
+            android:layout_alignParentBottom="true"
+            android:background="#00000000"
+            android:gravity="center|right"
+            android:orientation="horizontal" />
+    </RelativeLayout>
+
+    <com.ab.view.pullview.AbPullListView
+        android:id="@+id/cargoList"
+        android:layout_width="fill_parent"
+        android:layout_below="@+id/layout_01"
+        android:layout_height="fill_parent"
+        android:layout_marginRight="1dip"
+        android:cacheColorHint="#00000000"
+        android:divider="@drawable/list_divider"
+        android:dividerHeight="1dip"
+        android:fadingEdge="none"
+        android:fastScrollEnabled="true" >
+    </com.ab.view.pullview.AbPullListView>
+</RelativeLayout>
