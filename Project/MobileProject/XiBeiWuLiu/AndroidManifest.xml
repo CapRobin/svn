@@ -110,6 +110,14 @@
             android:name=".OrderSearchActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar" />
+        <activity
+            android:name=".TwoDimensionCodeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" />
+        <activity
+            android:name="com.xibeiwuliu.activity.TwoDimensionCodeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" />
     </application>
 
     

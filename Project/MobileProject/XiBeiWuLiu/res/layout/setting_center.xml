@@ -98,7 +98,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="10dip"
-                android:text="软件设置"
+                android:text="我的二维码"
                 android:textColor="@color/balck"
                 android:textSize="18sp" />
 

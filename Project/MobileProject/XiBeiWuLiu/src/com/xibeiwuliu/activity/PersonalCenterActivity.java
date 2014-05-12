@@ -122,11 +122,12 @@ public class PersonalCenterActivity extends BaseActivity implements OnClickListe
 			// }
 			break;
 		case R.id.layout_03:
-			Toast.makeText(PersonalCenterActivity.this, "软件设置", 5).show();
-			// Intent intent = new Intent(SettingCenterActivity.this,
-			// CommonalityActivity.class);
-			// intent.putExtra("intentType", 0);
-			// startActivity(intent);
+			Intent intent2 = new Intent();
+			String Msge = "我的二维码";
+			intent2.putExtra("msg", Msge);
+			intent2.putExtra("content", "http://dl.5671.cc");
+			intent2.setClass(PersonalCenterActivity.this, TwoDimensionCodeActivity.class);
+			startActivity(intent2);
 			break;
 		case R.id.layout_04:
 			Toast.makeText(PersonalCenterActivity.this, "检测更新", 5).show();
