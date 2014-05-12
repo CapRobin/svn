@@ -5,14 +5,15 @@ import java.io.Serializable;
 /**
  * 
  * Copyright (c) 2012 All rights reserved
- * @Name：CargoInfo.java 
+ * 
+ * @Name：CargoInfo.java
  * @Describe：货源信息实体类
  * @Author yufarong_yfr5734@163.com
  * @Date：2014-1-7 下午5:56:45
  * @Version v1.0
  */
 public class CargoInfo implements Serializable {
-	
+
 	private String Info_ADDID; // ID
 	private String Info_LPR_ID; // 物流公司ID
 	private String Info_connect; // 发布的信息
@@ -48,7 +49,6 @@ public class CargoInfo implements Serializable {
 	private String Car_count; // 发布时间
 	private String Info_ReMark; // 发布时间
 
-	
 	public String getInfo_ADDID() {
 		return Info_ADDID;
 	}

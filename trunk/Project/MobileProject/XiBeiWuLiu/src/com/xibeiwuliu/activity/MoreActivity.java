@@ -12,10 +12,10 @@ import com.xibeiwuliu.global.MyApplication;
  * 
  * Copyright (c) 2013 All rights reserved
  * 
- * @Name：SettingCenterActivity.java
- * @Describe：设置中心
+ * @Name：MoreActivity.java
+ * @Describe：更多页面
  * @Author: yfr5734@gmail.com
- * @Date：2014年4月28日 下午4:48:29
+ * @Date：2014年5月12日 上午9:26:18
  * @Version v1.0 *
  * 
  */

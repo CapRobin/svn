@@ -3,7 +3,8 @@ package com.xibeiwuliu.entity;
 /**
  * 
  * Copyright (c) 2012 All rights reserved
- * @Name：DriverUserInfo.java 
+ * 
+ * @Name：DriverUserInfo.java
  * @Describe：司机个人信息实体类
  * @Author yufarong_yfr5734@163.com
  * @Date：2013-12-20 上午11:05:42
@@ -11,22 +12,22 @@ package com.xibeiwuliu.entity;
  */
 public class DriverUserInfo {
 
-	private String Duser_id; 					// 用户ID
-	private String Duser_name; 			// 司机姓名
-	private String Duser_mobile; 			// 司机电话
-	private String Duser_pwd; 				// 司机登录密码
-	private String Duser_tle; 				// 司机随车电话
-	private String Duser_key; 				// 司机身份证号
-	private String Duser_tleJI; 			// 司机紧急联系电话
-	private String Duser_photo; 			// 司机照片(身份证件照片)
-	private String Duser_sex; 				// 司机性别
-	private String Duser_Addr; 			// 司机家庭地址
-	private String RoutePath; 			// 车辆路线跟车辆路线表(LPR_Duser_area)关联
-	private String Duser_J_key; 			// 驾驶执照号
-	private String Duser_level; 				// 用户级别(详见司机机别表)
-	private String Duser_PJ; 				// 司机评价
-	private String Duser_reamrk; 		// 备注
-	private String Add_time; 				// 添加或修时间
+	private String Duser_id; // 用户ID
+	private String Duser_name; // 司机姓名
+	private String Duser_mobile; // 司机电话
+	private String Duser_pwd; // 司机登录密码
+	private String Duser_tle; // 司机随车电话
+	private String Duser_key; // 司机身份证号
+	private String Duser_tleJI; // 司机紧急联系电话
+	private String Duser_photo; // 司机照片(身份证件照片)
+	private String Duser_sex; // 司机性别
+	private String Duser_Addr; // 司机家庭地址
+	private String RoutePath; // 车辆路线跟车辆路线表(LPR_Duser_area)关联
+	private String Duser_J_key; // 驾驶执照号
+	private String Duser_level; // 用户级别(详见司机机别表)
+	private String Duser_PJ; // 司机评价
+	private String Duser_reamrk; // 备注
+	private String Add_time; // 添加或修时间
 
 	public String getDuser_id() {
 		return Duser_id;

@@ -6,22 +6,21 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 /**
  * 
- * Copyright (c) 2012 All rights reserved Ãû³Æ£ºSqliteDaoHelperArea.java
- * ÃèÊö£ºµØÇøÊı¾İ¿â¹ÜÀíÀà
+ * Copyright (c) 2013 All rights reserved
  * 
- * @author Yu Farong - yfr5734@gmail.com
- * @date£º2014Äê1ÔÂ17ÈÕ ÉÏÎç7:29:10
- * @version v1.0
+ * @Nameï¼šSqliteDaoHelperArea.java
+ * @Describeï¼šæ•°æ®åº“è¾…åŠ©ç±»
+ * @Author: yfr5734@gmail.com
+ * @Dateï¼š2014å¹´5æœˆ12æ—¥ ä¸Šåˆ9:40:09
+ * @Version v1.0 *
+ * 
  */
 public class SqliteDaoHelperArea extends SQLiteOpenHelper {
-	// Êı¾İ¿âÃû³Æ
 	private static final String DATABASE_NAME = "logistics";
-	// Êı¾İ¿â°æ±¾
 	private static final int DATABASE_VERSION = 1;
 	private Context mContext;
 
 	public SqliteDaoHelperArea(Context context) {
-		// µ÷ÓÃ¸¸ÀàµÄ¹¹ÔìÆ÷
 		super(context, DATABASE_NAME, null, DATABASE_VERSION);
 		this.mContext = context;
 	}
