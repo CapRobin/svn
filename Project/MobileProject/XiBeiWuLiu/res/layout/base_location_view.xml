@@ -11,9 +11,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dip"
-        android:layout_marginRight="10dip"
-        android:layout_marginTop="10dip"
-        android:padding="5dip" >
+        android:layout_marginRight="10dip" >
 
         <TextView
             android:id="@+id/cfdext"
@@ -45,7 +43,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dip"
         android:layout_marginRight="10dip"
-        android:layout_marginTop="5dip"
+        android:layout_marginTop="2dip"
         android:orientation="vertical" >
 
         <LinearLayout
@@ -93,8 +91,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dip"
         android:layout_marginRight="10dip"
-        android:layout_marginTop="10dip"
-        android:padding="5dip" >
+        android:layout_marginTop="10dip" >
 
         <TextView
             android:id="@+id/mddText"
@@ -126,7 +123,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dip"
         android:layout_marginRight="10dip"
-        android:layout_marginTop="5dip"
+        android:layout_marginTop="2dip"
         android:orientation="vertical" >
 
         <LinearLayout

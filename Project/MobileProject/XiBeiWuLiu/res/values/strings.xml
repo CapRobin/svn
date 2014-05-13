@@ -46,6 +46,17 @@
         <item>整车配货</item>
         <item>件零担配货</item>
     </string-array>
+    
+    <string-array name="jsfs">
+        <item>手机支付</item>
+        <item>移动支付</item>
+        <item>网银支付</item>
+    </string-array>
+    
+    <string-array name="fbfs">
+        <item>立即发布</item>
+        <item>预约发布</item>
+    </string-array>
 
     <string name="pub_truck_type">车型：</string>
 

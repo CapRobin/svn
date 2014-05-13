@@ -21,47 +21,45 @@
                 android:layout_height="wrap_content" />
 
             <RelativeLayout
-                android:id="@+id/layout_04"
+                android:id="@+id/pub_cargo_weight_layout"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dip"
-                android:layout_marginLeft="10dip"
-                android:layout_marginRight="10dip"
-                android:layout_marginTop="10dip" >
+                android:layout_margin="10dip" >
 
                 <TextView
-                    android:id="@+id/ccslText"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/cyslText"
+                    android:layout_width="100dip"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:text="车源数量："
+                    android:text="车源数量:"
                     android:textColor="@color/balck"
-                    android:textSize="20sp" />
+                    android:textSize="18sp" />
 
                 <EditText
-                    android:id="@+id/ccslEdit"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toRightOf="@+id/ccslText"
+                    android:id="@+id/cyslEdit"
+                    android:layout_width="fill_parent"
+                    android:layout_height="35dip"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="100dip"
+                    android:layout_marginRight="25dip"
                     android:background="@drawable/myedit_bg"
                     android:inputType="number"
+                    android:singleLine="true"
                     android:textColor="@color/balck"
                     android:textSize="15sp" />
 
                 <TextView
-                    android:id="@+id/qcslTextStr"
-                    android:layout_width="wrap_content"
+                    android:layout_width="20dip"
                     android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginLeft="5dip"
-                    android:layout_toRightOf="@+id/ccslEdit"
                     android:text="辆"
                     android:textColor="@color/balck"
-                    android:textSize="20sp" />
+                    android:textSize="18sp" />
             </RelativeLayout>
 
             <RelativeLayout
-                android:id="@+id/layout_40"
+                android:id="@+id/pub_cargo_weight_layout"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dip"
@@ -69,76 +67,39 @@
                 android:layout_marginRight="10dip" >
 
                 <TextView
-                    android:id="@+id/tyfText"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/clcdText"
+                    android:layout_width="100dip"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:text="车         长："
+                    android:text="车辆长度:"
                     android:textColor="@color/balck"
-                    android:textSize="20sp" />
+                    android:textSize="18sp" />
 
                 <EditText
-                    android:id="@+id/pub_truck_length"
-                    android:layout_width="80dip"
-                    android:layout_height="wrap_content"
-                    android:layout_toRightOf="@+id/tyfText"
-                    android:background="@drawable/myedit_bg"
-                    android:textColor="@color/balck"
-                    android:textSize="15sp" />
-
-                <TextView
-                    android:id="@+id/tyfText3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:id="@+id/clcdEdit"
+                    android:layout_width="fill_parent"
+                    android:layout_height="35dip"
                     android:layout_centerVertical="true"
-                    android:layout_marginLeft="5dip"
-                    android:layout_toRightOf="@+id/pub_truck_length"
-                    android:text="米"
-                    android:textColor="@color/balck"
-                    android:textSize="20sp" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/layout_40"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dip"
-                android:layout_marginLeft="10dip"
-                android:layout_marginRight="10dip" >
-
-                <TextView
-                    android:id="@+id/tyfText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="车         长："
-                    android:textColor="@color/balck"
-                    android:textSize="20sp" />
-
-                <EditText
-                    android:id="@+id/chEdit"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toRightOf="@+id/tyfText"
+                    android:layout_marginLeft="100dip"
+                    android:layout_marginRight="25dip"
                     android:background="@drawable/myedit_bg"
                     android:inputType="number"
+                    android:singleLine="true"
                     android:textColor="@color/balck"
                     android:textSize="15sp" />
 
                 <TextView
-                    android:id="@+id/tyfText3"
-                    android:layout_width="wrap_content"
+                    android:layout_width="20dip"
                     android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginLeft="5dip"
-                    android:layout_toRightOf="@+id/chEdit"
                     android:text="米"
                     android:textColor="@color/balck"
-                    android:textSize="20sp" />
+                    android:textSize="18sp" />
             </RelativeLayout>
 
             <RelativeLayout
-                android:id="@+id/layout_45"
+                android:id="@+id/pub_cargo_weight_layout"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dip"
@@ -147,37 +108,38 @@
 
                 <TextView
                     android:id="@+id/clzzText"
-                    android:layout_width="wrap_content"
+                    android:layout_width="100dip"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:text="载        重："
+                    android:text="车辆載重:"
                     android:textColor="@color/balck"
-                    android:textSize="20sp" />
+                    android:textSize="18sp" />
 
                 <EditText
                     android:id="@+id/clzzEdit"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toRightOf="@+id/clzzText"
+                    android:layout_width="fill_parent"
+                    android:layout_height="35dip"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="100dip"
+                    android:layout_marginRight="25dip"
                     android:background="@drawable/myedit_bg"
                     android:inputType="number"
+                    android:singleLine="true"
                     android:textColor="@color/balck"
                     android:textSize="15sp" />
 
                 <TextView
-                    android:id="@+id/tyfText3"
-                    android:layout_width="wrap_content"
+                    android:layout_width="20dip"
                     android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginLeft="5dip"
-                    android:layout_toRightOf="@+id/clzzEdit"
                     android:text="吨"
                     android:textColor="@color/balck"
-                    android:textSize="20sp" />
+                    android:textSize="18sp" />
             </RelativeLayout>
 
             <RelativeLayout
-                android:id="@+id/layout_00"
+                android:id="@+id/layout_0"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dip"
@@ -185,20 +147,19 @@
                 android:layout_marginRight="10dip" >
 
                 <TextView
-                    android:id="@+id/cclxText"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/cllxText"
+                    android:layout_width="100dip"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:text="卡车类型"
+                    android:text="车辆类型:"
                     android:textColor="@color/balck"
-                    android:textSize="20sp" />
+                    android:textSize="18sp" />
 
                 <Spinner
-                    android:id="@+id/pub_truck_type"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="6dip"
-                    android:layout_toRightOf="@+id/cclxText"
+                    android:id="@+id/cllxSpinner"
+                    android:layout_width="fill_parent"
+                    android:layout_height="45dip"
+                    android:layout_marginLeft="97dip"
                     android:entries="@array/pub_truck_typelist" />
             </RelativeLayout>
 
@@ -211,60 +172,112 @@
                 android:layout_marginRight="10dip" >
 
                 <TextView
-                    android:id="@+id/tyfText"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/hwlxText"
+                    android:layout_width="100dip"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:text="货物类型"
+                    android:text="货物类型:"
                     android:textColor="@color/balck"
-                    android:textSize="20sp" />
+                    android:textSize="18sp" />
 
                 <Spinner
-                    android:id="@+id/pub_cargo_type"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="6dip"
-                    android:layout_toRightOf="@+id/tyfText"
+                    android:id="@+id/hwlxSpinner"
+                    android:layout_width="fill_parent"
+                    android:layout_height="45dip"
+                    android:layout_marginLeft="97dip"
                     android:entries="@array/pub_cargo_typelist" />
             </RelativeLayout>
 
             <RelativeLayout
-                android:id="@+id/layout_5"
+                android:id="@+id/pub_cargo_weight_layout"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="20dip"
+                android:layout_marginBottom="10dip"
                 android:layout_marginLeft="10dip"
                 android:layout_marginRight="10dip" >
 
                 <TextView
-                    android:id="@+id/hyjgText"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/hwjgText"
+                    android:layout_width="100dip"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:text="货运价格："
+                    android:text="货运价格:"
                     android:textColor="@color/balck"
-                    android:textSize="20sp" />
+                    android:textSize="18sp" />
 
                 <EditText
-                    android:id="@+id/hyjgEdit"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toRightOf="@+id/hyjgText"
+                    android:id="@+id/hwjgEdit"
+                    android:layout_width="fill_parent"
+                    android:layout_height="35dip"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="100dip"
+                    android:layout_marginRight="57dip"
                     android:background="@drawable/myedit_bg"
                     android:inputType="number"
+                    android:singleLine="true"
                     android:textColor="@color/balck"
                     android:textSize="15sp" />
 
                 <TextView
-                    android:id="@+id/hyjgText3"
-                    android:layout_width="wrap_content"
+                    android:layout_width="52dip"
                     android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginLeft="5dip"
-                    android:layout_toRightOf="@+id/hyjgEdit"
                     android:text="元/吨"
                     android:textColor="@color/balck"
-                    android:textSize="20sp" />
+                    android:textSize="18sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_0"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip" >
+
+                <TextView
+                    android:id="@+id/fbfsText"
+                    android:layout_width="100dip"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="发布方式:"
+                    android:textColor="@color/balck"
+                    android:textSize="18sp" />
+
+                <Spinner
+                    android:id="@+id/fbfsSpinner"
+                    android:layout_width="fill_parent"
+                    android:layout_height="45dip"
+                    android:layout_marginLeft="97dip"
+                    android:entries="@array/fbfs" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/pub_cargo_weight_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip" >
+
+                <TextView
+                    android:id="@+id/bcsmText"
+                    android:layout_width="100dip"
+                    android:layout_height="wrap_content"
+                    android:text="补充说明:"
+                    android:textColor="@color/balck"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/bcsmEdit"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="100dip"
+                    android:background="@drawable/myedit_bg"
+                    android:textColor="@color/balck"
+                    android:textSize="15sp" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -273,27 +286,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dip"
                 android:layout_marginLeft="10dip"
-                android:layout_marginRight="10dip" >
-
-                <Button
-                    android:id="@+id/isYuYueBut"
-                    android:layout_width="fill_parent"
-                    android:layout_height="40dip"
-                    android:layout_centerInParent="true"
-                    android:layout_centerVertical="true"
-                    android:background="@drawable/exist_selector"
-                    android:text="是否预约发布"
-                    android:textColor="@color/balck"
-                    android:textSize="18sp" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/layout_33"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="30dip"
-                android:layout_marginLeft="10dip"
-                android:layout_marginRight="10dip" >
+                android:layout_marginRight="10dip"
+                android:layout_marginTop="40dip" >
 
                 <Button
                     android:id="@+id/publicInfoBut"

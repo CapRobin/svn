@@ -22,7 +22,10 @@ import com.xibeiwuliu.global.MyApplication;
  */
 public class PersonalCenterActivity extends BaseActivity implements OnClickListener {
 	private MyApplication application = null;
-	private RelativeLayout layout_01, layout_02, layout_03, layout_04, layout_05, layout_06;
+	// private RelativeLayout layout_01, layout_02, layout_03, layout_04,
+	// layout_05, layout_06;
+	private RelativeLayout centerLayout_01, centerLayout_02, centerLayout_03, centerLayout_04, centerLayout_05, centerLayout_06, centerLayout_07,
+			centerLayout_08;
 	private String getMsg;
 	private boolean isShowRightBut = true; // 是否显示右边按钮
 
@@ -52,19 +55,30 @@ public class PersonalCenterActivity extends BaseActivity implements OnClickListe
 		// "Push Msg is-->> "+application.getPushMsg, 5).show();
 		// application.getPushMsg = null;
 		// }
-		layout_01 = (RelativeLayout) findViewById(R.id.layout_01);
-		layout_02 = (RelativeLayout) findViewById(R.id.layout_02);
-		layout_03 = (RelativeLayout) findViewById(R.id.layout_03);
-		layout_04 = (RelativeLayout) findViewById(R.id.layout_04);
-		layout_05 = (RelativeLayout) findViewById(R.id.layout_05);
-		layout_06 = (RelativeLayout) findViewById(R.id.layout_06);
+		// layout_01 = (RelativeLayout) findViewById(R.id.layout_01);
+		// layout_02 = (RelativeLayout) findViewById(R.id.layout_02);
+		// layout_03 = (RelativeLayout) findViewById(R.id.layout_03);
+		// layout_04 = (RelativeLayout) findViewById(R.id.layout_04);
+		// layout_05 = (RelativeLayout) findViewById(R.id.layout_05);
+		// layout_06 = (RelativeLayout) findViewById(R.id.layout_06);
 
-		layout_01.setOnClickListener(this);
-		layout_02.setOnClickListener(this);
-		layout_03.setOnClickListener(this);
-		layout_04.setOnClickListener(this);
-		layout_05.setOnClickListener(this);
-		layout_06.setOnClickListener(this);
+		centerLayout_01 = (RelativeLayout) findViewById(R.id.centerLayout_01);
+		centerLayout_02 = (RelativeLayout) findViewById(R.id.centerLayout_02);
+		centerLayout_03 = (RelativeLayout) findViewById(R.id.centerLayout_03);
+		centerLayout_04 = (RelativeLayout) findViewById(R.id.centerLayout_04);
+		centerLayout_05 = (RelativeLayout) findViewById(R.id.centerLayout_05);
+		centerLayout_06 = (RelativeLayout) findViewById(R.id.centerLayout_06);
+		centerLayout_07 = (RelativeLayout) findViewById(R.id.centerLayout_07);
+		centerLayout_08 = (RelativeLayout) findViewById(R.id.centerLayout_08);
+
+		centerLayout_01.setOnClickListener(this);
+		centerLayout_02.setOnClickListener(this);
+		centerLayout_03.setOnClickListener(this);
+		centerLayout_04.setOnClickListener(this);
+		centerLayout_05.setOnClickListener(this);
+		centerLayout_06.setOnClickListener(this);
+		centerLayout_07.setOnClickListener(this);
+		centerLayout_08.setOnClickListener(this);
 
 		if (isShowRightBut) {
 			this.rightTitleBut.setOnClickListener(new OnClickListener() {
@@ -80,64 +94,37 @@ public class PersonalCenterActivity extends BaseActivity implements OnClickListe
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
-		case R.id.layout_01:
+		case R.id.centerLayout_01:
 			Intent intent = new Intent(PersonalCenterActivity.this, PersonalDriverInfoActivity.class);
 			String Msg = "个人信息";
 			intent.putExtra("msg", Msg);
 			startActivity(intent);
-			// if (application.isLogin) {
-			// if (application.userInfo.getUserType() == 1) {
-			// Intent intent1 = new Intent(SettingCenterActivity.this,
-			// PersonalDriverInfoActivity.class);
-			// startActivity(intent1);
-			// }else {
-			// Intent intent2 = new Intent(SettingCenterActivity.this,
-			// PersonalLogisticsInfoActivity.class);
-			// startActivity(intent2);
-			// }
-			// } else {
-			// Toast.makeText(SettingCenterActivity.this, "登录后才能查看个人信息！",
-			// 5).show();
-			// Intent intent3 = new Intent(SettingCenterActivity.this,
-			// LoginActivity.class);
-			// startActivity(intent3);
-			// }
-			Toast.makeText(PersonalCenterActivity.this, "个人信息！", 5).show();
 			break;
-		case R.id.layout_02:
-			Toast.makeText(PersonalCenterActivity.this, "会员管理", 5).show();
-			// if (application.isLogin) {
-			// // Intent intent1 = new Intent(SettingCenterActivity.this,
-			// FriendListActivity.class);
-			// Intent intent1 = new Intent(SettingCenterActivity.this,
-			// FriendActivity.class);
-			// intent1.putExtra(Constants.MSGKEY, msg);
-			// startActivity(intent1);
-			// } else {
-			// Toast.makeText(SettingCenterActivity.this, "登录后才能查看个人信息！",
-			// 5).show();
-			// Intent intent3 = new Intent(SettingCenterActivity.this,
-			// LoginActivity.class);
-			// startActivity(intent3);
-			// }
+		case R.id.centerLayout_02:
+			Toast.makeText(PersonalCenterActivity.this, "我的发布", 5).show();
 			break;
-		case R.id.layout_03:
+		case R.id.centerLayout_03:
+			Toast.makeText(PersonalCenterActivity.this, "好友管理", 5).show();
+			break;
+		case R.id.centerLayout_04:
 			Intent intent2 = new Intent();
-			String Msge = "我的二维码";
+			String Msge = "软件分享";
 			intent2.putExtra("msg", Msge);
 			intent2.putExtra("content", "http://dl.5671.cc");
 			intent2.setClass(PersonalCenterActivity.this, TwoDimensionCodeActivity.class);
 			startActivity(intent2);
 			break;
-		case R.id.layout_04:
+		case R.id.centerLayout_05:
 			Toast.makeText(PersonalCenterActivity.this, "检测更新", 5).show();
 			break;
-		case R.id.layout_05:
-			Toast.makeText(PersonalCenterActivity.this, "关于公司", 5).show();
+		case R.id.centerLayout_06:
+			Toast.makeText(PersonalCenterActivity.this, "用户反馈", 5).show();
 			break;
-		case R.id.layout_06:
-			startActivity(new Intent(PersonalCenterActivity.this, PublishCargoActivity.class));
-
+		case R.id.centerLayout_07:
+			Toast.makeText(PersonalCenterActivity.this, "应用推荐", 5).show();
+			break;
+		case R.id.centerLayout_08:
+			Toast.makeText(PersonalCenterActivity.this, "关于公司", 5).show();
 			break;
 		}
 	}

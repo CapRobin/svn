@@ -1,6 +1,9 @@
 package com.xibeiwuliu.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -55,6 +58,15 @@ public class RelevantInfoDetailActivity extends BaseActivity {
 		infoTitleName.setText(getName);
 		infoContent.setText(getContent);
 		infoTime.setText(getTime);
+		infoImage.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(RelevantInfoDetailActivity.this, MyWebView.class);
+				intent.putExtra("url", "http://www.sinopec.com");
+				startActivity(intent);
+			}
+		});
 
 	}
 }

@@ -5,6 +5,8 @@ import android.text.TextUtils;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.xibeiwuliu.view.MyView;
@@ -23,8 +25,10 @@ import com.xibeiwuliu.view.MyView;
 public class PublishCargoActivity extends BaseActivity implements OnClickListener {
 	private String getMsg;
 	private boolean isShowRightBut = false;
-	private Button publicInfoBut, isYuYueBut;
+	private Button publicInfoBut;
 	private MyView myView = null;
+	private EditText zcsjEdit, ddsjEdit = null;
+	private ImageView mapImageAddr;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -46,13 +50,18 @@ public class PublishCargoActivity extends BaseActivity implements OnClickListene
 	private void initView() {
 		myView = (MyView) findViewById(R.id.myView);
 		publicInfoBut = (Button) findViewById(R.id.publicInfoBut);
-		isYuYueBut = (Button) findViewById(R.id.isYuYueBut);
+		zcsjEdit = (EditText) findViewById(R.id.zcsjEdit);
+		ddsjEdit = (EditText) findViewById(R.id.ddsjEdit);
+		mapImageAddr = (ImageView) findViewById(R.id.mapImageAddr);
+		// isYuYueBut = (Button) findViewById(R.id.isYuYueBut);
 		// //设置出发地合目的地为空
 		MyView.setStartAddress();
 		MyView.setEndAddress();
 
 		publicInfoBut.setOnClickListener(this);
-		isYuYueBut.setOnClickListener(this);
+		zcsjEdit.setOnClickListener(this);
+		ddsjEdit.setOnClickListener(this);
+		mapImageAddr.setOnClickListener(this);
 	}
 
 	/**
@@ -80,8 +89,14 @@ public class PublishCargoActivity extends BaseActivity implements OnClickListene
 				Toast.makeText(PublishCargoActivity.this, "出发地为：" + myView.getStartAddress() + "\n目的地为：" + myView.getEndAddress(), 5).show();
 			}
 			break;
-		case R.id.isYuYueBut:
-			Toast.makeText(PublishCargoActivity.this, "请选择预约时间", 5).show();
+		case R.id.zcsjEdit:
+			Toast.makeText(PublishCargoActivity.this, "请选择装车时间", 5).show();
+			break;
+		case R.id.ddsjEdit:
+			Toast.makeText(PublishCargoActivity.this, "请选择到达时间", 5).show();
+			break;
+		case R.id.mapImageAddr:
+			Toast.makeText(PublishCargoActivity.this, "进入地图选取地址", 5).show();
 			break;
 		}
 	}
