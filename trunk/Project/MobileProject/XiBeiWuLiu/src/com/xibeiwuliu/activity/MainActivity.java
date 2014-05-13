@@ -202,7 +202,6 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 		switch (v.getId()) {
 		case R.id.layoutItem01:
 			Msg = "货源信息";
-			// Toast.makeText(MainActivity.this, Msg, 5).show();
 			intent.setClass(MainActivity.this, CargoListActivity.class);
 			intent.putExtra("msg", Msg);
 			startActivity(intent);

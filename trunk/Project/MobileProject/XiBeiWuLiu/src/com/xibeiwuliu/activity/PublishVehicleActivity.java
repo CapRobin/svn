@@ -22,7 +22,7 @@ import com.xibeiwuliu.view.MyView;
  */
 public class PublishVehicleActivity extends BaseActivity implements OnClickListener {
 	private boolean isShowRightBut = false;
-	private Button publicInfoBut, isYuYueBut;
+	private Button publicInfoBut;
 	private String getMsg;
 	private MyView myView = null;
 
@@ -46,13 +46,11 @@ public class PublishVehicleActivity extends BaseActivity implements OnClickListe
 	private void initView() {
 		myView = (MyView) findViewById(R.id.myView);
 		publicInfoBut = (Button) findViewById(R.id.publicInfoBut);
-		isYuYueBut = (Button) findViewById(R.id.isYuYueBut);
 		// //设置出发地合目的地为空
 		MyView.setStartAddress();
 		MyView.setEndAddress();
 
 		publicInfoBut.setOnClickListener(this);
-		isYuYueBut.setOnClickListener(this);
 	}
 
 	/**
@@ -79,9 +77,6 @@ public class PublishVehicleActivity extends BaseActivity implements OnClickListe
 			} else {
 				Toast.makeText(PublishVehicleActivity.this, "出发地为：" + myView.getStartAddress() + "\n目的地为：" + myView.getEndAddress(), 5).show();
 			}
-			break;
-		case R.id.isYuYueBut:
-			Toast.makeText(PublishVehicleActivity.this, "请选择预约时间", 5).show();
 			break;
 		}
 	}

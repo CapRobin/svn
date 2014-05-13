@@ -49,10 +49,12 @@
         <activity
             android:name="com.xibeiwuliu.activity.PublishCargoActivity"
             android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize"
             android:theme="@android:style/Theme.NoTitleBar" />
         <activity
             android:name="com.xibeiwuliu.activity.PublishVehicleActivity"
             android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize"
             android:theme="@android:style/Theme.NoTitleBar" />
         <activity
             android:name=".SpecialLineActivity"
@@ -61,10 +63,12 @@
         <activity
             android:name=".PersonalDriverInfoActivity"
             android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize"
             android:theme="@android:style/Theme.NoTitleBar" />
         <activity
             android:name=".PersonalOwnerInfoActivity"
             android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize"
             android:theme="@android:style/Theme.NoTitleBar" />
         <activity
             android:name=".CargoListDetailActivity"
@@ -101,21 +105,20 @@
         <activity
             android:name=".SearchCargoActivity"
             android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize"
             android:theme="@android:style/Theme.NoTitleBar" />
         <activity
             android:name=".SearchVehicleActivity"
             android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize"
             android:theme="@android:style/Theme.NoTitleBar" />
         <activity
             android:name=".OrderSearchActivity"
             android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize"
             android:theme="@android:style/Theme.NoTitleBar" />
         <activity
             android:name=".TwoDimensionCodeActivity"
-            android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.NoTitleBar" />
-        <activity
-            android:name="com.xibeiwuliu.activity.TwoDimensionCodeActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar" />
     </application>

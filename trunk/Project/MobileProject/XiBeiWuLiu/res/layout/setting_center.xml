@@ -4,231 +4,314 @@
     android:layout_height="fill_parent"
     android:background="@color/app_bg" >
 
-    <LinearLayout
-        android:id="@+id/infoLayout1"
+    <ScrollView
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dip"
-        android:layout_marginLeft="20dip"
-        android:layout_marginRight="20dip"
-        android:layout_marginTop="40dip"
-        android:orientation="vertical" >
+        android:layout_height="fill_parent"
+        android:fadingEdge="none"
+        android:fastScrollEnabled="true" >
 
         <RelativeLayout
-            android:id="@+id/layout_01"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/setting_bg_up_selector_login"
-            android:orientation="horizontal" >
+            android:layout_height="fill_parent" >
 
-            <TextView
-                android:id="@+id/hospitalText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="10dip"
-                android:text="个人信息"
-                android:textColor="@color/balck"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/hospitalName"
+            <LinearLayout
+                android:id="@+id/infoLayout1"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="10dip"
-                android:layout_marginRight="25dip"
-                android:layout_toRightOf="@+id/hospitalText"
-                android:textColor="@color/text_color3" />
+                android:layout_marginBottom="20dip"
+                android:layout_marginLeft="20dip"
+                android:layout_marginRight="20dip"
+                android:layout_marginTop="40dip"
+                android:orientation="vertical" >
 
-            <ImageView
-                android:id="@+id/hospitalDetail"
-                android:layout_width="10dip"
-                android:layout_height="10dip"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:layout_marginRight="10dip"
-                android:background="@drawable/detail" />
+                <RelativeLayout
+                    android:id="@+id/centerLayout_01"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/setting_bg_up_selector_login"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/grxxText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dip"
+                        android:text="个人信息"
+                        android:textColor="@color/balck"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/hospitalName"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginRight="25dip"
+                        android:layout_toRightOf="@+id/hospitalText"
+                        android:textColor="@color/text_color3" />
+
+                    <ImageView
+                        android:layout_width="10dip"
+                        android:layout_height="10dip"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dip"
+                        android:background="@drawable/detail" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/centerLayout_02"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/setting_bg_center_selector_login"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/wdfbText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dip"
+                        android:text="我的发布"
+                        android:textColor="@color/balck"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/hospitalName"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginRight="25dip"
+                        android:layout_toRightOf="@+id/hospitalText"
+                        android:textColor="@color/text_color3" />
+
+                    <ImageView
+                        android:layout_width="10dip"
+                        android:layout_height="10dip"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dip"
+                        android:background="@drawable/detail" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/centerLayout_03"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/setting_bg_center_selector_login"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/hyglText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dip"
+                        android:text="好友管理"
+                        android:textColor="@color/balck"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/hospitalName"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginRight="25dip"
+                        android:layout_toRightOf="@+id/hospitalText"
+                        android:textColor="@color/text_color3" />
+
+                    <ImageView
+                        android:layout_width="10dip"
+                        android:layout_height="10dip"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dip"
+                        android:background="@drawable/detail" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/centerLayout_04"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/setting_bg_down_selector_login"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/rjfxText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dip"
+                        android:text="软件分享"
+                        android:textColor="@color/balck"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/hospitalName"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginRight="25dip"
+                        android:layout_toRightOf="@+id/hospitalText"
+                        android:textColor="@color/text_color3" />
+
+                    <ImageView
+                        android:layout_width="10dip"
+                        android:layout_height="10dip"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dip"
+                        android:background="@drawable/detail" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/centerLayout_05"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dip"
+                    android:background="@drawable/setting_bg_up_selector_login"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/jcgxText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dip"
+                        android:text="检测更新"
+                        android:textColor="@color/balck"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/hospitalName"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginRight="25dip"
+                        android:layout_toRightOf="@+id/hospitalText"
+                        android:textColor="@color/text_color3" />
+
+                    <ImageView
+                        android:id="@+id/hospitalDetail"
+                        android:layout_width="10dip"
+                        android:layout_height="10dip"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dip"
+                        android:background="@drawable/detail" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/centerLayout_06"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/setting_bg_center_selector_login"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/yhfkText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dip"
+                        android:text="用户反馈"
+                        android:textColor="@color/balck"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/hospitalName"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginRight="25dip"
+                        android:layout_toRightOf="@+id/hospitalText"
+                        android:textColor="@color/text_color3" />
+
+                    <ImageView
+                        android:layout_width="10dip"
+                        android:layout_height="10dip"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dip"
+                        android:background="@drawable/detail" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/centerLayout_07"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/setting_bg_center_selector_login"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/yytjText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dip"
+                        android:text="应用推荐"
+                        android:textColor="@color/balck"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/hospitalName"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginRight="25dip"
+                        android:layout_toRightOf="@+id/hospitalText"
+                        android:textColor="@color/text_color3" />
+
+                    <ImageView
+                        android:layout_width="10dip"
+                        android:layout_height="10dip"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dip"
+                        android:background="@drawable/detail" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/centerLayout_08"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/setting_bg_down_selector_login"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/yhfklText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dip"
+                        android:text="关于公司"
+                        android:textColor="@color/balck"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/gygsName"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginRight="25dip"
+                        android:layout_toRightOf="@+id/hospitalText"
+                        android:textColor="@color/text_color3" />
+
+                    <ImageView
+                        android:layout_width="10dip"
+                        android:layout_height="10dip"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dip"
+                        android:background="@drawable/detail" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="30dip" >
+                </LinearLayout>
+            </LinearLayout>
         </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/layout_02"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/setting_bg_center_selector_login"
-            android:orientation="horizontal" >
-
-            <TextView
-                android:id="@+id/hospitalText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="10dip"
-                android:text="好友管理"
-                android:textColor="@color/balck"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/hospitalName"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="10dip"
-                android:layout_marginRight="25dip"
-                android:layout_toRightOf="@+id/hospitalText"
-                android:textColor="@color/text_color3" />
-
-            <ImageView
-                android:id="@+id/hospitalDetail"
-                android:layout_width="10dip"
-                android:layout_height="10dip"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:layout_marginRight="10dip"
-                android:background="@drawable/detail" />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/layout_03"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/setting_bg_center_selector_login"
-            android:orientation="horizontal" >
-
-            <TextView
-                android:id="@+id/hospitalText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="10dip"
-                android:text="我的二维码"
-                android:textColor="@color/balck"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/hospitalName"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="10dip"
-                android:layout_marginRight="25dip"
-                android:layout_toRightOf="@+id/hospitalText"
-                android:textColor="@color/text_color3" />
-
-            <ImageView
-                android:id="@+id/hospitalDetail"
-                android:layout_width="10dip"
-                android:layout_height="10dip"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:layout_marginRight="10dip"
-                android:background="@drawable/detail" />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/layout_04"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/setting_bg_center_selector_login"
-            android:orientation="horizontal" >
-
-            <TextView
-                android:id="@+id/hospitalText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="10dip"
-                android:text="检测更新"
-                android:textColor="@color/balck"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/hospitalName"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="10dip"
-                android:layout_marginRight="25dip"
-                android:layout_toRightOf="@+id/hospitalText"
-                android:textColor="@color/text_color3" />
-
-            <ImageView
-                android:id="@+id/hospitalDetail"
-                android:layout_width="10dip"
-                android:layout_height="10dip"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:layout_marginRight="10dip"
-                android:background="@drawable/detail" />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/layout_05"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/setting_bg_center_selector_login"
-            android:orientation="horizontal" >
-
-            <TextView
-                android:id="@+id/hospitalText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="10dip"
-                android:text="关于公司"
-                android:textColor="@color/balck"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/hospitalName"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="10dip"
-                android:layout_marginRight="25dip"
-                android:layout_toRightOf="@+id/hospitalText"
-                android:textColor="@color/text_color3" />
-
-            <ImageView
-                android:id="@+id/hospitalDetail"
-                android:layout_width="10dip"
-                android:layout_height="10dip"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:layout_marginRight="10dip"
-                android:background="@drawable/detail" />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/layout_06"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/setting_bg_down_selector_login"
-            android:orientation="horizontal" >
-
-            <TextView
-                android:id="@+id/hospitalText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="10dip"
-                android:text="更多应用"
-                android:textColor="@color/balck"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/hospitalName"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="10dip"
-                android:layout_marginRight="25dip"
-                android:layout_toRightOf="@+id/hospitalText"
-                android:textColor="@color/text_color3" />
-
-            <ImageView
-                android:id="@+id/hospitalDetail"
-                android:layout_width="10dip"
-                android:layout_height="10dip"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:layout_marginRight="10dip"
-                android:background="@drawable/detail" />
-        </RelativeLayout>
-    </LinearLayout>
+    </ScrollView>
 
 </RelativeLayout>
