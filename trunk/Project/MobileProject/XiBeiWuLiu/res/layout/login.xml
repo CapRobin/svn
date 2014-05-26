@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/app_bg" >
+
+    <RelativeLayout
+        android:id="@+id/LoginLayout_01"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dip"
+        android:layout_marginRight="20dip"
+        android:layout_marginTop="35dip" >
+
+        <TextView
+            android:id="@+id/userNameText"
+            android:layout_width="100dip"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="用户名："
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/userNameEdit"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:layout_toRightOf="@+id/userNameText"
+            android:background="@drawable/myedit_bg"
+            android:hint="@string/inputPhoneNum"
+            android:singleLine="true"
+            android:textColor="@color/gray"
+            android:textSize="13sp" >
+        </EditText>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/LoginLayout_02"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/LoginLayout_01"
+        android:layout_marginLeft="20dip"
+        android:layout_marginRight="20dip"
+        android:layout_marginTop="10dip" >
+
+        <TextView
+            android:id="@+id/userPwdText"
+            android:layout_width="100dip"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="密    码："
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/userPwdEdit"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:layout_toRightOf="@+id/userPwdText"
+            android:background="@drawable/myedit_bg"
+            android:hint="请输入您的密码"
+            android:inputType="textPassword"
+            android:singleLine="true"
+            android:textColor="@color/gray"
+            android:textSize="13sp" >
+        </EditText>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/LoginLayout_03"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/LoginLayout_02"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="20dip"
+        android:layout_marginRight="18dip"
+        android:layout_marginTop="20dip"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/userTypeText"
+            android:layout_width="100dip"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="用户类型"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <Spinner
+            android:id="@+id/userTypeSpin"
+            android:layout_width="fill_parent"
+            android:layout_height="45dip"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dip"
+            android:layout_toRightOf="@+id/userTypeText"
+            android:entries="@array/user_type" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/loginBtn"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="50dip"
+        android:layout_marginLeft="20dip"
+        android:layout_marginRight="20dip"
+        android:layout_marginTop="10dip"
+        android:background="@drawable/exist_selector"
+        android:padding="2dip"
+        android:text="@string/login"
+        android:textColor="@color/gray_black"
+        android:textSize="20sp" />
+
+</RelativeLayout>

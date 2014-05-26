@@ -43,7 +43,8 @@ public class MethodUtil {
 	 */
 	public static boolean getNetworkState(Context context) {
 		// 检测网络
-		ConnectivityManager connectivity = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+		ConnectivityManager connectivity = (ConnectivityManager) context
+				.getSystemService(Context.CONNECTIVITY_SERVICE);
 		NetworkInfo netWork = connectivity.getActiveNetworkInfo();
 		if (netWork != null) {
 			return netWork.isAvailable();
@@ -61,7 +62,8 @@ public class MethodUtil {
 	 * @version v1.0
 	 */
 	public static boolean isGpsEnable(Context context) {
-		LocationManager locationManager = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
+		LocationManager locationManager = (LocationManager) context
+				.getSystemService(Context.LOCATION_SERVICE);
 		return locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
 	}
 
@@ -139,8 +141,8 @@ public class MethodUtil {
 		}
 		return valueLength;
 	}
-	
- 	public static String convertStreamToString(InputStream is) {
+
+	public static String convertStreamToString(InputStream is) {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(is));
 		StringBuilder sb = new StringBuilder();
 		String line = null;
@@ -159,14 +161,14 @@ public class MethodUtil {
 		}
 		return sb.toString();
 	}
- 	
+
 	/**
 	 * 
 	 * @Describe：Pull解析Xml文件
 	 * @param is
 	 * @return
 	 * @throws Exception
-	 * @Throws 
+	 * @Throws
 	 * @Date：2013-12-19 下午3:30:01
 	 * @Version v1.0
 	 */
@@ -197,24 +199,25 @@ public class MethodUtil {
 		}
 		return resultStr;
 	}
-	
+
 	/**
 	 * 
 	 * 描述：发布货源信息参数
+	 * 
 	 * @param string
 	 * @param lprId
-	 * @throws 
+	 * @throws
 	 * @date：2013年12月27日 上午3:37:10
 	 * @version v1.0
 	 */
-//	private void setParameterList(String key, String value) {
-//		Parameter parameter = null;
-//		parameter = new Parameter();
-//		parameter.setParameterKey(key);
-//		parameter.setParameterValue(value);
-//		parameterList.add(parameter);
-//	}
-	
+	// private void setParameterList(String key, String value) {
+	// Parameter parameter = null;
+	// parameter = new Parameter();
+	// parameter.setParameterKey(key);
+	// parameter.setParameterValue(value);
+	// parameterList.add(parameter);
+	// }
+
 	/**
 	 * 
 	 * @Describe：参数转换
@@ -225,59 +228,60 @@ public class MethodUtil {
 	 * @Date：2013-12-23 下午5:08:55
 	 * @Version v1.0
 	 */
-	public static String getParameterString(String portName, List<Parameter> parameterList) {
+	public static String getParameterString(String portName,
+			List<Parameter> parameterList) {
 		int size = parameterList.size();
 		StringBuilder sb = new StringBuilder();
 		for (int i = 0; i < size; i++) {
-			String string2 = "<" + parameterList.get(i).getParameterKey() + ">" + parameterList.get(i).getParameterValue() + "</"
+			String string2 = "<" + parameterList.get(i).getParameterKey() + ">"
+					+ parameterList.get(i).getParameterValue() + "</"
 					+ parameterList.get(i).getParameterKey() + ">";
 			sb.append(string2);
 		}
-		return "<Request><data code='" + portName + "'><no>" + sb + "</no></data></Request>";
+		return "<Request><data code='" + portName + "'><no>" + sb
+				+ "</no></data></Request>";
 	}
- 	
-	
 
-
-    /**
-     * 导入数据库
-     * @param context
-     * @param dbfile
-     * @return
-     */
-    public static boolean importDatabase(Context context,File dbfile) {
+	/**
+	 * 导入数据库
+	 * 
+	 * @param context
+	 * @param dbfile
+	 * @return
+	 */
+	public static boolean importDatabase(Context context, File dbfile) {
 		int BUFFER_SIZE = 1024;
 		InputStream is = null;
 		FileOutputStream fos = null;
 		boolean flag = false;
 		try {
-			//判断数据库文件是否存在，若不存在则执行导入，否则直接打开数据库
+			// 判断数据库文件是否存在，若不存在则执行导入，否则直接打开数据库
 			if (!dbfile.exists()) {
-				//欲导入的数据库
-				if(!dbfile.getParentFile().exists()){
+				// 欲导入的数据库
+				if (!dbfile.getParentFile().exists()) {
 					dbfile.getParentFile().mkdirs();
 				}
 				dbfile.createNewFile();
-				is = context.getResources().openRawResource(R.raw.logistics); 
+				is = context.getResources().openRawResource(R.raw.logistics);
 				fos = new FileOutputStream(dbfile);
 				byte[] buffer = new byte[BUFFER_SIZE];
 				int count = 0;
 				while ((count = is.read(buffer)) > 0) {
-				   fos.write(buffer, 0, count);
+					fos.write(buffer, 0, count);
 				}
 				fos.flush();
 			}
 			flag = true;
 		} catch (Exception e) {
 			e.printStackTrace();
-		}finally{
-			if(fos!=null){
+		} finally {
+			if (fos != null) {
 				try {
 					fos.close();
 				} catch (Exception e) {
 				}
 			}
-			if(is!=null){
+			if (is != null) {
 				try {
 					is.close();
 				} catch (Exception e) {
@@ -286,4 +290,79 @@ public class MethodUtil {
 		}
 		return flag;
 	}
+
+	/**
+	 * 
+	 * @Describe：Unicode解码
+	 * @param theString
+	 * @return
+	 * @Throws:  
+	 * @Date：2014年5月26日 上午11:32:26
+	 * @Version v1.0
+	 */
+	public static String decodeUnicode(String theString) {
+		char aChar;
+		int len = theString.length();
+		StringBuffer outBuffer = new StringBuffer(len);
+		for (int x = 0; x < len;) {
+			aChar = theString.charAt(x++);
+			if (aChar == '\\') {
+				aChar = theString.charAt(x++);
+				if (aChar == 'u') {
+					// Read the xxxx
+					int value = 0;
+					for (int i = 0; i < 4; i++) {
+						aChar = theString.charAt(x++);
+						switch (aChar) {
+						case '0':
+						case '1':
+						case '2':
+						case '3':
+						case '4':
+						case '5':
+						case '6':
+						case '7':
+						case '8':
+						case '9':
+							value = (value << 4) + aChar - '0';
+							break;
+						case 'a':
+						case 'b':
+						case 'c':
+						case 'd':
+						case 'e':
+						case 'f':
+							value = (value << 4) + 10 + aChar - 'a';
+							break;
+						case 'A':
+						case 'B':
+						case 'C':
+						case 'D':
+						case 'E':
+						case 'F':
+							value = (value << 4) + 10 + aChar - 'A';
+							break;
+						default:
+							throw new IllegalArgumentException(
+									"Malformed   \\uxxxx   encoding.");
+						}
+					}
+					outBuffer.append((char) value);
+				} else {
+					if (aChar == 't')
+						aChar = '\t';
+					else if (aChar == 'r')
+						aChar = '\r';
+					else if (aChar == 'n')
+						aChar = '\n';
+					else if (aChar == 'f')
+						aChar = '\f';
+					outBuffer.append(aChar);
+				}
+			} else
+				outBuffer.append(aChar);
+		}
+		return outBuffer.toString();
+	}
+
 }
