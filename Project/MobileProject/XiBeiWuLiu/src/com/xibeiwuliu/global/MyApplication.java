@@ -22,7 +22,7 @@ public class MyApplication extends Application {
 	public String mFamilyId = null;
 	public boolean firstStart = true;
 	public boolean isBoot = false;  
-	public boolean isLogin = true;
+	public boolean isLogin = false;
 	@Override
 	public void onCreate() {
 		super.onCreate();

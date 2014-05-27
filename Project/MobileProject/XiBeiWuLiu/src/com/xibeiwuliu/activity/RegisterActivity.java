@@ -16,33 +16,35 @@ import com.ab.global.AbAppException;
 import com.ab.task.AbTaskItem;
 import com.ab.task.AbTaskListener;
 import com.ab.task.AbThread;
-import com.xibeiwuliu.global.MyApplication;
 import com.xibeiwuliu.util.MethodUtil;
 import com.xibeiwuliu.web.UserInfoWeb;
 
+/**
+ * 
+ * Copyright (c) 2013 All rights reserved
+ * @Name：RegisterActivity.java 
+ * @Describe：用户注册
+ * @Author:  yfr5734@gmail.com
+ * @Date：2014年5月27日 上午9:56:47
+ * @Version v1.0
+ */
 public class RegisterActivity extends BaseActivity {
-	private MyApplication application = null;
 	private String getMsg;
-	private String register = null;
+	private boolean isRegister = false;
 
 	private Button registerBtn;
 	private EditText realNameEdit, userNameEdit, pwdEdit, affirmPwdEdit;
-	private String realNameEditStr, userNameEditStr, pwdEditStr,
-			affirmPwdEditStr;
+	private String realNameEditStr, userNameEditStr, pwdEditStr, affirmPwdEditStr;
 	private Spinner userTypeSpin = null;
-	private boolean isShowRightBut = true; // 是否显示右边按钮
-	
-	private int userType = 0;		
+	private int userType = 0;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setAbContentView(R.layout.register);
-		application = (MyApplication) abApplication;
 		getMsg = getIntent().getStringExtra("msg");
 		initTitleLayout(getMsg, false);
 		initView();
-
 	}
 
 	/**
@@ -54,14 +56,12 @@ public class RegisterActivity extends BaseActivity {
 	 * @version v1.0
 	 */
 	private void initView() {
-
 		realNameEdit = (EditText) findViewById(R.id.realNameEdit);
 		userNameEdit = (EditText) findViewById(R.id.userNameEdit);
 		pwdEdit = (EditText) findViewById(R.id.pwdEdit);
 		affirmPwdEdit = (EditText) findViewById(R.id.affirmPwdEdit);
 		userTypeSpin = (Spinner) findViewById(R.id.userTypeSpin);
 		registerBtn = (Button) findViewById(R.id.registerBtn);
-		
 
 		userTypeSpin.setOnItemSelectedListener(new OnItemSelectedListener() {
 
@@ -81,22 +81,26 @@ public class RegisterActivity extends BaseActivity {
 			public void onNothingSelected(AdapterView<?> parent) {
 			}
 		});
-		
 
 		registerBtn.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
 				startRegister();
-
 			}
 		});
 
 	}
 
+	/**
+	 * 
+	 * @Describe：开始注册
+	 * @Throws:
+	 * @Date：2014年5月27日 上午9:48:50
+	 * @Version v1.0
+	 */
 	private void startRegister() {
-		final String Imei = ((TelephonyManager) getSystemService(TELEPHONY_SERVICE))
-				.getDeviceId();
+		final String Imei = ((TelephonyManager) getSystemService(TELEPHONY_SERVICE)).getDeviceId();
 		realNameEditStr = realNameEdit.getText().toString().trim();
 		userNameEditStr = userNameEdit.getText().toString().trim();
 		pwdEditStr = pwdEdit.getText().toString().trim();
@@ -110,7 +114,7 @@ public class RegisterActivity extends BaseActivity {
 			realNameEdit.requestFocus();
 			return;
 		}
-		if (MethodUtil.chineseLength(realNameEditStr) < 3	|| MethodUtil.chineseLength(realNameEditStr) > 16) {
+		if (MethodUtil.chineseLength(realNameEditStr) < 3 || MethodUtil.chineseLength(realNameEditStr) > 16) {
 			realNameEdit.setError(getResources().getText(R.string.really_name_on));
 			realNameEdit.setFocusable(true);
 			realNameEdit.setFocusableInTouchMode(true);
@@ -172,24 +176,16 @@ public class RegisterActivity extends BaseActivity {
 			@Override
 			public void update() {
 				removeProgressDialog();
-				if (!TextUtils.isEmpty(register)) {
-					Toast.makeText(RegisterActivity.this, register, 5).show();
-				} else {
-					Toast.makeText(RegisterActivity.this, "获取数据失败", 5).show();
+				if (isRegister) {
+					finish();
+					Toast.makeText(RegisterActivity.this, "注册成功并通过审核，您将有100天使用期限", 5).show();
 				}
 			}
 
 			@Override
 			public void get() {
 				try {
-					
-
-//					realNameEditStr = realNameEdit.getText().toString().trim();
-//					userNameEditStr = userNameEdit.getText().toString().trim();
-//					pwdEditStr = pwdEdit.getText().toString().trim();
-//					affirmPwdEditStr = affirmPwdEdit.getText().toString().trim();
-					
-					register = UserInfoWeb.userRegister(realNameEditStr, userNameEditStr, pwdEditStr, userType, Imei, "1542519456");
+					isRegister = UserInfoWeb.userRegister(realNameEditStr, userNameEditStr, pwdEditStr, userType, Imei, "1542519456");
 				} catch (AbAppException e) {
 					e.printStackTrace();
 					showToastInThread(e.getMessage());
@@ -199,5 +195,4 @@ public class RegisterActivity extends BaseActivity {
 		// 开始执行
 		mAbTaskThread.execute(item);
 	}
-
 }
