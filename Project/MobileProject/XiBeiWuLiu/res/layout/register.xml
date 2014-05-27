@@ -62,6 +62,7 @@
             android:layout_toRightOf="@+id/userNameText"
             android:background="@drawable/myedit_bg"
             android:hint="请输入手机号码"
+            android:inputType="phone"
             android:singleLine="true"
             android:textColor="@color/gray"
             android:textSize="13sp" >
