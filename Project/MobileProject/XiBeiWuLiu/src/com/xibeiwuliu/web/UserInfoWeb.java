@@ -11,6 +11,10 @@ import org.json.JSONObject;
 import android.util.Log;
 
 import com.ab.global.AbAppException;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.xibeiwuliu.entity.DriverUserInfo;
+import com.xibeiwuliu.entity.UserInfo;
 import com.xibeiwuliu.global.Constant;
 import com.xibeiwuliu.util.MethodUtil;
 
@@ -103,13 +107,14 @@ public class UserInfoWeb {
 	 * @Date：2014年5月27日 上午10:46:46
 	 * @Version v1.0
 	 */
-	public static boolean userLogin(String userName, String password, int userType, String imei) throws AbAppException {
-		boolean isLogin = false;
+	public static UserInfo userLogin(String userName, String password, int userType, String imei) throws AbAppException {
 		String sMobile = userName;
 		String sPassword = password;
 		int sUserType = userType;
 		String sImei = imei;
-		String path = Constant.HOSTURL + "estar/aclient/myusers.asp?action=login&username=" + sMobile + "&password=" + sPassword + "&usertypes=" + sUserType + "&imei=" + sImei;
+		UserInfo getUserInfo = new UserInfo();
+		String path = Constant.HOSTURL + "estar/aclient/clientlogin.asp?action=login&loginSign=0&username="+sMobile+"&password="+sPassword+"&usertypes="+sUserType+"&imei="+sImei;
+		
 		try {
 			HttpGet request = new HttpGet(path);
 			request.setHeader("Accept", "application/json");
@@ -126,7 +131,23 @@ public class UserInfoWeb {
 				JSONObject jsonObject = new JSONObject(responseStr);
 				String resultState = jsonObject.getString("state");
 				if ("ok".equals(resultState)) {
-					isLogin = true;
+					
+//					if (userDataSize > 0) {
+//						JSONArray array = driverInfoObject.getJSONArray("data");
+//						for (int i = 0; i < array.length(); i++) {
+//							JSONObject objectItem = array.getJSONObject(i);
+//							GsonBuilder builder = new GsonBuilder();
+//							Gson gson = builder.create();
+//							driverUserInfo = gson.fromJson(objectItem.toString(), DriverUserInfo.class);
+//							userInfo.setDriverUserInfo(driverUserInfo);
+//						}
+//					}
+//					JSONObject objectItem = array.getJSONObject(i);
+					JSONObject jsonObjecta = jsonObject.getJSONObject("userinfos");
+					GsonBuilder builder = new GsonBuilder();
+					Gson gson = builder.create();
+					getUserInfo = gson.fromJson(jsonObjecta.toString(), UserInfo.class);
+//					isLogin = true;
 				} else {
 					String exMsg = jsonObject.getString("answer");
 					AbAppException mAppException = new AbAppException(exMsg);
@@ -137,7 +158,7 @@ public class UserInfoWeb {
 			AbAppException mAppException = new AbAppException(e);
 			throw mAppException;
 		}
-		return isLogin;
+		return getUserInfo;
 	}
 
 }

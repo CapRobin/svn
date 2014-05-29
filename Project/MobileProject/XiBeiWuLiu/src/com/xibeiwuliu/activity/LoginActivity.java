@@ -17,6 +17,7 @@ import com.ab.global.AbAppException;
 import com.ab.task.AbTaskItem;
 import com.ab.task.AbTaskListener;
 import com.ab.task.AbThread;
+import com.xibeiwuliu.entity.UserInfo;
 import com.xibeiwuliu.global.MyApplication;
 import com.xibeiwuliu.util.MethodUtil;
 
@@ -39,6 +40,7 @@ public class LoginActivity extends BaseActivity {
 	private boolean isShowRightBut = true; // 是否显示右边按钮
 	private boolean isLogin = false;
 	private int userType = 0;
+	private UserInfo getUserInfo = null;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -153,18 +155,18 @@ public class LoginActivity extends BaseActivity {
 			@Override
 			public void update() {
 				removeProgressDialog();
-				if (isLogin) {
-					Toast.makeText(LoginActivity.this, "注册成功", 5).show();
+				if (getUserInfo != null) {
+					Toast.makeText(LoginActivity.this, "登录成功", 5).show();
+					application.userInfo = getUserInfo;
 					application.isLogin = isLogin;
-				} else {
-					Toast.makeText(LoginActivity.this, "注册失败", 5).show();
-				}
+					startActivity(new Intent(LoginActivity.this, MainActivity.class));
+				} 
 			}
 
 			@Override
 			public void get() {
 				try {
-					isLogin = com.xibeiwuliu.web.UserInfoWeb.userLogin(userNameEditStr, userPwdEditStr, userType, Imei);
+					getUserInfo = com.xibeiwuliu.web.UserInfoWeb.userLogin(userNameEditStr, userPwdEditStr, userType, Imei);
 				} catch (AbAppException e) {
 					e.printStackTrace();
 					showToastInThread(e.getMessage());
