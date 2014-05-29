@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 
 import com.ab.global.AbConstant;
+import com.xibeiwuliu.entity.UserInfo;
 
 /**
  * 
@@ -23,6 +24,8 @@ public class MyApplication extends Application {
 	public boolean firstStart = true;
 	public boolean isBoot = false;  
 	public boolean isLogin = false;
+	public UserInfo userInfo = null;
+	
 	@Override
 	public void onCreate() {
 		super.onCreate();
