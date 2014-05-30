@@ -40,7 +40,7 @@ public class UserInfoWeb {
 	 * @param password
 	 *            密码
 	 * @param userType
-	 *            用户类型(0:司机；1:物流公司)
+	 *            用户类型(1:司机；0:物流公司)
 	 * @param imei
 	 *            手机身份编码
 	 * @param other
@@ -98,7 +98,7 @@ public class UserInfoWeb {
 	 * @param password
 	 *            密码
 	 * @param userType
-	 *            用户类型
+	 *            用户类型(1:司机；0:物流公司)
 	 * @param imei
 	 *            手机身份编码
 	 * @return

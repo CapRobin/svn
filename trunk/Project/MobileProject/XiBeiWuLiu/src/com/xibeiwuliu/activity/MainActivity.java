@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.xibeiwuliu.database.SqliteDaoArea;
 import com.xibeiwuliu.entity.AreaInfo;
+import com.xibeiwuliu.entity.UserInfo;
 import com.xibeiwuliu.global.MyApplication;
 import com.xibeiwuliu.view.MyImgScroll;
 import com.xibeiwuliu.web.UserInfoWeb;
@@ -102,6 +103,12 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 //		List<AreaInfo> strList = daoArea.getAreaInfo(0);
 		// Toast.makeText(MainActivity.this, strList.get(0), 5).show();
 //		Toast.makeText(MainActivity.this, strList.get(0).getCcityName(), 5).show();
+		
+		//测试获取返回用户信息
+		if (application.isLogin) {
+			UserInfo userInfo = application.userInfo;
+			Toast.makeText(MainActivity.this, "获取的用户电话为：" +userInfo.getTelphone(), Toast.LENGTH_SHORT).show();
+		}
 	}
 
 	/**
