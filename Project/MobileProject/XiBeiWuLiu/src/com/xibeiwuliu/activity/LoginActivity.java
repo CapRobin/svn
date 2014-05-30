@@ -39,7 +39,7 @@ public class LoginActivity extends BaseActivity {
 	private Spinner userTypeSpin = null;
 	private boolean isShowRightBut = true; // 是否显示右边按钮
 	private boolean isLogin = false;
-	private int userType = 0;
+	private int userType = 1;
 	private UserInfo getUserInfo = null;
 
 	@Override
@@ -72,9 +72,9 @@ public class LoginActivity extends BaseActivity {
 
 				String getUserTypeStr = userTypeSpin.getSelectedItem().toString().toString();
 				if ("司机".equals(getUserTypeStr)) {
-					userType = 0;
-				} else {
 					userType = 1;
+				} else {
+					userType = 0;
 				}
 				Toast.makeText(LoginActivity.this, getUserTypeStr, 5).show();
 			}
@@ -158,7 +158,7 @@ public class LoginActivity extends BaseActivity {
 				if (getUserInfo != null) {
 					Toast.makeText(LoginActivity.this, "登录成功", 5).show();
 					application.userInfo = getUserInfo;
-					application.isLogin = isLogin;
+					application.isLogin = true;
 					startActivity(new Intent(LoginActivity.this, MainActivity.class));
 				} 
 			}

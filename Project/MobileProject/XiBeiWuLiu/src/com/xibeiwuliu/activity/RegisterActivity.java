@@ -36,7 +36,7 @@ public class RegisterActivity extends BaseActivity {
 	private EditText realNameEdit, userNameEdit, pwdEdit, affirmPwdEdit;
 	private String realNameEditStr, userNameEditStr, pwdEditStr, affirmPwdEditStr;
 	private Spinner userTypeSpin = null;
-	private int userType = 0;
+	private int userType = 1;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -70,9 +70,9 @@ public class RegisterActivity extends BaseActivity {
 
 				String getUserTypeStr = userTypeSpin.getSelectedItem().toString().toString();
 				if ("司机".equals(getUserTypeStr)) {
-					userType = 0;
-				} else {
 					userType = 1;
+				} else {
+					userType = 0;
 				}
 				Toast.makeText(RegisterActivity.this, getUserTypeStr, 5).show();
 			}
