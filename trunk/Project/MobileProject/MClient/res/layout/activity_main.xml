@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+    <LinearLayout
+        android:id="@+id/top"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:gravity="top"
+		android:orientation="horizontal">
+
+    <RelativeLayout
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content" >
+        <Button
+            android:id="@+id/startCityBtn"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            
+            android:singleLine="true"
+			android:ellipsize="marquee"
+			android:focusableInTouchMode="true"
+		
+			android:layout_alignParentLeft="true"
+            android:text="@string/startcityTxt" />
+
+        <TextView
+            android:id="@+id/maintextView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/startCityBtn"
+            android:layout_centerVertical="true"
+            android:text="@string/daoTxt" />
+
+        <Button
+            android:id="@+id/stopCityBtn"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            
+            android:singleLine="true"
+			android:ellipsize="marquee"
+			android:focusableInTouchMode="true"
+			android:layout_toRightOf="@+id/maintextView1"
+            android:text="@string/quanguo" />
+
+        <Button
+            android:id="@+id/searchBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/stopCityBtn"
+            android:text="@string/searchBtnTxt"
+            android:textColor="@color/blue" />
+
+        <CheckBox
+            android:id="@+id/scrollCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:layout_toLeftOf="@+id/addBtn"
+            android:text="@string/scrollTxt" />
+
+        <Button
+            android:id="@+id/addBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="@string/addBtnTxt"
+            android:textColor="@color/blue" />
+
+        </RelativeLayout>
+		
+	</LinearLayout>
+
+    <!-- 开始-内容显示区域 -->
+    <LinearLayout
+		android:id="@+id/content"
+		android:layout_width="fill_parent"
+		android:layout_height="0dp"		
+		android:layout_weight="1"		
+		android:orientation="vertical">
+    
+
+        <com.estar.comm.MyListView
+        android:id="@+id/listView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:cacheColorHint="@color/transparent"
+        android:divider="@color/white"
+        android:dividerHeight="0px" />
+        
+   
+    </LinearLayout>
+	<!-- 结束-内容显示区域 -->
+    
+    <LinearLayout
+        android:id="@+id/bottom"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:gravity="bottom"
+		android:orientation="vertical"
+		android:background="@color/gray">
+		<!-- 滚动条广告 -->
+		<com.estar.comm.AutoScrollTextView 
+        android:id="@+id/endadv"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" 
+        android:inputType="text"
+        android:background="@android:color/transparent"
+        android:textSize="30px"
+        android:textColor="@color/red">
+        </com.estar.comm.AutoScrollTextView>
+
+    </LinearLayout>
+
+</LinearLayout>
