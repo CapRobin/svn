@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="string01">最近更新:</string>
+    <string name="string02">下拉刷新新信息</string>
+    <string name="string03">松开读取新信息</string>
+    <string name="string04">正在读取&#8230;</string>
+    <string name="string05">点击查看更多</string>
+    <string name="string06">数据加载完毕</string>
+</resources>

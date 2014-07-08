@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 提示 -->
+    <string name="typeBtn1Txt">货源信息</string>
+    <string name="typeBtn2Txt">车源信息</string>
+    <string name="typeInfo1Txt">钢材信息</string>
+    <string name="typeInfo2Txt">煤炭信息</string>
+    <string name="typeInfo3Txt">物流信息</string>
+    <string name="infoContentTxt">信息内容</string>
+    <string name="add2BtnTxt">发布2</string>
+    <string name="addStopCityTxt">目的地(可选)</string>
+    <string name="clearBtnTxt">清空</string>
+    <string name="backspaceBtnTxt">退格</string>
+    <string name="addinfoBtnTxt">发布</string>
+    <string name="addinfoErr1Txt">对不起，您暂时没有权限使用该发布功能</string>
+    <string name="addinfoErr2Txt">发布信息内容太长,请精简后再发</string>
+    <string name="addinfoDataErrTxt">发布内容不能为空</string>
+    <string name="addinfoMsg1">正在检测发布信息&#8230;</string>
+    <string name="addinfoMsg2">正在提交发布信息&#8230;</string>
+    <string name="addinfoMsg3">发布成功</string>
+    <string name="addinfoMsgE1">信息发送失败,请检查网络是否正常或与网管中心联系!</string>
+    <string name="addinfoMsgE2">相同信息不能重复发布,请更改发布信息的内容!</string>
+    <string name="addinfoMsgE3">您今天发布的信息条数已经达到规定要求,如果想增加发布的信息条数,请与管理员联系!</string>
+    <string name="button00Txt">0</string>
+    <string name="button01Txt">1</string>
+    <string name="button02Txt">2</string>
+    <string name="button03Txt">3</string>
+    <string name="button04Txt">4</string>
+    <string name="button05Txt">5</string>
+    <string name="button06Txt">6</string>
+    <string name="button07Txt">7</string>
+    <string name="button08Txt">8</string>
+    <string name="button09Txt">9</string>
+    <string name="button10Txt">-</string>
+    <string name="button11Txt">，</string>
+    <string name="button12Txt">。</string>
+    <string name="button13Txt">：</string>
+    <string name="button14Txt">；</string>
+    <string name="button15Txt">.</string>
+    <string name="button16Txt">、</string>
+    <string name="button17Txt">/</string>
+    <string name="button18Txt">去</string>
+    <string name="button19Txt">个</string>
+    <string name="button20Txt">吨</string>
+    <string name="button21Txt">米</string>
+    <string name="button22Txt">元</string>
+    <string name="button23Txt">台</string>
+    <string name="button24Txt">急</string>
+    <string name="button25Txt">发</string>
+    <string name="button26Txt">求</string>
+    <string name="button27Txt">回</string>
+    <string name="button28Txt">货</string>
+    <string name="button29Txt">至</string>
+    <string name="button30Txt">车</string>
+    <string name="button31Txt">到</string>
+    <string name="button32Txt">要</string>
+    <string name="button33Txt">在</string>
+    <string name="button34Txt">剩</string>
+    <string name="button35Txt">空</string>
+    <string name="button36Txt">装</string>
+    <string name="button37Txt">占</string>
+    <string name="button38Txt">或</string>
+    <string name="button39Txt">节</string>
+    <string name="button40Txt">大</string>
+    <string name="button41Txt">小</string>
+    <string name="button42Txt">卸</string>
+    <string name="button43Txt">多</string>
+    <string name="button44Txt">每</string>
+    <string name="button45Txt">部</string>
+    <string name="button46Txt">付</string>
+    <string name="button47Txt">清</string>
+    <string name="button48Txt">不</string>
+    <string name="button49Txt">半</string>
+    <string name="button50Txt">件</string>
+    <string name="button51Txt">方</string>
+    <string name="button52Txt">包</string>
+    <string name="button53Txt">长</string>
+    <string name="button54Txt">品</string>
+    <string name="button55Txt">款</string>
+    <string name="button56Txt">各</string>
+    <string name="button57Txt">定</string>
+    <string name="button58Txt">有</string>
+    <string name="button59Txt">需</string>
+    <string name="button60Txt">元/吨</string>
+    <string name="button61Txt">求车</string>
+    <string name="button62Txt">今天</string>
+    <string name="button63Txt">明天</string>
+    <string name="button64Txt">运价</string>
+    <string name="button70Txt">价格</string>
+    <string name="button71Txt">包车</string>
+    <string name="button72Txt">倒短</string>
+    <string name="button73Txt">面议</string>
+    <string name="button74Txt">左右</string>
+    <string name="button80Txt">货物>></string>
+    <string name="button81Txt">车长>></string>
+    <string name="button82Txt">车型>></string>
+    <string name="button83Txt">运费>></string>
+    <string name="button84Txt">说明>></string>
+    <string name="memtypeBtn1Txt">钢材会员</string>
+    <string name="memtypeBtn2Txt">物流会员</string>
+    <!-- 数组相关 -->
+    <string-array name="typeBtn_item">
+        <item>货源信息</item>
+        <item>车源信息</item>
+    </string-array>
+    <string-array name="button80_item">
+        <item>梨</item>
+        <item>葱</item>
+        <item>煤</item>
+        <item>化工</item>
+        <item>配件</item>
+        <item>饲料</item>
+        <item>木材</item>
+        <item>建材</item>
+        <item>钢材</item>
+        <item>转工</item>
+        <item>水产</item>
+        <item>农产</item>
+        <item>树苗</item>
+        <item>苹果</item>
+        <item>香蕉</item>
+        <item>桔子</item>
+        <item>大蒜</item>
+        <item>蒜台</item>
+        <item>土豆</item>
+        <item>萝卜</item>
+        <item>食品</item>
+        <item>水果</item>
+        <item>蔬菜</item>
+        <item>粮食</item>
+        <item>家禽</item>
+        <item>海鲜</item>
+        <item>原料</item>
+        <item>饮料</item>
+        <item>熟料</item>
+        <item>服装</item>
+        <item>机器</item>
+        <item>牲畜</item>
+        <item>能源</item>
+        <item>矿藏</item>
+        <item>纺织</item>
+        <item>制药</item>
+        <item>试剂</item>
+        <item>电机</item>
+        <item>电器</item>
+        <item>家具</item>
+        <item>竹藤</item>
+        <item>电子</item>
+        <item>机械</item>
+        <item>仪器</item>
+        <item>设备</item>
+        <item>水泥</item>
+        <item>矿粉</item>
+        <item>铁粉</item>
+        <item>塑料</item>
+        <item>纸制品</item>
+        <item>金属类</item>
+    </string-array>
+    <string-array name="button81_item">
+        <item>4米</item>
+        <item>4.2米</item>
+        <item>4.5米</item>
+        <item>4.8米</item>
+        <item>5米</item>
+        <item>5.8米</item>
+        <item>6米</item>
+        <item>6.2米</item>
+        <item>6.8米</item>
+        <item>7米</item>
+        <item>7.2米</item>
+        <item>7.4米</item>
+        <item>7.8米</item>
+        <item>8米</item>
+        <item>8.7米</item>
+        <item>8.8米</item>
+        <item>9米</item>
+        <item>12.5米</item>
+        <item>13米</item>
+        <item>17.5米</item>
+    </string-array>
+    <string-array name="button82_item">
+        <item>普通单车</item>
+        <item>集装箱车</item>
+        <item>前四后八</item>
+        <item>后八轮</item>
+        <item>半挂车</item>
+        <item>冷藏车</item>
+        <item>平板车</item>
+        <item>箱式车</item>
+        <item>高栏车</item>
+        <item>斯太尔</item>
+        <item>罐车</item>
+        <item>吊车</item>
+        <item>特种</item>
+        <item>单桥</item>
+        <item>双桥</item>
+        <item>封闭</item>
+        <item>工程</item>
+        <item>自卸</item>
+    </string-array>
+    <string-array name="button83_item">
+        <item>高价</item>
+        <item>高价急走</item>
+        <item>价格面议</item>
+        <item>运价好商量</item>
+        <item>全价</item>
+    </string-array>
+    <string-array name="button84_item">
+        <item>随车装</item>
+        <item>车已定好</item>
+        <item>马上装车</item>
+        <item>不占地方</item>
+        <item>请打手机</item>
+        <item>更正信息</item>
+        <item>在一个厂装</item>
+        <item>货在本站</item>
+        <item>货主在本站等</item>
+        <item>货主跟车</item>
+        <item>货主管饭</item>
+        <item>两货可一起走</item>
+        <item>今天定车 明天装车</item>
+        <item>晚上也可以装</item>
+        <item>求多部后八轮或半挂</item>
+        <item>求大小车</item>
+        <item>货已定 请勿打扰</item>
+        <item>装车付一半路费 货到付清</item>
+        <item>货到就卸 不压车</item>
+        <item>三不超</item>
+        <item>已成交</item>
+    </string-array>
+    <string-array name="regMem_item">
+        <item>煤炭会员</item>
+        <item>钢材会员</item>
+    </string-array>
+    <!-- 钢材会员相关 -->
+    <string-array name="gcBtn_item">
+        <item>钢材信息</item>
+        <item>物流信息</item>
+    </string-array>
+    <!-- 煤炭会员相关 -->
+    <string-array name="mtBtn_item">
+        <item>煤炭信息</item>
+        <item>物流信息</item>
+    </string-array>
+    
+    
+</resources>

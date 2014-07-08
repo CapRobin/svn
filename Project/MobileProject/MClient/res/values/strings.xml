@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">一网通</string>
+    <string name="app_tel">明天科技《一网通》软件</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <!-- 登录activity -->
+    <string name="userTxt">用　户：</string>
+    <string name="userSMTxt">用户名/手机号</string>
+    <string name="pwdTxt">密　码：</string>
+    <string name="pwdSMTxt">密码</string>
+    <string name="loginBtnTxt"> 登 录 </string>
+    <string name="regBtnTxt"> 注 册 </string>
+    <string name="nopassTxt">记住用户与密码</string>
+    <!-- 登录activity检测 -->
+    <string name="userChkTxt">请填写您的用户名或手机号</string>
+    <string name="pwdChkTxt">请填写您的密码</string>
+    <string name="netChkTxt">网络检测失败，请确认手机是否可以联网</string>
+    <string name="loginMsgW1">正在检测网络 &#8230;</string>
+    <string name="loginMsgW2">正在检测新版本&#8230;</string>
+    <string name="loginMsgW3">正在登录,请稍后&#8230;</string>
+    <string name="loginMsgW4">正在升级,请稍后&#8230;</string>
+    <string name="loginMsgW5">登录成功</string>
+    <string name="loginMsgW6">升级成功,正在安装 请稍后...</string>
+    <string name="loginMsgW7">升级失败，如有问题，请与我们客服联系。</string>
+    <string name="loginMsgE1">登录失败,请检查网络是否连接正常!</string>
+    <string name="loginMsgE2">对不起，该登录帐号并不存在或者您的帐号还没开通，请先注册后重新登录！</string>
+    <string name="loginMsgE3">用户名错误或者此用户名不存在! </string>
+    <string name="loginMsgE4">密码错误!</string>
+    <string name="loginMsgE5">对不起！您登录的用户名已到期被关闭,需要重新开通请联系我们！</string>
+    <string name="loginMsgE6">对不起！软件未授权，您不能在本机登录，如有疑问请与我们联系。</string>
+    <string name="loginMsgE7">您的服务期限还有</string>
+    <string name="loginMsgE71">天，请及时预缴服务费！</string>
+    <!-- 注册activity -->
+    <string name="memTypeTxt">会员类型：</string>
+	<string name="sjTxt">手　　机：</string>
+	<string name="star">*</string>
+	<string name="sjSMTxt">手机号为用户名　　</string>
+	<string name="sjSMTxt2">手机号为用户名</string>
+	<string name="pwdregTxt">密　　码：</string>
+	<string name="pwdregSMTxt">密码</string>
+	<string name="pwdreg2Txt">确认密码：</string>
+	<string name="pwdreg2SMTxt">确认密码</string>
+	<string name="name1Txt">真实姓名：</string>
+	<string name="name1SMTxt">填写真实姓名</string>
+	<string name="sexTxt">性　　别：</string>
+	<string name="manTxt">男</string>
+	<string name="womanTxt">女</string>
+	<string name="postcardTxt">身份证号：</string>
+	<string name="postcardSMTxt">填写真实身份证号码</string>
+	<string name="companyTxt">公司名称：</string>
+	<string name="companySMTxt">填写公司名称</string>
+	<string name="addrTxt">所  在  地：</string>
+	<string name="provinceTxt">省份</string>
+	<string name="cityTxt">城市</string>
+	<string name="townTxt">县区</string>
+	<string name="telTxt">电　　话：</string>
+	<string name="telSMTxt">多个号码 以“-”号相隔　　</string>
+	<string name="telSMTxt2">可填多个号码</string>
+	<string name="telnumTxt">区号</string>
+	<string name="QQTxt">QQ  号码：</string>
+	<string name="QQSMTxt">QQ号码</string>
+	<string name="JsrTxt">推  荐  人：</string>
+	<string name="JsrSMTxt">填写推荐人用户名</string>
+	<string name="agreeBtnTxt">同意服务条款，确认提交</string>
+	<string name="noBtnTxt"> 不 同 意 </string>
+	<string name="serviceBtnTxt">阅读服务条款</string>
+	<!-- 注册activity检测 -->
+	<string name="sjChkTxt">请填写您的手机号</string>
+	<string name="pwdregChkTxt">请填写您的密码</string>
+	<string name="pwdreg2ChkTxt">两次输入密码不一样</string>
+	<string name="name1ChkTxt">请填写您的真实姓名</string>
+	<string name="postcardChkTxt">请填写您的真实身份证号码</string>
+	<string name="postcardErrChkTxt">请填写真实有效的身份证号码</string>
+	<string name="proChkTxt">请选择省份</string>
+	<string name="cityChkTxt">请选择城市</string>
+	<string name="townChkTxt">请选择城市</string>
+	<string name="telnumChkTxt">请填写所在地电话区号</string>
+	<string name="telChkTxt">请填写您的电话号码或手机号码</string>
+	<string name="regsumbitTxt">正在提交数据，请稍后&#8230;</string>
+	<string name="regMsgE1">此会员名已被注册,请重新选择会员名注册!</string>
+	<string name="regMsgE2">系统检测到您的机器上已经注册过一个会员名(</string>
+	<string name="regMsgE21">)一台微机只能注册一个会员名且此会员名只能在注册微机上使用,请联系我们开通您注册过的会员名!</string>
+	<string name="regMsgE3">信息提交成功,请等待管理员的审核!如有问题请与管理员联系!</string>
+	<string name="regMsgS1">恭喜您,注册成功!您将有</string>
+	<string name="regMsgS11">天的使用期,如想成为正式会员,请联系我们!</string>
+	<!-- 详情显示 -->
+	<string name="DialTxt">拨号</string>
+	<string name="DialErrorTxt">电话号码不正确</string>
+	<!-- 公共 -->
+	<string name="SMTxt">提示</string>
+	<string name="BackTxt">返回</string>
+	<string name="OKTxt">确定</string>
+	<string name="CancelTxt">取消</string>
+	<string name="ExitTxt">您确定要退出吗？</string>
+	<string name="serviceUrl">http://192.168.0.58/estar/mclient/service.asp</string>
+	<string name="searchBtnTxt">查询</string>
+	<string name="addBtnTxt">发布</string>
+	<string name="daoTxt">到</string>
+	<string name="scrollTxt">滚动</string>
+	<string name="startscrollTxt">新信息自动滚动显示</string>
+	<string name="stopscrollTxt">已停止滚动新信息</string>
+	<string name="startcityTxt">出发地</string>
+	<string name="stopcityTxt">到达地</string>
+	<string name="startcitynoprovincetxt">出发地不允许选择省份</string>
+	<string name="startcitynotowntxt">出发地不允许选择县区</string>
+	<string name="startcitynoallquanxuantxt">出发地不允许下级全选</string>
+	<string name="searchCheckTxt1">出发地与到达地不能同时为空或全国</string>
+	<string name="crash_error">很抱歉，程序出现异常，即将退出。</string>
+</resources>

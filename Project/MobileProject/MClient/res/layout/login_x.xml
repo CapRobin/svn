@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/app_bg" >
+
+    <RelativeLayout
+        android:id="@+id/LoginLayout_01"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dip"
+        android:layout_marginRight="20dip"
+        android:layout_marginTop="35dip" >
+
+        <TextView
+            android:id="@+id/userNameText"
+            android:layout_width="100dip"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="账    号："
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/username"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:layout_toRightOf="@+id/userNameText"
+            android:background="@drawable/myedit_bg"
+            android:hint="请输入您的账号"
+            android:inputType="phone"
+            android:singleLine="true"
+            android:textColor="@color/gray"
+            android:textSize="13sp" >
+        </EditText>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/LoginLayout_02"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/LoginLayout_01"
+        android:layout_marginLeft="20dip"
+        android:layout_marginRight="20dip"
+        android:layout_marginTop="10dip" >
+
+        <TextView
+            android:id="@+id/userPwdText"
+            android:layout_width="100dip"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="密    码："
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:layout_toRightOf="@+id/userPwdText"
+            android:background="@drawable/myedit_bg"
+            android:hint="请输入您的密码"
+            android:inputType="textPassword"
+            android:singleLine="true"
+            android:textColor="@color/gray"
+            android:textSize="13sp" >
+        </EditText>
+    </RelativeLayout>
+
+<!--     <RelativeLayout -->
+<!--         android:id="@+id/LoginLayout_03" -->
+<!--         android:layout_width="fill_parent" -->
+<!--         android:layout_height="wrap_content" -->
+<!--         android:layout_below="@+id/LoginLayout_02" -->
+<!--         android:layout_centerVertical="true" -->
+<!--         android:layout_marginLeft="20dip" -->
+<!--         android:layout_marginRight="18dip" -->
+<!--         android:layout_marginTop="20dip" -->
+<!--         android:orientation="vertical" > -->
+
+        <RelativeLayout
+            android:id="@+id/r_01"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/LoginLayout_02"
+            android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+            android:layout_marginTop="20dip"
+                    android:layout_marginLeft="20dip"
+        android:layout_marginRight="20dip"
+            android:orientation="vertical" >
+
+            <CheckBox
+                android:id="@+id/nopass"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/nopassText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dip"
+                android:layout_toRightOf="@+id/nopass"
+                android:text="记住账号"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <CheckBox
+                android:id="@+id/rememberPwd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:textColor="@color/black"
+                android:layout_toLeftOf="@+id/rememberPwdText"
+                android:layout_marginRight="10dip"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/rememberPwdText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:text="记住用户名"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+<!--         </RelativeLayout> -->
+        
+        
+<!--         <RelativeLayout -->
+<!--             android:id="@+id/r_02" -->
+<!--             android:layout_width="fill_parent" -->
+<!--             android:layout_height="wrap_content" -->
+<!--             android:layout_below="@+id/LoginLayout_02" -->
+<!--             android:layout_centerVertical="true" -->
+<!--             android:layout_marginLeft="20dip" -->
+<!--             android:layout_marginRight="18dip" -->
+<!--             android:layout_marginTop="20dip" -->
+<!--             android:layout_toRightOf="@+id/r_01" -->
+<!--                 android:layout_alignParentRight="true" -->
+<!--             android:orientation="vertical" > -->
+
+<!--             <CheckBox -->
+<!--                 android:id="@+id/rememberPwd" -->
+<!--                 android:layout_width="100dip" -->
+<!--                 android:layout_height="wrap_content" -->
+<!--                 android:layout_alignParentLeft="true" -->
+<!--                 android:layout_centerVertical="true" -->
+<!--                 android:textColor="@color/black" -->
+<!--                 android:textSize="18sp" /> -->
+
+<!--             <TextView -->
+<!--                 android:id="@+id/rememberPwd" -->
+<!--                 android:layout_width="wrap_content" -->
+<!--                 android:layout_height="wrap_content" -->
+<!--                 android:layout_alignParentRight="true" -->
+<!--                 android:layout_centerVertical="true" -->
+<!--                 android:layout_toRightOf="@+id/rememberPwdImage" -->
+<!--                 android:text="记住用户名" -->
+<!--                 android:textColor="@color/black" -->
+<!--                 android:textSize="15sp" /> -->
+<!--         </RelativeLayout> -->
+    </RelativeLayout>
+
+    <!-- <RelativeLayout -->
+    <!-- android:id="@+id/fogLayout" -->
+    <!-- android:layout_width="fill_parent" -->
+    <!-- android:layout_height="wrap_content" > -->
+
+
+    <!-- <ImageView -->
+    <!-- android:id="@+id/rememberPwdImage" -->
+    <!-- android:layout_width="wrap_content" -->
+    <!-- android:layout_height="wrap_content" -->
+    <!-- android:layout_centerVertical="true" -->
+    <!-- android:layout_marginLeft="5dip" -->
+    <!-- android:layout_marginRight="5dip" -->
+    <!-- android:background="@drawable/check_button_n" -->
+    <!-- tools:ignore="ContentDescription" /> -->
+
+
+    <!-- <TextView -->
+    <!-- android:id="@+id/rememberPwd" -->
+    <!-- android:layout_width="wrap_content" -->
+    <!-- android:layout_height="wrap_content" -->
+    <!-- android:layout_centerVertical="true" -->
+    <!-- android:layout_toRightOf="@+id/rememberPwdImage" -->
+    <!-- android:text="@string/rem_pwd" -->
+    <!-- android:textColor="@color/black" -->
+    <!-- android:textSize="15sp" /> -->
+    <!-- </RelativeLayout> -->
+
+    <Button
+        android:id="@+id/loginBtn"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="70dip"
+        android:layout_marginLeft="20dip"
+        android:layout_marginRight="20dip"
+        android:layout_marginTop="10dip"
+        android:background="@drawable/exist_selector"
+        android:padding="2dip"
+        android:text="登    录"
+        android:textSize="20sp" />
+    <Button
+        android:id="@+id/regBtn"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="30dip"
+        android:layout_marginLeft="20dip"
+        android:layout_marginRight="20dip"
+        android:layout_marginTop="10dip"
+        android:background="@drawable/exist_selector"
+        android:padding="2dip"
+        android:text="注    册"
+        android:textSize="20sp" />
+    
+
+</RelativeLayout>
