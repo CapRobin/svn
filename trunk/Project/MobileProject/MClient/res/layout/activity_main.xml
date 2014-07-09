@@ -2,115 +2,133 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:background="@color/app_bg"
     android:orientation="vertical" >
+
     <LinearLayout
         android:id="@+id/top"
-		android:layout_width="fill_parent"
-		android:layout_height="wrap_content"
-		android:gravity="top"
-		android:orientation="horizontal">
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="top"
+        android:orientation="horizontal" >
 
-    <RelativeLayout
-		    android:layout_width="fill_parent"
-		    android:layout_height="wrap_content" >
-        <Button
-            android:id="@+id/startCityBtn"
-            android:layout_width="60dp"
+        <RelativeLayout
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            
-            android:singleLine="true"
-			android:ellipsize="marquee"
-			android:focusableInTouchMode="true"
-		
-			android:layout_alignParentLeft="true"
-            android:text="@string/startcityTxt" />
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="10dip" >
 
-        <TextView
-            android:id="@+id/maintextView1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/startCityBtn"
-            android:layout_centerVertical="true"
-            android:text="@string/daoTxt" />
+            <Button
+                android:id="@+id/startCityBtn"
+                android:layout_width="65dp"
+                android:layout_height="30dip"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/exist_selector"
+                android:ellipsize="marquee"
+                android:focusableInTouchMode="true"
+                android:singleLine="true"
+                android:text="@string/startcityTxt" />
 
-        <Button
-            android:id="@+id/stopCityBtn"
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
-            
-            android:singleLine="true"
-			android:ellipsize="marquee"
-			android:focusableInTouchMode="true"
-			android:layout_toRightOf="@+id/maintextView1"
-            android:text="@string/quanguo" />
+            <TextView
+                android:id="@+id/maintextView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/startCityBtn"
+                android:text="@string/daoTxt"
+                android:textColor="@color/black" />
 
-        <Button
-            android:id="@+id/searchBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/stopCityBtn"
-            android:text="@string/searchBtnTxt"
-            android:textColor="@color/blue" />
+            <Button
+                android:id="@+id/stopCityBtn"
+                android:layout_width="65dp"
+                android:layout_height="30dip"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/maintextView1"
+                android:background="@drawable/exist_selector"
+                android:ellipsize="marquee"
+                android:focusableInTouchMode="true"
+                android:singleLine="true"
+                android:text="@string/quanguo" />
 
-        <CheckBox
-            android:id="@+id/scrollCheckBox"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="true"
-            android:layout_toLeftOf="@+id/addBtn"
-            android:text="@string/scrollTxt" />
+            <Button
+                android:id="@+id/searchBtn"
+                android:layout_width="50dip"
+                android:layout_height="30dip"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/scrollCheckBox"
+                android:background="@drawable/exist_selector"
+                android:text="@string/searchBtnTxt"
+                android:textColor="@color/blue" />
 
-        <Button
-            android:id="@+id/addBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:text="@string/addBtnTxt"
-            android:textColor="@color/blue" />
+            <CheckBox
+                android:id="@+id/scrollCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="35dip"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/addBtn"
+                android:checked="true"
+                android:text="@string/scrollTxt"
+                android:textColor="@color/black"
+                android:textSize="15dip" />
 
+            <!-- <Button -->
+            <!-- android:id="@+id/addBtn" -->
+            <!-- android:layout_width="wrap_content" -->
+            <!-- android:layout_height="wrap_content" -->
+            <!-- android:layout_alignParentRight="true" -->
+            <!-- android:text="@string/addBtnTxt" -->
+            <!-- android:textColor="@color/blue" /> -->
         </RelativeLayout>
-		
-	</LinearLayout>
+    </LinearLayout>
 
     <!-- 开始-内容显示区域 -->
+
     <LinearLayout
-		android:id="@+id/content"
-		android:layout_width="fill_parent"
-		android:layout_height="0dp"		
-		android:layout_weight="1"		
-		android:orientation="vertical">
-    
+        android:id="@+id/content"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="1dip"
+            android:background="@drawable/list_divider" />
 
         <com.estar.comm.MyListView
-        android:id="@+id/listView"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:cacheColorHint="@color/transparent"
-        android:divider="@color/white"
-        android:dividerHeight="0px" />
-        
-   
+            android:id="@+id/listView"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginRight="1dip"
+            android:cacheColorHint="#00000000"
+            android:divider="@drawable/list_divider"
+            android:dividerHeight="1dip"
+            android:fadingEdge="none"
+            android:fastScrollEnabled="true" />
     </LinearLayout>
-	<!-- 结束-内容显示区域 -->
-    
+    <!-- 结束-内容显示区域 -->
+
     <LinearLayout
         android:id="@+id/bottom"
-		android:layout_width="fill_parent"
-		android:layout_height="wrap_content"
-		android:gravity="bottom"
-		android:orientation="vertical"
-		android:background="@color/gray">
-		<!-- 滚动条广告 -->
-		<com.estar.comm.AutoScrollTextView 
-        android:id="@+id/endadv"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content" 
-        android:inputType="text"
-        android:background="@android:color/transparent"
-        android:textSize="30px"
-        android:textColor="@color/red">
-        </com.estar.comm.AutoScrollTextView>
+        android:layout_height="wrap_content"
+        android:background="@color/gray"
+        android:gravity="bottom"
+        android:orientation="vertical" >
 
+        <!-- 滚动条广告 -->
+
+        <com.estar.comm.AutoScrollTextView
+            android:id="@+id/endadv"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:inputType="text"
+            android:textColor="@color/red"
+            android:textSize="30px" >
+        </com.estar.comm.AutoScrollTextView>
     </LinearLayout>
 
 </LinearLayout>

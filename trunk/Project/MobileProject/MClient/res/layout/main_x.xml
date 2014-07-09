@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/app_bg"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/top"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="top"
+        android:orientation="horizontal" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:id="@+id/startCityBtn"
+                android:layout_width="70dp"
+                android:layout_height="25dip"
+                android:layout_alignParentLeft="true"
+                android:background="@drawable/exist_selector"
+                android:layout_centerVertical="true"
+                android:ellipsize="marquee"
+                android:focusableInTouchMode="true"
+                android:singleLine="true"
+                android:text="@string/startcityTxt" />
+
+            <TextView
+                android:id="@+id/maintextView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/startCityBtn"
+                android:text="@string/daoTxt"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/stopCityBtn"
+                android:layout_width="70dp"
+                android:layout_height="25dip"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/maintextView1"
+                android:background="@drawable/exist_selector"
+                android:ellipsize="marquee"
+                android:focusableInTouchMode="true"
+                android:singleLine="true"
+                android:text="@string/quanguo" />
+
+            <Button
+                android:id="@+id/searchBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/stopCityBtn"
+                android:background="@drawable/exist_selector"
+                android:text="@string/searchBtnTxt"
+                android:textColor="@color/blue" />
+
+            <CheckBox
+                android:id="@+id/scrollCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/addBtn"
+                android:checked="true"
+                android:text="@string/scrollTxt" />
+
+            <!-- <Button -->
+            <!-- android:id="@+id/addBtn" -->
+            <!-- android:layout_width="wrap_content" -->
+            <!-- android:layout_height="wrap_content" -->
+            <!-- android:layout_alignParentRight="true" -->
+            <!-- android:text="@string/addBtnTxt" -->
+            <!-- android:textColor="@color/blue" /> -->
+        </RelativeLayout>
+    </LinearLayout>
+
+    <!-- 开始-内容显示区域 -->
+
+    <LinearLayout
+        android:id="@+id/content"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <com.estar.comm.MyListView
+            android:id="@+id/listView"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginRight="1dip"
+            android:cacheColorHint="#00000000"
+            android:divider="@drawable/list_divider"
+            android:dividerHeight="1dip"
+            android:fadingEdge="none"
+            android:fastScrollEnabled="true" />
+    </LinearLayout>
+    <!-- 结束-内容显示区域 -->
+
+    <LinearLayout
+        android:id="@+id/bottom"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/gray"
+        android:gravity="bottom"
+        android:orientation="vertical" >
+
+        <!-- 滚动条广告 -->
+
+        <com.estar.comm.AutoScrollTextView
+            android:id="@+id/endadv"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:inputType="text"
+            android:textColor="@color/red"
+            android:textSize="30px" >
+        </com.estar.comm.AutoScrollTextView>
+    </LinearLayout>
+
+</LinearLayout>

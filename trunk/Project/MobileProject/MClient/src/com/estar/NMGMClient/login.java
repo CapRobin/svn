@@ -1,12 +1,5 @@
 package com.estar.NMGMClient;
 
-import com.estar.comm.AutoInstall;
-import com.estar.comm.MySuperActivity;
-import com.estar.comm.MySuperApplication;
-import com.estar.data.DataSource;
-import com.estar.net.HttpDownloader;
-
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.ProgressDialog;
@@ -17,13 +10,18 @@ import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+
+import com.estar.comm.AutoInstall;
+import com.estar.comm.MySuperActivity;
+import com.estar.comm.MySuperApplication;
+import com.estar.data.DataSource;
+import com.estar.net.HttpDownloader;
 
 public class login extends MySuperActivity{
 
@@ -38,6 +36,7 @@ public class login extends MySuperActivity{
 	private int mStringID=0;
 	private String mString=null;
 	private String mUpdateUrl=null;
+	private boolean isShowRightBut = true;
 	//
 	String m_strUsername,m_strPassword,m_strNopass;
 	/* (non-Javadoc)
@@ -48,7 +47,14 @@ public class login extends MySuperActivity{
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		/* 载入mylayout.xml Layout */ 
-	    setContentView(R.layout.login_x); 
+//	    setContentView(R.layout.login_x); 
+//		application = (MyApplication) abApplication;
+		setAbContentView(R.layout.login_x);
+//		getMsg = getIntent().getStringExtra("msg");
+		initTitleLayout("登录", isShowRightBut);
+//		initView();
+	    
+	    
 	    //全局变量相关
 	  	app = (MySuperApplication) getApplication(); //获得我们的应用程序MySuperApplication
 	  	loginMsgHander=new Handler();  //创建属于主线程的handler   
@@ -94,6 +100,16 @@ public class login extends MySuperActivity{
 				login.this.startActivityForResult(intent,0); 
 			}
 		});
+		
+//		//测试ActivityView
+//		mregBtn.setOnClickListener(new OnClickListener() {
+//			
+//			@Override
+//			public void onClick(View v) {
+//				startActivity(new Intent(login.this,TestActivity.class));
+//			}
+//		});
+		
 	    //点击登录按钮
 	    mloginBtn.setOnClickListener(new OnClickListener() {
 			
@@ -103,6 +119,22 @@ public class login extends MySuperActivity{
 				onLogin();
 			}
 		});
+	    
+	    
+	    
+	    
+		// 右侧按钮的点击事件_测试
+		if (isShowRightBut) {
+			this.rightTitleBut.setOnClickListener(new OnClickListener() {
+
+				@Override
+				public void onClick(View v) {
+					startActivity(new Intent(login.this,TestActivity.class));
+				}
+			});
+		}
+	    
+	    
 	}
 	/* 重写 onActivityResult()*/ 
 	//接收来自注册窗口的返回值
