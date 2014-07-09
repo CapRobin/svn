@@ -45,6 +45,7 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 
@@ -95,6 +96,7 @@ public class MainActivity extends MySuperActivity implements MyListView.IOnRefre
 	private MyBaseAdapter adapter;
 	private RefreshDataAsynTask mRefreshAsynTask;
 	private LoadMoreDataAsynTask mLoadMoreAsynTask;
+	private boolean isShowRightBut = true;
 
 	boolean bRefresh=true;
 	Timer timer=null;
@@ -106,7 +108,11 @@ public class MainActivity extends MySuperActivity implements MyListView.IOnRefre
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+//		setContentView(R.layout.activity_main);
+
+		setAbContentView(R.layout.activity_main);
+//		getMsg = getIntent().getStringExtra("msg");
+		initTitleLayout("首页", isShowRightBut);
 		//设置全局变量相关
 		app = (MySuperApplication) getApplication(); //获得我们的应用程序MySuperApplication
 		mainMsgHander=new Handler();  //创建属于主线程的handler   
@@ -243,20 +249,20 @@ public class MainActivity extends MySuperActivity implements MyListView.IOnRefre
 				
 			}
 		});
-		//点击发布按钮
-		mAddBtn.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				//显示发布菜单
-				if(app.myinfo.usertypes==1){//钢材
-					ShowGCAddMenuDlg();
-				}else if(app.myinfo.usertypes==2){//煤炭
-					ShowMTAddMenuDlg();
-				}
-			}
-		});
+		//原始发布按钮
+//		mAddBtn.setOnClickListener(new OnClickListener() {
+//			
+//			@Override
+//			public void onClick(View v) {
+//				// TODO Auto-generated method stub
+//				//显示发布菜单
+//				if(app.myinfo.usertypes==1){//钢材
+//					ShowGCAddMenuDlg();
+//				}else if(app.myinfo.usertypes==2){//煤炭
+//					ShowMTAddMenuDlg();
+//				}
+//			}
+//		});
 		//初始化NotificationManager对象   	
 		m_NotificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE); 
 		//显示通知栏
@@ -392,6 +398,24 @@ public class MainActivity extends MySuperActivity implements MyListView.IOnRefre
 					}
 					
 				}.start();
+				
+				
+				//修改后的发布按钮
+				if (isShowRightBut) {
+					this.rightTitleBut.setOnClickListener(new OnClickListener() {
+
+						@Override
+						public void onClick(View v) {
+							// TODO Auto-generated method stub
+							//显示发布菜单
+							if(app.myinfo.usertypes==1){//钢材
+								ShowGCAddMenuDlg();
+							}else if(app.myinfo.usertypes==2){//煤炭
+								ShowMTAddMenuDlg();
+							}
+						}
+					});
+				}
 	}
 	//钢材信息发布框
 	protected void ShowAddGCDlg() {

@@ -36,8 +36,10 @@ public class reg extends MySuperActivity{
 	private int mStringID=0;
 	private String mString=null;
 
-	Button mAgreeBtn,mNoAgreeBtn,mServiceBtn,mUsertypeBtn;
-	EditText mSj,mName1,mCompany,mTelnum,mTel,mQQ,mPostCard;
+	Button mAgreeBtn,mServiceBtn,mUsertypeBtn;
+//	Button mNoAgreeBtn;
+	EditText mSj,mName1,mCompany,mQQ,mPostCard;
+	EditText mTelnum,mTel;
 	EditText mPwd,mPwd2;
 	RadioGroup mSexGroup1;
 	RadioButton mMan,mWoman;
@@ -54,6 +56,7 @@ public class reg extends MySuperActivity{
 	private int selectedProvinceIndex = 0;
 	private int selectedCityIndex = 0;
 	private int selectedTownIndex = 0;
+	private boolean isShowRightBut = false;
 	/* (non-Javadoc)
 	 * @see android.app.Activity#onCreate(android.os.Bundle)
 	 */
@@ -61,7 +64,10 @@ public class reg extends MySuperActivity{
 	public void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.reg); 
+//		setContentView(R.layout.reg); 
+		setAbContentView(R.layout.register_x);
+		initTitleLayout("注册", isShowRightBut);
+//		initView();
 		
 		//全局变量相关
 		app = (MySuperApplication) getApplication(); //获得我们的应用程序MySuperApplication
@@ -73,7 +79,7 @@ public class reg extends MySuperActivity{
 	    regMsgHander=new Handler();  //创建属于主线程的handler   
 		//Button
 		mAgreeBtn=(Button)findViewById(R.id.agreeBtn);
-		mNoAgreeBtn=(Button)findViewById(R.id.noAgreeBtn);
+//		mNoAgreeBtn=(Button)findViewById(R.id.noAgreeBtn);
 		mServiceBtn=(Button)findViewById(R.id.serviceBtn);
 		mProvince=(Button)findViewById(R.id.province);
 		mCity=(Button)findViewById(R.id.city);
@@ -120,14 +126,14 @@ public class reg extends MySuperActivity{
 		//-----------------------------------------------------
 
 		//点击 不同意按钮
-		mNoAgreeBtn.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				reg.this.finish();
-			}
-		});
+//		mNoAgreeBtn.setOnClickListener(new OnClickListener() {
+//			
+//			@Override
+//			public void onClick(View v) {
+//				// TODO Auto-generated method stub
+//				reg.this.finish();
+//			}
+//		});
 		//点击阅读服务条款按钮
 		mServiceBtn.setOnClickListener(new OnClickListener() {
 			

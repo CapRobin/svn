@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:background="@color/app_bg"
     android:orientation="vertical" >
 
     <LinearLayout
@@ -22,8 +23,8 @@
         android:id="@+id/typecode"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/white"
         android:textSize="14sp"
+        android:textColor="@color/black"
         android:text="TextView" />
 
     <TextView
@@ -32,13 +33,13 @@
         android:layout_height="wrap_content"
         android:text="TextView"
         android:textSize="14sp"
-        android:textColor="@color/gold" />
+        android:textColor="@color/black" />
 
     <TextView
         android:id="@+id/content"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="16sp"
         android:text="TextView" />
 
@@ -48,7 +49,7 @@
 	    android:layout_height="wrap_content"
 	    android:text="TextView"
 	    android:textSize="14sp"
-	    android:textColor="@color/blue2" />
+        android:textColor="@color/black" />
 
     <TextView
         android:id="@+id/tel"
@@ -56,7 +57,7 @@
         android:layout_height="wrap_content"
         android:text="TextView"
         android:textSize="14sp"
-        android:textColor="@color/white" />
+        android:textColor="@color/black" />
 
     </LinearLayout>
     </ScrollView>
@@ -66,28 +67,49 @@
 	android:layout_width="fill_parent"
 	android:layout_height="wrap_content"
 	android:gravity="bottom"
-	android:background="@color/gray"
-	android:orientation="vertical">
-	<RelativeLayout
-		        android:layout_width="fill_parent"
-		        android:layout_height="wrap_content" >
-    <LinearLayout
-        android:layout_centerHorizontal="true"
-        android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-        >
-    <Button 
+	android:layout_marginLeft="4dip"
+	android:layout_marginRight="4dip"
+	android:orientation="horizontal">
+	
+        <Button 
         android:id="@+id/button1"
         android:layout_width="130dp"
+        android:layout_weight="1"
+        android:background="@drawable/exist_selector"
         android:layout_height="wrap_content"
-        android:text="点击拨打电话"/>
+        android:layout_marginRight="2dip"
+        android:padding="10dip"
+        android:text="拨打电话"/>
     <Button 
         android:id="@+id/button2"
         android:layout_width="130dp"
+        android:layout_weight="1"
+        android:padding="10dip"
+        android:layout_marginLeft="2dip"
+        android:background="@drawable/exist_selector"
         android:layout_height="wrap_content"
-        android:text="返回"/>
-    </LinearLayout>
-    </RelativeLayout>
+        android:text="返回首页"/>
+    
+<!-- 	<RelativeLayout -->
+<!-- 		        android:layout_width="fill_parent" -->
+<!-- 		        android:layout_height="wrap_content" > -->
+<!--     <LinearLayout -->
+<!--         android:layout_centerHorizontal="true" -->
+<!--         android:layout_width="wrap_content" -->
+<!-- 		android:layout_height="wrap_content" -->
+<!--         > -->
+<!--     <Button  -->
+<!--         android:id="@+id/button1" -->
+<!--         android:layout_width="130dp" -->
+<!--         android:layout_height="wrap_content" -->
+<!--         android:text="点击拨打电话"/> -->
+<!--     <Button  -->
+<!--         android:id="@+id/button2" -->
+<!--         android:layout_width="130dp" -->
+<!--         android:layout_height="wrap_content" -->
+<!--         android:text="返回"/> -->
+<!--     </LinearLayout> -->
+<!--     </RelativeLayout> -->
     </LinearLayout>
 
 </LinearLayout>

@@ -50,6 +50,10 @@
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar" />
         <activity
+            android:name="com.estar.NMGMClient.TestActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" />
+        <activity
             android:name="com.estar.NMGMClient.Detail"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar" />

@@ -14,17 +14,15 @@
 
         <RelativeLayout
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dip"
-            android:layout_marginRight="10dip" >
+            android:layout_height="wrap_content" >
 
             <Button
                 android:id="@+id/startCityBtn"
-                android:layout_width="65dp"
-                android:layout_height="30dip"
+                android:layout_width="70dp"
+                android:layout_height="25dip"
                 android:layout_alignParentLeft="true"
-                android:layout_centerVertical="true"
                 android:background="@drawable/exist_selector"
+                android:layout_centerVertical="true"
                 android:ellipsize="marquee"
                 android:focusableInTouchMode="true"
                 android:singleLine="true"
@@ -41,8 +39,8 @@
 
             <Button
                 android:id="@+id/stopCityBtn"
-                android:layout_width="65dp"
-                android:layout_height="30dip"
+                android:layout_width="70dp"
+                android:layout_height="25dip"
                 android:layout_centerVertical="true"
                 android:layout_toRightOf="@+id/maintextView1"
                 android:background="@drawable/exist_selector"
@@ -53,10 +51,9 @@
 
             <Button
                 android:id="@+id/searchBtn"
-                android:layout_width="50dip"
-                android:layout_height="30dip"
-                android:layout_centerVertical="true"
-                android:layout_toLeftOf="@+id/scrollCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/stopCityBtn"
                 android:background="@drawable/exist_selector"
                 android:text="@string/searchBtnTxt"
                 android:textColor="@color/blue" />
@@ -64,14 +61,10 @@
             <CheckBox
                 android:id="@+id/scrollCheckBox"
                 android:layout_width="wrap_content"
-                android:layout_height="35dip"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
+                android:layout_height="wrap_content"
                 android:layout_toLeftOf="@+id/addBtn"
                 android:checked="true"
-                android:text="@string/scrollTxt"
-                android:textColor="@color/black"
-                android:textSize="15dip" />
+                android:text="@string/scrollTxt" />
 
             <!-- <Button -->
             <!-- android:id="@+id/addBtn" -->
@@ -91,11 +84,6 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:orientation="vertical" >
-
-        <ImageView
-            android:layout_width="fill_parent"
-            android:layout_height="1dip"
-            android:background="@drawable/list_divider" />
 
         <com.estar.comm.MyListView
             android:id="@+id/listView"
