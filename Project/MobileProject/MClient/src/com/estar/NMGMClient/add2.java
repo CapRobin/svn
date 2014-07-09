@@ -46,7 +46,10 @@ public class add2 extends MySuperActivity{
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		///* 载入mylayout.xml Layout */ 
-		setContentView(R.layout.add2); 
+//		setContentView(R.layout.add2); 
+		setAbContentView(R.layout.add2);
+//		getMsg = getIntent().getStringExtra("msg");
+		initTitleLayout("发布", false);
 		//Log.e("-------------------add1","1");
 		//设置全局变量相关
 		app = (MySuperApplication) getApplication(); //获得我们的应用程序MySuperApplication
