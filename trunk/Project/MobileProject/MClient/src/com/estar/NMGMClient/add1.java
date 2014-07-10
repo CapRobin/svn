@@ -3,18 +3,15 @@ package com.estar.NMGMClient;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.text.Editable;
-import android.text.Selection;
-import android.text.Spannable;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.estar.comm.MySuperActivity;
 import com.estar.comm.MySuperApplication;
@@ -56,7 +53,7 @@ public class add1 extends MySuperActivity{
 //		setContentView(R.layout.add1); 		
 		setAbContentView(R.layout.add1);
 //		getMsg = getIntent().getStringExtra("msg");
-		initTitleLayout("发布", false);
+		initTitleLayout("发布车源信息", false);
 		//Log.e("-------------------add1","1");
 		//设置全局变量相关
 		app = (MySuperApplication) getApplication(); //获得我们的应用程序MySuperApplication
@@ -75,6 +72,17 @@ public class add1 extends MySuperActivity{
 		//Log.e("-------------------add1","3");
 		//信息框
 		infoContent=(EditText)findViewById(R.id.infoContent);
+		
+		mAbTitleBar.getTitleTextLayout().setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Toast.makeText(add1.this, "测试", 5).show();
+				showTypeDlg();
+			}
+		});
+		
+		
 		//返回
 		Button backBtn=(Button)findViewById(R.id.backBtn);
 		backBtn.setOnClickListener(new OnClickListener() {
@@ -89,7 +97,7 @@ public class add1 extends MySuperActivity{
 				add1.this.finish();
 			}
 		});
-		//信息类型选择
+		//信息类型选择_屏蔽
 		mTypeBtn=(Button)findViewById(R.id.typeBtn);
 		mTypeBtn.setOnClickListener(new OnClickListener() {
 			
