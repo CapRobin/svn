@@ -49,7 +49,7 @@ public class add2 extends MySuperActivity{
 //		setContentView(R.layout.add2); 
 		setAbContentView(R.layout.add2);
 //		getMsg = getIntent().getStringExtra("msg");
-		initTitleLayout("发布", false);
+		initTitleLayout("发布钢材信息", false);
 		//Log.e("-------------------add1","1");
 		//设置全局变量相关
 		app = (MySuperApplication) getApplication(); //获得我们的应用程序MySuperApplication
@@ -68,20 +68,22 @@ public class add2 extends MySuperActivity{
 		//Log.e("-------------------add1","3");
 		//信息框
 		infoContent=(EditText)findViewById(R.id.infoContent);
-		//返回
-		Button backBtn=(Button)findViewById(R.id.backBtn);
-		backBtn.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				//显示主界面
-				//Intent intent = new Intent();
-                //intent.setClass(add1.this, MainActivity.class);//默认add1.class
-                //add1.this.startActivity(intent);
-				add2.this.finish();
-			}
-		});
+		
+		
+		//屏蔽原有返回键
+//		Button backBtn=(Button)findViewById(R.id.backBtn);
+//		backBtn.setOnClickListener(new OnClickListener() {
+//			
+//			@Override
+//			public void onClick(View v) {
+//				// TODO Auto-generated method stub
+//				//显示主界面
+//				//Intent intent = new Intent();
+//                //intent.setClass(add1.this, MainActivity.class);//默认add1.class
+//                //add1.this.startActivity(intent);
+//				add2.this.finish();
+//			}
+//		});
 		//信息类型选择
 		mTypeBtn=(Button)findViewById(R.id.typeBtn);
 		
