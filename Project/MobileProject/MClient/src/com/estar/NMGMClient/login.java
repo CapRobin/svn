@@ -263,7 +263,10 @@ public class login extends MySuperActivity{
 		// TODO Auto-generated method stub
 		//Log.e("!!!!!!!!!!!!!!CheckUser", "CheckUser_begin");
 		//Log.e("!!!!!!!!!!!!!!Login_diskinfo", myFun.getMobileIMEI());
+//		String diskinfo = "A0000022DAC844460030768502278";
 		String diskinfo=myFun.getMobileIMEI()+myFun.getMobileIESI();//IMEI号+IESI号
+//		System.out.println("getInfo is ---------->>"+diskinfo+"---------------------------------->>");
+//		String diskinfo=newImei+myFun.getMobileIESI();//IMEI号+IESI号
 		String macaddr=myFun.getSimSerialNumber();//SIM卡卡号 
 		String post=myFun.getMobileDeviceDataString();//手机相关资料（登录对比）
 		//Log.e("!!!!!!!!!!!!!!Login_User", m_strUsername);
