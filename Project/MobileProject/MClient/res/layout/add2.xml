@@ -1,671 +1,233 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="@color/app_bg"
     android:orientation="vertical" >
 
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/gray" >
-		<RelativeLayout
-		        android:layout_width="fill_parent"
-		        android:layout_height="wrap_content" >
-		        <Button
-		            android:id="@+id/backBtn"
-		            android:layout_width="65dp"
-		            android:layout_height="wrap_content"
-		            android:text="@string/BackTxt" />
+<!--     <LinearLayout -->
+<!--         android:layout_width="fill_parent" -->
+<!--         android:layout_height="wrap_content" -->
+<!--         android:background="@color/gray" > -->
+<!-- 		<RelativeLayout -->
+<!-- 		        android:layout_width="fill_parent" -->
+<!-- 		        android:layout_height="wrap_content" > -->
+<!-- 		        <Button -->
+<!-- 		            android:id="@+id/backBtn" -->
+<!-- 		            android:layout_width="65dp" -->
+<!-- 		            android:layout_height="wrap_content" -->
+<!-- 		            android:text="@string/BackTxt" /> -->
 		
-		         <Button
-		             android:id="@+id/typeBtn"
-		             android:layout_width="100dp"
-		             android:layout_height="wrap_content"
-		             android:layout_centerHorizontal="true"
-		             android:text="@string/typeInfo1Txt"
-		             android:textColor="@color/blue2" />
+<!-- 		         <Button -->
+<!-- 		             android:id="@+id/typeBtn" -->
+<!-- 		             android:layout_width="100dp" -->
+<!-- 		             android:layout_height="wrap_content" -->
+<!-- 		             android:layout_centerHorizontal="true" -->
+<!-- 		             android:text="@string/typeInfo1Txt" -->
+<!-- 		             android:textColor="@color/blue2" /> -->
 		         
-		        <Button
-		            android:id="@+id/add2Btn"
-		            android:layout_width="65dp"
-		            android:layout_height="wrap_content"
-		            android:layout_alignParentRight="true"
-		            android:text="@string/add2BtnTxt"
-		            android:visibility="invisible" />
+<!-- 		        <Button -->
+<!-- 		            android:id="@+id/add2Btn" -->
+<!-- 		            android:layout_width="65dp" -->
+<!-- 		            android:layout_height="wrap_content" -->
+<!-- 		            android:layout_alignParentRight="true" -->
+<!-- 		            android:text="@string/add2BtnTxt" -->
+<!-- 		            android:visibility="invisible" /> -->
 
-		</RelativeLayout>
-    </LinearLayout>
+<!-- 		</RelativeLayout> -->
+<!--     </LinearLayout> -->
 
+    
     <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content" >
+        android:id="@+id/layout_01"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="3dip"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:layout_marginTop="10dip" >
 
         <TextView
             android:id="@+id/textView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/startcityTxt" />
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="@string/startcityTxt"
+            android:textColor="@color/black" />
 
         <Button
             android:id="@+id/startcity"
             style="?android:attr/buttonStyleSmall"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
-            
-            android:singleLine="true"
-			android:ellipsize="marquee"
-			android:focusableInTouchMode="true"
-			
-            />
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="10dip"
+            android:layout_weight="1"
+            android:background="@drawable/exist_selector"
+            android:ellipsize="marquee"
+            android:focusableInTouchMode="true"
+            android:gravity="center"
+            android:padding="3dip"
+            android:singleLine="true" />
 
         <TextView
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/addStopCityTxt" />
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="@string/addStopCityTxt"
+            android:textColor="@color/black" />
 
         <Button
             android:id="@+id/stopcity"
             style="?android:attr/buttonStyleSmall"
             android:layout_width="65dp"
-            android:layout_height="wrap_content" 
-            
-            android:singleLine="true"
-			android:ellipsize="marquee"
-			android:focusableInTouchMode="true"
-			
-            />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content" >
-     <RelativeLayout
-		        android:layout_width="fill_parent"
-		        android:layout_height="wrap_content" >
-
-	 <LinearLayout
-	     android:id="@+id/infos"
-	     android:layout_width="250dp"
-	     android:layout_height="wrap_content" >
-
-        <EditText
-            android:id="@+id/infoContent"
-            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="10dip"
             android:layout_weight="1"
-            android:ems="10"
-            android:height="95dp"
-            android:hint="@string/infoContentTxt" >
-
-            <requestFocus />
-        </EditText>
-	 </LinearLayout>
-
-	 <LinearLayout
-	     android:layout_width="wrap_content"
-	     android:layout_height="95dp"
-	     android:layout_toRightOf="@id/infos"
-	     android:gravity="center_horizontal"
-	     android:orientation="vertical" >
-        
-        <Button
-            android:id="@+id/clearBtn"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="65dp"
-            android:layout_height="30dp"
-            android:layout_weight="1"
-            android:text="@string/clearBtnTxt" />
-
-        <Button
-            android:id="@+id/backspaceBtn"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="65dp"
-            android:layout_height="30dp"
-            android:layout_weight="1"
-            android:text="@string/backspaceBtnTxt" />
-        
-        <Button
-            android:id="@+id/addinfoBtn"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="65dp"
-            android:layout_height="30dp"
-            android:layout_weight="1"
-            android:text="@string/addinfoBtnTxt"
-            android:textColor="@color/red" />
-        
-        </LinearLayout>
-	</RelativeLayout>
+            android:background="@drawable/exist_selector"
+            android:ellipsize="marquee"
+            android:focusableInTouchMode="true"
+            android:gravity="center"
+            android:padding="3dip"
+            android:singleLine="true" />
     </LinearLayout>
+    
+    
+
+    <EditText
+        android:id="@+id/infoContent"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout_01"
+        android:background="@drawable/myedit_bg"
+        android:height="95dp"
+        android:layout_margin="20dip"
+        android:textSize="13sp"
+        android:hint="@string/infoContentTxt" />
+    
+<!--     <LinearLayout -->
+<!--         android:layout_width="fill_parent" -->
+<!--         android:layout_height="wrap_content" > -->
+
+<!--         <TextView -->
+<!--             android:id="@+id/textView1" -->
+<!--             android:layout_width="wrap_content" -->
+<!--             android:layout_height="wrap_content" -->
+<!--             android:text="@string/startcityTxt" /> -->
+
+<!--         <Button -->
+<!--             android:id="@+id/startcity" -->
+<!--             style="?android:attr/buttonStyleSmall" -->
+<!--             android:layout_width="65dp" -->
+<!--             android:layout_height="wrap_content" -->
+            
+<!--             android:singleLine="true" -->
+<!-- 			android:ellipsize="marquee" -->
+<!-- 			android:focusableInTouchMode="true" -->
+			
+<!--             /> -->
+
+<!--         <TextView -->
+<!--             android:id="@+id/textView2" -->
+<!--             android:layout_width="wrap_content" -->
+<!--             android:layout_height="wrap_content" -->
+<!--             android:text="@string/addStopCityTxt" /> -->
+
+<!--         <Button -->
+<!--             android:id="@+id/stopcity" -->
+<!--             style="?android:attr/buttonStyleSmall" -->
+<!--             android:layout_width="65dp" -->
+<!--             android:layout_height="wrap_content"  -->
+            
+<!--             android:singleLine="true" -->
+<!-- 			android:ellipsize="marquee" -->
+<!-- 			android:focusableInTouchMode="true" -->
+			
+<!--             /> -->
+
+<!--     </LinearLayout> -->
+
+<!--     <LinearLayout -->
+<!--         android:layout_width="fill_parent" -->
+<!--         android:layout_height="wrap_content" > -->
+<!--      <RelativeLayout -->
+<!-- 		        android:layout_width="fill_parent" -->
+<!-- 		        android:layout_height="wrap_content" > -->
+
+<!-- 	 <LinearLayout -->
+<!-- 	     android:id="@+id/infos" -->
+<!-- 	     android:layout_width="250dp" -->
+<!-- 	     android:layout_height="wrap_content" > -->
+
+<!--         <EditText -->
+<!--             android:id="@+id/infoContent" -->
+<!--             android:layout_width="fill_parent" -->
+<!--             android:layout_height="wrap_content" -->
+<!--             android:layout_weight="1" -->
+<!--             android:ems="10" -->
+<!--             android:height="95dp" -->
+<!--             android:hint="@string/infoContentTxt" > -->
+
+<!--             <requestFocus /> -->
+<!--         </EditText> -->
+<!-- 	 </LinearLayout> -->
+
+<!-- 	 <LinearLayout -->
+<!-- 	     android:layout_width="wrap_content" -->
+<!-- 	     android:layout_height="95dp" -->
+<!-- 	     android:layout_toRightOf="@id/infos" -->
+<!-- 	     android:gravity="center_horizontal" -->
+<!-- 	     android:orientation="vertical" > -->
+        
+<!--         <Button -->
+<!--             android:id="@+id/clearBtn" -->
+<!--             style="?android:attr/buttonStyleSmall" -->
+<!--             android:layout_width="65dp" -->
+<!--             android:layout_height="30dp" -->
+<!--             android:layout_weight="1" -->
+<!--             android:text="@string/clearBtnTxt" /> -->
+
+<!--         <Button -->
+<!--             android:id="@+id/backspaceBtn" -->
+<!--             style="?android:attr/buttonStyleSmall" -->
+<!--             android:layout_width="65dp" -->
+<!--             android:layout_height="30dp" -->
+<!--             android:layout_weight="1" -->
+<!--             android:text="@string/backspaceBtnTxt" /> -->
+        
+<!--         <Button -->
+<!--             android:id="@+id/addinfoBtn" -->
+<!--             style="?android:attr/buttonStyleSmall" -->
+<!--             android:layout_width="65dp" -->
+<!--             android:layout_height="30dp" -->
+<!--             android:layout_weight="1" -->
+<!--             android:text="@string/addinfoBtnTxt" -->
+<!--             android:textColor="@color/red" /> -->
+        
+<!--         </LinearLayout> -->
+<!-- 	</RelativeLayout> -->
+<!--     </LinearLayout> -->
+
+
+    <Button
+        android:id="@+id/addinfoBtn"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="20dip"
+        android:layout_marginRight="20dip"
+        android:layout_marginBottom="50dip"
+        android:background="@drawable/exist_selector"
+        android:padding="2dip"
+        android:text="发    布"
+        android:textSize="20sp" />
     
     <!-- 按键相关代码 -->
-<ScrollView
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:fillViewport="true" 
-        android:visibility="gone">
-<LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center_horizontal"
-        android:layout_alignParentRight="true">
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content" >
 
-        <Button
-            android:id="@+id/button00"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="32dp"
-            android:layout_height="wrap_content"
-            android:text="@string/button00Txt" />
-
-        <Button
-            android:id="@+id/button01"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="32dp"
-            android:layout_height="wrap_content"
-            android:text="@string/button01Txt" />
-
-        <Button
-            android:id="@+id/button02"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="32dp"
-            android:layout_height="wrap_content"
-            android:text="@string/button02Txt" />
-        <Button
-            android:id="@+id/button03"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="32dp"
-            android:layout_height="wrap_content"
-            android:text="@string/button03Txt" />
-        <Button
-            android:id="@+id/button04"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="32dp"
-            android:layout_height="wrap_content"
-            android:text="@string/button04Txt" />
-        <Button
-            android:id="@+id/button05"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="32dp"
-            android:layout_height="wrap_content"
-            android:text="@string/button05Txt" />
-        <Button
-            android:id="@+id/button06"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="32dp"
-            android:layout_height="wrap_content"
-            android:text="@string/button06Txt" />
-        <Button
-            android:id="@+id/button07"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="32dp"
-            android:layout_height="wrap_content"
-            android:text="@string/button07Txt" />
-        <Button
-            android:id="@+id/button08"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="32dp"
-            android:layout_height="wrap_content"
-            android:text="@string/button08Txt" />
-        <Button
-            android:id="@+id/button09"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="32dp"
-            android:layout_height="wrap_content"
-            android:text="@string/button09Txt" />
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content" >
-
-        <Button
-            android:id="@+id/button10"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="32dp"
-            android:layout_height="wrap_content"
-            android:text="@string/button10Txt" />
-        <Button
-            android:id="@+id/button11"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="32dp"
-            android:layout_height="wrap_content"
-            android:text="@string/button11Txt" />
-        <Button
-            android:id="@+id/button12"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="32dp"
-            android:layout_height="wrap_content"
-            android:text="@string/button12Txt" />
-        <Button
-            android:id="@+id/button13"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="32dp"
-            android:layout_height="wrap_content"
-            android:text="@string/button13Txt" />
-        <Button
-            android:id="@+id/button14"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="32dp"
-            android:layout_height="wrap_content"
-            android:text="@string/button14Txt" />
-        <Button
-            android:id="@+id/button15"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="32dp"
-            android:layout_height="wrap_content"
-            android:text="@string/button15Txt" />
-        <Button
-            android:id="@+id/button16"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="32dp"
-            android:layout_height="wrap_content"
-            android:text="@string/button16Txt" />
-        <Button
-            android:id="@+id/button17"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="32dp"
-            android:layout_height="wrap_content"
-            android:text="@string/button17Txt" />
-        <Button
-            android:id="@+id/button18"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="32dp"
-            android:layout_height="wrap_content"
-            android:text="@string/button18Txt" />
-        <Button
-            android:id="@+id/button19"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="32dp"
-            android:layout_height="wrap_content"
-            android:text="@string/button19Txt" />
-
-    </LinearLayout>
- <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content" >
-
-        <Button
-            android:id="@+id/button20"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="32dp"
-            android:layout_height="wrap_content"
-            android:text="@string/button20Txt" />
-        <Button
-            android:id="@+id/button21"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="32dp"
-            android:layout_height="wrap_content"
-            android:text="@string/button21Txt" />
-        <Button
-            android:id="@+id/button22"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="32dp"
-            android:layout_height="wrap_content"
-            android:text="@string/button22Txt" />
-        <Button
-            android:id="@+id/button23"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="32dp"
-            android:layout_height="wrap_content"
-            android:text="@string/button23Txt" />
-        <Button
-            android:id="@+id/button24"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="32dp"
-            android:layout_height="wrap_content"
-            android:text="@string/button24Txt" />
-        <Button
-            android:id="@+id/button25"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="32dp"
-            android:layout_height="wrap_content"
-            android:text="@string/button25Txt" />
-        <Button
-            android:id="@+id/button26"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="32dp"
-            android:layout_height="wrap_content"
-            android:text="@string/button26Txt" />
-        <Button
-            android:id="@+id/button27"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="32dp"
-            android:layout_height="wrap_content"
-            android:text="@string/button27Txt" />
-        <Button
-            android:id="@+id/button28"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="32dp"
-            android:layout_height="wrap_content"
-            android:text="@string/button28Txt" />
-        <Button
-            android:id="@+id/button29"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="32dp"
-            android:layout_height="wrap_content"
-            android:text="@string/button29Txt" />
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content" >
-
-        <Button
-            android:id="@+id/button30"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="32dp"
-            android:layout_height="wrap_content"
-            android:text="@string/button30Txt" />
-        <Button
-            android:id="@+id/button31"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="32dp"
-            android:layout_height="wrap_content"
-            android:text="@string/button31Txt" />
-        <Button
-            android:id="@+id/button32"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="32dp"
-            android:layout_height="wrap_content"
-            android:text="@string/button32Txt" />
-        <Button
-            android:id="@+id/button33"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="32dp"
-            android:layout_height="wrap_content"
-            android:text="@string/button33Txt" />
-        <Button
-            android:id="@+id/button34"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="32dp"
-            android:layout_height="wrap_content"
-            android:text="@string/button34Txt" />
-        <Button
-            android:id="@+id/button35"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="32dp"
-            android:layout_height="wrap_content"
-            android:text="@string/button35Txt" />
-        <Button
-            android:id="@+id/button36"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="32dp"
-            android:layout_height="wrap_content"
-            android:text="@string/button36Txt" />
-        <Button
-            android:id="@+id/button37"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="32dp"
-            android:layout_height="wrap_content"
-            android:text="@string/button37Txt" />
-        <Button
-            android:id="@+id/button38"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="32dp"
-            android:layout_height="wrap_content"
-            android:text="@string/button38Txt" />
-        <Button
-            android:id="@+id/button39"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="32dp"
-            android:layout_height="wrap_content"
-            android:text="@string/button39Txt" />
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content" >
-
-        <Button
-            android:id="@+id/button40"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="32dp"
-            android:layout_height="wrap_content"
-            android:text="@string/button40Txt" />
-        <Button
-            android:id="@+id/button41"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="32dp"
-            android:layout_height="wrap_content"
-            android:text="@string/button41Txt" />
-        <Button
-            android:id="@+id/button42"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="32dp"
-            android:layout_height="wrap_content"
-            android:text="@string/button42Txt" />
-        <Button
-            android:id="@+id/button43"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="32dp"
-            android:layout_height="wrap_content"
-            android:text="@string/button43Txt" />
-        <Button
-            android:id="@+id/button44"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="32dp"
-            android:layout_height="wrap_content"
-            android:text="@string/button44Txt" />
-        <Button
-            android:id="@+id/button45"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="32dp"
-            android:layout_height="wrap_content"
-            android:text="@string/button45Txt" />
-        <Button
-            android:id="@+id/button46"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="32dp"
-            android:layout_height="wrap_content"
-            android:text="@string/button46Txt" />
-        <Button
-            android:id="@+id/button47"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="32dp"
-            android:layout_height="wrap_content"
-            android:text="@string/button47Txt" />
-        <Button
-            android:id="@+id/button48"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="32dp"
-            android:layout_height="wrap_content"
-            android:text="@string/button48Txt" />
-        <Button
-            android:id="@+id/button49"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="32dp"
-            android:layout_height="wrap_content"
-            android:text="@string/button49Txt" />
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content" >
-
-        <Button
-            android:id="@+id/button50"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="32dp"
-            android:layout_height="wrap_content"
-            android:text="@string/button50Txt" />
-        <Button
-            android:id="@+id/button51"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="32dp"
-            android:layout_height="wrap_content"
-            android:text="@string/button51Txt" />
-        <Button
-            android:id="@+id/button52"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="32dp"
-            android:layout_height="wrap_content"
-            android:text="@string/button52Txt" />
-        <Button
-            android:id="@+id/button53"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="32dp"
-            android:layout_height="wrap_content"
-            android:text="@string/button53Txt" />
-        <Button
-            android:id="@+id/button54"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="32dp"
-            android:layout_height="wrap_content"
-            android:text="@string/button54Txt" />
-        <Button
-            android:id="@+id/button55"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="32dp"
-            android:layout_height="wrap_content"
-            android:text="@string/button55Txt" />
-        <Button
-            android:id="@+id/button56"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="32dp"
-            android:layout_height="wrap_content"
-            android:text="@string/button56Txt" />
-        <Button
-            android:id="@+id/button57"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="32dp"
-            android:layout_height="wrap_content"
-            android:text="@string/button57Txt" />
-        <Button
-            android:id="@+id/button58"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="32dp"
-            android:layout_height="wrap_content"
-            android:text="@string/button58Txt" />
-        <Button
-            android:id="@+id/button59"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="32dp"
-            android:layout_height="wrap_content"
-            android:text="@string/button59Txt" />
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content" >
-
-        <Button
-            android:id="@+id/button60"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="64dp"
-            android:layout_height="wrap_content"
-            android:text="@string/button60Txt" />
-        <Button
-            android:id="@+id/button61"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="64dp"
-            android:layout_height="wrap_content"
-            android:text="@string/button61Txt" />
-        <Button
-            android:id="@+id/button62"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="64dp"
-            android:layout_height="wrap_content"
-            android:text="@string/button62Txt" />
-        <Button
-            android:id="@+id/button63"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="64dp"
-            android:layout_height="wrap_content"
-            android:text="@string/button63Txt" />
-        <Button
-            android:id="@+id/button64"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="64dp"
-            android:layout_height="wrap_content"
-            android:text="@string/button64Txt" />
-     
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content" >
-
-        <Button
-            android:id="@+id/button70"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="64dp"
-            android:layout_height="wrap_content"
-            android:text="@string/button70Txt" />
-        <Button
-            android:id="@+id/button71"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="64dp"
-            android:layout_height="wrap_content"
-            android:text="@string/button71Txt" />
-        <Button
-            android:id="@+id/button72"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="64dp"
-            android:layout_height="wrap_content"
-            android:text="@string/button72Txt" />
-        <Button
-            android:id="@+id/button73"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="64dp"
-            android:layout_height="wrap_content"
-            android:text="@string/button73Txt" />
-        <Button
-            android:id="@+id/button74"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="64dp"
-            android:layout_height="wrap_content"
-            android:text="@string/button74Txt" />
-     
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content" >
-
-        <Button
-            android:id="@+id/button80"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="64dp"
-            android:layout_height="wrap_content"
-            android:textColor="@color/blue"
-            android:text="@string/button80Txt" />
-        <Button
-            android:id="@+id/button81"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="64dp"
-            android:layout_height="wrap_content"
-            android:textColor="@color/blue"
-            android:text="@string/button81Txt" />
-        <Button
-            android:id="@+id/button82"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="64dp"
-            android:layout_height="wrap_content"
-            android:textColor="@color/blue"
-            android:text="@string/button82Txt" />
-        <Button
-            android:id="@+id/button83"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="64dp"
-            android:layout_height="wrap_content"
-            android:textColor="@color/blue"
-            android:text="@string/button83Txt" />
-        <Button
-            android:id="@+id/button84"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="64dp"
-            android:layout_height="wrap_content"
-            android:textColor="@color/blue"
-            android:text="@string/button84Txt" />
-     
-    </LinearLayout>
-    
-    
-    </LinearLayout>
-    </ScrollView>
-
-</LinearLayout>
+</RelativeLayout>
