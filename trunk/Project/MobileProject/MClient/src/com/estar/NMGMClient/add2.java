@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.estar.comm.MySuperActivity;
 import com.estar.comm.MySuperApplication;
@@ -41,6 +42,9 @@ public class add2 extends MySuperActivity{
 	//
 	private int mStringID;
 	private String mString;
+
+	private boolean isShowRightBut =false;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -49,7 +53,7 @@ public class add2 extends MySuperActivity{
 //		setContentView(R.layout.add2); 
 		setAbContentView(R.layout.add2);
 //		getMsg = getIntent().getStringExtra("msg");
-		initTitleLayout("发布钢材信息", false);
+		initTitleLayout("发布钢材信息", isShowRightBut);
 		//Log.e("-------------------add1","1");
 		//设置全局变量相关
 		app = (MySuperApplication) getApplication(); //获得我们的应用程序MySuperApplication
@@ -69,6 +73,30 @@ public class add2 extends MySuperActivity{
 		//信息框
 		infoContent=(EditText)findViewById(R.id.infoContent);
 		
+//		mAbTitleBar.getTitleTextLayout().setOnClickListener(new OnClickListener() {
+//			
+//			@Override
+//			public void onClick(View v) {
+//				Toast.makeText(add2.this, "测试1", 5).show();
+//			}
+//		});
+//		
+//		mAbTitleBar.getTitleSmallTextButton().setOnClickListener(new OnClickListener() {
+//			
+//			@Override
+//			public void onClick(View v) {
+//				Toast.makeText(add2.this, "测试2", 5).show();
+//			}
+//		});
+		
+		mAbTitleBar.getTitleTextButton().setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Toast.makeText(add2.this, "发布刚才信息", 5).show();
+			}
+		});
+		
 		
 		//屏蔽原有返回键
 //		Button backBtn=(Button)findViewById(R.id.backBtn);
@@ -85,18 +113,18 @@ public class add2 extends MySuperActivity{
 //			}
 //		});
 		//信息类型选择
-		mTypeBtn=(Button)findViewById(R.id.typeBtn);
+//		mTypeBtn=(Button)findViewById(R.id.typeBtn);
 		
 		//发布2(保留项目)
-		Button add2Btn=(Button)findViewById(R.id.add2Btn);
-		add2Btn.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				//显示发布2窗口
-			}
-		});
+//		Button add2Btn=(Button)findViewById(R.id.add2Btn);
+//		add2Btn.setOnClickListener(new OnClickListener() {
+//			
+//			@Override
+//			public void onClick(View v) {
+//				// TODO Auto-generated method stub
+//				//显示发布2窗口
+//			}
+//		});
 		//
 		mstartcity=(Button)findViewById(R.id.startcity);
 		mstopcity=(Button)findViewById(R.id.stopcity);
@@ -208,26 +236,26 @@ public class add2 extends MySuperActivity{
 				}
 			}
 		});
-		//清空
-		Button clearBtn=(Button)findViewById(R.id.clearBtn);
-		clearBtn.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				infoContent.setText("");
-			}
-		});
-		//退格
-		Button backspaceBtn=(Button)findViewById(R.id.backspaceBtn);
-		backspaceBtn.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				BackSpace();
-			}
-		});
+		//清空_屏蔽
+//		Button clearBtn=(Button)findViewById(R.id.clearBtn);
+//		clearBtn.setOnClickListener(new OnClickListener() {
+//			
+//			@Override
+//			public void onClick(View v) {
+//				// TODO Auto-generated method stub
+//				infoContent.setText("");
+//			}
+//		});
+		//退格_屏蔽
+//		Button backspaceBtn=(Button)findViewById(R.id.backspaceBtn);
+//		backspaceBtn.setOnClickListener(new OnClickListener() {
+//			
+//			@Override
+//			public void onClick(View v) {
+//				// TODO Auto-generated method stub
+//				BackSpace();
+//			}
+//		});
 		//发布信息
 		Button addinfoBtn=(Button)findViewById(R.id.addinfoBtn);
 		addinfoBtn.setOnClickListener(new OnClickListener() {
@@ -255,6 +283,35 @@ public class add2 extends MySuperActivity{
 			}
 		});
 		//Log.e("--------------------add1","buttonPre");
+		
+
+		//修改后的发布按钮
+		if (isShowRightBut) {
+			this.rightTitleBut.setOnClickListener(new OnClickListener() {
+
+				@Override
+				public void onClick(View v) {
+					new Thread(){
+
+						/* (non-Javadoc)
+						 * @see java.lang.Thread#run()
+						 */
+						@Override
+						public void run() {
+							// TODO Auto-generated method stub
+							//super.run();
+							Message msg = new Message();// 
+					        msg.what = 1;  
+					        addHander.sendMessage(msg);
+					        //
+							addInfo();
+						}
+						
+					}.start();
+				}
+			});
+		}
+		
 	}
 	/*
 	 * 选择省份城市县区相关函数
@@ -625,6 +682,11 @@ public class add2 extends MySuperActivity{
 		        msg = new Message();// 必须这样写，不然会报错。因为   
 	            msg.what = 4;  
 	            addHander.sendMessage(msg);
+	            
+		        msg = new Message();// 返回主界面
+	            msg.what = 6;  
+	            addHander.sendMessage(msg);
+	            
 			}
 		}
 	}
@@ -651,6 +713,9 @@ public class add2 extends MySuperActivity{
 				break;
 			case 5://
 				infoContent.setText("");
+				break;
+			case 6://
+				finish();
 				break;
 			}  
 			}  
