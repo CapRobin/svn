@@ -36,7 +36,7 @@ public class login extends MySuperActivity{
 	private int mStringID=0;
 	private String mString=null;
 	private String mUpdateUrl=null;
-	private boolean isShowRightBut = true;
+	private boolean isShowRightBut = false;
 	//
 	String m_strUsername,m_strPassword,m_strNopass;
 	/* (non-Javadoc)
