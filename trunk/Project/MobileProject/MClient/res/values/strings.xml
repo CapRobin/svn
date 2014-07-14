@@ -108,4 +108,49 @@
 	<string name="startcitynoallquanxuantxt">出发地不允许下级全选</string>
 	<string name="searchCheckTxt1">出发地与到达地不能同时为空或全国</string>
 	<string name="crash_error">很抱歉，程序出现异常，即将退出。</string>
+	
+	
+    <string-array name="steelStyle">
+        <item>螺纹钢</item>
+        <item>工字钢</item>
+        <item>六角钢</item>
+        <item>弹簧钢</item>
+        <item>轴承钢</item>
+        <item>方钢</item>
+        <item>盘条</item>
+        <item>圆钢</item>
+        <item>扁钢</item>
+        <item>槽钢</item>
+    </string-array>
+    <string-array name="gcPinming">
+        <item>高线</item>
+        <item>普线</item>
+        <item>圆钢</item>
+        <item>焊管</item>
+        <item>方矩管</item>
+        <item>热轧等边角钢</item>
+        <item>槽钢</item>
+    </string-array>
+    <string-array name="gcGuige">
+        <item>大型</item>
+        <item>中型</item>
+        <item>小型</item>
+    </string-array>
+    <string-array name="gcChandi">
+        <item>产地1</item>
+        <item>产地2</item>
+        <item>产地3</item>
+    </string-array>
+    <string-array name="gcShuliang">
+        <item>吨</item>
+        <item>根</item>
+        <item>米</item>
+        <item>公斤</item>
+        <item>公斤</item>
+    </string-array>
+    <string-array name="isGuobiao">
+        <item>是</item>
+        <item>否</item>
+    </string-array>
+	
 </resources>
