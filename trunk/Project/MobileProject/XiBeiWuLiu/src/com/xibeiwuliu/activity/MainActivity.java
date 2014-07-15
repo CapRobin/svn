@@ -84,13 +84,18 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 
 				@Override
 				public void onClick(View v) {
-//					String Msg = "个人中心";
-//					Intent intent = new Intent(MainActivity.this, PersonalCenterActivity.class);
-//					intent.putExtra("msg", Msg);
-					String Msg = "登    录";
-					Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-					intent.putExtra("msg", Msg);
-					startActivity(intent);
+					String msg = null;
+					if (application.isLogin) {
+						msg = "个人中心";
+						Intent intent = new Intent(MainActivity.this, PersonalCenterActivity.class);
+						intent.putExtra("msg", msg);
+						startActivity(intent);
+					} else {
+						msg = "登    录";
+						Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+						intent.putExtra("msg", msg);
+						startActivity(intent);
+					}
 				}
 			});
 		}
@@ -100,14 +105,15 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 		// 开始滚动
 		myPager.start(this, listViews, 4000, ovalLayout, R.layout.ad_bottom_item, R.id.ad_item_v, R.drawable.dot_focused, R.drawable.dot_normal);
 
-//		List<AreaInfo> strList = daoArea.getAreaInfo(0);
+		// List<AreaInfo> strList = daoArea.getAreaInfo(0);
 		// Toast.makeText(MainActivity.this, strList.get(0), 5).show();
-//		Toast.makeText(MainActivity.this, strList.get(0).getCcityName(), 5).show();
-		
-		//测试获取返回用户信息
+		// Toast.makeText(MainActivity.this, strList.get(0).getCcityName(),
+		// 5).show();
+
+		// 测试获取返回用户信息
 		if (application.isLogin) {
 			UserInfo userInfo = application.userInfo;
-			Toast.makeText(MainActivity.this, "获取的用户电话为：" +userInfo.getTelphone(), Toast.LENGTH_SHORT).show();
+			Toast.makeText(MainActivity.this, "获取的用户电话为：" + userInfo.getTelphone(), Toast.LENGTH_SHORT).show();
 		}
 	}
 

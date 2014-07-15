@@ -12,133 +12,128 @@ package com.xibeiwuliu.entity;
  */
 public class DriverCarInfo {
 
-	private String Add_id; // id
-	private String Duser_id; // 车主_id
-	private String Car_key; // 车牌
-	private String Car_type; // 车型
-	private String Car_length; // 车长(M)
+	private int dCarId; 								// 车辆ID
+	private int dCarUserId;  						// 用户ID
+	private String dCarKey; 						// 车牌
+	private String dCarType; 					// 车型
+	private String dCarLength; 					// 车长(M)
 
-	private String Car_height; // 车高
-	private String Car_max_dun; // 最大承载吨位(Kg)
-	private String Car_bulk; // 容积(M3)
-	private String Car_Fkey; // 发动机号
-	private String Car_Jkey; // 车架号码
+	private String dCarHeight; 					// 车高
+	private String dCarMaxLoad; 				// 最大承载吨位(Kg)
+	private String dCarBulk; 						// 容积(M3)
+	private String dCarEngineKey; 			// 发动机号
+	private String dCarFrameKey; 			// 车架号码
 
-	private String Car_Ykey; // 运营证号
-	private String Car_Bkey; // 保险卡号
-	private String Car_Gunit; // 挂靠单位
-	private String Add_time; // 添加时间
-
-	public String getAdd_id() {
-		return Add_id;
+	private String dCarOperationNum; 	// 运营证号
+	private String dCarInsuranceNum; 	// 保险卡号
+	private String dCarSubjectionUnit; 	// 挂靠单位
+	private String dCarAddTime; 				// 添加时间
+	private String dCarOther1; 					// 备用
+	
+	private String dCarOther2; 					// 备用
+	private String dCarOther3; 					// 备用
+	public int getdCarId() {
+		return dCarId;
+	}
+	public void setdCarId(int dCarId) {
+		this.dCarId = dCarId;
+	}
+	public int getdCarUserId() {
+		return dCarUserId;
+	}
+	public void setdCarUserId(int dCarUserId) {
+		this.dCarUserId = dCarUserId;
+	}
+	public String getdCarKey() {
+		return dCarKey;
+	}
+	public void setdCarKey(String dCarKey) {
+		this.dCarKey = dCarKey;
+	}
+	public String getdCarType() {
+		return dCarType;
+	}
+	public void setdCarType(String dCarType) {
+		this.dCarType = dCarType;
+	}
+	public String getdCarLength() {
+		return dCarLength;
+	}
+	public void setdCarLength(String dCarLength) {
+		this.dCarLength = dCarLength;
+	}
+	public String getdCarHeight() {
+		return dCarHeight;
+	}
+	public void setdCarHeight(String dCarHeight) {
+		this.dCarHeight = dCarHeight;
+	}
+	public String getdCarMaxLoad() {
+		return dCarMaxLoad;
+	}
+	public void setdCarMaxLoad(String dCarMaxLoad) {
+		this.dCarMaxLoad = dCarMaxLoad;
+	}
+	public String getdCarBulk() {
+		return dCarBulk;
+	}
+	public void setdCarBulk(String dCarBulk) {
+		this.dCarBulk = dCarBulk;
+	}
+	public String getdCarEngineKey() {
+		return dCarEngineKey;
+	}
+	public void setdCarEngineKey(String dCarEngineKey) {
+		this.dCarEngineKey = dCarEngineKey;
+	}
+	public String getdCarFrameKey() {
+		return dCarFrameKey;
+	}
+	public void setdCarFrameKey(String dCarFrameKey) {
+		this.dCarFrameKey = dCarFrameKey;
+	}
+	public String getdCarOperationNum() {
+		return dCarOperationNum;
+	}
+	public void setdCarOperationNum(String dCarOperationNum) {
+		this.dCarOperationNum = dCarOperationNum;
+	}
+	public String getdCarInsuranceNum() {
+		return dCarInsuranceNum;
+	}
+	public void setdCarInsuranceNum(String dCarInsuranceNum) {
+		this.dCarInsuranceNum = dCarInsuranceNum;
+	}
+	public String getdCarSubjectionUnit() {
+		return dCarSubjectionUnit;
+	}
+	public void setdCarSubjectionUnit(String dCarSubjectionUnit) {
+		this.dCarSubjectionUnit = dCarSubjectionUnit;
+	}
+	public String getdCarAddTime() {
+		return dCarAddTime;
+	}
+	public void setdCarAddTime(String dCarAddTime) {
+		this.dCarAddTime = dCarAddTime;
+	}
+	public String getdCarOther1() {
+		return dCarOther1;
+	}
+	public void setdCarOther1(String dCarOther1) {
+		this.dCarOther1 = dCarOther1;
+	}
+	public String getdCarOther2() {
+		return dCarOther2;
+	}
+	public void setdCarOther2(String dCarOther2) {
+		this.dCarOther2 = dCarOther2;
+	}
+	public String getdCarOther3() {
+		return dCarOther3;
+	}
+	public void setdCarOther3(String dCarOther3) {
+		this.dCarOther3 = dCarOther3;
 	}
 
-	public void setAdd_id(String add_id) {
-		Add_id = add_id;
-	}
-
-	public String getDuser_id() {
-		return Duser_id;
-	}
-
-	public void setDuser_id(String duser_id) {
-		Duser_id = duser_id;
-	}
-
-	public String getCar_key() {
-		return Car_key;
-	}
-
-	public void setCar_key(String car_key) {
-		Car_key = car_key;
-	}
-
-	public String getCar_type() {
-		return Car_type;
-	}
-
-	public void setCar_type(String car_type) {
-		Car_type = car_type;
-	}
-
-	public String getCar_length() {
-		return Car_length;
-	}
-
-	public void setCar_length(String car_length) {
-		Car_length = car_length;
-	}
-
-	public String getCar_height() {
-		return Car_height;
-	}
-
-	public void setCar_height(String car_height) {
-		Car_height = car_height;
-	}
-
-	public String getCar_max_dun() {
-		return Car_max_dun;
-	}
-
-	public void setCar_max_dun(String car_max_dun) {
-		Car_max_dun = car_max_dun;
-	}
-
-	public String getCar_bulk() {
-		return Car_bulk;
-	}
-
-	public void setCar_bulk(String car_bulk) {
-		Car_bulk = car_bulk;
-	}
-
-	public String getCar_Fkey() {
-		return Car_Fkey;
-	}
-
-	public void setCar_Fkey(String car_Fkey) {
-		Car_Fkey = car_Fkey;
-	}
-
-	public String getCar_Jkey() {
-		return Car_Jkey;
-	}
-
-	public void setCar_Jkey(String car_Jkey) {
-		Car_Jkey = car_Jkey;
-	}
-
-	public String getCar_Ykey() {
-		return Car_Ykey;
-	}
-
-	public void setCar_Ykey(String car_Ykey) {
-		Car_Ykey = car_Ykey;
-	}
-
-	public String getCar_Bkey() {
-		return Car_Bkey;
-	}
-
-	public void setCar_Bkey(String car_Bkey) {
-		Car_Bkey = car_Bkey;
-	}
-
-	public String getCar_Gunit() {
-		return Car_Gunit;
-	}
-
-	public void setCar_Gunit(String car_Gunit) {
-		Car_Gunit = car_Gunit;
-	}
-
-	public String getAdd_time() {
-		return Add_time;
-	}
-
-	public void setAdd_time(String add_time) {
-		Add_time = add_time;
-	}
 
 }
