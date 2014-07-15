@@ -9,8 +9,12 @@ import android.os.Message;
 import android.text.Editable;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.estar.comm.MySuperActivity;
@@ -19,8 +23,10 @@ import com.estar.data.DataSource;
 
 public class add2 extends MySuperActivity{
 
-	EditText infoContent;
-	Button mTypeBtn,mstartcity,mstopcity;
+	private EditText infoContent;
+	private Button cdEdit;
+	private Button mTypeBtn,mstartcity,mstopcity;
+	private Spinner lbSpinner,pmSpinner,ggSpinner,cdSpinner,slSpinner,gbSpinner;
 	//
 	private int selectedStartProvinceIndex = 0;
 	private int selectedStartCityIndex = 0;
@@ -42,6 +48,49 @@ public class add2 extends MySuperActivity{
 	//
 	private int mStringID;
 	private String mString;
+	private int steelStyleSelect = 0;
+	private static final String gcPinming_0[]={"螺纹钢","线材","盘螺","圆钢"};
+	private static final String gcPinming_1[]={"无缝管","焊管"};
+	private static final String gcPinming_2[]={"热轧板/卷","冷轧板/卷","中厚板","镀锌板","彩涂板","镀锡板","镀铝锌钢板","硅钢","带钢"};
+	private static final String gcPinming_3[]={"工角槽","H型钢","方钢","扁钢","球扁钢"};
+	private static String gcPinming[]= null;
+	
+	
+	private static String steelStyle_x[]=null; 
+	private static String gcPinming_x_01[]=null; 
+	private static String gcPinming_x_02[]=null; 
+	private static String gcPinming_x_03[]=null; 
+
+	private static String gcPinming_x_04[]=null; 
+	private static String gcPinming_x_05[]=null; 
+	private static String gcPinming_x_06[]=null; 
+	private static String gcPinming_x_07[]=null; 
+	
+//    <string-array name="gcPinming">
+//    <item>螺纹钢</item>
+//    <item>线材</item>
+//    <item>盘螺</item>
+//    <item>圆钢</item>
+//    
+//    <item>无缝管</item>
+//    <item>焊管</item>
+//    
+//    <item>热轧板/卷</item>
+//    <item>冷轧板/卷</item>
+//    <item>中厚板</item>
+//    <item>镀锌板</item>
+//    <item>彩涂板</item>
+//    <item>镀锡板</item>
+//    <item>镀铝锌钢板</item>
+//    <item>硅钢</item>
+//    <item>带钢</item>
+//    
+//    <item>工角槽</item>
+//    <item>H型钢</item>
+//    <item>方钢</item>
+//    <item>扁钢</item>
+//    <item>球扁钢</item>
+//</string-array>
 
 	private boolean isShowRightBut =false;
 	
@@ -54,6 +103,16 @@ public class add2 extends MySuperActivity{
 		setAbContentView(R.layout.add2);
 //		getMsg = getIntent().getStringExtra("msg");
 		initTitleLayout("发布钢材信息", isShowRightBut);
+		steelStyle_x = this.getResources().getStringArray(R.array.steelStyle_x);
+		gcPinming_x_01 = this.getResources().getStringArray(R.array.gcPinming_x_01);
+		 gcPinming_x_02 = this.getResources().getStringArray(R.array.gcPinming_x_02);
+		gcPinming_x_03 = this.getResources().getStringArray(R.array.gcPinming_x_03);
+		
+		gcPinming_x_04 = this.getResources().getStringArray(R.array.gcPinming_x_04);
+		gcPinming_x_05 = this.getResources().getStringArray(R.array.gcPinming_x_05);
+		gcPinming_x_06 = this.getResources().getStringArray(R.array.gcPinming_x_06);
+		gcPinming_x_07 = this.getResources().getStringArray(R.array.gcPinming_x_07);
+		gcPinming = gcPinming_x_01; 
 		//Log.e("-------------------add1","1");
 		//设置全局变量相关
 		app = (MySuperApplication) getApplication(); //获得我们的应用程序MySuperApplication
@@ -128,6 +187,64 @@ public class add2 extends MySuperActivity{
 		//
 		mstartcity=(Button)findViewById(R.id.startcity);
 		mstopcity=(Button)findViewById(R.id.stopcity);
+
+		lbSpinner=(Spinner)findViewById(R.id.lbSpinner);
+		pmSpinner=(Spinner)findViewById(R.id.pmSpinner);
+		ggSpinner=(Spinner)findViewById(R.id.ggSpinner);
+		cdEdit=(Button)findViewById(R.id.cdEdit);
+		slSpinner=(Spinner)findViewById(R.id.slSpinner);
+		gbSpinner=(Spinner)findViewById(R.id.gbSpinner);
+		
+		
+//		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item,steelStyle);
+//		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//		lbSpinner.setAdapter(adapter);
+		
+		lbSpinner.setOnItemSelectedListener(new OnItemSelectedListener() {
+
+			@Override
+			public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
+//				textview.setText("您的血型是："+m[arg2]);
+				Toast.makeText(add2.this, "您选择了"+steelStyle_x[arg2], 5).show();
+//				steelStyleSelect = arg2;
+				setPmData(arg2);				
+			}
+
+			@Override
+			public void onNothingSelected(AdapterView<?> arg0) {
+			}
+		});
+		pmSpinner.setOnItemSelectedListener(new OnItemSelectedListener() {
+
+			@Override
+			public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
+				Toast.makeText(add2.this, "您选择了"+gcPinming[arg2], 5).show();
+			}
+
+			@Override
+			public void onNothingSelected(AdapterView<?> arg0) {
+			}
+		});
+		
+		cdEdit.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				// 显示对话框
+				if(m_iStartSign==0)//省份
+				{
+					ShowProvinceDlg(cdEdit,0);
+				}else if(m_iStartSign==1)//城市
+				{
+					ShowCityDlg(cdEdit,0);
+				}else if(m_iStartSign==2)//县区
+				{
+					ShowTownDlg(cdEdit,0);
+				}
+			}
+		});
+        
 		
 		m_strStartCity=app.GetConfigValue("add1startcity");
 		m_strStopCity=app.GetConfigValue("add1stopcity");
@@ -313,6 +430,43 @@ public class add2 extends MySuperActivity{
 		}
 		
 	}
+	
+	private void setPmData(int selectId) {
+
+		switch (selectId) {
+		case 0:
+			gcPinming = gcPinming_x_01;
+			break;
+		case 1:
+			gcPinming = gcPinming_x_02;
+			break;
+		case 2:
+			gcPinming = gcPinming_x_03;
+			break;
+		case 3:
+			gcPinming = gcPinming_x_04;
+			break;
+		case 4:
+			gcPinming = gcPinming_x_05;
+			break;
+		case 5:
+			gcPinming = gcPinming_x_06;
+			break;
+		case 6:
+			gcPinming = gcPinming_x_07;
+			break;
+		}
+		//配置品名数据
+		ArrayAdapter mAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,gcPinming);
+        //设置下拉列表风格
+        mAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        pmSpinner.setAdapter(mAdapter);
+		
+//		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item,gcPinming);
+////		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//		pmSpinner.setAdapter(adapter);
+	}
+	
 	/*
 	 * 选择省份城市县区相关函数
 	 */
