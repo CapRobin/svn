@@ -3,6 +3,7 @@ package com.xibeiwuliu.activity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.xibeiwuliu.entity.UserInfo;
 import com.xibeiwuliu.global.MyApplication;
 
 /**
@@ -43,6 +44,9 @@ public class PersonalDriverInfoActivity extends BaseActivity {
 	private void initView() {
 		// text = (TextView) findViewById(R.id.text);
 		// text.setText(getMsg);
-
+		
+		UserInfo userInfo = application.userInfo;
+		String userInfoStr = userInfo.getNames();
+		
 	}
 }
