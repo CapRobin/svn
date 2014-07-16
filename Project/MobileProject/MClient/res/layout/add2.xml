@@ -5,42 +5,44 @@
     android:background="@color/app_bg"
     android:orientation="vertical" >
 
-<!--     <LinearLayout -->
-<!--         android:layout_width="fill_parent" -->
-<!--         android:layout_height="wrap_content" -->
-<!--         android:background="@color/gray" > -->
-<!-- 		<RelativeLayout -->
-<!-- 		        android:layout_width="fill_parent" -->
-<!-- 		        android:layout_height="wrap_content" > -->
-<!-- 		        <Button -->
-<!-- 		            android:id="@+id/backBtn" -->
-<!-- 		            android:layout_width="65dp" -->
-<!-- 		            android:layout_height="wrap_content" -->
-<!-- 		            android:text="@string/BackTxt" /> -->
-		
-<!-- 		         <Button -->
-<!-- 		             android:id="@+id/typeBtn" -->
-<!-- 		             android:layout_width="100dp" -->
-<!-- 		             android:layout_height="wrap_content" -->
-<!-- 		             android:layout_centerHorizontal="true" -->
-<!-- 		             android:text="@string/typeInfo1Txt" -->
-<!-- 		             android:textColor="@color/blue2" /> -->
-		         
-<!-- 		        <Button -->
-<!-- 		            android:id="@+id/add2Btn" -->
-<!-- 		            android:layout_width="65dp" -->
-<!-- 		            android:layout_height="wrap_content" -->
-<!-- 		            android:layout_alignParentRight="true" -->
-<!-- 		            android:text="@string/add2BtnTxt" -->
-<!-- 		            android:visibility="invisible" /> -->
+    <!-- <LinearLayout -->
+    <!-- android:layout_width="fill_parent" -->
+    <!-- android:layout_height="wrap_content" -->
+    <!-- android:background="@color/gray" > -->
+    <!-- <RelativeLayout -->
+    <!-- android:layout_width="fill_parent" -->
+    <!-- android:layout_height="wrap_content" > -->
+    <!-- <Button -->
+    <!-- android:id="@+id/backBtn" -->
+    <!-- android:layout_width="65dp" -->
+    <!-- android:layout_height="wrap_content" -->
+    <!-- android:text="@string/BackTxt" /> -->
 
-<!-- 		</RelativeLayout> -->
-<!--     </LinearLayout> -->
 
-    
+    <!-- <Button -->
+    <!-- android:id="@+id/typeBtn" -->
+    <!-- android:layout_width="100dp" -->
+    <!-- android:layout_height="wrap_content" -->
+    <!-- android:layout_centerHorizontal="true" -->
+    <!-- android:text="@string/typeInfo1Txt" -->
+    <!-- android:textColor="@color/blue2" /> -->
+
+
+    <!-- <Button -->
+    <!-- android:id="@+id/add2Btn" -->
+    <!-- android:layout_width="65dp" -->
+    <!-- android:layout_height="wrap_content" -->
+    <!-- android:layout_alignParentRight="true" -->
+    <!-- android:text="@string/add2BtnTxt" -->
+    <!-- android:visibility="invisible" /> -->
+
+
+    <!-- </RelativeLayout> -->
+    <!-- </LinearLayout> -->
+
     <LinearLayout
-        android:layout_width="fill_parent"
         android:id="@+id/layout_01"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="3dip"
         android:layout_marginLeft="10dip"
@@ -97,322 +99,364 @@
             android:padding="3dip"
             android:singleLine="true" />
     </LinearLayout>
-    
-    
-            
 
-            <RelativeLayout
-                android:id="@+id/layout_0"
-                android:layout_below="@+id/layout_01"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dip"
-                android:layout_marginLeft="10dip"
-                android:layout_marginRight="10dip" >
+    <RelativeLayout
+        android:id="@+id/layout_0"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout_01"
+        android:layout_marginBottom="10dip"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip" >
 
-                <TextView
-                    android:id="@+id/jsfsText"
-                    android:layout_width="100dip"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="类      别:"
-                    android:textColor="@color/black"
-                    android:textSize="18sp" />
+        <TextView
+            android:id="@+id/lbText"
+            android:layout_width="100dip"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="类      别:"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
 
-                <Spinner
-                    android:id="@+id/jsfsSpinner"
-                    android:layout_width="fill_parent"
-                    android:layout_height="45dip"
-                    android:layout_marginLeft="97dip"
-                    android:entries="@array/steelStyle" />
-            </RelativeLayout>
+        <Spinner
+            android:id="@+id/lbSpinner"
+            android:layout_width="fill_parent"
+            android:layout_height="45dip"
+            android:layout_marginLeft="97dip"
+            android:entries="@array/steelStyle" />
+    </RelativeLayout>
 
-            <RelativeLayout
-                android:id="@+id/layout_1"
-                android:layout_below="@+id/layout_0"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dip"
-                android:layout_marginLeft="10dip"
-                android:layout_marginRight="10dip" >
+    <RelativeLayout
+        android:id="@+id/layout_1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout_0"
+        android:layout_marginBottom="10dip"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip" >
 
-                <TextView
-                    android:id="@+id/jsfsText"
-                    android:layout_width="100dip"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="品      名:"
-                    android:textColor="@color/black"
-                    android:textSize="18sp" />
+        <TextView
+            android:id="@+id/pmText"
+            android:layout_width="100dip"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="品      名:"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
 
-                <Spinner
-                    android:id="@+id/jsfsSpinner"
-                    android:layout_width="fill_parent"
-                    android:layout_height="45dip"
-                    android:layout_marginLeft="97dip"
-                    android:entries="@array/gcPinming" />
-            </RelativeLayout>
+        <Spinner
+            android:id="@+id/pmSpinner"
+            android:layout_width="fill_parent"
+            android:layout_height="45dip"
+            android:layout_marginLeft="97dip" />
+    </RelativeLayout>
 
-            <RelativeLayout
-                android:id="@+id/layout_2"
-                android:layout_below="@+id/layout_1"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dip"
-                android:layout_marginLeft="10dip"
-                android:layout_marginRight="10dip" >
+    <RelativeLayout
+        android:id="@+id/layout_2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout_1"
+        android:layout_marginBottom="10dip"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip" >
 
-                <TextView
-                    android:id="@+id/jsfsText"
-                    android:layout_width="100dip"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="规      格:"
-                    android:textColor="@color/black"
-                    android:textSize="18sp" />
+        <TextView
+            android:id="@+id/ggText"
+            android:layout_width="100dip"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="规      格:"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
 
-                <Spinner
-                    android:id="@+id/jsfsSpinner"
-                    android:layout_width="fill_parent"
-                    android:layout_height="45dip"
-                    android:layout_marginLeft="97dip"
-                    android:entries="@array/gcGuige" />
-            </RelativeLayout>
+        <Spinner
+            android:id="@+id/ggSpinner"
+            android:layout_width="fill_parent"
+            android:layout_height="45dip"
+            android:layout_marginLeft="97dip"
+            android:entries="@array/gcGuige" />
+    </RelativeLayout>
 
-            <RelativeLayout
-                android:id="@+id/layout_3"
-                android:layout_below="@+id/layout_2"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dip"
-                android:layout_marginLeft="10dip"
-                android:layout_marginRight="10dip" >
+    <RelativeLayout
+        android:id="@+id/layout_3"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout_2"
+        android:layout_marginBottom="10dip"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip" >
 
-                <TextView
-                    android:id="@+id/jsfsText"
-                    android:layout_width="100dip"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="产      地:"
-                    android:textColor="@color/black"
-                    android:textSize="18sp" />
+        <TextView
+            android:id="@+id/cdText"
+            android:layout_width="100dip"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:text="产      地:"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
 
-                <Spinner
-                    android:id="@+id/jsfsSpinner"
-                    android:layout_width="fill_parent"
-                    android:layout_height="45dip"
-                    android:layout_marginLeft="97dip"
-                    android:entries="@array/gcChandi" />
-            </RelativeLayout>
+        <Button
+            android:id="@+id/cdEdit"
+            android:layout_width="fill_parent"
+            android:layout_height="35dip"
+            android:layout_gravity="left"
+            android:layout_marginLeft="99dip"
+            android:layout_marginRight="3dip"
+            android:background="@drawable/myedit_bg"
+            android:entries="@array/gcChandi"
+            android:gravity="center_vertical" />
 
-            <RelativeLayout
-                android:id="@+id/layout_4"
-                android:layout_below="@+id/layout_3"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dip"
-                android:layout_marginLeft="10dip"
-                android:layout_marginRight="10dip" >
+        <!-- <EditText -->
+        <!-- android:id="@+id/infoContent" -->
+        <!-- android:layout_width="fill_parent" -->
+        <!-- android:layout_height="wrap_content" -->
+        <!-- android:layout_below="@+id/layout_6" -->
+        <!-- android:background="@drawable/myedit_bg" -->
+        <!-- android:height="95dp" -->
+        <!-- android:layout_margin="20dip" -->
+        <!-- android:textSize="13sp" -->
+        <!-- android:hint="@string/infoContentTxt" /> -->
+    </RelativeLayout>
 
-                <TextView
-                    android:id="@+id/jsfsText"
-                    android:layout_width="100dip"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="数      量:"
-                    android:textColor="@color/black"
-                    android:textSize="18sp" />
+    <RelativeLayout
+        android:id="@+id/layout_4"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout_3"
+        android:layout_marginBottom="10dip"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip" >
 
-                <Spinner
-                    android:id="@+id/jsfsSpinner"
-                    android:layout_width="fill_parent"
-                    android:layout_height="45dip"
-                    android:layout_marginLeft="97dip"
-                    android:entries="@array/gcShuliang" />
-            </RelativeLayout>
+        <TextView
+            android:id="@+id/slText"
+            android:layout_width="100dip"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="数      量:"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
 
-            <RelativeLayout
-                android:id="@+id/layout_5"
-                android:layout_below="@+id/layout_4"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dip"
-                android:layout_marginLeft="10dip"
-                android:layout_marginRight="10dip" >
+        <Spinner
+            android:id="@+id/slSpinner"
+            android:layout_width="fill_parent"
+            android:layout_height="45dip"
+            android:layout_marginLeft="97dip"
+            android:entries="@array/gcShuliang" />
+    </RelativeLayout>
 
-                <TextView
-                    android:id="@+id/jsfsText"
-                    android:layout_width="100dip"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="价      格:"
-                    android:textColor="@color/black"
-                    android:textSize="18sp" />
+    <RelativeLayout
+        android:id="@+id/layout_5"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout_4"
+        android:layout_marginBottom="10dip"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip" >
 
-                <Spinner
-                    android:id="@+id/jsfsSpinner"
-                    android:layout_width="fill_parent"
-                    android:layout_height="45dip"
-                    android:layout_marginLeft="97dip"
-                    android:entries="@array/steelStyle" />
-            </RelativeLayout>
+        <TextView
+            android:id="@+id/jgText"
+            android:layout_width="100dip"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="价      格:"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
 
-            <RelativeLayout
-                android:id="@+id/layout_6"
-                android:layout_below="@+id/layout_5"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dip"
-                android:layout_marginLeft="10dip"
-                android:layout_marginRight="10dip" >
+        <EditText
+            android:id="@+id/jgEdit"
+            android:layout_width="fill_parent"
+            android:layout_height="37dip"
+            android:layout_marginLeft="97dip"
+            android:layout_marginRight="40dip"
+            android:background="@drawable/myedit_bg"
+            android:gravity="center_vertical"
+            android:inputType="number" />
 
-                <TextView
-                    android:id="@+id/jsfsText"
-                    android:layout_width="100dip"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="国      标:"
-                    android:textColor="@color/black"
-                    android:textSize="18sp" />
+        <TextView
+            android:id="@+id/jgEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="45dip"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="97dip"
+            android:layout_marginRight="15dip"
+            android:gravity="center_vertical"
+            android:text="元"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+    </RelativeLayout>
 
-                <Spinner
-                    android:id="@+id/jsfsSpinner"
-                    android:layout_width="fill_parent"
-                    android:layout_height="45dip"
-                    android:layout_marginLeft="97dip"
-                    android:entries="@array/isGuobiao" />
-            </RelativeLayout>
-    
-    
+    <RelativeLayout
+        android:id="@+id/layout_6"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout_5"
+        android:layout_marginBottom="10dip"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip" >
+
+        <TextView
+            android:id="@+id/gbText"
+            android:layout_width="100dip"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="国      标:"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <Spinner
+            android:id="@+id/gbSpinner"
+            android:layout_width="fill_parent"
+            android:layout_height="45dip"
+            android:layout_marginLeft="97dip"
+            android:entries="@array/isGuobiao" />
+    </RelativeLayout>
 
     <EditText
         android:id="@+id/infoContent"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/layout_6"
+        android:layout_margin="20dip"
         android:background="@drawable/myedit_bg"
         android:height="95dp"
-        android:layout_margin="20dip"
-        android:textSize="13sp"
-        android:hint="@string/infoContentTxt" />
-    
-<!--     <LinearLayout -->
-<!--         android:layout_width="fill_parent" -->
-<!--         android:layout_height="wrap_content" > -->
+        android:hint="@string/infoContentTxt"
+        android:textSize="13sp" />
 
-<!--         <TextView -->
-<!--             android:id="@+id/textView1" -->
-<!--             android:layout_width="wrap_content" -->
-<!--             android:layout_height="wrap_content" -->
-<!--             android:text="@string/startcityTxt" /> -->
+    <!-- <LinearLayout -->
+    <!-- android:layout_width="fill_parent" -->
+    <!-- android:layout_height="wrap_content" > -->
 
-<!--         <Button -->
-<!--             android:id="@+id/startcity" -->
-<!--             style="?android:attr/buttonStyleSmall" -->
-<!--             android:layout_width="65dp" -->
-<!--             android:layout_height="wrap_content" -->
-            
-<!--             android:singleLine="true" -->
-<!-- 			android:ellipsize="marquee" -->
-<!-- 			android:focusableInTouchMode="true" -->
-			
-<!--             /> -->
 
-<!--         <TextView -->
-<!--             android:id="@+id/textView2" -->
-<!--             android:layout_width="wrap_content" -->
-<!--             android:layout_height="wrap_content" -->
-<!--             android:text="@string/addStopCityTxt" /> -->
+    <!-- <TextView -->
+    <!-- android:id="@+id/textView1" -->
+    <!-- android:layout_width="wrap_content" -->
+    <!-- android:layout_height="wrap_content" -->
+    <!-- android:text="@string/startcityTxt" /> -->
 
-<!--         <Button -->
-<!--             android:id="@+id/stopcity" -->
-<!--             style="?android:attr/buttonStyleSmall" -->
-<!--             android:layout_width="65dp" -->
-<!--             android:layout_height="wrap_content"  -->
-            
-<!--             android:singleLine="true" -->
-<!-- 			android:ellipsize="marquee" -->
-<!-- 			android:focusableInTouchMode="true" -->
-			
-<!--             /> -->
 
-<!--     </LinearLayout> -->
+    <!-- <Button -->
+    <!-- android:id="@+id/startcity" -->
+    <!-- style="?android:attr/buttonStyleSmall" -->
+    <!-- android:layout_width="65dp" -->
+    <!-- android:layout_height="wrap_content" -->
 
-<!--     <LinearLayout -->
-<!--         android:layout_width="fill_parent" -->
-<!--         android:layout_height="wrap_content" > -->
-<!--      <RelativeLayout -->
-<!-- 		        android:layout_width="fill_parent" -->
-<!-- 		        android:layout_height="wrap_content" > -->
 
-<!-- 	 <LinearLayout -->
-<!-- 	     android:id="@+id/infos" -->
-<!-- 	     android:layout_width="250dp" -->
-<!-- 	     android:layout_height="wrap_content" > -->
+    <!-- android:singleLine="true" -->
+    <!-- android:ellipsize="marquee" -->
+    <!-- android:focusableInTouchMode="true" -->
 
-<!--         <EditText -->
-<!--             android:id="@+id/infoContent" -->
-<!--             android:layout_width="fill_parent" -->
-<!--             android:layout_height="wrap_content" -->
-<!--             android:layout_weight="1" -->
-<!--             android:ems="10" -->
-<!--             android:height="95dp" -->
-<!--             android:hint="@string/infoContentTxt" > -->
 
-<!--             <requestFocus /> -->
-<!--         </EditText> -->
-<!-- 	 </LinearLayout> -->
+    <!-- /> -->
 
-<!-- 	 <LinearLayout -->
-<!-- 	     android:layout_width="wrap_content" -->
-<!-- 	     android:layout_height="95dp" -->
-<!-- 	     android:layout_toRightOf="@id/infos" -->
-<!-- 	     android:gravity="center_horizontal" -->
-<!-- 	     android:orientation="vertical" > -->
-        
-<!--         <Button -->
-<!--             android:id="@+id/clearBtn" -->
-<!--             style="?android:attr/buttonStyleSmall" -->
-<!--             android:layout_width="65dp" -->
-<!--             android:layout_height="30dp" -->
-<!--             android:layout_weight="1" -->
-<!--             android:text="@string/clearBtnTxt" /> -->
 
-<!--         <Button -->
-<!--             android:id="@+id/backspaceBtn" -->
-<!--             style="?android:attr/buttonStyleSmall" -->
-<!--             android:layout_width="65dp" -->
-<!--             android:layout_height="30dp" -->
-<!--             android:layout_weight="1" -->
-<!--             android:text="@string/backspaceBtnTxt" /> -->
-        
-<!--         <Button -->
-<!--             android:id="@+id/addinfoBtn" -->
-<!--             style="?android:attr/buttonStyleSmall" -->
-<!--             android:layout_width="65dp" -->
-<!--             android:layout_height="30dp" -->
-<!--             android:layout_weight="1" -->
-<!--             android:text="@string/addinfoBtnTxt" -->
-<!--             android:textColor="@color/red" /> -->
-        
-<!--         </LinearLayout> -->
-<!-- 	</RelativeLayout> -->
-<!--     </LinearLayout> -->
+    <!-- <TextView -->
+    <!-- android:id="@+id/textView2" -->
+    <!-- android:layout_width="wrap_content" -->
+    <!-- android:layout_height="wrap_content" -->
+    <!-- android:text="@string/addStopCityTxt" /> -->
 
+
+    <!-- <Button -->
+    <!-- android:id="@+id/stopcity" -->
+    <!-- style="?android:attr/buttonStyleSmall" -->
+    <!-- android:layout_width="65dp" -->
+    <!-- android:layout_height="wrap_content" -->
+
+
+    <!-- android:singleLine="true" -->
+    <!-- android:ellipsize="marquee" -->
+    <!-- android:focusableInTouchMode="true" -->
+
+
+    <!-- /> -->
+
+
+    <!-- </LinearLayout> -->
+
+
+    <!-- <LinearLayout -->
+    <!-- android:layout_width="fill_parent" -->
+    <!-- android:layout_height="wrap_content" > -->
+    <!-- <RelativeLayout -->
+    <!-- android:layout_width="fill_parent" -->
+    <!-- android:layout_height="wrap_content" > -->
+
+
+    <!-- <LinearLayout -->
+    <!-- android:id="@+id/infos" -->
+    <!-- android:layout_width="250dp" -->
+    <!-- android:layout_height="wrap_content" > -->
+
+
+    <!-- <EditText -->
+    <!-- android:id="@+id/infoContent" -->
+    <!-- android:layout_width="fill_parent" -->
+    <!-- android:layout_height="wrap_content" -->
+    <!-- android:layout_weight="1" -->
+    <!-- android:ems="10" -->
+    <!-- android:height="95dp" -->
+    <!-- android:hint="@string/infoContentTxt" > -->
+
+
+    <!-- <requestFocus /> -->
+    <!-- </EditText> -->
+    <!-- </LinearLayout> -->
+
+
+    <!-- <LinearLayout -->
+    <!-- android:layout_width="wrap_content" -->
+    <!-- android:layout_height="95dp" -->
+    <!-- android:layout_toRightOf="@id/infos" -->
+    <!-- android:gravity="center_horizontal" -->
+    <!-- android:orientation="vertical" > -->
+
+
+    <!-- <Button -->
+    <!-- android:id="@+id/clearBtn" -->
+    <!-- style="?android:attr/buttonStyleSmall" -->
+    <!-- android:layout_width="65dp" -->
+    <!-- android:layout_height="30dp" -->
+    <!-- android:layout_weight="1" -->
+    <!-- android:text="@string/clearBtnTxt" /> -->
+
+
+    <!-- <Button -->
+    <!-- android:id="@+id/backspaceBtn" -->
+    <!-- style="?android:attr/buttonStyleSmall" -->
+    <!-- android:layout_width="65dp" -->
+    <!-- android:layout_height="30dp" -->
+    <!-- android:layout_weight="1" -->
+    <!-- android:text="@string/backspaceBtnTxt" /> -->
+
+
+    <!-- <Button -->
+    <!-- android:id="@+id/addinfoBtn" -->
+    <!-- style="?android:attr/buttonStyleSmall" -->
+    <!-- android:layout_width="65dp" -->
+    <!-- android:layout_height="30dp" -->
+    <!-- android:layout_weight="1" -->
+    <!-- android:text="@string/addinfoBtnTxt" -->
+    <!-- android:textColor="@color/red" /> -->
+
+
+    <!-- </LinearLayout> -->
+    <!-- </RelativeLayout> -->
+    <!-- </LinearLayout> -->
 
     <Button
         android:id="@+id/addinfoBtn"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:layout_marginBottom="50dip"
         android:layout_marginLeft="20dip"
         android:layout_marginRight="20dip"
-        android:layout_marginBottom="50dip"
         android:background="@drawable/exist_selector"
         android:padding="2dip"
         android:text="发    布"
         android:textSize="20sp" />
-    
+
     <!-- 按键相关代码 -->
 
 </RelativeLayout>
