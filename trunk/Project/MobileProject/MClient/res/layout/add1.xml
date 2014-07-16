@@ -104,11 +104,11 @@
         android:id="@+id/infoContent"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="5dip"
         android:background="@drawable/myedit_bg"
         android:height="95dp"
-        android:layout_margin="5dip"
-        android:textSize="13sp"
-        android:hint="@string/infoContentTxt" />
+        android:hint="@string/infoContentTxt"
+        android:textSize="13sp" />
 
     <!-- <LinearLayout -->
     <!-- android:layout_width="fill_parent" -->
