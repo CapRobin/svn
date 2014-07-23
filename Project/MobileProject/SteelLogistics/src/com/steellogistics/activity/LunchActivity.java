@@ -5,8 +5,11 @@ import java.io.File;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
+import android.app.Dialog;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.DialogInterface.OnKeyListener;
 import android.content.Intent;
 import android.location.Location;
 import android.media.AudioManager;
@@ -14,6 +17,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.provider.Settings;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -47,7 +51,9 @@ public class LunchActivity extends Activity {
 	private String action = null;
 	public int INTENTWIFI = 1;
 	private int INTENTGPS = 2;
+	private Dialog mDialog;
 	private AudioManager audioManager = null;
+	private Dialog mProgressDialog;
 
 	private Handler handler = new Handler() {
 		public void handleMessage(android.os.Message msg) {
@@ -83,6 +89,17 @@ public class LunchActivity extends Activity {
 		// 去掉任务栏
 		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		setContentView(R.layout.lunch);
+//		showRoundProcessDialog(this, R.layout.loading_process_dialog_anim);
+		mProgressDialog = new Dialog(LunchActivity.this, R.style.theme_dialog_alert);
+		mProgressDialog.setContentView(R.layout.window_layout);
+		mProgressDialog.setCancelable(true);
+		mProgressDialog.setOnCancelListener(new android.content.DialogInterface.OnCancelListener() {
+			public void onCancel(DialogInterface dialog) {
+				LunchActivity.this.finish();
+			}
+		});
+		mProgressDialog.show();
+		
 		application = (MyApplication) getApplication();
 		application.isBoot = true;
 		audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
@@ -90,29 +107,36 @@ public class LunchActivity extends Activity {
 		// 检测网络
 		if (MethodUtil.getNetworkState(LunchActivity.this)) {
 
-			// 检测GPS功能
-			// boolean gpsEnabled =
-			// Settings.Secure.isLocationProviderEnabled(getContentResolver(),
-			// LocationManager.GPS_PROVIDER);
-			// if (gpsEnabled) {
-			// Toast.makeText(LunchActivity.this, "GPS已打开现在关闭！", 5).show();
-			// Settings.Secure.setLocationProviderEnabled(getContentResolver(),
-			// LocationManager.GPS_PROVIDER, false);
-			// Settings.Secure.setLocationProviderEnabled(getContentResolver(),
-			// LocationManager.GPS_PROVIDER, false);
-			// } else {
-			// Toast.makeText(LunchActivity.this, "GPS已关闭现在打开！", 5).show();
-			// Settings.Secure.setLocationProviderEnabled(getContentResolver(),
-			// LocationManager.GPS_PROVIDER, true);
-			// }
-			if (MethodUtil.isGpsEnable(LunchActivity.this)) {
-				checkIntent();
-			} else {
-				showMyDialog(2);
-			}
+			
+			//暂时屏蔽GPS检测
+//			if (MethodUtil.isGpsEnable(LunchActivity.this)) {
+//				checkIntent();
+//			} else {
+//				showMyDialog(2);
+//			}
+			
+			checkIntent();
 		} else {
 			showMyDialog(1);
 		}
+	}
+	
+	public void showRoundProcessDialog(Context mContext, int layout) {
+		OnKeyListener keyListener = new OnKeyListener() {
+			@Override
+			public boolean onKey(DialogInterface dialog, int keyCode, KeyEvent event) {
+				if (keyCode == KeyEvent.KEYCODE_HOME || keyCode == KeyEvent.KEYCODE_SEARCH) {
+					return true;
+				}
+				return false;
+			}
+		};
+
+		mDialog = new AlertDialog.Builder(mContext).create();
+		mDialog.setOnKeyListener(keyListener);
+		mDialog.show();
+		// 注意此处要放在show之后 否则会报异常
+		mDialog.setContentView(layout);
 	}
 
 	public boolean isExist() {

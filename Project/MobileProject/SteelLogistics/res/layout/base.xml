@@ -1,0 +1,58 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/titleLayout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <RelativeLayout
+        android:id="@+id/titleLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="45dip"
+        android:background="@drawable/title_bg" >
+
+        <Button
+            android:id="@+id/titleLeftBut"
+            android:layout_width="55dip"
+            android:layout_height="30dip"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dip"
+            android:background="@drawable/btn_back"
+            android:paddingLeft="5dip"
+            android:text="返回"
+            android:textColor="@color/white"
+            tools:context=".MainActivity" />
+
+        <TextView
+            android:id="@+id/titleName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:padding="@dimen/padding_medium"
+            android:textColor="@color/white"
+            android:textSize="20dip"
+            android:textStyle="bold"
+            tools:context=".MainActivity" />
+
+        <Button
+            android:id="@+id/titleRightBut"
+            android:layout_width="30dip"
+            android:layout_height="30dip"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dip"
+            android:background="@drawable/right_but_x"
+            android:textColor="@color/white"
+            tools:context=".MainActivity" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/contentLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="45dip"
+        android:background="@color/gray_black" >
+    </RelativeLayout>
+
+</RelativeLayout>
