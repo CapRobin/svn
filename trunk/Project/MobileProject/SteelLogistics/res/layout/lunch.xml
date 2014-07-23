@@ -1,24 +1,28 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
-    android:background="@drawable/launcher_bg"
-    android:layout_height="fill_parent" >
+    android:layout_height="fill_parent"
+    android:background="@drawable/launcher_bg" >
 
-<!--     <TextView -->
-<!--         android:layout_width="wrap_content" -->
-<!--         android:layout_height="wrap_content" -->
-<!--         android:layout_centerHorizontal="true" -->
-<!--         android:layout_centerVertical="true" -->
-<!--         android:padding="@dimen/padding_medium" -->
-<!--         android:textColor="@color/white" -->
-<!--         android:textSize="11sp" -->
-<!--         android:text="物流通欢迎您. . . . . ." /> -->
+    <!-- <TextView -->
+    <!-- android:layout_width="wrap_content" -->
+    <!-- android:layout_height="wrap_content" -->
+    <!-- android:layout_centerHorizontal="true" -->
+    <!-- android:layout_centerVertical="true" -->
+    <!-- android:padding="@dimen/padding_medium" -->
+    <!-- android:textSize="11sp" -->
+    <!-- android:text="新页面" /> -->
 
-<!--     <Button -->
-<!--         android:id="@+id/intentBut" -->
-<!--         android:layout_width="150dip" -->
-<!--         android:layout_centerInParent="true" -->
-<!--         android:layout_height="wrap_content" -->
-<!--         android:text="进入首页" /> -->
+    <ProgressBar
+        android:id="@+id/progress_horizontal_indeter"
+        style="@style/progressBarHorizontal_indeter"
+        android:layout_width="200dip"
+        android:layout_height="10dip"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="40dip"
+        android:indeterminate="true"
+        android:max="100"
+        android:progress="41" />
 
 </RelativeLayout>
