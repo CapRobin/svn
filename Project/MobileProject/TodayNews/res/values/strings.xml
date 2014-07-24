@@ -1,0 +1,10 @@
+<resources>
+
+    <string name="app_name">今日焦点</string>
+	<string name="left_menu_homepage">首页</string>		
+	<string name="left_menu_stars">关注明星</string>
+	<string name="left_menu_personal">个人资料</string>
+	<string name="left_menu_hotapp">热点应用</string>
+	<string name="left_menu_set">设  置</string>
+	<string name="left_menu_exit">退  出</string>
+</resources>
