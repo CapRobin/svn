@@ -11,6 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.ab.activity.AbActivity;
 import com.steellogistics.R;
 
 /**
@@ -24,7 +25,7 @@ import com.steellogistics.R;
  * @Version v1.0 *
  * 
  */
-public class BaseActivity extends Activity {
+public class BaseActivity extends AbActivity {
 	public Button titleLeftBut, titleRightBut;
 	public TextView titleName = null;
 	private LayoutInflater inflater = null;

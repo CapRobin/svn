@@ -34,7 +34,6 @@
             android:singleLine="true"
             android:textColor="@color/gray"
             android:textSize="13sp" >
-
         </EditText>
     </RelativeLayout>
 
@@ -98,7 +97,8 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginLeft="8dip"
-            android:layout_toRightOf="@+id/userTypeText" />
+            android:layout_toRightOf="@+id/userTypeText"
+            android:entries="@array/user_type" />
     </RelativeLayout>
 
     <Button

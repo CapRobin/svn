@@ -161,7 +161,8 @@
             android:layout_height="45dip"
             android:layout_centerVertical="true"
             android:layout_marginLeft="8dip"
-            android:layout_toRightOf="@+id/userTypeText" />
+            android:layout_toRightOf="@+id/userTypeText"
+            android:entries="@array/user_type" />
     </RelativeLayout>
 
     <Button
