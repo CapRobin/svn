@@ -13,14 +13,15 @@
         <Button
             android:id="@+id/titleLeftBut"
             android:layout_width="55dip"
-            android:layout_height="30dip"
+            android:layout_height="27dip"
             android:layout_centerVertical="true"
             android:layout_marginLeft="5dip"
             android:background="@drawable/btn_back"
+            android:gravity="center"
             android:paddingLeft="5dip"
             android:text="返回"
             android:textColor="@color/white"
-            tools:context=".MainActivity" />
+            android:textSize="12sp" />
 
         <TextView
             android:id="@+id/titleName"
@@ -32,19 +33,21 @@
             android:padding="@dimen/padding_medium"
             android:textColor="@color/white"
             android:textSize="20dip"
-            android:textStyle="bold"
-            tools:context=".MainActivity" />
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/titleRightBut"
-            android:layout_width="30dip"
-            android:layout_height="30dip"
+            android:layout_width="wrap_content"
+            android:layout_height="27dip"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="5dip"
-            android:background="@drawable/right_but_x"
+            android:background="@drawable/btn_title"
+            android:gravity="center"
+            android:paddingLeft="5dip"
+            android:paddingRight="5dip"
             android:textColor="@color/white"
-            tools:context=".MainActivity" />
+            android:textSize="12sp" />
     </RelativeLayout>
 
     <RelativeLayout

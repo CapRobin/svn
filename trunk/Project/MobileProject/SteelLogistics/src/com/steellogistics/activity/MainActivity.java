@@ -3,7 +3,6 @@ package com.steellogistics.activity;
 import java.util.ArrayList;
 import java.util.List;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
 import android.content.Intent;
@@ -20,6 +19,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.steellogistics.R;
+import com.steellogistics.global.MyApplication;
 import com.steellogistics.view.MyImgScroll;
 
 /**
@@ -40,13 +40,49 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 	private boolean isShowLeftBut = true;
 	private boolean isShowRightBut = true;
 	private AlertDialog dialog;
+	private MyApplication application = null;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setBaseContentView(R.layout.activity_main);
-		setTitleInfo("首    页", isShowLeftBut, "退出", isShowRightBut, null);
+		application = (MyApplication) getApplication();
+		titleBarInitView();
 		initView();
+	}
+
+	/**
+	 * 
+	 * @Describe：初始化标题栏
+	 * @Throws:
+	 * @Date：2014年7月24日 上午9:41:44
+	 * @Version v1.0
+	 */
+	private void titleBarInitView() {
+		setTitleInfo("首    页", isShowLeftBut, "退出", isShowRightBut, "个人");
+		if (isShowLeftBut) {
+			titleLeftBut.setOnClickListener(new OnClickListener() {
+
+				@Override
+				public void onClick(View v) {
+					showMyDialog();
+				}
+			});
+		}
+
+		if (isShowRightBut) {
+			titleRightBut.setOnClickListener(new OnClickListener() {
+
+				@Override
+				public void onClick(View v) {
+					if (application.isLogin) {
+						startActivity(new Intent(MainActivity.this, PersonalCenterActivity.class));
+					} else {
+						startActivity(new Intent(MainActivity.this, LoginActivity.class));
+					}
+				}
+			});
+		}
 	}
 
 	/**
@@ -64,13 +100,10 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 		ssBut = (Button) findViewById(R.id.ssBut);
 		zxBut = (Button) findViewById(R.id.zxBut);
 		gdBut = (Button) findViewById(R.id.gdBut);
-		
+
 		titleLayout = (RelativeLayout) findViewById(R.id.titleLayout);
 		myPager = (MyImgScroll) findViewById(R.id.myvp);
 		ovalLayout = (LinearLayout) findViewById(R.id.vb);
-		
-		titleLeftBut.setOnClickListener(this);
-		titleRightBut.setOnClickListener(this);
 
 		ghBut.setOnClickListener(this);
 		qgBut.setOnClickListener(this);
@@ -106,27 +139,28 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 					switch (imageItem) {
 					case 0:
 						intent.setClass(MainActivity.this, MyWebView.class);
-						intent.putExtra("url", "http://dl.5671.cc/");
+//						intent.putExtra("url", "http://dl.5671.cc/");
+						intent.putExtra("url", "http://www.nxgtjt.com");
 						startActivity(intent);
 						break;
 					case 1:
 						intent.setClass(MainActivity.this, MyWebView.class);
-						intent.putExtra("url", "http://qy.58.com/17195629821703/");
+						intent.putExtra("url", "http://www.baosteel.com/group/index.htm");
 						startActivity(intent);
 						break;
 					case 2:
 						intent.setClass(MainActivity.this, MyWebView.class);
-						intent.putExtra("url", "http://www.cnpc.com.cn/cn/");
+						intent.putExtra("url", "http://www.gtxh.com");
 						startActivity(intent);
 						break;
 					case 3:
 						intent.setClass(MainActivity.this, MyWebView.class);
-						intent.putExtra("url", "http://csl.chinawuliu.com.cn/");
+						intent.putExtra("url", "http://www.custeel.com");
 						startActivity(intent);
 						break;
 					case 4:
 						intent.setClass(MainActivity.this, MyWebView.class);
-						intent.putExtra("url", "http://www.189.cn/");
+						intent.putExtra("url", "http://www.csteelnews.com");
 						startActivity(intent);
 						break;
 					}
@@ -142,13 +176,6 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
-		case R.id.titleLeftBut:
-			showMyDialog();
-			break;
-		case R.id.titleRightBut:
-//			Toast.makeText(this, titleRightBut.getText(), 5).show();
-			startActivity(new Intent(MainActivity.this, PersonalCenterActivity.class));
-			break;
 		case R.id.ghBut:
 			startActivity(new Intent(MainActivity.this, SupplyActivity.class));
 			break;
@@ -169,7 +196,7 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 			break;
 		}
 	}
-	
+
 	/**
 	 * 
 	 * 描述：显示提示对话框

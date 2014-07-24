@@ -309,4 +309,10 @@ public class LunchActivity extends Activity {
 		msg.setData(bundle);
 		handler.sendMessage(msg);
 	}
+	
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
+		mProgressDialog.dismiss();
+	}
 }
