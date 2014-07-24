@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/menuLayout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/app_bg" >
+
+    <RelativeLayout
+        android:id="@+id/menuTitleLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="50dip"
+        android:background="#6FB9C1" >
+
+        <Button
+            android:id="@+id/menu_show"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:background="@drawable/menu_show"
+            android:textSize="30sp" />
+
+<!--         <TextView -->
+<!--             android:id="@+id/selectTitle" -->
+<!--             android:layout_width="wrap_content" -->
+<!--             android:layout_height="wrap_content" -->
+<!--             android:layout_centerInParent="true" -->
+<!--             android:text="血压" -->
+<!--             android:textColor="@color/white" -->
+<!--             android:textSize="30sp" /> -->
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/menuListView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:cacheColorHint="#00000000"
+        android:layout_below="@+id/menuTitleLayout"
+        android:divider="@drawable/line2"
+        android:dividerHeight="1dip"
+        android:fadingEdge="none" />
+
+</RelativeLayout>
