@@ -1,5 +1,7 @@
 package com.steellogistics.global;
 
+import com.steellogistics.entity.UserInfo;
+
 import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -21,7 +23,7 @@ public class MyApplication extends Application {
 	public boolean firstStart = true;
 	public boolean isBoot = false;  
 	public boolean isLogin = false;
-//	public UserInfo userInfo = null;
+	public UserInfo userInfo = null;
 	
 	@Override
 	public void onCreate() {
