@@ -1,5 +1,6 @@
 package com.steellogistics.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -10,20 +11,20 @@ import com.steellogistics.R;
  * 
  * Copyright (c) 2013 All rights reserved
  * 
- * @Name：SearchActivity.java
- * @Describe：搜索信息
+ * @Name：LoginActivity.java
+ * @Describe：用户登录页面
  * @Author: yfr5734@gmail.com
- * @Date：2014年7月22日 上午11:08:59
+ * @Date：2014年7月24日 上午9:30:26
  * @Version v1.0
  */
-public class SearchActivity extends BaseActivity {
+public class LoginActivity extends BaseActivity {
 	private boolean isShowLeftBut = true;
-	private boolean isShowRightBut = false;
+	private boolean isShowRightBut = true;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setBaseContentView(R.layout.search);
+		setBaseContentView(R.layout.login);
 		titleBarInitView();
 	}
 
@@ -35,7 +36,7 @@ public class SearchActivity extends BaseActivity {
 	 * @Version v1.0
 	 */
 	private void titleBarInitView() {
-		setTitleInfo("搜    索", isShowLeftBut, "返回", isShowRightBut, null);
+		setTitleInfo("登    录", isShowLeftBut, "返回", isShowRightBut, "注册");
 		if (isShowLeftBut) {
 			titleLeftBut.setOnClickListener(new OnClickListener() {
 
@@ -45,5 +46,16 @@ public class SearchActivity extends BaseActivity {
 				}
 			});
 		}
+
+		if (isShowRightBut) {
+			titleRightBut.setOnClickListener(new OnClickListener() {
+
+				@Override
+				public void onClick(View v) {
+					startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
+				}
+			});
+		}
 	}
+
 }

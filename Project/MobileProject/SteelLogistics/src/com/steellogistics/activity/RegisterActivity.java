@@ -10,20 +10,20 @@ import com.steellogistics.R;
  * 
  * Copyright (c) 2013 All rights reserved
  * 
- * @Name：SearchActivity.java
- * @Describe：搜索信息
+ * @Name：RegisterActivity.java
+ * @Describe：用户注册页面
  * @Author: yfr5734@gmail.com
- * @Date：2014年7月22日 上午11:08:59
+ * @Date：2014年7月24日 上午9:33:54
  * @Version v1.0
  */
-public class SearchActivity extends BaseActivity {
+public class RegisterActivity extends BaseActivity {
 	private boolean isShowLeftBut = true;
 	private boolean isShowRightBut = false;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setBaseContentView(R.layout.search);
+		setBaseContentView(R.layout.register);
 		titleBarInitView();
 	}
 
@@ -35,7 +35,7 @@ public class SearchActivity extends BaseActivity {
 	 * @Version v1.0
 	 */
 	private void titleBarInitView() {
-		setTitleInfo("搜    索", isShowLeftBut, "返回", isShowRightBut, null);
+		setTitleInfo("注    册", isShowLeftBut, "返回", isShowRightBut, null);
 		if (isShowLeftBut) {
 			titleLeftBut.setOnClickListener(new OnClickListener() {
 
@@ -46,4 +46,5 @@ public class SearchActivity extends BaseActivity {
 			});
 		}
 	}
+
 }

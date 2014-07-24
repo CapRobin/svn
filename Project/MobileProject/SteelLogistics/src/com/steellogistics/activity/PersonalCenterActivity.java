@@ -24,6 +24,17 @@ public class PersonalCenterActivity extends BaseActivity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setBaseContentView(R.layout.personal_center);
+		titleBarInitView();
+	}
+
+	/**
+	 * 
+	 * @Describe：初始化标题栏
+	 * @Throws:
+	 * @Date：2014年7月24日 上午9:41:44
+	 * @Version v1.0
+	 */
+	private void titleBarInitView() {
 		setTitleInfo("个人中心", isShowLeftBut, "返回", isShowRightBut, null);
 		if (isShowLeftBut) {
 			titleLeftBut.setOnClickListener(new OnClickListener() {
