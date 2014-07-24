@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <color name="no_back">#00000000</color>
+
+    <drawable name="textview_bg_color">#11EF88</drawable>
+
+    <color name="company_name_color">#5989B0</color>
+    <color name="grid_selected">#ee345688</color>
+    <color name="grid_nonal1">#ffffff</color>
+    <color name="grid_nonal2">#ffffff</color>
+    <color name="grid_today_bg">#F99D9D</color>
+
+</resources>

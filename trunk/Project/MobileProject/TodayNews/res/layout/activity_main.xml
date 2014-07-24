@@ -1,0 +1,59 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <org.lsp.todaynews.view.SlidingMenuView
+        android:id="@+id/main_menu_view"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <LinearLayout
+            android:id="@+id/main_left_menu"
+            android:layout_width="240dip"
+            android:layout_height="fill_parent"
+            android:background="@drawable/setting_item_no_round_normal"
+            android:orientation="vertical" 
+             >
+
+            <Button
+                android:id="@+id/btn_homepage"
+                android:layout_width="240dip"
+                android:layout_height="wrap_content"
+                android:background="@drawable/setting_item_top_round_normal"
+                android:text="@string/app_name"
+                android:textColor="#ffffff"
+                android:drawableLeft="@drawable/go_to_main_icon"
+                android:gravity="left|center_vertical"
+                android:paddingLeft="5dip" />
+
+            <LinearLayout
+                android:id="@+id/menu_linearLayout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <ListView
+                    android:id="@+id/gorup_listView"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:scrollbars="none"
+                    android:cacheColorHint="#00000000" 
+                    android:listSelector="@drawable/btn_main_item"
+                    android:divider="@null"
+                     />
+            </LinearLayout>
+
+            
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/main_body"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+
+          
+        </FrameLayout>
+    </org.lsp.todaynews.view.SlidingMenuView>
+
+</RelativeLayout>
