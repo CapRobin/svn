@@ -70,7 +70,7 @@ public class BuyInfoListActivity extends BaseActivity {
 				@Override
 				public void onClick(View v) {
 //					finish();
-					startActivity(new Intent(BuyInfoListActivity.this,PublishActivity.class));
+					startActivity(new Intent(BuyInfoListActivity.this,PublishSupplyActivity.class));
 				}
 			});
 		}

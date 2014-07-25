@@ -183,7 +183,7 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 			startActivity(new Intent(MainActivity.this, BuyInfoListActivity.class));
 			break;
 		case R.id.fbBut:
-			startActivity(new Intent(MainActivity.this, PublishActivity.class));
+			startActivity(new Intent(MainActivity.this, PublishSupplyActivity.class));
 			break;
 		case R.id.ssBut:
 			startActivity(new Intent(MainActivity.this, SearchActivity.class));

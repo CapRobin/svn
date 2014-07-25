@@ -10,7 +10,7 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:padding="@dimen/padding_medium"
-        android:text="发布信息"
+        android:text="发布求购"
         android:textSize="11sp" />
 
 </RelativeLayout>

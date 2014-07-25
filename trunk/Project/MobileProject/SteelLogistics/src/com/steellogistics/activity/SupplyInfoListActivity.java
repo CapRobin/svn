@@ -67,7 +67,7 @@ public class SupplyInfoListActivity extends BaseActivity {
 				@Override
 				public void onClick(View v) {
 //					finish();
-					startActivity(new Intent(SupplyInfoListActivity.this,PublishActivity.class));
+					startActivity(new Intent(SupplyInfoListActivity.this,PublishSupplyActivity.class));
 				}
 			});
 		}
