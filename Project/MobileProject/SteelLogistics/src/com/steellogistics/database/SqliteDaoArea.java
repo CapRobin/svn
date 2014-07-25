@@ -7,7 +7,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.xibeiwuliu.entity.AreaInfo;
+import com.steellogistics.entity.AreaInfo;
 
 /**
  * 

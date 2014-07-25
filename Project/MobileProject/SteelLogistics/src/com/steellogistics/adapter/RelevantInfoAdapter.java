@@ -10,8 +10,8 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.xibeiwuliu.activity.R;
-import com.xibeiwuliu.entity.RelevantInfo;
+import com.steellogistics.R;
+import com.steellogistics.entity.RelevantInfo;
 
 /**
  * 

@@ -139,7 +139,7 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 					switch (imageItem) {
 					case 0:
 						intent.setClass(MainActivity.this, MyWebView.class);
-//						intent.putExtra("url", "http://dl.5671.cc/");
+						// intent.putExtra("url", "http://dl.5671.cc/");
 						intent.putExtra("url", "http://www.nxgtjt.com");
 						startActivity(intent);
 						break;

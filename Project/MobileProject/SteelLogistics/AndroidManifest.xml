@@ -64,6 +64,11 @@
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar" />
         <activity
+            android:name=".activity.RelevantInfoDetailActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" />
+        <activity
             android:name=".activity.MoreActivity"
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="portrait"
