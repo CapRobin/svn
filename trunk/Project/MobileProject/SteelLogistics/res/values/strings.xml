@@ -4,7 +4,6 @@
     <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
     <string name="title_activity_main">钢材物流</string>
-    
     <string name="realNameText">真实姓名</string>
     <string name="realName">请输入真实姓名</string>
     <string name="really_name_on">请输入2到8个中文字符！</string>
@@ -12,6 +11,7 @@
     <string name="error_phone">手机号码格式不正确！</string>
     <string name="setPwdError">密码不能为空!</string>
     <string name="affirmPwdError">两次密码输入不一致!</string>
+    <string name="contentText">         资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容</string>
 
     <string-array name="user_type">
         <item>普通会员</item>

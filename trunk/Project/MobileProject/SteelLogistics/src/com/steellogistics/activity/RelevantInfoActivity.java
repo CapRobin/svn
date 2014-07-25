@@ -46,13 +46,13 @@ public class RelevantInfoActivity extends BaseActivity {
 	private AbTaskQueue mAbTaskQueue = null;
 	private RelevantInfoAdapter myListViewAdapter = null;
 	private List<RelevantInfo> mRelevantInfoList = null;
-	private String getMsg;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setBaseContentView(R.layout.relevant_info);
 		titleBarInitView();
+		initView();
 	}
 
 	/**
@@ -146,8 +146,8 @@ public class RelevantInfoActivity extends BaseActivity {
 	 */
 	private void InitViewPager() {
 		listViews = new ArrayList<View>();
-		int[] imageResId = new int[] { R.drawable.hyzx_01, R.drawable.hyzx_02, R.drawable.hyzx_03, R.drawable.hyzx_04, R.drawable.hyzx_05,
-				R.drawable.hyzx_06 };
+		int[] imageResId = new int[] { R.drawable.a, R.drawable.b, R.drawable.c, R.drawable.d, R.drawable.e,
+				R.drawable.g };
 		for (int i = 0; i < imageResId.length; i++) {
 			final int imageItem = i;
 			ImageView imageView = new ImageView(this);
