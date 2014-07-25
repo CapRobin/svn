@@ -18,4 +18,164 @@
         <item>公司商户</item>
     </string-array>
 
+    <string-array name="steelStyle_x">
+        <item>型材</item>
+        <item>板材</item>
+        <item>建材</item>
+        <item>管材</item>
+        <item>特钢</item>
+        <item>金属材料</item>
+        <item>钢索具产</item>
+    </string-array>
+    <string-array name="steelStyle">
+        <item>建材</item>
+        <item>管材</item>
+        <item>板材</item>
+        <item>型材</item>
+    </string-array>
+    
+<!--     工字钢|槽钢|角钢|方钢|重轨|高工钢|H型钢|不等边角钢|扁钢|轻轨|齿轮钢|六角钢|耐热钢棒|合结圆钢 合工圆钢|方管碳工钢|轴承钢|碳结圆钢|不锈圆钢|轴承圆钢|矩型管|弹簧钢| -->
+    <string-array name="gcPinming_x_01">
+        <item>工字钢</item>
+        <item>槽钢</item>
+        <item>角钢</item>
+        <item>方钢</item>
+        <item>重轨</item>
+        <item>高工钢</item>
+        <item>H型钢</item>
+        <item>不等边角钢</item>
+        <item>扁钢</item>
+        <item>轻轨</item>
+        <item>齿轮钢</item>
+        <item>六角钢</item>
+        <item>耐热钢棒</item>
+        <item>合结圆钢</item>
+        <item>合工圆钢</item>
+        <item>方管碳工钢</item>
+        <item>轴承钢</item>
+        <item>碳结圆钢</item>
+        <item>不锈圆钢</item>
+        <item>轴承圆钢</item>
+        <item>矩型管</item>
+        <item>弹簧钢</item>
+    </string-array>
+      <string-array name="gcPinming_x_02">
+        <item>中厚板</item>
+        <item>容器板</item>
+        <item>中板</item>
+        <item>碳结板</item>
+        <item>锅炉板</item>
+        
+        <item>低合金板</item>
+        <item>花纹板</item>
+        <item>冷板</item>
+        <item>热板</item>
+        <item>冷卷板</item>
+        
+        <item>热卷板</item>
+        <item>镀锌板</item>
+        <item>电镀锌板</item>
+        <item>电镀锌卷</item>
+        <item>锰板</item>
+        
+        <item>不锈钢板</item>
+        <item>硅钢片</item>
+        <item>彩涂板</item>
+        <item>彩钢瓦楞铁</item>
+        <item>镀锌卷板</item>
+        <item>热轧带钢</item>
+    </string-array>
+      <string-array name="gcPinming_x_03">
+        <item>高线</item>
+        <item>普线</item>
+        <item>螺纹钢</item>
+        <item>圆钢</item>
+    </string-array>
+      <string-array name="gcPinming_x_04">
+        <item>方管</item>
+        <item>矩管</item>
+        <item>方矩管</item>
+        <item>无缝管</item>
+        <item>焊管</item>
+        
+        <item>热镀锌管</item>
+        <item>冷镀锌管</item>
+        <item>螺旋管</item>
+        <item>不锈钢管</item>
+        <item>热轧无缝管</item>
+    </string-array>
+      <string-array name="gcPinming_x_05">
+        <item>合结钢</item>
+        <item>碳结钢</item>
+        <item>模具钢</item>
+        <item>硬线</item>
+        <item>拉丝材</item>
+        <item>轴承钢</item>
+    </string-array>
+      <string-array name="gcPinming_x_06">
+        <item>生铁</item>
+        <item>马口铁</item>
+        <item>铝</item>
+        <item>铅</item>
+        <item>黄铜</item>
+        <item>锡</item>
+        <item>锌</item>
+    </string-array>
+    
+      <string-array name="gcPinming_x_07">
+        <item>钢丝绳</item>
+    </string-array>
+    
+    <string-array name="gcPinming">
+        <item>螺纹钢</item>
+        <item>线材</item>
+        <item>盘螺</item>
+        <item>圆钢</item>
+        
+        <item>无缝管</item>
+        <item>焊管</item>
+        
+        <item>热轧板/卷</item>
+        <item>冷轧板/卷</item>
+        <item>中厚板</item>
+        <item>镀锌板</item>
+        <item>彩涂板</item>
+        <item>镀锡板</item>
+        <item>镀铝锌钢板</item>
+        <item>硅钢</item>
+        <item>带钢</item>
+        
+        <item>工角槽</item>
+        <item>H型钢</item>
+        <item>方钢</item>
+        <item>扁钢</item>
+        <item>球扁钢</item>
+    </string-array>
+    
+<!--     建材——螺纹钢、线材、盘螺、圆钢 -->
+<!-- 管材——无缝管、焊管 -->
+<!-- 板材——冷、热轧板/卷、中厚板、彩涂板（镀锌板、彩涂板、镀锡板、镀铝锌钢板）、硅钢、带钢 -->
+<!-- 型材——工角槽、H型钢、方钢、扁钢、球扁钢 -->
+    
+    <string-array name="gcGuige">
+        <item>大型</item>
+        <item>中型</item>
+        <item>小型</item>
+    </string-array>
+    <string-array name="gcChandi">
+        <item>产地1</item>
+        <item>产地2</item>
+        <item>产地3</item>
+    </string-array>
+    <string-array name="gcShuliang">
+        <item>吨</item>
+        <item>根</item>
+        <item>米</item>
+        <item>公斤</item>
+        <item>公斤</item>
+    </string-array>
+    <string-array name="isGuobiao">
+        <item>是</item>
+        <item>否</item>
+    </string-array>
 </resources>
