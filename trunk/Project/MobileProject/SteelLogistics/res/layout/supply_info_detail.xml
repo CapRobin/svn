@@ -1,0 +1,67 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/app_bg" >
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:fadingEdge="none"
+        android:fastScrollEnabled="true" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="10dip"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/layout_01"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/infoTitleName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dip"
+                    android:text="信息内容标题"
+                    android:textColor="@color/balck"
+                    android:textSize="25sp" />
+
+                <TextView
+                    android:id="@+id/infoTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="right"
+                    android:layout_marginRight="15dip"
+                    android:text="2014_05_08"
+                    android:textColor="@color/gray_light"
+                    android:textSize="11sp" />
+
+                <ImageView
+                    android:id="@+id/infoImage"
+                    android:layout_width="fill_parent"
+                    android:layout_height="200dip"
+                    android:layout_margin="15dip"
+                    android:background="@drawable/a" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/infoContent"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dip"
+                android:layout_marginRight="15dip"
+                android:text="@string/contentText"
+                android:textColor="@color/balck"
+                android:textSize="13sp" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
