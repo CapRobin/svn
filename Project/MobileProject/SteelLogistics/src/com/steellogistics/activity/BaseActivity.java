@@ -1,6 +1,5 @@
 package com.steellogistics.activity;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager.LayoutParams;
 import android.text.TextUtils;

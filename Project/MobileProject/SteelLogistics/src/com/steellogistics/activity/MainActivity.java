@@ -177,10 +177,10 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.ghBut:
-			startActivity(new Intent(MainActivity.this, SupplyActivity.class));
+			startActivity(new Intent(MainActivity.this, SupplyInfoListActivity.class));
 			break;
 		case R.id.qgBut:
-			startActivity(new Intent(MainActivity.this, BuyActivity.class));
+			startActivity(new Intent(MainActivity.this, BuyInfoListActivity.class));
 			break;
 		case R.id.fbBut:
 			startActivity(new Intent(MainActivity.this, PublishActivity.class));
