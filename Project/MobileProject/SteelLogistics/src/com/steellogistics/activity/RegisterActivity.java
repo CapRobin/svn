@@ -40,7 +40,7 @@ public class RegisterActivity extends BaseActivity {
 	private EditText realNameEdit, userNameEdit, pwdEdit, affirmPwdEdit;
 	private String realNameEditStr, userNameEditStr, pwdEditStr, affirmPwdEditStr;
 	private Spinner userTypeSpin = null;
-	private int userType = 1;
+	private int userType = 0;				//0.普通会员;	1.公司商户
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -93,12 +93,8 @@ public class RegisterActivity extends BaseActivity {
 			public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
 				String getUserTypeStr = userTypeSpin.getSelectedItem().toString().toString();
-				if ("司机".equals(getUserTypeStr)) {
-					userType = 1;
-				} else {
-					userType = 0;
-				}
-				Toast.makeText(RegisterActivity.this, getUserTypeStr, 5).show();
+				userType = position;
+				Toast.makeText(RegisterActivity.this, userType+"-------"+getUserTypeStr, 5).show();
 			}
 
 			@Override

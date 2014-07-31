@@ -4,9 +4,9 @@
     android:layout_height="fill_parent"
     android:background="@color/app_bg" >
 
-<!--     <include -->
-<!--         android:id="@+id/titleLayout" -->
-<!--         layout="@layout/title_view" /> -->
+    <!-- <include -->
+    <!-- android:id="@+id/titleLayout" -->
+    <!-- layout="@layout/title_view" /> -->
 
     <RelativeLayout
         android:id="@+id/layout_01"
@@ -44,14 +44,18 @@
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="5dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:layout_marginTop="5dip"
                 android:orientation="horizontal" >
 
                 <Button
                     android:id="@+id/ghBut"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dip"
+                    android:layout_marginBottom="5dip"
+                    android:layout_marginLeft="5dip"
+                    android:layout_marginRight="5dip"
                     android:layout_weight="1"
                     android:background="@drawable/item_bg_01"
                     android:text="供    货"
@@ -63,7 +67,9 @@
                     android:id="@+id/qgBut"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dip"
+                    android:layout_marginBottom="5dip"
+                    android:layout_marginLeft="5dip"
+                    android:layout_marginRight="5dip"
                     android:layout_weight="1"
                     android:background="@drawable/item_bg_02"
                     android:text="求    购"
@@ -75,14 +81,18 @@
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="5dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:layout_marginTop="5dip"
                 android:orientation="horizontal" >
 
                 <Button
                     android:id="@+id/fbBut"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dip"
+                    android:layout_marginBottom="5dip"
+                    android:layout_marginLeft="5dip"
+                    android:layout_marginRight="5dip"
                     android:layout_weight="1"
                     android:background="@drawable/item_bg_03"
                     android:text="发    布"
@@ -94,7 +104,9 @@
                     android:id="@+id/ssBut"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dip"
+                    android:layout_marginBottom="5dip"
+                    android:layout_marginLeft="5dip"
+                    android:layout_marginRight="5dip"
                     android:layout_weight="1"
                     android:background="@drawable/item_bg_04"
                     android:text="搜    索"
@@ -107,13 +119,18 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:layout_marginTop="5dip"
                 android:orientation="horizontal" >
 
                 <Button
                     android:id="@+id/zxBut"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dip"
+                    android:layout_marginBottom="5dip"
+                    android:layout_marginLeft="5dip"
+                    android:layout_marginRight="5dip"
                     android:layout_weight="1"
                     android:background="@drawable/item_bg_01"
                     android:text="行业资讯"
@@ -125,7 +142,9 @@
                     android:id="@+id/gdBut"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dip"
+                    android:layout_marginBottom="5dip"
+                    android:layout_marginLeft="5dip"
+                    android:layout_marginRight="5dip"
                     android:layout_weight="1"
                     android:background="@drawable/item_bg_02"
                     android:text="更    多"

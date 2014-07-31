@@ -12,169 +12,140 @@ package com.steellogistics.entity;
  */
 public class UserInfo {
 
-	private String id; 							// 会员ID
-	private String names; 					// 真实姓名
+	private int id; 								// 会员ID
+	private String realName; 			// 真实姓名
 	private String telphone; 				// 电话
-	private String username; 			// 会员名
+	private String userName; 			// 用户名
 	private String password; 				// 密码
-	private String usertypes; 				// 用户类型（1:司机或0:物流公司）
-
+	
+	private int userType; 					// 用户类型（0:普通会员；1:公司商户）
 	private String email; 					// 邮箱
 	private String mibaoQ; 				// 密码保护信息-问题
 	private String mibaoA; 				// 密码保护信息-答案
-	private String lasttime; 				// 到期期限（还有多少天到期）
-	private String addfunc; 				// 是否可以发布信息（0：否；1：是）
-	private String handwrite; 			// 是否可以手写（0：否；1：是）
+	private int lasttime; 					// 到期期限（还有多少天到期）
+	
+	private int couldPublic; 				// 是否可以发布信息（1：是；0：否）
+	private String userInfo; 				// 加密字符串组成，服务端做用户请求身份验证使用
+	private String longitude; 				// 经度
+	private String latitude; 				// 纬度
+	private String imei; 						// 移动设备识码
 
-	private String AddTimes; 			// 时间间隔(单位S)[0:无时间间隔;默认:45S]
-	private String InfoNum; 			// 信息条数数目[默认100]
-	private String CharNum; 			// 信息字数[默认60]
-	private String changeinfo; 			// 是否可以更改注册信息(0:无[默认];1;是)
-	private String changepwd; 			// 是否可以更改密码(0:无[默认];1;是)
-	private String userinfos; 				// 加密字符串组成，服务端做用户请求身份验证使用
-
-	public String getId() {
+	private String other1; 					// 其他参数
+	private String other2; 					// 其他参数
+	private String other3; 					// 其他参数
+	
+	public int getId() {
 		return id;
 	}
-
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
-
 	public String getNames() {
-		return names;
+		return realName;
 	}
-
 	public void setNames(String names) {
-		this.names = names;
+		this.realName = names;
 	}
-
 	public String getTelphone() {
 		return telphone;
 	}
-
 	public void setTelphone(String telphone) {
 		this.telphone = telphone;
 	}
-
 	public String getUsername() {
-		return username;
+		return userName;
 	}
-
 	public void setUsername(String username) {
-		this.username = username;
+		this.userName = username;
 	}
-
 	public String getPassword() {
 		return password;
 	}
-
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
-	public String getUsertypes() {
-		return usertypes;
+	public int getUsertypes() {
+		return userType;
 	}
-
-	public void setUsertypes(String usertypes) {
-		this.usertypes = usertypes;
+	public void setUsertypes(int usertypes) {
+		this.userType = usertypes;
 	}
-
 	public String getEmail() {
 		return email;
 	}
-
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
 	public String getMibaoQ() {
 		return mibaoQ;
 	}
-
 	public void setMibaoQ(String mibaoQ) {
 		this.mibaoQ = mibaoQ;
 	}
-
 	public String getMibaoA() {
 		return mibaoA;
 	}
-
 	public void setMibaoA(String mibaoA) {
 		this.mibaoA = mibaoA;
 	}
-
-	public String getLasttime() {
+	public int getLasttime() {
 		return lasttime;
 	}
-
-	public void setLasttime(String lasttime) {
+	public void setLasttime(int lasttime) {
 		this.lasttime = lasttime;
 	}
-
-	public String getAddfunc() {
-		return addfunc;
+	public int getAddfunc() {
+		return couldPublic;
 	}
-
-	public void setAddfunc(String addfunc) {
-		this.addfunc = addfunc;
+	public void setAddfunc(int addfunc) {
+		this.couldPublic = addfunc;
 	}
-
-	public String getHandwrite() {
-		return handwrite;
-	}
-
-	public void setHandwrite(String handwrite) {
-		this.handwrite = handwrite;
-	}
-
-	public String getAddTimes() {
-		return AddTimes;
-	}
-
-	public void setAddTimes(String addTimes) {
-		AddTimes = addTimes;
-	}
-
-	public String getInfoNum() {
-		return InfoNum;
-	}
-
-	public void setInfoNum(String infoNum) {
-		InfoNum = infoNum;
-	}
-
-	public String getCharNum() {
-		return CharNum;
-	}
-
-	public void setCharNum(String charNum) {
-		CharNum = charNum;
-	}
-
-	public String getChangeinfo() {
-		return changeinfo;
-	}
-
-	public void setChangeinfo(String changeinfo) {
-		this.changeinfo = changeinfo;
-	}
-
-	public String getChangepwd() {
-		return changepwd;
-	}
-
-	public void setChangepwd(String changepwd) {
-		this.changepwd = changepwd;
-	}
-
 	public String getUserinfos() {
-		return userinfos;
+		return userInfo;
 	}
-
 	public void setUserinfos(String userinfos) {
-		this.userinfos = userinfos;
+		this.userInfo = userinfos;
 	}
-
+	public String getLongitude() {
+		return longitude;
+	}
+	public void setLongitude(String longitude) {
+		this.longitude = longitude;
+	}
+	public String getLatitude() {
+		return latitude;
+	}
+	public void setLatitude(String latitude) {
+		this.latitude = latitude;
+	}
+	public String getImei() {
+		return imei;
+	}
+	public void setImei(String imei) {
+		this.imei = imei;
+	}
+	public String getOther1() {
+		return other1;
+	}
+	public void setOther1(String other1) {
+		this.other1 = other1;
+	}
+	public String getOther2() {
+		return other2;
+	}
+	public void setOther2(String other2) {
+		this.other2 = other2;
+	}
+	public String getOther3() {
+		return other3;
+	}
+	public void setOther3(String other3) {
+		this.other3 = other3;
+	}
+	public int getUserType() {
+		return userType;
+	}
+	public void setUserType(int userType) {
+		this.userType = userType;
+	}
 }
