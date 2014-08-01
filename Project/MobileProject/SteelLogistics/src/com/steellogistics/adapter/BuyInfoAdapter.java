@@ -12,14 +12,14 @@ import android.widget.TextView;
 
 import com.steellogistics.R;
 import com.steellogistics.entity.BuyInfo;
-import com.steellogistics.entity.SupplyInfo;
 
 /**
  * 
  * Copyright (c) 2013 All rights reserved
- * @Name：BuyInfoAdapter.java 
+ * 
+ * @Name：BuyInfoAdapter.java
  * @Describe：求购信息数据适配
- * @Author:  yfr5734@gmail.com
+ * @Author: yfr5734@gmail.com
  * @Date：2014年7月25日 上午11:01:30
  * @Version v1.0
  */
@@ -68,23 +68,21 @@ public class BuyInfoAdapter extends BaseAdapter {
 			// 减少findView的次数
 			holder = new ViewHolder();
 			// 初始化布局中的元素
-			holder.msg_content = ((TextView) convertView.findViewById(R.id.msg_content));
 			holder.titleName = ((TextView) convertView.findViewById(R.id.titleName));
-			holder.msg_date = ((TextView) convertView.findViewById(R.id.msg_date));
+			holder.amount = ((TextView) convertView.findViewById(R.id.amount));
+			holder.price = ((TextView) convertView.findViewById(R.id.price));
+			holder.address = ((TextView) convertView.findViewById(R.id.address));
+			holder.creatTime = ((TextView) convertView.findViewById(R.id.creatTime));
 			convertView.setTag(holder);
 		} else {
 			holder = (ViewHolder) convertView.getTag();
 		}
 
-		String addTime = mData.get(position).getCreatTime();
-		// 获取该行的数据
-		// if (addTime == null) {
-		// Date curDate = new Date(System.currentTimeMillis());//获取当前时间
-		// addTime = formatter.format(curDate);
-		// }
 		holder.titleName.setText(mData.get(position).getTitleName());
-		holder.msg_content.setText(mData.get(position).getContent());
-		holder.msg_date.setText(addTime);
+		holder.amount.setText("求购数量: " + mData.get(position).getBuyAmount());
+		holder.price.setText("求购单价: ¥ " + mData.get(position).getBuyPrice());
+		holder.address.setText(mData.get(position).getCompanyAddress());
+		holder.creatTime.setText(mData.get(position).getCreatTime());
 
 		return convertView;
 	}
@@ -93,9 +91,11 @@ public class BuyInfoAdapter extends BaseAdapter {
 	 * View元素
 	 */
 	static class ViewHolder {
-		TextView msg_content;
 		TextView titleName;
-		TextView msg_date;
+		TextView amount;
+		TextView price;
+		TextView address;
+		TextView creatTime;
 	}
 
 }

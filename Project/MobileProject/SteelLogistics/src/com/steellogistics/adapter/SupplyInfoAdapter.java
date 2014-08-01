@@ -68,23 +68,21 @@ public class SupplyInfoAdapter extends BaseAdapter {
 			// 减少findView的次数
 			holder = new ViewHolder();
 			// 初始化布局中的元素
-			holder.msg_content = ((TextView) convertView.findViewById(R.id.msg_content));
 			holder.titleName = ((TextView) convertView.findViewById(R.id.titleName));
-			holder.msg_date = ((TextView) convertView.findViewById(R.id.msg_date));
+			holder.sellScope = ((TextView) convertView.findViewById(R.id.sellScope));
+			holder.price = ((TextView) convertView.findViewById(R.id.price));
+			holder.address = ((TextView) convertView.findViewById(R.id.address));
+			holder.creatTime = ((TextView) convertView.findViewById(R.id.creatTime));
 			convertView.setTag(holder);
 		} else {
 			holder = (ViewHolder) convertView.getTag();
 		}
 
-		String addTime = mData.get(position).getCreatTime();
-		// 获取该行的数据
-		// if (addTime == null) {
-		// Date curDate = new Date(System.currentTimeMillis());//获取当前时间
-		// addTime = formatter.format(curDate);
-		// }
 		holder.titleName.setText(mData.get(position).getTitleName());
-		holder.msg_content.setText(mData.get(position).getContent());
-		holder.msg_date.setText(addTime);
+		holder.sellScope.setText("经营范围: " + mData.get(position).getSellScope());
+		holder.price.setText("商品单价: ¥" + mData.get(position).getPrice());
+		holder.address.setText(mData.get(position).getCompanyAddress());
+		holder.creatTime.setText(mData.get(position).getCreatTime());
 
 		return convertView;
 	}
@@ -93,9 +91,15 @@ public class SupplyInfoAdapter extends BaseAdapter {
 	 * View元素
 	 */
 	static class ViewHolder {
-		TextView msg_content;
+		// TextView msg_content;
+		// TextView titleName;
+		// TextView msg_date;
+
 		TextView titleName;
-		TextView msg_date;
+		TextView sellScope;
+		TextView price;
+		TextView address;
+		TextView creatTime;
 	}
 
 }
