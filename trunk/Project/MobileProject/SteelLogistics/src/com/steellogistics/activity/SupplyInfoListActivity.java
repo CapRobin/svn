@@ -9,12 +9,10 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.Toast;
 
 import com.ab.view.pullview.AbPullListView;
 import com.steellogistics.R;
 import com.steellogistics.adapter.SupplyInfoAdapter;
-import com.steellogistics.entity.BuyInfo;
 import com.steellogistics.entity.SupplyInfo;
 
 /**
@@ -60,14 +58,14 @@ public class SupplyInfoListActivity extends BaseActivity {
 				}
 			});
 		}
-		
+
 		if (isShowRightBut) {
 			titleRightBut.setOnClickListener(new OnClickListener() {
 
 				@Override
 				public void onClick(View v) {
-//					finish();
-					startActivity(new Intent(SupplyInfoListActivity.this,PublishSupplyActivity.class));
+					// finish();
+					startActivity(new Intent(SupplyInfoListActivity.this, PublishSupplyActivity.class));
 				}
 			});
 		}
@@ -92,13 +90,16 @@ public class SupplyInfoListActivity extends BaseActivity {
 
 		mSupplyInfoList = new ArrayList<SupplyInfo>();
 
-		// 制作假数据
+		// 构造数据
 		for (int i = 0; i < 20; i++) {
 			SupplyInfo supplyInfo = new SupplyInfo();
 			supplyInfo.setId(i);
-			supplyInfo.setTitleName("供货信息" + (i + 1));
+			supplyInfo.setTitleName("供应钢材信息" + (i + 1));
 			supplyInfo.setImageUrl("http://i.steelcn.cn/member/cg/buyadd.aspx");
-			supplyInfo.setContent((i + 1) + "供货信息内容供货信息内容供货信息内容供货信息内容供货信息内容供货信息内容供货信息内容");
+			supplyInfo.setSellScope("所有钢材");
+			supplyInfo.setPrice(String.valueOf(100 + i));
+			supplyInfo.setCompanyAddress("山东济南市");
+			supplyInfo.setMobile("13800000002");
 			supplyInfo.setCreatTime("2014_07_25");
 			mSupplyInfoList.add(supplyInfo);
 		}
@@ -107,28 +108,13 @@ public class SupplyInfoListActivity extends BaseActivity {
 		myListViewAdapter = new SupplyInfoAdapter(SupplyInfoListActivity.this, mSupplyInfoList);
 		supplyCargoList.setAdapter(myListViewAdapter);
 
-//		supplyCargoList.setOnItemClickListener(new OnItemClickListener() {
-//
-//			@Override
-//			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//				SupplyInfo cargoInfo = (SupplyInfo) myListViewAdapter.getItem(position - 1);
-//				// Intent intent = new Intent(CargoListActivity.this,
-//				// CargoListDetailActivity.class);
-//				// Bundle bundle = new Bundle();
-//				// bundle.putSerializable("cargoInfo", cargoInfo);
-//				// intent.putExtra("bundle", bundle);
-//				// startActivity(intent);
-//				Toast.makeText(SupplyInfoListActivity.this, cargoInfo.getContent(), 5).show();
-//			}
-//		});
-		
 		supplyCargoList.setOnItemClickListener(new OnItemClickListener() {
 
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 				SupplyInfo supplyInfo = (SupplyInfo) myListViewAdapter.getItem(position - 1);
 				String infoName = supplyInfo.getTitleName();
-				String infoContent = supplyInfo.getContent();
+				String infoContent = supplyInfo.getTitleName();
 				String infoTime = supplyInfo.getCreatTime();
 				Intent intent = new Intent(SupplyInfoListActivity.this, SupplyInfoDetailActivity.class);
 				// Bundle bundle = new Bundle();
@@ -140,6 +126,6 @@ public class SupplyInfoListActivity extends BaseActivity {
 				startActivity(intent);
 			}
 		});
-		
+
 	}
 }

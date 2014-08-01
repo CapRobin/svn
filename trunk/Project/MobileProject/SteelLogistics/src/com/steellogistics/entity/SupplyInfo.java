@@ -13,12 +13,18 @@ package com.steellogistics.entity;
  */
 public class SupplyInfo {
 
-	private int id; 					// ID
-	private String titleName; 	// 标题
-	private String imageUrl; 		// 图片地址
-	private String content; 		// 发布内容
-	private String creatTime; 	// 创建时间
-	
+	private int id; 								// ID
+	private String titleName; 			// 标题
+	private String imageUrl; 				// 图片地址
+	private String sellScope; 				// 经营范围
+	private String price; 					// 销售单价
+	private String productName; 		// 产品名称
+	private String productsInfo; 		// 商品介绍
+	private String content; 				// 发布内容
+	private String companyName; 	// 商家名称
+	private String companyAddress; // 商家地址
+	private String mobile; 					// 联系电话
+	private String creatTime; 			// 创建时间
 	public int getId() {
 		return id;
 	}
@@ -37,11 +43,53 @@ public class SupplyInfo {
 	public void setImageUrl(String imageUrl) {
 		this.imageUrl = imageUrl;
 	}
+	public String getSellScope() {
+		return sellScope;
+	}
+	public void setSellScope(String sellScope) {
+		this.sellScope = sellScope;
+	}
+	public String getPrice() {
+		return price;
+	}
+	public void setPrice(String price) {
+		this.price = price;
+	}
+	public String getProductName() {
+		return productName;
+	}
+	public void setProductName(String productName) {
+		this.productName = productName;
+	}
+	public String getProductsInfo() {
+		return productsInfo;
+	}
+	public void setProductsInfo(String productsInfo) {
+		this.productsInfo = productsInfo;
+	}
 	public String getContent() {
 		return content;
 	}
 	public void setContent(String content) {
 		this.content = content;
+	}
+	public String getCompanyName() {
+		return companyName;
+	}
+	public void setCompanyName(String companyName) {
+		this.companyName = companyName;
+	}
+	public String getCompanyAddress() {
+		return companyAddress;
+	}
+	public void setCompanyAddress(String companyAddress) {
+		this.companyAddress = companyAddress;
+	}
+	public String getMobile() {
+		return mobile;
+	}
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
 	}
 	public String getCreatTime() {
 		return creatTime;
@@ -49,6 +97,7 @@ public class SupplyInfo {
 	public void setCreatTime(String creatTime) {
 		this.creatTime = creatTime;
 	}
+	
 	
 	
 }

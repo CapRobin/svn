@@ -94,15 +94,18 @@ public class BuyInfoListActivity extends BaseActivity {
 		buyCargoList.setPullLoadEnable(true);
 
 		mBuylyInfoList = new ArrayList<BuyInfo>();
-
-		// 制作假数据
+		
+		// 构造数据
 		for (int i = 0; i < 20; i++) {
 			BuyInfo buyInfo = new BuyInfo();
 			buyInfo.setId(i);
-			buyInfo.setTitleName("求购信息" + (i + 1));
+			buyInfo.setTitleName("求购钢材信息" + (i + 1));
 			buyInfo.setImageUrl("http://i.steelcn.cn/member/cg/buyadd.aspx");
-			buyInfo.setContent((i + 1) + "求购信息内容求购信息内容求购信息内容求购信息内容求购信息内容求购信息内容求购信息内容");
-			buyInfo.setCreatTime("2014_07_25");
+			buyInfo.setBuyAmount(10+i);
+			buyInfo.setBuyPrice(String.valueOf(100+i));
+			buyInfo.setCompanyAddress("宁夏银川市");
+			buyInfo.setMobile("12800000001");
+			buyInfo.setCreatTime("2014_07_31");
 			mBuylyInfoList.add(buyInfo);
 		}
 
@@ -116,7 +119,7 @@ public class BuyInfoListActivity extends BaseActivity {
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 				BuyInfo buyInfo = (BuyInfo) myListViewAdapter.getItem(position - 1);
 				String infoName = buyInfo.getTitleName();
-				String infoContent = buyInfo.getContent();
+				String infoContent = buyInfo.getTitleName();
 				String infoTime = buyInfo.getCreatTime();
 				Intent intent = new Intent(BuyInfoListActivity.this, BuyInfoDetailActivity.class);
 				// Bundle bundle = new Bundle();
