@@ -3,6 +3,7 @@ package com.steellogistics.activity;
 import java.util.ArrayList;
 import java.util.List;
 
+import net.sf.json.JSONObject;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
 import android.content.Intent;
@@ -19,6 +20,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.steellogistics.R;
+import com.steellogistics.entity.UserInfo;
 import com.steellogistics.global.MyApplication;
 import com.steellogistics.view.MyImgScroll;
 
@@ -49,6 +51,11 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 		application = (MyApplication) getApplication();
 		titleBarInitView();
 		initView();
+		
+		//构造用户个人信息
+		if (application.userInfo == null) {
+			makeData();
+		}
 	}
 
 	/**
@@ -234,4 +241,33 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 		});
 		dialog.show();
 	}
+	
+	/**
+	 * 
+	 * @Describe：构造数据
+	 * @Throws:  
+	 * @Date：2014年8月1日 下午1:33:36
+	 * @Version v1.0
+	 */
+	private void makeData() {
+		UserInfo userInfo = new UserInfo();
+		
+		userInfo.setUserName("yfr5734");
+		userInfo.setGrade("普通会员");
+		userInfo.setLasttime("2014.08.30");
+		
+		userInfo.setRealName("罗永康");
+		userInfo.setIdentityCard("640321198603153879");
+		userInfo.setSex("男");
+		userInfo.setAge("26");
+		userInfo.setMobile("13800000001");
+		userInfo.setTelephone("0951-5321564");
+		userInfo.setEmail("1542956428@qq.com");
+		userInfo.setIndustry("螺纹钢");
+		userInfo.setAddress("宁夏银川");
+		userInfo.setCompanyInfo("公司成立于1998年，专注钢铁行业多年，有一定的行业基类！");
+		
+		application.userInfo = userInfo;
+	}
+	
 }

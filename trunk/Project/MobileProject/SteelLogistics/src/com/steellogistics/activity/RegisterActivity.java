@@ -33,7 +33,7 @@ import com.steellogistics.web.UserInfoWeb;
  */
 public class RegisterActivity extends BaseActivity {
 	private boolean isShowLeftBut = true;
-	private boolean isShowRightBut = true;
+	private boolean isShowRightBut = false;
 	private String getMsg;
 	private boolean isRegister = false;
 
