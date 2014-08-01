@@ -1,5 +1,6 @@
 package com.steellogistics.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
@@ -32,7 +33,7 @@ import com.steellogistics.web.UserInfoWeb;
  */
 public class RegisterActivity extends BaseActivity {
 	private boolean isShowLeftBut = true;
-	private boolean isShowRightBut = false;
+	private boolean isShowRightBut = true;
 	private String getMsg;
 	private boolean isRegister = false;
 
@@ -40,7 +41,7 @@ public class RegisterActivity extends BaseActivity {
 	private EditText realNameEdit, userNameEdit, pwdEdit, affirmPwdEdit;
 	private String realNameEditStr, userNameEditStr, pwdEditStr, affirmPwdEditStr;
 	private Spinner userTypeSpin = null;
-	private int userType = 0;				//0.普通会员;	1.公司商户
+	private int userType = 0; // 0.普通会员; 1.公司商户
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -59,13 +60,22 @@ public class RegisterActivity extends BaseActivity {
 	 * @Version v1.0
 	 */
 	private void titleBarInitView() {
-		setTitleInfo("注    册", isShowLeftBut, "返回", isShowRightBut, null);
+		setTitleInfo("注    册", isShowLeftBut, "返回", isShowRightBut, "个人中心");
 		if (isShowLeftBut) {
 			titleLeftBut.setOnClickListener(new OnClickListener() {
 
 				@Override
 				public void onClick(View v) {
 					finish();
+				}
+			});
+		}
+		if (isShowRightBut) {
+			titleRightBut.setOnClickListener(new OnClickListener() {
+
+				@Override
+				public void onClick(View v) {
+					startActivity(new Intent(RegisterActivity.this, PersonalCenterActivity.class));
 				}
 			});
 		}
@@ -94,7 +104,7 @@ public class RegisterActivity extends BaseActivity {
 
 				String getUserTypeStr = userTypeSpin.getSelectedItem().toString().toString();
 				userType = position;
-				Toast.makeText(RegisterActivity.this, userType+"-------"+getUserTypeStr, 5).show();
+				Toast.makeText(RegisterActivity.this, userType + "-------" + getUserTypeStr, 5).show();
 			}
 
 			@Override
