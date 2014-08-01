@@ -182,6 +182,7 @@ public class LoginActivity extends BaseActivity {
 				// }
 				Toast.makeText(LoginActivity.this, "登录成功", 5).show();
 				finish();
+				application.isLogin = true;
 			}
 
 			@Override

@@ -21,6 +21,7 @@ public class UserInfo {
 	private String mobile; 					// 移动电话
 	private String telephone; 			// 座机电话
 	private String grade; 					// 等级
+	private String identityCard; 		// 身份证号
 	
 	private String email; 					// 邮箱
 	private String address; 				// 所在地址
@@ -29,7 +30,7 @@ public class UserInfo {
 	private int userType; 					// 用户类型（0:普通会员；1:公司商户）
 	private String mibaoQ; 				// 密码保护信息-问题
 	private String mibaoA; 				// 密码保护信息-答案
-	private int lasttime; 					// 到期期限（还有多少天到期）
+	private String lasttime; 				// 到期期限（还有多少天到期）
 	
 	private int couldPublic; 				// 是否可以发布信息（1：是；0：否）
 	private String userInfo; 				// 加密字符串组成，服务端做用户请求身份验证使用
@@ -39,8 +40,12 @@ public class UserInfo {
 	private String other1; 					// 其他参数
 	private String other2; 					// 其他参数
 	private String other3; 					// 其他参数
-
-	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	public String getRealName() {
 		return realName;
 	}
@@ -52,6 +57,12 @@ public class UserInfo {
 	}
 	public void setUserName(String userName) {
 		this.userName = userName;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
 	}
 	public String getSex() {
 		return sex;
@@ -65,6 +76,12 @@ public class UserInfo {
 	public void setAge(String age) {
 		this.age = age;
 	}
+	public String getMobile() {
+		return mobile;
+	}
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
+	}
 	public String getTelephone() {
 		return telephone;
 	}
@@ -76,6 +93,18 @@ public class UserInfo {
 	}
 	public void setGrade(String grade) {
 		this.grade = grade;
+	}
+	public String getIdentityCard() {
+		return identityCard;
+	}
+	public void setIdentityCard(String identityCard) {
+		this.identityCard = identityCard;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	public String getAddress() {
 		return address;
@@ -95,59 +124,11 @@ public class UserInfo {
 	public void setCompanyInfo(String companyInfo) {
 		this.companyInfo = companyInfo;
 	}
-	public int getCouldPublic() {
-		return couldPublic;
-	}
-	public void setCouldPublic(int couldPublic) {
-		this.couldPublic = couldPublic;
-	}
-	public String getUserInfo() {
-		return userInfo;
-	}
-	public void setUserInfo(String userInfo) {
-		this.userInfo = userInfo;
-	}
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
-	public String getNames() {
-		return realName;
-	}
-	public void setNames(String names) {
-		this.realName = names;
-	}
-	public String getTelphone() {
-		return mobile;
-	}
-	public void setTelphone(String telphone) {
-		this.mobile = telphone;
-	}
-	public String getUsername() {
-		return userName;
-	}
-	public void setUsername(String username) {
-		this.userName = username;
-	}
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	public int getUsertypes() {
+	public int getUserType() {
 		return userType;
 	}
-	public void setUsertypes(int usertypes) {
-		this.userType = usertypes;
-	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
+	public void setUserType(int userType) {
+		this.userType = userType;
 	}
 	public String getMibaoQ() {
 		return mibaoQ;
@@ -161,23 +142,23 @@ public class UserInfo {
 	public void setMibaoA(String mibaoA) {
 		this.mibaoA = mibaoA;
 	}
-	public int getLasttime() {
+	public String getLasttime() {
 		return lasttime;
 	}
-	public void setLasttime(int lasttime) {
+	public void setLasttime(String lasttime) {
 		this.lasttime = lasttime;
 	}
-	public int getAddfunc() {
+	public int getCouldPublic() {
 		return couldPublic;
 	}
-	public void setAddfunc(int addfunc) {
-		this.couldPublic = addfunc;
+	public void setCouldPublic(int couldPublic) {
+		this.couldPublic = couldPublic;
 	}
-	public String getUserinfos() {
+	public String getUserInfo() {
 		return userInfo;
 	}
-	public void setUserinfos(String userinfos) {
-		this.userInfo = userinfos;
+	public void setUserInfo(String userInfo) {
+		this.userInfo = userInfo;
 	}
 	public String getLongitude() {
 		return longitude;
@@ -215,10 +196,6 @@ public class UserInfo {
 	public void setOther3(String other3) {
 		this.other3 = other3;
 	}
-	public int getUserType() {
-		return userType;
-	}
-	public void setUserType(int userType) {
-		this.userType = userType;
-	}
+	
+	
 }
