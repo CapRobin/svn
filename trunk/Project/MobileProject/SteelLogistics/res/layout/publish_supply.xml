@@ -5,70 +5,6 @@
     android:background="@color/app_bg"
     android:orientation="vertical" >
 
-    <!-- <LinearLayout -->
-    <!-- android:id="@+id/layout_01" -->
-    <!-- android:layout_width="fill_parent" -->
-    <!-- android:layout_height="wrap_content" -->
-    <!-- android:layout_marginBottom="3dip" -->
-    <!-- android:layout_marginLeft="10dip" -->
-    <!-- android:layout_marginRight="10dip" -->
-    <!-- android:layout_marginTop="10dip" > -->
-
-
-    <!-- <TextView -->
-    <!-- android:id="@+id/textView1" -->
-    <!-- android:layout_width="wrap_content" -->
-    <!-- android:layout_height="wrap_content" -->
-    <!-- android:layout_gravity="center_vertical" -->
-    <!-- android:layout_weight="1" -->
-    <!-- android:gravity="center_vertical" -->
-    <!-- android:text="出发地" -->
-    <!-- android:textColor="@color/black" /> -->
-
-
-    <!-- <Button -->
-    <!-- android:id="@+id/startcity" -->
-    <!-- style="?android:attr/buttonStyleSmall" -->
-    <!-- android:layout_width="65dp" -->
-    <!-- android:layout_height="wrap_content" -->
-    <!-- android:layout_gravity="center_vertical" -->
-    <!-- android:layout_marginRight="10dip" -->
-    <!-- android:layout_weight="1" -->
-    <!-- android:background="@drawable/exist_selector" -->
-    <!-- android:ellipsize="marquee" -->
-    <!-- android:focusableInTouchMode="true" -->
-    <!-- android:gravity="center" -->
-    <!-- android:padding="3dip" -->
-    <!-- android:singleLine="true" /> -->
-
-
-    <!-- <TextView -->
-    <!-- android:id="@+id/textView2" -->
-    <!-- android:layout_width="wrap_content" -->
-    <!-- android:layout_height="wrap_content" -->
-    <!-- android:layout_gravity="center_vertical" -->
-    <!-- android:layout_weight="1" -->
-    <!-- android:gravity="center_vertical" -->
-    <!-- android:text="到达地" -->
-    <!-- android:textColor="@color/black" /> -->
-
-
-    <!-- <Button -->
-    <!-- android:id="@+id/stopcity" -->
-    <!-- style="?android:attr/buttonStyleSmall" -->
-    <!-- android:layout_width="65dp" -->
-    <!-- android:layout_height="wrap_content" -->
-    <!-- android:layout_gravity="center_vertical" -->
-    <!-- android:layout_marginRight="10dip" -->
-    <!-- android:layout_weight="1" -->
-    <!-- android:background="@drawable/exist_selector" -->
-    <!-- android:ellipsize="marquee" -->
-    <!-- android:focusableInTouchMode="true" -->
-    <!-- android:gravity="center" -->
-    <!-- android:padding="3dip" -->
-    <!-- android:singleLine="true" /> -->
-    <!-- </LinearLayout> -->
-
     <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
@@ -324,7 +260,7 @@
                     android:layout_marginLeft="97dip"
                     android:entries="@array/isGuobiao" />
             </RelativeLayout>
-            
+
             <RelativeLayout
                 android:id="@+id/layout_66"
                 android:layout_width="fill_parent"
