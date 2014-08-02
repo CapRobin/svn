@@ -13,15 +13,12 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.ab.global.AbAppException;
 import com.ab.task.AbTaskItem;
 import com.ab.task.AbTaskListener;
 import com.ab.task.AbThread;
 import com.steellogistics.R;
 import com.steellogistics.entity.UserInfo;
-import com.steellogistics.global.MyApplication;
 import com.steellogistics.util.MethodUtil;
-import com.steellogistics.web.UserInfoWeb;
 
 /**
  * 
@@ -36,7 +33,6 @@ import com.steellogistics.web.UserInfoWeb;
 public class LoginActivity extends BaseActivity {
 	private boolean isShowLeftBut = true;
 	private boolean isShowRightBut = true;
-	private MyApplication application = null;
 	private Button loginBtn;
 	private EditText userNameEdit, userPwdEdit;
 	private String getMsg, userNameEditStr, userPwdEditStr = null;
@@ -49,7 +45,6 @@ public class LoginActivity extends BaseActivity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setBaseContentView(R.layout.login);
-		application = (MyApplication) getApplication();
 		titleBarInitView();
 		initView();
 	}

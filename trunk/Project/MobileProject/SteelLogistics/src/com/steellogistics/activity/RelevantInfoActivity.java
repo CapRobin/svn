@@ -20,7 +20,6 @@ import com.steellogistics.R;
 import com.steellogistics.adapter.RelevantInfoAdapter;
 import com.steellogistics.database.SqliteDaoArea;
 import com.steellogistics.entity.RelevantInfo;
-import com.steellogistics.global.MyApplication;
 import com.steellogistics.view.MyImgScroll;
 
 /**
@@ -37,7 +36,6 @@ public class RelevantInfoActivity extends BaseActivity {
 	private boolean isShowLeftBut = true;
 	private boolean isShowRightBut = false;
 
-	private MyApplication application = null;
 	private MyImgScroll myPager; // 图片容器
 	private LinearLayout ovalLayout; // 圆点容器
 	private List<View> listViews; // 图片组

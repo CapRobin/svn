@@ -12,19 +12,22 @@ package com.steellogistics.entity;
  */
 public class BuyInfoDetail {
 
+	//ListItem展示
 	private int id; 								// ID
 	private String titleName; 			// 标题
 	private String imageUrl; 				// 图片地址
 	private String buyInfo; 				// 求购信息
-	private String buyPrice; 				// 价格要求
 	private int buyAmount; 				// 求购数量
+	private String buyPrice; 				// 价格要求
+	private String companyAddress; // 商家地址
+	private String mobile; 					// 联系电话
+	private String creatTime; 			// 创建时间
+	
+	//详情页面展示
 	private String buyRequire; 			// 求购要求
 	private String packRequire; 		// 包装要求
 	private String companyName; 	// 商家名称
-	private String companyAddress; // 商家地址
 	private String contacts; 				// 联系人
-	private String mobile; 					// 联系电话
-	private String creatTime; 			// 创建时间
 	
 	public int getId() {
 		return id;

@@ -12,15 +12,10 @@ package com.steellogistics.entity;
  * @Version v1.0
  */
 public class SupplyInfoDetail {
-	
+	//ListItem展示
 	private int id; 								// ID
 	private String titleName; 			// 标题
 	private String imageUrl; 				// 图片地址
-	private String type; 						// 钢材类型
-	private String specification; 		// 规格
-	private String makeAddress; 		// 产地
-	private int amount; 					// 数量
-	private String isGb; 						// 是否国标
 	private String sellScope; 				// 经营范围
 	private String price; 					// 商品单价
 	private String productName; 		// 产品名称
@@ -29,11 +24,17 @@ public class SupplyInfoDetail {
 	private String companyName; 	// 商家名称
 	private String companyAddress; // 商家地址
 	private String mobile; 					// 联系电话
+	private String creatTime; 			// 创建时间
+	
+	//详情页面展示
+	private String type; 						// 钢材类型
+	private String specification; 		// 规格
+	private String makeAddress; 		// 产地
+	private String amount; 					// 数量
+	private String isGb; 						// 是否国标
 	private String contacts; 				// 联系人
 	private String email; 					// 电子邮箱
 	private String dealType; 				// 交易方式
-	private String creatTime; 			// 创建时间
-	
 	
 	public int getId() {
 		return id;
@@ -71,10 +72,10 @@ public class SupplyInfoDetail {
 	public void setMakeAddress(String makeAddress) {
 		this.makeAddress = makeAddress;
 	}
-	public int getAmount() {
+	public String getAmount() {
 		return amount;
 	}
-	public void setAmount(int amount) {
+	public void setAmount(String amount) {
 		this.amount = amount;
 	}
 	public String getIsGb() {

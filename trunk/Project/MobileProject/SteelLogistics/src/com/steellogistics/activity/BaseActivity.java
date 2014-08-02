@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.ab.activity.AbActivity;
 import com.steellogistics.R;
+import com.steellogistics.global.MyApplication;
 
 /**
  * 
@@ -30,6 +31,7 @@ public class BaseActivity extends AbActivity {
 	private LayoutInflater inflater = null;
 	public RelativeLayout contentLayout, titleLayout = null;
 	public LinearLayout.LayoutParams layoutParamsFF = null;
+	public MyApplication application = null;
 
 	// public Handler mBaseHandler = new Handler() {
 	//
@@ -57,6 +59,7 @@ public class BaseActivity extends AbActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.base);
+		application = (MyApplication) getApplication();
 		titleLeftBut = (Button) findViewById(R.id.titleLeftBut);
 		titleRightBut = (Button) findViewById(R.id.titleRightBut);
 		titleName = (TextView) findViewById(R.id.titleName);

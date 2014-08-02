@@ -11,7 +11,6 @@ import android.widget.Toast;
 import com.google.gson.Gson;
 import com.steellogistics.R;
 import com.steellogistics.entity.UserInfo;
-import com.steellogistics.global.MyApplication;
 
 /**
  * 
@@ -26,7 +25,6 @@ import com.steellogistics.global.MyApplication;
 public class PersonalCenterActivity extends BaseActivity {
 	private boolean isShowLeftBut = true;
 	private boolean isShowRightBut = false;
-	private MyApplication application = null;
 	private TextView userName, userGrade, expireTime;
 	private EditText realNameEdit, identityCardEdit, sexEdit, ageEdit, mobileEdit, telephoneEdit, emailEdit, industryEdit, addressEdit, otherInfoEdit;
 	private Button updateSubmit = null;
@@ -35,7 +33,6 @@ public class PersonalCenterActivity extends BaseActivity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setBaseContentView(R.layout.personal_center);
-		application = (MyApplication) getApplication();
 		titleBarInitView();
 		initView();
 	}
