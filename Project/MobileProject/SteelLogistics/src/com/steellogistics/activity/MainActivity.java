@@ -20,7 +20,6 @@ import android.widget.Toast;
 
 import com.steellogistics.R;
 import com.steellogistics.entity.UserInfo;
-import com.steellogistics.global.MyApplication;
 import com.steellogistics.view.MyImgScroll;
 
 /**
@@ -41,17 +40,15 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 	private boolean isShowLeftBut = true;
 	private boolean isShowRightBut = true;
 	private AlertDialog dialog;
-	private MyApplication application = null;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setBaseContentView(R.layout.activity_main);
-		application = (MyApplication) getApplication();
 		titleBarInitView();
 		initView();
-		
-		//构造用户个人信息
+
+		// 构造用户个人信息
 		if (application.userInfo == null) {
 			makeData();
 		}
@@ -240,21 +237,21 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 		});
 		dialog.show();
 	}
-	
+
 	/**
 	 * 
 	 * @Describe：构造数据
-	 * @Throws:  
+	 * @Throws:
 	 * @Date：2014年8月1日 下午1:33:36
 	 * @Version v1.0
 	 */
 	private void makeData() {
 		UserInfo userInfo = new UserInfo();
-		
+
 		userInfo.setUserName("yfr5734");
 		userInfo.setGrade("普通会员");
 		userInfo.setLasttime("2014.08.30");
-		
+
 		userInfo.setRealName("罗永康");
 		userInfo.setIdentityCard("640321198603153879");
 		userInfo.setSex("男");
@@ -265,8 +262,8 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 		userInfo.setIndustry("螺纹钢");
 		userInfo.setAddress("宁夏银川");
 		userInfo.setCompanyInfo("公司成立于1998年，专注钢铁行业多年，有一定的行业基类！");
-		
+
 		application.userInfo = userInfo;
 	}
-	
+
 }

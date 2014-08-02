@@ -80,14 +80,46 @@
             android:layout_height="fill_parent" >
 
             <RelativeLayout
-                android:id="@+id/layout_0"
+                android:id="@+id/layout_00"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/layout_01"
                 android:layout_marginBottom="10dip"
                 android:layout_marginLeft="10dip"
                 android:layout_marginRight="10dip"
                 android:layout_marginTop="23dip" >
+
+                <TextView
+                    android:id="@+id/btText"
+                    android:layout_width="100dip"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:text="标      题:"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/btEdit"
+                    android:layout_width="fill_parent"
+                    android:layout_height="35dip"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="99dip"
+                    android:layout_marginRight="3dip"
+                    android:background="@drawable/myedit_bg"
+                    android:entries="@array/gcChandi"
+                    android:gravity="center_vertical"
+                    android:hint="如:供应***钢材多少吨..."
+                    android:textSize="11sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_0"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_00"
+                android:layout_marginBottom="10dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip" >
 
                 <TextView
                     android:id="@+id/lbText"
@@ -176,7 +208,7 @@
                     android:textColor="@color/black"
                     android:textSize="18sp" />
 
-                <Button
+                <EditText
                     android:id="@+id/cdEdit"
                     android:layout_width="fill_parent"
                     android:layout_height="35dip"
@@ -206,11 +238,23 @@
                     android:textColor="@color/black"
                     android:textSize="18sp" />
 
+                <EditText
+                    android:id="@+id/slEdit"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="97dip"
+                    android:layout_marginRight="100dip"
+                    android:background="@drawable/myedit_bg"
+                    android:gravity="center_vertical"
+                    android:inputType="number" />
+
                 <Spinner
                     android:id="@+id/slSpinner"
-                    android:layout_width="fill_parent"
+                    android:layout_width="90dip"
                     android:layout_height="45dip"
-                    android:layout_marginLeft="97dip"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
                     android:entries="@array/gcShuliang" />
             </RelativeLayout>
 
@@ -280,9 +324,9 @@
                     android:layout_marginLeft="97dip"
                     android:entries="@array/isGuobiao" />
             </RelativeLayout>
-
+            
             <RelativeLayout
-                android:id="@+id/layout_7"
+                android:id="@+id/layout_66"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/layout_6"
@@ -291,7 +335,33 @@
                 android:layout_marginRight="10dip" >
 
                 <TextView
-                    android:id="@+id/jgText"
+                    android:id="@+id/jyfsText"
+                    android:layout_width="100dip"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="交易方式:"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <Spinner
+                    android:id="@+id/jyfsSpinner"
+                    android:layout_width="fill_parent"
+                    android:layout_height="45dip"
+                    android:layout_marginLeft="97dip"
+                    android:entries="@array/jyfs" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_7"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_66"
+                android:layout_marginBottom="10dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip" >
+
+                <TextView
+                    android:id="@+id/bcnrText"
                     android:layout_width="100dip"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
@@ -301,7 +371,7 @@
                     android:textSize="18sp" />
 
                 <EditText
-                    android:id="@+id/jgEdit"
+                    android:id="@+id/bcnrEdit"
                     android:layout_width="fill_parent"
                     android:layout_height="70dp"
                     android:layout_marginLeft="97dip"

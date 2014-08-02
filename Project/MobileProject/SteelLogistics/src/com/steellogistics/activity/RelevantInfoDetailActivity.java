@@ -8,7 +8,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.steellogistics.R;
-import com.steellogistics.global.MyApplication;
 
 /**
  * 
@@ -24,7 +23,6 @@ import com.steellogistics.global.MyApplication;
 public class RelevantInfoDetailActivity extends BaseActivity {
 	private boolean isShowLeftBut = true;
 	private boolean isShowRightBut = false;
-	private MyApplication application = null;
 	private TextView infoTitleName, infoTime, infoContent;
 	private ImageView infoImage = null;
 	private String getMsg = "信息详情";
@@ -33,7 +31,6 @@ public class RelevantInfoDetailActivity extends BaseActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setBaseContentView(R.layout.relevant_info_detail);
-		application = (MyApplication) abApplication;
 		titleBarInitView();
 		initView();
 

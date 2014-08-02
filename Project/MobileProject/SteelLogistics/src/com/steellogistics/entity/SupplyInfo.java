@@ -25,6 +25,7 @@ public class SupplyInfo {
 	private String companyAddress; // 商家地址
 	private String mobile; 					// 联系电话
 	private String creatTime; 			// 创建时间
+	
 	public int getId() {
 		return id;
 	}

@@ -8,21 +8,20 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.steellogistics.R;
-import com.steellogistics.global.MyApplication;
 
 /**
  * 
  * Copyright (c) 2013 All rights reserved
- * @Name：BuyInfoDetailActivity.java 
+ * 
+ * @Name：BuyInfoDetailActivity.java
  * @Describe：求购信息详情
- * @Author:  yfr5734@gmail.com
+ * @Author: yfr5734@gmail.com
  * @Date：2014年7月25日 上午11:21:39
  * @Version v1.0
  */
 public class BuyInfoDetailActivity extends BaseActivity {
 	private boolean isShowLeftBut = true;
 	private boolean isShowRightBut = false;
-	private MyApplication application = null;
 	private TextView infoTitleName, infoTime, infoContent;
 	private ImageView infoImage = null;
 
@@ -30,7 +29,6 @@ public class BuyInfoDetailActivity extends BaseActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setBaseContentView(R.layout.buy_info_detail);
-		application = (MyApplication) abApplication;
 		titleBarInitView();
 		initView();
 

@@ -1,11 +1,12 @@
 package com.steellogistics.global;
 
-import com.steellogistics.entity.UserInfo;
+import java.util.ArrayList;
+import java.util.List;
 
 import android.app.Application;
-import android.content.Context;
-import android.content.SharedPreferences;
-import android.content.SharedPreferences.Editor;
+
+import com.steellogistics.entity.SupplyInfoDetail;
+import com.steellogistics.entity.UserInfo;
 
 /**
  * 
@@ -21,72 +22,17 @@ public class MyApplication extends Application {
 
 	public String mFamilyId = null;
 	public boolean firstStart = true;
-	public boolean isBoot = false;  
+	public boolean isBoot = false;
 	public boolean isLogin = false;
 	public UserInfo userInfo = null;
-	
+	public List<SupplyInfoDetail> supplyInfoList = new ArrayList<SupplyInfoDetail>();
+
 	@Override
 	public void onCreate() {
 		super.onCreate();
-		// initLoginParams();
-		initData();  
+		initData();
 
 	}
-
-//    public static void SetMyContext() {
-//        logisticsDB = new LogisticsDB(context);
-//        logisticsDB.open().close(); // to initialize
-//      }  
-	
-	/**
-	 * 上次登录参数
-	 */
-	// private void initLoginParams() {
-	// SharedPreferences sp = getSharedPreferences(AbConstant.SHAREPATH,
-	// Context.MODE_PRIVATE);
-	// String userId = sp.getString(Constant.USERID, null);
-	// String userName = sp.getString(Constant.USERNAMECOOKIE, null);
-	// String userPwd = sp.getString(Constant.USERPASSWORDCOOKIE, null);
-	// firstStart = sp.getBoolean(Constant.FIRSTSTART, true);
-	// Boolean userPwdRemember =
-	// sp.getBoolean(Constant.USERPASSWORDREMEMBERCOOKIE, false);
-	// userPasswordRemember = userPwdRemember;
-	// if(userId!=null){
-	// UserInfo mUserDb = UserDao.getInstance(this).getUserById(userId);
-	// if(mUserDb!=null){
-	// if(AbStrUtil.isEmpty(mUserDb.getPassWord())){
-	// mUserDb.setPassWord(AbMd5.MD5(userPwd));
-	// }
-	// mUser = mUserDb;
-	// mTempUser = mUser;
-	// String mFamilyId = null;
-	// String mFamilyName = null;
-	// String createByUserId = null;
-	// List<Family> mFamilyList = mUser.getFamily();
-	// if(mFamilyList!=null && mFamilyList.size()>0){
-	// Family mFamily = mFamilyList.get(0);
-	// if(mFamily!=null){
-	// mFamilyId = String.valueOf(mFamily.getId());
-	// mFamilyName = mFamily.getName();
-	// createByUserId = mFamily.getCreateByUserId();
-	// }
-	// }
-	// this.mFamilyId = mFamilyId;
-	// this.mFamilyName = mFamilyName;
-	// this.createByUserId = createByUserId;
-	// }
-	// }
-	// }
-
-	/**
-	 * 清空上次登录参数
-	 */
-//	public void clearLoginParams() {
-//		SharedPreferences sp = getSharedPreferences(AbConstant.SHAREPATH, Context.MODE_PRIVATE);
-//		Editor editor = sp.edit();
-//		editor.clear();
-//		editor.commit();
-//	}
 
 	private void initData() {
 
@@ -97,15 +43,5 @@ public class MyApplication extends Application {
 	public void onTerminate() {
 		super.onTerminate();
 	}
-
-	// public void clearApp(){
-	// mTempFamilyId = "";
-	// mUser = null;
-	// mFamilyId = "";
-	// mFamilyName = "";
-	// mTempUser = null;
-	// mDoctors.clear();
-	// mUserList.clear();
-	// }
 
 }

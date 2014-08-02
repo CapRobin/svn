@@ -17,8 +17,7 @@
         <item>普通会员</item>
         <item>公司商户</item>
     </string-array>
-
-    <string-array name="steelStyle_x">
+    <string-array name="steelStyle">
         <item>型材</item>
         <item>板材</item>
         <item>建材</item>
@@ -27,15 +26,9 @@
         <item>金属材料</item>
         <item>钢索具产</item>
     </string-array>
-    <string-array name="steelStyle">
-        <item>建材</item>
-        <item>管材</item>
-        <item>板材</item>
-        <item>型材</item>
-    </string-array>
-    
-<!--     工字钢|槽钢|角钢|方钢|重轨|高工钢|H型钢|不等边角钢|扁钢|轻轨|齿轮钢|六角钢|耐热钢棒|合结圆钢 合工圆钢|方管碳工钢|轴承钢|碳结圆钢|不锈圆钢|轴承圆钢|矩型管|弹簧钢| -->
-    <string-array name="gcPinming_x_01">
+
+    <!-- 根据刚才类别选择品名 -->
+    <string-array name="gcPinming_01">
         <item>工字钢</item>
         <item>槽钢</item>
         <item>角钢</item>
@@ -59,25 +52,22 @@
         <item>矩型管</item>
         <item>弹簧钢</item>
     </string-array>
-      <string-array name="gcPinming_x_02">
+    <string-array name="gcPinming_02">
         <item>中厚板</item>
         <item>容器板</item>
         <item>中板</item>
         <item>碳结板</item>
         <item>锅炉板</item>
-        
         <item>低合金板</item>
         <item>花纹板</item>
         <item>冷板</item>
         <item>热板</item>
         <item>冷卷板</item>
-        
         <item>热卷板</item>
         <item>镀锌板</item>
         <item>电镀锌板</item>
         <item>电镀锌卷</item>
         <item>锰板</item>
-        
         <item>不锈钢板</item>
         <item>硅钢片</item>
         <item>彩涂板</item>
@@ -85,26 +75,25 @@
         <item>镀锌卷板</item>
         <item>热轧带钢</item>
     </string-array>
-      <string-array name="gcPinming_x_03">
+    <string-array name="gcPinming_03">
         <item>高线</item>
         <item>普线</item>
         <item>螺纹钢</item>
         <item>圆钢</item>
     </string-array>
-      <string-array name="gcPinming_x_04">
+    <string-array name="gcPinming_04">
         <item>方管</item>
         <item>矩管</item>
         <item>方矩管</item>
         <item>无缝管</item>
         <item>焊管</item>
-        
         <item>热镀锌管</item>
         <item>冷镀锌管</item>
         <item>螺旋管</item>
         <item>不锈钢管</item>
         <item>热轧无缝管</item>
     </string-array>
-      <string-array name="gcPinming_x_05">
+    <string-array name="gcPinming_05">
         <item>合结钢</item>
         <item>碳结钢</item>
         <item>模具钢</item>
@@ -112,7 +101,7 @@
         <item>拉丝材</item>
         <item>轴承钢</item>
     </string-array>
-      <string-array name="gcPinming_x_06">
+    <string-array name="gcPinming_06">
         <item>生铁</item>
         <item>马口铁</item>
         <item>铝</item>
@@ -121,20 +110,16 @@
         <item>锡</item>
         <item>锌</item>
     </string-array>
-    
-      <string-array name="gcPinming_x_07">
+    <string-array name="gcPinming_07">
         <item>钢丝绳</item>
     </string-array>
-    
     <string-array name="gcPinming">
         <item>螺纹钢</item>
         <item>线材</item>
         <item>盘螺</item>
         <item>圆钢</item>
-        
         <item>无缝管</item>
         <item>焊管</item>
-        
         <item>热轧板/卷</item>
         <item>冷轧板/卷</item>
         <item>中厚板</item>
@@ -144,29 +129,67 @@
         <item>镀铝锌钢板</item>
         <item>硅钢</item>
         <item>带钢</item>
-        
         <item>工角槽</item>
         <item>H型钢</item>
         <item>方钢</item>
         <item>扁钢</item>
         <item>球扁钢</item>
     </string-array>
-    
-<!--     建材——螺纹钢、线材、盘螺、圆钢 -->
-<!-- 管材——无缝管、焊管 -->
-<!-- 板材——冷、热轧板/卷、中厚板、彩涂板（镀锌板、彩涂板、镀锡板、镀铝锌钢板）、硅钢、带钢 -->
-<!-- 型材——工角槽、H型钢、方钢、扁钢、球扁钢 -->
-    
+
+    <!-- 钢材规格 -->
     <string-array name="gcGuige">
-        <item>大型</item>
-        <item>中型</item>
-        <item>小型</item>
+        <item>材质：HPB235</item>
+        <item>材质：HRB335</item>
+        <item>材质：HRB400</item>
+        <item>材质：Q235</item>
+        <item>材质：ST12</item>
+        <item>材质：DC01</item>
+        <item>材质：Q235B</item>
+        <item>φ6.5mm</item>
+        <item>φ8-10mm</item>
+        <item>φ12mm</item>
+        <item>φ6.5-12mm</item>
+        <item>φ12-14mm</item>
+        <item>φ16mm</item>
+        <item>φ18mm</item>
+        <item>φ20mm</item>
+        <item>φ22mm</item>
+        <item>φ25mm</item>
+        <item>φ28-32mm</item>
+        <item>φ16-25mm</item>
+        <item>8mm</item>
+        <item>10mm</item>
+        <item>12mm</item>
+        <item>16-20mm</item>
+        <item>40*4</item>
+        <item>50*58</item>
+        <item>#16</item>
+        <item>#12</item>
+        <item>#25</item>
+        <item>#60*6</item>
+        <item>10#</item>
+        <item>16#a</item>
+        <item>5.5-11.5*1500*C</item>
+        <item>2.75mm*1500*C</item>
+        <item>1.8mm*1250*C</item>
+        <item>8#</item>
+        <item>12#</item>
+        <item>Φ6.5-10mm</item>
+        <item>3.5-11.5mm*1500*C</item>
+        <item>4.0-6.0*1500*6000mm</item>
+        <item>2.75mm*1250*C</item>
+        <item>50*5</item>
+        <item>φ5.4-12</item>
+        <item>φ9-15.24</item>
+
+        <!-- 产地 -->
     </string-array>
     <string-array name="gcChandi">
         <item>产地1</item>
         <item>产地2</item>
         <item>产地3</item>
     </string-array>
+    <!-- 数量单位 -->
     <string-array name="gcShuliang">
         <item>吨</item>
         <item>根</item>
@@ -174,8 +197,15 @@
         <item>公斤</item>
         <item>公斤</item>
     </string-array>
+    <!-- 是否国标 -->
     <string-array name="isGuobiao">
         <item>是</item>
         <item>否</item>
     </string-array>
+    <!-- 交易方式 -->
+    <string-array name="jyfs">
+        <item>线下交易</item>
+        <item>线上交易</item>
+    </string-array>
+
 </resources>
