@@ -17,7 +17,7 @@ public class AndroidPushBroadcastMessageSample {
          * @brief 推送广播消息(消息类型为透传，由开发方应用自己来解析消息内容) message_type = 0 (默认为0)
          */
 
-        // 1. 设置developer平台的ApiKey/SecretKey
+        // 1. 设置developer平台的ApiKey/SecretKey 
         String apiKey = "bepquH1kBYkblD4v3ooC7bgw";
         String secretKey = "pe8eoH3ZGRXBeA9G4nnr2na6jzK0mIvQ";
         ChannelKeyPair pair = new ChannelKeyPair(apiKey, secretKey);
