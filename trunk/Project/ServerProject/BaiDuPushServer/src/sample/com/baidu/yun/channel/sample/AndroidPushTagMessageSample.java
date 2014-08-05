@@ -39,13 +39,13 @@ public class AndroidPushTagMessageSample {
 
             // 4. 创建请求类对象
             PushTagMessageRequest request = new PushTagMessageRequest();
-            request.setDeviceType(3); // device_type => 1: web 2: pc 3:android
+            request.setDeviceType(2); // device_type => 1: web 2: pc 3:android
                                       // 4:ios 5:wp
             request.setTagName("title");
-            request.setMessage("Get Msg is ----->> AndroidPushTagMessageSample");
+            request.setMessage("百度推送测试 ----->> AndroidPushTagMessageSample");
             // 若要通知，
-            // request.setMessageType(1);
-            // request.setMessage("{\"title\":\"Notify_title_danbo\",\"description\":\"Notify_description_content\"}");
+//             request.setMessageType(1);
+//             request.setMessage("{\"title\":\"Notify_title_danbo\",\"description\":\"Notify_description_content\"}");
 
             // 5. 调用pushMessage接口
             PushTagMessageResponse response = channelClient
