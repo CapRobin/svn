@@ -110,28 +110,28 @@ public class SupplyInfoListActivity extends BaseActivity {
 					getSupplyInfo = gson.fromJson(item.toString(), SupplyInfo.class);
 					mSupplyInfoList.add(getSupplyInfo);
 				}
-				
-				//输出得到的列表Json数据字符
+
+				// 输出得到的列表Json数据字符
 				String getSupplyInfoListStr = gson.toJson(mSupplyInfoList);
-				System.out.println("getSupplyInfoListStr is ------------>>"+getSupplyInfoListStr);
+				System.out.println("getSupplyInfoListStr is ------------>>" + getSupplyInfoListStr);
 
 			} catch (JSONException e) {
 				e.printStackTrace();
 			}
 		}
 
-//		for (int i = 0; i < 20; i++) {
-//			SupplyInfo supplyInfo = new SupplyInfo();
-//			supplyInfo.setId(i);
-//			supplyInfo.setTitleName("供应钢材信息" + (i + 1));
-//			supplyInfo.setImageUrl("http://i.steelcn.cn/member/cg/buyadd.aspx");
-//			supplyInfo.setSellScope("所有钢材");
-//			supplyInfo.setPrice(String.valueOf(100 + i));
-//			supplyInfo.setCompanyAddress("山东济南市");
-//			supplyInfo.setMobile("13800000002");
-//			supplyInfo.setCreatTime("2014_07_25");
-//			mSupplyInfoList.add(supplyInfo);
-//		}
+		// for (int i = 0; i < 20; i++) {
+		// SupplyInfo supplyInfo = new SupplyInfo();
+		// supplyInfo.setId(i);
+		// supplyInfo.setTitleName("供应钢材信息" + (i + 1));
+		// supplyInfo.setImageUrl("http://i.steelcn.cn/member/cg/buyadd.aspx");
+		// supplyInfo.setSellScope("所有钢材");
+		// supplyInfo.setPrice(String.valueOf(100 + i));
+		// supplyInfo.setCompanyAddress("山东济南市");
+		// supplyInfo.setMobile("13800000002");
+		// supplyInfo.setCreatTime("2014_07_25");
+		// mSupplyInfoList.add(supplyInfo);
+		// }
 
 		// 使用自定义的Adapter
 		myListViewAdapter = new SupplyInfoAdapter(SupplyInfoListActivity.this, mSupplyInfoList);

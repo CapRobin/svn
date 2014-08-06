@@ -19,18 +19,17 @@ public class SupplyInfoDetail {
 	private String sellScope; 				// 经营范围
 	private String price; 					// 商品单价
 	private String productName; 		// 产品名称
-	private String productsInfo; 		// 商品介绍
-	private String content; 				// 发布内容
-	private String companyName; 	// 商家名称
-	private String companyAddress; // 商家地址
-	private String mobile; 					// 联系电话
+	private String otherInfo; 			// 补充信息
+	private String userRealName; 	// 商家名称
+	private String userAddress; 			// 商家地址
+	private String contactNumber; 	// 联系电话
 	private String creatTime; 			// 创建时间
 	
 	//详情页面展示
 	private String type; 						// 钢材类型
 	private String specification; 		// 规格
 	private String makeAddress; 		// 产地
-	private String amount; 					// 数量
+	private String amount; 				// 数量
 	private String isGb; 						// 是否国标
 	private String contacts; 				// 联系人
 	private String email; 					// 电子邮箱
@@ -53,6 +52,54 @@ public class SupplyInfoDetail {
 	}
 	public void setImageUrl(String imageUrl) {
 		this.imageUrl = imageUrl;
+	}
+	public String getSellScope() {
+		return sellScope;
+	}
+	public void setSellScope(String sellScope) {
+		this.sellScope = sellScope;
+	}
+	public String getPrice() {
+		return price;
+	}
+	public void setPrice(String price) {
+		this.price = price;
+	}
+	public String getProductName() {
+		return productName;
+	}
+	public void setProductName(String productName) {
+		this.productName = productName;
+	}
+	public String getOtherInfo() {
+		return otherInfo;
+	}
+	public void setOtherInfo(String otherInfo) {
+		this.otherInfo = otherInfo;
+	}
+	public String getUserRealName() {
+		return userRealName;
+	}
+	public void setUserRealName(String userRealName) {
+		this.userRealName = userRealName;
+	}
+	public String getUserAddress() {
+		return userAddress;
+	}
+	public void setUserAddress(String userAddress) {
+		this.userAddress = userAddress;
+	}
+	public String getContactNumber() {
+		return contactNumber;
+	}
+	public void setContactNumber(String contactNumber) {
+		this.contactNumber = contactNumber;
+	}
+	public String getCreatTime() {
+		return creatTime;
+	}
+	public void setCreatTime(String creatTime) {
+		this.creatTime = creatTime;
 	}
 	public String getType() {
 		return type;
@@ -84,60 +131,6 @@ public class SupplyInfoDetail {
 	public void setIsGb(String isGb) {
 		this.isGb = isGb;
 	}
-	public String getSellScope() {
-		return sellScope;
-	}
-	public void setSellScope(String sellScope) {
-		this.sellScope = sellScope;
-	}
-	public String getPrice() {
-		return price;
-	}
-	public void setPrice(String price) {
-		this.price = price;
-	}
-	public String getProductName() {
-		return productName;
-	}
-	public void setProductName(String productName) {
-		this.productName = productName;
-	}
-	public String getProductsInfo() {
-		return productsInfo;
-	}
-	public void setProductsInfo(String productsInfo) {
-		this.productsInfo = productsInfo;
-	}
-	public String getContent() {
-		return content;
-	}
-	public void setContent(String content) {
-		this.content = content;
-	}
-	public String getCompanyName() {
-		return companyName;
-	}
-	public void setCompanyName(String companyName) {
-		this.companyName = companyName;
-	}
-	public String getCompanyAddress() {
-		return companyAddress;
-	}
-	public void setCompanyAddress(String companyAddress) {
-		this.companyAddress = companyAddress;
-	}
-	public String getDealType() {
-		return dealType;
-	}
-	public void setDealType(String dealType) {
-		this.dealType = dealType;
-	}
-	public String getMobile() {
-		return mobile;
-	}
-	public void setMobile(String mobile) {
-		this.mobile = mobile;
-	}
 	public String getContacts() {
 		return contacts;
 	}
@@ -150,12 +143,10 @@ public class SupplyInfoDetail {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getCreatTime() {
-		return creatTime;
+	public String getDealType() {
+		return dealType;
 	}
-	public void setCreatTime(String creatTime) {
-		this.creatTime = creatTime;
+	public void setDealType(String dealType) {
+		this.dealType = dealType;
 	}
-	
-	
 }

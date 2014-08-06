@@ -1,14 +1,18 @@
 package com.steellogistics.activity;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
 import com.steellogistics.R;
+import com.steellogistics.entity.BuyInfoDetail;
+import com.steellogistics.entity.UserInfo;
 
 /**
  * 
@@ -25,12 +29,15 @@ public class PublishBuyActivity extends BaseActivity {
 	private boolean isShowRightBut = true;
 	private String titlebarName = "发布求购";
 	private String[] mItems = { "供货信息", "求购信息" };
+	private EditText btEdit, qgyqEdit, slEdit, jgEdit, bzyqEdit, bcnrEdit = null;
+	private Button publishBuyBtn = null;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setBaseContentView(R.layout.publish_buy);
 		titleBarInitView();
+		initView();
 	}
 
 	/**
@@ -56,9 +63,9 @@ public class PublishBuyActivity extends BaseActivity {
 
 				@Override
 				public void onClick(View v) {
-//					publishType();
+					// publishType();
 					Intent intent = new Intent(PublishBuyActivity.this, PublishSupplyActivity.class);
-					intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP); 
+					intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 					startActivity(intent);
 				}
 			});
@@ -67,33 +74,101 @@ public class PublishBuyActivity extends BaseActivity {
 
 	/**
 	 * 
-	 * @Describe：选择发布信息类型
+	 * @Describe：初始化
 	 * @Throws:
-	 * @Date：2014年7月25日 下午2:36:33
+	 * @Date：2014年7月25日 下午4:35:13
 	 * @Version v1.0
 	 */
-	private void publishType() {
-		AlertDialog.Builder builder = new AlertDialog.Builder(PublishBuyActivity.this);
-		builder.setTitle("列表选择框");
-		builder.setItems(mItems, new DialogInterface.OnClickListener() {
-			public void onClick(DialogInterface dialog, int which) {
-				// 点击后弹出窗口选择了第几项
-				// showDialog("你选择的id为" + which + " , " + mItems[which]);
-				Toast.makeText(PublishBuyActivity.this, "您选择了" + mItems[which], 5).show();
-				if (which == 0) {
-					titlebarName = "发布供货";
-				} else {
-					titlebarName = "发布求购";
+	private void initView() {
+		btEdit = (EditText) findViewById(R.id.btEdit);
+		jgEdit = (EditText) findViewById(R.id.jgEdit);
+		slEdit = (EditText) findViewById(R.id.slEdit);
+		qgyqEdit = (EditText) findViewById(R.id.qgyqEdit);
+		bzyqEdit = (EditText) findViewById(R.id.bzyqEdit);
+		bcnrEdit = (EditText) findViewById(R.id.bcnrEdit);
+		publishBuyBtn = (Button) findViewById(R.id.publishBuyBtn);
+		publishBuyBtn.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				UserInfo info = application.userInfo;
+				String btEditStr = btEdit.getText().toString();
+				String jgEditStr = jgEdit.getText().toString();
+				String slEditStr = slEdit.getText().toString();
+				String qgyqEditStr = qgyqEdit.getText().toString();
+				String bzyqEditStr = bzyqEdit.getText().toString();
+				String bcnrEditStr = bcnrEdit.getText().toString();
+				
+				int userId = info.getId();
+				String buyerName = info.getRealName();
+				String mobile = info.getMobile();
+				String buyerAddress = info.getAddress();
+				String contacts = info.getContacts();
+				
+//				String dealType = "线下交易";
+				// 输入标题验证
+				if (TextUtils.isEmpty(btEditStr)) {
+					btEdit.setError("请输入标题");
+					btEdit.setFocusable(true);
+					btEdit.setFocusableInTouchMode(true);
+					btEdit.requestFocus();
+					return;
 				}
-
-				titleName.setText(titlebarName);
+				// 输入价格验证
+				if (TextUtils.isEmpty(jgEditStr)) {
+					jgEdit.setError("请输入价格");
+					jgEdit.setFocusable(true);
+					jgEdit.setFocusableInTouchMode(true);
+					jgEdit.requestFocus();
+					return;
+				}
+				// 输入数量验证
+				if (TextUtils.isEmpty(slEditStr)) {
+					slEdit.setError("请输入数量");
+					slEdit.setFocusable(true);
+					slEdit.setFocusableInTouchMode(true);
+					slEdit.requestFocus();
+					return;
+				}
+				BuyInfoDetail buyInfoDetail = new BuyInfoDetail();
+				
+				buyInfoDetail.setId(001);
+				buyInfoDetail.setTitleName(btEditStr);
+				buyInfoDetail.setImageUrl("http://img3.cache.netease.com/catchimg/20100808/85U286RU_0.jpg");
+				buyInfoDetail.setOtherInfo(bcnrEditStr);
+				buyInfoDetail.setBuyAmount(Integer.valueOf(slEditStr));
+				buyInfoDetail.setBuyPrice(jgEditStr);
+				buyInfoDetail.setUserAddress(buyerAddress);
+				
+				buyInfoDetail.setContactNumber(mobile);
+				buyInfoDetail.setCreatTime("2014_08_05");
+				buyInfoDetail.setBuyRequire(qgyqEditStr);
+				buyInfoDetail.setPackRequire(bzyqEditStr);
+				buyInfoDetail.setUserRealName(buyerName);
+				buyInfoDetail.setContacts(contacts);
+				publicJk(userId, buyInfoDetail);
 			}
 		});
-		builder.create().show();
-	}
 
-	private void showDialog(String str) {
-		new AlertDialog.Builder(PublishBuyActivity.this).setMessage(str).show();
+	};
+
+	/**
+	 * 
+	 * @Describe：模拟调用接口
+	 * @param userId
+	 * @param supplyInfo
+	 * @Throws:  
+	 * @Date：2014年8月6日 下午3:01:37
+	 * @Version v1.0
+	 */
+	private void publicJk(int userId, BuyInfoDetail buyInfo) {
+		application.buyInfoList.add(buyInfo);
+
+//		 BuyInfoDetail对象打包成Json字符串
+		 Gson gson = new Gson();
+		 String getBuyInfoStr = gson.toJson(buyInfo);
+		 System.out.println("getBuyInfoStr is ----------->>" + getBuyInfoStr);
+		 Toast.makeText(PublishBuyActivity.this, "发布求购信息成功", 5).show();
 	}
 
 }

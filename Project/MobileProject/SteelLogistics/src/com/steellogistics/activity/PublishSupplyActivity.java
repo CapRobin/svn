@@ -34,7 +34,7 @@ public class PublishSupplyActivity extends BaseActivity implements OnClickListen
 	private String[] mItems = { "供货信息", "求购信息" };
 	private Spinner lbSpinner, pmSpinner, ggSpinner, slSpinner, gbSpinner, jyfsSpinner;
 	private EditText btEdit, cdEdit, slEdit, jgEdit, bcnrEdit = null;
-	private Button addinfoBtn = null;
+	private Button publishSupplyBtn = null;
 
 	private static String gcPinming[] = null;
 	private static String steelStyle[] = null;
@@ -118,8 +118,8 @@ public class PublishSupplyActivity extends BaseActivity implements OnClickListen
 		gcPinming_07 = this.getResources().getStringArray(R.array.gcPinming_07);
 		gcPinming = gcPinming_01;
 
-		addinfoBtn = (Button) findViewById(R.id.addinfoBtn);
-		addinfoBtn.setOnClickListener(this);
+		publishSupplyBtn = (Button) findViewById(R.id.publishSupplyBtn);
+		publishSupplyBtn.setOnClickListener(this);
 
 		lbSpinner.setOnItemSelectedListener(new OnItemSelectedListener() {
 
@@ -191,7 +191,7 @@ public class PublishSupplyActivity extends BaseActivity implements OnClickListen
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
-		case R.id.addinfoBtn:
+		case R.id.publishSupplyBtn:
 
 			String btEditStr = btEdit.getText().toString();
 			String cdEditStr = cdEdit.getText().toString();
@@ -253,11 +253,10 @@ public class PublishSupplyActivity extends BaseActivity implements OnClickListen
 			supplyInfoDetail.setSellScope(jyfwEditStr);
 			supplyInfoDetail.setPrice(jgEditStr);
 			supplyInfoDetail.setProductName(pmSpinnerStr);
-			supplyInfoDetail.setProductsInfo(bcnrEditStr);
-			supplyInfoDetail.setContent("");
-			supplyInfoDetail.setCompanyName(companyName);
-			supplyInfoDetail.setCompanyAddress(cdEditStr);
-			supplyInfoDetail.setMobile(mobile);
+			supplyInfoDetail.setOtherInfo(bcnrEditStr);
+			supplyInfoDetail.setUserRealName(companyName);
+			supplyInfoDetail.setUserAddress(cdEditStr);
+			supplyInfoDetail.setContactNumber(mobile);
 			supplyInfoDetail.setCreatTime("2014_07_30");
 
 			supplyInfoDetail.setType(lbSpinnerStr);
