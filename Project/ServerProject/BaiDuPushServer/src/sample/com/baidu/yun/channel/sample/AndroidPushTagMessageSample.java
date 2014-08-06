@@ -42,7 +42,7 @@ public class AndroidPushTagMessageSample {
             request.setDeviceType(2); // device_type => 1: web 2: pc 3:android
                                       // 4:ios 5:wp
             request.setTagName("title");
-            request.setMessage("百度推送测试 ----->> AndroidPushTagMessageSample");
+            request.setMessage("百度推送测试 ----->> AndroidPushTagMessageSample_04");
             // 若要通知，
 //             request.setMessageType(1);
 //             request.setMessage("{\"title\":\"Notify_title_danbo\",\"description\":\"Notify_description_content\"}");
