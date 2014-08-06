@@ -15,6 +15,7 @@ import android.content.Context;
 import android.location.LocationManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.util.Log;
 import android.util.Xml;
 
 import com.steellogistics.R;
@@ -363,4 +364,23 @@ public class MethodUtil {
 		return outBuffer.toString();
 	}
 
+	/**
+	 * 获取assets文件中的Json字符串
+	 * 
+	 */
+	public static String getLocalInfo(Context context, String fileName) {
+		String getInfo = null;
+		try {
+			InputStream mStream = context.getAssets().open(fileName);
+			byte[] buffer = new byte[context.getResources().getAssets().open(fileName).available()];
+			mStream.read(buffer);
+			mStream.close();
+			getInfo = new String(buffer);
+			Log.d("TAG", "getJson is ---------------------->>" + getInfo);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return getInfo;
+	}
+	
 }

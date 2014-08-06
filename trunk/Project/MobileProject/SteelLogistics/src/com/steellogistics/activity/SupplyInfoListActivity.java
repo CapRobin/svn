@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.Toast;
 
 import com.ab.view.pullview.AbPullListView;
 import com.google.gson.Gson;
@@ -21,6 +22,7 @@ import com.steellogistics.R;
 import com.steellogistics.adapter.SupplyInfoAdapter;
 import com.steellogistics.entity.SupplyInfo;
 import com.steellogistics.entity.SupplyInfoDetail;
+import com.steellogistics.util.MethodUtil;
 
 /**
  * 
@@ -98,11 +100,11 @@ public class SupplyInfoListActivity extends BaseActivity {
 
 		// 构造数据
 		List<SupplyInfoDetail> supplyInfoDetailList = application.supplyInfoList;
-		if (supplyInfoDetailList != null && supplyInfoDetailList.size() > 0) {
+		try {
 			SupplyInfo getSupplyInfo = null;
-			try {
-				GsonBuilder builder = new GsonBuilder();
-				Gson gson = builder.create();
+			GsonBuilder builder = new GsonBuilder();
+			Gson gson = builder.create();
+			if (supplyInfoDetailList != null && supplyInfoDetailList.size() > 0) { // Application中获取数据数据
 				String objectItem = gson.toJson(supplyInfoDetailList);
 				JSONArray array = new JSONArray(objectItem);
 				for (int i = 0; i < array.length(); i++) {
@@ -114,24 +116,20 @@ public class SupplyInfoListActivity extends BaseActivity {
 				// 输出得到的列表Json数据字符
 				String getSupplyInfoListStr = gson.toJson(mSupplyInfoList);
 				System.out.println("getSupplyInfoListStr is ------------>>" + getSupplyInfoListStr);
-
-			} catch (JSONException e) {
-				e.printStackTrace();
+				Toast.makeText(SupplyInfoListActivity.this, "Application中获取数据数据", Toast.LENGTH_SHORT).show();
+			} else { // Assets中获取数据数据
+				String getInfo = MethodUtil.getLocalInfo(SupplyInfoListActivity.this, "supply_list.java");
+				JSONArray array = new JSONArray(getInfo);
+				for (int i = 0; i < array.length(); i++) {
+					JSONObject item = array.getJSONObject(i);
+					getSupplyInfo = gson.fromJson(item.toString(), SupplyInfo.class);
+					mSupplyInfoList.add(getSupplyInfo);
+				}
+				Toast.makeText(SupplyInfoListActivity.this, "Assets中获取数据数据", Toast.LENGTH_SHORT).show();
 			}
+		} catch (JSONException e) {
+			e.printStackTrace();
 		}
-
-		// for (int i = 0; i < 20; i++) {
-		// SupplyInfo supplyInfo = new SupplyInfo();
-		// supplyInfo.setId(i);
-		// supplyInfo.setTitleName("供应钢材信息" + (i + 1));
-		// supplyInfo.setImageUrl("http://i.steelcn.cn/member/cg/buyadd.aspx");
-		// supplyInfo.setSellScope("所有钢材");
-		// supplyInfo.setPrice(String.valueOf(100 + i));
-		// supplyInfo.setCompanyAddress("山东济南市");
-		// supplyInfo.setMobile("13800000002");
-		// supplyInfo.setCreatTime("2014_07_25");
-		// mSupplyInfoList.add(supplyInfo);
-		// }
 
 		// 使用自定义的Adapter
 		myListViewAdapter = new SupplyInfoAdapter(SupplyInfoListActivity.this, mSupplyInfoList);
