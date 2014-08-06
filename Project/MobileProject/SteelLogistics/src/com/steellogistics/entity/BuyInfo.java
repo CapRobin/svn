@@ -12,15 +12,22 @@ package com.steellogistics.entity;
  */
 public class BuyInfo {
 
-	private int id; 								// ID
-	private String titleName; 			// 标题
+	//ListItem展示
+	private int id; 								// 用户ID
+	private String titleName; 			// 信息标题
 	private String imageUrl; 				// 图片地址
-	private String buyInfo; 				// 求购信息
+	private String otherInfo; 			// 补充内容
 	private int buyAmount; 				// 求购数量
 	private String buyPrice; 				// 价格要求
-	private String companyAddress; // 商家地址
+	private String address; 				// 用户地址
 	private String mobile; 					// 联系电话
 	private String creatTime; 			// 创建时间
+	
+	//详情页面展示
+	private String buyRequire; 			// 求购要求
+	private String packRequire; 		// 包装要求
+	private String userRealName; 	// 商家名称
+	private String contacts; 				// 联系人	
 	
 	public int getId() {
 		return id;
@@ -40,11 +47,11 @@ public class BuyInfo {
 	public void setImageUrl(String imageUrl) {
 		this.imageUrl = imageUrl;
 	}
-	public String getBuyInfo() {
-		return buyInfo;
+	public String getOtherInfo() {
+		return otherInfo;
 	}
-	public void setBuyInfo(String buyInfo) {
-		this.buyInfo = buyInfo;
+	public void setOtherInfo(String otherInfo) {
+		this.otherInfo = otherInfo;
 	}
 	public int getBuyAmount() {
 		return buyAmount;
@@ -58,11 +65,11 @@ public class BuyInfo {
 	public void setBuyPrice(String buyPrice) {
 		this.buyPrice = buyPrice;
 	}
-	public String getCompanyAddress() {
-		return companyAddress;
+	public String getAddress() {
+		return address;
 	}
-	public void setCompanyAddress(String companyAddress) {
-		this.companyAddress = companyAddress;
+	public void setAddress(String address) {
+		this.address = address;
 	}
 	public String getMobile() {
 		return mobile;
@@ -76,6 +83,28 @@ public class BuyInfo {
 	public void setCreatTime(String creatTime) {
 		this.creatTime = creatTime;
 	}
-	
-	
+	public String getBuyRequire() {
+		return buyRequire;
+	}
+	public void setBuyRequire(String buyRequire) {
+		this.buyRequire = buyRequire;
+	}
+	public String getPackRequire() {
+		return packRequire;
+	}
+	public void setPackRequire(String packRequire) {
+		this.packRequire = packRequire;
+	}
+	public String getUserRealName() {
+		return userRealName;
+	}
+	public void setUserRealName(String userRealName) {
+		this.userRealName = userRealName;
+	}
+	public String getContacts() {
+		return contacts;
+	}
+	public void setContacts(String contacts) {
+		this.contacts = contacts;
+	}
 }
