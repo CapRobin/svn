@@ -110,7 +110,7 @@ public class BuyInfoListActivity extends BaseActivity {
 			BuyInfo getBuyInfo = null;
 			GsonBuilder builder = new GsonBuilder();
 			Gson gson = builder.create();
-			if (buyInfoDetailList != null && buyInfoDetailList.size() > 0) {		//Application中获取数据数据
+			if (buyInfoDetailList != null && buyInfoDetailList.size() > 0) { // Application中获取数据数据
 				String objectItem = gson.toJson(buyInfoDetailList);
 				JSONArray array = new JSONArray(objectItem);
 				for (int i = 0; i < array.length(); i++) {
@@ -123,7 +123,7 @@ public class BuyInfoListActivity extends BaseActivity {
 				String getSupplyInfoListStr = gson.toJson(mBuyInfoInfoList);
 				System.out.println("getSupplyInfoListStr is ------------>>" + getSupplyInfoListStr);
 				Toast.makeText(BuyInfoListActivity.this, "Application中获取数据数据", Toast.LENGTH_SHORT).show();
-			} else {		//Assets中获取数据数据
+			} else { // Assets中获取数据数据
 				String getInfo = MethodUtil.getLocalInfo(BuyInfoListActivity.this, "buy_list.java");
 				JSONArray array = new JSONArray(getInfo);
 				for (int i = 0; i < array.length(); i++) {

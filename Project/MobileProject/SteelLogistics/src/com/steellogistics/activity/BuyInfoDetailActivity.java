@@ -85,6 +85,5 @@ public class BuyInfoDetailActivity extends BaseActivity {
 				startActivity(intent);
 			}
 		});
-
 	}
 }

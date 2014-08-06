@@ -33,28 +33,6 @@ public class BaseActivity extends AbActivity {
 	public LinearLayout.LayoutParams layoutParamsFF = null;
 	public MyApplication application = null;
 
-	// public Handler mBaseHandler = new Handler() {
-	//
-	// @Override
-	// public void handleMessage(Message msg) {
-	// switch (msg.what) {
-	// case 0:
-	// Toast.makeText(BaseActivity.this, msg.getData().getString("Msg"),
-	// 5).show();
-	// break;
-	// case 1:
-	// showDialog(0);
-	// break;
-	// case 2:
-	// removeDialog(0);
-	// break;
-	// case 3:
-	//
-	// break;
-	// }
-	// }
-	// };
-
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

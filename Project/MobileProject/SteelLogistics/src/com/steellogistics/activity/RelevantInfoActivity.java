@@ -72,8 +72,6 @@ public class RelevantInfoActivity extends BaseActivity {
 			});
 		}
 	}
-	
-
 
 	/**
 	 * 
@@ -144,8 +142,7 @@ public class RelevantInfoActivity extends BaseActivity {
 	 */
 	private void InitViewPager() {
 		listViews = new ArrayList<View>();
-		int[] imageResId = new int[] { R.drawable.a, R.drawable.b, R.drawable.c, R.drawable.d, R.drawable.e,
-				R.drawable.g };
+		int[] imageResId = new int[] { R.drawable.a, R.drawable.b, R.drawable.c, R.drawable.d, R.drawable.e, R.drawable.g };
 		for (int i = 0; i < imageResId.length; i++) {
 			final int imageItem = i;
 			ImageView imageView = new ImageView(this);

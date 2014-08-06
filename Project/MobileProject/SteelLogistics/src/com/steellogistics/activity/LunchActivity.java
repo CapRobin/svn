@@ -64,8 +64,7 @@ public class LunchActivity extends Activity {
 			case 1:
 				coordinate = gpsManager.getCoordinate();
 
-				Toast.makeText(LunchActivity.this, "GPS位置位置信息：\n经度为：" + "" + "" + "" + "" + coordinate.Longitude + "\n维度为：" + coordinate.Latitude, 5)
-						.show();
+				Toast.makeText(LunchActivity.this, "GPS位置位置信息：\n经度为：" + "" + "" + "" + "" + coordinate.Longitude + "\n维度为：" + coordinate.Latitude, 5).show();
 				System.out.println("GPS位置位置信息：\n经度为：" + coordinate.Longitude + "\n维度为：" + coordinate.Latitude);
 
 				// startActivity(new Intent(LunchActivity.this,
@@ -89,7 +88,7 @@ public class LunchActivity extends Activity {
 		// 去掉任务栏
 		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		setContentView(R.layout.lunch);
-//		showRoundProcessDialog(this, R.layout.loading_process_dialog_anim);
+		// showRoundProcessDialog(this, R.layout.loading_process_dialog_anim);
 		mProgressDialog = new Dialog(LunchActivity.this, R.style.theme_dialog_alert);
 		mProgressDialog.setContentView(R.layout.window_layout);
 		mProgressDialog.setCancelable(true);
@@ -99,7 +98,7 @@ public class LunchActivity extends Activity {
 			}
 		});
 		mProgressDialog.show();
-		
+
 		application = (MyApplication) getApplication();
 		application.isBoot = true;
 		audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
@@ -107,20 +106,19 @@ public class LunchActivity extends Activity {
 		// 检测网络
 		if (MethodUtil.getNetworkState(LunchActivity.this)) {
 
-			
-			//暂时屏蔽GPS检测
-//			if (MethodUtil.isGpsEnable(LunchActivity.this)) {
-//				checkIntent();
-//			} else {
-//				showMyDialog(2);
-//			}
-			
+			// 暂时屏蔽GPS检测
+			// if (MethodUtil.isGpsEnable(LunchActivity.this)) {
+			// checkIntent();
+			// } else {
+			// showMyDialog(2);
+			// }
+
 			checkIntent();
 		} else {
 			showMyDialog(1);
 		}
 	}
-	
+
 	public void showRoundProcessDialog(Context mContext, int layout) {
 		OnKeyListener keyListener = new OnKeyListener() {
 			@Override
@@ -309,7 +307,7 @@ public class LunchActivity extends Activity {
 		msg.setData(bundle);
 		handler.sendMessage(msg);
 	}
-	
+
 	@Override
 	protected void onDestroy() {
 		super.onDestroy();
