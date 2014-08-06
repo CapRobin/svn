@@ -3,19 +3,24 @@ package com.steellogistics.activity;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.Toast;
 
 import com.ab.view.pullview.AbPullListView;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.steellogistics.R;
 import com.steellogistics.adapter.BuyInfoAdapter;
 import com.steellogistics.entity.BuyInfo;
-import com.steellogistics.entity.RelevantInfo;
+import com.steellogistics.entity.BuyInfoDetail;
 
 /**
  * 
@@ -31,10 +36,11 @@ public class BuyInfoListActivity extends BaseActivity {
 
 	private boolean isShowLeftBut = true;
 	private boolean isShowRightBut = true;
-	
-	private List<BuyInfo> mBuylyInfoList = null;
+
+	// private List<BuyInfo> mBuyInfoList = null;
 	private BuyInfoAdapter myListViewAdapter = null;
 	private AbPullListView buyCargoList = null;
+	private List<BuyInfo> mBuyInfoInfoList = null;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -62,15 +68,14 @@ public class BuyInfoListActivity extends BaseActivity {
 				}
 			});
 		}
-		
 
 		if (isShowRightBut) {
 			titleRightBut.setOnClickListener(new OnClickListener() {
 
 				@Override
 				public void onClick(View v) {
-//					finish();
-					startActivity(new Intent(BuyInfoListActivity.this,PublishSupplyActivity.class));
+					// finish();
+					startActivity(new Intent(BuyInfoListActivity.this, PublishBuyActivity.class));
 				}
 			});
 		}
@@ -92,27 +97,36 @@ public class BuyInfoListActivity extends BaseActivity {
 		// 打开关闭下拉刷新加载更多功能
 		buyCargoList.setPullRefreshEnable(true);
 		buyCargoList.setPullLoadEnable(true);
+		mBuyInfoInfoList = new ArrayList<BuyInfo>();
 
-		mBuylyInfoList = new ArrayList<BuyInfo>();
-		
-		// 构造数据
-		for (int i = 0; i < 20; i++) {
-			BuyInfo buyInfo = new BuyInfo();
-			buyInfo.setId(i);
-			buyInfo.setTitleName("求购钢材信息" + (i + 1));
-			buyInfo.setImageUrl("http://i.steelcn.cn/member/cg/buyadd.aspx");
-			buyInfo.setBuyAmount(10+i);
-			buyInfo.setBuyPrice(String.valueOf(100+i));
-			buyInfo.setCompanyAddress("宁夏银川市");
-			buyInfo.setMobile("12800000001");
-			buyInfo.setCreatTime("2014_07_31");
-			mBuylyInfoList.add(buyInfo);
+		// 获取构造数据
+		List<BuyInfoDetail> buyInfoDetailList = application.buyInfoList;
+		if (buyInfoDetailList != null && buyInfoDetailList.size() > 0) {
+			BuyInfo getBuyInfo = null;
+			try {
+				GsonBuilder builder = new GsonBuilder();
+				Gson gson = builder.create();
+				String objectItem = gson.toJson(buyInfoDetailList);
+				JSONArray array = new JSONArray(objectItem);
+				for (int i = 0; i < array.length(); i++) {
+					JSONObject item = array.getJSONObject(i);
+					getBuyInfo = gson.fromJson(item.toString(), BuyInfo.class);
+					mBuyInfoInfoList.add(getBuyInfo);
+				}
+
+				// 输出得到的列表Json数据字符
+				String getSupplyInfoListStr = gson.toJson(mBuyInfoInfoList);
+				System.out.println("getSupplyInfoListStr is ------------>>" + getSupplyInfoListStr);
+
+			} catch (JSONException e) {
+				e.printStackTrace();
+			}
 		}
 
 		// 使用自定义的Adapter
-		myListViewAdapter = new BuyInfoAdapter(BuyInfoListActivity.this, mBuylyInfoList);
+		myListViewAdapter = new BuyInfoAdapter(BuyInfoListActivity.this, mBuyInfoInfoList);
 		buyCargoList.setAdapter(myListViewAdapter);
-		
+
 		buyCargoList.setOnItemClickListener(new OnItemClickListener() {
 
 			@Override
@@ -131,6 +145,6 @@ public class BuyInfoListActivity extends BaseActivity {
 				startActivity(intent);
 			}
 		});
-		
+
 	}
 }

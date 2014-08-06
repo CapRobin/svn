@@ -81,7 +81,7 @@ public class BuyInfoAdapter extends BaseAdapter {
 		holder.titleName.setText(mData.get(position).getTitleName());
 		holder.amount.setText("求购数量: " + mData.get(position).getBuyAmount());
 		holder.price.setText("求购单价: ¥ " + mData.get(position).getBuyPrice());
-		holder.address.setText(mData.get(position).getCompanyAddress());
+		holder.address.setText(mData.get(position).getUserAddress());
 		holder.creatTime.setText(mData.get(position).getCreatTime());
 
 		return convertView;
