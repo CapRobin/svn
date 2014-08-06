@@ -88,7 +88,7 @@ public class PublishBuyActivity extends BaseActivity {
 		bcnrEdit = (EditText) findViewById(R.id.bcnrEdit);
 		publishBuyBtn = (Button) findViewById(R.id.publishBuyBtn);
 		publishBuyBtn.setOnClickListener(new OnClickListener() {
-			
+
 			@Override
 			public void onClick(View v) {
 				UserInfo info = application.userInfo;
@@ -98,14 +98,14 @@ public class PublishBuyActivity extends BaseActivity {
 				String qgyqEditStr = qgyqEdit.getText().toString();
 				String bzyqEditStr = bzyqEdit.getText().toString();
 				String bcnrEditStr = bcnrEdit.getText().toString();
-				
+
 				int userId = info.getId();
 				String buyerName = info.getRealName();
 				String mobile = info.getMobile();
 				String buyerAddress = info.getAddress();
 				String contacts = info.getContacts();
-				
-//				String dealType = "线下交易";
+
+				// String dealType = "线下交易";
 				// 输入标题验证
 				if (TextUtils.isEmpty(btEditStr)) {
 					btEdit.setError("请输入标题");
@@ -131,7 +131,7 @@ public class PublishBuyActivity extends BaseActivity {
 					return;
 				}
 				BuyInfoDetail buyInfoDetail = new BuyInfoDetail();
-				
+
 				buyInfoDetail.setId(001);
 				buyInfoDetail.setTitleName(btEditStr);
 				buyInfoDetail.setImageUrl("http://img3.cache.netease.com/catchimg/20100808/85U286RU_0.jpg");
@@ -139,7 +139,7 @@ public class PublishBuyActivity extends BaseActivity {
 				buyInfoDetail.setBuyAmount(Integer.valueOf(slEditStr));
 				buyInfoDetail.setBuyPrice(jgEditStr);
 				buyInfoDetail.setUserAddress(buyerAddress);
-				
+
 				buyInfoDetail.setContactNumber(mobile);
 				buyInfoDetail.setCreatTime("2014_08_05");
 				buyInfoDetail.setBuyRequire(qgyqEditStr);
@@ -157,18 +157,18 @@ public class PublishBuyActivity extends BaseActivity {
 	 * @Describe：模拟调用接口
 	 * @param userId
 	 * @param supplyInfo
-	 * @Throws:  
+	 * @Throws:
 	 * @Date：2014年8月6日 下午3:01:37
 	 * @Version v1.0
 	 */
 	private void publicJk(int userId, BuyInfoDetail buyInfo) {
 		application.buyInfoList.add(buyInfo);
 
-//		 BuyInfoDetail对象打包成Json字符串
-		 Gson gson = new Gson();
-		 String getBuyInfoStr = gson.toJson(buyInfo);
-		 System.out.println("getBuyInfoStr is ----------->>" + getBuyInfoStr);
-		 Toast.makeText(PublishBuyActivity.this, "发布求购信息成功", 5).show();
+		// BuyInfoDetail对象打包成Json字符串
+		Gson gson = new Gson();
+		String getBuyInfoStr = gson.toJson(buyInfo);
+		System.out.println("getBuyInfoStr is ----------->>" + getBuyInfoStr);
+		Toast.makeText(PublishBuyActivity.this, "发布求购信息成功", 5).show();
 	}
 
 }

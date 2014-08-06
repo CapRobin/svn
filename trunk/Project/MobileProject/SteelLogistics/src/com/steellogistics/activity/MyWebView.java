@@ -1,12 +1,12 @@
 package com.steellogistics.activity;
 
-import com.steellogistics.R;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
 import android.webkit.WebView;
+
+import com.steellogistics.R;
 
 /**
  * Copyright (c) 2013 All rights reserved
