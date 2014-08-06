@@ -52,7 +52,10 @@ public class AndroidPushMessageSample {
 			// request.setChannelId(4055509595846740063L);
 			// request.setUserId("656796655012285164");
 
-			request.setMessage("百度推送测试 ----->> AndroidPushMessageSample");
+			request.setMessage("百度推送测试 ----->> AndroidPushMessageSample_02");
+			// 若要通知，
+			 request.setMessageType(1);
+			 request.setMessage("{\"title\":\"标题\",\"description\":\"百度推送测试\"}");
 
 			// 5. 调用pushMessage接口
 			PushUnicastMessageResponse response = channelClient.pushUnicastMessage(request);

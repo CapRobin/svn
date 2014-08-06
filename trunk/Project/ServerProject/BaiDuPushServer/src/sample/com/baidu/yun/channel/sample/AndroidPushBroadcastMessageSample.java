@@ -50,10 +50,10 @@ public class AndroidPushBroadcastMessageSample {
 			request.setDeviceType(3); // device_type => 1: web 2: pc 3:android
 										// 4:ios 5:wp
 
-			request.setMessage("百度推送测试 ----->> AndroidPushBroadcastMessageSample");
+			request.setMessage("百度推送测试 ----->> AndroidPushBroadcastMessageSample_01");
 			// 若要通知，
-			// request.setMessageType(1);
-			// request.setMessage("{\"title\":\"Notify_title_danbo\",\"description\":\"Notify_description_content\"}");
+			 request.setMessageType(1);
+			 request.setMessage("{\"title\":\"Notify_标题\",\"description\":\"Notify_内容描述\"}");
 
 			// 5. 调用pushMessage接口
 			PushBroadcastMessageResponse response = channelClient.pushBroadcastMessage(request);
