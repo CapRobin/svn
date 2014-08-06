@@ -13,33 +13,34 @@ package com.steellogistics.entity;
 public class UserInfo {
 
 	private int id; 								// 会员ID
-	private String realName; 			// 真实姓名
+	private String realName; 			// 真实姓名(公司或个人真实姓名)
 	private String userName; 			// 用户名
 	private String password; 				// 密码
 	private String sex; 						// 性别
 	private String age; 						// 年龄
+	private String contacts; 				// 联系人
 	private String mobile; 					// 移动电话
 	private String telephone; 			// 座机电话
+	
 	private String grade; 					// 等级
 	private String identityCard; 		// 身份证号
-	
 	private String email; 					// 邮箱
-	private String address; 				// 所在地址
+	private String address; 				// 地址
 	private String industry; 		   		// 所属行业
 	private String companyInfo; 		// 公司简介
 	private int userType; 					// 用户类型（0:普通会员；1:公司商户）
 	private String mibaoQ; 				// 密码保护信息-问题
 	private String mibaoA; 				// 密码保护信息-答案
-	private String lasttime; 				// 到期期限（还有多少天到期）
 	
+	private String lasttime; 				// 到期期限（还有多少天到期）
 	private int couldPublic; 				// 是否可以发布信息（1：是；0：否）
 	private String userInfo; 				// 加密字符串组成，服务端做用户请求身份验证使用
 	private String longitude; 				// 经度
 	private String latitude; 				// 纬度
 	private String imei; 						// 移动设备识码
-	private String other1; 					// 其他参数
 	private String other2; 					// 其他参数
 	private String other3; 					// 其他参数
+	
 	public int getId() {
 		return id;
 	}
@@ -75,6 +76,12 @@ public class UserInfo {
 	}
 	public void setAge(String age) {
 		this.age = age;
+	}
+	public String getContacts() {
+		return contacts;
+	}
+	public void setContacts(String contacts) {
+		this.contacts = contacts;
 	}
 	public String getMobile() {
 		return mobile;
@@ -177,12 +184,6 @@ public class UserInfo {
 	}
 	public void setImei(String imei) {
 		this.imei = imei;
-	}
-	public String getOther1() {
-		return other1;
-	}
-	public void setOther1(String other1) {
-		this.other1 = other1;
 	}
 	public String getOther2() {
 		return other2;
