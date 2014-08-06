@@ -97,5 +97,4 @@ public class BuyInfoAdapter extends BaseAdapter {
 		TextView address;
 		TextView creatTime;
 	}
-
 }
