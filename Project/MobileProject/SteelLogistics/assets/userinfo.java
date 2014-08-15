@@ -1,0 +1,18 @@
+{
+    "address":"宁夏银川市",
+    "age":"27",
+    "companyInfo":"专注钢铁行业多年",
+    "userName":"yfr5734",
+    "email":"1542519456",
+    "grade":"普通会员",
+    "identityCard":"640687197806083917",
+    "industry":"钢铁",
+    "lasttime":"2014.08.15",
+    "mobile":"13800000010",
+    "realName":"余发荣",
+    "sex":"男",
+    "telephone":"09515681377",
+    "id":0,
+    "couldPublic":0,
+    "userType":0
+}

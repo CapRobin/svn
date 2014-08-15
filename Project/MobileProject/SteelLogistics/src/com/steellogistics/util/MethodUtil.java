@@ -12,6 +12,8 @@ import java.util.regex.Pattern;
 import org.xmlpull.v1.XmlPullParser;
 
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.location.LocationManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -42,8 +44,7 @@ public class MethodUtil {
 	 */
 	public static boolean getNetworkState(Context context) {
 		// 检测网络
-		ConnectivityManager connectivity = (ConnectivityManager) context
-				.getSystemService(Context.CONNECTIVITY_SERVICE);
+		ConnectivityManager connectivity = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
 		NetworkInfo netWork = connectivity.getActiveNetworkInfo();
 		if (netWork != null) {
 			return netWork.isAvailable();
@@ -61,8 +62,7 @@ public class MethodUtil {
 	 * @version v1.0
 	 */
 	public static boolean isGpsEnable(Context context) {
-		LocationManager locationManager = (LocationManager) context
-				.getSystemService(Context.LOCATION_SERVICE);
+		LocationManager locationManager = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
 		return locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
 	}
 
@@ -227,19 +227,19 @@ public class MethodUtil {
 	 * @Date：2013-12-23 下午5:08:55
 	 * @Version v1.0
 	 */
-//	public static String getParameterString(String portName,
-//			List<Parameter> parameterList) {
-//		int size = parameterList.size();
-//		StringBuilder sb = new StringBuilder();
-//		for (int i = 0; i < size; i++) {
-//			String string2 = "<" + parameterList.get(i).getParameterKey() + ">"
-//					+ parameterList.get(i).getParameterValue() + "</"
-//					+ parameterList.get(i).getParameterKey() + ">";
-//			sb.append(string2);
-//		}
-//		return "<Request><data code='" + portName + "'><no>" + sb
-//				+ "</no></data></Request>";
-//	}
+	// public static String getParameterString(String portName,
+	// List<Parameter> parameterList) {
+	// int size = parameterList.size();
+	// StringBuilder sb = new StringBuilder();
+	// for (int i = 0; i < size; i++) {
+	// String string2 = "<" + parameterList.get(i).getParameterKey() + ">"
+	// + parameterList.get(i).getParameterValue() + "</"
+	// + parameterList.get(i).getParameterKey() + ">";
+	// sb.append(string2);
+	// }
+	// return "<Request><data code='" + portName + "'><no>" + sb
+	// + "</no></data></Request>";
+	// }
 
 	/**
 	 * 导入数据库
@@ -295,7 +295,7 @@ public class MethodUtil {
 	 * @Describe：Unicode解码
 	 * @param theString
 	 * @return
-	 * @Throws:  
+	 * @Throws:
 	 * @Date：2014年5月26日 上午11:32:26
 	 * @Version v1.0
 	 */
@@ -342,8 +342,7 @@ public class MethodUtil {
 							value = (value << 4) + 10 + aChar - 'A';
 							break;
 						default:
-							throw new IllegalArgumentException(
-									"Malformed   \\uxxxx   encoding.");
+							throw new IllegalArgumentException("Malformed   \\uxxxx   encoding.");
 						}
 					}
 					outBuffer.append((char) value);
@@ -382,5 +381,37 @@ public class MethodUtil {
 		}
 		return getInfo;
 	}
-	
+
+	/**
+	 * 
+	 * @Describe：SharedPreferences保存数据
+	 * @Throws:
+	 * @Date：2014年8月14日 下午4:15:50
+	 * @Version v1.0
+	 */
+	public static void setSharedPreferences(Context context, String fileName, String infoKey, String savaString) {
+		SharedPreferences sharedPreferences = context.getSharedPreferences(fileName, Context.MODE_WORLD_READABLE);
+		Editor editor = sharedPreferences.edit();
+		editor.putString(infoKey, savaString);
+		// editor.putInt("age", new Integer(ageEditText.getText().toString()));
+		editor.commit();
+	}
+
+	/**
+	 * 
+	 * @Describe：SharedPreferences读取数据
+	 * @Throws:
+	 * @Date：2014年8月14日 下午4:15:50
+	 * @Version v1.0
+	 */
+	public static String getSharedPreferences(Context context, String fileName, String infoKey) {
+
+		SharedPreferences sharedPreferences = context.getSharedPreferences(fileName, Context.MODE_PRIVATE);
+		String userinfo = sharedPreferences.getString(infoKey, "");
+		// int age = sharedPreferences.getInt("age", 20);
+		// nameEditText.setText(name);
+		// ageEditText.setText(String.valueOf(age));
+		return userinfo;
+	}
+
 }
