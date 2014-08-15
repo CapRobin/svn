@@ -26,7 +26,7 @@ import com.steellogistics.entity.UserInfo;
  */
 public class PublishBuyActivity extends BaseActivity {
 	private boolean isShowLeftBut = true;
-	private boolean isShowRightBut = true;
+	private boolean isShowRightBut = false;
 	private String titlebarName = "发布求购";
 	private String[] mItems = { "供货信息", "求购信息" };
 	private EditText btEdit, qgyqEdit, slEdit, jgEdit, bzyqEdit, bcnrEdit = null;

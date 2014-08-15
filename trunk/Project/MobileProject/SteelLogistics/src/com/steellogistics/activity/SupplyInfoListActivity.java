@@ -7,22 +7,33 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.app.AlertDialog;
+import android.app.AlertDialog.Builder;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ImageView.ScaleType;
 import android.widget.Toast;
 
+import com.ab.task.AbTaskQueue;
 import com.ab.view.pullview.AbPullListView;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.steellogistics.R;
 import com.steellogistics.adapter.SupplyInfoAdapter;
+import com.steellogistics.database.SqliteDaoArea;
 import com.steellogistics.entity.SupplyInfo;
 import com.steellogistics.entity.SupplyInfoDetail;
 import com.steellogistics.util.MethodUtil;
+import com.steellogistics.view.MyImgScroll;
 
 /**
  * 
@@ -40,6 +51,11 @@ public class SupplyInfoListActivity extends BaseActivity {
 	private List<SupplyInfo> mSupplyInfoList = null;
 	private SupplyInfoAdapter myListViewAdapter = null;
 	private AbPullListView supplyCargoList = null;
+	private AlertDialog dialog;
+	private SqliteDaoArea daoArea = null;
+	private MyImgScroll myPager; // 图片容器
+	private LinearLayout ovalLayout; // 圆点容器
+	private List<View> listViews; // 图片组
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -49,6 +65,7 @@ public class SupplyInfoListActivity extends BaseActivity {
 		initView();
 	}
 
+
 	/**
 	 * 
 	 * @Describe：初始化标题栏
@@ -57,13 +74,13 @@ public class SupplyInfoListActivity extends BaseActivity {
 	 * @Version v1.0
 	 */
 	private void titleBarInitView() {
-		setTitleInfo("供货信息", isShowLeftBut, "返回", isShowRightBut, "发布");
+		setTitleInfo("首    页", isShowLeftBut, "退出", isShowRightBut, "个人");
 		if (isShowLeftBut) {
 			titleLeftBut.setOnClickListener(new OnClickListener() {
 
 				@Override
 				public void onClick(View v) {
-					finish();
+					showMyDialog();
 				}
 			});
 		}
@@ -73,11 +90,45 @@ public class SupplyInfoListActivity extends BaseActivity {
 
 				@Override
 				public void onClick(View v) {
-					startActivity(new Intent(SupplyInfoListActivity.this, PublishSupplyActivity.class));
+					if (application.isLogin) {
+						startActivity(new Intent(SupplyInfoListActivity.this, PersonalCenterActivity.class));
+					} else {
+						startActivity(new Intent(SupplyInfoListActivity.this, LoginActivity.class));
+					}
 				}
 			});
 		}
 	}
+	
+//	/**
+//	 * 
+//	 * @Describe：初始化标题栏
+//	 * @Throws:
+//	 * @Date：2014年7月24日 上午9:41:44
+//	 * @Version v1.0
+//	 */
+//	private void titleBarInitView() {
+//		setTitleInfo("供货信息", isShowLeftBut, "返回", isShowRightBut, "发布");
+//		if (isShowLeftBut) {
+//			titleLeftBut.setOnClickListener(new OnClickListener() {
+//
+//				@Override
+//				public void onClick(View v) {
+//					finish();
+//				}
+//			});
+//		}
+//
+//		if (isShowRightBut) {
+//			titleRightBut.setOnClickListener(new OnClickListener() {
+//
+//				@Override
+//				public void onClick(View v) {
+//					startActivity(new Intent(SupplyInfoListActivity.this, PublishSupplyActivity.class));
+//				}
+//			});
+//		}
+//	}
 
 	/**
 	 * 
@@ -89,6 +140,20 @@ public class SupplyInfoListActivity extends BaseActivity {
 	 */
 	private void initView() {
 		// mAbTaskQueue = AbTaskQueue.getInstance();
+		daoArea = SqliteDaoArea.getInstance(SupplyInfoListActivity.this);
+		myPager = (MyImgScroll) findViewById(R.id.myvp);
+		ovalLayout = (LinearLayout) findViewById(R.id.vb);
+		// cargoList = (AbPullListView) findViewById(R.id.cargoList);
+		// 初始化图片
+		InitViewPager();
+		// 开始滚动
+		myPager.start(this, listViews, 4000, ovalLayout, R.layout.ad_bottom_item, R.id.ad_item_v, R.drawable.dot_focused, R.drawable.dot_normal);
+
+//		mAbTaskQueue = AbTaskQueue.getInstance();
+		
+		
+		
+		
 
 		// 获取ListView对象
 		supplyCargoList = (AbPullListView) findViewById(R.id.supplyCargoList);
@@ -152,4 +217,96 @@ public class SupplyInfoListActivity extends BaseActivity {
 		});
 
 	}
+	
+	/**
+	 * @Describe：初始化广告图片
+	 * @Throws:
+	 * @Date：2014年4月28日 下午3:29:10
+	 * @Version v1.0
+	 */
+	private void InitViewPager() {
+		listViews = new ArrayList<View>();
+		int[] imageResId = new int[] { R.drawable.a, R.drawable.b, R.drawable.c, R.drawable.d, R.drawable.e, R.drawable.g };
+		for (int i = 0; i < imageResId.length; i++) {
+			final int imageItem = i;
+			ImageView imageView = new ImageView(this);
+			imageView.setImageResource(imageResId[i]);
+			// 设置图片点击事件
+			imageView.setOnClickListener(new OnClickListener() {
+				public void onClick(View v) {
+					Intent intent = new Intent();
+					switch (imageItem) {
+					case 0:
+						intent.setClass(SupplyInfoListActivity.this, MyWebView.class);
+						intent.putExtra("url", "http://dl.5671.cc/");
+						startActivity(intent);
+						break;
+					case 1:
+						intent.setClass(SupplyInfoListActivity.this, MyWebView.class);
+						intent.putExtra("url", "http://qy.58.com/17195629821703/");
+						startActivity(intent);
+						break;
+					case 2:
+						intent.setClass(SupplyInfoListActivity.this, MyWebView.class);
+						intent.putExtra("url", "http://www.cnpc.com.cn/cn/");
+						startActivity(intent);
+						break;
+					case 3:
+						intent.setClass(SupplyInfoListActivity.this, MyWebView.class);
+						intent.putExtra("url", "http://csl.chinawuliu.com.cn/");
+						startActivity(intent);
+						break;
+					case 4:
+						intent.setClass(SupplyInfoListActivity.this, MyWebView.class);
+						intent.putExtra("url", "http://www.189.cn/");
+						startActivity(intent);
+						break;
+					}
+					Toast.makeText(SupplyInfoListActivity.this, "您点击了第" + (myPager.getCurIndex() + 1) + "个广告位", Toast.LENGTH_SHORT).show();
+				}
+			});
+
+			imageView.setScaleType(ScaleType.CENTER_CROP);
+			listViews.add(imageView);
+		}
+	}
+	
+	/**
+	 * 
+	 * 描述：显示提示对话框
+	 * 
+	 * @throws
+	 * @date：2013-11-19 上午10:36:52
+	 * @version v1.0
+	 */
+	private void showMyDialog() {
+		String titleInfo = null;
+		Builder builder = new AlertDialog.Builder(this);
+		dialog = builder.create();
+		View retieve = LayoutInflater.from(this).inflate(R.layout.dialog_show, null);
+		dialog.setView(retieve, 0, 0, 0, 0);
+		Button acceptBtn = (Button) retieve.findViewById(R.id.acceptBtn);
+		Button unAcceptBtn = (Button) retieve.findViewById(R.id.unAcceptBtn);
+		TextView dialogTitleText1 = (TextView) retieve.findViewById(R.id.dialogTitleText1);
+		TextView setMessage = (TextView) retieve.findViewById(R.id.setMessage);
+		dialogTitleText1.setText("温馨提示");
+		setMessage.setText("		你确定要退出程序吗？");
+		acceptBtn.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				finish();
+			}
+		});
+
+		unAcceptBtn.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				dialog.dismiss();
+			}
+		});
+		dialog.show();
+	}
+	
 }

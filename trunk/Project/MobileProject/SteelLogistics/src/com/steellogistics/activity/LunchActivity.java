@@ -70,7 +70,7 @@ public class LunchActivity extends Activity {
 				// startActivity(new Intent(LunchActivity.this,
 				// MainActivity.class));
 
-				Intent intent = new Intent(LunchActivity.this, MainActivity.class);
+				Intent intent = new Intent(LunchActivity.this, MainActivity_x.class);
 				intent.putExtra("longitude", coordinate.Longitude);
 				intent.putExtra("latitude", coordinate.Latitude);
 				startActivity(intent);

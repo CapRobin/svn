@@ -1,0 +1,36 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/app_bg" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="35dip"
+        android:layout_marginRight="35dip"
+        android:background="@color/app_bg" >
+
+        <Button
+            android:id="@+id/gyBut"
+            android:layout_width="fill_parent"
+            android:layout_height="80dip"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/exist_selector"
+            android:text="发布供应"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/qgBut"
+            android:layout_width="fill_parent"
+            android:layout_height="80dip"
+            android:layout_below="@+id/gyBut"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dip"
+            android:background="@drawable/exist_selector"
+            android:text="发布求购"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -29,7 +29,7 @@ import com.steellogistics.entity.SupplyInfoDetail;
  */
 public class PublishSupplyActivity extends BaseActivity implements OnClickListener {
 	private boolean isShowLeftBut = true;
-	private boolean isShowRightBut = true;
+	private boolean isShowRightBut = false;
 	private String titlebarName = "发布供货";
 	private String[] mItems = { "供货信息", "求购信息" };
 	private Spinner lbSpinner, pmSpinner, ggSpinner, slSpinner, gbSpinner, jyfsSpinner;
