@@ -49,33 +49,7 @@
                     android:textSize="11sp" />
             </RelativeLayout>
 
-<!--             <RelativeLayout -->
-<!--                 android:id="@+id/layout_0" -->
-<!--                 android:layout_width="fill_parent" -->
-<!--                 android:layout_height="wrap_content" -->
-<!--                 android:layout_below="@+id/layout_00" -->
-<!--                 android:layout_marginBottom="10dip" -->
-<!--                 android:layout_marginLeft="10dip" -->
-<!--                 android:layout_marginRight="10dip" > -->
-
-<!--                 <TextView -->
-<!--                     android:id="@+id/lbText" -->
-<!--                     android:layout_width="100dip" -->
-<!--                     android:layout_height="wrap_content" -->
-<!--                     android:layout_centerVertical="true" -->
-<!--                     android:text="类      别:" -->
-<!--                     android:textColor="@color/black" -->
-<!--                     android:textSize="18sp" /> -->
-
-<!--                 <Spinner -->
-<!--                     android:id="@+id/lbSpinner" -->
-<!--                     android:layout_width="fill_parent" -->
-<!--                     android:layout_height="45dip" -->
-<!--                     android:layout_marginLeft="97dip" -->
-<!--                     android:entries="@array/steelStyle" /> -->
-<!--             </RelativeLayout> -->
-
-<LinearLayout
+            <LinearLayout
                 android:id="@+id/holder1"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
@@ -91,13 +65,13 @@
                     android:layout_marginRight="10dip" >
 
                     <TextView
+                        android:id="@+id/lbText"
                         android:layout_width="100dip"
-                    android:id="@+id/lbText"
-                    android:text="类      别:"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
                         android:layout_gravity="center_vertical"
-                        android:textColor="@color/red"
+                        android:text="类      别:"
+                        android:textColor="@color/black"
                         android:textSize="18sp" />
 
                     <EditText
@@ -136,33 +110,7 @@
                 </LinearLayout>
             </LinearLayout>
 
-<!--             <RelativeLayout -->
-<!--                 android:id="@+id/layout_1" -->
-<!--                 android:layout_width="fill_parent" -->
-<!--                 android:layout_height="wrap_content" -->
-<!--                 android:layout_below="@+id/layout_0" -->
-<!--                 android:layout_marginBottom="10dip" -->
-<!--                 android:layout_marginLeft="10dip" -->
-<!--                 android:layout_marginRight="10dip" > -->
-
-<!--                 <TextView -->
-<!--                     android:id="@+id/pmText" -->
-<!--                     android:layout_width="100dip" -->
-<!--                     android:layout_height="wrap_content" -->
-<!--                     android:layout_centerVertical="true" -->
-<!--                     android:text="品      名:" -->
-<!--                     android:textColor="@color/black" -->
-<!--                     android:textSize="18sp" /> -->
-
-<!--                 <Spinner -->
-<!--                     android:id="@+id/pmSpinner" -->
-<!--                     android:layout_width="fill_parent" -->
-<!--                     android:layout_height="45dip" -->
-<!--                     android:layout_marginLeft="97dip" /> -->
-<!--             </RelativeLayout> -->
-
-
- <LinearLayout
+            <LinearLayout
                 android:id="@+id/holder2"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
@@ -178,13 +126,13 @@
                     android:layout_marginRight="10dip" >
 
                     <TextView
-                    android:id="@+id/pmText"
-                    android:text="品      名:"
+                        android:id="@+id/pmText"
                         android:layout_width="100dip"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
                         android:layout_gravity="center_vertical"
-                        android:textColor="@color/red"
+                        android:text="品      名:"
+                        android:textColor="@color/black"
                         android:textSize="18sp" />
 
                     <EditText
@@ -223,33 +171,8 @@
                         android:verticalSpacing="7dp" />
                 </LinearLayout>
             </LinearLayout>
-<!--             <RelativeLayout -->
-<!--                 android:id="@+id/layout_2" -->
-<!--                 android:layout_width="fill_parent" -->
-<!--                 android:layout_height="wrap_content" -->
-<!--                 android:layout_below="@+id/layout_1" -->
-<!--                 android:layout_marginBottom="10dip" -->
-<!--                 android:layout_marginLeft="10dip" -->
-<!--                 android:layout_marginRight="10dip" > -->
 
-<!--                 <TextView -->
-<!--                     android:id="@+id/ggText" -->
-<!--                     android:layout_width="100dip" -->
-<!--                     android:layout_height="wrap_content" -->
-<!--                     android:layout_centerVertical="true" -->
-<!--                     android:text="规      格:" -->
-<!--                     android:textColor="@color/black" -->
-<!--                     android:textSize="18sp" /> -->
-
-<!--                 <Spinner -->
-<!--                     android:id="@+id/ggSpinner" -->
-<!--                     android:layout_width="fill_parent" -->
-<!--                     android:layout_height="45dip" -->
-<!--                     android:layout_marginLeft="97dip" -->
-<!--                     android:entries="@array/gcGuige" /> -->
-<!--             </RelativeLayout> -->
-
-<LinearLayout
+            <LinearLayout
                 android:id="@+id/holder3"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
@@ -265,13 +188,13 @@
                     android:layout_marginRight="10dip" >
 
                     <TextView
-                    android:id="@+id/ggText"
-                    android:text="规      格:"
+                        android:id="@+id/ggText"
                         android:layout_width="100dip"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
                         android:layout_gravity="center_vertical"
-                        android:textColor="@color/red"
+                        android:text="规      格:"
+                        android:textColor="@color/black"
                         android:textSize="18sp" />
 
                     <EditText
@@ -309,77 +232,211 @@
                         android:numColumns="2"
                         android:verticalSpacing="7dp" />
                 </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/holder3"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <RelativeLayout
+                        android:id="@+id/layout_3"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/layout_2"
+                        android:layout_marginBottom="10dip"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginRight="10dip" >
+
+                        <TextView
+                            android:id="@+id/ggText"
+                            android:layout_width="100dip"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="center_vertical"
+                            android:text="规      格:"
+                            android:textColor="@color/black"
+                            android:textSize="18sp" />
+
+                        <EditText
+                            android:id="@+id/ggEdit"
+                            android:layout_width="fill_parent"
+                            android:layout_height="35dip"
+                            android:layout_gravity="left"
+                            android:layout_marginLeft="99dip"
+                            android:layout_marginRight="3dip"
+                            android:background="@drawable/myedit_bg"
+                            android:editable="false"
+                            android:gravity="center_vertical"
+                            android:textSize="13sp" >
+
+                            <requestFocus />
+                        </EditText>
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:id="@+id/hiddenview3"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/layout_00"
+                        android:layout_marginBottom="10dip"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginRight="10dip"
+                        android:background="@drawable/test_01"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical"
+                        android:visibility="gone" >
+
+                        <com.steellogistics.view.NoScrollGridView
+                            android:id="@+id/ggGridView"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dip"
+                            android:horizontalSpacing="7dp"
+                            android:numColumns="2"
+                            android:verticalSpacing="7dp" >
+                        </com.steellogistics.view.NoScrollGridView>
+                    </LinearLayout>
+                </LinearLayout>
             </LinearLayout>
 
-
-            <RelativeLayout
-                android:id="@+id/layout_3"
+            <LinearLayout
+                android:id="@+id/holder4"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/layout_2"
-                android:layout_marginBottom="10dip"
-                android:layout_marginLeft="10dip"
-                android:layout_marginRight="10dip" >
+                android:orientation="vertical" >
 
-                <TextView
-                    android:id="@+id/cdText"
-                    android:layout_width="100dip"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_gravity="center_vertical"
-                    android:text="产      地:"
-                    android:textColor="@color/black"
-                    android:textSize="18sp" />
-
-                <EditText
-                    android:id="@+id/cdEdit"
+                <RelativeLayout
+                    android:id="@+id/layout_3"
                     android:layout_width="fill_parent"
-                    android:layout_height="35dip"
-                    android:layout_gravity="left"
-                    android:layout_marginLeft="99dip"
-                    android:layout_marginRight="3dip"
-                    android:background="@drawable/myedit_bg"
-                    android:entries="@array/gcChandi"
-                    android:gravity="center_vertical" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/layout_4"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/layout_3"
-                android:layout_marginBottom="10dip"
-                android:layout_marginLeft="10dip"
-                android:layout_marginRight="10dip" >
-
-                <TextView
-                    android:id="@+id/slText"
-                    android:layout_width="100dip"
                     android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="数      量:"
-                    android:textColor="@color/black"
-                    android:textSize="18sp" />
+                    android:layout_below="@+id/layout_2"
+                    android:layout_marginBottom="10dip"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginRight="10dip" >
 
-                <EditText
-                    android:id="@+id/slEdit"
+                    <TextView
+                        android:id="@+id/cdText"
+                        android:layout_width="100dip"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center_vertical"
+                        android:text="产      地:"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/cdEdit"
+                        android:layout_width="fill_parent"
+                        android:layout_height="35dip"
+                        android:layout_gravity="left"
+                        android:layout_marginLeft="99dip"
+                        android:layout_marginRight="3dip"
+                        android:background="@drawable/myedit_bg"
+                        android:editable="false"
+                        android:gravity="center_vertical"
+                        android:textSize="13sp" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/hiddenview4"
                     android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="97dip"
-                    android:layout_marginRight="100dip"
-                    android:background="@drawable/myedit_bg"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/layout_00"
+                    android:layout_marginBottom="10dip"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginRight="10dip"
+                    android:background="@drawable/test_01"
                     android:gravity="center_vertical"
-                    android:inputType="number" />
+                    android:orientation="vertical"
+                    android:visibility="gone" >
 
-                <Spinner
-                    android:id="@+id/slSpinner"
-                    android:layout_width="90dip"
-                    android:layout_height="45dip"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:entries="@array/gcShuliang" />
-            </RelativeLayout>
+                    <com.steellogistics.view.NoScrollGridView
+                        android:id="@+id/cdGridView"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dip"
+                        android:horizontalSpacing="7dp"
+                        android:numColumns="3"
+                        android:verticalSpacing="7dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/holder5"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <RelativeLayout
+                    android:id="@+id/layout_3"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/layout_2"
+                    android:layout_marginBottom="10dip"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginRight="10dip" >
+
+                    <TextView
+                        android:id="@+id/slText"
+                        android:layout_width="100dip"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center_vertical"
+                        android:text="数      量:"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/slEdit"
+                        android:layout_width="fill_parent"
+                        android:layout_height="35dip"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="left"
+                        android:layout_marginLeft="99dip"
+                        android:layout_marginRight="40dip"
+                        android:background="@drawable/myedit_bg"
+                        android:editable="false"
+                        android:gravity="center_vertical"
+                        android:inputType="number"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/sldwEdit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="45dip"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginLeft="97dip"
+                        android:layout_marginRight="15dip"
+                        android:gravity="center_vertical"
+                        android:text="吨"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/hiddenview5"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/layout_00"
+                    android:layout_marginBottom="10dip"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginRight="10dip"
+                    android:background="@drawable/test_01"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical"
+                    android:visibility="gone" >
+
+                    <com.steellogistics.view.NoScrollGridView
+                        android:id="@+id/slGridView"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dip"
+                        android:horizontalSpacing="7dp"
+                        android:numColumns="3"
+                        android:verticalSpacing="7dp" />
+                </LinearLayout>
+            </LinearLayout>
 
             <RelativeLayout
                 android:id="@+id/layout_5"
@@ -422,63 +479,135 @@
                     android:textSize="18sp" />
             </RelativeLayout>
 
-            <RelativeLayout
-                android:id="@+id/layout_6"
+            <LinearLayout
+                android:id="@+id/holder6"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/layout_5"
-                android:layout_marginBottom="10dip"
-                android:layout_marginLeft="10dip"
-                android:layout_marginRight="10dip" >
+                android:orientation="vertical" >
 
-                <TextView
-                    android:id="@+id/gbText"
-                    android:layout_width="100dip"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="国      标:"
-                    android:textColor="@color/black"
-                    android:textSize="18sp" />
-
-                <Spinner
-                    android:id="@+id/gbSpinner"
+                <RelativeLayout
+                    android:id="@+id/layout_3"
                     android:layout_width="fill_parent"
-                    android:layout_height="45dip"
-                    android:layout_marginLeft="97dip"
-                    android:entries="@array/isGuobiao" />
-            </RelativeLayout>
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/layout_2"
+                    android:layout_marginBottom="10dip"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginRight="10dip" >
 
-            <RelativeLayout
-                android:id="@+id/layout_66"
+                    <TextView
+                        android:id="@+id/gbText"
+                        android:layout_width="100dip"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center_vertical"
+                        android:text="国      标:"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/gbEdit"
+                        android:layout_width="fill_parent"
+                        android:layout_height="35dip"
+                        android:layout_gravity="left"
+                        android:layout_marginLeft="99dip"
+                        android:layout_marginRight="3dip"
+                        android:background="@drawable/myedit_bg"
+                        android:editable="false"
+                        android:gravity="center_vertical"
+                        android:textSize="13sp" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/hiddenview6"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/layout_00"
+                    android:layout_marginBottom="10dip"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginRight="10dip"
+                    android:background="@drawable/test_01"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical"
+                    android:visibility="gone" >
+
+                    <com.steellogistics.view.NoScrollGridView
+                        android:id="@+id/gbGridView"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dip"
+                        android:horizontalSpacing="7dp"
+                        android:numColumns="2"
+                        android:verticalSpacing="7dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/holder7"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/layout_6"
-                android:layout_marginBottom="10dip"
-                android:layout_marginLeft="10dip"
-                android:layout_marginRight="10dip" >
+                android:orientation="vertical" >
 
-                <TextView
-                    android:id="@+id/jyfsText"
-                    android:layout_width="100dip"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="交易方式:"
-                    android:textColor="@color/black"
-                    android:textSize="18sp" />
-
-                <Spinner
-                    android:id="@+id/jyfsSpinner"
+                <RelativeLayout
+                    android:id="@+id/layout_3"
                     android:layout_width="fill_parent"
-                    android:layout_height="45dip"
-                    android:layout_marginLeft="97dip"
-                    android:entries="@array/jyfs" />
-            </RelativeLayout>
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/layout_2"
+                    android:layout_marginBottom="10dip"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginRight="10dip" >
+
+                    <TextView
+                        android:id="@+id/jyfsText"
+                        android:layout_width="100dip"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center_vertical"
+                        android:text="交易方式:"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/jyfsEdit"
+                        android:layout_width="fill_parent"
+                        android:layout_height="35dip"
+                        android:layout_gravity="left"
+                        android:layout_marginLeft="99dip"
+                        android:layout_marginRight="3dip"
+                        android:background="@drawable/myedit_bg"
+                        android:editable="false"
+                        android:gravity="center_vertical"
+                        android:textSize="13sp" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/hiddenview7"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/layout_00"
+                    android:layout_marginBottom="10dip"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginRight="10dip"
+                    android:background="@drawable/test_01"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical"
+                    android:visibility="gone" >
+
+                    <com.steellogistics.view.NoScrollGridView
+                        android:id="@+id/jyfsGridView"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dip"
+                        android:horizontalSpacing="7dp"
+                        android:numColumns="2"
+                        android:verticalSpacing="7dp" />
+                </LinearLayout>
+            </LinearLayout>
 
             <RelativeLayout
                 android:id="@+id/layout_7"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/layout_66"
+                android:layout_below="@+id/layout_05"
                 android:layout_marginBottom="10dip"
                 android:layout_marginLeft="10dip"
                 android:layout_marginRight="10dip" >
@@ -496,7 +625,7 @@
                 <EditText
                     android:id="@+id/bcnrEdit"
                     android:layout_width="fill_parent"
-                    android:layout_height="70dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="97dip"
                     android:background="@drawable/myedit_bg"
                     android:gravity="center_vertical"
