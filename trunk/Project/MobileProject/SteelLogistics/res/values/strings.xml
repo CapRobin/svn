@@ -195,7 +195,6 @@
         <item>根</item>
         <item>米</item>
         <item>公斤</item>
-        <item>公斤</item>
     </string-array>
     <!-- 是否国标 -->
     <string-array name="isGuobiao">
@@ -206,6 +205,18 @@
     <string-array name="jyfs">
         <item>线下交易</item>
         <item>线上交易</item>
+    </string-array>
+    <!-- 钢材产地 -->
+    <string-array name="gccd">
+        <item>产地01</item>
+        <item>产地02</item>
+        <item>产地03</item>
+        <item>产地04</item>
+        <item>产地05</item>
+        <item>产地06</item>
+        <item>产地07</item>
+        <item>产地08</item>
+        <item>产地09</item>
     </string-array>
 
 </resources>

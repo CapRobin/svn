@@ -260,9 +260,27 @@
                     android:background="@drawable/myedit_bg"
                     android:gravity="center_vertical"
                     android:hint="请输入补充内容"
-                    android:textColor="@color/gray_light"
                     android:textSize="13sp" />
             </RelativeLayout>
+
+<!--             <Button -->
+<!--                 android:id="@+id/publishBuyBtn" -->
+<!--                 android:layout_width="fill_parent" -->
+<!--                 android:layout_height="wrap_content" -->
+<!--                 android:layout_below="@+id/layout_06" -->
+<!--                 android:layout_marginLeft="20dip" -->
+<!--                 android:layout_marginRight="20dip" -->
+<!--                 android:layout_marginTop="30dip" -->
+<!--                 android:background="@drawable/exist_selector" -->
+<!--                 android:padding="2dip" -->
+<!--                 android:text="发    布" -->
+<!--                 android:textSize="20sp" /> -->
+
+<!--             <RelativeLayout -->
+<!--                 android:layout_width="fill_parent" -->
+<!--                 android:layout_height="1dip" -->
+<!--                 android:layout_below="@+id/addinfoBtn" -->
+<!--                 android:layout_marginTop="25dip" > -->
 
             <Button
                 android:id="@+id/publishBuyBtn"
@@ -280,7 +298,7 @@
             <RelativeLayout
                 android:layout_width="fill_parent"
                 android:layout_height="1dip"
-                android:layout_below="@+id/addinfoBtn"
+                android:layout_below="@+id/publishBuyBtn"
                 android:layout_marginTop="25dip" >
             </RelativeLayout>
         </RelativeLayout>
