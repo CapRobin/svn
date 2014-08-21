@@ -165,11 +165,14 @@ public class SupplyInfoListActivity extends BaseActivity {
 
 		// 构造数据
 		List<SupplyInfoDetail> supplyInfoDetailList = application.supplyInfoList;
+
 		try {
 			SupplyInfo getSupplyInfo = null;
 			GsonBuilder builder = new GsonBuilder();
 			Gson gson = builder.create();
 			if (supplyInfoDetailList != null && supplyInfoDetailList.size() > 0) { // Application中获取数据数据
+				String getSupplyList = gson.toJson(supplyInfoDetailList);
+				System.out.println("Get getSupplyList is -------->>"+getSupplyList);
 				String objectItem = gson.toJson(supplyInfoDetailList);
 				JSONArray array = new JSONArray(objectItem);
 				for (int i = 0; i < array.length(); i++) {
