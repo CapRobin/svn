@@ -11,6 +11,7 @@ import java.util.regex.Pattern;
 
 import org.xmlpull.v1.XmlPullParser;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
@@ -19,8 +20,10 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.util.Log;
 import android.util.Xml;
+import android.view.inputmethod.InputMethodManager;
 
 import com.steellogistics.R;
+import com.steellogistics.activity.PublishSupplyActivity;
 
 /**
  * 
@@ -412,6 +415,24 @@ public class MethodUtil {
 		// nameEditText.setText(name);
 		// ageEditText.setText(String.valueOf(age));
 		return userinfo;
+	}
+	
+	/**
+	 * 
+	 * @Describe：关闭输入法
+	 * @Throws:
+	 * @Date：2014年8月20日 上午11:58:30
+	 * @Version v1.0
+	 */
+	public static void closeInputMethod(Activity activity) {
+		InputMethodManager imm = (InputMethodManager) activity.getSystemService(Context.INPUT_METHOD_SERVICE);
+		boolean isOpen = imm.isActive();
+
+		// isOpen若返回true，则表示输入法打开
+		if (isOpen) {
+			imm.hideSoftInputFromWindow(activity.getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+		}
+
 	}
 
 }

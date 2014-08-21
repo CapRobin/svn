@@ -151,7 +151,8 @@ public class PersonalCenterActivity extends BaseActivity {
 		// 保存个人信息到本地
 		// setData(getUserInfo);
 		MethodUtil.setSharedPreferences(this, "AppData", "userinfo", getUserInfo);
-		// application.userInfo = userInfo;
+		// 保存数据到全局
+		application.userInfo = userInfo;
 		finish();
 		Toast.makeText(PersonalCenterActivity.this, "修改个人信息成功", 50).show();
 	}

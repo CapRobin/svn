@@ -3,13 +3,20 @@ package com.steellogistics.activity;
 import android.app.TabActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.widget.ImageView;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 import android.widget.RadioGroup.OnCheckedChangeListener;
 import android.widget.RelativeLayout;
 import android.widget.TabHost;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.steellogistics.R;
+import com.steellogistics.entity.UserInfo;
+import com.steellogistics.global.MyApplication;
+import com.steellogistics.util.MethodUtil;
 import com.steellogistics.view.MoveBg;
 
 /**
@@ -29,12 +36,13 @@ public class MainActivity_x extends TabActivity {
 	private RelativeLayout bottom_layout;
 	private ImageView img;
 	private int startLeft;
+	private MyApplication application = null;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
-
+		application = (MyApplication) getApplication();
 		bottom_layout = (RelativeLayout) findViewById(R.id.layout_bottom);
 
 		tabHost = getTabHost();
@@ -50,6 +58,17 @@ public class MainActivity_x extends TabActivity {
 		img = new ImageView(this);
 		img.setImageResource(R.drawable.tab_front_bg);
 		bottom_layout.addView(img);
+		
+		// 获取本地构造数据
+		String getInfo = MethodUtil.getSharedPreferences(this, "AppData", "userinfo");
+
+		if (!TextUtils.isEmpty(getInfo)) {
+			GsonBuilder builder = new GsonBuilder();
+			Gson gson = builder.create();
+			application.userInfo = gson.fromJson(getInfo, UserInfo.class);
+			}else {
+				Toast.makeText(MainActivity_x.this, "获取个人信息失败", Toast.LENGTH_SHORT).show();
+			}
 	}
 
 	private OnCheckedChangeListener checkedChangeListener = new OnCheckedChangeListener() {
