@@ -47,8 +47,8 @@ public class MainActivity_x extends TabActivity {
 
 		tabHost = getTabHost();
 		tabHost.addTab(tabHost.newTabSpec("news").setIndicator("News").setContent(new Intent(this, SupplyInfoListActivity.class)));
-		tabHost.addTab(tabHost.newTabSpec("topic").setIndicator("Topic").setContent(new Intent(this, BuyInfoListActivity.class)));
-		tabHost.addTab(tabHost.newTabSpec("picture").setIndicator("Picture").setContent(new Intent(this, GongQiuActivity.class)));
+		tabHost.addTab(tabHost.newTabSpec("topic").setIndicator("Topic").setContent(new Intent(this, GongQiuActivity.class)));
+		tabHost.addTab(tabHost.newTabSpec("picture").setIndicator("Picture").setContent(new Intent(this, PublishActivity.class)));
 		tabHost.addTab(tabHost.newTabSpec("follow").setIndicator("Follow").setContent(new Intent(this, RelevantInfoActivity.class)));
 		tabHost.addTab(tabHost.newTabSpec("vote").setIndicator("Vote").setContent(new Intent(this, MoreActivity.class)));
 

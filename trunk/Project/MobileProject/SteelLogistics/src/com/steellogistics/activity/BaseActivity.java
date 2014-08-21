@@ -1,6 +1,7 @@
 package com.steellogistics.activity;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.view.ViewPager.LayoutParams;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -9,6 +10,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.ab.activity.AbActivity;
 import com.steellogistics.R;
@@ -32,7 +34,23 @@ public class BaseActivity extends AbActivity {
 	public RelativeLayout contentLayout, titleLayout = null;
 	public LinearLayout.LayoutParams layoutParamsFF = null;
 	public MyApplication application = null;
-
+	public Handler handler = new Handler(){
+		public void handleMessage(android.os.Message msg) {
+			switch (msg.what) {
+			case 0:
+				Toast.makeText(BaseActivity.this, "提示数据", 5).show();
+				break;
+			case 1:
+				
+				break;
+			case 2:
+				
+				break;
+			}
+		};
+	};
+	
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
