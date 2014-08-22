@@ -3,6 +3,10 @@ package com.steellogistics.activity;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -25,6 +29,7 @@ import com.actionbarsherlock.internal.nineoldandroids.animation.Animator;
 import com.actionbarsherlock.internal.nineoldandroids.animation.AnimatorListenerAdapter;
 import com.actionbarsherlock.internal.nineoldandroids.animation.ValueAnimator;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.steellogistics.R;
 import com.steellogistics.adapter.MyLocationAdapter;
 import com.steellogistics.entity.SupplyInfoDetail;
@@ -41,12 +46,13 @@ import com.steellogistics.view.NoScrollGridView;
  * @Date：2014年7月22日 上午11:08:10
  * @Version v1.0
  */
-public class PublishSupplyActivity extends BaseActivity implements OnClickListener, OnTouchListener {
+public class PublishSupplyActivity extends BaseActivity implements OnTouchListener {
 	private boolean isShowLeftBut = true;
 	private boolean isShowRightBut = false;
 	private String titlebarName = "发布供货";
 	private String[] mItems = { "供货信息", "求购信息" };
 	private Button publishSupplyBtn = null;
+	public List<SupplyInfoDetail> supplyListInfo = new ArrayList<SupplyInfoDetail>();
 
 	private EditText btEdit = null;
 	private EditText jgEdit = null;
@@ -172,7 +178,6 @@ public class PublishSupplyActivity extends BaseActivity implements OnClickListen
 		gcPinming_05 = this.getResources().getStringArray(R.array.gcPinming_05);
 		gcPinming_06 = this.getResources().getStringArray(R.array.gcPinming_06);
 		gcPinming_07 = this.getResources().getStringArray(R.array.gcPinming_07);
-		publishSupplyBtn.setOnClickListener(this);
 
 		// 设置隐藏GridView数据
 		setGridViewData();
@@ -184,7 +189,21 @@ public class PublishSupplyActivity extends BaseActivity implements OnClickListen
 		sldwEdit.setOnTouchListener(this);
 		gbEdit.setOnTouchListener(this);
 		jyfsEdit.setOnTouchListener(this);
+		publishSupplyBtn.setOnClickListener(new OnClickListener() {
 
+			@Override
+			public void onClick(View v) {
+				if (application.isLogin) {
+					if (baseUserInfo != null) {
+						submitPublishInfo();
+					}else {
+						showToast("请完善个人信息");
+					}
+				} else {
+					startActivity(new Intent(PublishSupplyActivity.this, LoginActivity.class));
+				}
+			}
+		});
 	};
 
 	/**
@@ -423,99 +442,124 @@ public class PublishSupplyActivity extends BaseActivity implements OnClickListen
 		pmEdit.setText(gcPinming[0]);
 	}
 
-	@Override
-	public void onClick(View v) {
-		switch (v.getId()) {
-		case R.id.publishSupplyBtn:
-
-			String btEditStr = btEdit.getText().toString();
-			String cdEditStr = cdEdit.getText().toString();
-			String slEditStr = slEdit.getText().toString();
-			String jgEditStr = jgEdit.getText().toString();
-			String bcnrEditStr = bcnrEdit.getText().toString();
-			String jyfwEditStr = "所有钢材";
-			// String dealType = "线下交易";
-			// 输入标题验证
-			if (TextUtils.isEmpty(btEditStr)) {
-				btEdit.setError("请输入标题");
-				btEdit.setFocusable(true);
-				btEdit.setFocusableInTouchMode(true);
-				btEdit.requestFocus();
-				return;
-			}
-			// 输入产地验证
-			if (TextUtils.isEmpty(cdEditStr)) {
-				cdEdit.setError("请输入产地");
-				cdEdit.setFocusable(true);
-				cdEdit.setFocusableInTouchMode(true);
-				cdEdit.requestFocus();
-				return;
-			}
-			// 输入数量验证
-			if (TextUtils.isEmpty(slEditStr)) {
-				slEdit.setError("请输入数量");
-				slEdit.setFocusable(true);
-				slEdit.setFocusableInTouchMode(true);
-				slEdit.requestFocus();
-				return;
-			}
-			// 输入价格验证
-			if (TextUtils.isEmpty(jgEditStr)) {
-				jgEdit.setError("请输入价格");
-				jgEdit.setFocusable(true);
-				jgEdit.setFocusableInTouchMode(true);
-				jgEdit.requestFocus();
-				return;
-			}
-
-			String lbSpinnerStr = lbEdit.getText().toString();
-			String pmSpinnerStr = pmEdit.getText().toString();
-			String ggSpinnerStr = ggEdit.getText().toString();
-			String slSpinnerStr = slEdit.getText().toString();
-			String gbSpinnerStr = gbEdit.getText().toString();
-			String jyfsSpinnerStr = jyfsEdit.getText().toString();
-
-			String companyName = application.userInfo.getRealName();
-			int userId = application.userInfo.getId();
-			String mobile = application.userInfo.getMobile();
-			String email = application.userInfo.getEmail();
-			String contacts = application.userInfo.getRealName();
-
-			SupplyInfoDetail supplyInfoDetail = new SupplyInfoDetail();
-			supplyInfoDetail.setId(01);
-			supplyInfoDetail.setTitleName(btEditStr);
-			supplyInfoDetail.setImageUrl("http://pic4.jiancai.com/2013/04/19/20130419010145823.jpg");
-			supplyInfoDetail.setSellScope(jyfwEditStr);
-			supplyInfoDetail.setPrice(jgEditStr);
-			supplyInfoDetail.setProductName(pmSpinnerStr);
-			supplyInfoDetail.setOtherInfo(bcnrEditStr);
-			supplyInfoDetail.setUserRealName(companyName);
-			supplyInfoDetail.setUserAddress(cdEditStr);
-			supplyInfoDetail.setContactNumber(mobile);
-			supplyInfoDetail.setCreatTime("2014_07_30");
-
-			supplyInfoDetail.setType(lbSpinnerStr);
-			supplyInfoDetail.setSpecification(ggSpinnerStr);
-			supplyInfoDetail.setMakeAddress(cdEditStr);
-			supplyInfoDetail.setAmount(slEditStr + slSpinnerStr);
-			supplyInfoDetail.setIsGb(gbSpinnerStr);
-			supplyInfoDetail.setContacts(contacts);
-			supplyInfoDetail.setEmail(email);
-			supplyInfoDetail.setDealType(jyfsSpinnerStr);
-
-			publicJk(userId, supplyInfoDetail);
-			break;
+	/**
+	 * 
+	 * @Describe：发布供货信息
+	 * @Throws:
+	 * @Date：2014年8月22日 上午9:38:53
+	 * @Version v1.0
+	 */
+	private void submitPublishInfo() {
+		String btEditStr = btEdit.getText().toString();
+		String cdEditStr = cdEdit.getText().toString();
+		String slEditStr = slEdit.getText().toString();
+		String jgEditStr = jgEdit.getText().toString();
+		String bcnrEditStr = bcnrEdit.getText().toString();
+		String jyfwEditStr = "所有钢材";
+		// String dealType = "线下交易";
+		// 输入标题验证
+		if (TextUtils.isEmpty(btEditStr)) {
+			btEdit.setError("请输入标题");
+			btEdit.setFocusable(true);
+			btEdit.setFocusableInTouchMode(true);
+			btEdit.requestFocus();
+			return;
 		}
+		// 输入产地验证
+		if (TextUtils.isEmpty(cdEditStr)) {
+			cdEdit.setError("请输入产地");
+			cdEdit.setFocusable(true);
+			cdEdit.setFocusableInTouchMode(true);
+			cdEdit.requestFocus();
+			return;
+		}
+		// 输入数量验证
+		if (TextUtils.isEmpty(slEditStr)) {
+			slEdit.setError("请输入数量");
+			slEdit.setFocusable(true);
+			slEdit.setFocusableInTouchMode(true);
+			slEdit.requestFocus();
+			return;
+		}
+		// 输入价格验证
+		if (TextUtils.isEmpty(jgEditStr)) {
+			jgEdit.setError("请输入价格");
+			jgEdit.setFocusable(true);
+			jgEdit.setFocusableInTouchMode(true);
+			jgEdit.requestFocus();
+			return;
+		}
+
+		String lbSpinnerStr = lbEdit.getText().toString();
+		String pmSpinnerStr = pmEdit.getText().toString();
+		String ggSpinnerStr = ggEdit.getText().toString();
+		String slSpinnerStr = slEdit.getText().toString();
+		String gbSpinnerStr = gbEdit.getText().toString();
+		String jyfsSpinnerStr = jyfsEdit.getText().toString();
+
+		String companyName = application.userInfo.getRealName();
+		int userId = application.userInfo.getId();
+		String mobile = application.userInfo.getMobile();
+		String email = application.userInfo.getEmail();
+		String contacts = application.userInfo.getRealName();
+
+		SupplyInfoDetail supplyInfoDetail = new SupplyInfoDetail();
+		supplyInfoDetail.setId(01);
+		supplyInfoDetail.setTitleName(btEditStr);
+		supplyInfoDetail.setImageUrl("http://pic4.jiancai.com/2013/04/19/20130419010145823.jpg");
+		supplyInfoDetail.setSellScope(jyfwEditStr);
+		supplyInfoDetail.setPrice(jgEditStr);
+		supplyInfoDetail.setProductName(pmSpinnerStr);
+		supplyInfoDetail.setOtherInfo(bcnrEditStr);
+		supplyInfoDetail.setUserRealName(companyName);
+		supplyInfoDetail.setUserAddress(cdEditStr);
+		supplyInfoDetail.setContactNumber(mobile);
+		supplyInfoDetail.setCreatTime(dateFormat.format(new   java.util.Date()));
+
+		supplyInfoDetail.setType(lbSpinnerStr);
+		supplyInfoDetail.setSpecification(ggSpinnerStr);
+		supplyInfoDetail.setMakeAddress(cdEditStr);
+		supplyInfoDetail.setAmount(slEditStr + slSpinnerStr);
+		supplyInfoDetail.setIsGb(gbSpinnerStr);
+		supplyInfoDetail.setContacts(contacts);
+		supplyInfoDetail.setEmail(email);
+		supplyInfoDetail.setDealType(jyfsSpinnerStr);
+
+		saveSupplyInfo(userId, supplyInfoDetail);
+		application.isPublishSupply = true;
+		finish();
 	}
 
-	// 模拟调用接口
-	private void publicJk(int userId, SupplyInfoDetail supplyInfo) {
-		application.supplyInfoList.add(supplyInfo);
-
-		// supplyInfoDetail对象打包成Json字符串
-		Gson gson = new Gson();
-		String getSupplyInfoStr = gson.toJson(supplyInfo);
-		System.out.println("getSupplyInfoStr is ----------->>" + getSupplyInfoStr);
+	/**
+	 * 
+	 * @Describe：存储数据到本地
+	 * @param userId
+	 * @param supplyInfo
+	 * @Throws:
+	 * @Date：2014年8月22日 上午10:14:45
+	 * @Version v1.0
+	 */
+	private void saveSupplyInfo(int userId, SupplyInfoDetail supplyInfo) {
+		GsonBuilder builder = new GsonBuilder();
+		Gson gson = builder.create();
+		SupplyInfoDetail supplyinfodetail = null;
+		try { // 获取本地构造数据
+			String getInfo = MethodUtil.getSharedPreferences(this, "AppData", "supplyInfo");
+			if (!TextUtils.isEmpty(getInfo)) {
+				JSONArray array = new JSONArray(getInfo);
+				for (int i = 0; i < array.length(); i++) {
+					JSONObject item = array.getJSONObject(i);
+					supplyinfodetail = gson.fromJson(item.toString(), SupplyInfoDetail.class);
+					supplyListInfo.add(supplyinfodetail);
+				}
+			}
+			supplyListInfo.add(supplyInfo);
+			String supplyInfoStr = gson.toJson(supplyListInfo);
+			MethodUtil.setSharedPreferences(this, "AppData", "supplyInfo", supplyInfoStr);
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
+		application.supplyInfoList = supplyListInfo;
 		Toast.makeText(PublishSupplyActivity.this, "发布供货信息成功", 5).show();
 	}
 

@@ -6,6 +6,10 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -23,7 +27,8 @@ import android.util.Xml;
 import android.view.inputmethod.InputMethodManager;
 
 import com.steellogistics.R;
-import com.steellogistics.activity.PublishSupplyActivity;
+import com.steellogistics.entity.BuyInfo;
+import com.steellogistics.entity.SupplyInfo;
 
 /**
  * 
@@ -435,4 +440,135 @@ public class MethodUtil {
 
 	}
 
+	/**
+	 * 描述：DoctorAnswerInfo排序
+	 * @param list
+	 * @param format
+	 * @return
+	 * @throws 
+	 * @date：2012-8-16 下午1:51:28
+	 * @version v1.0
+	 */
+//	public static List<BuyInfo> docSortList(List<BuyInfo> list, String format) {
+//
+////		List<BuyInfo> mBuyInfoInfoList
+//		
+//		BuyInfo aq_1 = new BuyInfo();
+//		BuyInfo aq_2 = new BuyInfo();
+//
+//		String first, second;
+//		Date firstDate, secondDate;
+//		int size = list.size();
+//		if (list != null) {
+//			for (int i = 0; i < size; i++) {
+//				for (int j = 0; j < size - 1; j++) {
+//					aq_1 = list.get(j);
+//					aq_2 = list.get(j + 1);
+//
+//					first = aq_1.getCreatTime();
+//					second = aq_2.getCreatTime();
+//					firstDate = Date.getDateByFormat(first, format);
+//					secondDate = DateUtil.getDateByFormat(second, format);
+//
+//					if (secondDate.after(firstDate)) {
+//						list.set(j, aq_2);
+//						list.set(j + 1, aq_1);
+//					}
+//				}
+//			}
+//		}
+//
+//		return list;
+//	}
+	
+	
+	/**
+	 * 描述：按照发布求购信息时间排序
+	 * @param list
+	 * @param format
+	 * @return
+	 * @throws 
+	 * @date：2013-3-11 下午3:18:39
+	 * @version v1.0
+	 */
+	public static List<BuyInfo> sortBuyList(List<BuyInfo> list, String format) {
+
+		BuyInfo aq_1 = new BuyInfo();
+		BuyInfo aq_2 = new BuyInfo();
+		String first, second;
+		Date firstDate, secondDate;
+		int size = list.size();
+		if (list != null) {
+			for (int i = 0; i < size; i++) {
+				for (int j = 0; j < size - 1; j++) {
+					aq_1 = list.get(j);
+					aq_2 = list.get(j + 1);
+					first = aq_1.getCreatTime();
+					second = aq_2.getCreatTime();
+					firstDate = getDateByFormat(first, format);
+					secondDate = getDateByFormat(second, format);
+					
+					if (secondDate.after(firstDate)) {
+						
+						list.set(j + 1, aq_1);
+						list.set(j, aq_2);
+					}
+				}
+			}
+		}
+		return list;
+	}
+	
+
+	/**
+	 * 描述：按照发布求购信息时间排序
+	 * @param list
+	 * @param format
+	 * @return
+	 * @throws 
+	 * @date：2013-3-11 下午3:18:39
+	 * @version v1.0
+	 */
+	public static List<SupplyInfo> sortSupplyList(List<SupplyInfo> list, String format) {
+
+		SupplyInfo aq_1 = new SupplyInfo();
+		SupplyInfo aq_2 = new SupplyInfo();
+		String first, second;
+		Date firstDate, secondDate;
+		int size = list.size();
+		if (list != null) {
+			for (int i = 0; i < size; i++) {
+				for (int j = 0; j < size - 1; j++) {
+					aq_1 = list.get(j);
+					aq_2 = list.get(j + 1);
+					first = aq_1.getCreatTime();
+					second = aq_2.getCreatTime();
+					firstDate = getDateByFormat(first, format);
+					secondDate = getDateByFormat(second, format);
+					
+					if (secondDate.after(firstDate)) {
+						list.set(j + 1, aq_1);
+						list.set(j, aq_2);
+					}
+				}
+			}
+		}
+		return list;
+	}
+	
+	/**
+	 * String转Date
+	 * @param strDate  String
+	 * @param format  "yyyy-MM-dd"
+	 * @return
+	 */
+	public static Date getDateByFormat(String strDate, String format) {
+		SimpleDateFormat sdf = new SimpleDateFormat(format);
+		try {
+			return (sdf.parse(strDate));
+		} catch (ParseException e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
 }

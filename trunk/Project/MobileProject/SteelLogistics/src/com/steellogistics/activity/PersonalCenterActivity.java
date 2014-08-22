@@ -145,6 +145,7 @@ public class PersonalCenterActivity extends BaseActivity {
 		userInfo.setAddress(addressEdit.getText().toString());
 		userInfo.setCompanyInfo(otherInfoEdit.getText().toString());
 		Gson gson = new Gson();
+		
 		String getUserInfo = gson.toJson(userInfo);
 		System.out.println("个人信息Json串为----------->>" + getUserInfo);
 
@@ -157,37 +158,37 @@ public class PersonalCenterActivity extends BaseActivity {
 		Toast.makeText(PersonalCenterActivity.this, "修改个人信息成功", 50).show();
 	}
 
-	/**
-	 * 
-	 * @Describe：保存数据
-	 * @Throws:
-	 * @Date：2014年8月14日 下午4:15:50
-	 * @Version v1.0
-	 */
-	private void setData(String savaString) {
-		SharedPreferences sharedPreferences = getSharedPreferences("AppData", Context.MODE_WORLD_READABLE);
-		Editor editor = sharedPreferences.edit();
-		editor.putString("userinfo", savaString);
-		// editor.putInt("age", new Integer(ageEditText.getText().toString()));
-		editor.commit();
-		Toast.makeText(PersonalCenterActivity.this, "UserInfo Sava is Successed ！", Toast.LENGTH_LONG).show();
-	}
-
-	/**
-	 * 
-	 * @Describe：获取数据
-	 * @Throws:
-	 * @Date：2014年8月14日 下午4:15:50
-	 * @Version v1.0
-	 */
-	private String getData() {
-
-		SharedPreferences sharedPreferences = this.getSharedPreferences("AppData", Context.MODE_PRIVATE);
-		String userinfo = sharedPreferences.getString("userinfo", "");
-		// int age = sharedPreferences.getInt("age", 20);
-		// nameEditText.setText(name);
-		// ageEditText.setText(String.valueOf(age));
-		return userinfo;
-
-	}
+//	/**
+//	 * 
+//	 * @Describe：保存数据
+//	 * @Throws:
+//	 * @Date：2014年8月14日 下午4:15:50
+//	 * @Version v1.0
+//	 */
+//	private void setData(String savaString) {
+//		SharedPreferences sharedPreferences = getSharedPreferences("AppData", Context.MODE_WORLD_READABLE);
+//		Editor editor = sharedPreferences.edit();
+//		editor.putString("userinfo", savaString);
+//		// editor.putInt("age", new Integer(ageEditText.getText().toString()));
+//		editor.commit();
+//		Toast.makeText(PersonalCenterActivity.this, "UserInfo Sava is Successed ！", Toast.LENGTH_LONG).show();
+//	}
+//
+//	/**
+//	 * 
+//	 * @Describe：获取数据
+//	 * @Throws:
+//	 * @Date：2014年8月14日 下午4:15:50
+//	 * @Version v1.0
+//	 */
+//	private String getData() {
+//
+//		SharedPreferences sharedPreferences = this.getSharedPreferences("AppData", Context.MODE_PRIVATE);
+//		String userinfo = sharedPreferences.getString("userinfo", "");
+//		// int age = sharedPreferences.getInt("age", 20);
+//		// nameEditText.setText(name);
+//		// ageEditText.setText(String.valueOf(age));
+//		return userinfo;
+//
+//	}
 }

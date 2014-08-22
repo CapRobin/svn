@@ -1,5 +1,7 @@
 package com.steellogistics.activity;
 
+import java.text.SimpleDateFormat;
+
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
 import android.os.Bundle;
@@ -17,6 +19,7 @@ import android.widget.Toast;
 
 import com.ab.activity.AbActivity;
 import com.steellogistics.R;
+import com.steellogistics.entity.UserInfo;
 import com.steellogistics.global.MyApplication;
 
 /**
@@ -32,29 +35,31 @@ import com.steellogistics.global.MyApplication;
  */
 public class BaseActivity extends AbActivity {
 	public Button titleLeftBut, titleRightBut;
+	public SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd   hh:mm:ss");
+	public String formatStr = "yyyy-MM-dd HH:mm:ss";
 	public TextView titleName = null;
 	private LayoutInflater inflater = null;
 	public RelativeLayout contentLayout, titleLayout = null;
 	public LinearLayout.LayoutParams layoutParamsFF = null;
 	public MyApplication application = null;
 	private AlertDialog dialog;
-	public Handler handler = new Handler(){
+	public UserInfo baseUserInfo = null;
+	public Handler handler = new Handler() {
 		public void handleMessage(android.os.Message msg) {
 			switch (msg.what) {
 			case 0:
 				Toast.makeText(BaseActivity.this, "提示数据", 5).show();
 				break;
 			case 1:
-				
+
 				break;
 			case 2:
-				
+
 				break;
 			}
 		};
 	};
-	
-	
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -67,8 +72,8 @@ public class BaseActivity extends AbActivity {
 		contentLayout = (RelativeLayout) findViewById(R.id.contentLayout);
 		inflater = LayoutInflater.from(this);
 		layoutParamsFF = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
+		baseUserInfo = application.userInfo;
 	}
-
 
 	/**
 	 * 
@@ -107,7 +112,7 @@ public class BaseActivity extends AbActivity {
 		});
 		dialog.show();
 	}
-	
+
 	/**
 	 * 
 	 * @Describe：设置加载内容显示区的View

@@ -26,6 +26,7 @@ public class MyApplication extends Application {
 	public boolean isBoot = false;
 	public boolean isLogin = false;
 	public UserInfo userInfo = null;
+	public boolean isPublishSupply = false;
 	// 构造供货和求购发布数据
 	public List<SupplyInfoDetail> supplyInfoList = new ArrayList<SupplyInfoDetail>();
 	public List<BuyInfoDetail> buyInfoList = new ArrayList<BuyInfoDetail>();
