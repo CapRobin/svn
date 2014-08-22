@@ -24,6 +24,7 @@ public class BuyInfoDetailActivity extends BaseActivity {
 	private boolean isShowRightBut = false;
 	private TextView infoTitleName, infoTime, infoContent;
 	private ImageView infoImage = null;
+	private String getMsg = "求购信息详情";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +43,7 @@ public class BuyInfoDetailActivity extends BaseActivity {
 	 * @Version v1.0
 	 */
 	private void titleBarInitView() {
-		setTitleInfo("信息详情", isShowLeftBut, "返回", isShowRightBut, null);
+		setTitleInfo(getMsg, isShowLeftBut, "返回", isShowRightBut, null);
 		if (isShowLeftBut) {
 			titleLeftBut.setOnClickListener(new OnClickListener() {
 

@@ -202,44 +202,6 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 
 	/**
 	 * 
-	 * 描述：显示提示对话框
-	 * 
-	 * @throws
-	 * @date：2013-11-19 上午10:36:52
-	 * @version v1.0
-	 */
-	private void showMyDialog() {
-		String titleInfo = null;
-		Builder builder = new AlertDialog.Builder(this);
-		dialog = builder.create();
-		View retieve = LayoutInflater.from(this).inflate(R.layout.dialog_show, null);
-		dialog.setView(retieve, 0, 0, 0, 0);
-		Button acceptBtn = (Button) retieve.findViewById(R.id.acceptBtn);
-		Button unAcceptBtn = (Button) retieve.findViewById(R.id.unAcceptBtn);
-		TextView dialogTitleText1 = (TextView) retieve.findViewById(R.id.dialogTitleText1);
-		TextView setMessage = (TextView) retieve.findViewById(R.id.setMessage);
-		dialogTitleText1.setText("温馨提示");
-		setMessage.setText("		你确定要退出程序吗？");
-		acceptBtn.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				finish();
-			}
-		});
-
-		unAcceptBtn.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				dialog.dismiss();
-			}
-		});
-		dialog.show();
-	}
-
-	/**
-	 * 
 	 * @Describe：构造数据
 	 * @Throws:
 	 * @Date：2014年8月1日 下午1:33:36

@@ -46,7 +46,7 @@ public class PublishActivity extends BaseActivity {
 
 				@Override
 				public void onClick(View v) {
-					finish();
+					showMyDialog();
 				}
 			});
 		}

@@ -1,11 +1,14 @@
 package com.steellogistics.activity;
 
+import android.app.AlertDialog;
+import android.app.AlertDialog.Builder;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.view.ViewPager.LayoutParams;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -34,6 +37,7 @@ public class BaseActivity extends AbActivity {
 	public RelativeLayout contentLayout, titleLayout = null;
 	public LinearLayout.LayoutParams layoutParamsFF = null;
 	public MyApplication application = null;
+	private AlertDialog dialog;
 	public Handler handler = new Handler(){
 		public void handleMessage(android.os.Message msg) {
 			switch (msg.what) {
@@ -65,6 +69,45 @@ public class BaseActivity extends AbActivity {
 		layoutParamsFF = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
 	}
 
+
+	/**
+	 * 
+	 * 描述：显示提示对话框
+	 * 
+	 * @throws
+	 * @date：2013-11-19 上午10:36:52
+	 * @version v1.0
+	 */
+	public void showMyDialog() {
+		String titleInfo = null;
+		Builder builder = new AlertDialog.Builder(this);
+		dialog = builder.create();
+		View retieve = LayoutInflater.from(this).inflate(R.layout.dialog_show, null);
+		dialog.setView(retieve, 0, 0, 0, 0);
+		Button acceptBtn = (Button) retieve.findViewById(R.id.acceptBtn);
+		Button unAcceptBtn = (Button) retieve.findViewById(R.id.unAcceptBtn);
+		TextView dialogTitleText1 = (TextView) retieve.findViewById(R.id.dialogTitleText1);
+		TextView setMessage = (TextView) retieve.findViewById(R.id.setMessage);
+		dialogTitleText1.setText("温馨提示");
+		setMessage.setText("		你确定要退出程序吗？");
+		acceptBtn.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				finish();
+			}
+		});
+
+		unAcceptBtn.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				dialog.dismiss();
+			}
+		});
+		dialog.show();
+	}
+	
 	/**
 	 * 
 	 * @Describe：设置加载内容显示区的View

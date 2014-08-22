@@ -25,7 +25,7 @@ public class SupplyInfoDetailActivity extends BaseActivity {
 	private boolean isShowRightBut = false;
 	private TextView infoTitleName, infoTime, infoContent;
 	private ImageView infoImage = null;
-	private String getMsg = "信息详情";
+	private String getMsg = "供货信息详情";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
