@@ -13,4 +13,11 @@
         android:text="搜索信息"
         android:textSize="11sp" />
 
+    <com.steellogistics.view.CheckSwitchButton
+        android:id="@+id/mCheckSwithcButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:enabled="true" />
+
 </RelativeLayout>

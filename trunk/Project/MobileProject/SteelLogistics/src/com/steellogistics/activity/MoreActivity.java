@@ -2,11 +2,10 @@ package com.steellogistics.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.ImageView;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.steellogistics.R;
@@ -21,7 +20,7 @@ import com.steellogistics.R;
  * @Date：2014年7月22日 上午11:14:05
  * @Version v1.0
  */
-public class MoreActivity extends BaseActivity implements OnClickListener{
+public class MoreActivity extends BaseActivity implements OnClickListener {
 	private boolean isShowLeftBut = true;
 	private boolean isShowRightBut = false;
 	private RelativeLayout centerLayout_01, centerLayout_02, centerLayout_03, centerLayout_04, centerLayout_05, centerLayout_06, centerLayout_07, centerLayout_08 = null;
@@ -32,7 +31,7 @@ public class MoreActivity extends BaseActivity implements OnClickListener{
 		setBaseContentView(R.layout.setting_center);
 		titleBarInitView();
 		initView();
-		
+
 	}
 
 	/**
@@ -54,7 +53,7 @@ public class MoreActivity extends BaseActivity implements OnClickListener{
 			});
 		}
 	}
-	
+
 	/**
 	 * 
 	 * 描述：初始化View
@@ -73,24 +72,25 @@ public class MoreActivity extends BaseActivity implements OnClickListener{
 		centerLayout_06 = (RelativeLayout) findViewById(R.id.centerLayout_06);
 		centerLayout_07 = (RelativeLayout) findViewById(R.id.centerLayout_07);
 		centerLayout_08 = (RelativeLayout) findViewById(R.id.centerLayout_08);
-		
+
 		centerLayout_01.setOnClickListener(this);
 		centerLayout_02.setOnClickListener(this);
 		centerLayout_03.setOnClickListener(this);
 		centerLayout_04.setOnClickListener(this);
-		
+
 		centerLayout_05.setOnClickListener(this);
 		centerLayout_06.setOnClickListener(this);
 		centerLayout_07.setOnClickListener(this);
 		centerLayout_08.setOnClickListener(this);
-		
-		}
+
+	}
 
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.centerLayout_01:
-//			startActivity(new Intent(MoreActivity.this, PersonalCenterActivity.class));
+			// startActivity(new Intent(MoreActivity.this,
+			// PersonalCenterActivity.class));
 			if (application.isLogin) {
 				startActivity(new Intent(MoreActivity.this, PersonalCenterActivity.class));
 			} else {
@@ -120,5 +120,12 @@ public class MoreActivity extends BaseActivity implements OnClickListener{
 			break;
 		}
 	}
-	
+
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+		if (keyCode == KeyEvent.KEYCODE_BACK) {
+			showMyDialog();
+		}
+		return super.onKeyDown(keyCode, event);
+	}
 }
