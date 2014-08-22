@@ -3,8 +3,12 @@ package com.steellogistics.activity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.CompoundButton;
+import android.widget.CompoundButton.OnCheckedChangeListener;
+import android.widget.Toast;
 
 import com.steellogistics.R;
+import com.steellogistics.view.CheckSwitchButton;
 
 /**
  * 
@@ -19,12 +23,27 @@ import com.steellogistics.R;
 public class SearchActivity extends BaseActivity {
 	private boolean isShowLeftBut = true;
 	private boolean isShowRightBut = false;
+	private CheckSwitchButton mCheckSwithcButton;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setBaseContentView(R.layout.search);
 		titleBarInitView();
+//		initView
+		mCheckSwithcButton = (CheckSwitchButton)findViewById(R.id.mCheckSwithcButton);
+		mCheckSwithcButton.setChecked(false);
+		mCheckSwithcButton.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+			
+			@Override
+			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+				if(isChecked){
+					Toast.makeText(SearchActivity.this, "打开", 5).show();
+				}else{
+					Toast.makeText(SearchActivity.this, "关闭", 5).show();
+				}
+			}
+		});
 	}
 
 	/**
