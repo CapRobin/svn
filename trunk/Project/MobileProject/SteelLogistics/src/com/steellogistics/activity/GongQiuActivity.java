@@ -7,6 +7,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -43,7 +44,7 @@ public class GongQiuActivity extends BaseActivity {
 	private boolean isSupplyInfoList = true;
 	private Button gyBut = null;
 	private Button qgBut = null;
-	private AbPullListView gyList, qgList = null;
+	private AbPullListView supplyList, buyList = null;
 	private BuyInfoAdapter buyInfoAdapter = null;
 	private SupplyInfoAdapter supplyInfoAdapter = null;
 	private List<BuyInfo> mBuyInfoInfoList = null;
@@ -73,7 +74,7 @@ public class GongQiuActivity extends BaseActivity {
 
 				@Override
 				public void onClick(View v) {
-//					finish();
+					showMyDialog();
 				}
 			});
 		}
@@ -118,46 +119,62 @@ public class GongQiuActivity extends BaseActivity {
 	 */
 	private void setGongQiuInfoView(boolean isSupplyList) {
 		if (isSupplyInfoList) {
-			gyList = null;
-			qgList = null;
+			supplyList = null;
+			buyList = null;
 			// 获取ListView对象
-			gyList = (AbPullListView) findViewById(R.id.gqList);
-			gyList.setPullRefreshEnable(true);
-			gyList.setPullLoadEnable(true);
+			supplyList = (AbPullListView) findViewById(R.id.gqList);
+			supplyList.setPullRefreshEnable(true);
+			supplyList.setPullLoadEnable(true);
 			
 			supplyInfoList = makeSupplyListData();
 			if (supplyInfoList != null && supplyInfoList.size() > 0) {
 				supplyInfoAdapter = new SupplyInfoAdapter(GongQiuActivity.this, supplyInfoList);
-				gyList.setAdapter(supplyInfoAdapter);
-				gyList.setOnItemClickListener(new OnItemClickListener() {
+				supplyList.setAdapter(supplyInfoAdapter);
+				supplyList.setOnItemClickListener(new OnItemClickListener() {
 
 					@Override
-					public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
-						Toast.makeText(GongQiuActivity.this, "SupplyInfo_"+arg2, Toast.LENGTH_SHORT).show();
+					public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+						SupplyInfo supplyInfo = (SupplyInfo) supplyInfoAdapter.getItem(position - 1);
+						String infoName = supplyInfo.getTitleName();
+						String infoContent = supplyInfo.getTitleName();
+						String infoTime = supplyInfo.getCreatTime();
+						Intent intent = new Intent(GongQiuActivity.this, SupplyInfoDetailActivity.class);
+						intent.putExtra("infoName", infoName);
+						intent.putExtra("infoContent", infoContent);
+						intent.putExtra("infoTime", infoTime);
+						startActivity(intent);
 					}
 				});
 				supplyInfoAdapter.notifyDataSetChanged();
 			}
 			isSupplyInfoList = false;
 		}else {
-			gyList = null;
-			qgList = null;
+			supplyList = null;
+			buyList = null;
 			
 			// 获取ListView对象
-			qgList = (AbPullListView) findViewById(R.id.gqList);
+			buyList = (AbPullListView) findViewById(R.id.gqList);
 			// 打开关闭下拉刷新加载更多功能
-			qgList.setPullRefreshEnable(true);
-			qgList.setPullLoadEnable(true);
+			buyList.setPullRefreshEnable(true);
+			buyList.setPullLoadEnable(true);
 
 			buyInfoList = makeBuyListData();
 			if (buyInfoList != null && buyInfoList.size() > 0) {
 			buyInfoAdapter = new BuyInfoAdapter(GongQiuActivity.this, mBuyInfoInfoList);
-			qgList.setAdapter(buyInfoAdapter);
-			qgList.setOnItemClickListener(new OnItemClickListener() {
+			buyList.setAdapter(buyInfoAdapter);
+			buyList.setOnItemClickListener(new OnItemClickListener() {
 
 				@Override
-				public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
-					Toast.makeText(GongQiuActivity.this, "BuyInfo_"+arg2, Toast.LENGTH_SHORT).show();
+				public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+					BuyInfo buyInfo = (BuyInfo) buyInfoAdapter.getItem(position - 1);
+					String infoName = buyInfo.getTitleName();
+					String infoContent = buyInfo.getTitleName();
+					String infoTime = buyInfo.getCreatTime();
+					Intent intent = new Intent(GongQiuActivity.this, BuyInfoDetailActivity.class);
+					intent.putExtra("infoName", infoName);
+					intent.putExtra("infoContent", infoContent);
+					intent.putExtra("infoTime", infoTime);
+					startActivity(intent);
 				}
 			});
 			buyInfoAdapter.notifyDataSetChanged();

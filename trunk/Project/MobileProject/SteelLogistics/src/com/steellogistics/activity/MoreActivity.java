@@ -49,7 +49,7 @@ public class MoreActivity extends BaseActivity implements OnClickListener{
 
 				@Override
 				public void onClick(View v) {
-					finish();
+					showMyDialog();
 				}
 			});
 		}

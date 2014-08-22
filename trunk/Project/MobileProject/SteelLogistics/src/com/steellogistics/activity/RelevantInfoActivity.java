@@ -67,7 +67,7 @@ public class RelevantInfoActivity extends BaseActivity {
 
 				@Override
 				public void onClick(View v) {
-					finish();
+					showMyDialog();
 				}
 			});
 		}
