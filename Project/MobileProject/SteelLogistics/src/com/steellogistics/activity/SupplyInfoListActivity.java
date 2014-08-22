@@ -8,22 +8,18 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.app.AlertDialog;
-import android.app.AlertDialog.Builder;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import com.ab.task.AbTaskQueue;
 import com.ab.view.pullview.AbPullListView;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -65,6 +61,11 @@ public class SupplyInfoListActivity extends BaseActivity {
 		initView();
 	}
 
+	@Override
+	protected void onResume() {
+		super.onResume();
+		setData();
+	}
 
 	/**
 	 * 
@@ -74,7 +75,7 @@ public class SupplyInfoListActivity extends BaseActivity {
 	 * @Version v1.0
 	 */
 	private void titleBarInitView() {
-		setTitleInfo("首    页", isShowLeftBut, "退出", isShowRightBut, "个人");
+		setTitleInfo("首    页", isShowLeftBut, "退出", isShowRightBut, "搜索");
 		if (isShowLeftBut) {
 			titleLeftBut.setOnClickListener(new OnClickListener() {
 
@@ -90,45 +91,11 @@ public class SupplyInfoListActivity extends BaseActivity {
 
 				@Override
 				public void onClick(View v) {
-					if (application.isLogin) {
-						startActivity(new Intent(SupplyInfoListActivity.this, PersonalCenterActivity.class));
-					} else {
-						startActivity(new Intent(SupplyInfoListActivity.this, LoginActivity.class));
-					}
+					startActivity(new Intent(SupplyInfoListActivity.this, SearchActivity.class));
 				}
 			});
 		}
 	}
-	
-//	/**
-//	 * 
-//	 * @Describe：初始化标题栏
-//	 * @Throws:
-//	 * @Date：2014年7月24日 上午9:41:44
-//	 * @Version v1.0
-//	 */
-//	private void titleBarInitView() {
-//		setTitleInfo("供货信息", isShowLeftBut, "返回", isShowRightBut, "发布");
-//		if (isShowLeftBut) {
-//			titleLeftBut.setOnClickListener(new OnClickListener() {
-//
-//				@Override
-//				public void onClick(View v) {
-//					finish();
-//				}
-//			});
-//		}
-//
-//		if (isShowRightBut) {
-//			titleRightBut.setOnClickListener(new OnClickListener() {
-//
-//				@Override
-//				public void onClick(View v) {
-//					startActivity(new Intent(SupplyInfoListActivity.this, PublishSupplyActivity.class));
-//				}
-//			});
-//		}
-//	}
 
 	/**
 	 * 
@@ -139,69 +106,52 @@ public class SupplyInfoListActivity extends BaseActivity {
 	 * 
 	 */
 	private void initView() {
-		// mAbTaskQueue = AbTaskQueue.getInstance();
 		daoArea = SqliteDaoArea.getInstance(SupplyInfoListActivity.this);
 		myPager = (MyImgScroll) findViewById(R.id.myvp);
 		ovalLayout = (LinearLayout) findViewById(R.id.vb);
-		// cargoList = (AbPullListView) findViewById(R.id.cargoList);
+
 		// 初始化图片
 		InitViewPager();
 		// 开始滚动
 		myPager.start(this, listViews, 4000, ovalLayout, R.layout.ad_bottom_item, R.id.ad_item_v, R.drawable.dot_focused, R.drawable.dot_normal);
-
-//		mAbTaskQueue = AbTaskQueue.getInstance();
-		
-		
-		
-		
 
 		// 获取ListView对象
 		supplyCargoList = (AbPullListView) findViewById(R.id.supplyCargoList);
 		// 打开关闭下拉刷新加载更多功能
 		supplyCargoList.setPullRefreshEnable(true);
 		supplyCargoList.setPullLoadEnable(true);
+		// // 构造数据
+		// String objectItem = null;
+		// try {
+		// SupplyInfo getSupplyInfo = null;
+		// GsonBuilder builder = new GsonBuilder();
+		// Gson gson = builder.create();
+		// String getSupplyInfoStr = MethodUtil.getSharedPreferences(this,
+		// "AppData", "supplyInfo");
+		// if (!TextUtils.isEmpty(getSupplyInfoStr)) { // 本地获取数据
+		// objectItem = getSupplyInfoStr;
+		// } else { // Application中获取数据数据
+		// List<SupplyInfoDetail> supplyInfoDetailList =
+		// application.supplyInfoList;
+		// objectItem = gson.toJson(supplyInfoDetailList);
+		// }
+		// JSONArray array = new JSONArray(objectItem);
+		// for (int i = 0; i < array.length(); i++) {
+		// JSONObject item = array.getJSONObject(i);
+		// getSupplyInfo = gson.fromJson(item.toString(), SupplyInfo.class);
+		// mSupplyInfoList.add(getSupplyInfo);
+		// }
+		// } catch (JSONException e) {
+		// e.printStackTrace();
+		// }
 
-		mSupplyInfoList = new ArrayList<SupplyInfo>();
-
-		// 构造数据
-		List<SupplyInfoDetail> supplyInfoDetailList = application.supplyInfoList;
-
-		try {
-			SupplyInfo getSupplyInfo = null;
-			GsonBuilder builder = new GsonBuilder();
-			Gson gson = builder.create();
-			if (supplyInfoDetailList != null && supplyInfoDetailList.size() > 0) { // Application中获取数据数据
-				String getSupplyList = gson.toJson(supplyInfoDetailList);
-				System.out.println("Get getSupplyList is -------->>"+getSupplyList);
-				String objectItem = gson.toJson(supplyInfoDetailList);
-				JSONArray array = new JSONArray(objectItem);
-				for (int i = 0; i < array.length(); i++) {
-					JSONObject item = array.getJSONObject(i);
-					getSupplyInfo = gson.fromJson(item.toString(), SupplyInfo.class);
-					mSupplyInfoList.add(getSupplyInfo);
-				}
-
-				// 输出得到的列表Json数据字符
-				String getSupplyInfoListStr = gson.toJson(mSupplyInfoList);
-				System.out.println("getSupplyInfoListStr is ------------>>" + getSupplyInfoListStr);
-				Toast.makeText(SupplyInfoListActivity.this, "Application中获取数据数据", Toast.LENGTH_SHORT).show();
-			} else { // Assets中获取数据数据
-				String getInfo = MethodUtil.getLocalInfo(SupplyInfoListActivity.this, "supply_list.java");
-				JSONArray array = new JSONArray(getInfo);
-				for (int i = 0; i < array.length(); i++) {
-					JSONObject item = array.getJSONObject(i);
-					getSupplyInfo = gson.fromJson(item.toString(), SupplyInfo.class);
-					mSupplyInfoList.add(getSupplyInfo);
-				}
-				Toast.makeText(SupplyInfoListActivity.this, "Assets中获取数据数据", Toast.LENGTH_SHORT).show();
-			}
-		} catch (JSONException e) {
-			e.printStackTrace();
-		}
-
-		// 使用自定义的Adapter
-		myListViewAdapter = new SupplyInfoAdapter(SupplyInfoListActivity.this, mSupplyInfoList);
-		supplyCargoList.setAdapter(myListViewAdapter);
+		// //排序
+		// List<SupplyInfo> getSupplyInfoList =
+		// MethodUtil.sortSupplyList(mSupplyInfoList, formatStr);
+		// // 使用自定义的Adapter
+		// myListViewAdapter = new
+		// SupplyInfoAdapter(SupplyInfoListActivity.this, getSupplyInfoList);
+		// supplyCargoList.setAdapter(myListViewAdapter);
 
 		supplyCargoList.setOnItemClickListener(new OnItemClickListener() {
 
@@ -218,9 +168,25 @@ public class SupplyInfoListActivity extends BaseActivity {
 				startActivity(intent);
 			}
 		});
-
+		// setData();
 	}
-	
+
+	/**
+	 * 
+	 * @Describe：装在数据
+	 * @Throws:
+	 * @Date：2014年8月22日 下午3:13:07
+	 * @Version v1.0
+	 */
+	private void setData() {
+		mSupplyInfoList = makeSupplyListData();
+		// 排序
+		List<SupplyInfo> getSupplyInfoList = MethodUtil.sortSupplyList(mSupplyInfoList, formatStr);
+		// 使用自定义的Adapter
+		myListViewAdapter = new SupplyInfoAdapter(SupplyInfoListActivity.this, getSupplyInfoList);
+		supplyCargoList.setAdapter(myListViewAdapter);
+	}
+
 	/**
 	 * @Describe：初始化广告图片
 	 * @Throws:
@@ -272,5 +238,47 @@ public class SupplyInfoListActivity extends BaseActivity {
 			imageView.setScaleType(ScaleType.CENTER_CROP);
 			listViews.add(imageView);
 		}
+	}
+
+	/**
+	 * 
+	 * @Describe：获取供货数据
+	 * @return
+	 * @Throws:
+	 * @Date：2014年8月21日 下午4:37:43
+	 * @Version v1.0
+	 */
+	private List<SupplyInfo> makeSupplyListData() {
+		mSupplyInfoList = new ArrayList<SupplyInfo>();
+		// 构造数据
+		String objectItem = null;
+		try {
+			SupplyInfo getSupplyInfo = null;
+			GsonBuilder builder = new GsonBuilder();
+			Gson gson = builder.create();
+			String getSupplyInfoStr = MethodUtil.getSharedPreferences(this, "AppData", "supplyInfo");
+			if (!TextUtils.isEmpty(getSupplyInfoStr)) { // 本地获取数据
+				objectItem = getSupplyInfoStr;
+			} else { // Application中获取数据数据
+				List<SupplyInfoDetail> supplyInfoDetailList = application.supplyInfoList;
+				if (supplyInfoDetailList.size() > 0 && supplyInfoDetailList != null) {
+					objectItem = gson.toJson(supplyInfoDetailList);
+				}
+			}
+
+			if (!TextUtils.isEmpty(objectItem)) {
+				JSONArray array = new JSONArray(objectItem);
+				for (int i = 0; i < array.length(); i++) {
+					JSONObject item = array.getJSONObject(i);
+					getSupplyInfo = gson.fromJson(item.toString(), SupplyInfo.class);
+					mSupplyInfoList.add(getSupplyInfo);
+				}
+			} else {
+				Toast.makeText(SupplyInfoListActivity.this, "暂时没有数据", Toast.LENGTH_SHORT).show();
+			}
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
+		return mSupplyInfoList;
 	}
 }

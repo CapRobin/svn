@@ -1,7 +1,5 @@
 package com.steellogistics.activity;
 
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,12 +9,11 @@ import org.json.JSONObject;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.Toast;
 
 import com.ab.view.pullview.AbPullListView;
 import com.google.gson.Gson;
@@ -41,8 +38,6 @@ public class BuyInfoListActivity extends BaseActivity {
 
 	private boolean isShowLeftBut = true;
 	private boolean isShowRightBut = true;
-
-	// private List<BuyInfo> mBuyInfoList = null;
 	private BuyInfoAdapter myListViewAdapter = null;
 	private AbPullListView buyCargoList = null;
 	private List<BuyInfo> mBuyInfoInfoList = null;
@@ -69,7 +64,7 @@ public class BuyInfoListActivity extends BaseActivity {
 
 				@Override
 				public void onClick(View v) {
-//					finish();
+					// finish();
 				}
 			});
 		}
@@ -95,50 +90,40 @@ public class BuyInfoListActivity extends BaseActivity {
 	 * 
 	 */
 	private void initView() {
-		// mAbTaskQueue = AbTaskQueue.getInstance();
-
 		// 获取ListView对象
 		buyCargoList = (AbPullListView) findViewById(R.id.buyCargoList);
 		// 打开关闭下拉刷新加载更多功能
 		buyCargoList.setPullRefreshEnable(true);
 		buyCargoList.setPullLoadEnable(true);
-		mBuyInfoInfoList = new ArrayList<BuyInfo>();
 
 		// 获取构造数据
-		List<BuyInfoDetail> buyInfoDetailList = application.buyInfoList;
+		mBuyInfoInfoList = new ArrayList<BuyInfo>();
+		String objectItem = null;
 		try {
 			BuyInfo getBuyInfo = null;
 			GsonBuilder builder = new GsonBuilder();
 			Gson gson = builder.create();
-			if (buyInfoDetailList != null && buyInfoDetailList.size() > 0) { // Application中获取数据数据
-				String objectItem = gson.toJson(buyInfoDetailList);
-				JSONArray array = new JSONArray(objectItem);
-				for (int i = 0; i < array.length(); i++) {
-					JSONObject item = array.getJSONObject(i);
-					getBuyInfo = gson.fromJson(item.toString(), BuyInfo.class);
-					mBuyInfoInfoList.add(getBuyInfo);
-				}
-
-				// 输出得到的列表Json数据字符
-				String getSupplyInfoListStr = gson.toJson(mBuyInfoInfoList);
-				System.out.println("getSupplyInfoListStr is ------------>>" + getSupplyInfoListStr);
-				Toast.makeText(BuyInfoListActivity.this, "Application中获取数据数据", Toast.LENGTH_SHORT).show();
-			} else { // Assets中获取数据数据
-				String getInfo = MethodUtil.getLocalInfo(BuyInfoListActivity.this, "buy_list.java");
-				JSONArray array = new JSONArray(getInfo);
-				for (int i = 0; i < array.length(); i++) {
-					JSONObject item = array.getJSONObject(i);
-					getBuyInfo = gson.fromJson(item.toString(), BuyInfo.class);
-					mBuyInfoInfoList.add(getBuyInfo);
-				}
-				Toast.makeText(BuyInfoListActivity.this, "Assets中获取数据数据", Toast.LENGTH_SHORT).show();
+			String getBuyInfoStr = MethodUtil.getSharedPreferences(this, "AppData", "buyInfo");
+			if (!TextUtils.isEmpty(getBuyInfoStr)) { // 本地获取数据
+				objectItem = getBuyInfoStr;
+			} else { // Application中获取数据数据
+				List<BuyInfoDetail> buyInfoDetailList = application.buyInfoList;
+				objectItem = gson.toJson(buyInfoDetailList);
 			}
-
+			JSONArray array = new JSONArray(objectItem);
+			for (int i = 0; i < array.length(); i++) {
+				JSONObject item = array.getJSONObject(i);
+				getBuyInfo = gson.fromJson(item.toString(), BuyInfo.class);
+				mBuyInfoInfoList.add(getBuyInfo);
+			}
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}
+
+		//排序
+		List<BuyInfo> getBuyInfoInfoList = MethodUtil.sortBuyList(mBuyInfoInfoList, formatStr);
 		// 使用自定义的Adapter
-		myListViewAdapter = new BuyInfoAdapter(BuyInfoListActivity.this, mBuyInfoInfoList);
+		myListViewAdapter = new BuyInfoAdapter(BuyInfoListActivity.this, getBuyInfoInfoList);
 		buyCargoList.setAdapter(myListViewAdapter);
 
 		buyCargoList.setOnItemClickListener(new OnItemClickListener() {
@@ -161,27 +146,4 @@ public class BuyInfoListActivity extends BaseActivity {
 		});
 
 	}
-
-	/**
-	 * 获取assets文件中的Json字符串
-	 * 
-	 */
-	private void getJsonText() {
-		try {
-
-			// private InputStream mStream;
-			// private String getStr;
-
-			InputStream mStream = this.getAssets().open("jsonTest_1.txt");
-			byte[] buffer = new byte[getResources().getAssets().open("jsonTest_1.txt").available()];
-			mStream.read(buffer);
-			mStream.close();
-			String getStr = new String(buffer);
-			// mTextView.setText(getStr);
-			Log.d("TAG", "getJson is ---------------------->>" + getStr);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
-
 }
