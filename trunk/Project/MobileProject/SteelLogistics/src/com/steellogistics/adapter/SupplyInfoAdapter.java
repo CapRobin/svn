@@ -80,7 +80,7 @@ public class SupplyInfoAdapter extends BaseAdapter {
 
 		holder.titleName.setText(mData.get(position).getTitleName());
 		holder.sellScope.setText("经营范围: " + mData.get(position).getSellScope());
-		holder.price.setText("商品单价: ¥" + mData.get(position).getPrice());
+		holder.price.setText("商品单价: ¥ " + mData.get(position).getPrice());
 		holder.address.setText(mData.get(position).getUserAddress());
 		holder.creatTime.setText(mData.get(position).getCreatTime());
 

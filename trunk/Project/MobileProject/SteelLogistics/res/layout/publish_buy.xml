@@ -72,7 +72,7 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="97dip"
-                    android:layout_marginRight="40dip"
+                    android:layout_marginRight="60dip"
                     android:background="@drawable/myedit_bg"
                     android:gravity="center_vertical"
                     android:inputType="number"
@@ -94,51 +94,129 @@
                     android:textSize="18sp" />
             </RelativeLayout>
 
-            <RelativeLayout
-                android:id="@+id/layout_03"
+<!--             <RelativeLayout -->
+<!--                 android:id="@+id/layout_03" -->
+<!--                 android:layout_width="fill_parent" -->
+<!--                 android:layout_height="wrap_content" -->
+<!--                 android:layout_below="@+id/layout_02" -->
+<!--                 android:layout_marginBottom="10dip" -->
+<!--                 android:layout_marginLeft="10dip" -->
+<!--                 android:layout_marginRight="10dip" > -->
+
+<!--                 <TextView -->
+<!--                     android:id="@+id/slText" -->
+<!--                     android:layout_width="100dip" -->
+<!--                     android:layout_height="wrap_content" -->
+<!--                     android:layout_centerVertical="true" -->
+<!--                     android:text="数      量:" -->
+<!--                     android:textColor="@color/black" -->
+<!--                     android:textSize="18sp" /> -->
+
+<!--                 <EditText -->
+<!--                     android:id="@+id/slEdit" -->
+<!--                     android:layout_width="fill_parent" -->
+<!--                     android:layout_height="fill_parent" -->
+<!--                     android:layout_centerVertical="true" -->
+<!--                     android:layout_marginLeft="97dip" -->
+<!--                     android:layout_marginRight="100dip" -->
+<!--                     android:background="@drawable/myedit_bg" -->
+<!--                     android:gravity="center_vertical" -->
+<!--                     android:inputType="number" -->
+<!--                     android:textColor="@color/gray_light" -->
+<!--                     android:textSize="13sp" /> -->
+
+<!--                 <Spinner -->
+<!--                     android:id="@+id/slSpinner" -->
+<!--                     android:layout_width="100dip" -->
+<!--                     android:layout_height="45dip" -->
+<!--                     android:layout_alignParentRight="true" -->
+<!--                     android:layout_centerVertical="true" -->
+<!--                     android:entries="@array/gcShuliang" /> -->
+<!--             </RelativeLayout> -->
+
+<LinearLayout
+                android:id="@+id/holder5"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/layout_02"
-                android:layout_marginBottom="10dip"
-                android:layout_marginLeft="10dip"
-                android:layout_marginRight="10dip" >
+                android:orientation="vertical" >
 
-                <TextView
-                    android:id="@+id/slText"
-                    android:layout_width="100dip"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="数      量:"
-                    android:textColor="@color/black"
-                    android:textSize="18sp" />
-
-                <EditText
-                    android:id="@+id/slEdit"
+                <RelativeLayout
+                    android:id="@+id/layout_3"
                     android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="97dip"
-                    android:layout_marginRight="100dip"
-                    android:background="@drawable/myedit_bg"
-                    android:gravity="center_vertical"
-                    android:inputType="number"
-                    android:textColor="@color/gray_light"
-                    android:textSize="13sp" />
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/layout_2"
+                    android:layout_marginBottom="10dip"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginRight="10dip" >
 
-                <Spinner
-                    android:id="@+id/slSpinner"
-                    android:layout_width="100dip"
-                    android:layout_height="45dip"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:entries="@array/gcShuliang" />
-            </RelativeLayout>
+                    <TextView
+                        android:id="@+id/slText"
+                        android:layout_width="100dip"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center_vertical"
+                        android:text="数      量:"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/slEdit"
+                        android:layout_width="fill_parent"
+                        android:layout_height="35dip"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="left"
+                        android:layout_marginLeft="99dip"
+                        android:layout_marginRight="60dip"
+                        android:background="@drawable/myedit_bg"
+                        android:editable="false"
+                        android:gravity="center_vertical"
+                        android:inputType="number"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/sldwEdit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="45dip"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginLeft="97dip"
+                        android:layout_marginRight="15dip"
+                        android:gravity="center_vertical"
+                        android:text="吨"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/hiddenview5"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/layout_00"
+                    android:layout_marginBottom="10dip"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginRight="10dip"
+                    android:background="@drawable/test_01"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical"
+                    android:visibility="gone" >
+
+                    <com.steellogistics.view.NoScrollGridView
+                        android:id="@+id/slGridView"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dip"
+                        android:horizontalSpacing="7dp"
+                        android:numColumns="3"
+                        android:verticalSpacing="7dp" />
+                </LinearLayout>
+            </LinearLayout>
+
 
             <RelativeLayout
                 android:id="@+id/layout_04"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/layout_03"
+                android:layout_below="@+id/holder5"
                 android:layout_marginBottom="10dip"
                 android:layout_marginLeft="10dip"
                 android:layout_marginRight="10dip" >
