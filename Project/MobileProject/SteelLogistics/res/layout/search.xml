@@ -4,20 +4,169 @@
     android:layout_height="fill_parent"
     android:background="@color/app_bg" >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:padding="@dimen/padding_medium"
-        android:text="搜索信息"
-        android:textSize="11sp" />
+    <RelativeLayout
+        android:id="@+id/layout_1"
+        android:layout_width="fill_parent"
+        android:layout_height="30dip"
+        android:layout_marginLeft="20dip"
+        android:layout_marginRight="20dip"
+        android:layout_marginTop="20dip" >
 
-    <com.steellogistics.view.CheckSwitchButton
-        android:id="@+id/mCheckSwithcButton"
-        android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/searchEdit"
+            android:layout_width="fill_parent"
+            android:layout_height="30dip"
+            android:layout_centerVertical="true"
+            android:background="@drawable/myedit_bg"
+            android:hint="请输入搜索关键字"
+            android:paddingLeft="55dip"
+            android:singleLine="true"
+            android:textSize="11sp" />
+
+        <Button
+            android:id="@+id/sslxBut"
+            android:layout_width="50dip"
+            android:layout_height="30dip"
+            android:layout_centerVertical="true"
+            android:background="@drawable/aaa"
+            android:text="供应" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/holder1"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:enabled="true" />
+        android:layout_below="@+id/layout_1"
+        android:layout_marginLeft="20dip"
+        android:layout_marginRight="20dip"
+        android:layout_marginTop="30dip"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/layout_3"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dip" >
+
+            <TextView
+                android:id="@+id/lbText"
+                android:layout_width="100dip"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:text="类      别:"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/lbEdit"
+                android:layout_width="fill_parent"
+                android:layout_height="30dip"
+                android:layout_gravity="left"
+                android:layout_marginLeft="80dip"
+                android:background="@drawable/myedit_bg"
+                android:editable="false"
+                android:gravity="center_vertical"
+                android:textSize="13sp" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/hiddenview1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dip"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="10dip"
+            android:background="@drawable/test_01"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <com.steellogistics.view.NoScrollGridView
+                android:id="@+id/lbGridView"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dip"
+                android:horizontalSpacing="7dp"
+                android:numColumns="3"
+                android:verticalSpacing="7dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/holder2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/holder1"
+        android:layout_marginLeft="20dip"
+        android:layout_marginRight="20dip"
+        android:layout_marginTop="10dip"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/layout_3"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dip" >
+
+            <TextView
+                android:id="@+id/pmText"
+                android:layout_width="100dip"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:text="品      名:"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/pmEdit"
+                android:layout_width="fill_parent"
+                android:layout_height="30dip"
+                android:layout_gravity="left"
+                android:layout_marginLeft="80dip"
+                android:background="@drawable/myedit_bg"
+                android:editable="false"
+                android:gravity="center_vertical"
+                android:textSize="13sp" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/hiddenview2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/layout_00"
+            android:layout_marginBottom="10dip"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="10dip"
+            android:background="@drawable/test_01"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <com.steellogistics.view.NoScrollGridView
+                android:id="@+id/pmGridView"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dip"
+                android:horizontalSpacing="7dp"
+                android:numColumns="3"
+                android:verticalSpacing="7dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/searchBut"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="30dip"
+        android:layout_marginLeft="20dip"
+        android:layout_marginRight="20dip"
+        android:layout_marginTop="30dip"
+        android:background="@drawable/exist_selector"
+        android:padding="2dip"
+        android:text="搜    索"
+        android:textSize="20sp" />
 
 </RelativeLayout>
