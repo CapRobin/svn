@@ -17,7 +17,7 @@ public class BuyInfoDetail {
 	private String titleName; 			// 信息标题
 	private String imageUrl; 				// 图片地址
 	private String otherInfo; 			// 补充信息
-	private int buyAmount; 				// 求购数量
+	private String buyAmount; 		// 求购数量
 	private String buyPrice; 				// 求购价格
 	private String userAddress; 			// 用户地址
 	private String contactNumber; 	// 联系电话
@@ -53,10 +53,10 @@ public class BuyInfoDetail {
 	public void setOtherInfo(String otherInfo) {
 		this.otherInfo = otherInfo;
 	}
-	public int getBuyAmount() {
+	public String getBuyAmount() {
 		return buyAmount;
 	}
-	public void setBuyAmount(int buyAmount) {
+	public void setBuyAmount(String buyAmount) {
 		this.buyAmount = buyAmount;
 	}
 	public String getBuyPrice() {

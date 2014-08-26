@@ -208,15 +208,16 @@
     </string-array>
     <!-- 钢材产地 -->
     <string-array name="gccd">
-        <item>产地01</item>
-        <item>产地02</item>
-        <item>产地03</item>
-        <item>产地04</item>
-        <item>产地05</item>
-        <item>产地06</item>
-        <item>产地07</item>
-        <item>产地08</item>
-        <item>产地09</item>
+        <item>鞍本钢铁基地</item>
+        <item>京津唐钢铁基地</item>
+        <item>上海钢铁基地</item>
+        <item>武汉钢铁基地</item>
+        <item>攀钢基地</item>
+        <item>包头钢铁基地</item>
+        <item>太原钢铁基地</item>
+        <item>马鞍山钢铁基地</item>
+        <item>重庆钢铁基地</item>
+        <item>台湾中国钢铁公司</item>
     </string-array>
 
 </resources>

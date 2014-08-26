@@ -20,7 +20,9 @@ import android.view.View.OnTouchListener;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -34,6 +36,7 @@ import com.steellogistics.R;
 import com.steellogistics.adapter.MyLocationAdapter;
 import com.steellogistics.entity.SupplyInfoDetail;
 import com.steellogistics.util.MethodUtil;
+import com.steellogistics.view.CheckSwitchButton;
 import com.steellogistics.view.NoScrollGridView;
 
 /**
@@ -64,12 +67,13 @@ public class PublishSupplyActivity extends BaseActivity implements OnTouchListen
 	private EditText cdEdit = null;
 	private EditText slEdit = null;
 	private TextView sldwEdit = null;
-	private EditText gbEdit = null;
+//	private EditText gbEdit = null;
 	private EditText jyfsEdit = null;
-	private View mHolder1, mHolder2, mHolder3, mHolder4, mHolder5, mHolder6, mHolder7;
+//	private View mHolder6 = null;
+	private View mHolder1, mHolder2, mHolder3, mHolder4, mHolder5, mHolder7;
 	private List<String> myGridViewList1, myGridViewList2, myGridViewList3, myGridViewList4, myGridViewList5, myGridViewList6, myGridViewList7 = null;
 	private NoScrollGridView lbGridView, pmGridView, ggGridView, cdGridView, slGridView, gbGridView, jyfsGridView = null;
-
+	private CheckSwitchButton gbSwithcButton = null;
 	private static String gcPinming[] = null;
 	private static String steelStyle[] = null;
 	private static String steelSpecification[] = null;
@@ -87,6 +91,7 @@ public class PublishSupplyActivity extends BaseActivity implements OnTouchListen
 	private static String gcPinming_05[] = null;
 	private static String gcPinming_06[] = null;
 	private static String gcPinming_07[] = null;
+	private boolean isGb = false;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -144,7 +149,7 @@ public class PublishSupplyActivity extends BaseActivity implements OnTouchListen
 		mHolder3 = findViewById(R.id.holder3);
 		mHolder4 = findViewById(R.id.holder4);
 		mHolder5 = findViewById(R.id.holder5);
-		mHolder6 = findViewById(R.id.holder6);
+//		mHolder6 = findViewById(R.id.holder6);
 		mHolder7 = findViewById(R.id.holder7);
 
 		lbEdit = (EditText) findViewById(R.id.lbEdit);
@@ -153,7 +158,7 @@ public class PublishSupplyActivity extends BaseActivity implements OnTouchListen
 		cdEdit = (EditText) findViewById(R.id.cdEdit);
 		slEdit = (EditText) findViewById(R.id.slEdit);
 		sldwEdit = (TextView) findViewById(R.id.sldwEdit);
-		gbEdit = (EditText) findViewById(R.id.gbEdit);
+//		gbEdit = (EditText) findViewById(R.id.gbEdit);
 		jyfsEdit = (EditText) findViewById(R.id.jyfsEdit);
 
 		lbGridView = (NoScrollGridView) findViewById(R.id.lbGridView);
@@ -161,7 +166,7 @@ public class PublishSupplyActivity extends BaseActivity implements OnTouchListen
 		ggGridView = (NoScrollGridView) findViewById(R.id.ggGridView);
 		cdGridView = (NoScrollGridView) findViewById(R.id.cdGridView);
 		slGridView = (NoScrollGridView) findViewById(R.id.slGridView);
-		gbGridView = (NoScrollGridView) findViewById(R.id.gbGridView);
+//		gbGridView = (NoScrollGridView) findViewById(R.id.gbGridView);
 		jyfsGridView = (NoScrollGridView) findViewById(R.id.jyfsGridView);
 
 		steelStyle = this.getResources().getStringArray(R.array.steelStyle);
@@ -178,7 +183,23 @@ public class PublishSupplyActivity extends BaseActivity implements OnTouchListen
 		gcPinming_05 = this.getResources().getStringArray(R.array.gcPinming_05);
 		gcPinming_06 = this.getResources().getStringArray(R.array.gcPinming_06);
 		gcPinming_07 = this.getResources().getStringArray(R.array.gcPinming_07);
-
+		
+		gbSwithcButton = (CheckSwitchButton)findViewById(R.id.gbSwithcButton);
+		gbSwithcButton.setChecked(false);
+		gbSwithcButton.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+			
+			@Override
+			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+				if(isChecked){
+					isGb = isChecked;
+//					Toast.makeText(PublishSupplyActivity.this, String.valueOf(isGb), 5).show();
+				}else{
+					isGb = isChecked;
+//					Toast.makeText(PublishSupplyActivity.this,  String.valueOf(isGb), 5).show();
+				}
+			}
+		});
+		
 		// 设置隐藏GridView数据
 		setGridViewData();
 
@@ -187,7 +208,7 @@ public class PublishSupplyActivity extends BaseActivity implements OnTouchListen
 		ggEdit.setOnTouchListener(this);
 		cdEdit.setOnTouchListener(this);
 		sldwEdit.setOnTouchListener(this);
-		gbEdit.setOnTouchListener(this);
+//		gbEdit.setOnTouchListener(this);
 		jyfsEdit.setOnTouchListener(this);
 		publishSupplyBtn.setOnClickListener(new OnClickListener() {
 
@@ -259,7 +280,7 @@ public class PublishSupplyActivity extends BaseActivity implements OnTouchListen
 		showView(myGridViewList3, 3);
 		showView(myGridViewList4, 4);
 		showView(myGridViewList5, 5);
-		showView(myGridViewList6, 6);
+//		showView(myGridViewList6, 6);
 		showView(myGridViewList7, 7);
 	}
 
@@ -367,22 +388,22 @@ public class PublishSupplyActivity extends BaseActivity implements OnTouchListen
 			});
 			break;
 		case 6:
-			gbGridView.setSelector(new ColorDrawable(Color.TRANSPARENT));
-			gbGridView.setAdapter(locationAdapter);
-			gbGridView.setOnItemClickListener(new OnItemClickListener() {
-
-				@Override
-				public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-					String itemStr = myGridViewList6.get(position);
-					gbEdit.setText(itemStr);
-					popViewisShow(6);
-					popViewisShow(7);
-					jyfsEdit.setFocusable(true);
-					jyfsEdit.requestFocus();
-					jyfsEdit.performClick();
-				}
-			});
+//			gbGridView.setSelector(new ColorDrawable(Color.TRANSPARENT));
+//			gbGridView.setAdapter(locationAdapter);
+//			gbGridView.setOnItemClickListener(new OnItemClickListener() {
+//
+//				@Override
+//				public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//
+//					String itemStr = myGridViewList6.get(position);
+////					gbEdit.setText(itemStr);
+//					popViewisShow(6);
+//					popViewisShow(7);
+//					jyfsEdit.setFocusable(true);
+//					jyfsEdit.requestFocus();
+//					jyfsEdit.performClick();
+//				}
+//			});
 			break;
 		case 7:
 			jyfsGridView.setSelector(new ColorDrawable(Color.TRANSPARENT));
@@ -494,7 +515,7 @@ public class PublishSupplyActivity extends BaseActivity implements OnTouchListen
 		String pmSpinnerStr = pmEdit.getText().toString();
 		String ggSpinnerStr = ggEdit.getText().toString();
 		String slSpinnerStr = slEdit.getText().toString();
-		String gbSpinnerStr = gbEdit.getText().toString();
+//		String gbSpinnerStr = gbEdit.getText().toString();
 		String jyfsSpinnerStr = jyfsEdit.getText().toString();
 
 		String companyName = application.userInfo.getRealName();
@@ -520,7 +541,7 @@ public class PublishSupplyActivity extends BaseActivity implements OnTouchListen
 		supplyInfoDetail.setSpecification(ggSpinnerStr);
 		supplyInfoDetail.setMakeAddress(cdEditStr);
 		supplyInfoDetail.setAmount(slEditStr + slSpinnerStr);
-		supplyInfoDetail.setIsGb(gbSpinnerStr);
+		supplyInfoDetail.setIsGb(String.valueOf(isGb));
 		supplyInfoDetail.setContacts(contacts);
 		supplyInfoDetail.setEmail(email);
 		supplyInfoDetail.setDealType(jyfsSpinnerStr);
@@ -609,11 +630,11 @@ public class PublishSupplyActivity extends BaseActivity implements OnTouchListen
 			}
 			break;
 		case 6:
-			if (View.GONE == mHolder6.findViewById(R.id.hiddenview6).getVisibility()) {
-				animateExpanding(mHolder6.findViewById(R.id.hiddenview6));
-			} else {
-				animateCollapsing(mHolder6.findViewById(R.id.hiddenview6));
-			}
+//			if (View.GONE == mHolder6.findViewById(R.id.hiddenview6).getVisibility()) {
+//				animateExpanding(mHolder6.findViewById(R.id.hiddenview6));
+//			} else {
+//				animateCollapsing(mHolder6.findViewById(R.id.hiddenview6));
+//			}
 			break;
 		case 7:
 			if (View.GONE == mHolder7.findViewById(R.id.hiddenview7).getVisibility()) {
@@ -708,12 +729,12 @@ public class PublishSupplyActivity extends BaseActivity implements OnTouchListen
 				popViewisShow(5);
 			}
 			break;
-		case R.id.gbEdit:// 点击触动规格项目
-			MethodUtil.closeInputMethod(PublishSupplyActivity.this);
-			if (event.getAction() == KeyEvent.ACTION_DOWN) {
-				popViewisShow(6);
-			}
-			break;
+//		case R.id.gbEdit:// 点击触动规格项目
+//			MethodUtil.closeInputMethod(PublishSupplyActivity.this);
+//			if (event.getAction() == KeyEvent.ACTION_DOWN) {
+//				popViewisShow(6);
+//			}
+//			break;
 		case R.id.jyfsEdit:// 点击触动规格项目
 			MethodUtil.closeInputMethod(PublishSupplyActivity.this);
 			if (event.getAction() == KeyEvent.ACTION_DOWN) {
