@@ -135,22 +135,22 @@ public class SearchActivity extends BaseActivity implements OnTouchListener {
 				}
 			}
 		});
-		
+
 		searchBut.setOnClickListener(new OnClickListener() {
-			
+
 			@Override
 			public void onClick(View v) {
 				submitSearch();
 			}
 		});
-		
+
 		setGridViewData();
 	}
 
 	/**
 	 * 
 	 * @Describe：开始搜索
-	 * @Throws:  
+	 * @Throws:
 	 * @Date：2014年8月26日 下午5:30:35
 	 * @Version v1.0
 	 */
@@ -158,7 +158,7 @@ public class SearchActivity extends BaseActivity implements OnTouchListener {
 		showToast("搜索成功！");
 		finish();
 	}
-	
+
 	/**
 	 * 
 	 * @Describe：构造View的数据
