@@ -27,7 +27,7 @@ import com.steellogistics.global.MyApplication;
  * Copyright (c) 2013 All rights reserved
  * 
  * @Name：BaseActivity.java
- * @Describe：Activity基类
+ * @Describe：Activity基类  
  * @Author: yfr5734@gmail.com
  * @Date：2014年5月12日 上午9:23:10
  * @Version v1.0 *
