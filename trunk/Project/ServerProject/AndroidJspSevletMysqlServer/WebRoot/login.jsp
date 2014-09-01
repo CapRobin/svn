@@ -129,8 +129,8 @@ BODY {
 			<td><input type="button" value="进入前台首页"
 				onClick="javascript:window.open('index.jsp')" /></td>
 			<td>
-				<div id=clock style="color: #006633; font-size: 14px"></div> <SCRIPT
-					type="text/javascript">
+				<div id=clock style="color: #006633; font-size: 14px"></div>
+				<SCRIPT type="text/javascript">
 					var clock = new Clock();
 					clock.display(document.getElementById("clock"));
 				</SCRIPT>
