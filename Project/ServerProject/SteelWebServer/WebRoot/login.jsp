@@ -41,8 +41,7 @@
 <body bgcolor="#8B795E">
 	<!-- 	<div align="center" -->
 	<!-- 		style="font: bold; font-size: 50px; color: #C7C7C7;">欢迎进入宁夏汇埠钢材信息平台</div> -->
-	<form action="servlet/ServerTest" id=formid name="formname"
-		method="post">
+	<form action="servlet/DoLogin" id=formid name="formname" method="post">
 		<table border="0" width="80%" align="center">
 			<tbody>
 				<tr align="center">

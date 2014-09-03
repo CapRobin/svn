@@ -21,6 +21,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    欢迎访问钢材信息平台 <br>
+    欢迎访问钢材信息平台 !<br>
   </body>
 </html>
