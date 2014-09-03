@@ -8,12 +8,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.steel.xbmt.dao.WebInfo;
+import com.steel.xbmt.biz.SteelBiz;
+import com.steel.xbmt.dao.SteelInfoDao;
 import com.steel.xbmt.entity.UserInfo;
 
 @SuppressWarnings("serial")
 public class DoLogin extends HttpServlet {
 
+	private SteelBiz biz = new SteelBiz();
+	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// super.doGet(req, resp);
@@ -37,8 +40,11 @@ public class DoLogin extends HttpServlet {
 
 		PrintWriter outWriter = resp.getWriter();
 		// UserInfo info = new UserInfo();
-		WebInfo webInfo = new WebInfo();
-		UserInfo userInfo = webInfo.userLogin(username, password);
+		
+		
+//		SteelInfoDao webInfo = new SteelInfoDao();
+//		UserInfo userInfo = webInfo.userLogin(username, password);
+		UserInfo userInfo=biz.login(username, password);
 		if (userInfo != null) {
 			resp.sendRedirect("/AndroidJspSevletMysqlServer/success.jsp");
 		} else {
@@ -49,5 +55,7 @@ public class DoLogin extends HttpServlet {
 		// resp.sendRedirect("/SteelWebServer/register.jsp");
 		// outWriter.print("Login successful !  Welcome to visit !");
 
+		
+		
 	}
 }
