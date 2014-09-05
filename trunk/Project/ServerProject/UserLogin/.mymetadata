@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="UserLogin"
+  id="myeclipse.1251782876953"
+  context-root="/UserLogin"
+  j2ee-spec="5.0"
+  archive="UserLogin.war">
+  <attributes>
+    <attribute name="webrootdir" value="/WebRoot" />
+  </attributes>
+</project-module>
+
