@@ -15,13 +15,12 @@ import javax.servlet.http.HttpServletResponse;
 @SuppressWarnings("serial")
 public class ServiceTest extends HttpServlet {
 
-	public void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("do Get");
 		response.setContentType("text/html");
 		response.setCharacterEncoding("utf-8");
 		PrintWriter out = response.getWriter();
-		UserDao dao = new UserDaoImpl();
+		UserDaoImpl dao = new UserDaoImpl();
 		// 获得客户端请求参数
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
@@ -29,7 +28,7 @@ public class ServiceTest extends HttpServlet {
 		User u = dao.login(username, password);
 		if (u != null) {
 			// 响应客户端内容，登录成功
-			//out.print("登录成功");
+			// out.print("登录成功");
 			out.print("登录成功");
 		} else {
 			// 响应客户端内容，登录失败
@@ -39,19 +38,18 @@ public class ServiceTest extends HttpServlet {
 		out.close();
 	}
 
-	public void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("do Post");
 		String username = request.getParameter("username");
 		PrintWriter out = response.getWriter();
-		UserDao dao = new UserDaoImpl();
+		UserDaoImpl dao = new UserDaoImpl();
 		// 获得客户端请求参数
 		String password = request.getParameter("password");
 
 		User u = dao.login(username, password);
 		if (u != null) {
 			// 响应客户端内容，登录成功
-			//out.print("登录成功");
+			// out.print("登录成功");
 			response.sendRedirect("/AndroidJspSevletMysqlServer/success.jsp");
 		} else {
 			// 响应客户端内容，登录失败
