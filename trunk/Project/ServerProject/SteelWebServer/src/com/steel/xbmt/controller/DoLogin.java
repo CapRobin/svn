@@ -7,9 +7,9 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.swing.plaf.TextUI;
 
 import com.steel.xbmt.biz.SteelBiz;
-import com.steel.xbmt.dao.SteelInfoDao;
 import com.steel.xbmt.entity.UserInfo;
 
 @SuppressWarnings("serial")
@@ -24,10 +24,45 @@ public class DoLogin extends HttpServlet {
 		resp.setContentType("text/html");
 		resp.setCharacterEncoding("utf-8");
 		PrintWriter outWriter = resp.getWriter();
-		outWriter.print("登录成功_get");
-
+		
+		String username = req.getParameter("username");
+		String password = req.getParameter("password");
+		UserInfo userInfo=biz.login(username, password);
+		if (userInfo != null) {
+			outWriter.print("Get请求成功! 获取用户真实姓名 = "+userInfo.getRealName()+"；年龄 = "+userInfo.getAge()+"；电话 = "+userInfo.getMobile());
+		}else {
+			outWriter.print("Get请求失败！");
+		}
+//		if (!username.isEmpty() & !password.isEmpty()) {
+//			outWriter.print("Get请求成功! 请求参数为：username = "+username+"；password = "+password);
+//		}else {
+//			outWriter.print("Get请求失败！");
+//		}
+		
 		outWriter.flush();
 		outWriter.close();
+		
+//		System.out.println("do Get");
+//		response.setContentType("text/html");
+//		response.setCharacterEncoding("utf-8");
+//		PrintWriter out = response.getWriter();
+//		UserDaoImpl dao = new UserDaoImpl();
+//		// 获得客户端请求参数
+//		String username = request.getParameter("username");
+//		String password = request.getParameter("password");
+//
+//		User u = dao.login(username, password);
+//		if (u != null) {
+//			// 响应客户端内容，登录成功
+//			// out.print("登录成功");
+//			out.print("登录成功");
+//		} else {
+//			// 响应客户端内容，登录失败
+//			out.print("登录失败");
+//		}
+//		out.flush();
+//		out.close();
+		
 	}
 
 	@Override
@@ -46,7 +81,7 @@ public class DoLogin extends HttpServlet {
 //		UserInfo userInfo = webInfo.userLogin(username, password);
 		UserInfo userInfo=biz.login(username, password);
 		if (userInfo != null) {
-			resp.sendRedirect("/AndroidJspSevletMysqlServer/success.jsp");
+			resp.sendRedirect("/SteelWebServer/success.jsp");
 		} else {
 			outWriter.print("Login failed Please try again !");
 		}
