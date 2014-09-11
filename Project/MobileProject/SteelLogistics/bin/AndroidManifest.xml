@@ -61,11 +61,13 @@
         <activity
             android:name=".activity.PublishSupplyActivity"
             android:configChanges="keyboardHidden|orientation"
+            android:windowSoftInputMode="stateHidden|adjustResize" 
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar" />
         <activity
             android:name=".activity.PublishBuyActivity"
             android:configChanges="keyboardHidden|orientation"
+            android:windowSoftInputMode="stateHidden|adjustResize" 
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar" />
         <activity
@@ -100,6 +102,11 @@
             android:theme="@android:style/Theme.NoTitleBar" />
         <activity
             android:name=".activity.RegisterActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" />
+        <activity
+            android:name=".activity.PublishActivity"
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar" />
