@@ -10,7 +10,7 @@ public class DBManager {
 
 //	public static final String DRIVER = "com.microsoft.jdbc.sqlserver.SQLServerDriver";		//SqlServer连接
 	public static final String DRIVER = "com.mysql.jdbc.Driver";		//SqlServer连接
-	public static final String URL = "jdbc:mysql://192.168.1.103:3306/steel";
+	public static final String URL = "jdbc:mysql://localhost:3306/steel";
 	public static final String DBUSER = "root";
 	public static final String DBPWD = "694687424";
 
