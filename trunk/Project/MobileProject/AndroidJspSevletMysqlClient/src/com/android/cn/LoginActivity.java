@@ -11,11 +11,13 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class LoginActivity extends Activity {
 
 	private Button cancelBtn, loginBtn;
 	private EditText userEditText, pwdEditText;
+	private  String getReString = null;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -36,14 +38,14 @@ public class LoginActivity extends Activity {
 
 		loginBtn.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
-				HttpPost request = new HttpPost("http://www.baidu.com");
+//				HttpPost request = new HttpPost("http://www.baidu.com");
 				if (validate()) {
 					if (login()) {
-						Intent intent = new Intent(LoginActivity.this,
-								MainActivity.class);
-						startActivity(intent);
+//						Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+//						startActivity(intent);
+						Toast.makeText(LoginActivity.this, getReString, 5).show();
 					} else {
-						showDialog("用户名称或者密码错误，请重新输入！");
+						Toast.makeText(LoginActivity.this, getReString, 5).show();
 					}
 				}
 			}
@@ -61,11 +63,25 @@ public class LoginActivity extends Activity {
 		// return false;
 		// }
 		// 修改版
-		if (result != null && result.equals("登录成功")) {
+//		if (result != null && result.equals("登录成功")) {
+//			return true;
+//		} else {
+//			return false;
+//		}
+		if (result != null) {
+			getReString = result;
 			return true;
-		} else {
+		}else {
+			getReString = result;
 			return false;
 		}
+		// 访问钢材服务版
+//		if (result != null) {
+//			return true;
+//			getReString = result;
+//		} else {
+//			return false;
+//		}
 	}
 
 	private boolean validate() {
@@ -84,18 +100,23 @@ public class LoginActivity extends Activity {
 
 	private void showDialog(String msg) {
 		AlertDialog.Builder builder = new AlertDialog.Builder(this);
-		builder.setMessage(msg).setCancelable(false)
-				.setPositiveButton("确定", new DialogInterface.OnClickListener() {
-					public void onClick(DialogInterface dialog, int id) {
-					}
-				});
+		builder.setMessage(msg).setCancelable(false).setPositiveButton("确定", new DialogInterface.OnClickListener() {
+			public void onClick(DialogInterface dialog, int id) {
+			}
+		});
 		AlertDialog alert = builder.create();
 		alert.show();
 	}
 
 	private String query(String username, String password) {
 		String queryString = "username=" + username + "&password=" + password;
-		String url = HttpUtil.BASE_URL + "servlet/ServiceTest?" + queryString;
+		
+		//测试连接JavaWeb开发平台(AndroidJspSevletMysqlServer)
+//		String url = HttpUtil.BASE_URL + "servlet/ServiceTest?" + queryString;
+//		http://192.168.1.103:8080/SteelWebServer/servlet/DoLogin?username=yfr&password=123456
+		//测试连接钢材信息平台(SteelWebServer)
+		String url = "http://192.168.1.126:8080/SteelWebServer/servlet/DoLogin?"+queryString;
+//		String url = "http://192.168.1.103:8080/UserLogin/LoginServlet?"+queryString;
 		return HttpUtil.queryStringForGet(url);
 	}
 }

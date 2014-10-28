@@ -11,7 +11,7 @@ import org.apache.http.util.EntityUtils;
 
 public class HttpUtil {
 	
-	public static final String BASE_URL="http://192.168.1.103:8080/AndroidJspSevletMysqlServer/";
+	public static final String BASE_URL="http://192.168.1.126:8080/AndroidJspSevletMysqlServer/";
 	
 	public static HttpGet getHttpGet(String url){
 		HttpGet request = new HttpGet(url);
