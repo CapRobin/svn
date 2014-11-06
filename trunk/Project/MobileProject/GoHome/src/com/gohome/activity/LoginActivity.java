@@ -2,30 +2,22 @@ package com.gohome.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.telephony.TelephonyManager;
-import android.text.TextUtils;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.Toast;
 
-import com.ab.task.AbTaskItem;
-import com.ab.task.AbTaskListener;
-import com.ab.task.AbThread;
 import com.gohome.R;
 
 /**
  * 
  * Copyright (c) 2013 All rights reserved
  * 
- * @Name£ºLoginActivity.java
- * @Describe£ºÓÃ»§µÇÂ¼Ò³Ãæ
+ * @Nameï¼šLoginActivity.java
+ * @Describeï¼šç”¨æˆ·ç™»å½•é¡µé¢
  * @Author: yfr5734@gmail.com
- * @Date£º2014Äê7ÔÂ24ÈÕ ÉÏÎç9:30:26
+ * @Dateï¼š2014å¹´7æœˆ24æ—¥ ä¸Šåˆ9:30:26
  * @Version v1.0
  */
 public class LoginActivity extends BaseActivity {
@@ -37,7 +29,8 @@ public class LoginActivity extends BaseActivity {
 	private Spinner userTypeSpin = null;
 	private boolean isLogin = false;
 	private int userType = 1;
-//	private UserInfo getUserInfo = null;
+
+	// private UserInfo getUserInfo = null;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -49,13 +42,13 @@ public class LoginActivity extends BaseActivity {
 
 	/**
 	 * 
-	 * @Describe£º³õÊ¼»¯±êÌâÀ¸
+	 * @Describeï¼šåˆå§‹åŒ–æ ‡é¢˜æ 
 	 * @Throws:
-	 * @Date£º2014Äê7ÔÂ24ÈÕ ÉÏÎç9:41:44
+	 * @Dateï¼š2014å¹´7æœˆ24æ—¥ ä¸Šåˆ9:41:44
 	 * @Version v1.0
 	 */
 	private void titleBarInitView() {
-		setTitleInfo("µÇ    Â¼", isShowLeftBut, "·µ»Ø", isShowRightBut, "×¢²á");
+		setTitleInfo("ï¿½ï¿½    Â¼", isShowLeftBut, "ï¿½ï¿½ï¿½ï¿½", isShowRightBut, "×¢ï¿½ï¿½");
 		if (isShowLeftBut) {
 			titleLeftBut.setOnClickListener(new OnClickListener() {
 
@@ -77,44 +70,46 @@ public class LoginActivity extends BaseActivity {
 
 	/**
 	 * 
-	 * ÃèÊö£º³õÊ¼»¯View
+	 * æè¿°ï¼šåˆå§‹åŒ–View
 	 * 
 	 * @throws
-	 * @date£º2013-11-13 ÉÏÎç10:21:24
+	 * @dateï¼š2013-11-13 ä¸Šåˆ10:21:24
 	 * @version v1.0
 	 */
 	private void initView() {
-//		loginBtn = (Button) findViewById(R.id.loginBtn);
-//		userNameEdit = (EditText) findViewById(R.id.userNameEdit);
-//		userPwdEdit = (EditText) findViewById(R.id.userPwdEdit);
-//		userTypeSpin = (Spinner) findViewById(R.id.userTypeSpin);
-//		userTypeSpin.setOnItemSelectedListener(new OnItemSelectedListener() {
-//
-//			@Override
-//			public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-//
-//				String getUserTypeStr = userTypeSpin.getSelectedItem().toString().toString();
-//				if ("ÆÕÍ¨»áÔ±".equals(getUserTypeStr)) {
-//					userType = 1;
-//				} else {
-//					userType = 0;
-//				}
-//				Toast.makeText(LoginActivity.this, getUserTypeStr, 5).show();
-//			}
-//
-//			@Override
-//			public void onNothingSelected(AdapterView<?> parent) {
-//			}
-//		});
-//
-//		loginBtn.setOnClickListener(new OnClickListener() {
-//
-//			@Override
-//			public void onClick(View v) {
-//				startLogin();
-//
-//			}
-//		});
+		// loginBtn = (Button) findViewById(R.id.loginBtn);
+		// userNameEdit = (EditText) findViewById(R.id.userNameEdit);
+		// userPwdEdit = (EditText) findViewById(R.id.userPwdEdit);
+		// userTypeSpin = (Spinner) findViewById(R.id.userTypeSpin);
+		// userTypeSpin.setOnItemSelectedListener(new OnItemSelectedListener() {
+		//
+		// @Override
+		// public void onItemSelected(AdapterView<?> parent, View view, int
+		// position, long id) {
+		//
+		// String getUserTypeStr =
+		// userTypeSpin.getSelectedItem().toString().toString();
+		// if ("ï¿½ï¿½Í¨ï¿½ï¿½Ô±".equals(getUserTypeStr)) {
+		// userType = 1;
+		// } else {
+		// userType = 0;
+		// }
+		// Toast.makeText(LoginActivity.this, getUserTypeStr, 5).show();
+		// }
+		//
+		// @Override
+		// public void onNothingSelected(AdapterView<?> parent) {
+		// }
+		// });
+		//
+		// loginBtn.setOnClickListener(new OnClickListener() {
+		//
+		// @Override
+		// public void onClick(View v) {
+		// startLogin();
+		//
+		// }
+		// });
 	}
 
 }

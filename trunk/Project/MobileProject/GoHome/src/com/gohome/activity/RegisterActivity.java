@@ -1,7 +1,6 @@
 package com.gohome.activity;
 
-import com.gohome.R;
-
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -9,14 +8,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import com.gohome.R;
+
 /**
  * 
  * Copyright (c) 2013 All rights reserved
  * 
- * @Name£ºRegisterActivity.java
- * @Describe£ºÓÃ»§×¢²áÒ³Ãæ
+ * @Nameï¼šRegisterActivity.java
+ * @Describeï¼šç”¨æˆ·æ³¨å†Œé¡µé¢
  * @Author: yfr5734@gmail.com
- * @Date£º2014Äê7ÔÂ24ÈÕ ÉÏÎç9:33:54
+ * @Dateï¼š2014å¹´7æœˆ24æ—¥ ä¸Šåˆ9:33:54
  * @Version v1.0
  */
 public class RegisterActivity extends BaseActivity {
@@ -29,7 +30,7 @@ public class RegisterActivity extends BaseActivity {
 	private EditText realNameEdit, userNameEdit, pwdEdit, affirmPwdEdit;
 	private String realNameEditStr, userNameEditStr, pwdEditStr, affirmPwdEditStr;
 	private Spinner userTypeSpin = null;
-	private int userType = 0; // 0.ÆÕÍ¨»áÔ±; 1.¹«Ë¾ÉÌ»§
+	private int userType = 0; // 0.æ™®é€šä¼šå‘˜; 1.å…¬å¸å•†æˆ·
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -42,16 +43,17 @@ public class RegisterActivity extends BaseActivity {
 
 	/**
 	 * 
-	 * @Describe£º³õÊ¼»¯±êÌâÀ¸
+	 * @Describeï¼šåˆå§‹åŒ–æ ‡é¢˜æ 
 	 * @Throws:
-	 * @Date£º2014Äê7ÔÂ24ÈÕ ÉÏÎç9:41:44
+	 * @Dateï¼š2014å¹´7æœˆ24æ—¥ ä¸Šåˆ9:41:44
 	 * @Version v1.0
 	 */
 	private void titleBarInitView() {
-		setTitleInfo("×¢    ²á", isShowLeftBut, "·µ»Ø", isShowRightBut, "¸öÈËÖĞĞÄ");
+		setTitleInfo("æ³¨    å†Œ", isShowLeftBut, "è¿”å›", isShowRightBut, "ä¸ªäººä¸­å¿ƒ");
 		if (isShowLeftBut) {
 			titleLeftBut.setOnClickListener(new OnClickListener() {
 
+				@Override
 				public void onClick(View v) {
 					finish();
 				}
@@ -60,8 +62,9 @@ public class RegisterActivity extends BaseActivity {
 		if (isShowRightBut) {
 			titleRightBut.setOnClickListener(new OnClickListener() {
 
+				@Override
 				public void onClick(View v) {
-//					startActivity(new Intent(RegisterActivity.this, PersonalCenterActivity.class));
+					startActivity(new Intent(RegisterActivity.this, MainActivity.class));
 				}
 			});
 		}
@@ -69,10 +72,10 @@ public class RegisterActivity extends BaseActivity {
 
 	/**
 	 * 
-	 * ÃèÊö£º³õÊ¼»¯View
+	 * æè¿°ï¼šåˆå§‹åŒ–View
 	 * 
 	 * @throws
-	 * @date£º2013-11-13 ÉÏÎç10:21:24
+	 * @dateï¼š2013-11-13 ä¸Šåˆ10:21:24
 	 * @version v1.0
 	 */
 	private void initView() {

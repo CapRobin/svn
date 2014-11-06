@@ -24,13 +24,11 @@ import com.gohome.global.MyApplication;
 /**
  * 
  * Copyright (c) 2013 All rights reserved
- * 
- * @Name£ºBaseActivity.java
- * @Describe£ºActivity»ùÀà
- * @Author: yfr5734@gmail.com
- * @Date£º2014Äê5ÔÂ12ÈÕ ÉÏÎç9:23:10
- * @Version v1.0 *
- * 
+ * @Nameï¼šBaseActivity.java 
+ * @Describeï¼šActivityåŸºç±»  
+ * @Author:  yfr5734@gmail.com
+ * @Dateï¼š2014å¹´11æœˆ6æ—¥ ä¸‹åˆ2:36:50
+ * @Version v1.0
  */
 public class BaseActivity extends AbActivity {
 	public Button titleLeftBut, titleRightBut;
@@ -47,7 +45,7 @@ public class BaseActivity extends AbActivity {
 		public void handleMessage(android.os.Message msg) {
 			switch (msg.what) {
 			case 0:
-				Toast.makeText(BaseActivity.this, "ÌáÊ¾Êı¾İ", 5).show();
+				Toast.makeText(BaseActivity.this, "æç¤ºæ•°æ®", 5).show();
 				break;
 			case 1:
 
@@ -76,10 +74,10 @@ public class BaseActivity extends AbActivity {
 
 	/**
 	 * 
-	 * ÃèÊö£ºÏÔÊ¾ÌáÊ¾¶Ô»°¿ò
+	 * æè¿°ï¼šæ˜¾ç¤ºæç¤ºå¯¹è¯æ¡†
 	 * 
 	 * @throws
-	 * @date£º2013-11-19 ÉÏÎç10:36:52
+	 * @dateï¼š2013-11-19 ä¸Šåˆ10:36:52
 	 * @version v1.0
 	 */
 	public void showMyDialog() {
@@ -92,8 +90,8 @@ public class BaseActivity extends AbActivity {
 		Button unAcceptBtn = (Button) retieve.findViewById(R.id.unAcceptBtn);
 		TextView dialogTitleText1 = (TextView) retieve.findViewById(R.id.dialogTitleText1);
 		TextView setMessage = (TextView) retieve.findViewById(R.id.setMessage);
-		dialogTitleText1.setText("ÎÂÜ°ÌáÊ¾");
-		setMessage.setText("		ÄãÈ·¶¨ÒªÍË³ö³ÌĞòÂğ£¿");
+		dialogTitleText1.setText("æ¸©é¦¨æç¤º");
+		setMessage.setText("		ä½ ç¡®å®šè¦é€€å‡ºç¨‹åºå—ï¼Ÿ");
 		acceptBtn.setOnClickListener(new OnClickListener() {
 
 			public void onClick(View v) {
@@ -112,10 +110,10 @@ public class BaseActivity extends AbActivity {
 
 	/**
 	 * 
-	 * @Describe£ºÉèÖÃ¼ÓÔØÄÚÈİÏÔÊ¾ÇøµÄView
+	 * @Describeï¼šè®¾ç½®åŠ è½½å†…å®¹æ˜¾ç¤ºåŒºçš„View
 	 * @param id
 	 * @Throws:
-	 * @Date£º2014Äê7ÔÂ23ÈÕ ÏÂÎç5:05:58
+	 * @Dateï¼š2014å¹´7æœˆ23æ—¥ ä¸‹åˆ5:05:58
 	 * @Version v1.0
 	 */
 	public void setBaseContentView(int id) {
@@ -125,14 +123,14 @@ public class BaseActivity extends AbActivity {
 
 	/**
 	 * 
-	 * @Describe£ºÉèÖÃ±êÌâÀ¸µÄÏà¹ØÊôĞÔ
+	 * @Describeï¼šè®¾ç½®æ ‡é¢˜æ çš„ç›¸å…³å±æ€§
 	 * @param pageName
 	 * @param isShowLeftBut
 	 * @param leftButText
 	 * @param isShowRightBut
 	 * @param rightButText
 	 * @Throws:
-	 * @Date£º2014Äê7ÔÂ23ÈÕ ÏÂÎç5:05:27
+	 * @Dateï¼š2014å¹´7æœˆ23æ—¥ ä¸‹åˆ5:05:27
 	 * @Version v1.0
 	 */
 	public void setTitleInfo(String pageName, boolean isShowLeftBut, String leftButText, boolean isShowRightBut, String rightButText) {
