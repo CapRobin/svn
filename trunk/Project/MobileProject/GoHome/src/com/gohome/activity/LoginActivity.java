@@ -4,9 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Spinner;
 
 import com.gohome.R;
 
@@ -23,14 +20,6 @@ import com.gohome.R;
 public class LoginActivity extends BaseActivity {
 	private boolean isShowLeftBut = true;
 	private boolean isShowRightBut = true;
-	private Button loginBtn;
-	private EditText userNameEdit, userPwdEdit;
-	private String getMsg, userNameEditStr, userPwdEditStr = null;
-	private Spinner userTypeSpin = null;
-	private boolean isLogin = false;
-	private int userType = 1;
-
-	// private UserInfo getUserInfo = null;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -48,7 +37,7 @@ public class LoginActivity extends BaseActivity {
 	 * @Version v1.0
 	 */
 	private void titleBarInitView() {
-		setTitleInfo("��    ¼", isShowLeftBut, "����", isShowRightBut, "ע��");
+		setTitleInfo("登    录", isShowLeftBut, "返回", isShowRightBut, "注册");
 		if (isShowLeftBut) {
 			titleLeftBut.setOnClickListener(new OnClickListener() {
 
@@ -77,39 +66,7 @@ public class LoginActivity extends BaseActivity {
 	 * @version v1.0
 	 */
 	private void initView() {
-		// loginBtn = (Button) findViewById(R.id.loginBtn);
-		// userNameEdit = (EditText) findViewById(R.id.userNameEdit);
-		// userPwdEdit = (EditText) findViewById(R.id.userPwdEdit);
-		// userTypeSpin = (Spinner) findViewById(R.id.userTypeSpin);
-		// userTypeSpin.setOnItemSelectedListener(new OnItemSelectedListener() {
-		//
-		// @Override
-		// public void onItemSelected(AdapterView<?> parent, View view, int
-		// position, long id) {
-		//
-		// String getUserTypeStr =
-		// userTypeSpin.getSelectedItem().toString().toString();
-		// if ("��ͨ��Ա".equals(getUserTypeStr)) {
-		// userType = 1;
-		// } else {
-		// userType = 0;
-		// }
-		// Toast.makeText(LoginActivity.this, getUserTypeStr, 5).show();
-		// }
-		//
-		// @Override
-		// public void onNothingSelected(AdapterView<?> parent) {
-		// }
-		// });
-		//
-		// loginBtn.setOnClickListener(new OnClickListener() {
-		//
-		// @Override
-		// public void onClick(View v) {
-		// startLogin();
-		//
-		// }
-		// });
+
 	}
 
 }
