@@ -24,9 +24,10 @@ import com.gohome.global.MyApplication;
 /**
  * 
  * Copyright (c) 2013 All rights reserved
- * @Name：BaseActivity.java 
- * @Describe：Activity基类  
- * @Author:  yfr5734@gmail.com
+ * 
+ * @Name：BaseActivity.java
+ * @Describe：Activity基类
+ * @Author: yfr5734@gmail.com
  * @Date：2014年11月6日 下午2:36:50
  * @Version v1.0
  */

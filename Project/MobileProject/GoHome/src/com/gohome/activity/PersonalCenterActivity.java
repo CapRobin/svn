@@ -1,6 +1,5 @@
 package com.gohome.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -10,21 +9,20 @@ import com.gohome.R;
 /**
  * 
  * Copyright (c) 2013 All rights reserved
- * 
- * @Name：LoginActivity.java
- * @Describe：用户登录页面
- * @Author: yfr5734@gmail.com
- * @Date：2014年7月24日 上午9:30:26
+ * @Name：PersonalCenterActivity.java 
+ * @Describe：个人中心
+ * @Author:  yfr5734@gmail.com
+ * @Date：2014年11月10日 下午4:16:09
  * @Version v1.0
  */
-public class LoginActivity extends BaseActivity {
+public class PersonalCenterActivity extends BaseActivity {
 	private boolean isShowLeftBut = true;
-	private boolean isShowRightBut = true;
+	private boolean isShowRightBut = false;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setBaseContentView(R.layout.login);
+		setBaseContentView(R.layout.grzx);
 		titleBarInitView();
 		initView();
 	}
@@ -37,7 +35,7 @@ public class LoginActivity extends BaseActivity {
 	 * @Version v1.0
 	 */
 	private void titleBarInitView() {
-		setTitleInfo("登    录", isShowLeftBut, "返回", isShowRightBut, "注册");
+		setTitleInfo("返回", isShowLeftBut, "返回", isShowRightBut, "");
 		if (isShowLeftBut) {
 			titleLeftBut.setOnClickListener(new OnClickListener() {
 
@@ -51,7 +49,7 @@ public class LoginActivity extends BaseActivity {
 			titleRightBut.setOnClickListener(new OnClickListener() {
 
 				public void onClick(View v) {
-					startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
+//					startActivity(new Intent(WyzcActivity.this, RegisterActivity.class));
 				}
 			});
 		}
@@ -66,7 +64,7 @@ public class LoginActivity extends BaseActivity {
 	 * @version v1.0
 	 */
 	private void initView() {
-
+		
 	}
 
 }
