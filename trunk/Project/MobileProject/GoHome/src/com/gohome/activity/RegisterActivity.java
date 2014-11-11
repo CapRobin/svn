@@ -53,7 +53,6 @@ public class RegisterActivity extends BaseActivity {
 		if (isShowLeftBut) {
 			titleLeftBut.setOnClickListener(new OnClickListener() {
 
-				@Override
 				public void onClick(View v) {
 					finish();
 				}
@@ -62,7 +61,6 @@ public class RegisterActivity extends BaseActivity {
 		if (isShowRightBut) {
 			titleRightBut.setOnClickListener(new OnClickListener() {
 
-				@Override
 				public void onClick(View v) {
 					startActivity(new Intent(RegisterActivity.this, MainActivity.class));
 				}

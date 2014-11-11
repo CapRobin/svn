@@ -1,10 +1,10 @@
 package com.gohome.activity;
 
+import com.gohome.R;
+
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
-
-import com.gohome.R;
 
 /**
  * 
