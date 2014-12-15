@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string name="lv_loadmore">正在加载信息&#8230;</string>
+    <string name="hello">Hello World, LogisticsManagementActivity!</string>
+    <string name="app_name">天翼物流</string>
+    <string name="btn_refresh">刷新</string>
+    <string name="btn_cat">分类</string>
+    <string name="btn_clear">清空</string>
+    <string name="btn_published">已发布</string>
+    <string name="btn_back">返回</string>
+    <string name="title_browser">浏览</string>
+    <string name="title_more">更多</string>
+    <string name="title_search">货运搜索</string>
+    <string name="title_publish">信息发布</string>
+    <string name="title_detail">信息详情</string>
+    <string name="title_login">登录</string>
+    <string name="title_register">注册</string>
+    <string name="info_filter_opt_cargo">货源信息</string>
+    <string name="info_filter_opt_truck">车源信息</string>
+    <string name="info_filter_title">选择信息类别</string>
+    <string name="publish_info_cargo">发布货源信息</string>
+    <string name="publish_info_truck">发布车源信息</string>
+    <string name="more_account">账户</string>
+    <string name="login_account">用户名：</string>
+    <string name="login_password">密码：</string>
+    <string name="login_btn">立即登录</string>
+    <string name="login_fail_alert">登录失败，请重试一下。</string>
+    <string name="logout_btn">退出</string>
+    <string name="pub_city">会员城市：</string>
+    <string name="pub_type">信息类型：</string>
+    <string name="pub_cargo_type">货物类型：</string>
+
+    <string-array name="pub_cargo_typelist">
+        <item>普货</item>
+        <item>重货</item>
+        <item>泡货</item>
+    </string-array>
+
+    <string name="pub_cargo_weight">重量体积：</string>
+
+    <string-array name="pub_cargo_weight_unit_list">
+        <item>吨</item>
+        <item>方</item>
+        <item>公斤</item>
+        <item>件</item>
+        <item>车</item>
+        <item>个</item>
+        <item>台</item>
+        <item>箱</item>
+    </string-array>
+
+    <string name="pub_truck_type">车型：</string>
+
+    <string-array name="pub_truck_typelist">
+        <item>不限</item>
+        <item>半封闭</item>
+        <item>半挂</item>
+        <item>保温</item>
+        <item>单桥</item>
+        <item>双桥</item>
+        <item>低板</item>
+        <item>高栏</item>
+        <item>高栏低桥</item>
+        <item>高栏双桥</item>
+        <item>工程</item>
+        <item>集装箱</item>
+        <item>冷藏</item>
+        <item>铁笼子</item>
+        <item>平板</item>
+        <item>大篷</item>
+        <item>起重</item>
+        <item>前四后八</item>
+        <item>前八轮后八轮</item>
+        <item>全封闭</item>
+        <item>斯太儿</item>
+        <item>特种</item>
+        <item>危险</item>
+        <item>棉被</item>
+        <item>小货</item>
+        <item>大货</item>
+        <item>邮政 油罐</item>
+        <item>自卸</item>
+        <item>自由厢板</item>
+    </string-array>
+
+    <string name="pub_truck_plate">车牌：</string>
+    <string name="pub_truck_capacity">载重：</string>
+    <string name="pub_truck_capacity_unit">吨</string>
+    <string name="pub_truck_length">车长：</string>
+    <string name="pub_truck_length_unit">米</string>
+    <string name="pub_memo">补充说明：</string>
+    <string name="pub_submit_btn">立即发布</string>
+    <string name="pub_reset_btn">清空表单</string>
+    <!--
+    <string name="pub_content">信息内容：</string>
+    <string name="pub_tel">联系方式：</string>
+    <string name="pub_flag">会员ID：</string>
+    <string name="pub_start_city">信息发出城市：</string>
+    <string name="pub_net_phone">网络电话：</string>
+    -->
+    <string name="pub_cargo_btn">发布</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_profile">Profile</string>
+    <string name="start_area">出发地：</string>
+    <string name="stop_area">到达地：</string>
+    <string name="search_cargo_btn">搜索货源</string>
+    <string name="search_truck_btn">搜索车源</string>
+    <string name="title_activity_search_browser">SearchBrowser</string>
+    <string name="pending">正在加载信息&#8230;</string>
+    <string name="nodata">抱歉，暂时没有信息。</string>
+    <string name="detail_id">ID：</string>
+    <string name="detail_code">会员城市：</string>
+    <string name="detail_type">类型：</string>
+    <string name="detail_content">信息内容：</string>
+    <string name="detail_tel">联系方式：</string>
+    <string name="detail_netphone">网路电话：</string>
+    <string name="detail_flag">发布会员ID：</string>
+    <string name="detail_deal">成交：</string>
+    <string name="detail_date">发布时间：</string>
+    <string name="contact_btn">查看联系方式</string>
+    <string name="tab_browser">浏览</string>
+    <string name="tab_search">搜索</string>
+    <string name="tab_publish">发布</string>
+    <string name="tab_more">更多</string>
+    <string name="province_btn">省份</string>
+    <string name="city_btn">城市</string>
+    <string name="area_btn">区县</string>
+    <string name="loc_warning">请先选择</string>
+    <string name="no_network">没有可用的网络</string>
+    <string name="no_network_tips">请开启GPRS或WIFI网路连接</string>
+    <string name="btn_cancel">取消</string>
+    <string name="btn_ok">确定</string>
+    <string name="btn_register">注册</string>
+    <string name="title_activity_register">Register</string>
+    
+    <string name="register_usertype">会员类型：</string>
+    <string name="register_username">会员名：</string>
+    <string name="register_password">密码：</string>
+    <string name="register_name1">真实姓名：</string>
+    <string name="register_postcard">身份证号码：</string>
+    <string name="register_sex">性别：</string>
+    <string name="register_province">所属省份：</string>
+    <string name="register_city">所属地区：</string>
+    <string name="register_province_city">省份地区：</string>
+    <string name="register_tel">联系电话：</string>
+    <string name="register_sj">手机号：</string>
+    <string name="register_cartype">车型：</string>
+    <string name="register_roads">运输线路：</string>
+    <string name="register_roads_start">起点：</string>
+    <string name="register_roads_stop">终点：</string>
+    <string name="register_submit_btn">立即注册</string>
+    <string name="register_reset_btn">清空表单</string>
+    
+    <string name="register_regsuccess">注册成功</string>
+    <string name="register_regnogo">提交信息成功，等待审核</string>
+    <string name="register_hasregedbefore">此机器已经注册过一个会员名</string>
+    <string name="register_hasreged">用户名已经被注册</string>
+    <string name="register_error">注册错误</string>
+
+    <string-array name="register_usertypelist">
+        <item>物流公司</item>
+        <item>货主</item>
+        <item>车主</item>
+    </string-array>
+    
+    <string-array name="register_sexlist">
+        <item>男</item>
+        <item>女</item>
+    </string-array>
+    
+    <string-array name="register_cartypelist">
+        <item>半封闭</item>
+        <item>半挂</item>
+        <item>保温</item>
+        <item>单桥</item>
+        <item>双桥</item>
+        <item>低板</item>
+        <item>高栏</item>
+        <item>高栏低桥</item>
+        <item>高栏双桥</item>
+        <item>工程</item>
+        <item>集装箱</item>
+        <item>冷藏</item>
+        <item>铁笼子</item>
+        <item>平板</item>
+        <item>大篷</item>
+        <item>起重</item>
+        <item>前四后八</item>
+        <item>前八轮后八轮</item>
+        <item>全封闭</item>
+        <item>斯太儿</item>
+        <item>特种</item>
+        <item>危险</item>
+        <item>棉被</item>
+        <item>小货</item>
+        <item>大货</item>
+        <item>邮政 油罐</item>
+        <item>自卸</item>
+        <item>自由厢板</item>
+        <item>不限</item>
+    </string-array>
+    
+    
+    <string name="register_carnums">车牌号：</string>
+    <string-array name="register_carnums_plist">
+        <item>京</item>
+        <item>津</item>
+        <item>沪</item>
+        <item>渝</item>
+        <item>冀</item>
+        <item>豫</item>
+        <item>云</item>
+        <item>辽</item>
+        <item>黑</item>
+        <item>湘</item>
+        <item>皖</item>
+        <item>鲁</item>
+        <item>新</item>
+        <item>苏</item>
+        <item>浙</item>
+        <item>赣</item>
+        <item>鄂</item>
+        <item>桂</item>
+        <item>甘</item>
+        <item>晋</item>
+        <item>蒙</item>
+        <item>陕</item>
+        <item>吉</item>
+        <item>闽</item>
+        <item>贵</item>
+        <item>粤</item>
+        <item>青</item>
+        <item>藏</item>
+        <item>川</item>
+        <item>宁</item>
+        <item>琼</item>
+        <item>港</item>
+        <item>澳</item>
+        <item>台</item>
+    </string-array>
+    <string-array name="register_carnums_alist">
+        <item>A</item>
+        <item>B</item>
+        <item>C</item>
+        <item>D</item>
+        <item>E</item>
+        <item>F</item>
+        <item>G</item>
+        <item>H</item>
+        <item>I</item>
+        <item>J</item>
+        <item>K</item>
+        <item>L</item>
+        <item>M</item>
+        <item>N</item>
+        <item>O</item>
+        <item>P</item>
+        <item>Q</item>
+        <item>R</item>
+        <item>S</item>
+        <item>T</item>
+        <item>U</item>
+        <item>V</item>
+        <item>W</item>
+        <item>X</item>
+        <item>Y</item>
+        <item>Z</item>
+    </string-array>
+
+    <string name="download_no_space">There is not enough space. Cannot finish download.</string>
+	
+    <!-- This is the short description of a permission associated with the
+        Android Download Manager. It is displayed as part of the description
+        of any application that was granted that permission.
+        This specific permission controls access to the Download Manager by
+        applications that initiate downloads. -->
+    <string name="permlab_downloadManager">Access download manager.</string>
+    <!-- This is the long description of a permission associated with the
+        Android Download Manager. It is displayed as part of the description
+        of any application that was granted that permission.
+        This specific permission controls access to the Download Manager by
+        applications that initiate downloads. -->
+    <string name="permdesc_downloadManager">Allows the application to
+        access the download manager and to use it to download files.
+        Malicious applications can use this to disrupt downloads and access
+        private information.</string>
+    <!-- This is the short description of a permission associated with the
+        Android Download Manager. It is displayed as part of the description
+        of any application that was granted that permission.
+        This specific permission controls access to some advanced (and
+        dangerous) features from the Download Manager that are needed by
+        system applications but aren't necessary for regular applications
+        that just initiate plain downloads. -->
+    <string name="permlab_downloadManagerAdvanced">Advanced download
+        manager functions.</string>
+   <!-- This is the long description of a permission associated with the
+        Android Download Manager. It is displayed as part of the description
+        of any application that was granted that permission.
+        This specific permission controls access to some advanced (and
+        dangerous) features from the Download Manager that are needed by
+        system applications but aren't necessary for regular applications
+        that just initiate plain downloads. -->
+    <string name="permdesc_downloadManagerAdvanced">Allows the application to
+        access the download manager\'s advanced functions.
+        Malicious applications can use this to disrupt downloads and access
+        private information.</string>
+
+    <string name="permlab_downloadCompletedIntent">Send download
+        notifications.</string>
+    <!-- This is the long description of a permission associated with the
+        Android Download Manager. It is displayed as part of the description
+        of any application that was granted that permission.
+        This specific permission allows an application to tell other
+        applications that their downloads have completed. -->
+    <string name="permdesc_downloadCompletedIntent">Allows the application
+        to send notifications about completed downloads. Malicious applications
+        can use this to confuse other applications that download
+        files.</string>
+
+    <!-- Title for permission to see all downloads to EXTERNAL -->
+    <string name="permlab_seeAllExternal">See all downloads to SD card</string>
+    <!-- Description for the permission to see all downloads to EXTERNAL -->
+    <string name="permdesc_seeAllExternal">Allows the application to see all
+        downloads to the SD card, regardless of which application downloaded
+        them.</string>        
+    <!-- This is the title that is used when displaying the notification
+    for a download that doesn't have a title associated with it. -->
+    <string name="download_unknown_title">&amp;lt;Untitled&amp;gt;</string>
+
+    <!-- When there are multiple simultaneous outstanding downloads from a
+        single application, they are displayed as a single notification,
+        and the expanded notification view displays the first two download
+        names separated with this string, i.e. "[title], [title]"
+        or "[title], [title] and [n] more". This is the comma + space
+        that separates the first two titles, and it's used both when there
+        are exactly two and more than two titles. -->
+    <string name="notification_filename_separator">", "</string>
+
+    <!-- When there are three or more simultaneous outstanding downloads from a
+        single application, they are displayed as a single notification,
+        and the expanded notification view uses this string to indicate
+        downloads beyond the first two, i.e. "[title], [title] and [n] more".
+        This is the " and [n] more" part, including the leading space, and it's
+        used regardless of the number of additional downloads. -->
+    <string name="notification_filename_extras">" and <xliff:g example="27" id="number">%d</xliff:g> more"</string>
+
+    <!-- When a download completes, a notification is displayed, and this
+        string is used to indicate that the download successfully completed.
+        Note that such a download could have been initiated by a variety of
+        applications, including (but not limited to) the browser, an email
+        application, a content marketplace. -->
+    <string name="notification_download_complete">Download complete</string>
+
+    <!-- When a download completes, a notification is displayed, and this
+        string is used to indicate that the download failed.
+        Note that such a download could have been initiated by a variety of
+        applications, including (but not limited to) the browser, an email
+        application, a content marketplace. -->
+    <string name="notification_download_failed">Download unsuccessful</string>
+    
+    <string name="sure">确认</string>
+    <string name="cancel">取消</string>
+    <string name="update">系统更新</string>
+    <string name="update_message">发现新版本，请更新！</string>
+    
+    
+</resources>
