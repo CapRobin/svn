@@ -89,6 +89,31 @@
             android:label="@string/title_activity_register"
             android:theme="@android:style/Theme.NoTitleBar" >
         </activity>
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/title_activity_register"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+        <activity
+            android:name=".BrowserActivity"
+            android:label="@string/title_activity_register"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+        <activity
+            android:name=".SearchActivity"
+            android:label="@string/title_activity_register"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+        <activity
+            android:name=".PublishActivity"
+            android:label="@string/title_activity_register"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+        <activity
+            android:name=".MoreActivity"
+            android:label="@string/title_activity_register"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
 
         <receiver android:name=".DownloadManagerReceiver" />
 
