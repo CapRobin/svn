@@ -20,7 +20,7 @@ public class MoveBg {
 	 */
 	public static void moveFrontBg(View v, int startX, int toX, int startY, int toY) {
 		TranslateAnimation anim = new TranslateAnimation(startX, toX, startY, toY);
-		anim.setDuration(200);
+		anim.setDuration(150);		//调整动画切换的速度(值越大 切换速度越慢)
 		anim.setFillAfter(true);
 		v.startAnimation(anim);
 	}
