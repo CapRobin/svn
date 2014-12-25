@@ -5,25 +5,28 @@
     android:background="@color/background"
     android:orientation="vertical" >
 
+
     <TextView
         android:id="@+id/msg_content"
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="top"
-        android:minHeight="?android:attr/listPreferredItemHeight"
-        android:paddingTop="8dp"
-        android:paddingLeft="6dp"
-        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_marginBottom="15dip"
+        android:ellipsize="end"
+        android:paddingLeft="15dip"
+        android:paddingRight="15dip"
+        android:paddingTop="10dip"
+        android:singleLine="true"
         android:textColor="@color/black"
-        android:textColorHighlight="@color/black" />
+        android:textColorHighlight="@color/gray" />
 
     <TextView
         android:id="@+id/msg_date"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingLeft="6dp"
-        android:paddingBottom="8dp"
-        android:textColor="@color/gray"
-        android:textColorHighlight="@color/gray" />
+        android:layout_gravity="right"
+        android:paddingRight="15dip"
+        android:text="2012.12.25"
+        android:textColorHighlight="@color/gray"
+        android:textSize="10sp" />
 
 </LinearLayout>
