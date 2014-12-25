@@ -1,0 +1,12 @@
+<resources>
+
+    <dimen name="switcher_view_width">150dip</dimen>
+    <dimen name="switcher_view_height">30dip</dimen>
+    <dimen name="detaile_pager">180dip</dimen>
+    <dimen name="detaile_height">225dip</dimen>
+    <dimen name="detaile_advice">80dip</dimen>
+    <dimen name="setting_list_space">30dip</dimen>
+    <dimen name="main_width">30dip</dimen>
+    <dimen name="main_space">10dip</dimen>
+    <dimen name="imageWidth">45dip</dimen>
+</resources>

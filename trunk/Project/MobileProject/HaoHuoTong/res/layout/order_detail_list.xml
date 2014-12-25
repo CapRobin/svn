@@ -1,0 +1,1335 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white" >
+    
+    
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:fadingEdge="none" >
+
+        <RelativeLayout
+            android:id="@+id/listLinear"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:id="@+id/infoLayout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dip"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:id="@+id/docImage"
+                    android:layout_width="60dip"
+                    android:layout_height="60dip"
+                    android:background="@drawable/head" />
+
+                <TextView
+                    android:id="@+id/nameEdit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dip"
+                    android:layout_toRightOf="@+id/docImage"
+                    android:textColor="@color/balck"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/docMobileEdit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/nameEdit"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginTop="10dip"
+                    android:layout_toRightOf="@+id/docImage"
+                    android:textColor="@color/text_color3"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/infoLayout2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/infoLayout"
+                android:layout_marginBottom="5dip"
+                android:layout_marginLeft="20dip"
+                android:layout_marginRight="20dip"
+                android:orientation="vertical" >
+
+                <RelativeLayout
+                    android:id="@+id/treatyFamilyTop"
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dip"
+                    android:background="@drawable/center_rail_n"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        android:id="@+id/imageleft"
+                        android:layout_width="25dip"
+                        android:layout_height="25dip"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dip"
+                        android:background="@drawable/appraise" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dip"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:layout_toRightOf="@+id/imageleft"
+                        android:gravity="center_vertical"
+                        android:text="个人信息"
+                        android:textColor="@color/text_color3"
+                        android:textSize="18sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/majorLayout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/setting_bg_center_selector_login"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/userName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="10dip"
+                        android:paddingLeft="10dip"
+                        android:paddingTop="10dip"
+                        android:text="司机姓名"
+                        android:textColor="@color/balck"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/userNameText"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginRight="10dip"
+                        android:layout_toRightOf="@+id/userName"
+                        android:background="@color/transparent"
+                        android:textColor="@color/text_color3" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/docInfoLayout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/setting_bg_center_selector_login"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/personalMobile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="10dip"
+                        android:paddingLeft="10dip"
+                        android:paddingTop="10dip"
+                        android:text="个人电话"
+                        android:textColor="@color/balck"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/personalMobileText"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginRight="10dip"
+                        android:layout_toRightOf="@+id/personalMobile"
+                        android:background="@color/transparent"
+                        android:textColor="@color/text_color3" />
+                </RelativeLayout>
+
+<!--                 <RelativeLayout -->
+<!--                     android:id="@+id/docInfoLayout" -->
+<!--                     android:layout_width="fill_parent" -->
+<!--                     android:layout_height="wrap_content" -->
+<!--                     android:background="@drawable/setting_bg_center_selector_login" -->
+<!--                     android:orientation="horizontal" > -->
+
+<!--                     <TextView -->
+<!--                         android:id="@+id/suicheMobileText" -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:paddingBottom="10dip" -->
+<!--                         android:paddingLeft="10dip" -->
+<!--                         android:paddingTop="10dip" -->
+<!--                         android:text="随车电话" -->
+<!--                         android:textColor="@color/balck" -->
+<!--                         android:textSize="18sp" /> -->
+
+<!--                     <TextView -->
+<!--                         android:id="@+id/suicheMobileText" -->
+<!--                         android:layout_width="fill_parent" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:layout_centerVertical="true" -->
+<!--                         android:layout_marginLeft="10dip" -->
+<!--                         android:layout_marginRight="10dip" -->
+<!--                         android:layout_toRightOf="@+id/suicheMobileText" -->
+<!--                         android:background="@color/transparent" -->
+<!--                         android:textColor="@color/text_color3" /> -->
+<!--                 </RelativeLayout> -->
+
+                <RelativeLayout
+                    android:id="@+id/docInfoLayout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/setting_bg_center_selector_login"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/identityCard"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="10dip"
+                        android:paddingLeft="10dip"
+                        android:paddingTop="10dip"
+                        android:text="身份证号"
+                        android:textColor="@color/balck"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/identityCardText"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginRight="10dip"
+                        android:layout_toRightOf="@+id/identityCard"
+                        android:background="@color/transparent"
+                        android:textColor="@color/text_color3" />
+                </RelativeLayout>
+
+<!--                 <RelativeLayout -->
+<!--                     android:id="@+id/docInfoLayout" -->
+<!--                     android:layout_width="fill_parent" -->
+<!--                     android:layout_height="wrap_content" -->
+<!--                     android:background="@drawable/setting_bg_center_selector_login" -->
+<!--                     android:orientation="horizontal" > -->
+
+<!--                     <TextView -->
+<!--                         android:id="@+id/jinjiMobileText" -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:paddingBottom="10dip" -->
+<!--                         android:paddingLeft="10dip" -->
+<!--                         android:paddingTop="10dip" -->
+<!--                         android:text="紧急电话" -->
+<!--                         android:textColor="@color/balck" -->
+<!--                         android:textSize="18sp" /> -->
+
+<!--                     <TextView -->
+<!--                         android:id="@+id/jinjiMobileText" -->
+<!--                         android:layout_width="fill_parent" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:layout_centerVertical="true" -->
+<!--                         android:layout_marginLeft="10dip" -->
+<!--                         android:layout_marginRight="10dip" -->
+<!--                         android:layout_toRightOf="@+id/jinjiMobileText" -->
+<!--                         android:background="@color/transparent" -->
+<!--                         android:textColor="@color/text_color3" /> -->
+<!--                 </RelativeLayout> -->
+
+                <RelativeLayout
+                    android:id="@+id/docInfoLayout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/setting_bg_center_selector_login"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/driverSex"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="10dip"
+                        android:paddingLeft="10dip"
+                        android:paddingTop="10dip"
+                        android:text="司机性别"
+                        android:textColor="@color/balck"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/driverSexText"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginRight="10dip"
+                        android:layout_toRightOf="@+id/driverSex"
+                        android:background="@color/transparent"
+                        android:textColor="@color/text_color3" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/docInfoLayout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/setting_bg_center_selector_login"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/familyAddress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="10dip"
+                        android:paddingLeft="10dip"
+                        android:paddingTop="10dip"
+                        android:text="家庭地址"
+                        android:textColor="@color/balck"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/familyAddressText"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginRight="10dip"
+                        android:layout_toRightOf="@+id/familyAddress"
+                        android:background="@color/transparent"
+                        android:textColor="@color/text_color3" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/docInfoLayout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/setting_bg_center_selector_login"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/qiwangliuxiang"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="10dip"
+                        android:paddingLeft="10dip"
+                        android:paddingTop="10dip"
+                        android:text="期望流向"
+                        android:textColor="@color/balck"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/qiwangliuxiangText"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/qiwangliuxiang"
+                        android:layout_marginTop="35dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginRight="10dip"
+                        android:background="@color/transparent"
+                        android:textColor="@color/text_color3" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/docInfoLayout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/setting_bg_down_selector_login"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/jiashizhizhao"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="10dip"
+                        android:paddingLeft="10dip"
+                        android:paddingTop="10dip"
+                        android:text="驾驶执照"
+                        android:textColor="@color/balck"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/jiashizhizhaoText"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginRight="10dip"
+                        android:layout_toRightOf="@+id/jiashizhizhao"
+                        android:background="@color/transparent"
+                        android:textColor="@color/text_color3" />
+                </RelativeLayout>
+                
+                 <RelativeLayout
+                    android:id="@+id/docInfoLayout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/setting_bg_down_selector_login"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/driver_level"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="10dip"
+                        android:paddingLeft="10dip"
+                        android:paddingTop="10dip"
+                        android:text="用户等级"
+                        android:textColor="@color/balck"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/driver_levelText"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginRight="10dip"
+                        android:layout_toRightOf="@+id/driver_level"
+                        android:background="@color/transparent"
+                        android:textColor="@color/text_color3" />
+                </RelativeLayout>
+                
+                  <RelativeLayout
+                    android:id="@+id/docInfoLayout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/setting_bg_down_selector_login"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/driver_praise"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="10dip"
+                        android:paddingLeft="10dip"
+                        android:paddingTop="10dip"
+                        android:text="用户好评"
+                        android:textColor="@color/balck"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/driver_praiseText"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginRight="10dip"
+                        android:layout_toRightOf="@+id/driver_praise"
+                        android:background="@color/transparent"
+                        android:textColor="@color/text_color3" />
+                </RelativeLayout>
+                
+                <RelativeLayout
+                    android:id="@+id/docInfoLayout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/setting_bg_center_selector_login"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/biddingMoney"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="10dip"
+                        android:paddingLeft="10dip"
+                        android:paddingTop="10dip"
+                        android:text="出价"
+                        android:textColor="@color/balck"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/biddingMoneyText"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginRight="10dip"
+                        android:layout_toRightOf="@+id/biddingMoney"
+                        android:background="@color/transparent"
+                        android:textColor="@color/text_color3" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/infoLayout3"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/infoLayout2"
+                android:layout_marginBottom="5dip"
+                android:layout_marginLeft="20dip"
+                android:layout_marginRight="20dip"
+                android:orientation="vertical" >
+
+                <RelativeLayout
+                    android:id="@+id/treatyFamilyTop"
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dip"
+                    android:background="@drawable/center_rail_n"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        android:id="@+id/imageleft"
+                        android:layout_width="25dip"
+                        android:layout_height="25dip"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dip"
+                        android:background="@drawable/appraise" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dip"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dip"
+                        android:layout_toRightOf="@+id/imageleft"
+                        android:gravity="center_vertical"
+                        android:text="车辆信息"
+                        android:textColor="@color/text_color3"
+                        android:textSize="18sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/majorLayout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/setting_bg_center_selector_login"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/carNum"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="10dip"
+                        android:paddingLeft="10dip"
+                        android:paddingTop="10dip"
+                        android:text="车牌"
+                        android:textColor="@color/balck"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/carNumText"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginRight="10dip"
+                        android:layout_toRightOf="@+id/carNum"
+                        android:background="@color/transparent"
+                        android:textColor="@color/text_color3" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/docInfoLayout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/setting_bg_center_selector_login"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/cartype"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="10dip"
+                        android:paddingLeft="10dip"
+                        android:paddingTop="10dip"
+                        android:text="车型"
+                        android:textColor="@color/balck"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/cartypeText"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginRight="10dip"
+                        android:layout_toRightOf="@+id/cartype"
+                        android:background="@color/transparent"
+                        android:textColor="@color/text_color3" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/docInfoLayout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/setting_bg_center_selector_login"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/carLength"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="10dip"
+                        android:paddingLeft="10dip"
+                        android:paddingTop="10dip"
+                        android:text="车长"
+                        android:textColor="@color/balck"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/carLengthText"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginRight="10dip"
+                        android:layout_toRightOf="@+id/carLength"
+                        android:background="@color/transparent"
+                        android:textColor="@color/text_color3" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/docInfoLayout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/setting_bg_center_selector_login"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/carHight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="10dip"
+                        android:paddingLeft="10dip"
+                        android:paddingTop="10dip"
+                        android:text="车高"
+                        android:textColor="@color/balck"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/carHightText"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginRight="10dip"
+                        android:layout_toRightOf="@+id/carHight"
+                        android:background="@color/transparent"
+                        android:textColor="@color/text_color3" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/docInfoLayout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/setting_bg_center_selector_login"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/volume"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="10dip"
+                        android:paddingLeft="10dip"
+                        android:paddingTop="10dip"
+                        android:text="容积"
+                        android:textColor="@color/balck"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/volumeText"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginRight="10dip"
+                        android:layout_toRightOf="@+id/volume"
+                        android:background="@color/transparent"
+                        android:textColor="@color/text_color3" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/docInfoLayout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/setting_bg_center_selector_login"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/maxLoad"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="10dip"
+                        android:paddingLeft="10dip"
+                        android:paddingTop="10dip"
+                        android:text="最大载重"
+                        android:textColor="@color/balck"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/maxLoadText"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginRight="10dip"
+                        android:layout_toRightOf="@+id/maxLoad"
+                        android:background="@color/transparent"
+                        android:textColor="@color/text_color3" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/docInfoLayout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/setting_bg_center_selector_login"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/freightState"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="10dip"
+                        android:paddingLeft="10dip"
+                        android:paddingTop="10dip"
+                        android:text="货运状态"
+                        android:textColor="@color/balck"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/freightStateText"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginRight="10dip"
+                        android:layout_toRightOf="@+id/freightState"
+                        android:background="@color/transparent"
+                        android:textColor="@color/text_color3" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/docInfoLayout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/setting_bg_center_selector_login"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/engineNum"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="10dip"
+                        android:paddingLeft="10dip"
+                        android:paddingTop="10dip"
+                        android:text="发动机号"
+                        android:textColor="@color/balck"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/engineNumText"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginRight="10dip"
+                        android:layout_toRightOf="@+id/engineNum"
+                        android:background="@color/transparent"
+                        android:textColor="@color/text_color3" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/docInfoLayout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/setting_bg_center_selector_login"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/chejiaNum"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="10dip"
+                        android:paddingLeft="10dip"
+                        android:paddingTop="10dip"
+                        android:text="车架号码"
+                        android:textColor="@color/balck"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/chejiaNumText"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginRight="10dip"
+                        android:layout_toRightOf="@+id/chejiaNum"
+                        android:background="@color/transparent"
+                        android:textColor="@color/text_color3" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/docInfoLayout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/setting_bg_center_selector_login"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/operationNum"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="10dip"
+                        android:paddingLeft="10dip"
+                        android:paddingTop="10dip"
+                        android:text="运营证号"
+                        android:textColor="@color/balck"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/operationNumText"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginRight="10dip"
+                        android:layout_toRightOf="@+id/operationNum"
+                        android:background="@color/transparent"
+                        android:textColor="@color/text_color3" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/docInfoLayout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/setting_bg_center_selector_login"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/insuranceNum"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="10dip"
+                        android:paddingLeft="10dip"
+                        android:paddingTop="10dip"
+                        android:text="保险卡号"
+                        android:textColor="@color/balck"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/insuranceNumText"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginRight="10dip"
+                        android:layout_toRightOf="@+id/insuranceNum"
+                        android:background="@color/transparent"
+                        android:textColor="@color/text_color3" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/docInfoLayout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/setting_bg_down_selector_login"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/guakaodanw"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="10dip"
+                        android:paddingLeft="10dip"
+                        android:paddingTop="10dip"
+                        android:text="挂靠单位"
+                        android:textColor="@color/balck"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/guakaodanwText"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginRight="10dip"
+                        android:layout_toRightOf="@+id/guakaodanw"
+                        android:background="@color/transparent"
+                        android:textColor="@color/text_color3" />
+                </RelativeLayout>
+            </LinearLayout>
+
+             <LinearLayout
+                 android:id="@+id/infoLayout4"
+                 android:layout_width="fill_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_below="@+id/infoLayout3"
+                 android:layout_marginBottom="5dip"
+                 android:layout_marginLeft="10dip"
+                 android:layout_marginRight="10dip"
+                 android:orientation="vertical" >
+
+                 <EditText
+                     android:id="@+id/remark"
+                     android:layout_width="fill_parent"
+                     android:layout_height="60dip"
+                     android:layout_marginBottom="0dip"
+                     android:layout_marginLeft="10dip"
+                     android:layout_marginRight="10dip"
+                     android:background="@drawable/myedit_bg"
+                     android:gravity="top"
+                     android:hint="添加备注信息"
+                     android:textSize="15sp" />
+
+                 <LinearLayout
+                    android:id="@+id/spinnerLayout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dip"
+                    android:layout_alignParentBottom="true"
+                    android:layout_margin="5dip"
+                    android:orientation="horizontal" >
+
+                    <Button
+                        android:id="@+id/consult"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/exist_selector"
+                        android:text="咨询" />
+
+                    <Button
+                        android:id="@+id/shareInfo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:layout_marginLeft="10dip"
+                        android:layout_marginRight="10dip"
+                        android:layout_weight="1"
+                        android:background="@drawable/exist_selector"
+                        android:text="信息分享"
+                        android:visibility="invisible" />
+
+                    <Button
+                        android:id="@+id/winingBut"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/exist_selector"
+                        android:text="确认中标" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="1dip"
+                android:layout_below="@+id/updateSubmit" >
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+<!--     <ScrollView -->
+<!--         android:layout_width="fill_parent" -->
+<!--         android:layout_height="wrap_content" > -->
+
+<!--         <RelativeLayout -->
+<!--             android:layout_width="fill_parent" -->
+<!--             android:layout_height="283dp" > -->
+
+<!--             <RelativeLayout -->
+<!--                 android:id="@+id/layout_1" -->
+<!--                 android:layout_width="fill_parent" -->
+<!--                 android:layout_height="150dip" -->
+<!--                 android:layout_margin="10dip" -->
+<!--                 android:background="@drawable/myedit_bg" > -->
+
+<!--                 <RelativeLayout -->
+<!--                     android:id="@+id/Layout_driver" -->
+<!--                     android:layout_width="fill_parent" -->
+<!--                     android:layout_height="wrap_content" -->
+<!--                     android:layout_marginTop="3dp" -->
+<!--                     android:background="@drawable/setting_bg_center_selector_login" -->
+<!--                     android:orientation="horizontal" > -->
+
+<!--                     <TextView -->
+<!--                         android:id="@+id/info_context" -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:hint="个人相关信息" -->
+<!--                         android:textColor="@color/balck" -->
+<!--                         android:textSize="20sp" /> -->
+<!--                 </RelativeLayout> -->
+
+<!--                 <RelativeLayout -->
+<!--                     android:id="@+id/Layout_driver_name" -->
+<!--                     android:layout_width="fill_parent" -->
+<!--                     android:layout_height="wrap_content" -->
+<!--                     android:layout_below="@+id/Layout_driver" -->
+<!--                     android:layout_centerHorizontal="true" -->
+<!--                     android:background="@drawable/setting_bg_center_selector_login" -->
+<!--                     android:orientation="horizontal" > -->
+
+<!--                     <TextView -->
+<!--                         android:id="@+id/textView1" -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:layout_alignParentLeft="true" -->
+<!--                         android:layout_alignParentTop="true" -->
+<!--                         android:layout_marginLeft="10dp" -->
+<!--                         android:text="司机姓名" -->
+<!--                         android:textSize="18sp" /> -->
+
+<!--                     <TextView -->
+<!--                         android:id="@+id/driverName" -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:layout_alignBottom="@+id/textView1" -->
+<!--                         android:layout_alignTop="@+id/textView1" -->
+<!--                         android:layout_marginLeft="20dp" -->
+<!--                         android:layout_toRightOf="@+id/textView1" -->
+<!--                         android:textSize="18sp" /> -->
+<!--                 </RelativeLayout> -->
+
+<!--                 <RelativeLayout -->
+<!--                     android:id="@+id/Layout_driver_phone" -->
+<!--                     android:layout_width="fill_parent" -->
+<!--                     android:layout_height="wrap_content" -->
+<!--                     android:layout_alignLeft="@+id/Layout_driver_name" -->
+<!--                     android:layout_below="@+id/Layout_driver_name" -->
+<!--                     android:background="@drawable/setting_bg_center_selector_login" -->
+<!--                     android:orientation="horizontal" > -->
+
+<!--                     <TextView -->
+<!--                         android:id="@+id/textView2" -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:textSize="18dp" -->
+<!--                         android:layout_marginLeft="10dp" -->
+<!--                         android:text="联系方式" /> -->
+
+<!--                     <TextView -->
+<!--                         android:id="@+id/driverPhone" -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:layout_alignBottom="@+id/textView2" -->
+<!--                         android:layout_alignLeft="@+id/textView2"  -->
+<!--                         android:layout_marginLeft="20dp"/> -->
+<!--                 </RelativeLayout> -->
+<!--                 <RelativeLayout -->
+<!--                     android:id="@+id/Layout_driver_IDCard" -->
+<!--                     android:layout_width="fill_parent" -->
+<!--                     android:layout_height="wrap_content" -->
+<!--                     android:layout_alignLeft="@+id/Layout_driver_phone" -->
+<!--                     android:layout_below="@+id/Layout_driver_phone" -->
+<!--                     android:background="@drawable/setting_bg_center_selector_login" -->
+<!--                     android:orientation="horizontal" > -->
+
+<!--                     <TextView -->
+<!--                         android:id="@+id/textView3" -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:textSize="18dp" -->
+<!--                         android:layout_marginLeft="10dp" -->
+<!--                         android:text="联系方式" /> -->
+
+<!--                     <TextView -->
+<!--                         android:id="@+id/driverPhone" -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:layout_alignBottom="@+id/textView3" -->
+<!--                         android:layout_marginLeft="20dp" -->
+<!--                          /> -->
+<!--                 </RelativeLayout> -->
+<!--                 <RelativeLayout -->
+<!--                     android:id="@+id/Layout_driver_sex" -->
+<!--                     android:layout_width="fill_parent" -->
+<!--                     android:layout_height="wrap_content" -->
+<!--                     android:layout_alignLeft="@+id/Layout_driver_IDCard" -->
+<!--                     android:layout_below="@+id/Layout_driver_IDCard" -->
+<!--                     android:background="@drawable/setting_bg_center_selector_login" -->
+<!--                     android:orientation="horizontal" > -->
+
+<!--                     <TextView -->
+<!--                         android:id="@+id/textView2" -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:layout_alignLeft="@+id/textView1" -->
+<!--                         android:layout_below="@+id/textView1" -->
+<!--                         android:textSize="18dp" -->
+<!--                         android:layout_marginLeft="10dp" -->
+<!--                         android:text="联系方式" /> -->
+
+<!--                     <TextView -->
+<!--                         android:id="@+id/driverPhone" -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:layout_alignBottom="@+id/textView2" -->
+<!--                         android:layout_alignLeft="@+id/driverName" /> -->
+<!--                 </RelativeLayout> -->
+<!--                 <RelativeLayout -->
+<!--                     android:id="@+id/Layout_driver_address" -->
+<!--                     android:layout_width="fill_parent" -->
+<!--                     android:layout_height="wrap_content" -->
+<!--                     android:layout_alignLeft="@+id/Layout_driver_sex" -->
+<!--                     android:layout_below="@+id/Layout_driver_sex" -->
+<!--                     android:background="@drawable/setting_bg_center_selector_login" -->
+<!--                     android:orientation="horizontal" > -->
+
+<!--                     <TextView -->
+<!--                         android:id="@+id/textView2" -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:layout_alignLeft="@+id/textView1" -->
+<!--                         android:layout_below="@+id/textView1" -->
+<!--                         android:textSize="18dp" -->
+<!--                         android:layout_marginLeft="10dp" -->
+<!--                         android:text="家庭住址" /> -->
+
+<!--                     <TextView -->
+<!--                         android:id="@+id/driverAddress" -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:layout_alignBottom="@+id/textView2" -->
+<!--                         android:layout_alignLeft="@+id/driverName" /> -->
+<!--                 </RelativeLayout> -->
+<!--                 <RelativeLayout -->
+<!--                     android:id="@+id/Layout_driver_qwlx" -->
+<!--                     android:layout_width="fill_parent" -->
+<!--                     android:layout_height="wrap_content" -->
+<!--                     android:layout_alignLeft="@+id/Layout_driver_address" -->
+<!--                     android:layout_below="@+id/Layout_driver_address" -->
+<!--                     android:background="@drawable/setting_bg_center_selector_login" -->
+<!--                     android:orientation="horizontal" > -->
+
+<!--                     <TextView -->
+<!--                         android:id="@+id/textView2" -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:layout_alignLeft="@+id/textView1" -->
+<!--                         android:layout_below="@+id/textView1" -->
+<!--                         android:textSize="18dp" -->
+<!--                         android:layout_marginLeft="10dp" -->
+<!--                         android:text="期望流向" /> -->
+
+<!--                     <TextView -->
+<!--                         android:id="@+id/driverPhone" -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:layout_alignBottom="@+id/textView2" -->
+<!--                         android:layout_alignLeft="@+id/driverName" /> -->
+<!--                 </RelativeLayout> -->
+<!--                 <RelativeLayout -->
+<!--                     android:id="@+id/Layout_driver_dCard" -->
+<!--                     android:layout_width="fill_parent" -->
+<!--                     android:layout_height="wrap_content" -->
+<!--                     android:layout_alignLeft="@+id/Layout_driver_qwlx" -->
+<!--                     android:layout_below="@+id/Layout_driver_qwlx" -->
+<!--                     android:background="@drawable/setting_bg_center_selector_login" -->
+<!--                     android:orientation="horizontal" > -->
+
+<!--                     <TextView -->
+<!--                         android:id="@+id/textView2" -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:layout_alignLeft="@+id/textView1" -->
+<!--                         android:layout_below="@+id/textView1" -->
+<!--                         android:textSize="18dp" -->
+<!--                         android:layout_marginLeft="10dp" -->
+<!--                         android:text="驾驶执照" /> -->
+
+<!--                     <TextView -->
+<!--                         android:id="@+id/driverPhone" -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:layout_alignBottom="@+id/textView2" -->
+<!--                         android:layout_alignLeft="@+id/driverName" /> -->
+<!--                 </RelativeLayout> -->
+
+<!--             </RelativeLayout> -->
+            
+            
+
+<!--             </RelativeLayout> -->
+
+<!--             <RelativeLayout -->
+<!--                 android:id="@+id/layout_2" -->
+<!--                 android:layout_width="fill_parent" -->
+<!--                 android:layout_height="150dip" -->
+<!--                 android:layout_alignLeft="@+id/layout_1" -->
+<!--                 android:layout_below="@+id/layout_1" -->
+<!--                 android:layout_marginRight="10dp" -->
+<!--                 android:background="@drawable/myedit_bg" > -->
+
+<!--                 <TextView -->
+<!--                     android:id="@+id/publicTime" -->
+<!--                     android:layout_width="wrap_content" -->
+<!--                     android:layout_height="wrap_content" -->
+<!--                     android:layout_alignParentLeft="true" -->
+<!--                     android:layout_alignParentTop="true" -->
+<!--                     android:hint="车辆相关信息" -->
+<!--                     android:textColor="@color/balck" -->
+<!--                     android:textSize="20sp" /> -->
+
+<!--                 <TextView -->
+<!--                     android:id="@+id/textView5" -->
+<!--                     android:layout_width="wrap_content" -->
+<!--                     android:layout_height="wrap_content" -->
+<!--                     android:layout_alignRight="@+id/publicTime" -->
+<!--                     android:layout_below="@+id/publicTime" -->
+<!--                     android:layout_marginTop="10dp" -->
+<!--                     android:text="车     型" /> -->
+
+<!--                 <TextView -->
+<!--                     android:id="@+id/carType" -->
+<!--                     android:layout_width="wrap_content" -->
+<!--                     android:layout_height="wrap_content" -->
+<!--                     android:layout_alignBottom="@+id/textView5" -->
+<!--                     android:layout_marginLeft="24dp" -->
+<!--                     android:layout_marginTop="10dp" -->
+<!--                     android:layout_toRightOf="@+id/textView5" -->
+<!--                     android:text="" /> -->
+
+<!--                 <TextView -->
+<!--                     android:id="@+id/textView7" -->
+<!--                     android:layout_width="wrap_content" -->
+<!--                     android:layout_height="wrap_content" -->
+<!--                     android:layout_centerVertical="true" -->
+<!--                     android:layout_toLeftOf="@+id/carType" -->
+<!--                     android:text="最大承载量" /> -->
+
+<!--                 <TextView -->
+<!--                     android:id="@+id/carmax" -->
+<!--                     android:layout_width="wrap_content" -->
+<!--                     android:layout_height="wrap_content" -->
+<!--                     android:layout_alignBaseline="@+id/textView7" -->
+<!--                     android:layout_alignBottom="@+id/textView7" -->
+<!--                     android:layout_alignLeft="@+id/carType" -->
+<!--                     android:text="" /> -->
+
+<!--                 <TextView -->
+<!--                     android:id="@+id/textView9" -->
+<!--                     android:layout_width="wrap_content" -->
+<!--                     android:layout_height="wrap_content" -->
+<!--                     android:layout_alignRight="@+id/textView7" -->
+<!--                     android:layout_below="@+id/textView7" -->
+<!--                     android:layout_marginTop="10dp" -->
+<!--                     android:text="车  牌  号" /> -->
+
+<!--                 <TextView -->
+<!--                     android:id="@+id/textView8" -->
+<!--                     android:layout_width="wrap_content" -->
+<!--                     android:layout_height="wrap_content" -->
+<!--                     android:layout_alignBaseline="@+id/carmax" -->
+<!--                     android:layout_alignBottom="@+id/carmax" -->
+<!--                     android:layout_marginLeft="15dp" -->
+<!--                     android:layout_toRightOf="@+id/carmax" -->
+<!--                     android:text="吨" /> -->
+
+<!--                 <TextView -->
+<!--                     android:id="@+id/textView6" -->
+<!--                     android:layout_width="wrap_content" -->
+<!--                     android:layout_height="wrap_content" -->
+<!--                     android:layout_alignLeft="@+id/textView9" -->
+<!--                     android:layout_below="@+id/textView9" -->
+<!--                     android:layout_marginTop="10dp" -->
+<!--                     android:text="挂号单位" /> -->
+
+<!--                 <TextView -->
+<!--                     android:id="@+id/carKey" -->
+<!--                     android:layout_width="wrap_content" -->
+<!--                     android:layout_height="wrap_content" -->
+<!--                     android:layout_alignBaseline="@+id/textView9" -->
+<!--                     android:layout_alignBottom="@+id/textView9" -->
+<!--                     android:layout_alignLeft="@+id/textView9" -->
+<!--                     android:layout_marginLeft="80dp" -->
+<!--                     android:text="" /> -->
+
+<!--                 <TextView -->
+<!--                     android:id="@+id/carUnit" -->
+<!--                     android:layout_width="wrap_content" -->
+<!--                     android:layout_height="wrap_content" -->
+<!--                     android:layout_alignBaseline="@+id/textView6" -->
+<!--                     android:layout_alignBottom="@+id/textView6" -->
+<!--                     android:layout_alignLeft="@+id/textView6" -->
+<!--                     android:layout_marginLeft="80dp" -->
+<!--                     android:text="" /> -->
+
+<!--                 <RelativeLayout -->
+<!--                     android:id="@+id/Layout_driver_PJ" -->
+<!--                     android:layout_width="fill_parent" -->
+<!--                     android:layout_height="wrap_content" -->
+<!--                     android:layout_alignBaseline="@+id/textView7" -->
+<!--                     android:layout_alignBottom="@+id/textView7" -->
+<!--                     android:layout_alignLeft="@+id/publicTime" -->
+<!--                     android:background="@drawable/setting_bg_center_selector_login" -->
+<!--                     android:orientation="horizontal" > -->
+
+<!--                     <TextView -->
+<!--                         android:id="@+id/textView4" -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:layout_alignLeft="@+id/textView3" -->
+<!--                         android:layout_below="@+id/textView3" -->
+<!--                         android:layout_marginTop="8dp" -->
+<!--                         android:text="客户评价" /> -->
+
+<!--                     <TextView -->
+<!--                         android:id="@+id/driverPJ" -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:layout_alignBaseline="@+id/textView4" -->
+<!--                         android:layout_alignBottom="@+id/textView4" -->
+<!--                         android:layout_alignLeft="@+id/driverLevel" /> -->
+
+<!--                     <RelativeLayout -->
+<!--                         android:id="@+id/Layout_driver_level" -->
+<!--                         android:layout_width="fill_parent" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:layout_alignParentRight="true" -->
+<!--                         android:layout_alignParentTop="true" -->
+<!--                         android:background="@drawable/setting_bg_center_selector_login" -->
+<!--                         android:orientation="horizontal" > -->
+
+<!--                         <TextView -->
+<!--                             android:id="@+id/textView3" -->
+<!--                             android:layout_width="wrap_content" -->
+<!--                             android:layout_height="wrap_content" -->
+<!--                             android:layout_alignRight="@+id/textView2" -->
+<!--                             android:layout_below="@+id/textView2" -->
+<!--                             android:layout_marginTop="8dp" -->
+<!--                             android:text="用户级别" /> -->
+
+<!--                         <TextView -->
+<!--                             android:id="@+id/driverLevel" -->
+<!--                             android:layout_width="wrap_content" -->
+<!--                             android:layout_height="wrap_content" -->
+<!--                             android:layout_alignBaseline="@+id/textView3" -->
+<!--                             android:layout_alignBottom="@+id/textView3" -->
+<!--                             android:layout_alignLeft="@+id/driverPhone" /> -->
+
+<!--                     </RelativeLayout> -->
+
+<!--                 </RelativeLayout> -->
+
+<!--                 <RelativeLayout -->
+<!--                     android:id="@+id/Layout_driver_PJ" -->
+<!--                     android:layout_width="fill_parent" -->
+<!--                     android:layout_height="wrap_content" -->
+<!--                     android:layout_alignBaseline="@+id/textView5" -->
+<!--                     android:layout_alignBottom="@+id/textView5" -->
+<!--                     android:layout_alignParentRight="true" -->
+<!--                     android:background="@drawable/setting_bg_center_selector_login" -->
+<!--                     android:orientation="horizontal" > -->
+
+<!--                     <TextView -->
+<!--                         android:id="@+id/textView4" -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:layout_alignLeft="@+id/textView3" -->
+<!--                         android:layout_below="@+id/textView3" -->
+<!--                         android:layout_marginTop="8dp" -->
+<!--                         android:text="客户评价" /> -->
+
+<!--                     <TextView -->
+<!--                         android:id="@+id/driverPJ" -->
+<!--                         android:layout_width="wrap_content" -->
+<!--                         android:layout_height="wrap_content" -->
+<!--                         android:layout_alignBaseline="@+id/textView4" -->
+<!--                         android:layout_alignBottom="@+id/textView4" -->
+<!--                         android:layout_alignLeft="@+id/driverLevel" /> -->
+<!--                 </RelativeLayout> -->
+
+<!--             </RelativeLayout> -->
+<!--         </RelativeLayout> -->
+<!--     </ScrollView> -->
+
+    
+
+</RelativeLayout>

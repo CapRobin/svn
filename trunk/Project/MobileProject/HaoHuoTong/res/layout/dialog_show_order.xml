@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dialogLayout1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/transparent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/dialogLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/exist_bg_1" >
+
+        <TextView
+            android:id="@+id/dialogTitleText1"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dip"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/dialogLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="300dp"
+        android:background="@drawable/exist_bg_2" >
+
+        <LinearLayout
+            android:id="@+id/butLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="50dip"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/acceptBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="35dip"
+                android:layout_marginLeft="25dip"
+                android:layout_marginRight="10dip"
+                android:layout_weight="1"
+                android:background="@drawable/exist_selector"
+                android:text="确定"
+                android:textColor="@color/balck"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/unAcceptBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="35dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="25dip"
+                android:layout_weight="1"
+                android:background="@drawable/exist_selector"
+                android:text="取消"
+                android:textColor="@color/balck"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/WinId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="28dp"
+            android:layout_marginTop="22dp"
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/WinName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/WinId"
+            android:layout_alignTop="@+id/WinId"
+            android:layout_below="@+id/WinId"
+            android:layout_marginTop="30dp"
+            android:text="TextView" />
+        <TextView
+            android:id="@+id/WinCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/WinName"
+            android:layout_alignTop="@+id/WinName"
+            android:layout_below="@+id/WinName"
+            android:layout_marginTop="30dp"
+            android:text="TextView" />
+        <TextView
+            android:id="@+id/Win_J_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/WinCard"
+            android:layout_alignTop="@+id/WinCard"
+            android:layout_below="@+id/WinCard"
+            android:layout_marginTop="30dp"
+            android:text="TextView" />
+        <TextView
+            android:id="@+id/Win_car_Card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/Win_J_id"
+            android:layout_alignTop="@+id/Win_J_id"
+            android:layout_below="@+id/Win_J_id"
+            android:layout_marginTop="30dp"
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/moeny"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+             android:layout_alignLeft="@+id/Win_car_Card"
+            android:layout_alignTop="@+id/Win_car_Card"
+            android:layout_below="@+id/Win_car_Card"
+            android:layout_marginTop="30dp"
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/remark_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/moeny"
+            android:layout_marginRight="28dp"
+            android:layout_alignTop="@+id/moeny"
+            android:layout_below="@+id/moeny"
+            android:layout_marginTop="30dp"
+            android:text="ttt" />
+
+    </RelativeLayout>
+
+</LinearLayout>

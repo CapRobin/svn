@@ -1,0 +1,23 @@
+<resources>
+
+    <dimen name="switcher_view_width">170dip</dimen>
+    <dimen name="switcher_view_height">35dip</dimen>
+    <dimen name="switcher_view_top">8dip</dimen>
+    <dimen name="switcher_button_width">37dip</dimen>
+    <dimen name="switcher_button_height">37dip</dimen>
+    <dimen name="date_view_text">25dip</dimen>
+    <dimen name="AxisTitleTextSize_text">10dip</dimen>
+    <dimen name="LegendTextSize_text">11dip</dimen>
+    <dimen name="detaile_pager">250dip</dimen>
+    <dimen name="detaile_height">295dip</dimen>
+    <dimen name="detaile_advice">100dip</dimen>
+    <dimen name="main_width">40dip</dimen>
+    <dimen name="imageWidth">45dip</dimen>
+    <dimen name="about_top">30dip</dimen>
+    <!-- 找回密码 -->
+    <dimen name="spaceHight">25dp</dimen>
+    <dimen name="spaceLow">20dp</dimen>
+    <dimen name="textWidth">240dp</dimen>
+    <dimen name="buttonWidth">100dp</dimen>
+
+</resources>

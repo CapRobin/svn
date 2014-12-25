@@ -1,0 +1,102 @@
+<resources>
+
+    <string name="app_name">好货通</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="userName">用户名</string>
+    <string name="phoneNum">手机号码</string>
+    <string name="inputPhoneNum">请输入手机号码</string>
+    <string name="userPwd">密　码</string>
+    <string name="getPassword">找回密码</string>
+    <string name="rem_pwd">记住密码</string>
+    <string name="forgetPwd">忘记密码</string>
+    <string name="login">登        录</string>
+    <string name="addFriend">加好友</string>
+    <string name="passWord">请输入输入密码</string>
+    <string name="sending_request">正在发送请求</string>
+    <string name="realNameText">真实姓名</string>
+    <string name="inputRealNameText">请输入真实姓名</string>
+    <string name="register">注        册</string>
+    <string name="setPwd">密码设置</string>
+    <string name="inputSetPwd">请输入密码</string>
+    <string name="firm_pwd">重复密码</string>
+    <string name="inputFirm_pwd">请输入确认密码</string>
+    <string name="loc_warning">请先选择</string>
+    <string name="province_btn">省份</string>
+    <string name="city_btn">城市</string>
+    <string name="area_btn">区县</string>
+    <string name="error_phone">手机号码格式不正确！</string>
+    <string name="phoneNumError">手机不能为空!</string>
+    <string name="affirmPwdError">两次密码输入不一致!</string>
+    <string name="realName">请输入真实姓名</string>
+    <string name="really_name_on">请输入2到8个中文字符！</string>
+    <string name="setPwdError">密码不能为空!</string>
+    <string name="pwdNotPhoneError">密码请输入手机号码!</string>
+    <string name="pub_cargo_type">货物类型：</string>
+    <string name="smsText">欢迎使用好货通物流软件，下载地址为：http://dl.5671.cc/;</string>
+
+    <string-array name="user_type">
+        <item>司机</item>
+        <item>物流公司</item>
+    </string-array>
+    
+    <string-array name="cargo_name">
+        <item>煤炭</item>
+        <item>焦炭</item>
+        <item>普通化工</item>
+        <item>危险化工</item>
+    </string-array>
+    
+    <string-array name="pub_cargo_typelist">
+        <item>普货</item>
+        <item>重货</item>
+        <item>泡货</item>
+    </string-array>
+
+    <string name="pub_cargo_weight">重量体积：</string>
+
+    <string-array name="pub_cargo_weight_unit_list">
+        <item>吨</item>
+        <item>方</item>
+        <item>公斤</item>
+        <item>件</item>
+        <item>车</item>
+        <item>个</item>
+        <item>台</item>
+        <item>箱</item>
+    </string-array>
+
+    <string name="pub_truck_type">车型：</string>
+
+    <string-array name="pub_truck_typelist">
+        <item>半封闭</item>
+        <item>半挂</item>
+        <item>保温</item>
+        <item>单桥</item>
+        <item>双桥</item>
+        <item>低板</item>
+        <item>高栏</item>
+        <item>高栏低桥</item>
+        <item>高栏双桥</item>
+        <item>工程</item>
+        <item>集装箱</item>
+        <item>冷藏</item>
+        <item>铁笼子</item>
+        <item>平板</item>
+        <item>大篷</item>
+        <item>起重</item>
+        <item>前四后八</item>
+        <item>前八轮后八轮</item>
+        <item>全封闭</item>
+        <item>斯太儿</item>
+        <item>特种</item>
+        <item>危险</item>
+        <item>棉被</item>
+        <item>小货</item>
+        <item>大货</item>
+        <item>邮政 油罐</item>
+        <item>自卸</item>
+        <item>自由厢板</item>
+    </string-array>
+
+</resources>

@@ -1,0 +1,25 @@
+<resources>
+
+    <dimen name="switcher_view_width">150dip</dimen>
+    <dimen name="switcher_view_height">30dip</dimen>
+    <dimen name="switcher_view_top">5dip</dimen>
+    <dimen name="switcher_button_width">33dip</dimen>
+    <dimen name="switcher_button_height">33dip</dimen>
+    <dimen name="date_view_text">25dip</dimen>
+    <dimen name="AxisTitleTextSize_text">10dip</dimen>
+    <dimen name="LegendTextSize_text">10dip</dimen>
+    <dimen name="about_top">40dip</dimen>
+    <dimen name="about_space">3dip</dimen>
+    <dimen name="detaile_advice">80dip</dimen>
+    <dimen name="setting_list_space">50dip</dimen>
+    <dimen name="main_width">50dip</dimen>
+    <dimen name="main_space">10dip</dimen>
+    <dimen name="main_left">0dip</dimen>
+    <dimen name="imageWidth">45dip</dimen>
+    <!-- 找回密码 -->
+    <dimen name="spaceHight">25dp</dimen>
+    <dimen name="spaceLow">20dp</dimen>
+    <dimen name="textWidth">200dp</dimen>
+    <dimen name="buttonWidth">100dp</dimen>
+
+</resources>

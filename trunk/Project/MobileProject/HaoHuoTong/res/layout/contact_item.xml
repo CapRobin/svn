@@ -1,0 +1,70 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/name_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true" >
+
+        <ImageView
+            android:id="@+id/contactImage"
+            android:layout_width="50dip"
+            android:layout_height="50dip"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="10dip"
+            android:src="@drawable/head" />
+
+        <TextView
+            android:id="@+id/contactName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="15dip"
+            android:layout_toRightOf="@+id/contactImage"
+            android:paddingTop="5dip"
+            android:text="余发荣"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/contactPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/contactName"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="15dip"
+            android:layout_marginTop="10dip"
+            android:layout_toRightOf="@+id/contactImage"
+            android:paddingBottom="5dip"
+            android:text="18602540653"
+            android:textColor="@color/black"
+            android:textSize="13sp" />
+
+        <!-- <ImageView -->
+        <!-- android:id="@+id/contactImagex" -->
+        <!-- android:layout_width="50dip" -->
+        <!-- android:layout_height="50dip" -->
+        <!-- android:layout_centerVertical="true" -->
+        <!-- android:layout_gravity="center_vertical" -->
+        <!-- android:layout_marginLeft="10dip" -->
+        <!-- android:layout_marginRight="10dip" -->
+        <!-- android:layout_alignParentRight="true" -->
+        <!-- android:src="@drawable/head" /> -->
+
+        <CheckBox
+            android:id="@+id/box"
+            android:layout_width="60dip"
+            android:layout_height="60dip"
+            android:layout_alignParentRight="true"
+            android:clickable="false"
+            android:focusable="false"
+            android:layout_centerVertical="true" />
+    </RelativeLayout>
+
+</RelativeLayout>
