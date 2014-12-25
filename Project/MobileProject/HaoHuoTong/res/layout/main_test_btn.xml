@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/index_main_bg" >
+
+    <LinearLayout
+        android:id="@+id/main_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_centerInParent="true"
+        android:layout_margin="10dip"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/dialogLayout_1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <RelativeLayout
+                android:id="@+id/dialogLayout1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dip"
+                android:background="@drawable/index_exist_bg_1" >
+
+                <TextView
+                    android:id="@+id/dialogTitleText1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="80dip"
+                    android:layout_centerInParent="true"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="10dip"
+                    android:text="模块1"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/dialogLayout2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dip"
+                android:layout_weight="1"
+                android:background="@drawable/index_exist_bg_1" >
+
+                <TextView
+                    android:id="@+id/dialogTitleText1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="80dip"
+                    android:layout_centerInParent="true"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="10dip"
+                    android:text="模块2"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/dialogLayout_2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <!-- <LinearLayout -->
+            <!-- android:id="@+id/dialogLayout_2" -->
+            <!-- android:layout_width="fill_parent" -->
+            <!-- android:layout_height="wrap_content" -->
+            <!-- android:layout_weight="1.5" -->
+            <!-- android:gravity="center_vertical" -->
+            <!-- android:layout_gravity="center_vertical" -->
+            <!-- android:orientation="vertical" > -->
+
+
+            <!-- <LinearLayout -->
+            <!-- android:id="@+id/layout1" -->
+            <!-- android:layout_width="fill_parent" -->
+            <!-- android:layout_height="fill_parent" -->
+            <!-- android:orientation="horizontal" > -->
+
+
+            <!-- <RelativeLayout -->
+            <!-- android:id="@+id/dialogLayout1" -->
+            <!-- android:layout_width="fill_parent" -->
+            <!-- android:layout_height="fill_parent" -->
+            <!-- android:layout_margin="5dip" -->
+            <!-- android:layout_weight="1" -->
+            <!-- android:background="@drawable/index_exist_bg_1" > -->
+
+
+            <!-- <TextView -->
+            <!-- android:id="@+id/dialogTitleText1" -->
+            <!-- android:layout_width="wrap_content" -->
+            <!-- android:layout_height="wrap_content" -->
+            <!-- android:layout_centerInParent="true" -->
+            <!-- android:gravity="center_vertical" -->
+            <!-- android:paddingLeft="10dip" -->
+            <!-- android:text="子模块3" -->
+            <!-- android:textColor="@color/white" -->
+            <!-- android:textSize="13sp" /> -->
+            <!-- </RelativeLayout> -->
+
+
+            <!-- <RelativeLayout -->
+            <!-- android:id="@+id/dialogLayout2" -->
+            <!-- android:layout_width="fill_parent" -->
+            <!-- android:layout_height="fill_parent" -->
+            <!-- android:layout_margin="5dip" -->
+            <!-- android:layout_toRightOf="@+id/dialogLayout1" -->
+            <!-- android:layout_weight="1" -->
+            <!-- android:background="@drawable/index_exist_bg_1" > -->
+
+
+            <!-- <TextView -->
+            <!-- android:id="@+id/dialogTitleText1" -->
+            <!-- android:layout_width="wrap_content" -->
+            <!-- android:layout_height="wrap_content" -->
+            <!-- android:layout_centerInParent="true" -->
+            <!-- android:gravity="center_vertical" -->
+            <!-- android:paddingLeft="10dip" -->
+            <!-- android:text="子模块4" -->
+            <!-- android:textColor="@color/white" -->
+            <!-- android:textSize="13sp" /> -->
+            <!-- </RelativeLayout> -->
+            <!-- </LinearLayout> -->
+
+
+            <!-- <LinearLayout -->
+            <!-- android:id="@+id/layout1" -->
+            <!-- android:layout_width="fill_parent" -->
+            <!-- android:layout_height="fill_parent" -->
+            <!-- android:orientation="horizontal" > -->
+
+
+            <!-- <RelativeLayout -->
+            <!-- android:id="@+id/dialogLayout1" -->
+            <!-- android:layout_width="fill_parent" -->
+            <!-- android:layout_height="fill_parent" -->
+            <!-- android:layout_margin="5dip" -->
+            <!-- android:layout_weight="1" -->
+            <!-- android:background="@drawable/index_exist_bg_1" > -->
+
+
+            <!-- <TextView -->
+            <!-- android:id="@+id/dialogTitleText1" -->
+            <!-- android:layout_width="wrap_content" -->
+            <!-- android:layout_height="wrap_content" -->
+            <!-- android:layout_centerInParent="true" -->
+            <!-- android:gravity="center_vertical" -->
+            <!-- android:paddingLeft="10dip" -->
+            <!-- android:text="子模块5" -->
+            <!-- android:textColor="@color/white" -->
+            <!-- android:textSize="13sp" /> -->
+            <!-- </RelativeLayout> -->
+
+
+            <!-- <RelativeLayout -->
+            <!-- android:id="@+id/dialogLayout2" -->
+            <!-- android:layout_width="fill_parent" -->
+            <!-- android:layout_height="fill_parent" -->
+            <!-- android:layout_margin="5dip" -->
+            <!-- android:layout_toRightOf="@+id/dialogLayout1" -->
+            <!-- android:layout_weight="1" -->
+            <!-- android:background="@drawable/index_exist_bg_1" > -->
+
+
+            <!-- <TextView -->
+            <!-- android:id="@+id/dialogTitleText1" -->
+            <!-- android:layout_width="wrap_content" -->
+            <!-- android:layout_height="wrap_content" -->
+            <!-- android:layout_centerInParent="true" -->
+            <!-- android:gravity="center_vertical" -->
+            <!-- android:paddingLeft="10dip" -->
+            <!-- android:text="子模块6" -->
+            <!-- android:textColor="@color/white" -->
+            <!-- android:textSize="13sp" /> -->
+            <!-- </RelativeLayout> -->
+            <!-- </LinearLayout> -->
+            <!-- </LinearLayout> -->
+
+            <RelativeLayout
+                android:id="@+id/dialogLayout01"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1.5"
+                android:gravity="center" >
+
+                <RelativeLayout
+                    android:id="@+id/dialogLayout1"
+                    android:layout_width="50dip"
+                    android:layout_height="90dip"
+                    android:layout_margin="5dip"
+                    android:layout_weight="1.5"
+                    android:background="@drawable/index_exist_bg_1" >
+
+                    <TextView
+                        android:id="@+id/dialogTitleText1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_centerInParent="true"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="10dip"
+                        android:text="子模块3"
+                        android:textColor="@color/white"
+                        android:textSize="13sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/dialogLayout2"
+                    android:layout_width="50dip"
+                    android:layout_height="90dip"
+                    android:layout_margin="5dip"
+                    android:layout_toRightOf="@+id/dialogLayout1"
+                    android:layout_weight="1.5"
+                    android:background="@drawable/index_exist_bg_1" >
+
+                    <TextView
+                        android:id="@+id/dialogTitleText1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_centerInParent="true"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="10dip"
+                        android:text="子模块4"
+                        android:textColor="@color/white"
+                        android:textSize="13sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/dialogLayout3"
+                    android:layout_width="50dip"
+                    android:layout_height="90dip"
+                    android:layout_below="@+id/dialogLayout1"
+                    android:layout_margin="5dip"
+                    android:layout_weight="1.5"
+                    android:background="@drawable/index_exist_bg_1" >
+
+                    <TextView
+                        android:id="@+id/dialogTitleText1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_centerInParent="true"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="10dip"
+                        android:text="子模块5"
+                        android:textColor="@color/white"
+                        android:textSize="13sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/dialogLayout4"
+                    android:layout_width="50dip"
+                    android:layout_height="90dip"
+                    android:layout_below="@+id/dialogLayout1"
+                    android:layout_margin="5dip"
+                    android:layout_toRightOf="@+id/dialogLayout3"
+                    android:layout_weight="1.5"
+                    android:background="@drawable/index_exist_bg_1" >
+
+                    <TextView
+                        android:id="@+id/dialogTitleText1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_centerInParent="true"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="10dip"
+                        android:text="子模块6"
+                        android:textColor="@color/white"
+                        android:textSize="13sp" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/dialogLayout02"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dip"
+                android:layout_weight="1"
+                android:background="@drawable/index_exist_bg_1" >
+
+                <TextView
+                    android:id="@+id/dialogTitleText1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_centerInParent="true"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="10dip"
+                    android:text="模块7"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/dialogLayout_3"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <RelativeLayout
+                android:id="@+id/dialogLayout02"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dip"
+                android:layout_weight="1"
+                android:background="@drawable/index_exist_bg_1" >
+
+                <TextView
+                    android:id="@+id/dialogTitleText1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_centerInParent="true"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="10dip"
+                    android:text="模块8"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/dialogLayout01"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1.5"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <RelativeLayout
+                    android:id="@+id/dialogLayout01"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1.5"
+                    android:gravity="center" >
+
+                    <RelativeLayout
+                        android:id="@+id/dialogLayout1"
+                        android:layout_width="50dip"
+                        android:layout_height="65dp"
+                        android:layout_margin="5dip"
+                        android:layout_weight="1.5"
+                        android:background="@drawable/index_exist_bg_1" >
+
+                        <TextView
+                            android:id="@+id/dialogTitleText1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:layout_centerInParent="true"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="10dip"
+                            android:text="子模块9"
+                            android:textColor="@color/white"
+                            android:textSize="13sp" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/dialogLayout2"
+                        android:layout_width="50dip"
+                        android:layout_height="65dp"
+                        android:layout_margin="5dip"
+                        android:layout_toRightOf="@+id/dialogLayout1"
+                        android:layout_weight="1.5"
+                        android:background="@drawable/index_exist_bg_1" >
+
+                        <TextView
+                            android:id="@+id/dialogTitleText1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:layout_centerInParent="true"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="10dip"
+                            android:text="子模块10"
+                            android:textColor="@color/white"
+                            android:textSize="13sp" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/dialogLayout3"
+                        android:layout_width="50dip"
+                        android:layout_height="65dp"
+                        android:layout_below="@+id/dialogLayout1"
+                        android:layout_margin="5dip"
+                        android:layout_weight="1.5"
+                        android:background="@drawable/index_exist_bg_1" >
+
+                        <TextView
+                            android:id="@+id/dialogTitleText1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:layout_centerInParent="true"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="10dip"
+                            android:text="子模块11"
+                            android:textColor="@color/white"
+                            android:textSize="13sp" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/dialogLayout4"
+                        android:layout_width="50dip"
+                        android:layout_height="65dp"
+                        android:layout_below="@+id/dialogLayout1"
+                        android:layout_margin="5dip"
+                        android:layout_toRightOf="@+id/dialogLayout3"
+                        android:layout_weight="1.5"
+                        android:background="@drawable/index_exist_bg_1" >
+
+                        <TextView
+                            android:id="@+id/dialogTitleText1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:layout_centerInParent="true"
+                            android:gravity="center_vertical"
+                            android:paddingLeft="10dip"
+                            android:text="子模块12"
+                            android:textColor="@color/white"
+                            android:textSize="13sp" />
+                    </RelativeLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/dialogLayout1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="40dp"
+                    android:layout_margin="5dip"
+                    android:layout_weight="1"
+                    android:background="@drawable/index_exist_bg_1" >
+
+                    <TextView
+                        android:id="@+id/dialogTitleText1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_centerInParent="true"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="10dip"
+                        android:text="模块13"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,1056 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white" >
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+
+            <RelativeLayout
+                android:id="@+id/layout_1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dip"
+                android:background="@color/white" >
+
+                <TextView
+                    android:id="@+id/tyfText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="货物名称："
+                    android:textColor="@color/balck"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/tyf"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/tyfText"
+                    android:background="@drawable/myedit_bg"
+                    android:textColor="@color/balck"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_1"
+                android:layout_marginBottom="10dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:background="@color/white" >
+
+                <TextView
+                    android:id="@+id/tyfText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="发货地址："
+                    android:textColor="@color/balck"
+                    android:textSize="20sp" />
+
+                <!-- <LinearLayout -->
+                <!-- android:id="@+id/spinnerLayout" -->
+                <!-- android:layout_width="fill_parent" -->
+                <!-- android:layout_height="wrap_content" -->
+                <!-- android:layout_below="@+id/tyfText" -->
+                <!-- android:orientation="horizontal" > -->
+
+
+                <!-- <Spinner -->
+                <!-- android:id="@+id/provincefSpinner" -->
+                <!-- android:layout_width="80dip" -->
+                <!-- android:layout_height="wrap_content" -->
+                <!-- android:layout_weight="1" /> -->
+
+
+                <!-- <Spinner -->
+                <!-- android:id="@+id/municipalitySpinner" -->
+                <!-- android:layout_width="80dip" -->
+                <!-- android:layout_height="wrap_content" -->
+                <!-- android:layout_weight="1" /> -->
+
+
+                <!-- <Spinner -->
+                <!-- android:id="@+id/countySpinner" -->
+                <!-- android:layout_width="80dip" -->
+                <!-- android:layout_height="wrap_content" -->
+                <!-- android:layout_weight="1" /> -->
+                <!-- </LinearLayout> -->
+
+                <fragment
+                    android:id="@+id/fragment_start_area"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tyfText"
+                    android:layout_margin="6dip"
+                    class="com.haohuotong.other.LocationSelector" />
+
+                <!-- <EditText -->
+                <!-- android:id="@+id/tyf" -->
+                <!-- android:layout_width="fill_parent" -->
+                <!-- android:layout_height="wrap_content" -->
+                <!-- android:layout_below="@+id/fragment_start_area" -->
+                <!-- android:layout_marginLeft="3dip" -->
+                <!-- android:layout_marginRight="3dip" -->
+                <!-- android:background="@drawable/myedit_bg" -->
+                <!-- android:textColor="@color/balck" -->
+                <!-- android:textSize="15sp" /> -->
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_3"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_2"
+                android:layout_marginBottom="10dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:background="@color/white" >
+
+                <TextView
+                    android:id="@+id/tyfText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="收货地址："
+                    android:textColor="@color/balck"
+                    android:textSize="20sp" />
+
+                <!-- <LinearLayout -->
+                <!-- android:id="@+id/spinnerLayout" -->
+                <!-- android:layout_width="fill_parent" -->
+                <!-- android:layout_height="wrap_content" -->
+                <!-- android:layout_below="@+id/tyfText" -->
+                <!-- android:orientation="horizontal" > -->
+
+
+                <!-- <Spinner -->
+                <!-- android:id="@+id/provincefSpinner" -->
+                <!-- android:layout_width="80dip" -->
+                <!-- android:layout_height="wrap_content" -->
+                <!-- android:layout_weight="1" /> -->
+
+
+                <!-- <Spinner -->
+                <!-- android:id="@+id/municipalitySpinner" -->
+                <!-- android:layout_width="80dip" -->
+                <!-- android:layout_height="wrap_content" -->
+                <!-- android:layout_weight="1" /> -->
+
+
+                <!-- <Spinner -->
+                <!-- android:id="@+id/countySpinner" -->
+                <!-- android:layout_width="80dip" -->
+                <!-- android:layout_height="wrap_content" -->
+                <!-- android:layout_weight="1" /> -->
+                <!-- </LinearLayout> -->
+
+                <fragment
+                    android:id="@+id/fragment_stop_area"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tyfText"
+                    android:layout_margin="6dip"
+                    class="com.haohuotong.other.LocationSelector" />
+
+                <!-- <EditText -->
+                <!-- android:id="@+id/tyf" -->
+                <!-- android:layout_width="fill_parent" -->
+                <!-- android:layout_height="wrap_content" -->
+                <!-- android:layout_below="@+id/fragment_stop_area" -->
+                <!-- android:layout_marginLeft="3dip" -->
+                <!-- android:layout_marginRight="3dip" -->
+                <!-- android:background="@drawable/myedit_bg" -->
+                <!-- android:textColor="@color/balck" -->
+                <!-- android:textSize="15sp" /> -->
+            </RelativeLayout>
+
+            <!-- <RelativeLayout -->
+            <!-- android:id="@+id/layout_3" -->
+            <!-- android:layout_width="fill_parent" -->
+            <!-- android:layout_height="wrap_content" -->
+            <!-- android:layout_below="@+id/layout_2" -->
+            <!-- android:layout_marginBottom="10dip" -->
+            <!-- android:layout_marginLeft="10dip" -->
+            <!-- android:layout_marginRight="10dip" -->
+            <!-- android:background="@color/white" > -->
+
+
+            <!-- <TextView -->
+            <!-- android:id="@+id/tyfText" -->
+            <!-- android:layout_width="wrap_content" -->
+            <!-- android:layout_height="wrap_content" -->
+            <!-- android:layout_centerVertical="true" -->
+            <!-- android:text="电话：" -->
+            <!-- android:textColor="@color/balck" -->
+            <!-- android:textSize="20sp" /> -->
+
+
+            <!-- <EditText -->
+            <!-- android:id="@+id/tyf" -->
+            <!-- android:layout_width="fill_parent" -->
+            <!-- android:layout_height="wrap_content" -->
+            <!-- android:layout_marginLeft="85dip" -->
+            <!-- android:background="@drawable/myedit_bg" -->
+            <!-- android:textColor="@color/balck" -->
+            <!-- android:textSize="15sp" /> -->
+            <!-- </RelativeLayout> -->
+
+            <RelativeLayout
+                android:id="@+id/layout_0"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_3"
+                android:layout_marginBottom="10dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:background="@color/white" >
+
+                <TextView
+                    android:id="@+id/tyfText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="货物类型"
+                    android:textColor="@color/balck"
+                    android:textSize="20sp" />
+
+                <Spinner
+                    android:id="@+id/pub_cargo_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="6dip"
+                    android:layout_toRightOf="@+id/tyfText"
+                    android:entries="@array/pub_cargo_typelist" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_00"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_0"
+                android:layout_marginBottom="10dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:background="@color/white" >
+
+                <TextView
+                    android:id="@+id/tyfText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="卡车类型"
+                    android:textColor="@color/balck"
+                    android:textSize="20sp" />
+
+                <Spinner
+                    android:id="@+id/pub_truck_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="6dip"
+                    android:layout_toRightOf="@+id/tyfText"
+                    android:entries="@array/pub_truck_typelist" />
+            </RelativeLayout>
+
+            <!-- <TextView -->
+            <!-- android:layout_width="match_parent" -->
+            <!-- android:layout_height="wrap_content" -->
+            <!-- android:layout_margin="6dip" -->
+            <!-- android:text="@string/pub_truck_type" -->
+            <!-- android:textAppearance="?android:attr/textAppearanceMedium" -->
+            <!-- android:textColor="@color/black" /> -->
+
+
+            <!-- <Spinner -->
+            <!-- android:id="@+id/pub_truck_type" -->
+            <!-- android:layout_width="match_parent" -->
+            <!-- android:layout_height="wrap_content" -->
+            <!-- android:layout_margin="6dip" -->
+            <!-- android:entries="@array/pub_truck_typelist" /> -->
+
+
+            <!-- <RelativeLayout -->
+            <!-- android:id="@+id/pub_cargo_weight_layout" -->
+            <!-- android:layout_width="match_parent" -->
+            <!-- android:layout_height="wrap_content" -->
+            <!-- android:layout_margin="6dip" -->
+            <!-- android:orientation="horizontal" > -->
+
+
+            <!-- <EditText -->
+            <!-- android:id="@+id/pub_cargo_weight" -->
+            <!-- android:layout_width="0dp" -->
+            <!-- android:layout_height="wrap_content" -->
+            <!-- android:layout_weight="1" -->
+            <!-- android:ems="10" > -->
+            <!-- </EditText> -->
+
+
+            <!-- <Spinner -->
+            <!-- android:id="@+id/pub_cargo_weight_unit_list" -->
+            <!-- android:layout_width="wrap_content" -->
+            <!-- android:layout_height="wrap_content" -->
+            <!-- android:entries="@array/pub_cargo_weight_unit_list" /> -->
+            <!-- </RelativeLayout> -->
+
+            <RelativeLayout
+                android:id="@+id/pub_cargo_weight_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_00"
+                android:layout_marginBottom="10dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:background="@color/white" >
+
+                <TextView
+                    android:id="@+id/tyfText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="重量体积："
+                    android:textColor="@color/balck"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/pub_cargo_weight"
+                    android:layout_width="80dip"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/tyfText"
+                    android:background="@drawable/myedit_bg"
+                    android:textColor="@color/balck"
+                    android:textSize="15sp" />
+
+                <!-- <TextView -->
+                <!-- android:id="@+id/tyfText3" -->
+                <!-- android:layout_width="wrap_content" -->
+                <!-- android:layout_height="wrap_content" -->
+                <!-- android:layout_centerVertical="true" -->
+                <!-- android:layout_marginLeft="5dip" -->
+                <!-- android:layout_toRightOf="@+id/tyf" -->
+                <!-- android:text="元/吨" -->
+                <!-- android:textColor="@color/balck" -->
+                <!-- android:textSize="20sp" /> -->
+
+                <Spinner
+                    android:id="@+id/pub_cargo_weight_unit_list"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dip"
+                    android:layout_toRightOf="@+id/pub_cargo_weight"
+                    android:entries="@array/pub_cargo_weight_unit_list" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_4"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/pub_cargo_weight_layout"
+                android:layout_marginBottom="10dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:background="@color/white" >
+
+                <TextView
+                    android:id="@+id/tyfText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="运输距离："
+                    android:textColor="@color/red"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/tyf"
+                    android:layout_width="80dip"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/tyfText"
+                    android:background="@drawable/myedit_bg"
+                    android:textColor="@color/balck"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/tyfText3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dip"
+                    android:layout_toRightOf="@+id/tyf"
+                    android:text="公里"
+                    android:textColor="@color/balck"
+                    android:textSize="20sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_40"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_4"
+                android:layout_marginBottom="10dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:background="@color/white" >
+
+                <TextView
+                    android:id="@+id/tyfText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="车         长："
+                    android:textColor="@color/balck"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/pub_truck_length"
+                    android:layout_width="80dip"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/tyfText"
+                    android:background="@drawable/myedit_bg"
+                    android:textColor="@color/balck"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/tyfText3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dip"
+                    android:layout_toRightOf="@+id/pub_truck_length"
+                    android:text="米"
+                    android:textColor="@color/balck"
+                    android:textSize="20sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_45"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_40"
+                android:layout_marginBottom="10dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:background="@color/white" >
+
+                <TextView
+                    android:id="@+id/tyfText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="载        重："
+                    android:textColor="@color/balck"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/pub_truck_capacity"
+                    android:layout_width="80dip"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/tyfText"
+                    android:background="@drawable/myedit_bg"
+                    android:textColor="@color/balck"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/tyfText3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dip"
+                    android:layout_toRightOf="@+id/pub_truck_capacity"
+                    android:text="吨"
+                    android:textColor="@color/balck"
+                    android:textSize="20sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_5"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_45"
+                android:layout_marginBottom="10dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:background="@color/white" >
+
+                <TextView
+                    android:id="@+id/tyfText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="运输费用："
+                    android:textColor="@color/red"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/tyf"
+                    android:layout_width="80dip"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/tyfText"
+                    android:background="@drawable/myedit_bg"
+                    android:textColor="@color/balck"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/tyfText3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dip"
+                    android:layout_toRightOf="@+id/tyf"
+                    android:text="元/吨"
+                    android:textColor="@color/balck"
+                    android:textSize="20sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_6"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_5"
+                android:layout_marginBottom="10dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:background="@color/white" >
+
+                <TextView
+                    android:id="@+id/tyfText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="装车时间："
+                    android:textColor="@color/red"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/tyf"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/tyfText"
+                    android:background="@drawable/myedit_bg"
+                    android:textColor="@color/balck"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_7"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_6"
+                android:layout_marginBottom="10dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:background="@color/white" >
+
+                <TextView
+                    android:id="@+id/tyfText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="结算方式："
+                    android:textColor="@color/red"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/tyf"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/tyfText"
+                    android:background="@drawable/myedit_bg"
+                    android:textColor="@color/balck"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_8"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_7"
+                android:layout_margin="10dip"
+                android:background="@color/white" >
+
+                <TextView
+                    android:id="@+id/tyfText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="服务费用："
+                    android:textColor="@color/red"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/tyf"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/tyfText"
+                    android:background="@drawable/myedit_bg"
+                    android:textColor="@color/balck"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_9"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_8"
+                android:layout_marginBottom="10dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:background="@color/white" >
+
+                <TextView
+                    android:id="@+id/tyfText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="包装形式："
+                    android:textColor="@color/red"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/tyf"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/tyfText"
+                    android:background="@drawable/myedit_bg"
+                    android:textColor="@color/balck"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_10"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_9"
+                android:layout_marginBottom="10dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:background="@color/white" >
+
+                <TextView
+                    android:id="@+id/tyfText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="是否缺货："
+                    android:textColor="@color/red"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/tyf"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/tyfText"
+                    android:background="@drawable/myedit_bg"
+                    android:textColor="@color/balck"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_11"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_10"
+                android:layout_marginBottom="10dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:background="@color/white" >
+
+                <TextView
+                    android:id="@+id/tyfText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="是否排队："
+                    android:textColor="@color/red"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/tyf"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/tyfText"
+                    android:background="@drawable/myedit_bg"
+                    android:textColor="@color/balck"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_21"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_11"
+                android:layout_marginBottom="10dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:background="@color/white" >
+
+                <TextView
+                    android:id="@+id/tyfText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="补充说明："
+                    android:textColor="@color/balck"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/pub_memo"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/tyfText"
+                    android:background="@drawable/myedit_bg"
+                    android:textColor="@color/balck"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_22"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_21"
+                android:layout_marginBottom="10dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:background="@color/white" >
+
+                <TextView
+                    android:id="@+id/tyfText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="车         牌："
+                    android:textColor="@color/balck"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/pub_truck_plate"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/tyfText"
+                    android:background="@drawable/myedit_bg"
+                    android:textColor="@color/balck"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_24"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_22"
+                android:layout_marginBottom="10dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:background="@color/white" >
+
+                <TextView
+                    android:id="@+id/tyfText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="装卸时间："
+                    android:textColor="@color/balck"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/tyf"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/tyfText"
+                    android:background="@drawable/myedit_bg"
+                    android:textColor="@color/balck"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_25"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_24"
+                android:layout_marginBottom="10dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:background="@color/white" >
+
+                <TextView
+                    android:id="@+id/tyfText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="运抵时间："
+                    android:textColor="@color/balck"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/tyf"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/tyfText"
+                    android:background="@drawable/myedit_bg"
+                    android:textColor="@color/balck"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_26"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_25"
+                android:layout_marginBottom="10dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:background="@color/white" >
+
+                <TextView
+                    android:id="@+id/tyfText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="运输费用："
+                    android:textColor="@color/balck"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/tyf"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/tyfText"
+                    android:background="@drawable/myedit_bg"
+                    android:textColor="@color/balck"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_27"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_26"
+                android:layout_margin="10dip"
+                android:background="@color/white" >
+
+                <TextView
+                    android:id="@+id/tyfText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="付款方式："
+                    android:textColor="@color/balck"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/tyf"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/tyfText"
+                    android:background="@drawable/myedit_bg"
+                    android:textColor="@color/balck"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_28"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_27"
+                android:layout_marginBottom="10dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:background="@color/white" >
+
+                <TextView
+                    android:id="@+id/tyfText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="是否押韵："
+                    android:textColor="@color/balck"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/tyf"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/tyfText"
+                    android:background="@drawable/myedit_bg"
+                    android:textColor="@color/balck"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_29"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_28"
+                android:layout_marginBottom="10dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:background="@color/white" >
+
+                <TextView
+                    android:id="@+id/tyfText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="联系电话："
+                    android:textColor="@color/balck"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/tyf"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/tyfText"
+                    android:background="@drawable/myedit_bg"
+                    android:textColor="@color/balck"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_30"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_29"
+                android:layout_marginBottom="10dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:background="@color/white" >
+
+                <TextView
+                    android:id="@+id/tyfText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="联  系  人："
+                    android:textColor="@color/balck"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/tyf"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/tyfText"
+                    android:background="@drawable/myedit_bg"
+                    android:textColor="@color/balck"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_31"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_30"
+                android:layout_marginBottom="10dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:background="@color/white" >
+
+                <TextView
+                    android:id="@+id/tyfText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="账         户："
+                    android:textColor="@color/balck"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/tyf"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/tyfText"
+                    android:background="@drawable/myedit_bg"
+                    android:textColor="@color/balck"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_32"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_31"
+                android:layout_marginBottom="10dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:background="@color/white" >
+
+                <TextView
+                    android:id="@+id/tyfText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="开  户  行："
+                    android:textColor="@color/balck"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/tyf"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/tyfText"
+                    android:background="@drawable/myedit_bg"
+                    android:textColor="@color/balck"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+
+            <!-- <RelativeLayout -->
+            <!-- android:id="@+id/layout_33" -->
+            <!-- android:layout_width="fill_parent" -->
+            <!-- android:layout_height="wrap_content" -->
+            <!-- android:layout_below="@+id/layout_32" -->
+            <!-- android:layout_marginBottom="10dip" -->
+            <!-- android:layout_marginLeft="10dip" -->
+            <!-- android:layout_marginRight="10dip" -->
+            <!-- android:background="@color/white" > -->
+
+
+            <!-- <TextView -->
+            <!-- android:id="@+id/tyfText" -->
+            <!-- android:layout_width="wrap_content" -->
+            <!-- android:layout_height="wrap_content" -->
+            <!-- android:layout_centerVertical="true" -->
+            <!-- android:text="名称：" -->
+            <!-- android:textColor="@color/balck" -->
+            <!-- android:textSize="20sp" /> -->
+
+
+            <!-- <EditText -->
+            <!-- android:id="@+id/tyf" -->
+            <!-- android:layout_width="fill_parent" -->
+            <!-- android:layout_height="wrap_content" -->
+            <!-- android:layout_marginLeft="85dip" -->
+            <!-- android:background="@drawable/myedit_bg" -->
+            <!-- android:textColor="@color/balck" -->
+            <!-- android:textSize="15sp" /> -->
+            <!-- </RelativeLayout> -->
+
+            <RelativeLayout
+                android:id="@+id/layout_33"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_32"
+                android:layout_marginBottom="10dip"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:background="@color/white" >
+
+                <Button
+                    android:id="@+id/publicInfoBut"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/exist_selector"
+                    android:text="发        布"
+                    android:textColor="@color/balck"
+                    android:textSize="20sp" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

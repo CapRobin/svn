@@ -1,0 +1,4 @@
+<resources>
+ <dimen name="switcher_view">20dip</dimen>
+    <dimen name="imageWidth">95dip</dimen>
+</resources>

@@ -1,0 +1,17 @@
+<resources>
+
+    <dimen name="switcher_view">180dip</dimen>
+    <dimen name="about_top">60dip</dimen>
+    <dimen name="about_space">1dip</dimen>
+    <dimen name="detaile_pager">300dip</dimen>
+    <dimen name="detaile_height">345dip</dimen>
+    <dimen name="detaile_advice">160dip</dimen>
+    <dimen name="imageWidth">85dip</dimen>
+    <dimen name="editeHight">45dp</dimen>
+     <!-- 找回密码 -->
+    <dimen name="spaceHight">30dp</dimen>
+    <dimen name="spaceLow">20dp</dimen>
+    <dimen name="textWidth">280dp</dimen>
+    <dimen name="buttonWidth">130dp</dimen>
+
+</resources>

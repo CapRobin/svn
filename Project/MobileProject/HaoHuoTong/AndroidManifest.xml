@@ -1,0 +1,262 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.haohuotong"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="7"
+        android:targetSdkVersion="15" />
+
+    <application
+        android:name=".global.MyApplication"
+        android:icon="@drawable/app_icon"
+        android:label="@string/app_name"
+        android:screenOrientation="portrait"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".activity.LunchActivity"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.LoginActivity" />
+        <activity android:name=".activity.RegisterActivity" />
+        <activity android:name=".activity.PublicVehicleInfoActivity" />
+        <activity android:name=".activity.InfoConsultlActivity" />
+        <activity android:name=".activity.MyPublicInfoActivity" />
+        <activity android:name=".activity.FragmentCargoInfoDetail" />
+        <activity android:name=".activity.FragmentVehicleInfoDetail" />
+        <activity
+            android:name=".activity.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" />
+        <activity
+            android:name=".activity.SpecialtySearchActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.GaoJiaJiZouActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.SpecialtyResourceActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.YunJiaMarketActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.JiaoTongLuKuangActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.YeWuQiaTanActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.FaBuCheYuanActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.YiDongJieSuanActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.HuoWuTouBaoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.MoreFunctionActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.SettingCenterActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.RecommendInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ContactListActivity_x"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ContactListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ShareInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ConsultActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.PersonalDriverInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.PhotoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.OverlayDemo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.MyPublicInfoDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.UserAuctionListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.SubmitOrderDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.PersonalLogisticsInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.PublicCargoInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.MapActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="定位图层展示"
+            android:screenOrientation="sensor" >
+        </activity>
+        <activity
+            android:name=".activity.CommonalityInfoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomTheme" />
+        <activity
+            android:name=".activity.CommonalityActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomTheme" />
+        <activity android:name=".activity.AuctionListActivity" />
+        <activity android:name=".activity.AddFriendsActivity" />
+        <activity android:name=".activity.DriverAuctionListActivity" />
+
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" >
+        </service>
+        <service android:name="com.chat.activity.GetMsgService" >
+        </service>
+
+        <activity
+            android:name="com.chat.activity.FriendListActivity"
+            android:launchMode="singleTop" >
+        </activity>
+        <activity
+            android:name="com.haohuotong.activity.FriendActivity"
+            android:launchMode="singleTop" >
+        </activity>
+        <activity android:name="com.chat.activity.Tab1" >
+        </activity>
+        <activity
+            android:name="com.chat.activity.Tab2"
+            android:launchMode="singleTask" >
+        </activity>
+        <activity android:name="com.chat.activity.Tab3" >
+        </activity>
+        <activity
+            android:name="com.chat.activity.ChatActivity"
+            android:windowSoftInputMode="adjustResize" >
+        </activity>
+    </application>
+
+    <!-- 在SDCard中创建与删除文件权限 -->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <!-- 访问internet权限 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 接收启动广播权限 -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <!-- 创建快捷方程式 -->
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+    <!-- 删除快捷方程式 -->
+    <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT" />
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.RESTART_PACKAGES" />
+
+    <permission android:name="android.permission.BAIDU_LOCATION_SERVICE" >
+    </permission>
+
+    <uses-permission android:name="android.permission.BAIDU_LOCATION_SERVICE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.READ_LOGS" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" >
+    </uses-permission>
+
+    <!-- 百度地图配置 -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />
+
+    <permission android:name="android.permission.BAIDU_LOCATION_SERVICE" >
+    </permission>
+
+    <uses-permission android:name="android.permission.BAIDU_LOCATION_SERVICE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.INTERNET" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" >
+    </uses-permission>
+    <!-- <uses-permission android:name="android.permission.WRITE_APN_SETTINGS"></uses-permission> -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" >
+    </uses-permission>
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_GPS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <!-- SDK1.5需要android.permission.GET_TASKS权限判断本程序是否为当前运行的应用? -->
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.CAMERA" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.RECORD_AUDIO" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+    <!-- <uses-permission android:name="android.permission.WRITE_SETTINGS" /> -->
+    <!-- 来电消音 -->
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <!-- 指定添加安装快捷方式的权限 -->
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.RESTART_PACKAGES" />
+    <!-- 杀死进程的权限 -->
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="false"
+        android:resizeable="true"
+        android:smallScreens="true" />
+
+</manifest>

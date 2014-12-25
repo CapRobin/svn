@@ -1,0 +1,19 @@
+<resources>
+ <dimen name="enter_marginLeft">888sp</dimen> 
+ <dimen name="bp_marginLeft">0sp</dimen> 
+ <dimen name="userlist_width">700sp</dimen> 
+ <dimen name="user_delete_marginLeft">330dp</dimen>
+  <dimen name="device_delete_marginLeft">10sp</dimen>
+  <dimen name="bp_date_width">220dip</dimen>
+  <dimen name="bp_mmhg_width">220dip</dimen>
+  <dimen name="bp_mb_width">160dip</dimen>
+   <dimen name="bp_state_width">220dip</dimen>
+   <dimen name="bp_check_width">100dip</dimen>
+    <dimen name="wei_height_width">300dip</dimen>
+    <dimen name="wei_check_width">100dip</dimen>
+    <dimen name="glu_mmol_width">260dip</dimen>
+    <dimen name="spo_title4">260dip</dimen>
+    <dimen name="glu_title4">260dip</dimen>
+    <dimen name="imageWidth">95dip</dimen>
+      
+</resources>

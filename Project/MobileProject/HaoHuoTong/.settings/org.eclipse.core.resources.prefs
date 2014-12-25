@@ -1,0 +1,16 @@
+eclipse.preferences.version=1
+encoding//src/com/chat/activity=UTF-8
+encoding//src/com/chat/activity/FriendListActivity.java=UTF-8
+encoding//src/com/chat/activity/MyListView.java=UTF-8
+encoding//src/com/haohuotong/activity/CommonalityActivity.java=UTF-8
+encoding//src/com/haohuotong/activity/CommonalityInfoActivity.java=UTF-8
+encoding//src/com/haohuotong/activity/FriendActivity.java=UTF-8
+encoding//src/com/haohuotong/activity/LoginActivity.java=UTF-8
+encoding//src/com/haohuotong/activity/MainActivity.java=UTF-8
+encoding//src/com/haohuotong/activity/OverlayDemo.java=UTF-8
+encoding//src/com/haohuotong/activity/RecommendInfoActivity.java=UTF-8
+encoding//src/com/haohuotong/global/MyApplication.java=UTF-8
+encoding//src/com/haohuotong/web/UserInfoWeb.java=UTF-8
+encoding//src/com/way/chat/common/tran/bean/TranObjectType.java=UTF-8
+encoding//src/com/way/chat/common/util/Constants.java=UTF-8
+encoding//src/com/way/client/ClientOutputThread.java=UTF-8

@@ -1,0 +1,9 @@
+<resources>
+
+    <dimen name="switcher_btn_height">45dip</dimen>
+    <dimen name="switcher_btn_width">50dip</dimen>
+    <dimen name="switcher_view">70dip</dimen>
+    <dimen name="imageWidth">85dip</dimen>
+    <dimen name="add_width">135dip</dimen>
+
+</resources>

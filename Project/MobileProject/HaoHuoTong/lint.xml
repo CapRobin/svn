@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lint>
+    <issue id="HandlerLeak" severity="ignore" />
+    <issue id="NewApi" severity="ignore">
+        <ignore path="src\com\haohuotong\activity\CommonalityInfoActivity.java" />
+        <ignore path="src\com\haohuotong\activity\CommonalityInfoActivity_Y.java" />
+    </issue>
+    <issue id="ParserError" severity="ignore" />
+    <issue id="ShowToast" severity="ignore" />
+</lint>

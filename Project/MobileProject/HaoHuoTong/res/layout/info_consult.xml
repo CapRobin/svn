@@ -1,0 +1,51 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <ListView
+        android:id="@+id/consultList"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="55dip"
+        android:cacheColorHint="#00000000"
+        android:divider="@drawable/line2"
+        android:dividerHeight="1dip"
+        android:fadingEdge="none"
+        android:focusable="false" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="55dip"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/top_bg" >
+
+        <EditText
+            android:id="@+id/consultContent"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="80dip"
+            android:background="@drawable/myedit_bg"
+            android:hint="请输入咨询信息"
+            android:padding="3dip"
+            android:textColor="@color/balck"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/consultBtn"
+            android:layout_width="60dip"
+            android:layout_height="40dip"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dip"
+            android:background="@drawable/exist_selector"
+            android:text="咨询"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+    </RelativeLayout>
+
+</RelativeLayout>
