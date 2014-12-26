@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_width="fill_parent"
+    android:layout_height="50dip"
     android:background="@color/titleBar_bg" >
 
-    <Button
+    <ImageView
         android:id="@+id/left_title_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="25dip"
+        android:layout_height="25dip"
+        android:layout_centerInParent="true"
         android:layout_alignParentLeft="true"
-        android:background="@drawable/title_btn"
-        android:padding="13dp"
-        android:textColor="#FFFFFF" />
+        android:layout_marginLeft="10dip"
+        android:padding="15dp"/>
 
     <TextView
         android:id="@+id/title"
@@ -22,13 +22,13 @@
         android:textSize="18dp"
         android:textColor="#FFFFFF" />
 
-    <Button
+    <ImageView
         android:id="@+id/right_title_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="25dip"
+        android:layout_height="25dip"
         android:layout_alignParentRight="true"
-        android:background="@drawable/title_btn"
-        android:padding="13dp"
-        android:textColor="#FFFFFF" />
+        android:layout_centerInParent="true"
+        android:layout_marginRight="10dip"
+        android:padding="15dp" />
 
 </RelativeLayout>
