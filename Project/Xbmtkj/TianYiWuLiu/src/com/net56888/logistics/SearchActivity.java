@@ -44,7 +44,6 @@ public class SearchActivity extends FragmentActivity {
 			public void onClick(View v) {
 				reset();
 			}
-
 		});
 
 		tv.setText(R.string.title_search);
