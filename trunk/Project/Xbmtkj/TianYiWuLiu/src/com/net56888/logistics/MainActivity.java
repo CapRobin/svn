@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.RadioGroup;
 import android.widget.RadioGroup.OnCheckedChangeListener;
 import android.widget.RelativeLayout;
+import android.widget.SlidingDrawer.OnDrawerOpenListener;
 import android.widget.TabHost;
 
 import com.net56888.logistics.ui.MoveBg;
@@ -44,6 +45,7 @@ public class MainActivity extends TabActivity {
 		setContentView(R.layout.main);
 		intView();
 	}
+	
 
 	//初始化View
 	private void intView() {
@@ -60,7 +62,7 @@ public class MainActivity extends TabActivity {
 		// 设置底部菜单的高度
 		android.view.ViewGroup.LayoutParams pp = radiogroup.getLayoutParams();
 		radiogroup.getLayoutParams();
-		pp.height = (int) (itemWidth * 0.6);
+		pp.height = (int) (itemWidth * 0.7);
 		radiogroup.setLayoutParams(pp);
 
 		// 设置TabHost
@@ -76,7 +78,7 @@ public class MainActivity extends TabActivity {
 		android.view.ViewGroup.LayoutParams pps = img.getLayoutParams();
 		img.getLayoutParams();
 		pps.width = itemWidth;
-		pps.height = (int) (itemWidth * 0.6);
+		pps.height = (int) (itemWidth * 0.7);
 		img.setLayoutParams(pps);
 
 		// 初始写入标签动画视图

@@ -50,9 +50,14 @@ public class PublishTab extends Fragment {
 
 			@Override
 			public void onClick(View v) {
-				Intent i = new Intent(PublishTab.this.getActivity(), InfoPub.class);
-				i.putExtra(PUBLISH_TYPE, InfoEntity.Type.toInteger(InfoEntity.Type.CargoInfo));
-				startActivity(i);
+				
+				//原始代码
+//				Intent i = new Intent(PublishTab.this.getActivity(), InfoPub.class);
+//				i.putExtra(PUBLISH_TYPE, InfoEntity.Type.toInteger(InfoEntity.Type.CargoInfo));
+//				startActivity(i);
+				
+				//修改代码
+				startActivity(new Intent(PublishTab.this.getActivity(), TestActivity.class));
 			}
 
 		});

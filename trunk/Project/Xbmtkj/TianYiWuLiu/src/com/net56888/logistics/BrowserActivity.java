@@ -9,6 +9,7 @@ import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -39,13 +40,15 @@ public class BrowserActivity extends BaseActivity {
 
 	// 初始化View
 	private void intView() {
-		Button lbtn = (Button) findViewById(R.id.left_title_btn);
+		ImageView lbtn = (ImageView) findViewById(R.id.left_title_btn);
 		list = (ListView) findViewById(R.id.list);
-		Button rbtn = (Button) findViewById(R.id.right_title_btn);
+		ImageView rbtn = (ImageView) findViewById(R.id.right_title_btn);
 		TextView tv = (TextView) findViewById(R.id.title);
 
-		lbtn.setText(R.string.btn_refresh);
-		rbtn.setText(R.string.btn_cat);
+//		lbtn.setText(R.string.btn_refresh);
+		lbtn.setBackgroundDrawable(getResources().getDrawable(R.drawable.refresh));
+//		rbtn.setText(R.string.btn_cat);
+		rbtn.setBackgroundDrawable(getResources().getDrawable(R.drawable.classification));
 		tv.setText(R.string.title_browser);
 
 		lbtn.setOnClickListener(new OnClickListener() {
