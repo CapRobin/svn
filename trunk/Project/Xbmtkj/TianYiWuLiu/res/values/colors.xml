@@ -58,6 +58,7 @@
     <color name="action_bg">#F8F8FF</color>
     <color name="text_color3">#8c8c8c</color>
     <color name="list_bg">#7D9EC0</color>
+    <color name="titleBar_bg">#329bdd</color>
     
     
     <color name="index_main_bg">#2C4A6C</color>

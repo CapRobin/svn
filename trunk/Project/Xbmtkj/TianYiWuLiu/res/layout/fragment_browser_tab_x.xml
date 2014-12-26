@@ -7,7 +7,43 @@
 
     <include
         android:id="@+id/title_bar"
-        layout="@layout/title_bar" />
+        layout="@layout/title_bar_x" />
+
+<!-- <RelativeLayout -->
+<!--     android:layout_width="fill_parent" -->
+<!--     android:layout_height="50dip" -->
+<!--     android:background="@color/titleBar_bg" > -->
+
+<!--     <Button -->
+<!--         android:id="@+id/left_title_btn" -->
+<!--         android:layout_width="25dip" -->
+<!--         android:layout_height="25dip" -->
+<!--         android:layout_centerInParent="true" -->
+<!--         android:layout_alignParentLeft="true" -->
+<!--         android:background="@drawable/refresh" -->
+<!--         android:layout_marginLeft="10dip" -->
+<!--         android:padding="15dp"/> -->
+
+<!--     <TextView -->
+<!--         android:id="@+id/title" -->
+<!--         android:layout_width="wrap_content" -->
+<!--         android:layout_height="wrap_content" -->
+<!--         android:layout_centerInParent="true" -->
+<!--         android:text="@string/title_browser" -->
+<!--         android:textSize="18dp" -->
+<!--         android:textColor="#FFFFFF" /> -->
+
+<!--     <Button -->
+<!--         android:id="@+id/right_title_btn" -->
+<!--         android:layout_width="25dip" -->
+<!--         android:layout_height="25dip" -->
+<!--         android:layout_alignParentRight="true" -->
+<!--         android:background="@drawable/classification" -->
+<!--         android:layout_centerInParent="true" -->
+<!--         android:layout_marginRight="10dip" -->
+<!--         android:padding="15dp" /> -->
+
+<!-- </RelativeLayout> -->
 
     <ListView
         android:id="@+id/list"
