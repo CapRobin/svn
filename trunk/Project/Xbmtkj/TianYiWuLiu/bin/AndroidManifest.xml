@@ -95,6 +95,11 @@
             android:theme="@android:style/Theme.NoTitleBar" >
         </activity>
         <activity
+            android:name=".TestActivity"
+            android:label="@string/title_activity_register"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+        <activity
             android:name=".BrowserActivity"
             android:label="@string/title_activity_register"
             android:theme="@android:style/Theme.NoTitleBar" >
