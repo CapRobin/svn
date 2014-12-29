@@ -1,32 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:background="@color/background"
-    android:orientation="vertical" >
+    android:background="@color/background">
 
-
-    <TextView
-        android:id="@+id/msg_content"
+    <ImageView
+        android:id="@+id/listPoint"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="15dip"
-        android:ellipsize="end"
-        android:paddingLeft="15dip"
-        android:paddingRight="15dip"
-        android:paddingTop="10dip"
-        android:singleLine="true"
-        android:textColor="@color/black"
-        android:textColorHighlight="@color/gray" />
+        android:layout_centerVertical="true"
+        android:background="@drawable/list_point" />
 
-    <TextView
-        android:id="@+id/msg_date"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="right"
-        android:paddingRight="15dip"
-        android:text="2012.12.25"
-        android:textColorHighlight="@color/gray"
-        android:textSize="10sp" />
+        android:layout_toRightOf="@+id/listPoint"
+        android:orientation="vertical" >
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/msg_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dip"
+            android:ellipsize="end"
+            android:paddingLeft="15dip"
+            android:paddingRight="15dip"
+            android:paddingTop="10dip"
+            android:singleLine="true"
+            android:text="法国的都是法师打发士大夫发生大幅范德法师打发士大夫发生大幅范德法师打发士大夫发生大幅范德萨"
+            android:textColor="@color/black"
+            android:textColorHighlight="@color/gray" />
+
+        <TextView
+            android:id="@+id/msg_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:paddingRight="15dip"
+            android:text="2012.12.25"
+            android:textColorHighlight="@color/gray"
+            android:textSize="10sp" />
+    </LinearLayout>
+
+</RelativeLayout>
