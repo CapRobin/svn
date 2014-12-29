@@ -60,6 +60,10 @@
     <color name="list_bg">#7D9EC0</color>
     <color name="titleBar_bg">#329bdd</color>
     
+    <color name="itemBgColor">#F7F7F7</color>
+    <color name="textColorUnChecked">#DEDEDE</color>
+    <color name="textColorChecked">#242424</color>
+    
     
     <color name="index_main_bg">#2C4A6C</color>
 

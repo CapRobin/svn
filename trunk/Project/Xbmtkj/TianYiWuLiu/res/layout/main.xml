@@ -38,7 +38,7 @@
                     android:layout_width="fill_parent"
                     android:layout_height="55dip"
                     android:layout_gravity="bottom"
-                    android:background="@drawable/bottombg"
+                    android:background="#F0F0F0"
                     android:gravity="center_vertical"
                     android:orientation="horizontal" >
 
@@ -81,25 +81,26 @@
                     <RadioButton
                         android:id="@+id/radio_news"
                         style="@style/tab"
-                        android:drawableTop="@drawable/item_01"
+                        android:checked="true"
+                        android:drawableTop="@drawable/tab_selector_bgg"
                         android:text="浏 览" />
 
                     <RadioButton
                         android:id="@+id/radio_topic"
                         style="@style/tab"
-                        android:drawableTop="@drawable/item_01"
+                        android:drawableTop="@drawable/tab_selector_bgg"
                         android:text="搜 索" />
 
                     <RadioButton
                         android:id="@+id/radio_pic"
                         style="@style/tab"
-                        android:drawableTop="@drawable/item_01"
+                        android:drawableTop="@drawable/tab_selector_bgg"
                         android:text="发 布" />
 
                     <RadioButton
                         android:id="@+id/radio_follow"
                         style="@style/tab"
-                        android:drawableTop="@drawable/item_01"
+                        android:drawableTop="@drawable/tab_selector_bgg"
                         android:text="更 多" />
 
                     <!-- <RadioButton -->
