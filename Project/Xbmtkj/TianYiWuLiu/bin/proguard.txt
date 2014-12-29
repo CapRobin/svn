@@ -1,13 +1,13 @@
 # view AndroidManifest.xml #generated:47
 -keep class com.net56888.logistics.App { <init>(...); }
 
-# view AndroidManifest.xml #generated:97
+# view AndroidManifest.xml #generated:102
 -keep class com.net56888.logistics.BrowserActivity { <init>(...); }
 
 # view AndroidManifest.xml #generated:62
 -keep class com.net56888.logistics.Detail { <init>(...); }
 
-# view AndroidManifest.xml #generated:118
+# view AndroidManifest.xml #generated:123
 -keep class com.net56888.logistics.DownloadManagerReceiver { <init>(...); }
 
 # view AndroidManifest.xml #generated:70
@@ -22,34 +22,37 @@
 # view AndroidManifest.xml #generated:92
 -keep class com.net56888.logistics.MainActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:112
+# view AndroidManifest.xml #generated:117
 -keep class com.net56888.logistics.MoreActivity { <init>(...); }
 
 # view AndroidManifest.xml #generated:79
 -keep class com.net56888.logistics.Profile { <init>(...); }
 
-# view AndroidManifest.xml #generated:107
+# view AndroidManifest.xml #generated:112
 -keep class com.net56888.logistics.PublishActivity { <init>(...); }
 
 # view AndroidManifest.xml #generated:87
 -keep class com.net56888.logistics.Register { <init>(...); }
 
-# view AndroidManifest.xml #generated:102
+# view AndroidManifest.xml #generated:107
 -keep class com.net56888.logistics.SearchActivity { <init>(...); }
 
 # view AndroidManifest.xml #generated:83
 -keep class com.net56888.logistics.SearchBrowser { <init>(...); }
 
+# view AndroidManifest.xml #generated:97
+-keep class com.net56888.logistics.TestActivity { <init>(...); }
+
 # view AndroidManifest.xml #generated:75
 -keep class com.net56888.logistics.TruckInfoPub { <init>(...); }
 
-# view AndroidManifest.xml #generated:120
+# view AndroidManifest.xml #generated:125
 -keep class com.net56888.logistics.downloads.DownloadProvider { <init>(...); }
 
-# view AndroidManifest.xml #generated:133
+# view AndroidManifest.xml #generated:138
 -keep class com.net56888.logistics.downloads.DownloadReceiver { <init>(...); }
 
-# view AndroidManifest.xml #generated:125
+# view AndroidManifest.xml #generated:130
 -keep class com.net56888.logistics.downloads.DownloadService { <init>(...); }
 
 # view res/layout/fragment_locations.xml #generated:34
