@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			td{
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<!--
+        	企业AB班	第一阶段考试	平均成绩不高
+					第二阶段考试	
+					第三阶段考试	成绩还行
+					第四阶段考试	还没有开始
+			企业C班	还没有开始考试	
+
+        -->
+		<h2>table表格合并练习</h2>
+		<table border="1" bordercolor="green" cellspacing="0" width="100%">
+			<tr>
+				<td rowspan="4">企业AB班</td>
+				<td>第一阶段考试</td>
+				<td rowspan="2">平均成绩不高</td>
+			</tr>
+			<tr>
+				<td width="">第二阶段考试</td>
+			</tr>
+			<tr>
+				<td>第三阶段考试</td>
+				<td>成绩还行</td>
+			</tr>
+			<tr>
+				<td>第四阶段考试</td>
+				<td>还没有开始</td>
+			</tr>
+			<tr>
+				<td>企业C班</td>
+				<td colspan="2">还没有开始考试</td>
+			</tr>
+		</table>
+	</body>
+</html>
