@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>百度注册案例</title>
+	</head>
+
+	<body>
+		<h1 style="text-align: center;">Lesson01_Form表单练习1_百度注册案例</h1><br />
+		<form action="#" method="post" autocomplete="off">
+			<fieldset>
+				<legend>注册百度账号</legend>
+				<div>
+					<label for="name">用户名：</label>
+					<input id="name" type="text" name="name" placeholder="请输入用户名" required="required" autofocus="autofocus" maxlength="4" />
+				</div><br />
+				
+				<div>
+					<label for="mobile">手机号：</label>
+					<input id="mobile" type="text" name="mobile" placeholder="请输入手机号" required="required" maxlength="11" />
+				</div><br />
+				
+				<div>
+					<label for="pwd">密&emsp;码：</label>
+					<input id="pwd" type="password" name="pwd" placeholder="请输入密码" required="required" />
+				</div><br />
+				
+				<div>
+					<label for="yzm">验证码：</label>
+					<input id="yzm" type="text" name="yzm" placeholder="请输入验证码" required="required" />
+					<button onclick="alert('验证码已发送到手机！')">发送验证码</button>
+				</div><br />
+				
+				<div>
+					<input id="accept" type="checkbox" name="accept" />
+					<label for="accept" style="font-size: 13px;">阅读并接受《百度用户协议》及《百度隐私权保护声明》</label>
+				</div>
+			</fieldset>
+			<input type="submit" name="注册" id="" value="注册" />
+		</form>
+	</body>
+
+</html>
