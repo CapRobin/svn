@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div {
+				margin: 0 100px 0 100px;
+			}
+			
+			p {
+				padding: 20px;
+			}
+			
+			#divId {
+				width: 700px;
+				background-color: aliceblue;
+				margin: auto;
+			}
+		</style>
+	</head>
+
+	<body>
+		<h1 style="text-align: center;">Lesson01_Form表单练习2_智联招聘注册案例</h1><br />
+		<form action="#" method="post">
+			<div id="divId">
+				<p>单位信息</p>
+				<div id="">
+					<label for="name">单位名称&emsp;</label>
+					<input type="text" name="name" id="name" placeholder="请输入单位名称" required="required" autofocus="autofocus" />
+				</div><br />
+				<div id="">
+					<label for="">所&ensp;在&ensp;地&emsp;</label>
+					<!--<input type="" name="" id="" value="" />-->
+					<select name="address">
+						<optgroup label="陕西">
+							<option value="西安市">西安市</option>
+							<option value="铜川市">铜川市</option>
+							<option value="宝鸡市">宝鸡市</option>
+							<option value="咸阳市">咸阳市</option>
+							<option value="渭南市">渭南市</option>
+						</optgroup>
+						<optgroup label="宁夏">
+							<option value="银川市">银川市</option>
+							<option value="石嘴山市">石嘴山市</option>
+							<option value="吴忠市">吴忠市</option>
+							<option value="固原市">固原市</option>
+							<option value="中卫市">中卫市</option>
+						</optgroup>
+						<optgroup label="甘肃">
+							<option value="兰州市">兰州市</option>
+							<option value="白银市">白银市</option>
+							<option value="天水市">天水市</option>
+							<option value="张掖市">张掖市</option>
+							<option value="酒泉市">酒泉市</option>
+						</optgroup>
+					</select>
+				</div><br />
+				<div id="">
+					<label for="contacts">联&ensp;系&ensp;人&emsp;</label>
+					<input type="text" name="contacts" id="contacts" placeholder="请输入联系人" />&emsp;&emsp;
+				</div><br />
+
+				<div id="">
+					<label for="contacts">性&emsp;&emsp;別&emsp;</label>
+					<input type="radio" name="sex" id="male" value="先生" checked="checked" /><label for="male">先生</label>
+					<input type="radio" name="sex" id="female" value="女士" /><label for="female">女士</label>
+				</div><br />
+
+				<div id="">
+					<label for="phoneNumber">联系电话&emsp;</label>
+					<input type="text" name="phoneNumber" id="phoneNumber" placeholder="请输入联系电话" required="required" maxlength="11" />
+				</div><br />
+
+				<div id="">
+					<label for="checkCode">验&ensp;证&ensp;码&emsp;</label>
+					<input type="text" name="checkCode" id="checkCode" placeholder="请输入验证码" />
+					<button onclick="alert('验证码已发送！')">发送验证码</button>
+				</div><br />
+
+				<div id="">
+					<label for="areaCode">固定电话&emsp;</label>
+					<input style="width: 60px;" type="text" name="areaCode" id="areaCode" placeholder="区号" maxlength="4" />
+					<input style="width: 120px;" type="text" name="fixedLine" id="fixedLine" placeholder="固定电话" maxlength="8" />
+					<input style="width: 60px;" type="text" name="extension" id="extension" placeholder="分机号" maxlength="4" />
+				</div><br />
+
+				<p>账户信息</p>
+				<div id="">
+					<label for="userName">用&ensp;户&ensp;名&emsp;</label>
+					<input type="text" name="userName" id="userName" placeholder="请输入用户名" required="required" />
+				</div><br />
+				<div id="">
+					<label for="email">电子邮件&emsp;</label>
+					<input type="email" name="email" id="email" placeholder="请输入电子邮件" />
+				</div><br />
+				<div id="">
+					<label for="pwd">密&emsp;&emsp;码&emsp;</label>
+					<input type="password" name="pwd" id="pwd" placeholder="请输入密码" />
+				</div><br />
+				<div id="">
+					<label for="rePwd">密码确认&emsp;</label>
+					<input type="password" name="rePwd" id="rePwd" placeholder="请再次输入密码" />
+				</div><br />
+				<div id="">
+					<input type="checkbox" name="deel" id="deel" />
+					<label for="deel" style="font-size: 13px;">我已阅读并同意智联招聘《用户服务协议》和《隐私政策》</label>
+				</div><br />
+				<div id="">
+					<input type="submit" name="免费注册" id="register" value="免费注册" />
+				</div>
+			</div>
+		</form>
+	</body>
+
+</html>
