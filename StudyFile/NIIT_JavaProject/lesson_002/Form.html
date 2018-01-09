@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			table {
+				border: 1px solid cadetblue;
+				border-collapse: collapse;
+				text-align: center;
+				width: 800px;
+			}
+			
+			table th {
+				border: 1px solid cadetblue;
+				border-collapse: collapse;
+				line-height: 40px;
+				color: blue;
+			}
+			
+			table td {
+				border: 1px solid cadetblue;
+				border-collapse: collapse;
+				line-height: 30px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<h1 style="text-align: center;">JavaCalssC_Lesson01_Form表单</h1>
+		<h3>一：说明总结</h3>
+		<table border="1">
+			<thead>
+				<th>用途</th>
+				<th>元素名称</th>
+				<th>固定属性</th>
+				<th>备注说明</th>
+			</thead>
+			<tbody>
+				<tr>
+					<td style="color: #0000FF;" colspan="4">表单主体</td>
+				</tr>
+				<tr>
+					<td>圈定表单元素</td>
+					<td>form</td>
+					<td>action="{服务端处理程序的地址}"</td>
+					<td rowspan="3">第二行第四列</td>
+				</tr>
+				<tr>
+					<td>第三行第一列</td>
+					<td>第三行第二列</td>
+					<td>第三行第三列</td>
+				</tr>
+				<tr>
+					<td>第三行第一列</td>
+					<td>第三行第二列</td>
+					<td>第三行第三列</td>
+				</tr>
+				<tr>
+					<td colspan="4">用来填的表单元素</td>
+				</tr>
+				<tr>
+					<td>第二行第一列</td>
+					<td>第二行第二列</td>
+					<td>第二行第三列</td>
+					<td rowspan="3">第二行第四列</td>
+				</tr>
+				<tr>
+					<td>第三行第一列</td>
+					<td>第三行第二列</td>
+					<td>第三行第三列</td>
+				</tr>
+				<tr>
+					<td>第三行第一列</td>
+					<td>第三行第二列</td>
+					<td>第三行第三列</td>
+				</tr>
+				<tr>
+					<td colspan="4">用来选的表单元素</td>
+				</tr>
+				<tr>
+					<td>第二行第一列</td>
+					<td>第二行第二列</td>
+					<td>第二行第三列</td>
+					<td rowspan="3">第二行第四列</td>
+				</tr>
+				<tr>
+					<td>第三行第一列</td>
+					<td>第三行第二列</td>
+					<td>第三行第三列</td>
+				</tr>
+				<tr>
+					<td>第三行第一列</td>
+					<td>第三行第二列</td>
+					<td>第三行第三列</td>
+				</tr>
+			</tbody>
+			<tfoot></tfoot>
+		</table><br />
+		<hr />
+		<form action="#">
+			<fieldset>
+				<legend>选择性表单</legend>
+				<h3>单项选择</h3>
+				<div>
+					<label>性别:</label>
+					<input type="radio" name="性别" id="01" value="男" checked="checked" /><label for="01">男</label>
+					<input type="radio" name="性别" id="02" value="女" /><label for="02">女</label>
+				</div>
+
+				<h3>多项选择</h3>
+				<div>
+					<label>颜色:</label>
+					<input type="checkbox" name="颜色" id="03" value="红色" /><label for="03">红色</label>
+					<input type="checkbox" name="颜色" id="04" value="黄色" checked="checked" /><label for="04">黄色</label>
+					<input type="checkbox" name="颜色" id="05" value="蓝色" /><label for="05">蓝色</label>
+				</div>
+
+				<h3>下拉选择</h3>
+				<div>
+
+					<select name="班级">
+						<optgroup label="学生班">
+							<option id="06" value="北大">北大</option>
+							<option id="07" value="宁大">宁大</option>
+							<option id="08" value="财大">财大</option>
+						</optgroup>
+						<optgroup label="企业班">
+							<option id="09" value="A班">A班</option>
+							<option id="10" value="B班">B班</option>
+							<option id="11" value="C班" selected="selected">C班</option>
+						</optgroup>
+						<optgroup label="高级班">
+							<option id="12" value="A班">A班</option>
+							<option id="13" value="B班">B班</option>
+							<option id="14" value="C班">C班</option>
+						</optgroup>
+					</select>
+				</div>
+			</fieldset>
+		</form>
+	</body>
+
+</html>
