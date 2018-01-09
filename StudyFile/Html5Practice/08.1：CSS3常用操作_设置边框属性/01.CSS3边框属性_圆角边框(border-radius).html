@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3边框属性_圆角边框(boder-radius)</title>
+    <style type="text/css" id="styleId">
+        #headTitle {
+            text-align: center;
+        }
+
+        /*为所有Div标签设置全局属性*/
+        div {
+            text-align: center;
+            text-align-all: center;
+            align-content: center;
+            margin: 0px auto;
+            width: 400px;
+            height: 100px;
+            line-height: 100px;
+            border: 2px solid blue;
+            background-color: #31caff;
+            padding: 40px 30px; /*上下内边距为40px，左右内边距为30px.*/
+            font-size: 20px;
+            font-family: "Adobe 黑体 Std R";
+        }
+
+        div.borderSet01 {
+            /*1、border-radius：圆角边框八个属性值：
+            (左上角X轴半径，右上角X轴半径，右下角X轴半径，左下角X轴半径/左上角Y轴半径，右上角Y轴半径，右下角Y轴半径，左下角Y轴半径)*/
+            border-radius: 50px 0px 50px 0px/50px 0px 50px 0px;
+        }
+
+        div.borderSet02 {
+            /*2、border-radius：圆角边框四个属性值：
+            (左上角X和Y轴半径，右上角X和Y轴半径，右下角X和Y轴半径，左下角X和Y轴半径/左上角Y轴半径)*/
+            border-radius: 0px 20px 40px 60px;
+        }
+
+        div.borderSet03 {
+            /*3、border-radius：三个属性值：
+            (左上角X和Y轴半径，右上角左下角X和Y轴半径，右下角X和Y轴半径)*/
+            border-radius: 50px 30px 10px;
+        }
+
+        div.borderSet04 {
+            /*4、border-radius：二个属性值：
+            (左上角右下角X和Y轴半径，右上角左下角X和Y轴半径)*/
+            border-radius: 50px 25px;
+        }
+
+        div.borderSet05 {
+            /*5、border-radius：一个属性值：(四个角的X和Y轴半径相同)*/
+            border-radius: 25px;
+        }
+    </style>
+</head>
+<body>
+<h1 id="headTitle">8.1.01：CSS3边框属性_圆角边框</h1><br>
+
+<!--为DIV元素定义一个类选择器-->
+<h3 align="center">1、border-radius: 100px 0px 100px 0px/100px 0px 100px 0px;</h3>
+<div class="borderSet01">第一个DIV容器显示内容</div>
+<br>
+<h3 align="center">2、border-radius: 0px 20px 40px 60px;</h3>
+<div class="borderSet02">第二个DIV容器显示内容</div>
+<br>
+<h3 align="center">3、border-radius: 50px 30px 10px;</h3>
+<div class="borderSet03">第三个DIV容器显示内容</div>
+<br>
+<h3 align="center">4、border-radius: 50px 25px;</h3>
+<div class="borderSet04">第四个DIV容器显示内容</div>
+<br>
+<h3 align="center">5、border-radius: 25px;</h3>
+<div class="borderSet05">第五个DIV容器显示内容</div>
+<br>
+<br>
+</body>
+</html>

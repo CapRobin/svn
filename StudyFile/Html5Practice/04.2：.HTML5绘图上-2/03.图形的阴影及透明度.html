@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas绘制图形的阴影及透明度</title>
+    <style>
+        #mcvs {
+            border: 2px solid #000000;
+            background-color: #b3d4fc;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function () {
+            var mcvs = document.getElementById("mcvs");
+            var cnt = mcvs.getContext("2d");
+            /*标题一*/
+            cnt.font = "25px Courier New";
+            cnt.fillStyle = "blue";
+            cnt.fillText("绘制矩形", 90, 70);
+            /*开始绘制绘制矩形*/
+            cnt.beginPath();
+            cnt.rect(50, 125, 200, 125);
+            cnt.lineWidth = 5;//绘制线条画笔的宽度
+            cnt.strokeStyle = "green";//设置线条的颜色
+            cnt.stroke();
+
+            /*设置矩形的阴影(该设置必须在设置填充颜色方法“cnt.fill()”之前执行)，
+            执行该方法后后面的所有图形都将被设置阴影，为某形状单独设置阴影的情况除外*/
+            cnt.shadowColor = "black";//设置阴影的颜色值
+            cnt.shadowBlur = 10;//设置阴影的模糊度
+            cnt.shadowOffsetX = 10;//设置或返回阴影与形状之间的水平距离
+            cnt.shadowOffsetY = 10;//设置或返回阴影与形状之间的垂直距离
+
+            /*设置图形的透明度，该属性的值介于0~1之间，值越小透明度越大*/
+            cnt.globalAlpha = 0.5;
+
+            cnt.fillStyle = "blue";//设置矩形的填充颜色
+            cnt.fill();//开始填充
+
+            /*标题二*/
+            cnt.font = "25px Courier New";
+            cnt.fillStyle = "blue";
+            cnt.fillText("绘制圆圈", 390, 70);
+            /*开始绘制绘制圆圈*/
+            cnt.beginPath();
+            //设置X.Y坐标
+            var centerX = 450;
+            var centerY = mcvs.height / 2 + 35;
+            var radiuse = 80;
+            cnt.arc(centerX, centerY, radiuse, 0, 2 * Math.PI, true);
+            cnt.lineWidth = 2;
+            cnt.strokeStyle = "green";
+            cnt.stroke();
+
+            /*设置圆的阴影*/
+            cnt.shadowColor = "black";
+            cnt.shadowBlur = 15;
+            cnt.shadowOffsetX = 15;
+            cnt.shadowOffsetY = 15;
+
+            /*设置圆的透明度*/
+            cnt.globalAlpha = 0.8;
+            cnt.fillStyle = "red";//设置圆的填充色
+            cnt.fill();//开始填充
+
+        }
+    </script>
+</head>
+<body>
+<h1 align="center">4.2.03：Canvas绘制图形的阴影及透明度</h1><br>
+<p align="center">
+    <canvas id="mcvs" width="600" height="300">
+        您的浏览器暂不支持Canvas元素，请升级浏览器或更换其他浏览器！
+    </canvas>
+</p>
+
+</body>
+</html>

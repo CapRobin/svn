@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新增Input属性</title>
+</head>
+<body>
+<h1 align="center">3.2.01：新增Input属性练习</h1>
+<!--新增Input属性：autocomplete属性：规定<Input>元素输入字段是否应该开启自动补全功能-->
+
+<h2>1、autocomplete属性</h2>
+<form action="../Practice/DemoTest.html" method="get">
+    <input type="text" name="username" autocomplete="off"> <br>
+    <input type="password" name="password" autocomplete="off"><br>
+    <input type="submit" name="登录">
+</form>
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+<!--新增Input属性：autofocus属性：规定当页面加载时<input>元素应该自动获得焦点-->
+<h2>2、autofocus属性</h2>
+<form action="../Practice/DemoTest.html">
+    <p style="margin-left: 100px; font-weight: 400">
+        <!--此处点击：“标题概要”时光标跳转至文本域中-->
+        <label for="detail" style="font-weight: 400">标题概要</label>
+    </p><br>
+    <p><textarea id="detail" cols="50" rows="10">详情内容详情内容详情内容详情内容详情内容详情内容详情内容详情内容详情内容详情内容详情内容详情内容详情内容</textarea></p><br>
+    <p>
+        <!--autofocus属性进入页面时同意按钮自动获得焦点（进入页面直接回车即为点击同意按钮）-->
+        <input type="submit" value="同意" autofocus="on">
+        <input type="submit" value="拒绝">
+    </p>
+</form>
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+<!--新增Input属性：form属性：规定元素所属的一个过多个表单-->
+<h2>3、form属性</h2>
+<!--此处通过地址栏显示的提交数据可见form表单提交了两个文本框中的数据-->
+<form id="formid" action="../Practice/DemoTest.html">
+    <input type="text" name="name01" autofocus="autofocus">
+    <input type="submit" value="提交"><br>
+</form>
+下面Input输入框在Form表单之外，但因为对其添加了form属性，且其职位Form表单的ID，所以该输入框任然是Form表单的一部分。<br>
+<input type="text" name="password" form="formid"><br>
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+<!--新增Input属性：list属性：该属性通过引用datalist元素来为Input元素设置预设值-->
+<h2>4、list属性</h2>
+<form action="../Practice/DemoTest.html" method="get">
+    请输入网址：
+    <input type="url" list="urllist" name="weblink">
+    <datalist id="urllist">
+        <option label="百度">http://www.baidu.com</option>
+        <option label="淘宝">http://www.taobao.com</option>
+        <option label="华鸿">http://www.hhkj.nx.cn</option>
+    </datalist>
+    <input type="submit" value="提交">
+</form>
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+<!--新增Input属性：lmain、max、step属性：分别规定输入数字值的最小值、最大值及规定合法的数字增加或减少的间隔-->
+<h2>5、main、max、step属性</h2>
+<form action="../Practice/DemoTest.html" method="get">
+    请输入数字：
+    <input type="number" name="number01" min="1" max="10" step="2">
+    <input type="submit" value="提交">
+</form>
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+<!--新增Input属性：multiple属性：允许用户为input元素同时上传多个文件-->
+<h2>6、multiple属性</h2>
+<form action="../Practice/DemoTest.html">
+    选择文件：<input type="file" name="image01"><br>
+    选择文件：<input type="file" name="image02" multiple><br>
+    <input type="submit" value="提交">
+</form>
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+<!--新增Input属性：pattern属性：规定用来验证input元素值的正则表达式-->
+<h2>7、pattern属性</h2>
+<form action="../Practice/DemoTest.html" method="get">
+    <!--此处“[A-Za-z1-9]”为正则表达式的表单方式，即输入数字或字母的组和密码“{6}”为输入字母或数字的长度-->
+    输入数字或字母的组和密码：<br>
+    <input type="text" name="userpassword" pattern="[A-Za-z0-9]{6}" title="非法输入，请输入字母或数字组合">
+    <input type="submit" value="提交">
+</form>
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+<!--新增Input属性：placeholder属性：显示input文本框内的提示信息-->
+<h2>8、placeholder属性</h2>
+<form action="../Practice/DemoTest.html" method="get">
+    <input type="text" name="pwd" pattern="[A-Za-z0-9]{6}" placeholder="请输入数字母和数字的组和密码">
+    <input type="submit" value="提交">
+</form>
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+<!--新增Input属性：required属性：该属性规定input文本框内不能为空，否则无法提交表单-->
+<h2>9、required属性</h2>
+<form action="../Practice/DemoTest.html" method="get">
+    <input type="text" name="content" required>
+    <input type="submit" value="提交">
+</form>
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+<!--新增Input属性：width&height属性：规定设置提交按钮所显示图片的大小-->
+<h2>10、width&height属性</h2>
+<form action="../Practice/DemoTest.html" method="get">
+    <input type="text" name="test"><br>
+    <input type="image" src="Ppt01.jpg" width="100" height="100">
+</form>
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+<!--新增Input属性：表单重写-->
+<h2>11、表单重写属性</h2>
+<form id="testform" action="http://www.baidu.com" enctype="application/x-www-form-urlencoded" method="get">
+    请输入邮箱地址：<input type="email" name="userid" required><br>
+    <input type="submit" value="formaction:修改表单提交地址" formaction="../Practice/DemoTest.html"><br>
+    <input type="submit" value="formcntype:修改表单数据提交到服务器时的编码方式" formenctype="multipart/form-data"><br>
+    <!--该效果可通过谷歌浏览器开发者工具Method参数查看-->
+    <input type="submit" value="formmethod:改变表单数据的发送方式(get/post)" formmethod="post"><br>
+    <input type="submit" value="novalidate:修改标题提交时取消input文本框输入内容的所有验证" formnovalidate="formnovalidate"><br>
+    <input type="submit" value="formtarget:表示服务器的响应数据是否在新页面中打开_blank" formtarget="_blank"><br>
+    <input type="submit" value="formtarget:表示服务器的响应数据是否在新页面中打开_self" formtarget="_self">
+</form>
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

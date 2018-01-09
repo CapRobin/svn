@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5利用Canvas元素绘制弧线和曲线</title>
+    <style>
+        #mcvs {
+            border: 2px solid #555555;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function () {
+            var mcvs = document.getElementById("mcvs");
+            var mcet = mcvs.getContext("2d");
+
+            /*标题：绘制弧线示例*/
+            mcet.font = "20px Courier New";
+            mcet.fillStyle = "black";
+            mcet.fillText("绘制弧线示例", 40, 30);
+
+            /*开始绘制弧线*/
+
+            /*注释：此处弧线的确定由三个点的坐标和一个半径来确定
+                第一个点：该点可以是开始绘制的起始点(如此处的“mcet.moveTo(50,50)”)也可以是上次绘制结束时候的结束点(如此处的“mcet.lineTo(100,50)”)
+                第二个点：即为此处的“mcet.arcTo”方法的前两个参数
+                第三个点：即为此处的“mcet.arcTo”方法的第三第四个参数
+                弧线的半径：即为此处“mcet.arcTo”方法的最后一个参数
+                绘制原理：绘制出来的弧线必然与经过第一个点和第二个点的直线还有经过第二个点和第三个点的直线相切，并且半径为所设置的半径
+            */
+            mcet.beginPath();
+            mcet.moveTo(50, 50);
+            mcet.lineTo(100, 50);
+            mcet.arcTo(150, 50, 150, 100, 50);
+            mcet.lineTo(150, 250);
+            mcet.strokeStyle = "blue";
+            mcet.lineWidth = "5";
+            mcet.stroke();
+
+            /*测试示例*/
+            /*注释掉“mcet.lineTo(100,50);”两次效果显示一样*/
+            /*mcet.beginPath();
+            mcet.moveTo(50, 50);
+            //mcet.lineTo(100,50);
+            mcet.arcTo(150, 50, 150, 100, 50);
+            mcet.lineTo(150, 250);
+            mcet.strokeStyle = "blue";
+            mcet.lineWidth = "5";
+            mcet.stroke();*/
+
+            /*标题：绘制二次贝塞尔曲线*/
+            mcet.font = "20px Courier New";
+            mcet.fillStyle = "black";
+            mcet.fillText("绘制二次贝塞尔曲线示例", 250, 30);
+
+            /*绘制二次贝塞尔曲线*/
+            mcet.beginPath();
+            mcet.moveTo(280, 150);
+            mcet.quadraticCurveTo(350, 50, 450, 300);
+            mcet.strokeStyle = "red";
+            mcet.lineWidth = 5;
+            mcet.stroke();
+
+            /*标题：绘制三次贝塞尔曲线*/
+            mcet.font = "20px Courier New";
+            mcet.fillStyle = "black";
+            mcet.fillText("绘制三次贝塞尔曲线示例", 550, 30);
+
+            /*绘制三次贝塞尔曲线*/
+            mcet.beginPath();
+            mcet.moveTo(600, 280);
+            mcet.bezierCurveTo(620, 70, 650, 120, 750, 280);
+            mcet.strokeStyle = "green";
+            mcet.lineWidth = "5";
+            mcet.stroke();
+
+
+        }
+    </script>
+</head>
+<body>
+<h1 align="center">4.1.03：HTML5Canvas元素绘制弧线和曲线</h1><br>
+
+<p align="center">
+    <canvas id="mcvs" width="800" height="350">
+        抱歉！您的浏览器不支持Html5，请升级浏览器或更换其他浏览器重新尝试！
+    </canvas>
+</p>
+</body>
+</html>

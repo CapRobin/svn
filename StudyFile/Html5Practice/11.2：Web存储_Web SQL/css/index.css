@@ -1,0 +1,14 @@
+tr {
+    height: 30px;
+}
+
+td {
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+}
+
+th {
+    padding-left: 10px;
+    padding-right: 10px;
+}

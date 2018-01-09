@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5Canvas元素绘制图形变换</title>
+    <!--设置Canvas画布的样式-->
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #mcvs {
+            border: 1px solid #000000;
+            background-color: #b3d4fc;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function () {
+            var cvs = document.getElementById("mcvs");
+            var ctt = cvs.getContext("2d");
+            //设置标题
+            title(ctt, "bold 20px Courier New", "#000000", "第一步:移动；第二步:旋转；第三步:缩放", 120, 50);
+            var rectWidth = 200;
+            var rectHeight = 100;
+            ctt.fillStyle = "#ff0000";
+            //移动前的矩形
+            //移动矩形,此方法的两个参数表示为移动后矩形的开始绘制点的坐标
+            ctt.translate(cvs.width / 2, cvs.height / 2);
+            /*旋转矩形*/
+            ctt.rotate(0.25 * Math.PI);
+            /*缩放矩形*/
+            ctt.scale(0.5, 0.5);
+            ctt.fillRect(-rectWidth / 2, -rectHeight / 2, rectWidth, rectHeight);
+
+        }
+
+        /*设置标题*/
+        function title(context, textstyle, textColor, text, x, y) {
+            context.font = textstyle;
+            context.fillStyle = textColor;
+            context.fillText(text, x, y)
+        }
+    </script>
+</head>
+<body>
+<h1 align="center">4.4.01：Canvas元素绘制图形变换示例</h1><br>
+<p align="center">
+    <canvas id="mcvs" width="600" height="400">
+        抱歉！您的浏览器暂不支持HTML5，请更新或更换浏览器后再次尝试，谢谢！
+    </canvas>
+</p>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5Canvas画布状态的保存和恢复</title>
+    <!--设置Canvas画布的样式-->
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #mcvs {
+            border: 1px solid #000000;
+            background-color: #b3d4fc;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function () {
+            var cvs = document.getElementById("mcvs");
+            var ctt = cvs.getContext("2d");
+            //设置标题
+            title(ctt, "bold 15px Courier New", "#0000ff", "红色:初始绘制的矩形 绿色:第一次恢复 蓝色:第二次恢复 黑色：第三次恢复", 50, 50);
+
+            //第一步：设置矩形的宽和高
+            var rectWidth = 100;
+            var rectHeight = 50;
+            //保存矩形的第一个步骤(默认起始坐标为0.0)
+            ctt.save();
+
+            //第二步：移动矩形到画布的中心点
+            ctt.translate(cvs.width / 2, cvs.height / 2);
+            //保存绘制矩形的第二个步骤
+            ctt.save();
+
+            //第三步：矩形旋转45度
+            ctt.rotate(Math.PI / 4);
+            //保存绘制矩形的第三个步骤
+            ctt.save();
+
+            //第四步：设置矩形的宽和高为原始宽高的两倍
+            ctt.scale(2, 2);
+            ctt.fillStyle = "#ff0000";
+
+            //开始绘制矩形
+            ctt.fillRect(-rectWidth / 2, -rectHeight / 2, rectWidth, rectHeight);
+
+            /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+            /*恢复设置：恢复到矩形到某一步骤状态，该恢复设置只能逆向逐步恢复，此处的fillstyle的颜色设置只做恢复步骤标识使用*/
+
+            //第一次恢复：此时恢复一步到状态三(即矩形的宽高未改变之前)
+            ctt.restore();//
+            ctt.fillStyle = "#00ff00";
+            ctt.fillRect(-rectWidth / 2, -rectHeight / 2, rectWidth, rectHeight);
+
+            //第二次恢复：此时恢复到状态二(即矩形未旋转之前)
+            ctt.restore();
+            ctt.fillStyle = "#0000ff";
+            ctt.fillRect(-rectWidth / 2, -rectHeight / 2, rectWidth, rectHeight);
+
+            //第三次恢复：此时恢复到状态一(即矩形未移动到中心点之前)
+            ctt.restore();
+            ctt.fillStyle = "#000000";
+            ctt.fillRect(-rectWidth / 2, -rectHeight / 2, rectWidth, rectHeight);
+
+
+        }
+
+        /*设置标题*/
+        function title(context, textstyle, textColor, text, x, y) {
+            context.font = textstyle;
+            context.fillStyle = textColor;
+            context.fillText(text, x, y)
+        }
+    </script>
+</head>
+<body>
+<h1 align="center">4.4.02：Canvas画布状态的保存和恢复示例</h1><br>
+<p align="center">
+    <canvas id="mcvs" width="600" height="400">
+        抱歉！您的浏览器暂不支持HTML5，请更新或更换浏览器后再次尝试，谢谢！
+    </canvas>
+</p>
+</body>
+</html>

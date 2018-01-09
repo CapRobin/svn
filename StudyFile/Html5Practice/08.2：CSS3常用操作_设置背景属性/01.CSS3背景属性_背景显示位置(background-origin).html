@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3背景属性_背景显示位置(background-origin)</title>
+    <style type="text/css">
+        /*ID选择器*/
+        #headTitle {
+            text-align: center;
+        }
+
+        /*为所有Div标签设置全局属性*/
+        div {
+            width: 150px;
+            height: 150px;
+            padding: 30px;
+            margin: 50px;
+            /*背景图片的起始位置*/
+            background: url("../Resources/image/bg.png") no-repeat left top;
+            border: 30px dashed rgba(255, 0, 0, 0.5);
+        }
+        /*1.从边框区域(BorderBox)区域放置背景*/
+        .divClass01 {
+            /*Safari版*/
+            -webkit-background-origin: border-box;
+            /*Opera版*/
+            -o-background-origin: border-box;
+            /*标准版*/
+            background-origin: border-box;
+        }
+
+        /*2.从内边距区域(PaddingBox)区域放置背景(默认方式)*/
+        .divClass02 {
+            /*Safari版*/
+            -webkit-background-origin: padding-box;
+            /*Opera版*/
+            -o-background-origin: padding-box;
+            /*!*标准版*!*/
+            background-origin: padding-box;
+        }
+
+        /*3.从内容(ContentBox)区域放置背景*/
+        div.divClass03 {
+            /*Safari版*/
+            -webkit-background-origin: content-box;
+            /*Opera版*/
+            -o-background-origin: content-box;
+            /*标准版*/
+            background-origin: content-box;
+        }
+    </style>
+</head>
+<body>
+
+<h1 id="headTitle">8.2.01：CSS3背景属性_背景显示位置(background-origin)</h1><br><br>
+<!--cellspacing属性用来表示单元格之间的空隙大小-->
+<table border="1" align="center" style="border: 1px solid #31caff;" cellspacing="0">
+    <tr>
+        <th style="text-align:center; height: 50px">
+            <span style="font-size: 16px">1.从边框区域(BorderBox)区域放置背景</span>
+        </th>
+        <th style="text-align:center;">
+            <span style="font-size: 16px">2.从内边距区域(PaddingBox)区域放置背景(默认)</span>
+        </th>
+        <th style="text-align:center;">
+            <span style="font-size: 16px">3.从内容(ContentBox)区域放置背景</span>
+        </th>
+    </tr>
+    <tr>
+        <td>
+            <div class="divClass01" id="myDiv01"></div>
+        </td>
+        <td>
+            <div class="divClass02" id="myDiv02"></div>
+        </td>
+        <td>
+            <div class="divClass03" id="myDiv03"></div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
