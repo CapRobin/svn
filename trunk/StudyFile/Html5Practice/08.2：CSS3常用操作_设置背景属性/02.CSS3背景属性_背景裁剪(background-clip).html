@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3背景属性_背景裁剪(background-clip)</title>
+    <style type="text/css">
+        h1 {
+            text-align: center;
+        }
+
+        /*为所有Div标签设置全局属性*/
+        div {
+            width: 150px;
+            height: 150px;
+            padding: 30px;
+            margin: 50px;
+            /*背景图片的起始位置*/
+            background: url("../Resources/image/bg.png") black no-repeat left top;
+            border: 30px dashed rgba(255, 0, 0, 0.5);
+            /*背景图片的起始位置为边框区域*/
+            background-origin: border-box;
+        }
+
+        /*1.从边框区域(BorderBox)以外裁剪*/
+        .divClass01 {
+            /*Safari版*/
+            -webkit-background-clip: border-box;
+            /*Opera版*/
+            -o-background-clip: border-box;
+            /*!*标准版*!*/
+            background-clip: border-box;
+        }
+
+        /*2.从内边距区域(PaddingBox)以外裁剪*/
+        .divClass02 {
+            /*Safari版*/
+            -webkit-background-clip: padding-box;
+            /*Opera版*/
+            -o-background-clip: padding-box;
+            /*标准版*/
+            background-clip: padding-box;
+        }
+
+        /*3.从内容区域(ContentBox)以外裁剪*/
+        div.divClass03 {
+            /*Safari版*/
+            -webkit-background-clip: content-box;
+            /*Opera版*/
+            -o-background-clip: content-box;
+            /*标准版*/
+            background-clip: content-box;
+        }
+    </style>
+
+</head>
+<body>
+<h1>8.2.02：CSS3背景属性_背景裁剪(background-clip)</h1><br><br>
+<!--cellspacing属性用来表示单元格之间的空隙大小-->
+<table border="1" align="center" style="border: 1px solid #31caff;" cellspacing="0">
+    <tr>
+        <th style="text-align:center; height: 50px">
+            <span style="font-size: 16px">1.从边框区域(BorderBox)以外裁剪</span>
+        </th>
+        <th style="text-align:center;">
+            <span style="font-size: 16px">2.从内边距区域(PaddingBox)以外裁剪</span>
+        </th>
+        <th style="text-align:center;">
+            <span style="font-size: 16px">3.从内容区域(ContentBox)以外裁剪</span>
+        </th>
+    </tr>
+    <tr>
+        <td>
+            <div class="divClass01" id="myDiv01"></div>
+        </td>
+        <td>
+            <div class="divClass02" id="myDiv02"></div>
+        </td>
+        <td>
+            <div class="divClass03" id="myDiv03"></div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5Canvas元素绘制文本</title>
+    <!--设置Canvas画布的样式-->
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #mcvs {
+            border: 1px solid #000000;
+            background-color: #ffffff;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function () {
+            var cvs = document.getElementById("mcvs");
+            var ctt = cvs.getContext("2d");
+            //添加标题
+            title(ctt, "black", "实体文本绘制", 0, 50);
+            /*实体文本绘制*/
+            ctt.font = "120px 华文行楷";
+            ctt.fillStyle = "blue";
+            ctt.fillText("华鸿科技", 70, 175);
+
+            //添加标题
+            title(ctt, "black", "描边文本绘制", 0, 250);
+            /*实体文本绘制*/
+            ctt.font = "120px 华文行楷";
+            ctt.fillStyle = "blue";
+            ctt.fillText("华鸿科技", 70, 175);
+            /*描边文本绘制*/
+            ctt.font = "120px 华文行楷";
+            ctt.strokeStyle = "blue";
+            ctt.lineWidth = 2;
+            ctt.strokeText("华鸿科技", 70, 375);
+        }
+
+        /*绘制文本方法*/
+        function title(context, textColor, text, x, y) {
+            context.font = "bold 30px Courier New";
+            context.fillStyle = textColor;
+            context.fillText(text, x, y)
+        }
+    </script>
+</head>
+<body>
+<h1 align="center">4.3.02：Canvas元素绘制文本示例</h1><br>
+<p align="center">
+    <canvas id="mcvs" width="600" height="400">
+        抱歉！您的浏览器暂不支持HTML5，请更新或更换浏览器后再次尝试，谢谢！
+    </canvas>
+</p>
+</body>
+</html>

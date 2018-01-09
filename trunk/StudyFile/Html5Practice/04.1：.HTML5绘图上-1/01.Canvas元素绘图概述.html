@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5绘图_Canvas元素概述</title>
+    <!--为Canvas容器设置一个样式-->
+    <style>
+        #mycanvas {
+            border: 1px solid #ffff00;
+        }
+    </style>
+
+    <script type="text/javascript">
+        window.onload = function () {
+            /*第二步：通过ID找到Canvas元素*/
+            var mcanvas = document.getElementById("mycanvas");
+            /*第三步：获取Context对象*/
+            var mcontext = mcanvas.getContext("2d");
+            /*第四步：绘制图像*/
+            /*设置绘图颜色*/
+            mcontext.fillStyle = "#ff0000"
+            /*设置绘图的坐标及大小,绘制方法：fillRect(X开始坐标,Y开始坐标,图形宽度,图形高度)*/
+            mcontext.fillRect(100, 50, 400, 300);
+        }
+    </script>
+</head>
+<body>
+
+<h1 align="center">4.1.01：HTML5绘图_Canvas元素概述</h1><br>
+<p align="center">
+    <!--第一步：Canvas元素在H5中的申明-->
+    <canvas id="mycanvas" width="600" height="400">
+        您的浏览器暂不支持Canvas元素，请升级浏览器或更换其他浏览器！
+    </canvas>
+</p>
+</body>
+</html>

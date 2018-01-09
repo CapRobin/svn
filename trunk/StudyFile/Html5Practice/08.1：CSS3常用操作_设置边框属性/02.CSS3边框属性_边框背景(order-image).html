@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3边框属性_边框背景(boder-image)</title>
+    <style type="text/css">
+        /*为H1标签设置全局属性*/
+        h1 {
+            text-align: center;
+        }
+
+        h3 {
+            text-align: center;
+        }
+
+        /*为所有Div标签设置全局属性*/
+        div {
+            margin: 0 auto;
+            height: 60px;
+            width: 370px;
+            border: 10px solid transparent;
+            padding: 30px 20px;
+            line-height: 60px;
+            text-align: center;
+            font-family: 华文楷体;
+            font-weight: bolder;
+            font-size: 25px;
+            color: darkred;
+        }
+
+        /*Id选择器01*/
+        /*设置边框背景图片为平铺方式*/
+        #roundId {
+            /*Safari浏览器支持版*/
+            -webkit-border-image: url(../Resources/image/borderImage.png) 30 round;
+            /*火狐浏览器支持版*/
+            -moz-border-image: url(../Resources/image/borderImage.png) 30 round;
+            /*Opera浏览器支持版*/
+            -o-border-image: url(../Resources/image/borderImage.png) 30 round;
+            /*通用标准版本*/
+            border-image: url(../Resources/image/borderImage.png) 30 round;
+        }
+
+        #stretchId {
+            -webkit-border-image: url(../Resources/image/borderImage.png) 30 stretch;
+            -moz-border-image: url(../Resources/image/borderImage.png) 30 stretch;
+            -o-border-image: url(../Resources/image/borderImage.png) 30 stretch;
+            border-image: url(../Resources/image/borderImage.png) 30 stretch;
+        }
+
+
+    </style>
+</head>
+<body>
+<h1>8.1.02：CSS3边框属性_边框背景</h1><br><br>
+<h3>1、平铺方式填充边框背景</h3>
+<div id="roundId">使用Round(平铺)属性来填充边框</div>
+<br>
+<h3>2、拉伸方式填充边框背景</h3>
+<div id="stretchId">使用Stretch(拉伸)属性来填充边框</div>
+
+</body>
+</html>

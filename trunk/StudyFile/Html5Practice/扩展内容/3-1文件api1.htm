@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title></title>
+        <script src="../Resources/js/jquery-3.2.1.js" type="text/javascript"></script>
+
+
+        <script type="text/javascript">
+        function init(){
+            var btn = document.getElementById("btnGetFileName");
+            btn.addEventListener("click", function (e) {
+                var fileList = document.getElementById("fileDemo").files;
+
+
+
+                for (var i = 0; i < fileList.length; i++) {
+                    var file = fileList[i];
+                    var size = file.size;
+                    var name = file.name;
+                    var type = file.type;
+                    var lastModifiedDate = file.lastModifiedDate;
+                    var d = document.getElementById("result");
+                    $("#result").append("<p>文件名称:"+name+"******文件大小:"+size+"******文件类型"+type+"******修改时间:"+lastModifiedDate+"</p>");
+                }
+
+            });
+        }
+
+
+        </script>
+    </head>
+    <body onload="init();">
+        <input type="file" multiple id="fileDemo"/>
+        <input type="button" id="btnGetFileName" value="获取上去文件的名字"/>
+        <!--arguments[0]等待求解-->
+        <!--<input type="button" id="btnGetFileName" onclick="alert(arguments[0]);" value="获取上去文件的名字"/>-->
+        <div id="result">
+
+
+        </div>
+    </body>
+</html>
