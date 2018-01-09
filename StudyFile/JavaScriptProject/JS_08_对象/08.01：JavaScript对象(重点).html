@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>08.01：JavaScript对象(重点)</title>
+    <script type="text/javascript">
+        /*~~~~~~~~~~~~~~~JavaScript对象~~~~~~~~~~~~~*/
+
+        /*    第一种创建方式：
+        * 缺点：每次创建对象都要绑定属性和函数，属性值在绑定的时候只能给一个固定值或初始值
+        * */
+        //创建对象
+        var student = new Object();
+        //绑定属性及事件
+        student.age = 18;
+        student.name = "张全蛋";
+        student.num = 108;
+        student.pay = function () {
+            alert("我是张全蛋");
+            var canDo = "学习、打篮球、撸啊撸、睡觉.......";
+            return canDo;
+        };
+        //绑定一个已经定义好的函数
+        student.eat = sEat;
+
+        function sEat() {
+            var str = "我爱吃辣条";
+            alert(str);
+            return "辣条";
+        }
+        //调用属性及函数
+        alert("学生" + student.name + "的年龄是:" + student.age + "；学号是;" + student.num + "；还会" + student.pay() + "；爱吃" + student.eat());
+
+        /*第二种方式创建：
+        * 优点：解决了第一种创建方式的问题
+        * 缺点：代码冗余，类型是空白
+        *
+        * this：表示当前对象，谁迪奥用当前函数即表示是谁
+        *
+        *
+        * */
+
+        function createStudent(name, age) {
+            var stu = new Object();
+            //为对象绑定属性(静态属性)
+            stu.age = age;
+            stu.name = name;
+            //为对象绑定事件(行为属性)
+            stu.sayHi = function () {
+                //this：表示当前对象，谁调用当前函数即表示是谁，此处this.name可表示
+                // 为stu1.name、stu2.name、stu3.name，那个对象调用即表示那个
+                var sayStr = this.name+"说：你好，世界！";
+                return sayStr;
+            };
+            //返回对象
+            return stu;
+        }
+
+        //调用createStudent函数创建相应的对象，并返回对象
+        var stu1 = createStudent("张三",25);
+        var stu2 = createStudent("李四",32);
+        var stu3 = createStudent("王五",18);
+
+        //对象的使用
+        console.log("对象stu1的名字-------->>"+stu1.name);
+        console.log("对象stu2的年龄-------->>"+stu2.age);
+        console.log(stu3);
+        console.log("对象stu3.sayHi()----->>"+stu3.sayHi());
+
+        /*   第三种方式创建
+
+        new关键字:
+          开辟内存空间  存储新创建的对象(new Object())
+          把this设置为当前对象
+          执内行部代码,设置对象属性和方法
+          返回新创建的对象
+
+          这种创建方式里面的new很重要，如果没有new即为调用一个普通函数，执行下里面的代码
+          即可，有返回值返回，没有返回值直接返回undefined
+          所以若要创建对象此处必须使用new关键字来创建var per = new Person("成龙",65);
+
+        总结：
+            1、函数可以new；一般要被new的函数大写，表示类型，就是为了后面new(创建)对象
+            2、函数也可以直接被调用，该方式就是一个普通函数，跟变量名的命名规则一样的函数名
+        * */
+
+        //为创建对象所准备的构造函数，构造函数的本质就是为了创建对象用的
+        function Person(name,age) {
+            //当前对象绑定属性
+            this.name = name;
+            this.age = age;
+            //当前对象绑定事件(函数)
+            this.say = function () {
+                alert("*********");
+            }
+        }
+
+        //开始创建对象
+        var per = new Person("成龙",65);
+        //使用对象
+        console.log(per.name);
+        console.log(per.age);
+        console.log(per);
+        per.say();
+
+        /*//普通函数也可以new但是没有任何意义
+        function fn() {
+            alert("xxxxxxxxx");
+        }
+        //再次声明 这样没有任何意义，fnn没有绑定任何属性和函数
+        var fnn = new fn();*/
+
+    </script>
+</head>
+<body>
+<h1 style="text-align: center">08.01：JavaScript对象(重点)</h1><br><br>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>08.04：函数绑定</title>
+    <script type="text/javascript">
+        /*~~~~~~~~~~~函数绑定~~~~~~~~~~~
+        * 绑定方式一：对象名.函数名 = 匿名函数
+        * 绑定方式二：对象名.函数名 = 已经存在的函数的名字
+        *
+        *
+        *
+        *
+        * */
+
+        //创建对象的构造函数
+        function Objt(name) {
+            this.name = name;
+            //绑定函数方式一
+            this.eat = function () {
+                alert(this.name+"喜欢吃海鲜");
+            };
+
+            //绑定函数方式二
+            this.play = mPlay;
+        }
+
+        //已存在的函数
+        function mPlay(name) {
+            //此处竟然也可以调用到this.name
+            alert(this.name+"喜欢游泳");
+        }
+
+        //调用构造方法开始创建对象
+        var objt = new Objt("张全蛋");
+
+
+        /*注意：在Script脚本编辑区域内的任何地方都可以调用对象的方法或属性，因为在
+        * 使用new关键字调用构造方法创建对象的时候已经执行过构造方法里面的所有代码了，
+        * 相当于构造方法里面的所有代码已被预加载(初始化)，所以在任何地方调用都不影响
+        * */
+        //调用对象所绑定的函数
+        objt.eat();
+        objt.play();
+
+
+    </script>
+</head>
+<body>
+<h1 style="text-align: center">08.04：函数绑定</h1><br><br>
+</body>
+</html>

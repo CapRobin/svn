@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>05.07：While与DoWhile循环</title>
+    <link rel="stylesheet" href="css/0402.css">
+    <script>
+        /*~~~~~~~While循环余DoWhile循环~~~~~~~*/
+        /*While循环：该循环也可以看做是For循环的一种方式
+        * 执行顺序：先执行初始化值(i)、然后执行判断条件、然后执行循环语句(可自行在语句体内对循环变量进行控制)
+        * 注意：与For循环不同，While循环初始化变量和开始执行判断条件之间可以对i进行其他操作*/
+
+        //案例一
+        function showView01() {
+            //While循环方式也可以看做是For循环的一种方式
+            var i = 1;
+            var sum = 0;
+            while (i <= 100) {
+                sum += i;
+                i++
+            }
+            changeStyle(1);
+            showView.innerHTML = "1~100所有整数之和为：" + sum;
+        }
+
+        //案例二
+        function showView02() {
+            var str = "既然这样，那么就带着你的户口，我们去登记吧，听说今天登记打折！";
+            do {
+                var isanAnswer = window.confirm("求求你 嫁给我吧！")
+                if (isanAnswer) {
+                    alert(str)
+                }
+            } while (!isanAnswer);
+            changeStyle(2);
+            showView.innerHTML = str;
+        }
+
+        /*JavaScript修改CSS样式*/
+        function changeStyle(key) {
+            var getId1 = document.getElementById("pId01");
+            var getId2 = document.getElementById("pId02");
+
+            switch (key) {
+                case 1:
+                    getId1.style.color = "red";
+                    getId2.style.color = "black";
+                    break;
+                case 2:
+                    getId1.style.color = "black";
+                    getId2.style.color = "red";
+                    break;
+                default:
+                    break;
+            }
+        }
+    </script>
+</head>
+<body>
+<h1 style="text-align: center">05.07：While与DoWhile循环</h1><br><br>
+
+<table border="1px" align="center" style="border: 1px solid #31caff" cellspacing="0">
+    <tr style="height: 50px">
+        <th>
+            <button onclick="showView01()">案例一演示</button>
+        </th>
+        <th>
+            <button onclick="showView02()">案例二演示</button>
+        </th>
+    </tr>
+    <tr style="font-weight: bold; font-family: '微软雅黑 Light'; text-align: center">
+        <td colspan="3">
+            <div id="showView">
+                请点击按钮查看案例演示结果
+            </div>
+        </td>
+    </tr>
+    <tr style="height: 100px">
+        <td colspan="3">
+            <p id="pId01">案例一：求1~100所有整数之和（While循环）</p>
+            <p id="pId02">案例二：求求你，嫁给我吧！（DoWhile循环）</p>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

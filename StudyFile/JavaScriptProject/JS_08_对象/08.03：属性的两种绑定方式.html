@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>08.03：属性的两种绑定方式</title>
+    <script type="text/javascript">
+        /*~~~~~~~~~~~属性的绑定方式~~~~~~~~~~~
+        * 方式一：this.属性名 = 属性值
+        * 方式二：对象名[变量/字符串/整数] = 属性值
+        *
+        * 注意：调用构造方法将对象创建完成之后还可以为返回的对象绑定
+        * 属性和事件(函数),该种情况一般会在对象的属性和事件不确定的
+        * 时候会使用，当对象创建完成之后随时为对象添加属性和事件(函数)
+        * */
+
+        var kk = "属性名";
+
+        //构造方法
+        function Objt(name, arr) {
+            //属性绑定方式一：常规方式
+            this.name = name;
+            this.arr = arr;
+            //通过调用函数为对象绑定属性
+            this.bh = bh();
+
+            //属性绑定方式二：不常用
+            this[0] = "张飞";
+            this[1] = "关羽";
+            this["刘玄德"] = "刘备";
+            this.我是属性名 = "闹着玩";
+            this[kk] = "继续闹着玩";
+
+            //绑定事件：在此可以为对象绑定任何事件
+            this.bublle = function () {
+                alert("开始冒泡排序");
+            };
+        }
+
+        //为对象属性赋值的函数
+        function bh() {
+            alert("我是为对象属性赋值的函数");
+            return 2018;
+        }
+
+        var arr = [18, 20, 8, 45, 26, 75, 32];
+        //调用构造方法开始创建对象
+        var objt = new Objt("阿彪", arr);
+        //对象创建完成之后还可以为返回的对象绑定属性和事件(函数)
+        objt.age = 28;
+        objt.sayHi = function () {
+            console.log("我是最后为对象绑定的函数")
+        };
+        //对象使用
+        objt.bublle();
+        console.log(objt);
+        /*
+        * 通过打印对象可以看出其实数组也是一个对象
+        * 数组也有两种创建方式
+        * 1.字面量创建；var arr = [18, 20, 26, 75, 32];
+        * 2.使用new创建：var arr = new Array(5);
+        * 使用new创建数组类似于如下代码:
+        * function Array(n){
+        *       ......
+        *   }
+        * */
+        console.log(objt.arr);
+        console.log(objt.name);
+
+        console.log(objt.age);
+        objt.sayHi();
+    </script>
+</head>
+<body>
+<h1 style="text-align: center">08.03：属性的两种绑定方式</h1><br><br>
+</body>
+</html>

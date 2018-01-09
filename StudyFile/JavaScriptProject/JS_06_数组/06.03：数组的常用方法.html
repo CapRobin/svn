@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>06.03：数组的常用方法</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/main_01.js"></script>
+</head>
+<body>
+<h1 style="text-align: center">06.03：数组的常用方法</h1>
+
+<table border="1px" align="center" style="border: 1px solid #31caff" cellspacing="0">
+    <tr style="height: 40px">
+        <th>
+            <button onclick="clickAction01()">数组末端添加元素</button>
+        </th>
+        <th>
+            <button onclick="clickAction02()">数组开头添加元素</button>
+        </th>
+        <th>
+            <button onclick="clickAction03()">合并数组(数组元素)</button>
+        </th>
+        <th>
+            <button onclick="clickAction04()">数组转换成字符串</button>
+        </th>
+        <th>
+            <button onclick="clickAction05()">删除数组末端元素</button>
+        </th>
+    </tr>
+    <tr style="height: 40px">
+        <th>
+            <button onclick="clickAction06()">指定区域截取数组</button>
+        </th>
+        <th>
+            <button onclick="clickAction07()">数组添加/删除元素</button>
+        </th>
+        <th>
+            <button onclick="clickAction08()">数组直接转字符串</button>
+        </th>
+        <th>
+            <button onclick="clickAction09()">查找数组元素位置</button>
+        </th>
+        <th>
+            <button onclick="clickAction10()">对原数组进行排序</button>
+        </th>
+    </tr>
+    <tr style="height: 60px; font-weight: bold; font-family: '微软雅黑 Light'; text-align: left;">
+        <td colspan="5">
+            <div id="showView">
+                请点击按钮查看案例演示结果
+            </div>
+        </td>
+    </tr>
+    <tr style="height: 5px">
+        <td colspan="5">
+            <p id="pId01">数组末端添加元素：向数组的末尾添加一个或更多元素，并返回新的长度</p>
+            <p id="pId02">数组开头添加元素：向数组的开头添加一个或更多元素，并返回新的长度。</p>
+            <p id="pId03">合并数组(数组元素)：连接两个或更多的数组(合并数组)，合并后不改变原数组，只返回新的数组结果；</p>
+            <p id="pId04">数组转换成字符串：将数组中的所有元素转化成字符串，并按照指定的符号(传入的参数)进行分割</p>
+            <p id="pId05">删除数组末端元素：删除并返回数组的最后一个元素</p>
+            <p id="pId06">截取指定区域数组：截取数组指定区域(start <=指定区域< end,不包含end)的元素并返回新的数组，原数组不变</p>
+            <p id="pId07">数组添加/删除元素：向数组(指定位置)中添加/删除元素，返回被删除元素组成的新数组，该方法会改变原数组</p>
+            <p id="pId08">数组直接转字符串：将数组直接转换成字符串(即去掉“[]”直接输出)</p>
+            <p id="pId09">查找数组元素位置：查找具体元素的指定位置，返回元素的索引值(指定位置),如果找不到返回-1</p>
+            <p id="pId10">对原数组进行排序：对数组排序 原数组将会改变</p>
+        </td>
+    </tr>
+</table>
+
+
+</body>
+</html>

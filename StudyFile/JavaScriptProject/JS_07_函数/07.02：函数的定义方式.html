@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>07.02：函数的定义方式</title>
+    <script>
+        /*~~~~~~~~~~~~~~函数的三种定义方式(常用前两种)~~~~~~~~~~~~~~~~~
+        *
+        * 1：第一种函数定义方式一旦声明，随处可调用，第二种和第三种方式定义的函数只有先声
+        *   明后方可调用(这两种方式类似变量，先声明再使用),第一种较为常用，第三种很少使用
+        * 2：调用函数时必须在函数名后面加括号,需要传参数必须要传入参数，直接调用函
+        *   数名只会返回整个函数体的代码，不会返回返回值，
+        * 3：可以把函数名赋值给一个变量，那么这个变量就是一个函数，如:var f = fn；调用:f();
+        * 4: 调用函数时如果被调用的函数中包含其他函数，那么会先执行里面(调用其他函数)再执行外面
+        * */
+
+        //此处打印函数的返回值
+        console.log("第一个函数返回：" + fn(10, 5));
+
+        //第一种方式：
+        function fn(a, b) {
+            alert("我是函数的第一种定义方式");
+            return a + b;
+        }
+
+        //如下错误调用函数fun(), 返回：“fun is not a function”(错误)
+        //console.log(fun(20,15));//返回：fun is not a function(错误)
+        //console.log(fnObj());//   返回：fnObj is not a function(错误)
+
+        //第二种方式：
+        var fun = function (a, b) {
+            alert("我是函数的第二种定义方式");
+            return a + b;
+        };
+
+        //第三种方式：
+        var fnObj = new Function("alert('我是函数的第三种定义方式，但是大家都不怎么用我');return 5+50;");
+
+        //如下正确调用函数fun()和fnObj()
+        console.log("第二个函数返回：" + fun(20, 15));
+        console.log("第三个函数返回：" + fnObj());
+        //此处将函数名赋值给一个变量
+        var f = fn;
+        console.log("直接调用函数名返回：\n\r" + f);//打印函数名即为打印整个函数的所有代码
+    </script>
+</head>
+<body>
+<h1 style="text-align: center">07.02：函数的定义方式</h1><br><br>
+</body>
+</html>

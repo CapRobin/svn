@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>09.02：京东广告栏案例</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #top_banner{
+            margin: 20px;
+            height: 120px;
+            background-color: #0000FF;
+        }
+        .bg{
+            margin: auto 150px;
+            height: 120px;
+            background-color: #18a600;
+            position: relative;
+        }
+
+        a{
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background-color: #555555;
+            color: white;
+            width: 20px;
+            text-decoration: none;
+            height: 20px;
+            text-align: center;
+            line-height: 20px;
+        }
+        .hide{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<h1 style="text-align: center">09.02：京东广告栏案例</h1><br><br>
+<div id="top_banner">
+    <div class="bg">
+        <a href="#" id="closeBanner">x</a>
+    </div>
+</div>
+
+<script type="text/javascript">
+    //获取元素的对象
+    var closeBanner = document.getElementById("closeBanner");
+    var topBanner = document.getElementById("top_banner");
+    //为元素设置点击事件
+    closeBanner.onclick = function () {
+        //开始修改相关元素的样式
+        /*~~~~~~~~~注意~~~~~~~~~
+        * 因为class是JavaScript的保留关键字，所以修改元素的class的值得时候必须要使用className属性进行设置，
+        *
+        * */
+        topBanner.className = "hide";
+
+        /*~~~~~~~注意~~~~~~~
+        * a标签中href属性的值至少要加上#，否则点击该标签元素时也没会被刷新(每次刷新
+        * 都会使得网页恢复到初始状态)，导致后面的console.log或其他代码都不会执行*/
+        console.log(topBanner);
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>07.04：变量解析面试题</title>
+    <script type="text/javascript">
+
+        /*~~~~~练习题一~~~~~*/
+        console.log("练习题一------------>>");
+        var a = 10;
+        f1();
+        function f1() {
+            //依照就近原则，此处变量a进行提升，提升至局部变量第一行，但没有赋值所以打印a即为打印局
+            // 部变量内的a,但是没有值，所以返回undefined，
+            console.log("a = "+a);
+            var a = 15;
+        }
+
+        /*~~~~~练习题二~~~~~*/
+        console.log("练习题二------------>>");
+        var n = 10;
+        f2();
+        function f2() {
+            var m = 20;
+            //原理同上，m正常打印
+            console.log("m = "+m);
+            console.log("n = "+n);//返回undefined，
+            var n = 15;
+        }
+
+        /*~~~~~练习题三~~~~~*/
+        console.log("练习题三------------>>");
+        f3();
+        //n2和n3为全局变量，可正常打印
+        console.log("外部n3 = "+n3);
+        console.log("外部n2 = "+n2);
+        //此处报错，成员变量无法被获取！返回"n1 is not defined"
+        console.log("外部n1 = "+n1);
+        function f3() {
+            //此处n1为局部变量，n2和n3为全局变量，所以外部打印n1报错
+            var n1=5; n2=10; n3=15;
+            console.log("内部n1 = "+n1);
+            console.log("内部n2 = "+n2);
+            console.log("内部n3 = "+n3);
+
+        }
+
+    </script>
+</head>
+<body>
+<h1 style="text-align: center">07.04：变量解析面试题</h1><br><br>
+</body>
+</html>

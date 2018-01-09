@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>03.05：类型转换</title>
+    <script>
+        console.log("~~~~~~~~~~~~转换布尔值~~~~~~~~~~~~");
+        //转换布尔值:除了0、undefined、和NaN外其他都将被转换成true
+        console.log(Boolean(0));//返回false
+        console.log(Boolean(163));//返回true
+        console.log(Boolean(1.63));//返回true
+        console.log(Boolean("你好"));//返回true
+        console.log(Boolean(undefined));//返回false
+        console.log(Boolean(NaN));//返回false
+
+        //转换成字符串
+        console.log("~~~~~~~~~~~~转换成字符串~~~~~~~~~~~~");
+        var num = true;
+        console.log(typeof num);//boolean
+        console.log(typeof num.toString());//String
+        console.log(typeof String(num));//String
+        console.log(typeof String(50));//String
+        //字符串拼接 转换成字符串
+        var num1 = 50;
+        console.log(typeof (num1 + ""));//String
+
+        //转换成Number
+        console.log("~~~~~~~~~~~~转换成数值型~~~~~~~~~~~~");
+        var str = "10";
+        var num2 = Number(str);
+        console.log(num2 + 5);
+        console.log(typeof Number(str));
+        var str1 = "30x";
+        //如果字符串不是一个纯数字，Number转换的时候将返回NaN(提示NaN不是一个数字)
+        console.log(Number(str1));//NaN
+
+        //使用parseInt()函数转换成数值，
+        // 当被转换的字符串是以数字开头，字符结尾，
+        // 则该函数值的转换结果为数字部分内容。
+        // 当以非数字的其他字符开头时，则使用该函数
+        // 转换时直接返回NaN。parseFloat()函数相似
+        var str2 = "50x";
+        window.console.log(window.parseInt(str2) + 5);//55
+        var str3 = "x60";
+        window.console.log(window.parseInt(str3) + 5);//NaN
+        var str4 = "50x";
+        window.console.log(window.parseFloat(str2) + 5);//55
+        var str5 = "x60";
+        window.console.log(window.parseFloat(str3) + 5);//NaN
+
+
+    </script>
+</head>
+<body>
+<h1 style="text-align: center">03.05：类型转换</h1>
+</body>
+</html>

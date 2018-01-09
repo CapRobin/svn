@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>08.02：构造函数</title>
+    <script type="text/javascript">
+        /*~~~~~~~~~~构造函数~~~~~~~~~~
+        * 构造函数"new Object()"：new 后面调用的函数，我们称之为构造函数，
+        * 此处Object()我们把它视为一个构造函数，构造函数的本质也是一个函数，
+        * 只不过构造函数的目的是专门为创建对象而处在的，为新的对象进行初始化(
+        * 绑定相关的属性和事件)
+        *
+        * 作用: 跟new关键字一样    一般用作数据初始化
+        * 目的:就是为了对象初始化
+        * */
+
+        //构造函数
+        function Person(name, age) {
+            this.name =name;
+            this.age =age;
+            this.sayHi = function () {
+                alert(this.name+"说：“地球 你好”")
+            }
+        }
+
+        //调用构造函数，并返回所创建的对象
+        var per = new Person("张三", 28);
+
+        //使用对象
+        console.log(per);
+        console.log("对象的姓名："+per.name);
+        console.log("对象的年龄："+per.age);
+        per.sayHi();
+
+        /*~~~~~~~注意构造函数和普通函数的区别~~~~~~~
+        * 1、普通函数也可以被new，但是没有意义，因为普通函数没有被传入
+        * 相关对象(this不知道是谁)，所以无法绑定属性和事件
+        *
+        * 2、构造函数也可以被当做普通函数被调用，但是也没什么意义，因为
+        * 这样构造函数没有被new 所以也无法创建对象，绑定属性和事件(里面
+        * 的代码会被执行但是没有任何效果)，返回值也不是对象，构造函数没有
+        * 设置return返回值所以返回undefined
+        * */
+        /*var per1 = Person("李四",28);
+        console.log(per1); //返回undefined*/
+
+    </script>
+</head>
+<body>
+<h1 style="text-align: center">08.02：构造函数</h1><br><br>
+</body>
+</html>

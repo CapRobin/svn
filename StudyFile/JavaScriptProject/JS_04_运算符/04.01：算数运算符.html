@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>04.01：算数运算符</title>
+    <script>
+        console.log("~~~~~~~算数运算符++和--(单独)运算~~~~~~~");
+        //单独的"++a"和"a++"都表示'a=a+1'运算,'--'运算同理
+        var a = 5;
+        var b = 3;
+        ++a;//a=a+1;
+        window.console.log("a：" + a);
+        b++;//b=b+1;
+        window.console.log("b：" + b);
+
+        console.log("~~~~~~~算数运算符++和--(参与)运算~~~~~~~");
+        //当"++a"和"a++"都参与运算时，从左向右看，
+        // "++"放在操作数(a)后边时
+        //先看到操作数，那么现将该操作数的值赋给钱前面，然后再自+1
+        //当"++"放在操作数(a)后边时，
+        //先看到"++"运算符，那么先将操作数的值自+1后再赋值给前面。
+        //"--a"和"a--"同理
+        var i = 5;
+        j = i++;
+        console.log("i=" + i + "\nj=" + j);//i=6,j=5
+        var n = 10;
+        m = ++n;
+        console.log("n=" + n + "\nm=" + m);//n=7,m=7
+
+        console.log("~~~~~~~条件(三目)运算符~~~~~~~");
+        //运算符包括一元(单目)运算符，二元(双目)运算符、三元(三目)运算符
+        //"a++"表示单目、"a+b"表示双目
+        //"a>b? a:b"表示三目运算符(条件运算符)，
+        // 语法结构：操作数(判断是true或false)？结果1：结果2
+
+        //比较两个数的大小
+        var aa = 76;
+        var bb = 58;
+        var maxValue1 = aa > bb ? aa : bb;
+        var maxValue2 = true ? aa : bb;
+        var maxValue3 = 5 ? aa : bb;
+        //此处aa>bb=true、true=true、5强转后也等于true，所以输出结果相同
+        console.log("比较两个数的最大值为1：" + maxValue1);//76
+        console.log("比较两个数的最大值为2：" + maxValue2);//76
+        console.log("比较两个数的最大值为3：" + maxValue3);//76
+    </script>
+</head>
+<body>
+<h1 style="text-align: center">04.01：算数运算符</h1>
+</body>
+</html>

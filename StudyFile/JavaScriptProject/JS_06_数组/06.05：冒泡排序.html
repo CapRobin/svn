@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>06.05：冒泡排序</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script>
+        /*本联系整点关注了程序的时间和空间复杂度*/
+        function clickAction() {
+            var arr09 = [6, 4, 1, 8, 3, 5, 9, 2, 7];
+            var nStr = arr09.toString();
+            console.log("原数组——————————>>" + nStr);
+            var inTimes = 0;
+            var outTimes = 0;
+            /*第一次优化：N个数比较(N-1)次即可比较出其的大小顺序来，所以外层循环的判断条件为(i<arr09.length-1)*/
+            for (var i = 0; i < arr09.length - 1; i++) {
+                /*第三次优化：加入数组本来就是按照从大到小的顺序排列的，那么就需要开关门原则，此处定义开关门标记变量*/
+                var isNeedSort = true;
+                //内部循环执行结束后最小的值将被排到最后面
+                //注意：因为当内部循环条件为(j<arr09.length)时，循环的过程中j最大就能取到(arr09.length-1),当j=(arr09.length-1)(最后一次遍历)时arr09[j+1]的值不存在，所以比较也没什么意义，所以在此将省略数组的最后一次遍历，将遍历条件改为:(j<arr09.length-1)
+                /*第二次优化：由于每一次外部循环执行结束后数组的尾部都有i个元素已经排好了顺序，所以执行每一次内部循环的次数将减去i次(不考虑已排好顺序的部分)*/
+                for (var j = 0; j < arr09.length - 1 - i; j++) {
+                    //将索引值为j的元素与下一位元素进行比较，如当前元素的值小于下一个元素是，互换位置,
+                    if (arr09[j] < arr09[j + 1]) {
+                        //如果该段代码从来没有执行过(在第一次进行内部循环时即可知道)，即表示数组元素中前面的元素比后面的元素都要大， 数组元素已经是从大到小的顺序排列了
+                        isNeedSort = false;
+                        var temp = arr09[j];
+                        temp = arr09[j];
+                        arr09[j] = arr09[j + 1];
+                        arr09[j + 1] = temp;
+                    }
+                    inTimes++;
+                }
+                outTimes++;
+                //如果isNeedSort=true，则直接终止所有循环
+                if (isNeedSort) {
+                    break;
+                }
+            }
+            console.log("排序后的数组—————>>" + arr09);
+            console.log("内部循环次数————————>>" + inTimes + "次");
+            console.log("外部循环次数————————>>" + outTimes + "次");
+
+            //修改字体样式并打印到页面
+            var showStr = "原数组：[" + nStr + "]<br><br>冒泡排序后的数组：[" + arr09 + "]";
+            document.getElementById("pId").style.color = "red";
+            showView.innerHTML = showStr;
+        }
+    </script>
+</head>
+<body>
+<h1 style="text-align: center">06.05：冒泡排序</h1><br><br>
+
+<table border="1px" align="center" style="width: 500px; height: 200px; border: 1px solid #31caff" cellspacing="0">
+    <tr style="height: 50px">
+        <th>
+            <button style="font-size: large; width: 500px; height: 50px" onclick="clickAction()">冒泡排序</button>
+        </th>
+    </tr>
+    <tr style="height: 150px; font-weight: bold; font-family: '微软雅黑 Light'; text-align: center">
+        <td style="padding: 20px; font-size: 23px">
+            <div id="showView">
+                请点击按钮查看案例演示结果
+            </div>
+        </td>
+    </tr>
+    <tr style="height: 50px">
+        <td>
+            <p id="pId">冒泡排序：将数值数组中的元素按照从大到小的顺序排序</p>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>

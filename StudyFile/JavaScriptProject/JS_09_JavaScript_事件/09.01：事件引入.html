@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>09.01：事件引入</title>
+    <style type="text/css">
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: #18a600;
+            margin: auto;
+            line-height: 200px;
+            color: white;
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body>
+<h1 style="text-align: center">09.01：事件引入</h1><br><br>
+
+<div id="divId">敢不敢点我一下？</div>
+
+<script type="text/javascript">
+    /*
+    * DOM必须要结合事件才能使用所以要了解DOM就必须先了解事件
+    * 事件定义：在什么时候做什么事情
+    * 事件三要素；
+    * 1、事件源：谁触发了什么事
+    * 2、事件：什么事(系统已经提供好了)
+    * 3、事件驱动函数：事件被触发了，要做什么事()匿名函数
+    *
+    * 案例需求1：点击Div元素执行弹框提示信息
+    * 事件源：Div
+    * 事件：点击事件
+    * 事件驱动函数：匿名函数执行alert()
+    *
+    * 案例需求1：点击Div元素修改div的背景颜色和大小
+    * */
+
+    //1、事件源：DIV；通过DOM对象获取页面Div元素对象(有5中方式，之后介绍)
+    var div = document.getElementById("divId");
+    //2、执行点击事件[元素对象点击事件 = 匿名函数(事件驱动函数) function(){事件驱动函数的代码}]
+    div.onclick = function () {
+        //3、执行事件驱动函数的代码
+        alert("额 让你点 你就点啊！");
+
+        //修改div的背景颜色和大小
+        div.style.width = "400px";
+        div.style.backgroundColor = "blue";
+    }
+</script>
+</body>
+</html>
