@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript语法</title>
+    <script type="text/javascript">
+        //全局变量
+        var company = "华鸿科技";
+
+        function testClick01() {
+            var username = "乐乐";
+            var userName = "袁乐";
+            alert("JavaScript代码：\rfunction testClick01() {\n" +
+                "            var username = \"乐乐\";\n" +
+                "            var userName = \"袁乐\";\n" +
+                "            alert(\"我的小名叫：\"+username+\"\\r我的大名叫：\"+userName);\n" +
+                "        }\r~~~~~~~~~~~~~~~~~~~~~~~~~\r运行结果：\r我的小名叫：" + username + "\r我的大名叫：" + userName);
+        }
+
+        function testClick02() {
+            alert("JavaScript代码：\rfunction testClick02() {\n" +
+                "            alert(\"JavaScript代码结尾加分号显示正常\");\n" +
+                "        }\r~~~~~~~~~~~~~~~~~~~~~~~~~\n运行结果：\rJavaScript代码结尾加分号显示正常");
+        }
+
+        function testClick03() {
+            alert("JavaScript代码：\rfunction testClick03() {\n" +
+                "            alert(\"JavaScript代码结尾不加分号显示正常\")\n" +
+                "        }\r~~~~~~~~~~~~~~~~~~~~~~~~~\n运行结果：\rJavaScript代码结尾不加分号显示正常")
+        }
+
+        function testClick04() {
+            //局部变量
+            var url = "www.huahongkeji.net";
+            alert(company + ":" + url)
+        }
+
+        function testClick05() {
+            var a = 15;
+            var b = 20;
+            //a+=b等价于a=a+b;
+            a += b;
+            alert("JavaScript代码：\nfunction testClick05() {\n" +
+                "            var a = 15;\n" +
+                "            var b = 20;\n" +
+                "            a+=b;\n" +
+                "            alert(\"输出a的值为：\"+a);\n" +
+                "        }\r~~~~~~~~~~~~~~~~~~~~~~~~~\n运行结果：\n输出a的值为：" + a);
+        }
+
+        function testClick06() {
+            var a = 15;
+            var b = 20;
+            //a*=b等价于a=a*b;
+            a *= b;
+            alert("JavaScript代码：\nfunction testClick06() {\n" +
+                "            var a = 15;\n" +
+                "            var b = 20;\n" +
+                "            a*=b;\n" +
+                "            alert(\"输出a的值为：\"+a);\n" +
+                "        }\r~~~~~~~~~~~~~~~~~~~~~~~~~\n运行结果：\n输出a的值为：" + a);
+        }
+
+        function testClick07() {
+            var a = 20;
+            var b = 15;
+            //a%=b等价于a除以b后的余数值赋给a;
+            a %= b;
+            alert("JavaScript代码：\nfunction testClick07() {\n" +
+                "            var a = 20;\n" +
+                "            var b = 15;\n" +
+                "            a%=b;\n" +
+                "            alert(\"输出a的值为：\"+a);\n" +
+                "        }\r~~~~~~~~~~~~~~~~~~~~~~~~~\n运行结果：\n输出a的值为：" + a);
+        }
+
+        function testClick08() {
+            var i = 1;
+            var j = i++;
+            //此时i给j赋值之后再自加1
+            alert("JavaScript代码：\rfunction testClick08() {\n" +
+                "            var i = 1;\n" +
+                "            var j = i++;\n" +
+                "            //此时i给j赋值之后再自加1\n" +
+                "            alert(\"i = \"+i+\"\\rj = \"+j);\n" +
+                "        }\r~~~~~~~~~~~~~~~~~~~~~~~~~\n运行结果：\ri = " + i + "\rj = " + j);
+        }
+
+        function testClick09() {
+            var i = 1;
+            var j = ++i;
+            //此时i先自加1再赋值给j
+            alert("JavaScript代码：\rfunction testClick09() {\n" +
+                "            var i = 1;\n" +
+                "            var j = ++i;\n" +
+                "            //此时i先自加1再赋值给j\n" +
+                "            alert(\"i = \"+i+\"\\rj = \"+j);\n" +
+                "        }\r~~~~~~~~~~~~~~~~~~~~~~~~~\n运行结果：\ri = " + i + "\rj = " + j);
+        }
+
+        function testClick10() {
+            var i = 6;
+            var j = i--;
+            //此时i给j赋值之后再自减1
+            alert("JavaScript代码：\rfunction testClick10() {\n" +
+                "            var i = 6;\n" +
+                "            var j = i--;\n" +
+                "            //此时i给j赋值之后再自减1\n" +
+                "            alert(\"i = \"+i+\"\\rj = \"+j);\n" +
+                "        }\r~~~~~~~~~~~~~~~~~~~~~~~~~\n运行结果：\ri = " + i + "\rj = " + j);
+        }
+
+        function testClick11() {
+            var i = 6;
+            var j = --i;
+            //此时i先自减1再赋值给j
+            alert("JavaScript代码：\rfunction testClick11() {\n" +
+                "            var i = 6;\n" +
+                "            var j = --i;\n" +
+                "            //此时i先自减1再赋值给j\n" +
+                "            alert(\"i = \"+i+\"\\rj = \"+j);\n" +
+                "        }\r~~~~~~~~~~~~~~~~~~~~~~~~~\n运行结果：\ri = " + i + "\rj = " + j);
+        }
+
+        function testClick012() {
+            var a = 10;
+            var b = "10";
+            //a和b比较：只根据表面值进行判断是否相等，不涉及数据类型，然后将判断结果赋值给c
+            var c = a == b;
+            //a和b比较：根据表面值和数据类型同时进行判断是否相等，，然后将判断结果赋值给d
+            var d = a === b;
+            //a和b比较：只根据表面值进行判断是否不相等，不涉及数据类型，然后将判断结果赋值给c
+            var e = a != b;
+            //a和b比较：根据表面值和数据类型同时进行判断是否不相等，，然后将判断结果赋值给d
+            var f = a !== b;
+            alert("JavaScript代码：\nfunction testClick012() {\n" +
+                "            var a = 10;\n" +
+                "            var b = \"10\";\n" +
+                "            //a和b比较：只根据表面值进行判断是否相等，不涉及数据类型，然后将判断结果赋值给c\n" +
+                "            var c = a==b;\n" +
+                "            //a和b比较：根据表面值和数据类型同时进行判断是否相等，，然后将判断结果赋值给d\n" +
+                "            var d = a===b;\n" +
+                "            //a和b比较：只根据表面值进行判断是否不相等，不涉及数据类型，然后将判断结果赋值给c\n" +
+                "            var e = a!=b;\n" +
+                "            //a和b比较：根据表面值和数据类型同时进行判断是否不相等，，然后将判断结果赋值给d\n" +
+                "            var f = a!==b;\n" +
+                "            alert(\"c = \"+c+\"\\rd = \"+d+\"\\ne = \"+e+\"\\nf = \"+f);\n" +
+                "        }\n~~~~~~~~~~~~~~~~~~~~~~~~~\n运行结果：\nc = " + c + "\rd = " + d + "\ne = " + e + "\nf = " + f);
+        }
+
+        function testClick013() {
+            var a = true;
+            var b = false;
+            //"!a":逻辑非运算
+            var c = !a;
+            //"a&&b":逻辑与运算
+            var d = a && b;
+            //"a||b":逻辑或运算
+            var e = a || b;
+            alert("JavaScript代码：\nfunction testClick013() {\n" +
+                "            var a = true;\n" +
+                "            var b = false;\n" +
+                "            //\"!a\":逻辑非运算\n" +
+                "            var c = !a;\n" +
+                "            //\"a&&b\":逻辑与运算\n" +
+                "            var d = a&&b;\n" +
+                "            //\"a||b\":逻辑或运算\n" +
+                "            var e = a||b;\n" +
+                "            alert(\"c = \"+c+\"\\rd = \"+d+\"\\ne = \"+e);\n" +
+                "        }\n~~~~~~~~~~~~~~~~~~~~~~~~~\n运行结果：\nc = " + c + "\rd = " + d + "\ne = " + e);
+        }
+
+        function testClick014() {
+            var a = 15;
+            var b = 20;
+            //"a > b ? a:b"条件运算符，此处表示:如果a>b为真则m=a,否则m=b;
+            var m = a > b ? a : b;
+            alert("JavaScript代码：\nfunction testClick014() {\n" +
+                "            var a = 15;\n" +
+                "            var b = 20;\n" +
+                "            //\"a > b ? a:b\"条件运算符，此处表示:如果a>b为真则m=a,否则m=b;\n" +
+                "            var m= a > b ? a:b;\n" +
+                "            alert(\"a和b两个数中的最大值为：\"+m);\n" +
+                "        }\n~~~~~~~~~~~~~~~~~~~~~~~~~\n运行结果：\na和b两个数中的最大值为：" + m);
+        }
+
+        function testClick015() {
+            var a = "One " + "World";
+            a += " One Dream";
+            alert("JavaScript代码：\nfunction testClick015() {\n" +
+                "            var a = \"One \"+\"World\";\n" +
+                "            a+=\" One Dream\";\n" +
+                "            alert(a);\n" +
+                "        }\n~~~~~~~~~~~~~~~~~~~~~~~~~\n运行结果：\n" + a);
+        }
+    </script>
+</head>
+<body>
+<h1 style="text-align: center">10.3.01：JavaScript语法</h1>
+<form name="mForm">
+    <h3>01：JavaScript语言区分大小写：</h3>
+    <button id="testId01" onclick="testClick01()">变量大小写测试</button>
+    <h3>02：JavaScript尾行分号可有可无：</h3>
+    <button id="testId02" onclick="testClick02()">添加分号测试按钮</button>
+    <button id="testId03" onclick="testClick03()">不加分号测试按钮</button>
+    <h3>03：JavaScript变量的作用域：</h3>
+    <button id="testId04" onclick="testClick04()">变量作用域测试按钮</button>
+    <h3>04：JavaScript赋值运算符运用(列举部分)：</h3>
+    <button id="testId05" onclick="testClick05()">a+=b测试按钮</button>
+    <button id="testId06" onclick="testClick06()">a*=b测试按钮</button>
+    <button id="testId07" onclick="testClick07()">a%=b测试按钮</button>
+    <h3>05：JavaScript算术运算符运用(列举部分)：</h3>
+    <button id="testId08" onclick="testClick08()">"++"01测试按钮</button>
+    <button id="testId09" onclick="testClick09()">"++"02测试按钮</button>
+    <button id="testId10" onclick="testClick10()">"--"01测试按钮</button>
+    <button id="testId11" onclick="testClick11()">"--"02测试按钮</button>
+    <h3>06：JavaScript比较运算符运用(列举部分)：</h3>
+    <button id="testId12" onclick="testClick012()">比较运算符</button>
+    <h3>07：JavaScript比较运算符运用(列举部分)：</h3>
+    <button id="testId13" onclick="testClick013()">逻辑运算符测试按钮</button>
+    <h3>08：JavaScript比较运算符运用(列举部分)：</h3>
+    <button id="testId14" onclick="testClick014()">条件运算符测试按钮</button>
+    <h3>09：JavaScript字符串运算符运用(列举部分)：</h3>
+    <button id="testId15" onclick="testClick015()">字符串运算符测试按钮</button>
+</form>
+</body>
+</html>

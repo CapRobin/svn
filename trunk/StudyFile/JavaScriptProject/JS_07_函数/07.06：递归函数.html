@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>07.06：递归函数</title>
+    <script type="text/javascript">
+        /*~~~~~~~~~~~~递归函数~~~~~~~~~~~~*/
+
+        /*
+        * 1、定义：函数自己调用自己的过程即成为递归
+        * 2、递归函数必不可少需要添加结束条件，否则很容易出现死循环使得程序卡死，
+        * 3、非特殊情况下不建议使用递归函数
+        * */
+
+        //递归函数
+        var times = 0;
+
+        function say() {
+            alert("从前有个庙，庙里有个老和尚，老和尚对小和尚说：“从前有个庙，庙里......")
+            times++;
+            if (times < 5) {
+                say();
+            } else {
+                alert("老和尚死了！！！")
+            }
+        }
+
+        say();
+
+        //函数也是一种数据类型
+        function fn() {
+            alert("我是fn()函数");
+            return 10;
+        }
+
+        console.log("函数名打印返回：" + fn);
+        console.log("fn的类型为：" + (typeof fn));
+        console.log("fn()的类型为：" + (typeof  fn()));
+    </script>
+</head>
+<body>
+<h1 style="text-align: center">07.06：递归函数</h1>
+</body>
+</html>

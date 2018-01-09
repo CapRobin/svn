@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>07.07：回调函数</title>
+    <script type="text/javascript">
+        /*~~~~~~~~~~回调函数~~~~~~~~~~~*/
+        /*
+        * 1、定义：回头再次调用
+        * 2、程序中函数作为参数使用
+        * */
+
+        /*案例一*/
+        //此案例中demo()即为回调函数，
+        // test函数被当做函数fn的参数被传入，demo为函数fn的参数，当函数fn被调用时fn(test)，
+        // 即demo=test，所以执行demo()即等于执行test()
+        fn(test);
+
+        function fn(demo) {
+            alert("我是fn函数");
+            //开始执行回调
+            demo();
+            test();
+        }
+
+        function test() {
+            alert("我是test函数");
+        }
+
+        /*案例二*/
+        //要求 函数有三个参数  前两个是整数 后一个是规则  规则规定了 这两个参数在函数中是计算了加减乘除哪一个算法
+        // 说明：
+        // 1、js、jjf、cf都是三个函数的名字 同样也是调用suan()函数时传给它的参数，suan()函数
+        // 中的operation即为每次调用该函数传入的操作规则，operation()即表示回调相应规则的函数
+        var m1 = suan(100, 5, jf);
+        var m2 = suan(100, 5, jjf);
+        var m3 = suan(100, 5, cf);
+        //该方式与以上三种调用方式原理一样
+        var m4 = suan(100, 5, function (a, b) {
+            console.log("a / b = " + (a / b));
+            return a/b;
+        });
+
+        alert(m1);
+        alert(m2);
+        alert(m3);
+        alert(m4);
+
+        function suan(a, b, operation) {
+            console.log("~~~~~~我是函数fn2~~~~~~")
+            //执行回调
+            var resultNum = operation(a,b);
+            return resultNum;
+        }
+
+        //加法函数
+        function jf(a, b) {
+            console.log("a + b = " + (a + b));
+            return a + b;
+        }
+        //减法函数
+        function jjf(a, b) {
+            console.log("a - b = " + (a - b));
+            return a - b;
+        }
+        //乘法函数
+        function cf(a, b) {
+            console.log("a * b = " + (a * b));
+            return a * b;
+        }
+        //除法函数
+        function ccf(a, b) {
+            console.log("a / b = " + (a / b));
+            return a / b;
+        }
+
+    </script>
+</head>
+<body>
+<h1 style="text-align: center">07.07：回调函数</h1><br><br>
+</body>
+</html>

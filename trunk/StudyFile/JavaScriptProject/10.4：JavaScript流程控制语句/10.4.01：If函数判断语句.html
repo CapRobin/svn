@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>If函数判断语句</title>
+    <link rel="stylesheet" href="css/idex.css">
+    <script type="text/javascript">
+        function check() {
+            var userName = document.mform.user.value;
+            var userPwd = document.mform.password.value;
+            if(userName == ""){
+                alert("请输入用户名！");
+            }else if(userPwd == ""){
+                alert("请输入用户密码！");
+            }else{
+                mform.submit();
+                alert("恭喜您成功登录！")
+            }
+        }
+    </script>
+</head>
+<body>
+<h1 style="text-align: center">10.4.01：If函数判断语句</h1>
+<br>
+<form name="mform" method="post" action="">
+    <table align="center" cellpadding="0" cellspacing="0">
+        <tr>
+            <th id="thId" colspan="2" align="center">用户登录</th>
+        </tr>
+        <tr>
+            <td>账 号：</td>
+            <td>
+                <input id="user" type="text" name="uName">
+            </td>
+        </tr>
+        <tr>
+            <td>密 码：</td>
+            <td>
+                <input id="password" type="text" name="uPwd">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align: center;height: 40px">
+                <input type="button" name="login" value="登   录" onclick="check()">
+                <input style="margin-left: 50px" type="button" name="reset" value="重   置">
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

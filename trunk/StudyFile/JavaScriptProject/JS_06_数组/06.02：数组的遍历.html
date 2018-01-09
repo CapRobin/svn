@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>06.02：数组的遍历</title>
+    <script>
+        function clickAction() {
+            var arr = ['张强','刘涛','马军','张瑞','黎明'];
+
+            /*数组遍历方式一*/
+            console.log('~~~~~~~~~~~数组遍历方式一_For循环~~~~~~~~~~~');
+            //相对For In遍历方式，该方式在实际开发中较为常用，但两者方式都可以，看个人喜好
+            for (var i=0; i<arr.length; i++){
+                console.log('数组arr的第'+(i+1)+'个值为：------>>'+arr[i]);
+            }
+
+            /*数组遍历方式二*/
+            console.log('~~~~~~~~~~~数组遍历方式二_For In循环~~~~~~~~~~~');
+            //For In遍历方式是JavaScript中用来专门遍历数组的方法，
+            for(var index in arr){
+                console.log('数组arr的第'+(Number(index)+1)+'个值为：------>>'+arr[index]);
+
+            }
+        }
+    </script>
+</head>
+<body onload="clickAction()">
+<h1 style="text-align: center">06.02：数组的遍历</h1><br><br>
+</body>
+</html>

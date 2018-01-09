@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Do While循环语句的运用</title>
+    <script type="text/javascript">
+        function calculate() {
+            var sum = 0;
+            var i = 1;
+            var result = "";
+            do {
+                sum = sum + i;
+                result += i + "\n";
+                i++;
+            } while (sum <= 100);
+            alert("累加和不大于100的所有自然数为：\n" + result);
+        }
+    </script>
+</head>
+<body>
+<h1 style="text-align: center">10.4.05：Do While循环语句的运用</h1>
+<div style="text-align: center">
+    <p>输出累加和不大于100的所有自然数</p>
+    <input type="button" value="开始计算" onclick="calculate()">
+</div>
+</body>
+</html>

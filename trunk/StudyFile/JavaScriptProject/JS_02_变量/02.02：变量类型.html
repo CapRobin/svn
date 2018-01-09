@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>02.02：变量类型</title>
+    <script type="text/javascript">
+        //字符类型
+        var varName01 = "我是字符串";
+        //typeof是获取变量类型的一个函数
+        alert("varName01的类型为：" + typeof varName01);
+
+        //数值类型(包括整型和浮点型)
+        var varName02_01 = 50;
+        var varName02_02 = 3.14;
+        alert("varName02_01的类型为：" + typeof varName02_01);
+        alert("varName02_02的类型为：" + typeof varName02_02);
+
+        //Boolean类型
+        var varName03 = false;
+        alert("varName03的类型为：" + typeof varName03);
+
+        //Undefined：未定义类型表示变量已被申明但是没有被赋值
+        var varName04;
+        alert("varName04的类型为：" + typeof varName04);
+
+        //Object对象类型
+        var varName05 = null;
+        alert("varName05的类型为：" + typeof varName05);
+
+        /*Undefined与Null的区别
+        * Undefined表示变量已声明，但是没有赋值
+        * Null表示变量已赋值，但是不知道具体给什么值，先给一个空值*/
+        var varName06 = undefined;
+        alert("varName06的类型为：" + typeof varName06);
+
+    </script>
+</head>
+<body>
+<h1 style="text-align: center">02.02：变量类型</h1><br><br>
+</body>
+</html>

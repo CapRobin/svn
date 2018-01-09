@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>06.01：数组的定义</title>
+    <script>
+        function clickAction() {
+            /*~~~~~~~数组的定义方式~~~~~~~*/
+            console.log("~~~~~~~数组的定义方式~~~~~~~");
+            //方式一_01：创建一个空数组 长度为0
+            var arr1_1 = [];
+            console.log(arr1_1);
+            //方式一_02：创建一个有初始值的数组，其长度由系统计算
+            var arr1_2 = [1, 2, 3, 4, 5, 6];
+            console.log(arr1_2);
+
+            //方式二_01：创建一个空数组
+            var arr2_1 = new Array();
+            console.log(arr2_1);
+            //方式二_01：创建一个有初始值得数组
+            var arr2_2 = new Array("Hello", true, 88, "你好", 18.69);
+            console.log(arr2_2);
+            //方式二_3:创建一个有指定长度的数组，我们没有给数组的元素赋值 默认undefined
+            var arr2_3 = new Array(5);
+            console.log(arr2_3);
+            // console.log(arr2_3[2]);//输出undefined
+            //注意：如果new Array()括号中直接写一个整数，即表示数组长度，其他值都表示给数组插入元素
+            var arr2_4 = new Array(8);//申明数组长度
+            var arr2_5 = new Array(true);//给数组插入一个元素
+            var arr2_6 = new Array("fsa3424%&*&*");//给数组插入一个元素
+            var arr2_7 = new Array("3.14");//给数组插入一个元素
+            console.log(arr2_4);
+            console.log(arr2_5);
+            console.log(arr2_6);
+            console.log(arr2_7);
+
+            /*~~~~~~~数组的操作~~~~~~~*/
+            /*数组操作时使用数组的角标(索引)向数组中插入值，索引值默认从0开始
+            * 如果创建数组是没有指定数组的长度，那么数组的长度与放入数组元素的个数相等*/
+
+            console.log("~~~~~~~数组的操作_赋值~~~~~~~");
+            //数组赋值
+            var arr3 = [];
+            console.log(arr3);
+            arr3[0] = 123;
+            arr3[1] = "刘亮";
+            arr3[2] = false;
+            arr3[3] = 2.5;
+            arr3[4] = "abc";
+            console.log(arr3);
+
+            console.log("~~~~~~~数组的操作_修改~~~~~~~");
+            //修改指定位置的元素
+            var arr4 = ["Hello", true, 88, "阿荣", 18.69];
+            console.log("修改前--->>" + arr4[4]);
+            arr4[4] = "我要修改18.69";
+            console.log("修改后--->>" + arr4[4]);
+
+            console.log("~~~~~~~数组的操作_取值~~~~~~~");
+            console.log("数组(arr4)中的第四个元素的值是------>>" + arr4[3]);
+
+            console.log("~~~~~~~数组的操作_获取长度~~~~~~~");
+            //数组的长度永远等于最后一个元素的索引值+1
+            var arr5 = ['black', 'red', 'yellow', 'green'];
+            console.log("数组arr5的长度为：---01--->" + arr5.length);
+            arr5[7] = 'white';
+            console.log("数组arr5的长度为：---02--->" + arr5.length);
+            //这样赋值后数组的长度为8，其他的未被赋值的索引值存在，只是值为undefined
+            console.log("数组arr5中第1位的值为：" + arr5[0]);
+            console.log("数组arr5中第2位的值为：" + arr5[1]);
+            console.log("数组arr5中第3位的值为：" + arr5[2]);
+            console.log("数组arr5中第4位的值为：" + arr5[3]);
+            console.log("数组arr5中第5位的值为：" + arr5[4]);
+            console.log("数组arr5中第6位的值为：" + arr5[5]);
+            console.log("数组arr5中第7位的值为：" + arr5[6]);
+            console.log("数组arr5中第8位的值为：" + arr5[7]);
+
+
+        }
+
+    </script>
+</head>
+<body onload="clickAction()">
+<h1 style="text-align: center">06.01：数组的定义</h1><br><br>
+</body>
+</html>

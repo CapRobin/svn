@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Continue语句的运用</title>
+    <script type="text/javascript">
+        function calculate() {
+            var num = 0;
+            var scoreArr = Array(50, 85, 74, 56, 48, 94, 88, 59, 78, 82, 85, 74, 56, 48, 94, 88, 59, 78, 82);
+            for (i = 0; i < scoreArr.length; i++) {
+                //continue语句是终止本次循环，继续下一次循环，如果下一次循环条件不满足则直接退出循环
+                if (scoreArr[i] < 60) continue;
+                num += 1;
+            }
+            alert("考试合格的人数有 " + num + " 个");
+        }
+    </script>
+</head>
+<body>
+<h1 style="text-align: center">10.4.06：Continue语句的运用</h1>
+<div style="text-align: center">
+    <p>输出考试合格的总人数</p>
+    <input type="button" value="开始计算" onclick="calculate()">
+</div>
+</body>
+</html>

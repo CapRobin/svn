@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>07.01：函数练习</title>
+    <style type="text/css">
+        /*border-style: solid; border-width: 5px;*/
+        /*table{border-right:50px solid #F00;border-bottom:50px solid #F00}*/
+        /*table td{border-left:50px solid #F00;border-top:50px solid #F00}*/
+        table {
+            width: 60%;
+            height: 300px;
+            text-align: center;
+            border-spacing: 30px;
+        }
+
+        tr {
+            height: 120px;
+        }
+
+        td {
+            width: 100px;
+            border-radius: 5px;
+            background-color: #26bbff;
+            color: white;
+            font-size: 25px;
+            padding: 30px;
+        }
+    </style>
+    <script type="text/javascript">
+
+        var tIdArray = [];
+        var showStr = "";
+
+        //预加载函数
+        function loadAction(what) {
+            for (var i = 0; i < 7; i++) {
+                tIdArray[i] = window.document.getElementById("tId0" + (i + 1).toString());
+            }
+            tIdArray[0].onmouseenter = function () {
+                tIdArray[0].innerHTML = "点击查看";
+                tIdArray[6].innerHTML = "练习一：求一组数中的最大值和最小值";
+            };
+            tIdArray[0].onmouseleave = function () {
+                tIdArray[0].innerHTML = "练习一";
+                tIdArray[6].innerHTML = "显示区域";
+            };
+            tIdArray[0].onmousedown = function () {
+                tIdArray[6].style.left = "200px";
+                //求一组数的最大值和最小值
+                var array01 = [23, 7, 51, 82, 9, 17, 36, 61, 72];
+                tIdArray[6].innerHTML = getMaxMinValue(array01);
+
+            };
+
+            tIdArray[1].onmouseenter = function () {
+                tIdArray[1].innerHTML = "点击查看";
+                tIdArray[6].innerHTML = "练习二：翻转数组，返回一个新数组";
+            };
+            tIdArray[1].onmouseleave = function () {
+                tIdArray[1].innerHTML = "练习二";
+                tIdArray[6].innerHTML = "显示区域";
+            };
+            tIdArray[1].onmousedown = function () {
+                //翻转数组
+                var array02 = [23, 7, 51, 82, 9, 17, 36, 61, 72];
+                tIdArray[6].innerHTML = reverseArray(array02);
+            };
+
+            tIdArray[2].onmouseenter = function () {
+                tIdArray[2].innerHTML = "点击查看";
+                tIdArray[6].innerHTML = "练习三：将数组按照从小到大的顺序排序(冒泡排序)";
+            };
+            tIdArray[2].onmouseleave = function () {
+                tIdArray[2].innerHTML = "练习三";
+                tIdArray[6].innerHTML = "显示区域";
+            };
+            tIdArray[2].onmousedown = function () {
+                //翻转数组
+                var array03 = [23, 7, 51, 82, 9, 17, 36, 61, 72];
+                tIdArray[6].innerHTML = bubbleSortArray(array03);
+            };
+
+            tIdArray[3].onmouseenter = function () {
+                tIdArray[3].innerHTML = "点击查看";
+                tIdArray[6].innerHTML = "练习四：求任意数的阶乘，及1!+2!+3!+....+n!的和";
+            };
+            tIdArray[3].onmouseleave = function () {
+                tIdArray[3].innerHTML = "练习四";
+            };
+            tIdArray[3].onmousedown = function () {
+                var num = window.prompt("请输入一个数字,求它的阶乘");
+
+                if (/\D/.test(num)) {
+                    alert("别闹！请输入大于0的正规整数");
+                } else {
+                    var showStr = num + "的阶乘为：" + getFactorial(num) + "<br>" + num + "个阶乘之和为：" + sumFactorial(num);
+                    tIdArray[6].innerHTML = showStr;
+                }
+            };
+
+            tIdArray[4].onmouseenter = function () {
+                tIdArray[4].innerHTML = "点击查看";
+                tIdArray[6].innerHTML = "练习五：求斐波那契数列(Fibonacci)中的第N个数的值";
+            };
+            tIdArray[4].onmouseleave = function () {
+                tIdArray[4].innerHTML = "练习五";
+            };
+            tIdArray[4].onmousedown = function () {
+
+                var num = window.prompt("请输入一个数字,求它的阶乘");
+
+                if (/\D/.test(num)) {
+                    alert("别闹！请问能输入一个大于0的正常整数吗？");
+                } else {
+                    tIdArray[6].innerHTML = "斐波那契数列的第" + num + "个数是：" + sumFibonacci(num);
+                }
+            };
+
+            tIdArray[5].onmouseenter = function () {
+                tIdArray[5].innerHTML = "点击查看";
+                tIdArray[6].innerHTML = "练习六：输入某年某月某日，判断这一天是这一年的第几天";
+            };
+            tIdArray[5].onmouseleave = function () {
+                tIdArray[5].innerHTML = "练习六";
+                tIdArray[6].innerHTML = "显示区域";
+            };
+            tIdArray[5].onmousedown = function () {
+                tIdArray[6].innerHTML = "点击处理练习06";
+            };
+        }
+
+        //练习一：求数组中的最大值和最小值
+        function getMaxMinValue(array01) {
+            //获取最大值
+            var maxValueNum = maxValue(array01);
+            //获取最小值
+            var minValueNum = minValue(array01);
+            showStr = "原数组为：[" + array01 + "]<br>最大值为：" + maxValueNum + "<br>最小值为：" + minValueNum;
+            return showStr;
+
+        }
+
+        //练习二：翻转数组
+        function reverseArray(array02) {
+            var str = array02.toString();
+            var temp = 0;
+            for (var i = 0; i < array02.length / 2; i++) {
+                temp = array02[i];
+                array02[i] = array02[array02.length - 1 - i];
+                array02[array02.length - 1 - i] = temp;
+            }
+            showStr = "原数组为：[" + str + "]<br>翻转后的新数组为：[" + array02 + "]";
+            ;
+            return showStr
+        }
+
+        //练习三：数组排序(冒泡排序)
+        function bubbleSortArray(array03) {
+            var mStr = array03.toString();
+            var innerTimes = 0;
+            var outTimes = 0;
+            for (var i = 0; i < array03.length - 1; i++) {
+                var flag = true;
+                for (var j = 0; j < array03.length - 1 - i; j++) {
+                    if (array03[j] > array03[j + 1]) {
+
+                        flag = false;
+                        var temp = array03[j];
+                        array03[j] = array03[j + 1];
+                        array03[j + 1] = temp;
+                    }
+                    innerTimes++;
+                }
+                outTimes++;
+
+                if(flag){
+                    break;
+                }
+            }
+            console.log("内层循环次数----->>" + innerTimes);
+            console.log("外层循环次数----->>" + outTimes);
+
+            return "原数组为：[" + mStr + "]<br>排序后的数组为：[" + array03 + "]";
+        }
+
+        //练习四：求阶乘
+        function getFactorial(num) {
+            var temp = 1;
+            for (var i = 1; i <= num; i++) {
+                temp *= i;
+            }
+            return temp;
+        }
+
+        //练习五：求斐波那契数量的第N个数是多少
+        function sumFibonacci(num) {
+            var n1 = 0;
+            var n2 = 1;
+            var s = 0;
+            for (var i = 2; i <= num; i++) {
+                s = n1 + n2;
+                n1 = n2;
+                n2 = s;
+                console.log("打印斐波那契数量：--------->>" + s);
+            }
+
+            return s;
+        }
+
+
+        //求N个数的阶乘之和
+        function sumFactorial(n) {
+            var sum = 0;
+            for (var i = 1; i <= n; i++) {
+                sum += getFactorial(i);
+            }
+            return sum;
+        }
+
+
+        //求最大值
+        function maxValue(array) {
+            //假设数组的第一个元素为最大值
+            var temp1 = array[0];
+            for (var i = 1; i < array.length; i++) {
+                if (array[i] > temp1) {
+                    temp1 = array[i];
+                }
+            }
+            console.log("打印最大值----->>" + temp1);
+            return temp1;
+        }
+
+        function minValue(array) {
+            //假设数组的第一个元素为最小值
+            var temp = array[0];
+            for (var i = 1; i < array.length; i++) {
+                if (array[i] < temp) {
+                    temp = array[i];
+                }
+            }
+            console.log("打印最小值----->>" + temp);
+            return temp;
+        }
+
+    </script>
+
+</head>
+<body onload="loadAction()">
+<h1 style="text-align: center">07.01：函数练习</h1><br><br>
+<table align="center">
+    <tr>
+        <td id="tId01">练习一</td>
+        <td id="tId02">练习二</td>
+        <td id="tId03">练习三</td>
+    </tr>
+    <tr>
+        <td id="tId04">练习四</td>
+        <td id="tId05">练习五</td>
+        <td id="tId06">练习六</td>
+    </tr>
+    <tr style="height: 180px">
+        <td id="tId07" colspan="3" style="text-align: left; background-color: lightseagreen">显示区域</td>
+    </tr>
+</table>
+</body>
+</html>

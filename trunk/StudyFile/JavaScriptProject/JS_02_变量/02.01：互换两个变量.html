@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>02.01：互换两个变量</title>
+    <script type="text/javascript">
+        window.onload = function () {
+            //获取四个p标签的ID
+            var h = document.getElementById("h");
+            var p1 = document.getElementById("p1");
+            var p2 = document.getElementById("p2");
+            var p3 = document.getElementById("p3");
+            var p4 = document.getElementById("p4");
+            /*开始互换两个值*/
+            var a = 10;
+            var b = 20;
+            h.innerHTML = "交换之前：a=" + a + " b=" + b;
+
+            //方法一(实际开发使用):
+            /*var temp = a;
+            a = b;
+            b = temp;
+            p1.innerHTML ="方法一交换之后：a=" + a + " b=" + b;*/
+
+            //方法二(面试使用,但是有弊端：数值有最大值，到了最大值之后该方法错误)
+            /*var sum = a+b;
+            a = sum-a;
+            b= sum-a;
+            p2.innerHTML ="方法二交换之后：a=" + a + " b=" + b;*/
+
+            //方法三(面试使用,但是有弊端：数值有最大值，到了最大值之后该方法错误)
+            /*a = a+b;
+            b = a-b;
+            a = a-b;
+            p2.innerHTML ="方法三交换之后：a=" + a + " b=" + b;*/
+
+            //一句话解决,但是有弊端：数值有最大值，到了最大值之后该方法错误
+            b = a + b - (a = b);
+            p2.innerHTML = "方法三交换之后：a=" + a + " b=" + b;
+
+
+        };
+    </script>
+</head>
+<body>
+
+</body>
+<h1 style="text-align: center">02.01：互换两个变量</h1><br><br>
+<h3 id="h"></h3>
+<p id="p1"></p>
+<p id="p2"></p>
+<p id="p3"></p>
+<p id="p4"></p>
+</html>

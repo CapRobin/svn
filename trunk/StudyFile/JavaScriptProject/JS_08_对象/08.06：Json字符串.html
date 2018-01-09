@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>08.06：Json字符串</title>
+    <script type="text/javascript">
+        /*~~~~~~~~Json字符串~~~~~~~~
+        * 1：定义：Json是服务器后台和前端传递数据的一种字符串格式，以键值对的方式组成
+        * 2：Java解析Json：
+        *   Gson jStr = new Gson();
+        *   Person per = jStr.fromJSON(jsonStr);
+        * 3、JavaScript解析Json:
+        *    1> var per = JSON.parse(jsonStr);
+        *    2> var per = jsonStr;
+        * 4：Json与对象的字面量的区别：字面量的建和值可以不加双引号，但是Json字符串必
+        *   须按照按照标准格式写，建和值都必须加双引号，否则Json字符在传递过程中报错！
+        * 5：JSON由{}和key:value以及逗号组成,三部分
+        * 6：因为后台服务器基本上都不支持JS函数，所以Json字符串里面不会绑定任何函数事件
+        * */
+
+        //Json字符串的标准写法
+        var json = {
+            "name":"张全蛋",
+            "age":"28",
+            "number":"1086",
+            "height":"180"
+        };
+
+
+        /*~~~~~~~~Json字符串的遍历~~~~~~~~
+        * 1、使用For in遍历Json字符串
+        * 2、使用for in循环遍历出来的都是每一个键
+        *
+        * */
+
+        for(var index in json){
+            //每一次循环index的值为本次循环的键(key)，取某一个键所对应的值(value)的方法为：json[index]
+            console.log("Json字符串的"+index+"键对应的值为--------->>"+json[index]);
+        }
+    </script>
+</head>
+<body>
+<h1 style="text-align: center">08.06：Json字符串</h1><br><br>
+</body>
+</html>

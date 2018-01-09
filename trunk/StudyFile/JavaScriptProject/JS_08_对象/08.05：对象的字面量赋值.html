@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>08.05：对象的字面量赋值</title>
+    <script type="text/javascript">
+        /*~~~~~~~~~函数的字面量赋值~~~~~~~~~
+        * 格式：
+        * var Objt = {key:value, key:value, key:value}
+        *
+        * */
+
+        //规定标准格式
+        //var objct = {"name":"张三", "age":23, "number":1087, "skill":function () {alert("我是对象事件函数");}};
+
+        //常用表示方法(去掉属性名的双引号)
+        //var objct = {name:"张三", age:23, number:1087, skill:function () {alert("我是对象事件函数");}};
+
+        //开发常用格式(增加代码可读性)
+        var objct = {
+            "name": "张三",
+            "age": 23,
+            "number": 1087,
+            skill: function () {
+                alert("我是对象事件函数");
+            }
+        };
+
+        //使用对象
+        objct.skill();
+        console.log(objct.name);
+
+    </script>
+</head>
+<body>
+<h1 style="text-align: center">08.05：对象的字面量赋值</h1><br><br>
+</body>
+</html>
