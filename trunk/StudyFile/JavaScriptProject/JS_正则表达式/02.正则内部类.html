@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    console.log("--------------预定义类---------------")
+    //匹配任意字符  数量不固定
+//    console.log(/./.test("\r"));
+//    console.log(/./.test("\n"));
+//    console.log(/./.test(""));
+//    console.log(/./.test("+"));
+//    console.log(/./.test("kkkuu"));
+//    console.log(/./.test("^&*"));
+
+    //  \d  数字字符   0~9  出现数字就可以
+//    console.log(/\d/.test("\n9"));
+//    console.log(/\d/.test("58\r"));
+//    console.log(/\d/.test("998asdkjfgh"));
+//    console.log(/\d/.test(""));
+//    console.log(/\d/.test("k5"));
+//    console.log(/\d/.test("8u"));
+//    console.log(/\d/.test("sdkjfhgsdjhf1jahsdgfasjuhdg"));
+
+    // \D  非数字  出现符合规则的即可
+//    console.log(/\D/.test("\n9"));
+//    console.log(/\D/.test("58\r"));
+//    console.log(/\D/.test("998asdkjfgh"));
+//    console.log(/\D/.test(""));
+//    console.log(/\D/.test("k5"));
+//    console.log(/\D/.test("8u"));
+//    console.log(/\D/.test("sdkjfhgsdjhf1jahsdgfasjuhdg"));
+
+    // \s  空白字符  \r\n " " \t
+//    console.log(/\s/.test("\n9"));
+//    console.log(/\s/.test("58\r"));
+//    console.log(/\s/.test(" "));
+//    console.log(/\s/.test(""));
+//    console.log(/\s/.test("k5"));
+//    console.log(/\s/.test("8u"));
+//    console.log(/\s/.test("sdkjfhgsdjhf1jahsdgfasjuhdg"));
+
+    // \S 非空白字符
+//    console.log(/\S/.test("\n9"));
+//    console.log(/\S/.test("58\r"));
+//    console.log(/\S/.test(" "));
+//    console.log(/\S/.test(""));
+//    console.log(/\S/.test("k5"));
+//    console.log(/\S/.test("8u"));
+//    console.log(/\S/.test("sdkjfhgsdjhf1jahsdgfasjuhdg"));
+
+    //\W   单词字符 数字 字母 下划线
+//    console.log(/\w/.test("\n9"));
+//    console.log(/\w/.test("58\r"));
+//    console.log(/\w/.test(" "));
+//    console.log(/\w/.test(""));
+//    console.log(/\w/.test("k5"));
+//    console.log(/\w/.test("8u"));
+//    console.log(/\w/.test("sdkjfhgsdjhf1jahsdgfasjuhdg"));
+
+    // \W	[^a-zA-Z_0-9]	    非单词字符
+
+//    console.log(/\W/.test(""));
+
+
+    console.log("--------------简单类类---------------");
+    //  必须完整 只能多不能少
+//    console.log(/hello/.test("kkhelloii"));
+//    console.log(/hello/.test("hello"));
+//    console.log(/hello/.test("hellopp"));
+//    console.log(/hello/.test("heppllo"));
+//    console.log(/hello/.test("hell"));
+
+    //中括号的加入   只要有其中一个就可以了
+    //表示一个字符
+//    console.log(/[hello]/.test("he"));
+//    console.log(/[hello]/.test("hello"));
+//    console.log(/[hello]/.test("ok"));
+//    console.log(/[hello]/.test("pp"));
+//    console.log(/[hello]/.test(" "));
+//    console.log(/[hello]/.test("ul"));
+
+
+
+
+
+    console.log("--------------负向类---------------")
+    //不够和正好，返回false；多了或者没有返回true
+//    console.log(/[^abc]/.test("a"));//不够  false
+//    console.log(/[^abc]/.test("abc"));//正好  false
+//    console.log(/[^abc]/.test("p"));  //没有  true
+//    console.log(/[^abc]/.test("ab"));//不够  false
+//    console.log(/[^abc]/.test("abckkk")); //多了  true
+
+
+    console.log("--------------范围类---------------")
+    //表示从哪到哪
+//    console.log(/[a-z]/.test("as"));
+//    console.log(/[a-z]/.test("k"));
+//    console.log(/[a-z]/.test("*"));
+//    console.log(/[a-z]/.test("yhg58"));
+//    console.log(/[a-z]/.test("y99"));
+//    console.log(/[a-z]/.test(" k"));
+//    console.log(/[a-z]/.test(" "));
+    console.log("--------------组合类---------------");
+    console.log(/[a-f0-9]/.test("s"));
+    console.log(/[a-f0-9]/.test("fs"));
+    console.log(/[a-f0-9]/.test("998"));
+    console.log(/[a-f0-9]/.test("h7"));
+    console.log(/[a-f0-9]/.test("af"));
+    console.log(/[a-zA-Z0-9_$]/)
+
+
+
+
+</script>
+
+</body>
+</html>

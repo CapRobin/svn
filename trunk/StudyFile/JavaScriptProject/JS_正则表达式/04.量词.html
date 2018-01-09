@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //* >=0
+//    console.log(/^a*$/.test("a"));
+//    console.log(/^a*$/.test(""));
+//    console.log(/^a*$/.test("aaaaaaaa"));
+//    console.log(/^a*$/.test("aaaaaaaaaaaaaaaa"));
+//    console.log(/^a*$/.test("b"));
+//    console.log(/^a*$/.test("aaaaaab"));
+
+// +   >=1
+//    console.log(/^a+$/.test("a"));
+//    console.log(/^a+$/.test(""));
+//    console.log(/^a+$/.test("aaaaaaaa"));
+//    console.log(/^a+$/.test("aaaaaaaaaaaaaaaa"));
+//    console.log(/^a+$/.test("b"));
+//    console.log(/^a+$/.test("aaaaaab"));
+
+    // ?   0 || 1
+//    console.log(/^a?$/.test("a"));
+//    console.log(/^a?$/.test(""));
+//    console.log(/^a?$/.test("aaaaaaaa"));
+//    console.log(/^a?$/.test("aaaaaaaaaaaaaaaa"));
+//    console.log(/^a?$/.test("b"));
+//    console.log(/^a?$/.test("aaaaaab"));
+
+
+//    console.log(/^\w+$/.test("kkkkk"));
+//    console.log(/^\w+$/.test("123456uuu"));
+//    console.log(/^\w+$/.test("$%^&*("));
+//    console.log(/^\w+$/.test("sdfsdf$%^&"));
+//    console.log(/^\w+$/.test("8595$%^&"));
+
+//    （多个字母，重复最后一个
+
+//    console.log(/^a?b?c?$/.test("abc"));
+//    console.log(/^a+b+c+$/.test("abcacbacbabacabcabca"));
+//    console.log(/^a+b+c+$/.test("aaaaabbbbbccc"));
+
+
+//    console.log(/^[abc]$/.test("a"));
+//    console.log(/^[abc]$/.test("b"));
+    //只能出现前边符合模板的两个字符
+//    console.log(/^[abc]{2}$/.test("ab"));
+//    console.log(/^[abc]{2}$/.test("bc"));
+//    console.log(/^[abc]{2}$/.test("ac"));
+//    console.log(/^[abc]{2}$/.test("abc"));
+        //至少2次
+//        console.log(/^[abc]{2,}$/.test("ab"));
+//        console.log(/^[abc]{2,}$/.test("bc"));
+//        console.log(/^[abc]{2,}$/.test("ac"));
+//        console.log(/^[abc]{2,}$/.test("abc"));
+//        console.log(/^[abc]{2,}$/.test("a"));
+//        console.log(/^[abc]{2,}$/.test("b"));
+
+//    console.log(/^[abc]{2,5}$/.test("abc"));
+//    console.log(/^[abc]{2,5}$/.test("bca"));
+//    console.log(/^[abc]{2,5}$/.test("ac"));
+//    //n到m次 包含m次
+//    console.log(/^[abc]{2,5}$/.test("abcac"));
+//    console.log(/^[abc]{2,5}$/.test("abcaca"));
+//    console.log(/^[abc]{2,5}$/.test("ab"));
+//    console.log(/^[abc]{2,5}$/.test("bc"));
+
+//    console.log(/^[abc]|[def]$/.test("a"));
+//    console.log(/^[abc]|[def]$/.test("d"));
+//    console.log(/^[abc]|[def]$/.test("e"));
+//    console.log(/^[abc]|[def]$/.test("ab"));
+//    console.log(/^[abc]|[def]$/.test("ed"));
+//    console.log(/^[abc]|[def]$/.test("afabcaaaaa"));
+//    console.log(/^x|y$/.test("x"));
+//    console.log(/^x|y$/.test("xy"));
+//    console.log(/^x|y$/.test("n"));
+//    console.log(/^abc|def$/.test("defabc"));
+//    console.log(/^z|food$/.test("foodz"));
+
+    console.log(/^(abc)|(def)$/.test("abcsdkfjhsdkjgdef"));
+
+</script>
+
+</body>
+</html>
