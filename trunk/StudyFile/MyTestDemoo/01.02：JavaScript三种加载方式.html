@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>01.02：JavaScript三种加载方式</title>
+    <!--内嵌式定义-->
+    <script type="text/javascript">
+        alert("JavaScript的第一种加载方式")
+    </script>
+
+    <!--外链式定义-->
+    <!--此处的src的文件路径可以是相对路径、绝对路径和网络路径-->
+    <script src="js/main.js">
+        //此处写任何代码JavaScript将不会运行
+        /*alert("换挡54356356！@#￥%……&*（）");
+                                   alert("换挡54356356！@#￥%……&*（）");
+        alert("换挡54356356！@#￥%……&*（）");
+        alert("换挡54356356！@#￥%……&*（）");*/
+    </script>
+</head>
+<!--行内定义-->
+<body onload="alert('JavaScript的第三种加载方式')">
+<h1 style="text-align: center">01.02：JavaScript三种加载方式</h1><br>
+</body>
+</html>
