@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas绘制图形的渐变效果</title>
+    <style>
+        #mcvs {
+            border: 2px solid #000000;
+            background-color: #b3d4fc;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function () {
+            var mcvs = document.getElementById("mcvs");
+            var cnt = mcvs.getContext("2d");
+            /*线性渐变展示*/
+
+            //标题1
+            cnt.font = "30px Courier New";
+            cnt.fillStyle = "blue";
+            cnt.fillText("线性渐变01", 80, 50);
+
+            //创建线性渐变的颜色对象，四个参数分变为：线性(直线)的起始端坐标和末端坐标
+            var grad01 = cnt.createLinearGradient(50, 100, 250, 100);
+            //给颜色对象填充颜色，此处两个参数分别指：渐变色标的偏移位置(偏移量)和颜色值
+            grad01.addColorStop(0, "red");
+            grad01.addColorStop(0.5, "green");
+            grad01.addColorStop(1, "blue");
+            //设置线性渐变
+            cnt.strokeStyle = grad01;
+            cnt.fillStyle = grad01;
+            cnt.fillRect(50, 100, 200, 200);
+
+            //标题2
+            cnt.font = "30px Courier New";
+            cnt.fillStyle = "blue";
+            cnt.fillText("线性渐变02", 330, 50);
+
+            //创建线性渐变的颜色对象，四个参数分变为：线性(直线)的起始端坐标和末端坐标
+            var grad02 = cnt.createLinearGradient(300, 100, 500, 300);
+            //给颜色对象填充颜色，此处两个参数分别指：渐变色标的偏移位置(偏移量)和颜色值
+            grad02.addColorStop(0, "red");
+            grad02.addColorStop(0.5, "green");
+            grad02.addColorStop(1, "blue");
+            //设置线性渐变
+            cnt.strokeStyle = grad02;
+            cnt.fillStyle = grad02;
+            cnt.fillRect(300, 100, 200, 200);
+
+            //标题3
+            cnt.font = "30px Courier New";
+            cnt.fillStyle = "blue";
+            cnt.fillText("经向渐变", 590, 50);
+
+            //创建经向渐变的颜色对象，前三个参数表示内部小圆的圆心X、Y坐标和半径，后三个参数表示外部圆心的X、Y坐标和半径
+            var gadia = cnt.createRadialGradient(650, 200, 50, 650, 200, 80);
+            gadia.addColorStop(0, "#0000ff");
+            gadia.addColorStop(0.5, "#00ff00");
+            gadia.addColorStop(1, "#ff0000");
+            cnt.fillStyle = gadia;
+            cnt.fillRect(550, 100, 200, 200);
+
+
+        }
+    </script>
+</head>
+<body>
+<h1 align="center">4.2.04：Canvas绘制图形的渐变效果</h1><br>
+<p align="center">
+    <canvas id="mcvs" width="800" height="400">
+        您的浏览器暂不支持Canvas元素，请升级浏览器或更换其他浏览器！
+    </canvas>
+</p>
+
+</body>
+</html>
