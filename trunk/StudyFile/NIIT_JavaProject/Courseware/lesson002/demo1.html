@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>表单元素的demo1</title>
+	</head>
+
+	<body>
+
+		<form action="http://www.baidu1.com" method="post" autocomplete="off">
+			<fieldset>
+				<legend>演示用来填的表单元素</legend>
+				<div>
+					<label for="姓名">姓名:&nbsp; &nbsp; &nbsp; &nbsp;</label>
+					<input id="姓名" type="text" name="姓名" placeholder="请填写你的真实姓名" />
+				</div>
+				<div>
+					<label for="年龄">年龄:&nbsp; &nbsp; &nbsp; &nbsp;</label>
+					<input id="年龄" type="text" name="年龄" placeholder="请填写你的真实年龄" required="required" maxlength="3" />
+				</div>
+				<div>
+					<label for="密码">密码:&nbsp; &nbsp; &nbsp; &nbsp;</label>
+					<input id="密码" type="password" name="密码" />
+				</div>
+				<div>
+					<label for="年终总结">年终总结:</label>
+					<textarea id="年终总结" rows="5" name="年终总结" placeholder="请好好填写年终总结，否则不给你发年终奖！！！"></textarea>
+				</div>
+
+			</fieldset>
+
+			<fieldset>
+				<legend>用来选的表单元素</legend>
+				<div>
+					<label>性别:</label>
+					<input id="性别_男" type="radio" name="性别" value="男" /><label for="性别_男">男</label>
+					<input id="性别_女" type="radio" name="性别" checked="checked" value="女" /><label for="性别_女">女</label>
+				</div>
+
+				<div>
+					<label>内存大小:</label>
+					<input id="内存大小_4G" type="checkbox" name="内存大小" value="4G" /><label for="内存大小_4G">4G</label>
+					<input id="内存大小_8G" type="checkbox" name="内存大小" value="8G" checked="checked" /><label for="内存大小_8G">8G</label>
+					<input id="内存大小_10G" type="checkbox" name="内存大小" value="10G" checked="checked" /><label for="内存大小_10G">10G</label>
+				</div>
+
+				<div>
+					<label for="班级">班级:</label>
+					<select id="班级" name="班级" autofocus="autofocus">
+						<optgroup label="企业班">
+							<option>A</option>
+							<option>B</option>
+							<option selected="selected">C</option>
+						</optgroup>
+						<optgroup label="学生班">
+							<option>北大</option>
+							<option>宁大</option>
+							<option>财大</option>
+						</optgroup>
+					</select>
+				</div>
+
+				<input list="各大院校" name="毕业院校" />
+				<datalist id="各大院校">
+					<option>1</option>
+					<option>3423</option>
+					<option>3423</option>
+					<option>3423</option>
+					<option>3423</option>
+					<option>3423</option>
+					<option>3423</option>
+					<option>12</option>
+					<option>123</option>
+				</datalist>
+			</fieldset>
+
+			<!--<input type="submit" value="提交表单" />-->
+			<button type="submit">提交表单</button>
+		</form>
+
+	</body>
+
+</html>

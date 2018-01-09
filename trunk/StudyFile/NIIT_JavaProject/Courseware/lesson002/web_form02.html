@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>web-form表单</title>
+		<style>
+			table {
+				border-collapse: collapse;
+				margin: 10px;
+			}
+			
+			table td,
+			table th {
+				border: 1px solid blue;
+			}
+		</style>
+	</head>
+
+	<body>
+		<h1>web-form表单</h1>
+
+		<table>
+			<caption>表单主体</caption>
+			<thead>
+				<tr>
+					<th>用途</th>
+					<th>元素名称</th>
+					<th>固定属性</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>圈定表单元素</td>
+					<td>form</td>
+					<td>action="{服务端处理程序的地址}"</td>
+				</tr>
+				<tr>
+					<td>指定提交方式</td>
+					<td>form</td>
+					<td>method="get/post"</td>
+				</tr>
+				<tr>
+					<td>发起提交请求</td>
+					<td>input</td>
+					<td>type="submit"</td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<td colspan="3">本质：将表单元素，以键值对的形式，发送给服务端程序</td>
+				</tr>
+			</tfoot>
+		</table>
+
+		<hr />
+		<div style="clear: both;"></div>
+
+		<table style="float:left">
+			<caption>用来填的表单元素</caption>
+			<thead>
+				<tr>
+					<th>用途</th>
+					<th>元素名称</th>
+					<th>固定属性</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>文本</td>
+					<td>input</td>
+					<td>type="text"</td>
+				</tr>
+				<tr>
+					<td>数字</td>
+					<td>input</td>
+					<td>type="number" min="" max=""</td>
+				</tr>
+				<tr>
+					<td>邮箱</td>
+					<td>input</td>
+					<td>type="email"</td>
+				</tr>
+				<tr>
+					<td>url</td>
+					<td>input</td>
+					<td>type="url"</td>
+				</tr>
+				<tr>
+					<td>密码</td>
+					<td>input</td>
+					<td>type="password"</td>
+				</tr>
+				<tr>
+					<td>大段文字</td>
+					<td>textarea</td>
+					<td>rows="{可见行数}"</td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<td colspan="3">
+						<ol>
+							<li>必须设置name属性</li>
+							<li>用value属性获取用户的输入，也可以提前初始化</li>
+						</ol>
+					</td>
+				</tr>
+			</tfoot>
+		</table>
+
+		<table style="float:left">
+			<caption>用来选的表单元素</caption>
+			<thead>
+				<tr>
+					<th>用途</th>
+					<th>元素名称</th>
+					<th>固定属性</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>单选</td>
+					<td>input</td>
+					<td>type="radio"</td>
+				</tr>
+				<tr>
+					<td>多选</td>
+					<td>input</td>
+					<td>type="checkbox"</td>
+				</tr>
+				<tr>
+					<td>下拉列表</td>
+					<td>select</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>组合框</td>
+					<td>input</td>
+					<td>list="{datalist的id}" （在datalist里面定义数据列表）</td>
+				</tr>
+				<tr>
+					<td>日期</td>
+					<td>input</td>
+					<td>type="date" min="" max=""</td>
+				</tr>
+				<tr>
+					<td>时间</td>
+					<td>input</td>
+					<td>type="time" min="" max=""</td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<td colspan="3">
+						<ol>
+							<li>同一组的选项元素，name属性必须相同</li>
+							<li>input实现的选择元素，用checked来选中</li>
+							<li>select元素，用selected来选中</li>
+						</ol>
+					</td>
+				</tr>
+			</tfoot>
+		</table>
+
+		<div style="clear: both;"></div>
+		<hr />
+
+		<table style="float:left;">
+			<caption>辅助元素/属性</caption>
+			<thead>
+				<tr>
+					<th>用途</th>
+					<th>元素名称</th>
+					<th>固定属性</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>辅助获取焦点</td>
+					<td>label</td>
+					<td>for="{对应表单元素的id}"</td>
+				</tr>
+				<tr>
+					<td>关闭自动完成</td>
+					<td>form</td>
+					<td>autocomplete="off"</td>
+				</tr>
+				<tr>
+					<td>默认的描述</td>
+					<td></td>
+					<td>placeholder="{默认描述文字}"</td>
+				</tr>
+				<tr>
+					<td>自动获取焦点</td>
+					<td></td>
+					<td>autofocus="autofocus"</td>
+				</tr>
+				<tr>
+					<td>必填验证</td>
+					<td></td>
+					<td>required="required"</td>
+				</tr>
+				<tr>
+					<td>限制输入字符</td>
+					<td></td>
+					<td>maxlength="{允许输入的字符长度}"</td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<td colspan="3">提供更好的用户体验</td>
+				</tr>
+			</tfoot>
+		</table>
+
+	</body>
+
+</html>

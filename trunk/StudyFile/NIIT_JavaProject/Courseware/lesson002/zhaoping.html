@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>智联招聘-注册</title>
+	</head>
+
+	<body>
+		<h1>填写注册信息，立即成为智联企业会员</h1>
+		<form action="http://www.zhaoping.com" method="post">
+			<fieldset>
+				<legend>单位信息</legend>
+				<div>
+					<label for="enterpriseName">单位名称</label>
+					<input type="text" name="enterpriseName" id="enterpriseName" required="required" maxlength="20" autofocus="autofocus" />
+				</div>
+				
+				<div>
+					<label for="employeeNumber">员工人数</label>
+					<input type="number" name="employeeNumber" id="employeeNumber" min="1" max="10" step="2" required="required" />
+				</div>
+
+				<div>
+					<label for="birthday">注册日期</label>
+					<input type="week" name="birthday" id="birthday" min="2012/06/01" required="required" />
+				</div>
+
+				<div>
+					<label for="logoColor">LOGO色</label>
+					<input type="color" name="logoColor" id="logoColor" />
+				</div>
+
+				<div>
+					<label for="score">企业评分</label>
+					<input type="range" min="6" max="10" name="score" id="score" />
+				</div>
+
+				<div>
+					<label for="onDuty">上班时间</label>
+					<input type="time" name="onDuty" id="onDuty" required="required" />
+				</div>
+
+				<div>
+					<label for="address">所在地</label>
+					<select name="address" id="address">
+						<optgroup label="大西北">
+							<option value="65">青海</option>
+							<option value="66">西藏</option>
+							<option value="67">甘肃</option>
+							<option value="64" selected="selected">宁夏</option>
+						</optgroup>
+						<optgroup label="东北">
+							<option value="14">黑龙江</option>
+							<option value="15">吉林</option>
+							<option value="16">辽宁</option>
+						</optgroup>
+						<optgroup label="华中">
+							<option value="24">河北</option>
+							<option value="25">河南</option>
+							<option value="26">陕西</option>
+						</optgroup>
+						<optgroup label="华南">
+							<option value="34">广东</option>
+							<option value="35">广西</option>
+							<option value="36">福建</option>
+						</optgroup>
+					</select>
+				</div>
+
+				<div>
+					<label for="contact">联系人</label>
+					<input type="text" name="contact" id="contact" required="required" />
+					<input type="radio" name="sex" id="male" value="1" checked="checked" /><label for="male">先生</label>
+					<input type="radio" name="sex" id="famale" value="0" /><label for="famale">女士</label>
+				</div>
+
+				<div>
+					<label for="mobile">联系电话</label>
+					<input type="text" name="mobile" id="mobile" required="required" />
+				</div>
+
+				<div>
+					<label for="verifyCode">验证码</label>
+					<input type="text" name="verifyCode" id="verifyCode" required="required" />
+					<input type="button" value="获取短信验证码" />
+				</div>
+
+				<div>
+					<input type="text" name="regionCode" id="regionCode" placeholder="区号" required="required" />
+					<input type="text" name="phone" id="phone" placeholder="固定电话" required="required" />
+					<input type="text" name="branch" id="branch" placeholder="分机号" required="required" />
+				</div>
+
+			</fieldset>
+
+			<fieldset>
+				<legend>账户信息</legend>
+				<table>
+					<tr>
+						<td><label for="account">用户名</label></td>
+						<td>
+							<input type="text" name="account" id="account" maxlength="4" required="required" placeholder="用户名" />
+						</td>
+					</tr>
+					<tr>
+						<td><label for="email">电子邮箱</label></td>
+						<td>
+							<input type="email" name="email" id="email" required="required" />
+						</td>
+					</tr>
+					<tr>
+						<td><label for="portal">门户网站</label></td>
+						<td>
+							<input type="url" name="portal" id="portal" required="required" />
+						</td>
+					</tr>
+					<tr>
+						<td><label for="password">密码</label></td>
+						<td>
+							<input type="password" name="password" id="password" required="required" />
+						</td>
+					</tr>
+					<tr>
+						<td><label for="passwordConfirmed">密码确认</label></td>
+						<td>
+							<input type="password" name="passwordConfirmed" id="passwordConfirmed" required="required" />
+						</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>
+							<input type="checkbox" name="accept" id="accept" required="required" />
+							<label for="accept">我已阅读并同意智联招聘《用户服务协议》和《隐私政策》</label>
+						</td>
+					</tr>
+				</table>
+			</fieldset>
+
+			<input type="submit" value="免费注册" />
+		</form>
+
+	</body>
+
+</html>
