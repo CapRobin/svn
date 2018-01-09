@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas绘制图案自动填充</title>
+    <style>
+        #mycanvas {
+            border: 2px solid green;
+            background-color: cadetblue;
+        }
+    </style>
+    <script type="text/javascript">
+        function repeatImage(type) {
+            var cvs = document.getElementById("mycanvas");
+            var ctx = cvs.getContext("2d");
+            //每次重新填充时清除上次填充，四个参数分别表示画布的X坐标，画布的Y坐标，画布的宽度,画布的高度
+            ctx.clearRect(0, 0, cvs.width, cvs.height);
+            var image = document.getElementById("repeatimage");
+            //获取所填充内容的对象
+            var pat = ctx.createPattern(image, type);
+            //填充区域设置
+            ctx.rect(0, 0, cvs.width, cvs.height);
+            ctx.fillStyle = pat;
+            //开始填充
+            ctx.fill()
+
+        }
+    </script>
+</head>
+<body>
+<h1 align="center">4.2.05：Canvas绘制图案自动填充</h1><br>
+<p align="center">
+    <img src="../../image/logo.png" id="repeatimage"><br>
+    <!--为按钮添加事件-->
+    <button onclick="repeatImage('repeat')">XY方向自动填充</button>
+    <button onclick="repeatImage('repeat-x')">X方向自动填充</button>
+    <button onclick="repeatImage('repeat-y')">Y方向自动填充</button>
+    <button onclick="repeatImage('no-repeat')">不做自动填充</button>
+    <br><br>
+    <canvas id="mycanvas" width="750" height="450">
+        抱歉！您的浏览器不支持HTML5，请更新或更换其他浏览器再次尝试！
+    </canvas>
+</p>
+</body>
+</html>
