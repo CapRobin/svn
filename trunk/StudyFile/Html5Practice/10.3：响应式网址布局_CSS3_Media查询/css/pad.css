@@ -1,0 +1,25 @@
+h2 {
+    color: #26bbff;
+    font-size: 2em;
+}
+
+section#sction {
+    width: 600px;
+}
+
+header {
+    line-height: 80px;
+}
+
+section#content {
+    width: 390px;
+    margin-left: 10px;
+}
+
+#right {
+    display: none;
+}
+
+footer {
+    line-height: 50px;
+}

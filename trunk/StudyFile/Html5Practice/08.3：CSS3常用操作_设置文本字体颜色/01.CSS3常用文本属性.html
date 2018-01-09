@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3常用文本属性</title>
+    <style type="text/css">
+        p {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        #h1Id {
+            font-size: 60px;
+            font-family: 华文行楷;
+            color: blue;
+            /*设置阴影和模糊度
+              四个参数分别表示X轴方向偏移量(可为负数)、
+              Y轴方向偏移量(可为负数)、模糊度、阴影颜色
+            */
+            text-shadow: 5px 5px 10px #ff0000;
+        }
+
+        div.myDiv {
+            /*em为客伸缩的度量长度*/
+            width: 12em;
+            border: 1px solid #31caff;
+            /*要实现文本的省略或裁剪必须设置下面两个属性*/
+            /*设置不允许换行*/
+            white-space: nowrap;
+            /*文本超出的时候要将其隐藏掉*/
+            overflow: hidden;
+        }
+
+        h3.h3Test {
+            width: 12em;
+            border: 1px solid #31caff;
+            /*word-wrap: normal;表示默认不断行的写法*/
+            /*设置单词超出部分自动断行(不能保证单词的完整性)*/
+            word-wrap: break-word;
+
+        }
+    </style>
+</head>
+<body>
+
+</body>
+<h1 style="text-align: center">8.3.01：CSS3常用文本属性</h1>
+
+<p>1.0：定义文本阴影或模糊效果</p>
+<h1 id="h1Id">测试文字阴影模糊效果</h1>
+<p>2.1：省略文本处理方式——添加省略符合(text-overflow: ellipsis)</p>
+<div class="myDiv" style="text-overflow: ellipsis">这是第一段演示文字，因为文字太长了无法在DIV容器中正常显示</div>
+
+<p>2.2：省略文本处理方式——直接裁切掉(text-overflow: clip)</p>
+<div class="myDiv" style="text-overflow: clip">这是第二段演示文字，因为文字太长了无法在DIV容器中正常显示</div>
+<p>3.0：超出容器边界时文本是否断开转行</p>
+<h3 class="h3Test">This is a section of the string inside the container："Hello fsdagfsadgsdafsgdgasdfsdafasd! Can I Help You?"</h3>
+</html>

@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3 2D变形</title>
+    <style type="text/css">
+        th {
+            width: 250px;
+            height: 30px;
+            color: blue;
+            font-size: 14px;
+        }
+
+        td {
+            width: 250px;
+            height: 140px;
+            text-align: center;
+        }
+
+        div {
+            width: 100px;
+            height: 100px;
+            background: darkcyan;
+            margin: 0px auto;
+            text-align: center;
+        }
+
+        a {
+            font-size: 20px;
+            text-align: center;
+            line-height: 100px;
+            text-transform: none;
+            text-decoration: none;
+            color: black;
+        }
+
+        /*使用结构伪类选择器定义表格第八行的DIV样式*/
+        tr:nth-child(8) div {
+            background-color: #26bbff;
+        }
+
+        tr:nth-child(8) a {
+            font-size: 10px;
+            font-weight: bold;
+            color: white;
+        }
+
+        tr:nth-child(7) th {
+            color: red;
+        }
+
+        /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~以元素中心为中心点~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+        /*tr:nth-of-type(2) td:nth-of-type(1):
+        此处亦可使用两个结构伪类选择器来定位表格*/
+        /*tr:nth-of-type(2) td:nth-of-type(1) div:hover{
+            -moz-transform:rotate(25deg);
+            -webkit-transform:rotate(25deg);
+            -o-transform:rotate(25deg);
+            -ms-transform:rotate(25deg);
+            transform:rotate(25deg);
+        }*/
+
+        /*鼠标悬浮时视图旋转45度(使用伪类选择器来实现视图的选中)*/
+        .RotateStyle div:hover {
+            -moz-transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            -ms-transform: rotate(25deg);
+            transform: rotate(45deg);
+        }
+
+        /*视图缩放80%*/
+        .ScaleStyle div:hover {
+            -moz-transform: scale(0.8, 0.8);
+            -webkit-transform: scale(0.8, 0.8);
+            -o-transform: scale(0.8, 0.8);
+            -ms-transform: scale(0.8, 0.8);
+            transform: scale(0.8, 0.8);
+        }
+
+        /*水平方向(X轴)视图缩放50%*/
+        .ScaleXStyle div:hover {
+            -moz-transform: scaleX(0.5);
+            -webkit-transform: scaleX(0.5);
+            -o-transform: scaleX(0.5);
+            -ms-transform: scaleX(0.5);
+            transform: scaleX(0.5);
+        }
+
+        /*垂直方向(Y轴)视图缩放50%*/
+        .ScaleYStyle div:hover {
+            -moz-transform: scaleY(0.5);
+            -webkit-transform: scaleY(0.5);
+            -o-transform: scaleY(0.5);
+            -ms-transform: scaleY(0.5);
+            transform: scaleY(0.5);
+        }
+
+        /*Translate属性：重新定位元素坐标*/
+        .TranslateStyle div:hover {
+            -moz-transform: translate(-15px, -15px);
+            -webkit-transform: translate(-15px, -15px);
+            -o-transform: translate(-15px, -15px);
+            -ms-transform: translate(-15px, -15px);
+            transform: translate(-15px, -15px);
+        }
+
+        /*TranslateX属性：重新定位元素坐标(X轴)*/
+        .TranslateXStyle div:hover {
+            -moz-transform: translateX(15px);
+            -webkit-transform: translateX(15px);
+            -o-transform: translateX(15px);
+            -ms-transform: translateX(15px);
+            transform: translateX(15px);
+        }
+
+        /*TranslateY属性：重新定位元素坐标(Y轴)*/
+        .TranslateYStyle div:hover {
+            -moz-transform: translateY(15px);
+            -webkit-transform: translateY(15px);
+            -o-transform: translateY(15px);
+            -ms-transform: translateY(15px);
+            transform: translateY(15px);
+        }
+
+        /*Skew属性：元素在XY轴分别倾斜45度*/
+        .SkewStyle div:hover {
+            -moz-transform: skew(45deg, 15deg);
+            -webkit-transform: skew(45deg, 15deg);
+            -o-transform: skew(45deg, 15deg);
+            -ms-transform: skew(45deg, 15deg);
+            transform: skew(45deg, 15deg);
+        }
+
+        /*SkewX属性：元素在X轴倾斜-30度*/
+        .SkewXStyle div:hover {
+            -moz-transform: skewX(-30deg);
+            -webkit-transform: skewX(-30deg);
+            -o-transform: skewX(-30deg);
+            -ms-transform: skewX(-30deg);
+            transform: skewX(-30deg);
+        }
+
+        /*SkewY属性：元素在Y轴倾斜30度*/
+        .SkewYStyle div:hover {
+            -moz-transform: skewY(30deg);
+            -webkit-transform: skewY(30deg);
+            -o-transform: skewY(30deg);
+            -ms-transform: skewY(30deg);
+            transform: skewY(30deg);
+        }
+
+        /*Rotate和Scale属性：多种变形效果01*/
+        .BlendStyle01 div:hover {
+            -moz-transform: rotate(45deg) scale(0.8, 0.8);
+            -webkit-transform: rotate(45deg) scale(0.8, 0.8);
+            -o-transform: rotate(45deg) scale(0.8, 0.8);
+            -ms-transform: rotate(25deg) scale(0.8, 0.8);
+            transform: rotate(45deg) scale(0.8, 0.8);
+        }
+
+        /*Translate和Skew属性：多种变形效果02*/
+        .BlendStyle02 div:hover {
+            -moz-transform: translate(-15px, -15px) skew(30deg, 15deg);
+            -webkit-transform: translate(-15px, -15px) skew(30deg, 15deg);
+            -o-transform: translate(-15px, -15px) skew(30deg, 15deg);
+            -ms-transform: translate(-15px, -15px) skew(30deg, 15deg);
+            transform: translate(-15px, -15px) skew(30deg, 15deg);
+        }
+
+        /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~重新定义中心点~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+        /*以左上角为中心点*/
+        .Transform-originStyle01 div {
+            -moz-transform-origin: left top;
+            -webkit-transform-origin: left top;
+            -o-transform-origin: left top;
+            -ms-transform-origin: left top;
+            transform-origin: left top;
+        }
+
+        /*开始旋转*/
+        .Transform-originStyle01 div:hover {
+            -moz-transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            -ms-transform: rotate(25deg);
+            transform: rotate(45deg);
+        }
+
+        /*以右下角为中心点*/
+        .Transform-originStyle02 div {
+            -moz-transform-origin: right bottom;
+            -webkit-transform-origin: right bottom;
+            -o-transform-origin: right bottom;
+            -ms-transform-origin: right bottom;
+            transform-origin: right bottom;
+        }
+
+        /*开始旋转*/
+        .Transform-originStyle02 div:hover {
+            -moz-transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            -ms-transform: rotate(25deg);
+            transform: rotate(45deg);
+        }
+
+        /*以右上角为中心点*/
+        .Transform-originStyle03 div {
+            -moz-transform-origin: right top;
+            -webkit-transform-origin: right top;
+            -o-transform-origin: right top;
+            -ms-transform-origin: right top;
+            transform-origin: right top;
+        }
+
+        /*开始变形*/
+        .Transform-originStyle03 div:hover {
+            -moz-transform: skew(30deg, 15deg);
+            -webkit-transform: skew(30deg, 15deg);
+            -o-transform: skew(30deg, 15deg);
+            -ms-transform: skew(30deg, 15deg);
+            transform: skew(30deg, 15deg);
+        }
+
+        /*以左下角为中心点*/
+        .Transform-originStyle04 div {
+            -moz-transform-origin: left bottom;
+            -webkit-transform-origin: left bottom;
+            -o-transform-origin: left bottom;
+            -ms-transform-origin: left bottom;
+            transform-origin: left bottom;
+        }
+
+        /*开始变形*/
+        .Transform-originStyle04 div:hover {
+            -moz-transform: skew(30deg, 15deg);
+            -webkit-transform: skew(30deg, 15deg);
+            -o-transform: skew(30deg, 15deg);
+            -ms-transform: skew(30deg, 15deg);
+            transform: skew(30deg, 15deg);
+        }
+
+
+    </style>
+</head>
+<body>
+<h1 style="text-align: center">9.1.01：CSS3 2D变形(鼠标移动到视图上方时的变形效果)</h1><br>
+<table border="1px" align="center" style="border: 1px solid #31caff" cellspacing="0">
+    <tr>
+        <th>
+            Rotate属性：视图旋转45度
+        </th>
+        <th>
+            Scale属性：视图缩放80%
+        </th>
+        <th>
+            ScaleX属性：X轴方向缩放50%
+        </th>
+        <th>
+            ScaleY属性：Y轴方向缩放50%
+        </th>
+    </tr>
+    <tr>
+        <td class="RotateStyle">
+            <div>
+                <a href="http://www.hhkj.nx.cn">Rotate</a>
+            </div>
+        </td>
+        <td class="ScaleStyle">
+            <div>
+                <a href="http://www.hhkj.nx.cn">Scale</a>
+            </div>
+        </td>
+        <td class="ScaleXStyle">
+            <div>
+                <a href="http://www.hhkj.nx.cn">ScaleX</a>
+            </div>
+        </td>
+        <td class="ScaleYStyle">
+            <div>
+                <a href="http://www.hhkj.nx.cn">ScaleY</a>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <th>
+            Translate属性：重定元素坐标(XY轴)
+        </th>
+        <th>
+            TranslateX属性：重定元素坐标(X轴)
+        </th>
+        <th>
+            TranslateY属性：重定元素坐标(Y轴)
+        </th>
+        <th>
+            Skew属性：元素在XY轴分别倾斜45度
+        </th>
+    </tr>
+    <tr>
+        <td class="TranslateStyle">
+            <div>
+                <a href="http://www.hhkj.nx.cn">Translate</a>
+            </div>
+        </td>
+        <td class="TranslateXStyle">
+            <div>
+                <a href="http://www.hhkj.nx.cn">TranslateX</a>
+            </div>
+        </td>
+        <td class="TranslateYStyle">
+            <div>
+                <a href="http://www.hhkj.nx.cn">TranslateY</a>
+            </div>
+        </td>
+        <td class="SkewStyle">
+            <div>
+                <a href="http://www.hhkj.nx.cn">Skew</a>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <th>
+            SkewX属性：元素在X轴倾斜-30度
+        </th>
+        <th>
+            SkewY属性：元素在Y轴倾斜30度
+        </th>
+        <th>
+            混合变形01：旋转和缩放
+        </th>
+        <th>
+            混合变形02：重新定位和倾斜
+        </th>
+    </tr>
+    <tr>
+        <td class="SkewXStyle">
+            <div>
+                <a href="http://www.hhkj.nx.cn">SkewX</a>
+            </div>
+        </td>
+        <td class="SkewYStyle">
+            <div>
+                <a href="http://www.hhkj.nx.cn">SkewY</a>
+            </div>
+        </td>
+        <td class="BlendStyle01">
+            <div>
+                <a href="http://www.hhkj.nx.cn">混变01</a>
+            </div>
+        </td>
+        <td class="BlendStyle02">
+            <div>
+                <a href="http://www.hhkj.nx.cn">混变02</a>
+            </div>
+        </td>
+    </tr>
+
+
+    <tr>
+        <th>
+            以左上角为中心点变形
+        </th>
+        <th>
+            以右下角为中心点变形
+        </th>
+        <th>
+            以右上角为中心点变形
+        </th>
+        <th>
+            以左下角为中心点变形
+        </th>
+    </tr>
+    <tr>
+        <td class="Transform-originStyle01">
+            <div>
+                <a href="http://www.hhkj.nx.cn">重定中心点01</a>
+            </div>
+        </td>
+        <td class="Transform-originStyle02">
+            <div>
+                <a href="http://www.hhkj.nx.cn">重定中心点02</a>
+            </div>
+        </td>
+        <td class="Transform-originStyle03">
+            <div>
+                <a href="http://www.hhkj.nx.cn">重定中心点03</a>
+            </div>
+        </td>
+        <td class="Transform-originStyle04">
+            <div>
+                <a href="http://www.hhkj.nx.cn">重定中心点04</a>
+            </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

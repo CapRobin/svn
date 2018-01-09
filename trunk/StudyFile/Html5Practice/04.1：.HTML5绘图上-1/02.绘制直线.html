@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5Canvas元素绘制直线</title>
+
+    <style>
+        #mycanvas {
+            border: 2px solid #000000;
+        }
+    </style>
+
+    <script type="text/javascript">
+        window.onload = function () {
+            var mycanvas = document.getElementById("mycanvas");
+            var mycontext = mycanvas.getContext("2d");
+            /*第一条直线*/
+            mycontext.font = "40 Courier New";
+            mycontext.fillStyle = "blue";
+            mycontext.fillText("第一条直线", 50, mycanvas.height / 2 - 130);
+            /*绘制第一个图形*/
+            mycontext.beginPath();
+            mycontext.moveTo(50, mycanvas.height / 2 - 100);
+            mycontext.lineTo(200, mycanvas.height / 2 - 100);
+            mycontext.strokeStyle = "#ff0000";
+            mycontext.lineWidth = "30";
+            mycontext.lineCap = "round";
+            mycontext.stroke();
+
+            /*第二条直线*/
+            mycontext.font = "40 Courier New";
+            mycontext.fillStyle = "blue";
+            mycontext.fillText("第二条直线", 50, mycanvas.height / 2 - 30);
+            /*绘制第二个图形*/
+            mycontext.beginPath();
+            mycontext.moveTo(50, mycanvas.height / 2);
+            mycontext.lineTo(200, mycanvas.height / 2);
+            mycontext.strokeStyle = "#ff0000";
+            mycontext.lineWidth = "30";
+            mycontext.lineCap = "butt";
+            mycontext.stroke();
+
+            /*第三条直线*/
+            mycontext.font = "40 Courier New";
+            mycontext.fillStyle = "blue";
+            mycontext.fillText("第三条直线", 50, mycanvas.height / 2 + 70);
+            /*绘制第三条直线*/
+            mycontext.beginPath();
+            mycontext.moveTo(50, mycanvas.height / 2 + 100);
+            mycontext.lineTo(200, mycanvas.height / 2 + 100);
+            mycontext.lineWidth = "30";
+            mycontext.strokeStyle = "#ff0000";
+            mycontext.lineCap = "square";
+            mycontext.stroke();
+        }
+    </script>
+
+</head>
+<body>
+<h1 align="center">4.1.02：HTML5Canvas元素绘制直线</h1><br>
+<p align="center">
+    <canvas id="mycanvas" width="300" height="500">
+        <!--如果浏览器不支持H5或Canvas元素再次对用户进行友好提示或设置替换方案！-->
+        您的浏览器不支持Canvas元素，请升级浏览器或更换其他浏览器！
+    </canvas>
+</p>
+</body>
+</html>

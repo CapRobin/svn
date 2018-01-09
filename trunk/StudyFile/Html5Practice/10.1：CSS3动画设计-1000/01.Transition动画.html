@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Transition动画</title>
+    <style type="text/css">
+        body {
+            background-color: #b3d4fc;
+        }
+
+        .divBoxStyle {
+            padding: 40px;
+        }
+
+        .transition_list {
+            width: 100px;
+            height: 100px;
+            margin-left: 10px;
+            margin-bottom: 10px;
+            background-color: red;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            line-height: 100px;
+        }
+
+        .divStyle {
+            margin: 0px auto;
+            width: 150px;
+            height: 50px;
+            margin: 0px auto;
+            line-height: 50px;
+            font-weight: bold;
+            font-size: 20px;
+            text-align: center;
+            color: white;
+            background-color: blue;
+
+            /*~~~~~为divStyle元素设置动画过度属性~~~~~*/
+
+            /*指定该动画为CSS的那个属性起作用
+            此处也可以这样写来定义某一个或几个属性的变形动画
+                transition-property: width;
+                transition-property: height;
+                transition-property: width height;
+            */
+            transition-property: all;
+            /*动画过度花费的时间，默认0秒(s)*/
+            transition-duration: 4s;
+        }
+
+        /*设置鼠标移动到元素上后动画变形后的样式效果属性*/
+        .divStyle:hover {
+            width: 400px;
+            height: 100px;
+            text-emphasis: "dsfds";
+            line-height: 100px;
+            font-size: 30px;
+        }
+
+        .divBoxStyle:hover .transition_list {
+            margin-left: 90%;
+            background-color: green;
+            color: black;
+            /*设置圆角效果*/
+            border-radius: 25px;
+            /*设置旋转360度*/
+            transform: rotate(360deg);
+        }
+
+        /*~~~~~为divBoxStyle中的每一个元素设置动画变形过度属性~~~~~*/
+        .ease {
+            /*!*规定应用过度的CSS属性的名称(此处适用于所有已定义的属性)*!
+            transition-property: all;
+            !*定义动画过度所花费的时间，默认0秒(s)*!
+            transition-duration: 5s;
+            !*定义动画过度效果的时间曲线，曲线方式包括：
+            ease(默认):：慢——>快——>慢,等同于贝塞尔曲线:cubic-bezier(0.25,0.1,0.25,1)、
+            ease-in：慢——>快,等同于贝塞尔曲线:cubic-bezier(0.42,0,1,1)、
+            ease-out：快——>慢,等同于贝塞尔曲线:cubic-bezier(0,0,0.58,1)、
+            ease-in-out：慢速开始和结束,等同于贝塞尔曲线:cubic-bezier(0.42,0,0.58,1)、
+            linear：匀速,等同于贝塞尔曲线:cubic-bezier(0,0,1,1)、*!
+            transition-timing-function: ease;*/
+
+            /*此处使用简写模式*/
+            transition: all 5s ease;
+        }
+
+        .ease-in {
+            transition: all 5s ease-in;
+        }
+
+        .ease-out {
+            transition: all 5s ease-out;
+        }
+
+        .ease-in-out {
+            transition: all 5s ease-in-out;
+        }
+
+        .linear {
+            transition: all 5s linear;
+        }
+
+        /*利用cubic-bezier函数(每个参数取值范围是0~1)来表示时间曲线，此处每个参数可自定义设置*/
+        .cubic-bezier {
+            transition: all 5s cubic-bezier(0.25, 0, 0.75, 1);
+        }
+    </style>
+</head>
+<body>
+<h1 style="text-align: center">10.1.01：Transition动画</h1><br>
+
+<div class="divStyle">动画样式一</div>
+<br>
+
+<div class="divBoxStyle">
+    <div class="transition_list ease">ease</div>
+    <div class="transition_list ease-in">ease-in</div>
+    <div class="transition_list ease-out">ease-out</div>
+    <div class="transition_list ease-in-out">ease-in-out</div>
+    <div class="transition_list linear">linear</div>
+    <div class="transition_list cubic-bezier">cubic-bezier</div>
+</div>
+
+</body>
+</html>
