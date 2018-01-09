@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5Canvas元素绘制文本换行</title>
+    <!--设置Canvas画布的样式-->
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #mcvs {
+            border: 1px solid #000000;
+            background-color: #b3d4fc;
+        }
+    </style>
+    <script type="text/javascript">
+
+        /*设置文本换行的方法*/
+        function wrapText(ctt, text, maxwidth, lineheight, x, y) {
+            //按照空格将文本字符封装到数组中
+            var words = text.split(" ");
+            //设置每行的文本对象
+            var line = "";
+            //循环写入每行文本
+            for (var n = 0; n < words.length; n++) {
+                var linetext = line + words[n] + " ";
+                //得到当前文本的一个对象
+                var mst = ctt.measureText(linetext);
+                var textwidth = mst.width;
+                if (textwidth > maxwidth) {
+                    ctt.fillText(line, x, y);
+                    line = words[n] + " ";
+                    y = lineheight + y;
+                } else {
+                    line = linetext;
+                }
+            }
+            ctt.fillText(line, x, y);
+        }
+
+        window.onload = function () {
+            var cvs = document.getElementById("mcvs");
+            var ctt = cvs.getContext("2d");
+
+            //设置标题
+            title(ctt, "bold 20px Courier New", "#ff0000", "文本换行", 250, 50);
+
+            //文本信息
+            var text = "Ningxia Huahong Network Technology Co., Ltd. is a high-tech enterprise specializing in software development, software customization and software implementation. Has a number of long-term professional engaged in software development, software customization professionals, with strong technological development capabilities, and fully meet the needs of government and enterprise information.";
+            //设置绘制区域的最大宽度
+            var maxwidth = 500;
+            //设置每行的高度
+            var lineheight = 25;
+            //设置每行开始绘制的X坐标
+            var x = (cvs.width - maxwidth) / 2;
+            //设置每行开始绘制的Y坐标
+            var y = 100;
+            //设置绘制字体的颜色
+            ctt.fillStyle = "#0000ff";
+            ctt.font = "20px Arial";
+            //调用文本换行绘制方法
+            wrapText(ctt, text, maxwidth, lineheight, x, y)
+
+        }
+
+        /*设置标题*/
+        function title(context, textstyle, textColor, text, x, y) {
+            context.font = textstyle;
+            context.fillStyle = textColor;
+            context.fillText(text, x, y)
+        }
+    </script>
+</head>
+<body>
+<h1 align="center">4.3.04：Canvas元素绘制文本换行示例</h1><br>
+<p align="center">
+    <canvas id="mcvs" width="600" height="400">
+        抱歉！您的浏览器暂不支持HTML5，请更新或更换浏览器后再次尝试，谢谢！
+    </canvas>
+</p>
+</body>
+</html>

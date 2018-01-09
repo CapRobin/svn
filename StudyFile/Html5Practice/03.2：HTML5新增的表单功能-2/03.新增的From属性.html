@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新增From属性</title>
+</head>
+<body>
+<h1 align="center">3.2.03：新增From属性练习</h1>
+<!--新增form属性：autocomplete属性：当form使用该属性时该表单下的所有元素都具备自动完成功能，
+个别元素不需要自动完成功能时可单独关闭(autocomplete="off")-->
+<h2>1、autocomplete属性</h2>
+<form action="../Practice/DemoTest.html" method="get" autocomplete="on">
+    请输入用户：<input type="text" name="user_name"><br>
+    请输入密码：<input type="password" name="user_pad"><br>
+    请输入水果：<input type="text" name="shuiguo" list="fruitlist"><br>
+    <datalist id="fruitlist">
+        <option value="pingguo">苹果</option>
+        <option value="juzi">橘子</option>
+        <option value="putao">葡萄</option>
+        <option value="xiangjiao">香蕉</option>
+    </datalist>
+    <input type="submit" value="01.全部设置自动填充提交测试">
+</form>
+
+<!--单独设置用户不需要自动完成功能-->
+<form action="../Practice/DemoTest.html" method="get" autocomplete="on">
+    请输入用户：<input type="text" name="user_name"><br>
+    请输入密码：<input type="password" name="user_pad"><br>
+    请输入水果：<input type="text" name="shuiguo" list="fruitlist" autocomplete="off"><br>
+    <datalist id="fruitlist">
+        <option value="pingguo">苹果</option>
+        <option value="juzi">橘子</option>
+        <option value="putao">葡萄</option>
+        <option value="xiangjiao">香蕉</option>
+    </datalist>
+    <input type="submit" value="02.水果取消自动完成提交测试">
+</form>
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+<!--新增form属性：novalidate属性：该元素用户form属性时即表示表单内的所有元素不做任何验证处理，直接提交-->
+<h2>3、novalidate属性</h2>
+<form action="../Practice/DemoTest.html" method="get" novalidate="true">
+    请输入邮箱：<input type="email" name="useremail" required><br>
+    请输入邮编：<input type="text" name="user_yb" pattern="[0~9]{6}" title="请输入6位数的邮政编码！" required><br>
+    <input type="submit" value="01.Form属性取消表单验证">
+</form>
+<form action="../Practice/DemoTest.html" method="get">
+    请输入邮箱：<input type="email" name="useremail"><br>
+    请输入邮编：<input type="text" name="user_yb" pattern="[0~9]{6}" title="请输入6位数的邮政编码！"><br>
+    <input type="submit" value="02.Input属性取消表单验证" formnovalidate="formnovalidate">
+</form>
+</body>
+</html>

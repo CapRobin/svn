@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5Canvas元素绘制文本对齐及度量方法</title>
+    <!--设置Canvas画布的样式-->
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #mcvs {
+            border: 1px solid #000000;
+            background-color: #ffffff;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function () {
+            var cvs = document.getElementById("mcvs");
+            var ctt = cvs.getContext("2d");
+
+            /*绘制直线*/
+            ctt.moveTo(cvs.width / 2, 0);
+            ctt.lineTo(cvs.width / 2, cvs.height);
+            ctt.strokeStyle = "#ff0000";
+            ctt.lineWidth = 2;
+            ctt.stroke();
+
+            /*设置文本对齐方式*/
+            //设置标题
+            title(ctt, "bold 20px Courier New", "#000000", "1、左对齐", 0, 50);
+            //左对齐
+            alignType(ctt, "60px 华文行楷", "blue", "华鸿科技", cvs.width / 2, 100, "left");
+
+            //设置标题
+            title(ctt, "bold 20px Courier New", "#000000", "2、右对齐", 0, 180);
+            //右对齐
+            alignType(ctt, "60px 华文行楷", "blue", "华鸿科技", cvs.width / 2, 230, "right");
+
+            //设置标题
+            title(ctt, "bold 20px Courier New", "#000000", "3、居中对齐", 110, 310);
+            //居中对齐
+            alignType(ctt, "60px 华文行楷", "blue", "华鸿科技", cvs.width / 2, 360, "center");
+
+            //设置标题
+            title(ctt, "bold 20px Courier New", "#000000", "4、Start属性设置", 85, 440);
+            //居中对齐(取决于文字排版的方式)，文字从左到右排版，Start表示左对齐，文字从右到左排版
+            //Start表示右对齐，即向文字开始写的位置对齐，此处文字是从左到右排版，即为左对齐！
+            alignType(ctt, "60px 华文行楷", "blue", "华鸿科技", cvs.width / 2, 490, "start");
+
+            //设置标题
+            title(ctt, "bold 20px Courier New", "#000000", "5、End属性设置", 0, 570);
+            //居中对齐(取决于文字排版的方式)，文字从左到右排版，End表示右对齐，文字从右到左排版
+            //End表示左对齐，即向文字书写结束的位置对齐，此处文字是从左到右排版，即为右对齐
+            alignType(ctt, "60px 华文行楷", "blue", "华鸿科技", cvs.width / 2, 620, "end");
+
+            //设置标题
+            title(ctt, "bold 20px Courier New", "#ff0000", "6、文本度量", 110, 720);
+            var mst = ctt.measureText("宁夏一点通!");
+            var mstwidth = mst.width;
+            ctt.font = "bold 20px Courier New";
+            ctt.fillStyle = "blue";
+            ctt.textAlign = "center";
+            ctt.fillText("宁夏一点通的度量长度为：" + mstwidth + "px", cvs.width / 2, 770);
+
+
+        }
+
+        /*绘制文本对齐方式*/
+        function alignType(ctt, textstyle, textColor, text, x, y, type) {
+            ctt.font = textstyle;
+            ctt.strokeStyle = textColor;
+            ctt.lineWidth = 2;
+            ctt.textAlign = type;
+            ctt.strokeText(text, x, y);
+        }
+
+        /*绘制文本方法*/
+        function title(context, textstyle, textColor, text, x, y) {
+            context.font = textstyle;
+            context.fillStyle = textColor;
+            context.fillText(text, x, y)
+        }
+    </script>
+</head>
+<body>
+<h1 align="center">4.3.03：Canvas元素绘制文本对齐及度量方法示例</h1><br>
+<p align="center">
+    <canvas id="mcvs" width="800" height="800">
+        抱歉！您的浏览器暂不支持HTML5，请更新或更换浏览器后再次尝试，谢谢！
+    </canvas>
+</p>
+</body>
+</html>

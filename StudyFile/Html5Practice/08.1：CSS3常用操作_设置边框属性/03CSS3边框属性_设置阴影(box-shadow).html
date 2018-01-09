@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3边框属性_设置阴影(box-shadow)</title>
+    <style type="text/css">
+        /*设置H1的全局属性*/
+        h1 {
+            text-align: center;
+        }
+
+        /*设置H3的全局属性*/
+        h3 {
+            text-align: center;
+        }
+
+        /*设置DIV的全局属性*/
+        div {
+            width: 300px;
+            height: 150px;
+            background-color: #31caff;
+            line-height: 150px;
+            text-align: center;
+            margin: auto;
+            /*为DIV容器设置阴影属性,五个属性分别表示：
+            水平阴影位置(必需；可为负数)，
+            垂直阴影位置(必需；可为负数)，
+            阴影模糊度(可选)
+            阴影大小(可选)
+            阴影颜色(可选)*/
+            /*Safari版*/
+            -webkit-box-shadow: 15px 15px 10px #888888;
+            /*火狐版*/
+            -moz-box-shadow: 15px 15px 10px #888888;
+            /*Opera版*/
+            -o-box-shadow: 15px 15px 10px #888888;
+            /*标准版*/
+            box-shadow: 15px 15px 10px #888888;
+        }
+
+        /*设置Input元素的全局属性*/
+        input {
+            padding: 4px; /*上线左右的内边距都是4px*/
+            border: 1px solid #999999;
+            font: Arial;
+            width: 150px;
+            background-color: #ffffff;
+            /*为Input元素设置阴影效果:五个属性分别表示：
+            水平阴影位置(必需；可为负数)，
+            垂直阴影位置(必需；可为负数)，
+            阴影模糊度(可选)
+            阴影大小(可选)
+            阴影颜色(可选)*/
+            /*Safari版*/
+            */ -webkit-box-shadow: 5px 5px 6px #888888;
+            /*火狐版*/
+            -moz-box-shadow: 5px 5px 6px #888888;
+            /*Opera版*/
+            -o-box-shadow: 5px 5px 6px #888888;
+            /*标准版*/
+            box-shadow: 5px 5px 6px #888888;
+        }
+
+        /*ID选择器设置Form表单居中*/
+        #mForm {
+            text-align: center;
+        }
+
+        /*两个伪类选择器，当鼠标移动到输入框或输入框获取焦点的时候边框变换颜色*/
+        input:hover, input:focus {
+            border-color: red;
+        }
+
+        /*ID选择器设置提交按钮宽度*/
+        .submit input {
+            width: 300px;
+            font-size: 15px;
+            color: #ffffff;
+            padding: 5px 5px;
+            border: 0px;
+            background: #31caff;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        label {
+            margin-right: 50px;
+            color: #31caff;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<h1>8.1.03：CSS3边框属性_设置阴影(box-shadow)</h1>
+<br><br>
+<h3>DIV容器</h3>
+<div>展示DIV设置阴影效果</div>
+<br>
+<h3>用户登录</h3>
+<form action="#" id="mForm">
+    <p class="name">
+        <label for="name">姓名：</label>
+        <input type="text" id="name" name="name">
+    </p>
+    <p class="email">
+        <label for="email">邮箱：</label>
+        <input type="text" id="email" name="email">
+    </p>
+    <p class="submit">
+        <input type="submit" id="submitId" value="提交">
+    </p>
+</form>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5音视频的相关方法</title>
+</head>
+<body>
+<h1 align="center">5.2.01：HTML5音视频相关方法示例</h1><br>
+
+<table border="1" width="1000" align="center" style="text-align:center; border-color: cornflowerblue" cellspacing="0"
+       border="0" bordercolor="#000000" class="ke-zeroborder">
+    <tbody>
+    <tr style="height: 80px">
+        <th style="text-align:center; width: 500px">
+            <span style="font-size: 25px">视频展示</span>
+        </th>
+        <th style="text-align:center;width: 500px;">
+            <span style="font-size: 25px">相关方法</span>
+        </th>
+    </tr>
+    <tr>
+        <td rowspan="6" style="text-align:center;">
+            <video id="videoId" width="500" height="280" controls="controls">
+                <source id="oggSrc" src="../Resources/src/nsyghr.ogg" type="video/ogg">
+                <source id="mp4Src" src="../Resources/src/nsyghr.mp4" type="video/mp4">
+                抱歉！您的浏览器暂时不支持HTML5的video标签，请更新或更换浏览器再次尝试！
+            </video>
+        </td>
+    </tr>
+    <tr style="height: 60px">
+        <td style="text-align:left;">
+            <!--检测浏览器是否支持播放MP4类型的视频文件-->
+            <button style="width: 500px; height: 60px" onclick="isSupport('video/mp4','avc1.42E01E,mp4a.40.2')"
+                    type="button">检测浏览器是否支持播放MP4视频
+            </button>
+        </td>
+    </tr>
+    <tr style="height: 60px">
+        <td style="text-align:left;">
+            <button style="width: 500px; height: 60px" onclick="isSupport('video/ogg','theora,vorbis')" type="button">
+                检测浏览器是否支持播放Ogg视频
+            </button>
+        </td>
+    </tr>
+    <tr style="height: 60px">
+        <td style="text-align:left;">
+            <button style="width: 500px; height: 60px" onclick="changeVideoSrc()" type="button">切换视频</button>
+        </td>
+    </tr>
+    <tr style="height: 60px">
+        <td style="text-align:left;">
+            <button style="width: 500px; height: 60px" onclick="videoPause()" type="button">暂停播放</button>
+        </td>
+    </tr>
+    <tr style="height: 60px">
+        <td style="text-align:left;">
+            <button style="width: 500px; height: 60px" onclick="videoPlay()" type="button">开始播放</button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<script>
+    /*检测浏览器是否支持播放相关音视频文件*/
+    function isSupport(videoType, codeType) {
+        var myVid = document.createElement('video');
+        var isSupp = myVid.canPlayType(videoType + ";codecs=" + codeType + '"')
+        if (isSupp == "") {
+            isSupp = "NO";
+            alert(isSupp + ":表示该浏览器不支持播放该音视频文件");
+        } else if (isSupp == "probably") {
+            alert(isSupp + ":表示该浏览器可能支持播放该音视频文件");
+        } else {
+            alert(isSupp + ":表示该浏览器也许支持播放该音视频文件");
+        }
+    }
+
+    /*切换视频资源*/
+    function changeVideoSrc() {
+        document.getElementById("mp4Src").src = "../Resources/src/cnxdsj.mp4"
+        document.getElementById("oggSrc").src = "../Resources/src/cnxdsj.ogg"
+        document.getElementById("videoId").load();
+
+    }
+
+    /*设置媒体暂停或播放*/
+    var myVid = document.getElementById("videoId");
+
+    function videoPause() {
+        myVid.pause();
+    }
+
+    /*开始播放*/
+    function videoPlay() {
+        myVid.play();
+    }
+</script>
+
+</body>
+</html>

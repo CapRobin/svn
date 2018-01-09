@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas绘制矩形和圆</title>
+    <style>
+        #mcvs {
+            border: 2px solid #000000;
+            background-color: #b3d4fc;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function () {
+            var mcvs = document.getElementById("mcvs");
+            var cnt = mcvs.getContext("2d");
+            /*标题一*/
+            cnt.font = "25px Courier New";
+            cnt.fillStyle = "blue";
+            cnt.fillText("绘制矩形", 90, 70);
+            /*开始绘制绘制矩形*/
+            cnt.beginPath();
+            cnt.rect(50, 125, 200, 125);
+            cnt.lineWidth = 5;//绘制线条画笔的宽度
+            cnt.strokeStyle = "green";//设置线条的颜色
+            cnt.stroke();
+            cnt.fillStyle = "blue";//设置矩形的填充颜色
+            cnt.fill();//开始填充
+
+            /*标题二*/
+            cnt.font = "25px Courier New";
+            cnt.fillStyle = "blue";
+            cnt.fillText("绘制圆圈", 390, 70);
+            /*开始绘制绘制圆圈*/
+            cnt.beginPath();
+            //设置X.Y坐标
+            var centerX = 450;
+            var centerY = mcvs.height / 2 + 35;
+            var radiuse = 80;
+            /*六个参数分别表示：圆心X坐标、圆心Y坐标、半径、这段弧线的起始弧度(此处的弧度是以x轴正方向/时钟三
+            点钟为基准、进行顺时针旋转的角度来计算的)、结束弧度、开始绘制弧度的方向(true表示逆时针绘制，false
+            表示顺时针绘制，默认顺时针绘制)*/
+            cnt.arc(centerX, centerY, radiuse, 0, 2 * Math.PI, true);
+            cnt.lineWidth = 2;
+            cnt.strokeStyle = "green";
+            cnt.stroke();
+            cnt.fillStyle = "red";//设置圆的填充色
+            cnt.fill();//开始填充
+
+        }
+    </script>
+</head>
+<body>
+<h1 align="center">4.2.02：Canvas绘制矩形和圆</h1><br>
+<p align="center">
+    <canvas id="mcvs" width="600" height="300">
+        您的浏览器暂不支持Canvas元素，请升级浏览器或更换其他浏览器！
+    </canvas>
+</p>
+
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+/*改变了字体颜色和大小*/
+h2 {
+
+    color: yellow;
+    font-size: 4em;
+}
+
+/*改变容器的宽度*/
+section#sction {
+    width: 1160px;
+}
+
+/*改变内容区的宽度*/
+section#content {
+    width: 640px;
+}
+
+/*改变右侧的宽度*/
+#right {
+    width: 300px;
+}
+
+/*改变底部的高度*/
+footer {
+    line-height: 80px;
+}
