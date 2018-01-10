@@ -4,10 +4,96 @@
     <meta charset="UTF-8">
     <title>09.03：事件拓展</title>
     <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #top_banner{
+            margin: 20px;
+            height: 120px;
+            background-color: #0000FF;
+        }
+        .bg{
+            margin: auto 150px;
+            height: 120px;
+            background-color: #18a600;
+            position: relative;
+        }
 
+        a{
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background-color: #555555;
+            color: white;
+            width: 20px;
+            text-decoration: none;
+            height: 20px;
+            text-align: center;
+            line-height: 20px;
+        }
+        .hide{
+            /*!important的使用时为了增加样式权重的方法*/
+            display: none !important;
+        }
     </style>
 </head>
 <body>
 <h1 style="text-align: center">09.03：事件拓展</h1><br><br>
+<div id="top_banner">
+    <div class="bg">
+        <img src="" alt="" name="img">
+        <a href="#" id="closeBanner" onclick="cb()">x</a>
+    </div>
+</div>
+
+<script type="text/javascript">
+    //获取元素的对象
+    var closeBanner = document.getElementById("closeBanner");
+    var topBanner = document.getElementById("top_banner");
+
+    /************事件对象的获取方式************
+    //方式一：通过页面标签的ID直接获取某一个对象
+    var obj01 = document.getElementById("closeBanner");
+    //方式二：通过页面标签class的值获取，返回的是一个数组对象
+    var obj02 = document.getElementsByClassName("bg");
+    //方式三：通过页面标签的name值获取事件的对象，返回的也是一个数组对象
+    var obj03 = document.getElementsByName("img");
+    //方式四：通过页面的标签名获取事件对象(如:div button image等)，同样返回一个数组对象(一个页面有好多相同标签的元素)
+    var obj04 = document.getElementsByTagName("");
+    //方式五_01(H5新推出)：单独获取一个
+    var obj05_01 = document.querySelector("CSS选择器");
+    //方式五_01(H5新推出)：根据一个选择器获取多个(如类名的方式、后代的方式、子代的方式等)
+    var obj05_2 = document.querySelectorAll("选择器");
+     ****************************************/
+
+
+    /***************注册事件监听的方式***************/
+    //方式一：点击事件后面直接等于匿名函数
+    //为元素设置点击事件
+    closeBanner.onclick = function () {
+        //开始修改相关元素的样式
+        /*~~~~~~~~~注意~~~~~~~~~
+        * 因为class是JavaScript的保留关键字，所以修改元素的class的值得时候必须要使用className属性进行设置，
+        *
+        * */
+        topBanner.className = "hide";
+
+        /*~~~~~~~注意~~~~~~~
+        * a标签中href属性的值至少要加上#，否则点击该标签元素时也没会被刷新(每次刷新
+        * 都会使得网页恢复到初始状态)，导致后面的console.log或其他代码都不会执行*/
+        console.log(topBanner);
+    };
+
+    //方式二：为点击事件设定一个已经存在的函数
+    /*closeBanner.onclick = cb;
+        function cb() {
+        //函数代码...........
+    }*/
+
+    //方式三：直接在标签元素内部调用onclick方法，传一个已经存在的函数即可(据说不常用，不推荐)
+    //<a href="#" id="closeBanner" onclick="cb()">x</a>
+
+</script>
 </body>
 </html>
