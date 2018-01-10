@@ -1,0 +1,60 @@
+4：Css样式属性
+	1)尺寸
+		width：
+		min-width:
+		max-width:
+		height：
+		min-height:
+		max-height:
+	2）颜色(字体)
+		color：颜色
+		opacity：透明度
+		赋值方式{
+			1、类似于red、blue关键字
+			2、类似于#FF0000十六进制
+			3、RGB(红色、绿色、蓝色)，RGB每个值的取值范围为0~255
+			4、rgba(r:红色 g:绿色 b:蓝色 a:透明度)
+		}
+	3)边框
+		border：border-width、border-style、border-color；
+		border-width: 宽度;
+		border-style: {
+			solid：实线；
+			dotted：点状虚线；
+			dashed：虚线；
+			double：双线；
+		};
+		border-color: 颜色;
+		border-top: 上边框样式，其他三边雷同
+	4) 边角
+		border-raduis:边角弧度设置{
+			border-radius: 5px;(四个角的弧度都为5px)
+			border-radius: 5px 15px(左上角和右下角弧度为:5px;右上角和左下角弧度为：15px);
+			border-radius: 5px 15px 25px;(左上角弧度：5px、右下角弧度：25px、右上角和左下角弧度：15px);
+			border-radius: 5px 15px 25px 35px;(左上角弧度：5px、右上角弧度：15px、右下角弧度：25px、左下角弧度：35px);
+		}
+	5）背景
+		background：-image、-position、-size、-repeat、-color
+		background-image：
+		background-position：图片定位，默认左上角显示(x=0px,y=0px){
+		}
+		background-size
+		background-repeat：排铺填充方式 repeat|no-repeat|repeat-x|repeat-y
+		background-color
+		
+	6)字体
+		font：
+		font-family：多个字体用逗号分开，多个字体按照先后顺序查找，直到找到为止，系统中未找到自定义的字体时则显示系统默认字体
+		font-style：设置字体为斜体/粗体等 inherit|initial|italic(斜体)|normal(正常)|oblique(倾斜)
+		font-size：字体大小(单位：百分比,px,em等)
+		font-weight:bold(粗体)
+		
+	7）文本
+		text-align：水平的对齐方式 left|center|right
+		line-height:行高设置
+		text-indent:缩进 可以设置正值或赋负值 (具体数值或百分比)
+		text-transform: 字体转换
+		
+		
+		
+		

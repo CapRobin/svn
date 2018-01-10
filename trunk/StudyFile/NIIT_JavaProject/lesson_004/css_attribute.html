@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div {
+				width: 80%;
+				height: 500px;
+				background-color: #5F9EA0;
+				margin: auto;
+			}
+			.body{
+				text-align: center;
+			}
+			
+			.mBody{
+				width: 200px;
+				height: 100px;
+				border: 2px brown solid;
+				/*边框宽度被改变*/
+				border-width: 5px;
+				border-color: yellow;
+				border-style: double;
+				border-top: 2px dashed #0000FF;
+				border-radius: 5px;
+				border-radius: 5px 15px;
+				border-radius: 5px 15px 25px;
+				border-radius: 5px 15px 25px 35px;
+			}
+			.circle01{
+				width: 100px;
+				height: 100px;
+				text-align: center;
+				line-height: 100px;
+				background-color: #F0F8FF;
+				border-radius: 50%;
+			}
+			.circle02{
+				width: 200px;
+				height: 100px;
+				text-align: center;
+				line-height: 100px;
+				background-color: #F0F8FF;
+				border-radius: 50%;
+			}
+			.circle03{
+				width: 100px;
+				height: 100px;
+				text-align: center;
+				line-height: 100px;
+				background-color: #F0F8FF;
+				border-radius: 100px 0 0 0;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="body">
+			<div>
+				<h3>第一个Div容器</h3>
+			</div><br />
+			<div>
+				<h3>第二个Div容器</h3>
+				<p class="mBody">段落显示内容</p>
+			</div><br />
+			<div>
+				<h3>第三个Div容器</h3>
+				<div class="circle01">
+					圆
+				</div><br />
+				<div class="circle02">
+					椭圆
+				</div><br />
+				<div class="circle03">
+					四分之一圆
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>
