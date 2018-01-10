@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.fontset{
+				font-family:"arial black","微软雅黑","century gothic";
+				font-style: inherit;
+				/*em单位是按照系统默认字体大小的倍数设置，默认字体大小为16px,则2em表示32px;3em表示48px*/
+				font-size: 2em;
+				/*颜色设置为粗体*/
+				font-weight: 1000;
+				
+			}
+			p{
+				background-color: #5F9EA0;
+				text-align: left;
+				line-height: 20px;
+				text-indent: 100px;
+				/*适用于英文*/
+				word-spacing: 20px;
+				/*适用于中文*/
+				letter-spacing: 20px;
+				/*大小写转换*/
+				text-transform: capitalize;
+				
+				/*下划线*/
+				/*text-decoration: underline;*/
+				/*上划线*/
+				/*text-decoration: overline;*/
+				/*删除线*/
+				text-decoration: line-through;
+			}
+			.center{
+				margin: auto;
+				width: 200px;
+				height:100px;
+				background: #5F9EA0;
+				text-align: center;
+				line-height: 100px;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 style="text-align: center;">字体</h1><br /><br />
+		<div>
+			<p>
+				段落内容<span class="fontset">字体设置(set font)</span>其他内容<br />
+				段落内容<span class="fontset">字体设置(set font)</span>其他内容<br />
+				段落内容<span class="fontset">字体设置(set font)</span>其他内容<br />
+				段落内容<span class="fontset">字体设置(set font)</span>其他内容<br />
+				My name is zhang quan dan
+			</p>
+			<div class="center">
+				<a href="#">内容上下左右居中</a>
+			</div>
+		</div>
+	</body>
+</html>
