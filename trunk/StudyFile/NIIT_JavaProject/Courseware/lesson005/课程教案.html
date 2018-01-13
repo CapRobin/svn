@@ -1,0 +1,153 @@
+一、概念
+-------------------------------------------------------
+1.层叠
+	“后面” 覆盖 “前面” （技巧:先设定大多数，再处理极个别）
+
+2.样式解析顺序
+	浏览器默认 -> 外部样式表 -> 内部样式表 -> 内联样式
+
+3.语法
+	选择器 { 
+		样式声明; 
+		...
+	}
+
+4.“块级元素” 包含 “内联元素”
+	display: block; （块状积木 是用来堆的）
+	display: inline;（一条线上的元素 从左向右排列就行）
+
+5.attribute vs property
+	attr是 html标签的属性（文本）
+	prop是  dom元素的属性（对象）
+
+
+二、选择器
+-------------------------------------------------------
+1.基本特征
+	#id
+	.class
+	tag
+
+2.attribute特征
+			 [attr]: 存在
+	 [attr = value]: 存在 且 值=value 
+	[attr != value]: 存在 且 值!=value 
+
+	[attr *= value]: 存在 且 值包含value 
+	[attr ~= value]: 存在 且 （以空格分隔的）值包含value 
+
+	[attr ^= value]: 存在 且 value为前缀
+	[attr |= value]: 存在 且 value或value-为前缀
+	[attr $= value]: 存在 且 value为后缀
+	
+3.元素关系
+	后代关系: 祖先元素   element
+	父子关系:   父元素 > element
+	所有兄弟: 兄长元素 ~ element
+	相邻兄弟: 兄长元素 + element
+
+	:first-child      子元素中的老大
+	:nth-child(序号)  ... 老几
+	:last-child		  ... 老小
+	:only-child       ... 独生子
+
+	:first-of-type       tag中的老大
+	:nth-of-type(序号)   ... 老几
+	:last-of-type		 ... 老小
+	:only-of-type		 ... 独生子
+
+4.超链接
+	a:link      未被访问
+	a:visited	已经访问
+	a:hover		鼠标悬浮
+	a:active    鼠标按下
+
+5.普通元素的特征
+	:first-letter  首字母
+	:first-line	   首行
+
+	:before        元素前面
+	:after		   元素后面
+
+	:visible	 可见
+	:hidden		 隐藏
+
+6.表单元素的特征
+	:focus			焦点
+	:enabled		启用
+	:disabled		禁用
+
+	:checked		点击选中
+	:selected		下拉选中
+
+
+三、排版
+-------------------------------------------------------
+1.盒子模型
+	width height指的是内容大小，不含padding和margin
+
+2.四个方向可分别设置
+	border: 厚度 线条类型 颜色;
+	pandding: 上 右 下 左;
+	marging: 上 右 下 左;
+
+3.定位
+	position: static; （根据自己的大小，像积木一样从上往下、在父容器中堆放）
+	position: relative; （还按static的方式堆，堆完后偏移一下）
+
+	position: absolue; （把这块积木拿出来，其它的照样堆，它在父容器中单另堆，会叠在别的上面）
+	position: fix; （也是绝对定位，但父容器是整个窗口）
+
+4.偏移（相对于左上角）
+	top: 上偏移
+	left: 左偏移
+
+5.堆叠问题
+	z-index: 哪一层（谁在上，谁在下）
+	opacity: 透明度（不完全遮挡）
+
+6.浮动
+	float: 方向; （堆到这块积木时，把它拿出来：向一个方向飘，其它积木继续）
+	clear: 方向; （指定方向，不允许浮动）
+
+
+四、元素效果
+-------------------------------------------------------
+1.背景
+	background: 颜色 url(图片) 图片重复 是否固定 定位;
+
+2.文本
+	-- 整体
+	text-indent: 		缩进
+	text-align:  		对齐
+
+	-- 局部
+	word-spacing: 		字间距
+	letter-spacing: 	字母间距
+	line-height:		行高
+
+	-- 外观
+	text-transform: 	单词大小写
+	text-decoration: 	装饰（上、下、中间 划线）
+	white-space:		处理空格
+	color:				颜色
+
+	font-family:		字体
+	font-size:			大小
+	font-weight:		粗细
+	font-style:		斜体
+
+3.列表
+	list-style: 序号类型 序号位置 url(图片)
+
+4.表格
+	
+	border-collapse: 合并相邻边框
+	border-spacing: 边框间距
+	caption-side: 标题位置
+	empty-cells: 隐藏空单元格
+
+
+
+
+

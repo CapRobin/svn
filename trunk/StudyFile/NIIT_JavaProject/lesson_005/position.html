@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>定位</title>
+		<style type="text/css">
+			div{
+				border: 1px solid red
+				;
+			}
+			div.child{
+				width: 200px;
+				height: 200px;
+				border: 1px solid green;
+				padding: 10px;
+				margin: 10px;
+			}
+			#box2{
+				position: absolute;
+				left: 200px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="parentBox">
+
+			<div id="box1" class="child">
+				我是盒子1
+			</div>
+			<div id="box2" class="child">
+				我是盒子2
+			</div>
+			<div id="box3" class="child">
+				我是盒子3
+			</div>
+		</div>
+	</body>
+
+</html>

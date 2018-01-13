@@ -1,0 +1,15 @@
+/*ID选择器格式：#id名*/
+
+#h1Id,
+#comment {
+	color: red;
+}
+
+/*Class选择器*/
+.pClass01{
+	text-align: center;
+}
+.pClass02{
+	font-size: 50px;
+	
+}
