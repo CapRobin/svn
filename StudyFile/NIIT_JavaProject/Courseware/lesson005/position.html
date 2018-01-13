@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				border: 1px solid red;
+				margin: 100px;
+				position: relative;
+			}
+			
+			div.child{
+				width: 200px;
+				height: 200px;
+				
+				border: 1px dashed yellow;
+				padding: 10px;
+				margin: 10px;
+			}
+			
+			#box2{
+				position:fixed;
+				left:10px;
+				top:10px;
+			}
+		</style>
+		
+	</head>
+	<body>
+		<div id="parentBox">
+			<div id="box1" class="child">
+				盒子1
+			</div>
+			<div id="box2" class="child">
+				盒子2
+			</div>
+			<div id="box3" class="child">
+				盒子3
+			</div>
+		</div>
+	</body>
+</html>

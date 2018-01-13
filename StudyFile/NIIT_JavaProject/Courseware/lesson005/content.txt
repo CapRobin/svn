@@ -1,0 +1,35 @@
+一、选择器
+注意：层叠样式的覆盖顺序，不是简单的后面覆盖前面，要先考虑选择器的优先级
+1.基本特征
+	#id
+	.class
+	tag
+	
+2.attribute特征
+	
+3.关系
+	祖先后辈： 祖先元素 element
+	父子关系：父亲元素 > element
+	
+
+4.超链接
+	:link    未被点击
+	:visited 点过了
+	:hover	  鼠标悬浮
+	:active  按住鼠标左键不放
+	
+
+
+二、排版
+1.定位（display:block;）
+	position: static; 
+	position: relative; 
+	position: absolute; 
+	position: fixed; 
+	
+2.堆叠的问题
+	z-index:哪一层 （谁在上，谁在下）
+	opacity:透明度（不完全遮挡）
+
+
+
