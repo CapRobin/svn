@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			/*box-shadow：为元素添加阴影
+			 * 属性
+			 * h-shadow|v-shadow|blur|spread|color
+			 * 
+			 * 
+			 * 
+			 * 
+			 * 
+			 * */
+			
+			#divId{
+				margin-top: 50px;
+			}
+			div{
+				display: inline-block;
+				margin: 20px;
+			}
+			.base{
+				width: 150px;
+				height: 150px;
+				background: #008000;
+			}
+			.default{
+				box-shadow: 5px 5px;
+			}
+			.box-blur{
+				box-shadow: -5px -5px 10px;
+			}
+			.box-blur2{
+				border-radius: 5px;
+				box-shadow: 0px 0px 10px;
+			}
+			.box-spread{
+				border-radius: 10px;
+				box-shadow: 0px 0px 0px 1px;
+			}
+			.box-color{
+				border-radius: 10px;
+				box-shadow: 0px 0px 50px 0px black;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="divId">
+		<div class="base default">BoxShadow01</div>
+		<div class="base box-blur">BoxShadow02</div>
+		<div class="base box-blur2">BoxShadow03</div>
+		<div class="base box-spread">BoxShadow04</div>
+		<div class="base box-color">BoxShadow05</div>
+		</div>
+	</body>
+</html>

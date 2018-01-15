@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			ul {
+				/*无序列表*/
+				list-style-type: circle;
+				/*有序列表*/
+				list-style-type: decimal;
+				/*按照小写字母排序*/
+				list-style-type: lower-alpha;
+				/*按照大写写字母排序*/
+				list-style-type: upper-alpha;
+				/*按照罗马字母小写排序*/
+				list-style-type: lower-roman;
+				/*按照罗马字母大写排序*/
+				list-style-type: upper-roman;
+				/*以0开头的数字排列*/
+				list-style-type: decimal-leading-zero;
+				list-style-image: url(../img/circle.jpg);
+				/*设置图片在里面
+				list-style-position: inside;
+				/*默认图片在外边*/
+				list-style-position: outside;
+			}
+			
+			ul>li{
+				width: 200px;
+				height: 35px;
+				background: #A52A2A;
+				text-align: center;
+				line-height: 35px;
+				border-radius: 6px;
+				margin: 5px;
+			}
+			ul>li:hover{
+				/*鼠标滑过某一项某一项背景变成绿色 */
+				background: #008000;
+			}
+		</style>
+	</head>
+
+	<body>
+		<ul>
+			<li>NIIT01</li>
+			<li>NIIT02</li>
+			<li>NIIT03</li>
+			<li>NIIT04</li>
+			<li>NIIT05</li>
+			<ul>
+				<li>NIIT01</li>
+				<li>NIIT02</li>
+				<li>NIIT03</li>
+				<li>NIIT04</li>
+				<li>NIIT05</li>
+			</ul>
+			<li>NIIT05</li>
+			<li>NIIT06</li>
+			<li>NIIT07</li>
+			<li>NIIT08</li>
+			<li>NIIT09</li>
+			<li>NIIT10</li>
+		</ul>
+	</body>
+
+</html>

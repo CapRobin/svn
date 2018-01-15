@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			/*普通设置方式/
+			/*table {
+				border: 1px solid #5F9EA0;
+				text-align: center;
+			}
+			
+			th{
+				border: 1px solid #5F9EA0;
+			}
+			
+			td {
+				border: 1px solid #5F9EA0;
+			}*/
+			/*可直接使用分组访问器*/
+			/*table,table>tr>th,table>tr>td {
+				border: 1px solid #5F9EA0;
+			}*/
+			/*可直接使用分组访问器*/
+			
+			table {
+				border: 1px solid #5F9EA0;
+				/**/
+				border-collapse: collapse;
+				text-align: center;
+				width: 900px;
+				height: 200px;
+			}
+			
+			th,
+			td {
+				border: 1px solid #5F9EA0;
+				width: 300px;
+				/*水平方向对齐*/
+				text-align: center;
+				/*垂直方向对齐*/
+				vertical-align: middle;
+				padding: 50px;
+				background: darkcyan;
+				color: white;
+				font-size: 35px;
+			}
+			
+			/*Table表格标题放置的位置*/
+			caption {
+				caption-side: top;
+				font-size: 30px;
+				font-weight: bold;
+			}
+		</style>
+	</head>
+
+	<body>
+		<table border="" cellspacing="" cellpadding="">
+			<caption>Java班级</caption>
+			<tr>
+				<th>班级</th>
+				<th>人数</th>
+				<th>开课时间</th>
+			</tr>
+			<tr>
+				<td>A班</td>
+				<td>50</td>
+				<td>2017-8-25</td>
+			</tr>
+			<tr>
+				<td>B班</td>
+				<td>45</td>
+				<td>2017-12-25</td>
+			</tr>
+			<tr>
+				<td>A班</td>
+				<td>55</td>
+				<td>2017-12-29</td>
+			</tr>
+		</table>
+	</body>
+
+</html>

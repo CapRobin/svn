@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.btn{
+				/*变成内联的块状元素*/
+				display: inline-block;
+				width: 150px;
+				height: 35px;
+				background-color:#5F9EA0;
+				text-align: center;
+				line-height: 35px;
+				/*文本修饰：去掉下划线*/
+				text-decoration: none;
+				border-radius: 6px;
+				color: white;
+			}
+			/*通过class使用伪类选择器,鼠标滑过之后变换颜色*/
+			.btn:hover{
+				color: red;
+				background-color: #7FFFD4;
+			}
+			.btn:active{
+				color: blue;
+				background-color: #FFFF00;
+			}
+			
+			ul{
+				/*去掉无需列表前面的点*/
+				list-style: none;
+			}
+			ul>li{
+				width: 200px;
+				height: 35px;
+				background: #A52A2A;
+				text-align: center;
+				line-height: 35px;
+				border-radius: 6px;
+				margin: 5px;
+			}
+			ul>li:hover{
+				/*鼠标滑过某一项某一项背景变成绿色 */
+				background: #008000;
+			}
+		</style>
+	</head>
+	<body>
+		<!--按钮实现方式的比较-->
+		<a href="#" class="btn">按钮</a>
+		<button class="btn">按钮</button>
+		<ul>
+			<li>NIIT01</li>
+			<li>NIIT02</li>
+			<li>NIIT03</li>
+			<li>NIIT04</li>
+			
+		</ul>
+	</body>
+</html>
