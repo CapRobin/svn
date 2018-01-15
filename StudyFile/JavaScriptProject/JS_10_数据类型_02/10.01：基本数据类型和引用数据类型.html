@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>10.01：基本数据类型和引用数据类型</title>
+    <script type="text/javascript">
+        /*********JS数据类型*********
+         * 1、按照简单/复杂度分为
+         *      基本(简单)数据类型：如Number、String、Boolean、Undefined、Null
+         *      引用(复杂)数据类型：Object、Array、Date等
+         * 2：基本数据类型直接在栈内存中存储值；如Number、String、Boolean、Undefined、Null
+         * 3：引用数据类型存储模式：在栈内存中存储地址(哈希值)，在堆内存中存储具体的值；如Object、Array、Date等
+         * 4：基本类型和引用类型的区别：
+         * 5：
+         *
+         * */
+
+        //基本数据类型
+        var str = "hello";
+        var num = 250;
+        //引用数据类型
+        /****************************************************************
+          在内存中函数(function)是被单独存储在一个空间中的，它只是一个模板，谁使用谁调用该
+          方法即可 如果函数中出现对象的属性和事件，那么表示谁调用(谁new)这个函数谁就是该对象
+         ****************************************************************/
+        function Person(name) {
+            this.name = name;
+            this.content = "我是显示内容";
+            this.sayHi = function () {
+                /*此处this.name表示张全蛋01/张全蛋02/张全蛋03/张全蛋04/张全蛋05*/
+                alert(this.name+"说你好！");
+            }
+        }
+        /******************************************************
+         在此创建的每一个对象都被存储到堆内存中，而对象的function函数(模板
+         函数)被单独存放在一个空间中，而且只存储一个，因为他们的模板一样!
+         ******************************************************/
+        var per01 = new Person("张全蛋01");
+        var per02 = new Person("张全蛋02");
+        var per03 = new Person("张全蛋03");
+        var per04 = new Person("张全蛋04");
+        var per05 = new Person("张全蛋05");
+    </script>
+</head>
+<body>
+<h1 style="text-align: center">10.01：基本数据类型和引用数据类型</h1><br><br>
+</body>
+</html>
