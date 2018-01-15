@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#divId{
+				margin: 30px;
+			}
+			
+			/* display：所有元素显示是可以设置改变的
+			 * 1、inline 行内元素没有宽和高
+			 * 2、display: inline-block;行内块状元素可用设置宽和高
+			 * 3、display: block;块状元素前后有换行符
+			 * 
+			 * 
+			 * */
+			a{
+				background: yellow;
+				width: 100px;
+				height: 30px;
+				/*display: inline;*/
+				/*display: inline-block;*/
+				display: block;
+			}
+			.ul01 li,.ul02 li{
+				background: #008B8B;
+				width: 60px;
+				height: 30px;
+			}
+			.ul01 li{
+				display: inline;
+			.ul02 li{
+				display: inline-block;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="divId">
+			
+		<h2>行内元素</h2>
+		<a href="#">超链接</a>
+		<ul class="ul01">
+			<li>NIIT01</li>
+			<li>NIIT02</li>
+			<li>NIIT03</li>
+			<li>NIIT04</li>
+			<li>NIIT05</li>
+		</ul>
+		<ul class="ul02">
+			<li>NIIT01</li>
+			<li>NIIT02</li>
+			<li>NIIT03</li>
+			<li>NIIT04</li>
+			<li>NIIT05</li>
+		</ul>
+		</div>
+	</body>
+</html>

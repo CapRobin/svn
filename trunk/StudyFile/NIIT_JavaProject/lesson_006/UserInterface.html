@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>用户界面</title>
+		<style type="text/css">
+			
+			#divId{
+				margin: 30px;
+			}
+			p{
+				background: green;
+				width: 200px;
+				height: 200px;
+				text-align: center;
+				/*outline:
+				 * 设置属性值和Border雷同
+				 * 不同：Border随着元素的形状变化，而outline只是一个矩形的轮廓 
+				 * 
+				 * 
+				 * */
+				outline-width: 2px;
+				outline-style: solid;
+				outline-color: #A52A2A;		
+				/*Border与outline的区别*/
+				border: 2px solid #0000FF;
+				border-radius: 20px;
+			}
+			input{
+				border-radius: 10px;
+				/*表示取消轮廓*/
+				outline: none;
+			}
+			/*
+			 * 鼠标样式体验 
+			 * */
+			button{
+				margin-top: 20px;
+				
+				/*鼠标默认箭头*/
+				cursor: hand;
+				/*鼠标变成小手*/
+				cursor: pointer;
+				/*鼠标变成进度圈*/
+				cursor: progress;
+				/*鼠标变成拖动样式*/
+				cursor: move;
+				/*鼠标变成文本效果*/
+				cursor: text;
+				/*鼠标变成文本问号(可用的帮助效果)*/
+				cursor: help;
+				/*十字交叉*/
+				cursor: crosshair;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="divId">
+			
+		<p>OutLine</p>
+		<input type="text"/><br />
+		<button>鼠标形状(cursor)</button>
+		</div>
+	</body>
+</html>
