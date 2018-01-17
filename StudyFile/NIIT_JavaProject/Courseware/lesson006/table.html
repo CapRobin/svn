@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body>table, table th, table td{
+				/*
+				 * 添加边框
+				 * 表格外围  + 列（th|td）  
+				 */
+				border: 1px solid red;
+			}
+			
+			table{
+				/*
+				 * 单元格边框合并方式
+				 * collapse：合并
+				 * separate：独立
+				 */
+				border-collapse: separate;
+				/*
+				 * 宽高设置（表、列）
+				 * 表优先级比列高
+				 */
+				width: 600px; 
+				height: 300px;
+			}
+			th, td{
+				width: 200px;
+				/*
+				 * 水平方向对齐方式
+				 * left|right|center
+				 */
+				text-align: left;
+				/*
+				 * 垂直方向对齐方式
+				 * top|middle|bottom
+				 */
+				vertical-align: middle;
+				padding: 10px;
+				background: grey;
+			}
+			caption{
+				/*
+				 * 标题出现的位置
+				 * top | bottom
+				 */
+				caption-side: bottom;
+			}
+		</style>
+	</head>
+	<body>
+		<table>
+			<caption>Java班级</caption>
+			<tr>
+				<th>班级</th>
+				<th>人数</th>
+				<th>开课时间</th>
+			</tr>
+			<tr>
+				<td>A班</td>
+				<td>50</td>
+				<td>2017-8-25</td>
+			</tr>
+			<tr>
+				<td>B班</td>
+				<td>45</td>
+				<td>2017-8-26</td>
+			</tr>
+			<tr>
+				<td>C班</td>
+				<td>55</td>
+				<td>2017-12-29</td>
+			</tr>
+		</table>
+	</body>
+</html>

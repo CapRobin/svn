@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			/*
+			 * position(定位)
+			 * 2、relative:相对定位（相对于自己原来的位置）
+			 * 	布局方式和static相似
+			 * 	元素可以位移
+			 */
+			.relative{
+				position: relative;
+				background: yellowgreen;
+				height: 50px;
+				margin-bottom: 5px;
+				overflow: auto;
+			}
+			.move{
+				top: -30px;
+				left: -100px;
+				width: 50%;
+				background: red;
+			}
+			body{
+				height: 2000px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="relative">
+			<span>定位</span><span>定位</span><span>定位</span>
+			<img src="../img/banner1.jpg" width="300px" />
+			<span>定位</span><span>定位</span><span>定位</span>
+			<span>定位</span><span>定位</span><span>定位</span>
+		</div>
+		<div class="relative">
+			定位2
+		</div>
+		点点滴滴
+		<div class="relative move">
+			定位3
+		</div>
+		<div1 class="relative move">
+			定位4
+		</div1>
+	</body>
+</html>

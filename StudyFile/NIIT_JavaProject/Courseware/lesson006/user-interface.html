@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			p{
+				background: green;
+				width: 100px;
+				height: 100px;
+				/*
+				 * outline:outline-width outline-style outline-color
+				 * 设置属性值和border雷同
+				 * 不同的地方：border随着元素形状进行变化，outline是个矩形轮廓
+				 * none:取消轮廓
+				 */
+				outline-width: 2px;
+				outline-style: solid;
+				outline-color: red;
+				
+				border: 1px dashed black;
+				
+				border-radius: 10px;
+			}
+			
+			input{
+				border-radius: 10px;
+				outline: none;
+			}
+			
+			button{
+				/*默认值：箭头*/
+				cursor: default;
+				/*小手*/
+				cursor: pointer;
+				/*标识对象可移动*/
+				cursor: move; 
+				/*文本效果*/
+				cursor: text; 
+				/*等待效果*/
+				cursor: wait; 
+				/*可用的帮助*/
+				cursor: help;
+				/*十字交叉*/
+				cursor: crosshair;
+			}
+		</style>
+	</head>
+	<body>
+		<p>outline</p>
+		<input type="text" />
+		<button>cursor</button>
+	</body>
+</html>

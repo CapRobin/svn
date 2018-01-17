@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			/*
+			 * float(浮动)
+			 * 1、left ：所有元素浮动之后从左边开始排列
+			 * 2、right：所有元素浮动之后从右边开始排列
+			 */
+			.base{
+				background: mistyrose;
+				width: 300px;
+				height: 100px;
+			}
+			.float{
+				float: left;
+			}
+			.no-float{
+				clear: both;
+			}
+			.lay01{
+				
+			}
+			
+			.lay02{
+				clear: both;
+			}
+			
+			.lay03{
+				clear: both;
+			}
+			
+			.lay04{
+				
+			}
+			.lay05{
+				
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div style="background: #D2691E;">
+			<p>我不是浮动层</p>
+		</div>
+		<div>
+			<p>内部：我不是浮动层</p>
+			<div class="base lay01 float">lay01</div>
+			<div class="base lay02 float">lay02</div>
+			<div class="base lay03 float">lay03</div>
+			<div class="base lay04 float">lay04</div>
+			<div class="base lay05 float">lay05</div>
+		</div>
+		
+		<div style="background: #D2691E;" class="no-float">
+			<p>我不是浮动层</p>
+		</div>
+	</body>
+</html>

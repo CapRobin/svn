@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			/*
+			 * display （所有元素显示是可以设置改变的）
+			 * 1、inline 行内元素 没有宽高的
+			 * 2、inline-block 行内块状元素 可以设置宽高
+			 * 3、block 块状元素 前后有换行符
+			 */
+			a{
+				background:red;
+				width:200px;
+				height: 35px;
+				display: inline-block;
+			}
+			h2{
+				display: inline;
+			}
+			
+			.ul01 li, .ul02 li{
+				background:red;
+				width:60px;
+				height: 35px;
+			}
+			.ul01 li{
+				display: inline;
+			}
+			.ul02 li{
+				display: inline-block;
+			}
+		</style>
+	</head>
+	<body>
+		<h2>行内元素</h2>
+		<a href="#">超链接超链接超链接</a>
+		
+		<ul class="ul01">
+			<li>niit01</li>
+			<li>niit02</li>
+			<li>niit03</li>
+			<li>niit04</li>
+		</ul>
+		
+		<ul class="ul02">
+			<li>niit01</li>
+			<li>niit02</li>
+			<li>niit03</li>
+			<li>niit04</li>
+		</ul>
+	</body>
+</html>
