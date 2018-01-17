@@ -1,0 +1,20 @@
+1、定位+布局
+	1) static 默认布局
+	2）
+	3)
+	4) display
+	5) float
+2、访问器|访问符
+
+3、2D转换
+	transform
+	
+4、过渡
+
+5、动画
+
+6、浏览器兼容
+	-webkit-:浏览器内核支持webkit，比如Safari、Chrome
+	-ms-：IE浏览器
+	-moz-：Firefox(火狐)浏览器
+	-O-

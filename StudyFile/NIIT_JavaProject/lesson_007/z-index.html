@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			/*
+			 
+			 * z-index根据赋值的大小来显示它的叠加顺序 值越大越在上面
+			 * 
+			 * 
+			 * */
+			.lay01{
+				background: red;
+				width: 100px;
+				height: 100px;
+				border-radius: 50%;
+				position: absolute;
+				left: 200px;
+				top: 200px;
+				z-index: 10;
+			}
+			.lay02{
+				background: green;
+				width: 100px;
+				height: 100px;
+				position: absolute;
+				left: 200px;
+				top: 200px;
+				z-index: 1;
+			}
+			.lay03{
+				background: blue;
+				width: 100px;
+				height: 100px;
+				border-radius: 20%;
+				position: absolute;
+				left: 200px;
+				top: 200px;
+				z-index: 8;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="lay01"></div>
+		<div class="lay02"></div>
+		<div class="lay03"></div>
+	</body>
+</html>

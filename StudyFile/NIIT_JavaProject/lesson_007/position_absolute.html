@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>相对定位</title>
+		<style type="text/css">
+			/*absolute：相对于第一个定位不是static的祖辈*/
+			
+			.parent{
+				background: deepskyblue;
+				width: 200px;
+				height: 200px;
+				/*去掉试试*/
+				position: relative;
+			}
+			.child{
+				/*相对于Body标签(浏览器进行定位)*/
+				position: absolute;
+				background: brown;
+				width: 100px;
+				height: 100px;
+				left: 50px;
+				top: 50px;
+			}
+			.sub-child{
+				position: relative;
+				background: burlywood;
+				width: 50px;
+				height: 50px;
+				left: 20px;
+				top: 20;
+			}
+		</style>
+	</head>
+	<body>
+		<h2>绝对定位</h2>
+		<div class="parent">
+			<div class="child">
+				<div id="" class="sub-child">
+					
+				</div>
+			</div>
+		</div>
+		
+		<div>
+			<p>流布局01</p>
+		</div>
+		<div style="position: absolute;left: 100px;top: 100px;">
+			<p>流布局02</p>
+		</div>
+		<div>
+			<p>流布局03</p>
+		</div>
+		<div>
+			<p>流布局04</p>
+		</div>
+		
+	</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			/*	float
+			 * 1：float: left；所有元素浮动之后从左边开始排列
+			 * 2；1：float: right；
+			 * */
+			
+			.base {
+				background: green;
+				width: 300px;
+				height: 100px;
+				float: left;
+			}
+			
+			.nofloat {
+				/*清除左右两边的浮动*/
+				clear: both;
+			}
+			
+			.lay01 {}
+			
+			.lay02 {}
+			
+			.lay03 {}
+			
+			.lay04 {}
+			
+			.lay05 {}
+		</style>
+	</head>
+
+	<body>
+		<div style="background: grey;">
+			<p>我不是浮动层</p>
+		</div>
+		<div>
+			<p>我不是浮动层</p>
+			<div class="base lay01">lay01</div>
+			<div class="base lay02 nofloat">lay02</div>
+			<div class="base lay03 nofloat">lay03</div>
+			<div class="base lay04">lay04</div>
+			<div class="base lay05">lay05</div>
+		</div>
+		<div class="nofloat" style="background: grey;">
+			<p>我不是浮动层</p>
+		</div>
+	</body>
+
+</html>
