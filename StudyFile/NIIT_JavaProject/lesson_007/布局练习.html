@@ -1,109 +1,124 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title></title>
-		<style type="text/css">
-			.base{
-				background: deepskyblue;
-				color: white;
-				font-size: 35px;
-				border: 1px solid white;
-			}
-			.body{
-				margin: auto;
-				width: 80%;
-			}
-			h3{
-				text-align: center;
-			}
-			.head{
-				width: 100%;
-				height: 100px;
-				text-align: center;
-			}
-			.head ul{
-				list-style: none;
-				
-			}
-			.head li{
-				font-size: 20px;
-			}
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			.content{
-				text-align: center;
-				width: 100%;
-				height: 400px;
-			}
-			.nav{
-				line-height: 400px;
-				height: 400px;
-				width: 20%;
-			}
-			.mk{
-				margin: 0;
-				padding: 0;
-				height: 400px;
-				width: 79%;
-				float: left;
-			}
-			.foot{
-				width: 100%;
-				height: 80px;
-				text-align: center;
-				line-height: 80px;
-			}
-			 .mk01{
-			 	float: left;
-			 	height: 200px;
-			 }
-			 .mk02{
-			 	float: left;
-			 	height: 200px;
-			 }
-			 .mk03{
-			 	float: left;
-			 	height: 200px;
-			 }
-			 .mk04{
-			 	float: left;
-			 	height: 200px;
-			 }
-		</style>
-	</head>
-	<body>
-		<div class="body">
-		<div class="base head">
-			<h3>首页菜单</h3>
-			<ul>
-				<li>网站首页</li>
-				<li>公司简介</li>
-				<li>最新资讯</li>
-				<li>联系方式</li>
-			</ul>
-		</div>
-		<div class="base content">
-			<div class="base nav">Navigation</div>
-			<div class="base mk">
-				<div class="base mk01">第一个模块</div>
-				<div class="base mk02">第一个模块</div>
-				<div class="base mk03">第一个模块</div>
-				<div class="base mk04">第一个模块</div>
-			</div>
-		</div>
-		<div class="base foot">Footer</div>
-		
-			
-		</div>
-	</body>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        .body {
+            width: 80%;
+            margin: auto;
+            border: 1px solid #cccccc;
+            min-width: 690px;
+        }
+
+        .base {
+            text-align: center;
+            font-size: 25px;
+            box-sizing: border-box;
+            border: 1px solid white;
+        }
+
+        .header {
+            height: 80px;
+            background: #5F9EA0;
+            font-size: 20px;
+        }
+
+        .logo {
+            width: 20%;
+            height: 100%;
+            float: left;
+            background: #D2691E;
+            color: white;
+            line-height: 80px;
+            text-align: center;
+            box-sizing: border-box;
+            border-right: 1px solid white;
+        }
+
+        .navigation {
+            width: 20%;
+            height: 400px;
+            background: #18a600;
+            float: left;
+        }
+
+        .content {
+            width: 40%;
+            height: 200px;
+            float: left;
+            background: #31caff;
+        }
+
+        .footer {
+            height: 80px;
+            clear: both;
+            background: #666666;
+        }
+
+        ul {
+            width: 80%;
+            padding: 0;
+            margin: 0;
+            line-height: 80px;
+            float: left;
+            box-sizing: border-box;
+            border-left: 1px solid white;
+        }
+
+        li {
+            float: left;
+            list-style: none;
+            width: 20%;
+            text-align: center;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+
+    </style>
+    <!--外加练习————统一设置元素的lineHeight属性-->
+    <script type="text/javascript">
+        window.onload = function () {
+            var header = document.getElementById("header");
+            var navigation = document.getElementById("navigation");
+            var md01 = document.getElementById("md01");
+            var md02 = document.getElementById("md02");
+            var md03 = document.getElementById("md03");
+            var md04 = document.getElementById("md04");
+            var footer = document.getElementById("footer");
+
+            var heightArr = [navigation, md01, md02, md03, md04, footer];
+            for (var i = 0; i < heightArr.length; i++) {
+                heightArr[i].style.lineHeight = heightArr[i].offsetHeight + "px";
+                console.log(heightArr[i] + "的高度为------------->>" + heightArr[i].offsetHeight)
+            }
+//                header.style.lineHeight = "50px";
+        }
+    </script>
+</head>
+<body>
+<h1 style="text-align: center">网站布局</h1><br>
+<div class="body">
+    <div id="header" class="base header">
+        <div class="logo">企业LOGO</div>
+        <ul>
+            <li><a href="#">菜单栏01</a></li>
+            <li><a href="#">菜单栏02</a></li>
+            <li><a href="#">菜单栏03</a></li>
+            <li><a href="#">菜单栏04</a></li>
+            <li><a href="#">菜单栏04</a></li>
+        </ul>
+    </div>
+    <div id="navigation" class="base navigation">导航栏</div>
+    <div id="md01" class="base content md01">模块一</div>
+    <div id="md02" class="base content md02">模块二</div>
+    <div id="md03" class="base content md03">模块三</div>
+    <div id="md04" class="base content md04">模块四</div>
+    <div id="footer" class="base footer">底部信息</div>
+</div>
+<br><br>
+</body>
 </html>
