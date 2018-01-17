@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			/*transform
+			 * 2D转换
+			 * 1、translate (left|x,top|y) 移动元素
+			 * 	translateX：水平方向移动
+			 * 	translateY：垂直方向移动
+			 * */
+			
+			.transform{
+				width: 100px;
+				height: 100px;
+				background: #00BFFF;
+				/*水平垂直方向移动*/
+				/*-moz-transform: translate(0px,0px);
+				-webkit-transform: translate(0px,0px);
+				-ms-transform: translate(0px,0px);
+				transform: translate(50px,50px);*/
+				
+				
+				
+				/*水平方向移动*/
+				/*-moz-transform: translateX(200px);
+				-webkit-transform: translateX(200px);
+				-ms-transform: translateX(200px);
+				transform: translateX(200px);*/
+				
+				/*垂直方向移动*/
+				/*-moz-transform: translateY(200px);
+				-webkit-transform: translateY(200px);
+				-ms-transform: translateY(200px);
+				transform: translateY(200px);*/
+				
+				
+				
+				-moz-transform: translate(0px,0px);
+				-webkit-transform: translate(0px,0px);
+				-ms-transform: translate(0px,0px);
+				transform: translate(200px,200px);
+				transform: rotate(135deg);
+			}
+			
+		</style>
+	</head>
+	<body>
+		<p>不要动</p>
+		<div class="transform">
+			transform
+		</div>
+		<p>不要动</p>
+	</body>
+</html>
