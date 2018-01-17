@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			/*
+			 * position(定位)
+			 * 3、absolute:相对第一个定位不是static的祖辈
+			 * 	元素可以位移
+			 */
+			.parent{
+				background: yellowgreen;
+				width: 200px;
+				height: 200px;
+				position: relative;
+			}
+			.child{
+				position: absolute;
+				background: burlywood;
+				width: 100px;
+				height: 100px;
+				left: 50px;
+				top:50px;
+			}
+			.sub-child{
+				position: relative;
+				background: blueviolet;
+				width: 50px;
+				height: 50px;
+				left: 20px;
+				top: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<h2>绝对定位</h2>
+		<div>
+			<div class="parent">
+				<div class="child">
+					<div class="sub-child"></div>
+				</div>
+			</div>
+		</div>
+		<div>
+			<p>
+				流布局1
+			</p>
+		</div>
+		<div style="position: absolute; left: 100px; top: 100px;">
+			<p>
+				流布局2
+			</p>
+		</div>
+		<div>
+			<p>
+				流布局3
+			</p>
+		</div>
+	</body>
+</html>

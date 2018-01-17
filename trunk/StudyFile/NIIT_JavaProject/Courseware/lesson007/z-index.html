@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			/*
+			 * 值：可以正值、0、负值
+			 * 默认值：0
+			 * 值越大，层居上
+			 */
+			.lay01{
+				background: red;
+				width: 100px;
+				height:100px;
+				border-radius: 50%;
+				position: absolute;
+				left: 200px;
+				top : 200px;
+				z-index: 5;
+			}
+			.lay02{
+				background: palevioletred;
+				width: 100px;
+				height:100px;
+				position: absolute;
+				left: 200px;
+				top : 200px;
+				z-index: -10;
+			}
+			.lay03{
+				background: blue;
+				width: 100px;
+				height:100px;
+				border-radius: 20px;
+				position: absolute;
+				left: 200px;
+				top : 200px;
+				z-index: 3;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="lay01"></div>
+		<div class="lay02"></div>
+		<div class="lay03"></div>
+	</body>
+</html>

@@ -1,0 +1,119 @@
+1、css使用方式
+	1）内联样式  ：优先级最高
+	2）内部样式  ：优先级和外部样式一样，最后设置的属性起作用
+	3）外部样式
+	
+2、样式访问
+	selector{
+		属性1：属性值1;
+		属性2：属性值2;
+	}
+	
+3、访问符（访问器）
+	1）元素名称
+	2）class名称： 样式类，元素使用多个样式，以空格分隔;定义时以点开头
+	3）id：元素的唯一标识;定义时以#开头
+	4）分组访问符，通过逗号分隔访问符
+	
+4、css样式属性
+	备注:
+		top:上
+		bottom：下
+		left：左
+		right: 右
+		center:中
+	1）尺寸
+		width：
+		min-width：
+		max-width：
+		height：
+		min-height：
+		max-height：
+	2）颜色（字体）
+		color：颜色
+		opacity：透明度
+		赋值方式{
+			1、类似于red、blue关键字
+			2、类似于#FF0000十六进制
+			3、rgb(r:红色,g:绿色,b:蓝色) r\g\b：0-255
+			4、rgba(r:红色,g:绿色,b:蓝色,a:透明度)
+		}
+	3、边框
+		border：border-width border-style border-color
+			border-width:宽度
+			border-style:{
+				solid ：实线
+				dotted：点状虚线
+				dashed：虚线
+				double: 双线
+			}
+			border-color:颜色
+		border-top:上边框，其他三个边框雷同
+	4、边角
+		border-radius:四个边角设置
+			{
+				5px: 四个边角
+				5px 10px: 5px设置top-left|bottom-right ；10px设置 top-right|bottom-left
+				5px 10px 15px: 5px设置top-left; 10px设置 top-right|bottom-left;10px设置 bottom-right;
+				5px 10px 15px 20px: 从top-left顺时针设置
+			}
+	5、背景
+		background: -image -repeat -position -size -color
+		background-image：背景图片 url()
+		background-position:图片定位（默认值0，0）,（x，y）
+			赋值：{
+				1、可以具体的值
+				2、百分比
+				3、关键字（没有前后顺序）
+			}
+		background-size:图片的大小 (宽|高)
+		background-repeat：铺排填充 repeat|no-repeat|repeat-x|repeat-y
+		background-color：背景颜色
+	6、字体
+		font:
+		font-family:多个字体以逗号分隔，按顺序读取，直到找到合适的字体
+		font-style :normal|italic(斜体)|oblique(倾斜)
+						标签元素 ： i | em
+		font-size：字体大小（百分比，px，em）
+		font-weight：bold(粗体，元素b)
+	7、文本
+		text-align：水平的对齐方式 left|center|right
+		line-height：行高
+		text-indent：缩进，正值|负值 （具体值、百分比）
+		word-spacing  ：单词之间的距离（中文无效）
+		letter-spacing：字母之间的距离
+		text-transform：字符转换 uppercase(大写)|lowercase(小写)|capitalize(单词首字母大写)
+		text-decoration：文本装饰 
+			{
+				underline：下划线
+				overline ：下划线
+				line-through: 删除线
+			}
+	8、盒子模型
+	9、超链接a
+		:link    未被点击
+		:visited 点过了
+		:hover	  鼠标悬浮
+		:active  按住鼠标左键不放
+	10、list列表
+		list-style-type: {
+			没有效果        ：none
+			无序列表类型：disc | circle | square
+			有序列表类型：decimal | lower-latin | upper-latin | lower-roman | upper-roman
+			新增的类型    ：decimal-leading-zero | 
+		}
+		list-style-image: url()
+		list-style-position: inside(把标记放在文本内) | outside
+	11、表格table
+	12、box-shadow：  添加阴影
+	13、text-shadow：文本添加阴影
+	14、用户界面{
+		1、outline：轮廓
+		2、cursor：鼠标形状
+	}
+	15、display显示模式
+		1、inline 行内元素
+		2、inline-block 行内块状元素
+		3、block  块状元素
+5、css注释
+	/* */
