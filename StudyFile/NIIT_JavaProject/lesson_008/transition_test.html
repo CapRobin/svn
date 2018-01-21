@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.base{
+				background: #008080;
+				margin: 5px;
+				color: white;
+				
+				height: 200px;
+				width: 200px;
+				margin: 20px;
+				text-align: center;
+				line-height: 100px;
+				float: left;
+				text-align: center;
+				line-height: 200px;
+				-webkit-transition: all 2s linear 0s;
+				transition: transform 5s linear 0s;
+				-webkit-transition: -webkit-transform 2s ease 1s;
+				-moz-transition: -webkit-transform 2s ease 1s;
+				-ms-transition: -webkit-transform 2s ease 1s;
+				-o-transition: -webkit-transform 2s ease 1s;
+				transition: transform 2s ease 1s;
+			}
+			.div1:hover{
+				-moz-transform: translate(100px,100px);
+				-webkit-transform: translate(100px,100px);
+				-ms-transform: translate(100px,100px);
+				transform:translate(100px,100px);
+			}
+			.div2:hover{
+				-moz-transform: rotate(225deg);
+				-webkit-transform: rotate(225deg);
+				-ms-transform: rotate(225deg);
+				transform: rotate(225deg);
+			}
+			.div3:hover{
+				-moz-transform: rotate(225deg) scale(0.5);
+				-webkit-transform: rotate(225deg) scale(0.5);
+				-ms-transform: rotate(225deg) scale(0.5);
+				transform: rotate(225deg) scale(0.5);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="base div1">translate(100px,100px)</div>
+		<div class="base div2">rotate(225deg)</div>
+		<div class="base div3">rotate(225deg) scale(0.5</div>
+			
+		</div>
+	</body>
+</html>

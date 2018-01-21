@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.base{
+				background: green;
+				margin: 5px;
+				height: 100px;
+				width: 100px;
+				text-align: center;
+				line-height: 100px;
+				-webkit-transition: all 2s linear 0s;
+				transition: all 10s linear 0s;
+			}
+			/*
+			 
+				1:transition-property: 
+					all:所有可以进行过渡的属性；width|height|color|opacity
+				2：transition-duration: 
+					过渡的动画所持续的时间，具体的值比如1s,1000ms
+				3：transition-delay: 
+				4：transition-timing-function: 
+					时间函数(时间曲线)：
+						linear：线性运动(匀速)
+						ease：慢开始-快-慢
+						ease-in：以慢速开始
+						ease-out：以慢速结束
+						ease-in-out：慢速开始+慢速结束
+						
+			 * 
+			 * 
+			 * 
+			 * 
+			 * */
+			.div1{
+				transition-property: width,height;
+				transition-duration: 1s,1s;
+				transition-timing-function: ease,ease;
+				transition-delay: 1s,1s;
+				transition: width 1s ease 1s,height 1s linear 1s; 
+			}
+			.div1:hover{
+				width: 150px;
+				height: 150px;
+			}
+			.div2:hover{
+				background: blue;
+			}
+			.div3:hover{
+				/*透明度*/
+				opacity: 0.2;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="base div1">1</div>
+		<div class="base div2">2</div>
+		<div class="base div3">3</div>
+		<div class="base div4">4</div>
+	</body>
+</html>
