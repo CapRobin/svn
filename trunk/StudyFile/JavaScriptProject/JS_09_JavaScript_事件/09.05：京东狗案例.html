@@ -3,27 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <title>09.05:：京东狗案例</title>
+    <style type="text/css">
+        .divClass {
+            width: 300px;
+            height: 300px;
+            text-align: center;
+            margin: auto;
+        }
+    </style>
     <script type="text/javascript">
         //页面加载完成之后执行
         window.onload = function () {
             var img = document.getElementById("image");
+            var innerClass = document.getElementById("innerClass");
             //鼠标进入的时候显示图片
             img.onmousemove = function () {
+                innerClass.innerHTML = "鼠标移入";
                 img.src = "img/jd2.png";
-                console.log("~~~~~~~~~~~~~~")
             };
 
             //鼠标移除时候显示图片
             img.onmouseout = function () {
+                innerClass.innerHTML = "鼠标移出";
                 img.src = "img/jd1.png";
-                console.log("~~~~~~~~~~~~~~")
             }
 
         }
     </script>
 </head>
 <body>
+
 <h1 style="text-align: center">09.05:：京东狗案例</h1><br><br>
-<img style="text-align: center" id="image" src="img/jd1.png">
+<div class="divClass">
+    <div id="innerClass">默认显示</div>
+    <img style="text-align: center" id="image" src="img/jd1.png">
+</div>
 </body>
 </html>

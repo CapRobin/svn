@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>12.01：Dom的节点获取</title>
+</head>
+<body>
+<h1 style="text-align: center">12.01：Dom的节点获取</h1><br><br>
+<div class="box" id="parent">
+    <p>我是一个P标签</p>
+    <div class="son">我不是Son</div>
+</div>
+<div class="box">我是凑热闹的</div>
+<br>
+<hr>
+
+
+<h3>实例：点击按钮修改列表每一项的背景颜色、文字大小、字体颜色、及外边距</h3>
+<button id="btn">点击修改列表样式</button>
+<ul>
+    <li>美国iPhone用户集体状告苹果</li>
+    <li>美国iPhone用户集体状告苹果</li>
+    <li>美国iPhone用户集体状告苹果</li>
+    <li>美国iPhone用户集体状告苹果</li>
+    <li>美国iPhone用户集体状告苹果</li>
+    <li>美国iPhone用户集体状告苹果</li>
+</ul>
+
+<script type="text/javascript">
+
+    //获取DOM节点对象的常规方式有以下几种
+    //var obj01 = document.getElementById("parent");
+    //var obj02 = document.getElementsByClassName("");
+    //var obj03 = document.getElementsByTagName("");
+    //var obj04 = document.getElementsByName("");
+
+    /*
+    * 该方式无论获取class的元素有几个，都是以数组的形式返回；所以此处不再能直接使用
+    * box.style.background = "red"的方式为元素设置样式，因为数组没有style方法，
+    * 想要操作元素必须通过数组下标的形式来获得具体的元素对象，并对其进行样式设定
+    * */
+    var box = document.getElementsByClassName("box");
+    console.log(box);
+    box[0].style.background = "red";
+    box[1].style.background = "green";
+
+    /******************实例演示******************/
+    var btn = document.getElementById("btn");
+    var liArray = document.getElementsByTagName("li");
+    console.log(liArray);
+    btn.onclick = function () {
+        for (var i = 0; i < liArray.length; i++) {
+            liArray[i].style.color = "white";
+            liArray[i].style.backgroundColor = "green";
+            liArray[i].style.fontSize = "30px";
+            liArray[i].style.marginTop = "5px";
+        }
+    }
+</script>
+</body>
+</html>

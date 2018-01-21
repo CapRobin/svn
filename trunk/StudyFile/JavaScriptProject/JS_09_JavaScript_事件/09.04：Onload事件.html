@@ -3,9 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>09.04：Onload事件</title>
+    <style type="text/css">
+        div {
+            text-align: center;
+            margin: auto;
+        }
+    </style>
     <script type="text/javascript">
-        /*在代码编写过程中为了代码整洁或其他原因需要将JavaScript代码放到顶部，那么就必须使用onload事件*/
-        //window.onload表示将页面的所有东西(DOM结果、img图片、文本内容等)加载完成之后在开始执行函数后面的东西
+        /*在代码编写过程中为了代码整洁或其他原因需要将JavaScript代码放到顶部，
+        那么就需要使用onload事件。window.onload表示将页面的所有东西(DOM结果、
+        img图片、文本内容等)加载完成之后在开始执行函数后面的东西，但是该方法有弊
+        端，如果页面中有大量的图片或加载耗时的东西该方法将不再被适用*/
         window.onload = function () {
             alert("图片加载完毕！")
         }
@@ -13,8 +21,8 @@
 </head>
 <body>
 <h1 style="text-align: center">09.04：Onload事件</h1><br><br>
-
-<img src="https://www.baidu.com/img/bd_logo1.png">
-
+<div>
+    <img src="https://www.baidu.com/img/bd_logo1.png">
+</div>
 </body>
 </html>
