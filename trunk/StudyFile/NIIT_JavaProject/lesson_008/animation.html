@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.base{
+				background: green;
+				margin: 5px;
+				width: 100px;
+				height: 100px;
+				text-align: center;
+				line-height: 100px;
+			}
+			.div1{
+				animation: base-animation 2s;
+				animation-name: base-animation;
+				/*动画持续时间*/
+				animation-duration: 1000ms;
+				/*动画时间函数*/
+				animation-timing-function: ease;
+				/*动画延迟执行时间*/
+				animation-delay: 100ms;
+				/*动画执行次数*/
+				animation-iteration-count: infinite;
+				animation-direction: alternate;
+				animation-play-state: paused;
+			}
+			.div1:hover{
+				animation-play-state: paused;
+			}
+			.div2{
+				animation:base-animation2 2s linear 0s infinite;
+			}
+			
+			/*定义的动画名称*/
+			@keyframes base-animation{
+				from{
+					width:100px;
+					height: 100px;
+				}
+				to{
+					width: 200px;
+					height: 200px;
+				}
+			}
+			/*定义的动画名称*/
+			@keyframes base-animation2{
+				0%{
+					
+				}
+				50%{
+					transform: rotate(180px);
+				}
+				100%{
+					transform: rotate(360px);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="base div1">1</div>
+		<div class="base div2">2</div>
+		<div class="base div3">3</div>
+		<div class="base div4">4</div>
+	</body>
+</html>

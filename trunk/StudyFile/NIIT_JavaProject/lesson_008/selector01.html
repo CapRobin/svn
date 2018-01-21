@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        /*
+
+
+
+        */
+        h1 {
+            color: red;
+        }
+
+        #idSel {
+            background: yellowgreen;
+        }
+
+        .className {
+            font-size: 50px;
+        }
+
+        * {
+            border: 1px solid darkcyan;
+            padding: 5px;
+            margin: 5px;
+        }
+
+        .tongpei * {
+            color: rosybrown;
+            border: none;
+            padding: 0px;
+            margin: 0px;
+        }
+
+        *[href] {
+            color: blue;
+        }
+
+
+        .parent *{
+            border: 2px solid red;
+            padding: 20px;
+            margin: 20px;
+        }
+        .parent p{
+            background: black;
+            color: red;
+        }
+        .parent>div>div>p{
+            background: red;
+            color: green;
+        }
+        /*找相邻的下一个元素*/
+        .parent ul li+li{
+            color: green;
+        }
+        /*找相邻的下一个所有兄弟元素*/
+        .parent ul li~li{
+            color: green;
+        }
+
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+<div>
+    <h1>元素名称访问符</h1>
+    <div id="idSel">id访问符</div>
+    <div class="className">class访问符</div>
+    <div class="tongpei">
+        <p>内部统配符元素</p>
+        <hr>
+        <span>测试通配符</span>
+    </div>
+    <div class="attribute">
+        <a href="#1" class="test_a"></a>
+        <a href="#2" class="test_a abc"></a>
+        <a href="#3" class="test_b"></a>
+    </div>
+    <hr>
+    <div class="parent">
+    <div>子元素
+        <div>孙子元素
+            <p>重孙元素</p>
+        </div>
+    </div>
+    </div>
+
+    <div class="parent">
+        <ul>
+            <li>Niit01</li>
+            <li>Niit02</li>
+            <li>Niit03</li>
+            <li>Niit04</li>
+        </ul>
+        <ul>
+            <li>Niit01</li>
+            <li>Niit02</li>
+            <li>Niit03</li>
+            <li>Niit04</li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

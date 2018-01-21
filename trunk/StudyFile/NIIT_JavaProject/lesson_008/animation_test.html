@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				background: #FEEFDC;
+			}
+			.fz{
+				width: 100px;
+				height: 100px;
+			}
+			.fz:hover{
+				-moz-animation: fz-animation 1s linear 0s infinite;
+				-ms-animation: fz-animation 1s linear 0s infinite;
+				-webkit-animation: fz-animation 1s linear 0s infinite;
+				-o-animation: fz-animation 1s linear 0s infinite;
+				animation: fz-animation 1s linear 0s infinite;
+			}
+			@-moz-keyframes -moz-fz-animation{
+				0%{
+					transform: rotate(0deg);
+				}
+				50{
+					transform: rotate(180deg);
+				}
+				100%{
+					transform: rotate(360deg);
+				}
+			}
+			@-webkit-keyframes -webkit-fz-animation{
+				0%{
+					transform: rotate(0deg);
+				}
+				50{
+					transform: rotate(180deg);
+				}
+				100%{
+					transform: rotate(360deg);
+				}
+			}
+			@-ms-keyframes -ms-fz-animation{
+				0%{
+					transform: rotate(0deg);
+				}
+				50{
+					transform: rotate(180deg);
+				}
+				100%{
+					transform: rotate(360deg);
+				}
+			}
+			@-o-keyframes -o-fz-animation{
+				0%{
+					transform: rotate(0deg);
+				}
+				50{
+					transform: rotate(180deg);
+				}
+				100%{
+					transform: rotate(360deg);
+				}
+			}
+			@keyframes fz-animation{
+				0%{
+					transform: rotate(0deg);
+				}
+				50{
+					transform: rotate(180deg);
+				}
+				100%{
+					transform: rotate(360deg);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<h1>风筝练习</h1>
+		<div class="fz">
+			<img src="../img/fz.jpg" width="100px"/>
+		</div>
+	</body>
+</html>
