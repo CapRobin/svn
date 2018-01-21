@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>L01_02：列表(List)</title>
+    <style type="text/css">
+        .li {
+            width: 20%;
+            border: 1px solid #D2691E;
+            background: #008B8B;
+            color: white;
+            font-size: 20px;
+            padding: 20px;
+            /*取消该元素列表样式(前面的排序标记)*/
+            list-style: none;
+            /*所有元素左浮动*/
+            float: left;
+            /*添加该属性后border边框直接叠加在容器的上面不另外占用像素空间*/
+            box-sizing: border-box;
+        }
+
+        .li02, .li03, .li04, .li05 {
+            border-left: none;
+        }
+    </style>
+</head>
+<body>
+<h1 style="text-align: center">L01_02：列表(List)</h1><br>
+<hr>
+<h3>无序列表：</h3>
+<div>
+    <!--点标记-->
+    <ul type="disc">
+        <li>乔布斯</li>
+        <li>巴菲特</li>
+        <li>奥巴马</li>
+    </ul>
+    <!--圆圈标记-->
+    <ul type="circle">
+        <li>马化腾</li>
+        <li>李彦宏</li>
+        <li>刘强东</li>
+    </ul>
+    <!--正方形标记-->
+    <ul type="square">
+        <li>张三</li>
+        <li>李四</li>
+        <li>王五</li>
+    </ul>
+</div>
+
+<h3>有序列表：</h3>
+<div>
+    <!--按照数字排序-->
+    <ol type="1">
+        <li>乔布斯</li>
+        <li>巴菲特</li>
+        <li>奥巴马</li>
+    </ol>
+    <!--按照小写字母排序-->
+    <ol type="a">
+        <li>马化腾</li>
+        <li>李彦宏</li>
+        <li>刘强东</li>
+    </ol>
+    <!--按照大写字母排序-->
+    <ol type="A">
+        <li>张三</li>
+        <li>李四</li>
+        <li>王五</li>
+    </ol>
+    <!--按照小写罗马字母排序-->
+    <ol type="i">
+        <li>张小龙</li>
+        <li>贾跃亭</li>
+        <li>孙正义</li>
+    </ol>
+    <!--按照大写罗马字母排序-->
+    <ol type="I">
+        <li>张朝阳</li>
+        <li>柳传志</li>
+        <li>任正非</li>
+    </ol>
+</div>
+
+<h3>有序无序列表嵌套：</h3>
+<!--此处使用知识点：1：有序和无序列表混合使用; 2：网页浮动布局-->
+<div>
+    <ul type="circle" style="margin: 20px;padding: 20px">
+        <li class="li li01">宁夏
+            <ol type="1">
+                <li>宁夏市01
+                    <ul>
+                        <li>宁夏特产01</li>
+                        <li>宁夏特产02</li>
+                        <li>宁夏特产03</li>
+                    </ul>
+                </li>
+                <li>宁夏市02
+                    <ul>
+                        <li>宁夏特产01</li>
+                        <li>宁夏特产02</li>
+                        <li>宁夏特产03</li>
+                    </ul>
+                </li>
+                <li>宁夏市03
+                    <ul>
+                        <li>宁夏特产01</li>
+                        <li>宁夏特产02</li>
+                        <li>宁夏特产03</li>
+                    </ul>
+                </li>
+                <li>宁夏市04
+                    <ul>
+                        <li>宁夏特产01</li>
+                        <li>宁夏特产02</li>
+                        <li>宁夏特产04</li>
+                    </ul>
+                </li>
+            </ol>
+        </li>
+        <li class="li li02">陕西
+            <ol type="A">
+                <li>陕西市01
+                    <ul>
+                        <li>陕西特产01</li>
+                        <li>陕西特产02</li>
+                        <li>陕西特产01</li>
+                    </ul>
+                </li>
+                <li>陕西市02
+                    <ul>
+                        <li>陕西特产01</li>
+                        <li>陕西特产02</li>
+                        <li>陕西特产01</li>
+                    </ul>
+                </li>
+                <li>陕西市03
+                    <ul>
+                        <li>陕西特产01</li>
+                        <li>陕西特产02</li>
+                        <li>陕西特产03</li>
+                    </ul>
+                </li>
+                <li>陕西市4
+                    <ul>
+                        <li>陕西特产01</li>
+                        <li>陕西特产02</li>
+                        <li>陕西特产03</li>
+                    </ul>
+                </li>
+            </ol>
+        </li>
+        <li class="li li03">甘肃
+            <ol type="I">
+                <li>甘肃市01
+                    <ul>
+                        <li>甘肃特产01</li>
+                        <li>甘肃特产02</li>
+                        <li>甘肃特产03</li>
+                    </ul>
+                </li>
+                <li>甘肃市02
+                    <ul>
+                        <li>甘肃特产01</li>
+                        <li>甘肃特产02</li>
+                        <li>甘肃特产03</li>
+                    </ul>
+                </li>
+                <li>甘肃市03
+                    <ul>
+                        <li>甘肃特产01</li>
+                        <li>甘肃特产02</li>
+                        <li>甘肃特产03</li>
+                    </ul>
+                </li>
+                <li>甘肃市04
+                    <ul>
+                        <li>甘肃特产01</li>
+                        <li>甘肃特产02</li>
+                        <li>甘肃特产03</li>
+                    </ul>
+                </li>
+            </ol>
+        </li>
+        <li class="li li04">青海
+            <ol type="a">
+                <li>青海市01
+                    <ul>
+                        <li>青海特产01</li>
+                        <li>青海特产02</li>
+                        <li>青海特产03</li>
+                    </ul>
+                </li>
+                <li>青海市02
+                    <ul>
+                        <li>青海特产01</li>
+                        <li>青海特产02</li>
+                        <li>青海特产03</li>
+                    </ul>
+                </li>
+                <li>青海市03
+                    <ul>
+                        <li>青海特产01</li>
+                        <li>青海特产02</li>
+                        <li>青海特产03</li>
+                    </ul>
+                </li>
+                <li>青海市04
+                    <ul>
+                        <li>青海特产01</li>
+                        <li>青海特产02</li>
+                        <li>青海特产03</li>
+                    </ul>
+                </li>
+            </ol>
+        </li>
+        <li class="li li05">新疆
+            <ol type="i">
+                <li>新疆市01
+                    <ul>
+                        <li>新疆特产01</li>
+                        <li>新疆特产02</li>
+                        <li>新疆特产03</li>
+                    </ul>
+                </li>
+                <li>新疆市02
+                    <ul>
+                        <li>新疆特产01</li>
+                        <li>新疆特产02</li>
+                        <li>新疆特产03</li>
+                    </ul>
+                </li>
+                <li>新疆市03
+                    <ul>
+                        <li>新疆特产01</li>
+                        <li>新疆特产02</li>
+                        <li>新疆特产03</li>
+                    </ul>
+                </li>
+                <li>新疆市4
+                    <ul>
+                        <li>新疆特产01</li>
+                        <li>新疆特产02</li>
+                        <li>新疆特产03</li>
+                    </ul>
+                </li>
+            </ol>
+        </li>
+    </ul>
+</div>
+<div style="clear: both"><br><br>
+    <hr>
+</div>
+</body>
+</html>

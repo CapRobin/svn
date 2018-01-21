@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson_01_01：NIIT培训第一堂课</title>
+    <script type="text/javascript">
+        window.onload = function () {
+            var btn = document.getElementById("btn");
+            var count = 0;
+            btn.onclick = function () {
+                if (count === 0) {
+                    alert("哎 还真敢点我啊！");
+                } else {
+                    alert("这已经是你第" + (count + 1) + "次点我了");
+                }
+                count++;
+            }
+        }
+    </script>
+
+</head>
+<body>
+<h1 style="text-align: center">Lesson_01_01：NIIT培训第一堂课</h1><br><br>
+<!--在网页中画一条水平线-->
+<h3>1、hr标签在网页中添加一条水平线"</h3>
+<hr><br>
+
+<h3>2、H标签使用</h3>
+<div>
+    <h1>我是标题元素H1</h1>
+    <h2>我是标题元素H2</h2>
+    <h3>我是标题元素H3</h3>
+    <h4>我是标题元素H4</h4>
+    <h5>我是标题元素H5</h5>
+    <h6>我是标题元素H6</h6>
+</div><br>
+
+<!--为Div添加行内样式-->
+<h3>3、使用Div容器为文本添加行内样式</h3>
+<div style="color: red;text-decoration: underline;font-size: 35px">我是Div容器中得文本内容</div><br>
+
+<h3>4、点击按钮弹框(JS代码控制)</h3>
+<button id="btn">点我试试</button><br>
+
+<h3>5、P标签Span标签、Strong标签、及其em标签使用使用使用</h3>
+<!--
+    <spam>标签  ：文本包裹标签
+    <p>标签     ：段落标签
+    <em>标签    ：普通强调标签
+    <strong>标签：强烈强调标签
+-->
+<span>我不是段落</span><br>
+我也不是段落
+<p>我才是是段落<strong>我是非常强烈的强调</strong>我才是是段落<em>我只是普通强调</em>我才是是段落我才是是段落</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
