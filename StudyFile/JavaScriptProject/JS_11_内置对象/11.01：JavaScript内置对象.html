@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>11.01：JavaScript内置对象</title>
+    <script type="text/javascript">
+        /***********内置对象***********
+         * 1、
+         *
+         *
+         *
+         *
+         *
+         * */
+
+        //內置对象————Array(数组)
+        var arr01 = new Array();
+        var  arr02 = 88;
+        var  arr03 = [];
+        var arr04 = {};
+        function fn(arry) {
+            /*检测传入参数是不是数组类型
+            * 检测语法：参数 instanceof 对象名称
+            * H5新增检测数组：Array.isArray(参数)
+            * */
+            console.log(arry instanceof Array);
+            console.log("检查传入参数是否为数组类型(H5新增)---->>"+ Array.isArray(arry));
+        }
+        fn(arr01);
+        fn(arr02);
+        fn(arr03);
+        fn(arr04);
+
+        var arry01 = ["柳传志","巴菲特","乔布斯","马云","马化腾","李彦宏"];
+        console.log("打印数组自己本身的值--------->："+arry01.valueOf());
+
+
+        console.log("-----------Person对象判断-----------");
+        //Persong对象
+        function Person() {
+
+        }
+        var per = new Person();
+        var p = "test";
+        function fn01(pe) {
+            console.log(pe  instanceof Person)
+        }
+        //调用检测
+        fn01(per);
+        fn01(p);
+
+        /*--------------数组的堆栈操作--------------
+        * 原则：后进先出(数组第一个元素最后取出)
+        * */
+        console.log("--------------堆栈操作--------------\n循环添加元素------------>>");
+        var arry02 = [];
+        //循环添加元素
+        for(var i = 0;i <10;i++){
+            //在数组末尾添加一个或多个元素，并返回新的长度
+            arry02.push("元素"+i);
+        }
+        console.log(arry02);
+        //循环打印取出元素(先取出最后一个放入的元素)
+        console.log("循环取出元素------------>>");
+        for(var i = 0;i <10;i++){
+            //删除并返回数组的最后一个元素
+            console.log("第"+(i+1)+"次取出的元素为----->>"+arry02.pop());
+            console.log(arry02);
+        }
+
+        /*--------------数组的队列操作--------------
+        * 原则：先进先出(数组第一个元素首先取出)
+        * */
+        console.log("--------------队列操作--------------\n循环添加元素------------>>");
+        var arry03 = [];
+        //循环添加元素
+        for(var i = 0;i <10;i++){
+            //在数组开头添加一个或多个元素，并返回新的长度
+            arry03.unshift("元素"+i);
+        }
+        console.log(arry03);
+        //循环打印取出元素(先取出第一个放入的元素)
+        console.log("循环取出元素------------>>");
+        for(var i = 0;i <10;i++){
+            //删除并返回数组的第一个元素
+            console.log("第"+(i+1)+"次取出的元素为----->>"+arry03.shift());
+            console.log(arry03);
+        }
+
+
+        /*数组排序
+        * sort()函数不传任何参数时排序有弊端，一般使用都会传入规则函数(参数)
+        * sort()函数是按照Unicode编码进行排序，规则是先将两个值的第
+        *   一位进行比较排序，如果第一位相等再比较他们的第二位进行排序
+        * */
+        console.log("\n\n--------------数组排序------------>>");
+        var arry04 = [35,28,46,18,55,75,8,17,2,47];
+        //错误排序演示
+        console.log(arry04.sort());
+
+
+        //传入规则函数
+        /*规则函数:将数组的相邻两个元素进行比较
+        * 返回值 < 0; 则a会排到b之前
+        * 返回值 = 0; 则a和b的相对位置不变
+        * 返回值 > 0; 则b会排到a之前
+        *
+        * */
+        console.log(arry04.sort(function (a, b) {
+            //从小到大排序
+            return a-b;
+            //从大到小排序
+            //return b-a;
+        }));
+
+        //查看一个字符的ASCII值
+        console.log("g的ASCII值为："+"g".charCodeAt());
+
+    </script>
+</head>
+<h1 style="text-align: center">11.01：JavaScript内置对象</h1><br><br>
+<body>
+
+</body>
+</html>

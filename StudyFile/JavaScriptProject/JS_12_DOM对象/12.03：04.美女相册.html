@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>12.03：美女相册.html</title>
+    <style type="text/css">
+        body {
+            background-color: #cccccc;
+        }
+
+        #box {
+            margin-top: 50px;
+            margin-left: 50px;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul > li {
+            float: left;
+            margin: 5px;
+            list-style: none;
+            margin-top: 20px;
+
+        }
+
+        li img {
+            width: 100px;
+        }
+
+        #showImg {
+            width: 435px;
+            border: 1px solid #5F9EA0;
+        }
+
+        #showGirl {
+            margin-top: 20px;
+        }
+
+        h3 {
+            color: blueviolet;
+            font-size: 30px;
+        }
+
+        #pId {
+            width: 435px;
+            text-align: center;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        #reg {
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 20px;
+            color: #5F9EA0;
+            padding-bottom: 40px;
+        }
+
+
+    </style>
+    <script type="text/javascript">
+        window.onload = function () {
+            /*
+            * 1：找到指定元素对象 我们可以按照选择器的方式实现先找到父元素,通过父元素
+            * 对象点getElement... 获取 当前父元素下面的指定子元素或者子元素数组
+            * 2：我们找到页面某一个或一些元素 不止可以通过document点 找到
+            * 因为document 是封装了整个页面 所以document去get也就是去整个页面去找
+            * 那我如果单纯通过一个ul或者其他标签去getElement呢?  是不是就获取指定元素下面的元素呢?
+            * 答案是 肯定的!!!
+            *
+            *
+            * */
+            //先找到ul
+            var ul = document.getElementsByTagName("ul")[0];
+            //通过ul去找a标签 就是找到ul下面的所有a标签
+            var aList = ul.getElementsByTagName("a");
+            //找到显示美女的img标签
+            var showImg = document.getElementById("showImg");
+            //找到显示美女名字的p标签
+            var imgName = document.getElementById("pId");
+            /*
+            * 1、给每一个a标签添加事件通过循环的方式给多个元素添加事件
+            * 2、此处this.href绝对不能形成aList[i].href  该循环从
+            * 0~aList.length会一次性执行完毕，具体函数里面的代码并没有
+            * 被执行，只有被点击的时候才会执行，所处此处谁点击谁就是this
+            *
+            * */
+            for (var i = 0; i < aList.length; i++) {
+                aList[i].onclick = function () {
+                    //点击对应a标签 则或得到当前点击的a标签的href值 设置到下面的img的src上面即可
+                    showImg.src = this.href;
+                    imgName.innerText = this.title;
+                    //防止a标签点击跳转的href对应的地址
+                    return false;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<h1 style="text-align: center">12.03：美女相册</h1>
+<div id="box">
+    <h3>美女画廊</h3>
+    <a id="reg" href="#">注册</a>
+    <ul>
+        <li><a href="img/1.jpg" title="美女01"><img src="img/1-small.jpg" alt=""></a></li>
+        <li><a href="img/2.jpg" title="美女02"><img src="img/2-small.jpg" alt=""></a></li>
+        <li><a href="img/3.jpg" title="美女03"><img src="img/3-small.jpg" alt=""></a></li>
+        <li><a href="img/4.jpg" title="美女04"><img src="img/4-small.jpg" alt=""></a></li>
+    </ul>
+    <!--设置元素左右两侧不允许任何浮动-->
+    <div style="clear: both"></div>
+    <div id="showGirl"><img id="showImg" src="img/placeholder.png" alt=""></div>
+    <p id="pId">显示图片的名字</p>
+</div>
+</body>
+</html>

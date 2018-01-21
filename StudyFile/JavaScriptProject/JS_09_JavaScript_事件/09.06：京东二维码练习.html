@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>09.06：京东二维码练习</title>
+    <style type="text/css">
+        .box {
+            width: 50px;
+            height: 50px;
+            /*向X轴反方向(向左)偏移160px,向Y轴反方向(向上)偏移52px*/
+            background: url("img/bgs.png") no-repeat -160px -52px;
+            /*绝对定位，相对于浏览器*/
+            position: fixed;
+            right: 20px;
+            top: 300px;
+        }
+
+        .QR {
+            width: 150px;
+            height: 150px;
+            /*绝对定位，相对于父元素*/
+            position: absolute;
+            left: -300px;
+            top: -120px;
+        }
+
+        /*隐藏二维码样式*/
+        .hide {
+            display: none;
+        }
+
+        /*显示二维码样式*/
+        .show {
+            display: block;
+        }
+    </style>
+    <script type="text/javascript">
+        // 文档页面加载完成之后直接调用此处
+        window.onload = function () {
+            var box = document.getElementById("boxId");
+            var qr = document.getElementById("qrId");
+            box.onmousemove = function () {
+                //Class值修改：方式一
+                qr.className = qr.className.replace("hide", "show");
+                //Class值修改：方式二
+//        qr.className = "QR show";
+            };
+            box.onmouseout = function () {
+                //Class值修改：方式一
+                qr.className = qr.className.replace("show", "hide");
+                //Class值修改：方式二
+//        qr.className = "QR hide"
+            }
+        }
+    </script>
+</head>
+<body>
+<h1 style="text-align: center">09.06：京东二维码练习(鼠标滑过查看效果)</h1><br><br>
+
+<div class="box" id="boxId">
+    <div class="QR hide" id="qrId">
+        <img src="img/QRCode02.png" alt="">
+    </div>
+</div>
+</body>
+</html>

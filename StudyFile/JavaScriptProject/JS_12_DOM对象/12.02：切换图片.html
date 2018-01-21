@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>12.02：切换图片</title>
+    <style type="text/css">
+        /*a标签转换按钮样式修改*/
+        .aBtn {
+            border: 2px solid white;
+            border-radius: 6px;
+            background-color: #5F9EA0;
+            padding: 10px;
+            /*去掉下划线*/
+            text-decoration: none;
+            /*字体设置*/
+            color: white;
+            font-size: 20px;
+
+        }
+    </style>
+
+    <script type="text/javascript">
+        window.onload = function () {
+            var a = document.getElementsByTagName("a")[0];
+            var img = document.getElementsByTagName("img")[0];
+            var url01 = img.src;
+            var url02 = img.src;
+            /*实现方式一*/
+            a.onclick = function () {
+                if (url01 === url02) {
+                    img.src = "img/img02.jpg";
+                } else {
+                    img.src = "img/img01.jpg";
+                }
+                url02 = img.src;
+                return false;
+            };
+
+            /*实现方式二————行内实现*/
+            //function changeImage() {
+            //    if (url01 === url02) {
+            //        img.src = "img/img02.jpg";
+            //    } else {
+            //        img.src = "img/img01.jpg";
+            //    }
+            //    url02 = img.src;
+            //    return false;
+            //}
+
+
+        }
+    </script>
+</head>
+<body>
+<h1 style="text-align: center">12.02：切换图片</h1><br><br>
+<!--三种方式实现a标签不跳转
+
+-->
+<!--方式一：在外部点击事件函数中return false(如点击事件实现方式一)；-->
+<a class="aBtn" href="http://www.baidu.com">点击切换图片</a><br><br>
+<!--//方式二：在行内点击事件中直接return false！-->
+<!--<a href="http://www.baidu.com" onclick="changeImage();return false">点击切换图片</a><br><br>-->
+<!--//方式三：在行内点击事件直接onclick="return "执行函数";然后在执行函数中return false；-->
+<!--<a href="http://www.baidu.com" onclick="return changeImage()">点击切换图片</a><br><br>-->
+<img src="img/img01.jpg" width="300" alt="">
+</body>
+</html>
