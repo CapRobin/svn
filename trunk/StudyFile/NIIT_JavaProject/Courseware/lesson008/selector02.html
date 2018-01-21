@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			/* 
+			 * 访问器|访问符|选择器|选择符
+			 	五、伪类访问符(以冒号开头)
+			 		01）元素:link             默认的链接
+			 		02）元素:visited          被访问过
+			 		03）元素:hover            鼠标悬浮
+			 		04）元素:active           鼠标点击
+			 		05）元素:focus            输入焦点
+			 		06）元素:first-child      父元素的第一个子元素
+			 		07）元素:last-child       父元素的最后一个子元素
+			 		08）元素:nth-child(n)     从前往后找第n个，开始索引1
+			 			2n+1 (odd)  :奇数列 
+			 			2n   (even) :偶数列
+			 		09）元素:nth-last-child(n)       从后往前找第n个，开始索引1
+			 		10）元素:first-of-type           第一个同级兄弟元素
+			 		11）元素:last-of-type            最后一个同级兄弟元素
+			 		10）元素:nth-of-type(n)          第一个同级兄弟元素
+			 			2n+1 (odd)  :奇数列 
+			 			2n   (even) :偶数列
+			 		11）元素:nth-last-of-type(n)     最后一个同级兄弟元素
+			 		12）元素:empty            没有任何子元素，包括文本
+			 		13）元素:checked          被选中状态的元素
+			 		13）元素:checked          被选中状态的元素
+			 	六、伪对象访问符(以冒号开头,例如 : | ::)
+			 		1）元素：first-letter     第一个字符
+			 		2）元素：first-line       第一行
+			 		3）元素：before           元素内容的开头
+			 			content:内容
+			 		4）元素：after            元素内容的结尾
+			 			content:内容
+			 		5）元素：selection        文本内容被选中之后
+			 */
+			.form ul{
+				list-style: none;
+				line-height: 35px;
+			}
+			.form li label{
+				width: 120px;
+				display: inline-block;
+				text-align: right;
+			}
+			.form input:focus{
+				color: red;
+				outline-color: red;
+			}
+			.form ul li:first-child label{
+				color: blue;
+			}
+			.form ul li:last-child label{
+				color: green;
+			}
+			
+			.findChild li:nth-child(1){
+				background: red;
+			}
+			.findChild li:nth-last-child(1){
+				background: red;
+			}
+			
+			.findChild li:nth-child(2n+1){
+				background: yellow;
+			}
+			.findChild li:nth-child(2n){
+				background: blue;
+			}
+			
+			.findChild li:nth-child(odd){
+				background: red;
+			}
+			.findChild li:nth-child(even){
+				background: grey;
+			}
+			
+			.findBrother li:first-of-type{
+				background: red;
+			}
+			.findBrother li:last-of-type{
+				background: red;
+			}
+			.findBrother li:nth-of-type(2n){
+				background: green;
+			}
+			.findBrother li:nth-last-of-type(1){
+				background: green;
+			}
+			
+			.test div{
+				background: red;
+				width: 300px;
+				height: 50px;
+			}
+			.test div:empty{
+				background: green;
+			}
+			
+			.test input:checked+label {
+				color: white;
+			}
+			.test p:first-letter{
+				color: blueviolet;
+				float: left;
+				font-size: 30px;
+			}
+			.test p:first-line{
+				color: blue;
+			}
+			
+			.test p::-webkit-selection{
+				background: black;
+				color: red;
+			}
+			.test p::-ms-selection{
+				background: black;
+				color: red;
+			}
+			.test p::-moz-selection{
+				background: black;
+				color: red;
+			}
+			.test p::selection{
+				background: black;
+				color: red;
+			}
+			
+			.form label:after{
+				content: ":";
+			}
+			.form label:before{
+				content: "";
+			}
+			.form span:empty{
+				color: red;
+			}
+			.form span:empty:after{
+				content: "(*)";
+			}
+		</style>
+	</head>
+	<body>
+		<div class="form">
+			<form>
+				<ul>
+					<li>
+						<label>用户名</label>
+						<input type="text"/>
+						<span></span>
+					</li>
+					<li>
+						<label>密码</label>
+						<input type="password"/>
+						<span>(注意)</span>
+					</li>
+					<li>
+						<label>确认密码</label>
+						<input type="password"/>
+						<span></span>
+					</li>
+				</ul>
+			</form>
+		</div>
+		<div class="findChild">
+			<ul>
+				<li>Niit01</li>
+				<li>Niit02</li>
+				<li>Niit03</li>
+				<li>Niit04</li>
+				<li>Niit05</li>
+			</ul>
+		</div>
+		
+		<div class="findBrother">
+			<ul>
+				<li>Niit01</li>
+				<li>Niit02</li>
+				<li>Niit03</li>
+				<li>Niit04</li>
+				<li>Niit05</li>
+			</ul>
+			<ul>
+				<li>Niit01</li>
+				<li>Niit02</li>
+				<li>Niit03</li>
+				<li>Niit04</li>
+				<li>Niit05</li>
+			</ul>
+		</div>
+		
+		<div class="test">
+			<div>div1</div>
+			<div></div>
+			<div>
+				<input type="checkbox" checked="checked"/><label>爱好1</label>
+				<input type="checkbox" /><label>爱好2</label>
+			</div>
+			<div>
+				<h2>伪类</h2>
+				<p>今天天气很好，大家都来Niit中心学习，兴趣很高！今天天气很好，大家都来Niit中心学习，兴趣很高！
+					今天天气很好，大家都来Niit中心学习，兴趣很高！
+				</p>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>风筝动画</title>
+		<style>
+			body{
+				background: #FEEFDC;
+			}
+			.fengzheng{
+				background: blue;
+				width: 100px;
+				height: 100px;
+			}
+			.fengzheng:hover{
+				-webkit-animation: -webkit-fengzheng-animation 1s linear 0s infinite;
+				-ms-animation: -ms-fengzheng-animation 1s linear 0s infinite;
+				-moz-animation: -moz-fengzheng-animation 1s linear 0s infinite;
+				animation: fengzheng-animation 1s linear 0s infinite;
+			}
+			@-webkit-keyframes -webkit-fengzheng-animation{
+				0%{
+					-webkit-transform: rotate(0deg);
+				}
+				50%{
+					-webkit-transform: rotate(180deg);
+				}
+				100%{
+					-webkit-transform: rotate(360deg);
+				}
+			}
+			@-ms-keyframes -ms-fengzheng-animation{
+				0%{
+					-ms-transform: rotate(0deg);
+				}
+				50%{
+					-ms-transform: rotate(180deg);
+				}
+				100%{
+					-ms-transform: rotate(360deg);
+				}
+			}
+			@-moz-keyframes -moz-fengzheng-animation{
+				0%{
+					-moz-transform: rotate(0deg);
+				}
+				50%{
+					-moz-transform: rotate(180deg);
+				}
+				100%{
+					-moz-transform: rotate(360deg);
+				}
+			}
+			@keyframes fengzheng-animation{
+				0%{
+					transform: rotate(0deg);
+				}
+				50%{
+					transform: rotate(180deg);
+				}
+				100%{
+					transform: rotate(360deg);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<h2>风筝动画</h2>
+		<div class="fengzheng">
+			<img src="../img/fengzheng.jpg" width="100px"/>
+		</div>
+	</body>
+</html>

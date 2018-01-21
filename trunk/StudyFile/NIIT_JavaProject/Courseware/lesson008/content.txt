@@ -1,0 +1,40 @@
+1、定位 + 布局
+	1）position：定位
+		1）static   默认布局
+		2）relative 相对定位
+		3）absolute 绝对定位
+		4）fixed    固定定位
+	2）left、right、top、bottom
+		在原有位置上进行一个位移
+		left   ：右移
+		right  ：左移
+		top    ：下移
+		bottom ：上移
+		备注：如果值是负值，位移方向相反
+	3）z-index 
+		值：可以正值、0、负值
+		默认值：0
+		值越大，层居上
+	4）display
+	5）float浮动
+	
+2、访问器|访问符|选择器|选择符
+
+3、2D转换
+	transform
+	方法：
+		1）translate
+		2）rotate
+		3）scale
+		4）skew
+		5）matrix 矩阵转换
+	transform-origin:定位（过渡参考点）
+4、过渡
+	transition
+5、动画
+	animation
+6、浏览器兼容
+	-webkit-: 浏览器内核支持webkit，比如safari，Chrome
+	-ms-    : IE浏览器
+	-moz-   : Firefox浏览器
+	-o-     : Opera浏览器

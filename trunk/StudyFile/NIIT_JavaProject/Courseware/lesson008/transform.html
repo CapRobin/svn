@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			/*
+			 * transform：2D转换(方法可以以空格相隔的方式组合使用)
+			 * 方法如下：
+			 * 1、translate(left | x, top | y) 移动元素
+			 * 		translateX:水平方向的移动
+			 * 		translateY:垂直方向的移动
+			 * 2、rotate(deg) 旋转多少度	
+			 * 	正值：顺时针
+			 * 	负值：逆时针
+			 * 3、scale(x,y) 宽高伸缩
+			 * 		scaleX(x):水平方向的伸缩;
+			 * 		scaleY(y):垂直方向的伸缩;
+			 * 
+			 * 
+			 * transform-origin:transform转换的参考点
+			 */	
+			.transform{
+				background: red;
+				width: 100px;
+				height: 100px;
+				
+				-webkit-transform: translate(0px,0px);
+				-moz-transform: translate(0px,0px);
+				-ms-transform: translate(0px,0px);
+				transform: translate(100px,100px);
+				
+				-webkit-transform: translateX(200px) translateY(200px);
+				-moz-transform: translateX(200px) translateY(200px);
+				-ms-transform: translateX(200px) translateY(200px);
+				transform: translateX(200px) translateY(200px);
+				
+				transform-origin: center center;
+				transform:rotate(45deg);
+			}
+			.container{
+				transform-origin: left top;
+				transform:translate(100px,100px) scale(0.5,.5);
+				background: blue;
+				width: 100px;
+				height: 100px;
+			}
+		</style>
+	</head>
+	<body>
+		<p>不移动元素1</p>
+		<div class="container">
+			<div class="transform">transform</div>
+		</div>
+		<p>不移动元素2</p>
+	</body>
+</html>

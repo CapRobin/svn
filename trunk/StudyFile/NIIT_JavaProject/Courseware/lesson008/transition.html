@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.base{
+				background: red;
+				margin: 5px;
+				width: 100px;
+				height: 100px;
+				text-align: center;
+				line-height: 100px;
+				-webkit-transition: all 2s linear 0s;
+				transition: all 2s linear 0s;
+			}
+			
+			/*
+			 * transition 过渡
+			 * 1、transition-property
+			 * 	过渡的元素属性
+			 * 	all:所有可以进行过渡的属性 
+			 * 	width | height | color | opacity
+			 * 2、transition-duration
+			 * 	过渡持续的时间 具体的值 比如1s 1000ms 默认值是0
+			 * 3、transition-timing-function
+			 * 	时间函数（曲线）
+			 * 	linear : 线性运动（匀速）
+			 * 	ease：慢-快-慢
+			 * 	ease-in：   慢速开始
+			 * 	ease-out：慢速结束
+			 * 	ease-in-out：慢速开始  + 慢速结束
+			 * 4、transition-delay
+			 * 	延迟执行过渡 具体的值 比如1s 1000ms 默认值是0
+			 */
+			.div1{
+				transition-property: width, height;
+				transition-duration: 1s, 1s;
+				transition-timing-function: ease,ease;
+				transition-delay: 1s,1s;
+				transition:width 1s ease 1s, height 1s linear 1.5s;
+				transition:width 1s, height 1s;
+				transition:width 1s ease, height 1s ease;
+				transition:width 1s 1s, height 1s ease;
+			}
+			.div1:hover{
+				width: 150px;
+				height: 150px;
+			}
+			.div2:hover{
+				background: blue;
+			}
+			.div3:hover{
+				opacity: 0.2;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="base div1">div1</div>
+		<div class="base div2">div2</div>
+		<div class="base div3">div3</div>
+	</body>
+</html>
