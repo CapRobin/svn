@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Java C班阶段练习_用户登录</title>
+    <style type="text/css">
+        /*~~~~~~设置网页背景自适应~~~~~~*/
+        html {
+            height: 100%;
+            width: 100%;
+        }
+
+        body {
+            height: 100%;
+            width: 100%;
+            background: url("img/bg.jpg") no-repeat;
+            background-size: cover;
+            overflow: hidden;
+        }
+
+        /*~~~~~~设置登录窗口样式~~~~~~*/
+        #login {
+            width: 650px;
+            height: 400px;
+            text-align: center;
+            margin: auto;
+            border: 1px solid #5dd6ff;
+            border-radius: 10px;
+            background-color: #cccccc;
+        }
+
+        /*~~~~~~设置登录窗口标题样式~~~~~~*/
+        #loginTitle {
+            width: 100%;
+            height: 60px;
+            background: #4da3ff;
+            color: white;
+            font-size: 35px;
+            line-height: 60px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            margin-bottom: 20px;
+            font-family: "华文行楷";
+            text-shadow: 5px 5px 10px #666666;
+            transition: linear;
+            transition-duration: 2s;
+        }
+
+        /*鼠标滑过标题样式*/
+        #loginTitle:hover {
+            height: 80px;
+            line-height: 80px;
+            font-weight: bold;
+            font-size: 40px;
+            text-align: center;
+            color: blue;
+            background-color: #cccccc;
+            -moz-transition: linear;
+            -webkit-transition: linear;
+            -o-transition: linear;
+            transition: linear;
+            transition-duration: 2s;
+        }
+
+        /*~~~~~~设置登录界面内容区域样式~~~~~~*/
+        .formDiv {
+            width: 50%;
+            margin: auto;
+
+        }
+
+        .base {
+            line-height: 60px;
+            font-size: 20px;
+        }
+
+        .label {
+            width: 35%;
+            vertical-align: middle;
+        }
+
+        .label:hover + input {
+            background-color: #c2ff0d;
+        }
+
+        .input {
+            width: 60%;
+            height: 25px;
+            border: 1px solid #4da3ff;
+            border-radius: 5px;
+            outline: none;
+            padding-right: 5px;
+            padding-left: 5px;
+            margin: 0;
+            vertical-align: middle;
+        }
+
+        span {
+            width: 5%;
+            vertical-align: middle;
+        }
+
+        .label:after {
+            content: "：";
+        }
+
+        /*~~~~~~设置Input窗口样式~~~~~~*/
+        form input:focus {
+            color: green;
+            border: 1px solid green;
+
+        }
+
+        form span:empty:after {
+            content: "*";
+            color: red;
+        }
+
+        /*~~~~~~设置密码模块样式~~~~~~*/
+        .rememberPwd {
+            width: 100%;
+            float: left;
+            font-size: 15px;
+        }
+
+        .rememberPwd li {
+            list-style: none;
+        }
+
+        .rememberPwd ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        .rememberPwd li:nth-child(1) {
+            line-height: 30px;
+            float: left;
+            text-align: left;
+            margin-left: 30px;
+        }
+
+        .rememberPwd li:nth-child(2) {
+            line-height: 30px;
+            float: right;
+            margin-right: 30px;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        a:active {
+            color: green;
+        }
+
+        .bx {
+            width: 15px;
+            height: 15px;
+            line-height: 60px;
+            vertical-align: middle;
+            margin: 0;
+            padding: 0;
+            border: 1px solid green;
+        }
+
+        .rememberPwd .bx:checked + .rpd {
+            color: green;
+        }
+
+        .rpd {
+            vertical-align: middle;
+            margin: 0;
+            padding: 0;
+        }
+
+        /*~~~~~~设置提交按钮样式~~~~~~*/
+        .submitBtn {
+            width: 90%;
+            height: 40px;
+            background: #008B8B;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            font-size: 20px;
+            color: white;
+            line-height: 40px;
+            box-sizing: border-box;
+            outline: none;
+            margin-top: 60px;
+            margin-right: 10px;
+        }
+
+        .submitBtn:hover {
+            background: #00BFFF;
+            cursor: pointer;
+        }
+
+        .submitBtn:active {
+            background: green;
+            color: #D2691E;
+        }
+
+        #footerDiv {
+            position: fixed;
+            right: 5px;
+            bottom: 0;
+            color: white;
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+<h3 style="text-align: center">阶段性练习——学生管理系统登录页面设计</h3><br><br>
+
+
+<div id="login">
+    <div id="loginTitle">欢迎登录学生管理系统</div>
+    <div class="formDiv">
+        <form action="#">
+            <div class="base uName">
+                <label for="input01" class="label">账&emsp;号</label>
+                <input id="input01" class="input" type="text" placeholder="请输入登录账户">
+                <span></span>
+            </div>
+            <div class="base uPwd">
+                <label for="input02" class="label">密&emsp;码</label>
+                <input id="input02" class="input" type="password" placeholder="请输入登录密码">
+                <span></span>
+            </div>
+            <div class="base rememberPwd">
+                <ul>
+                    <li>
+                        <input id="bx" class="bx" type="checkbox" checked>
+                        <label for="bx" class="rpd">记住密码</label>
+                    </li>
+                    <!--<li>-->
+                    <!--<label class="rpd">记住密码</label>-->
+                    <!--</li>-->
+                    <li><a href="#" onclick="alert('已将重置密码链接发送至您的邮箱，请注意查收！')">找回密码</a></li>
+                </ul>
+            </div>
+            <button class="submitBtn" onclick="alert('欢迎登录NIIT学生管理系统')" type="button">登&emsp;录</button>
+        </form>
+    </div>
+</div>
+<p id="footerDiv">
+    作业内容：学生管理系统登录页面设计<br>学生名称：余发荣&emsp;时间：2018.01.21
+</p>
+</body>
+</html>
