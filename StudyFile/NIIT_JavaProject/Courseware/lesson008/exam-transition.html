@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.base{
+				background: red;
+				margin: 5px;
+				width: 100px;
+				height: 100px;
+				text-align: center;
+				line-height: 100px;
+				font-size: 8px;
+				-webkit-transition: -webkit-transform 2s ease 1s;
+				-ms-transition: -ms-transform 2s ease 1s;
+				-moz-transition: -moz-transform 2s ease 1s;
+				-o-transition: -o-transform 2s ease 1s;
+				transition: transform 2s ease 1s;
+			}
+			.div1:hover{
+				-webkit-transform:translate(100px, 100px);
+				-ms-transform:translate(100px, 100px);
+				-moz-transform:translate(100px, 100px);
+				-o-transform:translate(100px, 100px);
+				transform:translate(100px, 100px);
+			}
+			.div2:hover{
+				-webkit-transform:rotate(225deg);
+				-ms-transform:rotate(225deg);
+				-moz-transform:rotate(225deg);
+				-o-transform:rotate(225deg);
+				transform:rotate(225deg);
+			}
+			.div3:hover{
+				-webkit-transform:rotate(225deg) scale(2,2);
+				-ms-transform:rotate(225deg) scale(2,2);
+				-moz-transform:rotate(225deg) scale(2,2);
+				-o-transform:rotate(225deg) scale(2,2);
+				transform:rotate(225deg) scale(2,2);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="base div1">translate(100px,100px)</div>
+		<div class="base div2">rotate(225deg)</div>
+		<div class="base div3">rotate(225deg) scale(2,2)</div>
+	</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			/* 
+			 * 访问器|访问符|选择器|选择符
+			 * 	一、元素访问符
+			 * 		1）tag名称
+			 * 		2）ID (规范：整个页面唯一)
+			 * 		3）class名称
+			 * 		4）* 通配选择符
+				二、属性访问符
+					1、E[att]        :通过属性名称
+					2、E[att=""]     :通过属性名称和值
+					3、E[att~="val"] :以空格分解成几个单词，只要其中含有value
+					4、E[att^="val"] :以val开头
+					5、E[att$="val"] :以val结尾
+					6、E[att*="val"] :包含val字符串
+				三、关系访问符
+					1、包含（子孙）
+						1）以空格的方式  如 div a;
+						2）从当前访问到的元素开始寻找子孙元素
+					2、子访问符
+						父元素>子元素
+					3、相邻访问符
+						通过+号 例如 div+div 相邻的下一个元素
+					4、兄弟访问符
+						通过~号 例如 div~div 下一个所有兄弟元素
+				四、分组访问符
+					以逗号分隔给每一组给到样式
+					例如 div,h1,body{
+						color:red;
+					}
+			 */
+			h1{
+				color: red;
+			}
+			#idSel{
+				background: yellowgreen;
+			}
+			.className{
+				font-size: 50px;
+			}
+			*{
+				border: 1px solid darkcyan;
+				padding: 5px;
+				margin: 5px;
+			}
+			.tongpei *{
+				color: rosybrown;
+				border: none;
+				padding: 0px;
+				margin: 0px;
+			}
+			*[href]{
+				color: blue;
+			}
+			a[href]{
+				color: yellow;
+			}
+			.attribute a[href]{
+				background: red;
+			}
+			.attribute a[href="#2"]{
+				background: greenyellow;
+			}
+			
+			.attribute a[class~= "test_a"]{
+				background: blueviolet;
+			}
+			.attribute a[class^= "test_a"]{
+				background: black;
+				color: red;
+			}
+			.attribute a[class$= "_a"]{
+				color: white;
+				border: 2px dashed red;
+			}
+			.attribute a[class*= "a"]{
+				background: red;
+				color: green;
+			}
+			hr{
+				border: 1px dashed black;
+				padding: 0px;
+				margin: 0px;
+			}
+			html, body{
+				margin: 0;
+			}
+			.parent *{
+				border: 2px solid red;
+				padding: 20px;
+				margin: 20px;
+			}
+			
+			.parent p{
+				background: black;
+				color: red;
+			}
+			
+			.parent>div>div>p{
+				background: red;
+				color: white;
+			}
+			
+			.parent .curLi+li{
+				color: red;
+			}
+			.parent .curLi~li{
+				color: green;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<h1>元素名称访问符</h1>
+			<div id="idSel">id访问</div>
+			<div class="className">class名称访问符</div>
+			<div class="tongpei">
+				<p>
+					内部通配符元素
+				</p>
+				<hr />
+				<h1>通配符</h1>
+				<span>测试通配符</span>
+			</div>
+		</div>
+		<hr />
+		<div class="attribute">
+			<a href="#1" class="test_a">Niit01</a>
+			<a href="#2" class="test_a abc">Niit02</a>
+			<a href="#3" class="test_b test_a">Niit03</a>
+		</div>
+		<hr />
+		<div class="parent">
+			元素自己
+			<div>子元素
+				<div>
+					孙子元素
+					<p>重孙元素</p>
+				</div>
+			</div>
+		</div>
+		<div class="parent">
+			<ul>
+				<li class="curLi">Niit01</li>
+				<li >Niit02</li>
+				<li>Niit03</li>
+				<li>Niit04</li>
+			</ul>
+			<ul>
+				<li>Niit01</li>
+				<li>Niit02</li>
+				<li class="curLi">Niit03</li>
+				<li>Niit04</li>
+			</ul>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			/*
+			 * position(定位)
+			 * 1、static:流布局（默认的）
+			 * 	从上往下，从左到右（到右边距自动换行）
+			 * 	默认布局，元素无法位移
+			 */
+			.static{
+				position: static;
+				background: yellowgreen;
+				height: 50px;
+				margin-bottom: 5px;
+				/*
+				 * 内容浮出之后怎样显示
+				 * hidden:隐藏
+				 * scroll:始终显示滚动条
+				 * auto  :内容超出才会显示滚动条
+				 * 
+				 * 水平方向： overflow-x
+				 * 垂直方向： overflow-y
+				 */
+				overflow: hidden;
+				overflow: auto;
+				overflow-x: scroll;
+				overflow-x: hidden;
+				overflow-y: scroll;
+				left: 100px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="static">
+			<span>定位</span><span>定位</span><span>定位</span>
+			<img src="../img/banner1.jpg" width="300px" />
+			<span>定位</span><span>定位</span><span>定位</span>
+			<span>定位</span><span>定位</span><span>定位</span>
+		</div>
+		<div class="static">
+			定位
+		</div>
+		<div class="static">
+			定位
+		</div>
+		<div class="static">
+			定位
+		</div>
+	</body>
+</html>
