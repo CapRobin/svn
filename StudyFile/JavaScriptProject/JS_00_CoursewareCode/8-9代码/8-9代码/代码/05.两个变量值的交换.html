@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var a = 10;
+        var b = 20;
+        //字符串连接
+        console.log("交换之前 a:" + a + " b:" + b);
+        //交换代码
+        /*
+        //  1.实际开发必须用的  第三个变量交换
+        var temp = a;//temp=10
+
+        a = b;//a=20
+        b = temp;//b=10
+        // ctrl +alt +L  快速格式化代码
+
+        //2  面试用  有弊端    一旦超出数值最大范围 数值有误
+        var sum=a+b;
+        a=sum-a;//a=b
+        b=sum-b;//b=a
+
+        //3  面试用    有弊端
+        a=a + b;
+        b=a - b;
+        a=a - b;
+         */
+        //4 一句话实现   有弊端 装X用
+        b=a+b-(a=b);
+
+
+
+
+        console.log("交换之前 a:" + a + " b:" + b);//a:20 b:10
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
