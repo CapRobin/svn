@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>12.05：禁用文本框</title>
+    <style type="text/css">
+        .table {
+            width: 400px;
+            height: 150px;
+            text-align: left;
+            margin: auto;
+            border: 1px solid #18a600;
+            padding: 10px;
+            position: relative;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function () {
+            var inputId = document.getElementById("inputId");
+            var btn01 = document.getElementsByTagName("button")[0];
+            var btn02 = document.getElementsByTagName("button")[1];
+
+            /*禁用文本框
+            * 1：可以直接在行内样式中添加disabled = "随便写点东西"
+            * 2：使用JS代码设置时
+            *   inputId.disabled = "随便内容"：表示禁用
+            *   inputId.disabled = ""：表示解禁
+            *
+            * */
+
+            btn01.onclick = function () {
+                inputId.disabled = "disabled";
+            };
+            btn02.onclick = function () {
+                inputId.disabled = "";
+            }
+        }
+    </script>
+</head>
+<body>
+<h1 style="text-align: center">12.05：禁用文本框</h1><br><br>
+
+<div class="table">
+    <input id="inputId" type="text"><br><br>
+    <button>禁用</button>
+    <button>解禁</button>
+</div>
+</body>
+</html>
