@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>12.04：Placeholder占位符使用及淘宝、京东输入框案例</title>
+    <style type="text/css">
+        .table{
+            width: 400px;
+            height:150px;
+            text-align: left;
+            margin: auto;
+            border: 1px solid #18a600;
+            padding: 10px;
+            position: relative;
+        }
+        .base{
+            line-height: 40px;
+        }
+        #lb{
+            position: absolute;
+            left: 65px;
+            top: 11px;
+            font-size: 13px;
+            color: #999999;
+            cursor: text;
+        }
+        #jd{
+            color: #999999;
+        }
+        .hide{
+            display: none;
+        }
+        .show{
+            display: inline-block;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var lb = document.getElementById("lb");
+            var tb = document.getElementById("tb");
+            var jd = document.getElementById("jd");
+            /*淘宝搜索框设置*/
+            //输入监听
+            tb.oninput = function () {
+                if (this.value ===""){
+                    lb.className = "show";
+                }else {
+                    lb.className = "hide";
+                }
+            }
+
+            /*京东搜索框设置*/
+            //获取焦点时
+            jd.onfocus = function () {
+                if (this.value === "我是京东"){
+                    this.style.color = "black";
+                    this.value = "";
+                }
+            }
+            jd.onblur = function () {
+                if (this.value === ""){
+                    this.style.color = "#999999";
+                    this.value = "我是京东";
+                }
+            }
+
+        }
+    </script>
+</head>
+<body>
+<h1 style="text-align: center">12.04：Placeholder占位符使用及淘宝、京东输入框案例</h1><br><br>
+<div class="table">
+    <div class="base 01">
+        淘宝：
+        <label for="tb" id="lb" >我是淘宝</label>
+        <input type="text" id="tb"><br>
+    </div>
+    <div class="base 02">
+        京东：
+        <input id="jd" type="text" value="我是京东"><br>
+    </div>
+    <div class="base 03">
+        placeholder：
+        <input type="text" placeholder="placeholder">
+    </div>
+</div>
+</body>
+</html>
