@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        @keyframes blink {
+            0%,
+            100% {
+                opacity: 1
+            }
+            50% {
+                opacity: 0
+            }
+        }
+
+        @-webkit-keyframes blink {
+            0%,
+            100% {
+                opacity: 1
+            }
+            50% {
+                opacity: 0
+            }
+        }
+
+        @-moz-keyframes blink {
+            0%,
+            100% {
+                opacity: 1
+            }
+            50% {
+                opacity: 0
+            }
+        }
+
+        .wrap {
+            width: 1000px;
+            text-align: center;
+            margin: 100px auto 0;
+        }
+
+        .wrap h1 {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-weight: 300;
+        }
+
+        .word {
+            font-weight: 700;
+        }
+
+        .typed-cursor {
+            opacity: 1;
+            -webkit-animation: blink .7s infinite;
+            -moz-animation: blink .7s infinite;
+            animation: blink .7s infinite;
+            display: none;
+        }
+
+        .saySection {
+            margin-top: 50px;
+        }
+
+        .saySection input {
+            font-size: 30px;
+        }
+
+        .saySection .txtSay {
+            padding-left: 10px;
+        }
+
+        .saySection .btnSay {
+            display: inline-block;
+            padding: 0 20px;
+            cursor: pointer;
+        }
+    </style>
+    <script src="jquery-1.11.1.js"></script>
+    <script>
+        $(function () {
+            //需求:  页面展开 每隔固定时间多显示一个字 不停拼接  直到完成  点击按钮 把文本框的内容按照间隔时间设置到上面显示
+            //步骤
+            //1.页面加载 光标显示 把红鲤鱼 分批次 相隔固定时间设置到word里面去
+            //2.清除定时器
+            //3.按钮点击事件  获取文本框内容 设置到word里面  设置原理同第一条
+
+
+            //1.页面加载 光标显示 把红鲤鱼 分批次 相隔固定时间设置到word里面去
+            var beginStr = "红鲤鱼绿鲤鱼与驴";
+            //定时器对象
+            var timer = null;
+            showText(beginStr);
+
+
+            //3.按钮点击事件  获取文本框内容 设置到word里面  设置原理同第一条
+            $("#btnSay").click(function () {
+                showText($("#inValue").val());
+                //每次点击完 清除输入内容
+                $("#inValue").val("");
+            });
+            
+            
+            
+
+
+            //封装显示字符串的额方法
+            function showText(desstr) {
+                //要用定时器 先清除定时器
+                clearInterval(timer);
+                //字符串转换成数组 来操作角标
+                var arr = desstr.split("");//字符串拆分
+
+                //用来计数
+                var num = 0;
+
+//            console.log(arr);
+//            用来拼接的字符串
+                var showStr = "";
+                timer = setInterval(function () {
+
+                    //2.清除定时器
+                    if (arr[num] === undefined) {
+
+                        clearInterval(timer);
+                        //隐藏光标
+                        $(".typed-cursor").hide();
+//                    return;
+
+                    } else {
+                        //显示光标
+                        $(".typed-cursor").show();
+
+                        showStr += arr[num];
+                        $(".word").text(showStr)
+                        num++;
+                    }
+
+
+                }, 200);
+
+
+            }
+
+
+        });
+
+
+    </script>
+</head>
+
+<body>
+
+<div class="wrap">
+    <h1>
+        You want to say ： <span class="word"></span><span class="typed-cursor">|</span> ！
+    </h1>
+
+    <div class="saySection">
+        <input type="text" id="inValue" class="txtSay"/>
+        <input type="button" value="Say" id="btnSay" class="btnSay"/>
+    </div>
+</div>
+
+
+</body>
+</html>

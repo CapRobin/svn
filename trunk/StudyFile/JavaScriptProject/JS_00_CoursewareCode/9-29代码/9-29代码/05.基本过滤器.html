@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="jquery-1.11.1.js"></script>
+<script>
+    $(function () {
+
+        $("li").css({
+            "background-color":"pink",
+            "margin-bottom":"10px"
+
+        });
+        //基本过滤器
+        //:odd  奇数的index  偶数的个数
+        $("li:odd").css("background-color","red");
+        //:even 偶数的index  奇数的个数
+        $("li:even").css("background-color","yellow");
+        //.eq(index) 按照索引值选择指定  筛选选择器
+        $("li").eq(3).css("background-color","blue");
+        //:eq(index) 基本过滤器
+        $("li:eq(4)").css("background-color","orange");
+        //:first  选择第一个
+        $("li:first").css("background-color","green");
+        //:last 最后一个
+        $("li:last").css("background-color","black");
+
+        $("div:not(.box)").css("background-color","red");
+
+
+        
+    });
+
+
+</script>
+<ul>
+    <li>落霞与孤鹜齐飞,秋水共长天一色.</li>
+    <li>落霞与孤鹜齐飞,秋水共长天一色.</li>
+    <li>落霞与孤鹜齐飞,秋水共长天一色.</li>
+    <li>落霞与孤鹜齐飞,秋水共长天一色.</li>
+    <li>落霞与孤鹜齐飞,秋水共长天一色.</li>
+    <li>落霞与孤鹜齐飞,秋水共长天一色.</li>
+    <li>落霞与孤鹜齐飞,秋水共长天一色.</li>
+    <li>落霞与孤鹜齐飞,秋水共长天一色.</li>
+
+    <div class="box">我是div</div>
+    <div>我是div</div>
+    <div class="box">我是div</div>
+</ul>
+
+</body>
+</html>

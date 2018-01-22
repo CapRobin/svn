@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .img1{
+            position: absolute;
+            top: 80px;
+            left:30px;
+        }
+        .img2{
+            position: absolute;
+            top: 80px;
+            right:30px;
+
+        }
+        div{
+            width: 900px;
+
+            color: red;
+            margin: 100px auto;
+            font: 700 45px/60px "simsun";
+
+
+        }
+
+
+
+    </style>
+</head>
+<body>
+<img src="imgs/aside.jpg" alt="" class="img1">
+<img src="imgs/aside.jpg" alt="" class="img2">
+<div>
+    公将战,曹刿请见,曰:"我与城北徐公熟美?" <br>
+    有朋自远方来,虽远必诛. <br>
+公将战,曹刿请见,曰:"我与城北徐公熟美?" <br>
+    有朋自远方来,虽远必诛. <br>
+公将战,曹刿请见,曰:"我与城北徐公熟美?" <br>
+    有朋自远方来,虽远必诛. <br>
+公将战,曹刿请见,曰:"我与城北徐公熟美?" <br>
+    有朋自远方来,虽远必诛. <br>
+公将战,曹刿请见,曰:"我与城北徐公熟美?" <br>
+    有朋自远方来,虽远必诛. <br>
+公将战,曹刿请见,曰:"我与城北徐公熟美?" <br>
+    有朋自远方来,虽远必诛. <br>
+公将战,曹刿请见,曰:"我与城北徐公熟美?" <br>
+    有朋自远方来,虽远必诛. <br>
+公将战,曹刿请见,曰:"我与城北徐公熟美?" <br>
+    有朋自远方来,虽远必诛. <br>
+公将战,曹刿请见,曰:"我与城北徐公熟美?" <br>
+    有朋自远方来,虽远必诛. <br>
+公将战,曹刿请见,曰:"我与城北徐公熟美?" <br>
+    有朋自远方来,虽远必诛. <br>
+公将战,曹刿请见,曰:"我与城北徐公熟美?" <br>
+    有朋自远方来,虽远必诛. <br>
+公将战,曹刿请见,曰:"我与城北徐公熟美?" <br>
+    有朋自远方来,虽远必诛. <br>
+公将战,曹刿请见,曰:"我与城北徐公熟美?" <br>
+    有朋自远方来,虽远必诛. <br>
+公将战,曹刿请见,曰:"我与城北徐公熟美?" <br>
+    有朋自远方来,虽远必诛. <br>
+公将战,曹刿请见,曰:"我与城北徐公熟美?" <br>
+    有朋自远方来,虽远必诛. <br>
+公将战,曹刿请见,曰:"我与城北徐公熟美?" <br>
+    有朋自远方来,虽远必诛. <br>
+公将战,曹刿请见,曰:"我与城北徐公熟美?" <br>
+    有朋自远方来,虽远必诛. <br>
+公将战,曹刿请见,曰:"我与城北徐公熟美?" <br>
+    有朋自远方来,虽远必诛. <br>
+公将战,曹刿请见,曰:"我与城北徐公熟美?" <br>
+    有朋自远方来,虽远必诛. <br>
+公将战,曹刿请见,曰:"我与城北徐公熟美?" <br>
+    有朋自远方来,虽远必诛. <br>
+公将战,曹刿请见,曰:"我与城北徐公熟美?" <br>
+    有朋自远方来,虽远必诛. <br>
+公将战,曹刿请见,曰:"我与城北徐公熟美?" <br>
+    有朋自远方来,虽远必诛. <br>
+公将战,曹刿请见,曰:"我与城北徐公熟美?" <br>
+    有朋自远方来,虽远必诛. <br>
+公将战,曹刿请见,曰:"我与城北徐公熟美?" <br>
+    有朋自远方来,虽远必诛. <br>
+公将战,曹刿请见,曰:"我与城北徐公熟美?" <br>
+    有朋自远方来,虽远必诛. <br>
+公将战,曹刿请见,曰:"我与城北徐公熟美?" <br>
+    有朋自远方来,虽远必诛. <br>
+公将战,曹刿请见,曰:"我与城北徐公熟美?" <br>
+    有朋自远方来,虽远必诛. <br>
+公将战,曹刿请见,曰:"我与城北徐公熟美?" <br>
+    有朋自远方来,虽远必诛. <br>
+公将战,曹刿请见,曰:"我与城北徐公熟美?" <br>
+    有朋自远方来,虽远必诛. <br>
+公将战,曹刿请见,曰:"我与城北徐公熟美?" <br>
+    有朋自远方来,虽远必诛. <br>
+公将战,曹刿请见,曰:"我与城北徐公熟美?" <br>
+    有朋自远方来,虽远必诛. <br>
+公将战,曹刿请见,曰:"我与城北徐公熟美?" <br>
+    有朋自远方来,虽远必诛. <br>
+
+</div>
+<script src="jQuery-1.0.0-my.js"></script>
+<script>
+    /*
+        思路  : 每次被卷曲的头部高度减去 图片的top值 <0时  缓动动画 缓动到 纵向的top80
+
+
+
+
+     */
+    var imgArr=document.getElementsByTagName("img");
+    window.onscroll= function () {
+//        console.log(imgArr[0].offsetTop);
+//        console.log(scroll().top-imgArr[0].offsetTop);
+//        if(scroll().top-imgArr[0].offsetTop<0){
+//            linearSpeedAnimateY(imgArr[0],imgArr.offsetTop);
+//            linearSpeedAnimateY(imgArr[1],imgArr.offsetTop);
+//        }
+
+        //获取被卷曲的头部高度
+        var val=scroll().top;
+        linearSpeedAnimateY(imgArr[0],val+80);
+        linearSpeedAnimateY(imgArr[1],val+80);
+    }
+
+
+
+
+</script>
+
+</body>
+</html>

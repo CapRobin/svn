@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            padding: 20px;
+            display: none;
+        }
+        .current{
+            display: block;
+        }
+        .qie{
+            background-color: blue;
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+<script src="jquery-1.11.1.js"></script>
+<script>
+    $(function () {
+        //JQ中的class操作   addClass  removeClass toggleClass  hasClass
+
+        $("button").eq(0).click(function () {
+            //addClass 为元素添加class  操作的是class名称,没有点  不是选择器
+            $("div").addClass("current");
+        });
+        $("button").eq(1).click(function () {
+            //removeClass  为元素移除一个class
+            $("div").removeClass("current");
+
+        });
+
+        $("button").eq(2).click(function () {
+            //hasClass  判断元素是否有class
+            alert( $("div").hasClass("current"));
+        });
+
+        $("button").eq(3).click(function () {
+            //利用hasClass  实现切换背景颜色效果
+//            if($("div").hasClass("qie")){
+//                $("div").removeClass("qie");
+//            }else{
+//                $("div").addClass("qie");
+//            }
+          //toggleClass 切换class  内部完成了 上面的代码
+            $("div").toggleClass("qie");
+
+        });
+
+    });
+    
+    
+</script>
+<button>添加class</button>
+<button>移除class</button>
+<button>判断class</button>
+<button>切换class</button>
+<div class="qq">
+
+
+</div>
+</body>
+</html>

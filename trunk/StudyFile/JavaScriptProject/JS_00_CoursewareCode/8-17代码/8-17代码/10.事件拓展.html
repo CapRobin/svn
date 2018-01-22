@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #top-banner {
+            background-color: pink;
+            margin: 20px;
+            height: 120px;
+
+        }
+
+        .bg {
+            margin: auto 150px;
+            height: 120px;
+            background-color: blue;
+            position: relative;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+        a {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            text-decoration: none;
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            background-color: black;
+            color: white;
+        }
+
+        .hide {
+            display: none !important;
+        }
+
+
+    </style>
+</head>
+<body>
+<div id="top-banner">
+    <div class="bg">
+        <img src="" alt="" name="qq">
+        <a href="#" id="closeBanner" onclick="cl()">×</a>
+    </div>
+</div>
+
+<script>
+    //获取事件源对象
+    var closeBanner = document.getElementById("closeBanner");
+    //数组
+    //    var bgs=document.getElementsByClassName('bg');
+    //根据标签的name属性获取
+    //    document.getElementsByName()
+    //根据标签名字
+    //    document.getElementsByTagName()
+    //H5新推出的
+    //    document.querySelector("CSS选择器");
+    //    document.querySelectorAll()
+
+
+    //获取topBanner元素对象
+    var topBanner = document.getElementById("top-banner");
+
+
+    //点击事件  第一种事件驱动函数方式
+    //    closeBanner.onclick= function () {
+    //        //事件驱动函数  因为class是一个保留字所以我们对象的属性不能起名成class
+    //        //所以 想要操作元素的class 值  就用classname去操作
+    //        //如果a标签的href="#"没有加# 则点击a会刷新页面 刷新页面也就会导致所有的console.log会被刷新 没有
+    //        //而我们的页面元素对象也会重新刷新 重新加载 不再是上一次的元素对象 所以不生效
+    ////        console.log(topBanner);
+    //        topBanner.className="hide";
+    //
+    //
+    //    }
+    //第二种
+//    closeBanner.onclick = cl;
+//
+    function cl() {
+        topBanner.className = "hide";
+
+    }
+
+    //第三种   行内事件 不推荐
+
+
+
+</script>
+
+
+</body>
+</html>

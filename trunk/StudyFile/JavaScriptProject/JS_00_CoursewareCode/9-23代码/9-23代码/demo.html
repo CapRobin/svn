@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            background-color: pink;
+            width: 200px;
+            height: 200px;
+            margin: 100px;
+            border: 10px solid #000;
+
+        }
+
+
+
+    </style>
+</head>
+<body>
+<div></div>
+<script src="jQuery-1.0.0-my.js"></script>
+<script>
+    var div=getEle("div")[0];
+//    var div=document.getElementsByTagName("div")[0];
+//    var a;
+//    console.log(a);
+//    console.log(typeof  undefined);
+
+//    console.log(getStyle(div,null));
+//    console.log(div);
+//    console.log(getStyle(div,"width"));
+//    console.log(getStyle(div,"margin"));
+//    console.log(parseInt(getStyle(div,"margin")));
+//    console.log(getStyle(div,"border"));
+//    console.log(window.getComputedStyle(div,null)["width"]);
+
+    slowSpeedAnimate(div,{
+        "margin":500,
+
+    });
+
+//    console.log(parseFloat(getStyle(div,"")))
+
+</script>
+
+</body>
+</html>

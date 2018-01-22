@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button>点击</button>
+<button>解绑</button>
+<script>
+
+    var btn1 = document.getElementsByTagName("button")[0];
+    var btn2 = document.getElementsByTagName("button")[1];
+
+
+
+
+    function fn(){
+        alert("蒹葭苍苍,白露为霜.何以解忧,唯有杜康");
+    }
+
+
+    //兼容写法
+    EvenetListener = {
+        addEvent: function (ele, eventName, func) {
+            if (ele.addEventListener) {
+                ele.addEventListener(eventName, func);
+            } else if (ele.attachEvent) {
+                ele.attachEvent("on" + eventName, func);
+            } else {
+                //但是 有层叠覆盖问题  需要自己写解决层叠覆盖问题
+                ele["on" + eventName] = func;
+            }
+
+        },
+        deleteEvent: function (ele, eventName, func) {
+            if (ele["on" + eventName]) {
+                ele["on" + eventName] = null;
+            } else if (ele.removeEventListener) {
+                ele.removeEventListener(eventName, func);
+            } else {
+                ele.detachEvent("on" + eventName, func);
+            }
+        },
+        qq: function () {
+            
+        },
+//        ww:function
+        
+        
+
+    };
+
+    //添加事件
+
+    EvenetListener.addEvent(btn1,"click",fn);
+
+    btn2.onclick= function () {
+        EvenetListener.deleteEvent(btn1,"click",fn);
+    }
+
+
+</script>
+
+</body>
+</html>

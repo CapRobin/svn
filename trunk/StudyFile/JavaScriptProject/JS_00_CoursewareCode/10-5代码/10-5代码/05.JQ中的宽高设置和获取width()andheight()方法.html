@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            width: 100px;
+            height:150px;
+            background-color: pink;
+            padding:50px;
+            margin: 10px;
+            border: 10px solid #000;
+        }
+
+
+    </style>
+</head>
+<body>
+<script src="jquery-1.11.1.js"></script>
+<script>
+    $(function () {
+        $("button").eq(0).click(function () {
+            //width 和height的获取
+            //通过CSS的方式获取宽或高  结果是字符串类型 带单位px
+            //不包含margin  padding border
+//            alert($(".box").css("width"));
+//            alert($(".box").width());
+            //通过width或者height方法获取宽高 结果是number类型方便计算
+            //不包含margin  padding border
+//            alert(typeof $(".box").width());
+            alert("宽:"+$(".box").width()+"  高:"+$(".box").height());
+
+
+        });
+        $("button").eq(1).click(function () {
+            //width()和height()设置宽高
+            //传入参数就是设置  参数可以是带单位的字符串也可以是 数值
+            $(".box").width(300);
+            $(".box").height("300px");
+
+        });
+        
+    });
+    
+</script>
+<button>获取</button>
+<button>设置</button>
+<div class="box"></div>
+
+
+</body>
+</html>

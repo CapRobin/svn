@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+//    console.log(window);
+//window作为顶层BOM对象 调用时可以省略
+//所有的全局变量以及函数 都绑定到了 window对象上  window还可以省略
+
+    aaa="xxx";
+    console.log(window.aaa);
+
+
+    function  fn(){
+        alert("kkk");
+    }
+
+
+    window.fn();
+    console.log(window.fn);
+
+    window.alert("我是弹窗");
+window.confirm("我来选择");
+window.prompt("我来输入");
+
+
+
+</script>
+
+</body>
+</html>

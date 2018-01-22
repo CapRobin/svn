@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        button{
+            width: 100px;
+            height: 50px;
+            border: none;
+            margin: 30px;
+            cursor:pointer;
+        }
+        .show{
+            background-color: pink;
+        }
+
+
+    </style>
+</head>
+<body>
+<!--li.box$*5-->
+
+<button class="show">按钮1</button>
+<button>按钮2</button>
+<button>按钮3</button>
+<button>按钮4</button>
+<button>按钮5</button>
+
+<script>
+    /*
+
+    点亮盒子    思想 排他思想
+                先干掉所有人 然后复活自己
+
+
+        思路:
+            1.添加鼠标移入事件
+            2.干掉所有按钮
+            3.点亮自己
+
+     */
+    // 1.添加鼠标移入事件
+    var btArr=document.getElementsByTagName("button");
+
+
+    for(var i=0;i<btArr.length;i++){
+        btArr[i].index=i;
+
+        btArr[i].onmouseover= function () {
+            //2.干掉所有按钮
+            for(var i=0;i<btArr.length;i++){
+                btArr[i].className="";
+            }
+            //3.点亮自己
+            this.className="show";
+            console.log(this.index);
+//            console.log(this);
+//            console.log(i);
+//            console.log(btArr[i]);
+        }
+    }
+
+
+
+
+
+</script>
+
+
+
+</body>
+</html>

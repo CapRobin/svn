@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+            选择结构:  有选择性执行
+            格式:
+            1. 运行()里面的结果 看结果是true还是false  如果是true则执行语句体  false则不执行
+            if(布尔值或者表达式){
+                    语句体 (可以是一句可以是多句);
+            }
+
+            2.  布尔值是true 执行语句体1  然后 if语句结束  如果布尔值是false则执行语句体2
+            if(布尔值){
+                语句体1
+            }else{
+                语句体2
+            }
+            3.执行if  [ 判断布尔值 如果是true  执行语句体1  false 继续向下判断 看哪一个else if
+            //是true  则执行 哪一个else if的语句体  都没有true  执行else
+            if(布尔值){
+                语句体1
+            }else if(布尔值){
+                语句体2
+            }else if(布尔值){
+                语句体3
+            } ...else if(布尔值){
+                语句体n
+            }else{
+            }
+
+
+
+
+
+        var a=10;
+        if(a>=11){
+            alert("我是大于等于10");
+        }
+
+
+
+
+        var a=7;
+        if(a>8){
+            alert("a比8大");
+        }else{
+            alert("a不比8大");
+        }
+         */
+
+        var a=41;
+        if(a>50){
+            alert('a比50大');
+        }else if(a>40){
+            alert('a比40大');
+        }else if(a>30){
+            alert('a比30大');
+        }else{
+            alert('a太low');
+        }
+
+
+        alert('我是酱油团!!!顺序结构');
+    </script>
+</head>
+<body>
+
+</body>
+</html>

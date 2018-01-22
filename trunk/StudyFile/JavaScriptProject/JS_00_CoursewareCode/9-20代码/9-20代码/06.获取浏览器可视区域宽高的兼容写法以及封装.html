@@ -1,0 +1,21 @@
+<!--<!DOCTYPE html>-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="jQuery-1.0.0-my.js"></script>
+<script>
+//    //标准模式下(有DTD)   火狐没有DTD不行
+//console.log(document.documentElement.clientWidth+"   "+document.documentElement.clientHeight);
+//    //怪异模式下
+//console.log(document.body.clientWidth+"   "+document.body.clientHeight);
+//    //IE9+ 识别  IE8一下  undefined
+//console.log(window.innerWidth+"   "+window.innerHeight);
+
+console.log(getBrowserClient().width+"   "+getBrowserClient().height);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .right {
+            color: green;
+        }
+
+        .wrong {
+            color: red;
+        }
+
+
+    </style>
+</head>
+<body>
+<input type="text" id="inp">
+<span id="sp"></span>
+<script>
+    var inp = document.getElementById("inp");
+    var sp = document.getElementById("sp");
+    inp.onblur = function () {
+
+
+//        if (/^1[3578]\d{9}$/.test(this.value)) {
+//            sp.innerHTML = "手机号输入正确!";
+//            sp.className = "right";
+//
+//        } else {
+//            sp.innerHTML = "手机号格式错误!";
+//            sp.className = "wrong";
+//
+//        }
+        //010 024 三位 区号是由  直辖市 和6大区域中心组成
+        // 0316   普通城市
+        //010 8
+       // 0244 5992627
+        if (/^(0\d{2}\-8\d{7})|(0\d{3}\-3\d{6})$/.test(this.value)) {
+            sp.innerHTML = "固话输入正确!";
+            sp.className = "right";
+
+        } else {
+            sp.innerHTML = "固话格式错误!";
+            sp.className = "wrong";
+
+        }
+
+
+
+
+    }
+
+
+</script>
+
+</body>
+</html>

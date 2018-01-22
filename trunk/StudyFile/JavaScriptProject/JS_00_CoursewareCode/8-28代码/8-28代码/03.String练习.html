@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //    截取字符串"我爱中华人民共和国"，中的"中华"
+
+    var str = "我爱中华人民共和国";
+
+    //    console.log(str.substr(2,2));
+    //    console.log(str.substring(2,4));
+    //    console.log(str.slice(2,4));
+    //"abcoefoxyozzopp"查找字符串中所有o出现的位置
+
+    var str1 = "abcoefoxyozzopp";
+    //    var arr=[];
+    //    for(var i=0;i<str1.length;i++){
+    //        if(str1.charAt(i)==="o"){
+    //            arr.push(i);
+    //        }
+    //    }
+    //
+    //    console.log(arr);
+
+    //把字符串中所有的o替换成!
+    //    console.log(str1.replace(/o/g,"!"))
+    //判断一个字符串中出现次数最多的字符，统计这个次数
+//
+//    var json = {};
+//    for (var i = 0; i < str1.length; i++) {
+//        var c = str1.charAt(i);
+//        if (json[c] === undefined) {
+//            json[c] = 1;
+//        } else {
+//            json[c] += 1;
+//        }
+//    }
+//
+//    console.log(json);
+//
+////    var max=json[a];
+//
+//    var num=0;
+//    var key;
+//    //遍历json  取出值最大的那个键
+//    for (var k in json) {
+//        if(num<1){
+//            var max=json[k];
+//            num++;
+//        }else{
+//            if(json[k]>max){
+//                //如果下一个元素比最大值还大 那么就是新的最大值
+//                //把max等于最大值的键值对的值
+//                max=json[k];
+//                //把key等于 最大值的那个键
+//                key=k;
+//
+//            }
+//
+//
+//        }
+//
+//
+//
+//
+//    }
+//
+//    console.log(key+"  "+max);
+
+
+    //数组去重和字符串去重
+//    var arr=str1.split("");
+//
+//    var newArr=[];
+////    console.log(arr);
+//    for(var i=0;i<arr.length;i++){
+//        //利用根据字符串找到头位置 如果这个位置跟当前遍历的索引位置相同
+//        //表示第一次出现 放入新数组
+//        //如果不同 表示在当前字符之前还有一个跟自己相等的字符 那么表示自己是重复的
+//        //不在放入新数组
+//        //总结: 查找所有字符 第一次出现的位置 放入数组 其他不放
+//        if(arr.indexOf(arr[i])===i){
+//        newArr.push(arr[i]);
+//        }
+//    }
+//
+//    console.log(newArr);
+//字符串翻转
+
+    var str3="abcdefg";
+//    console.log(str3.reverse);
+    //字符串翻转     类似链式编程 (不是真正的)
+    console.log(str3.split("").reverse().join(""));
+
+
+</script>
+
+</body>
+</html>

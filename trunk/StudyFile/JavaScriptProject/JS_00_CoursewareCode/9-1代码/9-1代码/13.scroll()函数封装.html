@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            height: 5000px;
+        }
+
+
+    </style>
+</head>
+<body>
+<script>
+    //要求 scroll()的返回值 是json  可以直接点top  点 left获取值
+    
+    window.onscroll= function () {
+//        console.log(document.documentElement.scrollTop);
+        document.title=scroll().top;
+    };
+    
+
+
+    function scroll(){
+//      if(window.pageYOffset!==undefined){
+//            //火狐 谷歌  IE9+
+////          console.log(document.pageYOffset);
+//          return {
+//              top:parseInt(window.pageYOffset),
+//              left:parseInt(window.pageXOffset)
+//
+//          };
+//      }else {
+//        return {
+//            top:parseInt(document.documentElement.scrollTop),
+//            left:parseInt(document.documentElement.scrollLeft)
+//        };
+//
+//      }
+
+        return {
+            top:parseInt(window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop),
+            left:parseInt(window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft)
+        };
+
+
+    }
+
+
+</script>
+
+</body>
+</html>

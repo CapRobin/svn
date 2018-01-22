@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        img{
+            border: 1px solid #000;
+        }
+        
+        
+    </style>
+</head>
+<body>
+<script src="jquery-1.1.1.js"></script>
+<script>
+    //原生JS的入口函数只能写一个  写多个就层叠覆盖
+//    window.onload= function () {
+    //        alert("我是原生第一个入口函数");
+    //
+    //    }
+    //    window.onload= function () {
+    //        alert("我是原生第二个入口函数");
+    //
+    //    }
+    //的入口函数  多个不会覆盖
+//    $(function () {
+//        alert("JQ的第一个入口");
+//    });
+
+    //文档和图片都加载完成  相当于原生的 window.onload
+//    $(function () {
+////        alert("JQ的第二个入口");
+//        alert("入口函数被弹出");
+//    });
+    
+    
+//    $(document).ready(function () {
+//        alert("入口函数1");
+//
+//    });
+    //文档加载出来以后执行
+//    $(document).ready(function () {
+//        alert("入口函数2");
+//
+//    });
+    //文档和图片全部加载完 执行
+    $(window).ready(function () {
+        alert("window加载完");
+    })
+
+
+</script>
+<img src="http://www.baidu.com/img/bd_logo.png" alt="">
+</body>
+</html>

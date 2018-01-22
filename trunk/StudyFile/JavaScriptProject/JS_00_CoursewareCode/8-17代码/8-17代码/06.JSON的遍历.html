@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var json = {
+            "name": "四炮",
+            "age": "26",
+            "length": "185",
+
+
+        };
+        /*
+         JSON的遍历
+         for  in 循环
+
+         for in 循环变量遍历出来的都是每一个键也就是属性名
+
+
+
+         */
+
+//        for (var k in json) {
+////            k="age";
+////            k="name";
+////            k="name";
+////            console.log(k);           //对象点属性名 获取属性值 此种方式获取不到 因为 对象没有k属性
+////            console.log("键:"+k+" 值:"+json.k);
+//            console.log("键:" + k + " 值:" + json[k]);
+//        }
+
+
+        function Person() {
+
+
+        }
+        //        var aaa="hehe";
+        var per = new Person();
+        //        per[aaa]="哈哈";
+        //        console.log(per);
+        //绑定属性
+        per["kk"] = "哈哈";
+        //获取属性
+        console.log(per["kk"]);
+        console.log(per);
+
+//        var a=20;
+//        a=30;
+//
+//        alert(a);
+
+
+    </script>
+
+
+</head>
+<body>
+
+</body>
+</html>

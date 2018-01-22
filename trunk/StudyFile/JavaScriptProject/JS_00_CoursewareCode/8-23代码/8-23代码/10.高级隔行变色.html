@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        .wrap {
+            width: 500px;
+            margin: 100px auto 0;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            border: 1px solid #c0c0c0;
+            width: 500px;
+        }
+
+        th,
+        td {
+            border: 1px solid #d0d0d0;
+            color: #404060;
+            padding: 10px;
+        }
+
+        th {
+            background-color: #09c;
+            font: bold 16px "微软雅黑";
+            color: #fff;
+        }
+
+        td {
+            font: 14px "微软雅黑";
+        }
+
+        tbody tr {
+            background-color: #f0f0f0;
+            cursor: pointer;
+        }
+        
+        .current {
+            background-color: red!important;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th>序号</th>
+                    <th>姓名</th>
+                    <th>课程</th>
+                    <th>成绩</th>
+                </tr>
+            </thead>
+            <tbody id="target">
+                <tr>
+                    <td>
+                        1
+                    </td>
+                    <td>吕不韦</td>
+                    <td>语文</td>
+                    <td>100</td>
+
+                </tr>
+                <tr>
+                    <td>
+                        2
+                    </td>
+                    <td>吕布</td>
+                    <td>日语</td>
+                    <td>100</td>
+                </tr>
+                <tr>
+                    <td>
+                        3
+                    </td>
+                    <td>吕蒙</td>
+                    <td>营销学</td>
+                    <td>100</td>
+                </tr>
+                <tr>
+                    <td>
+                        4
+                    </td>
+                    <td>吕尚</td>
+                    <td>数学</td>
+                    <td>100</td>
+                </tr>
+                <tr>
+                    <td>
+                        5
+                    </td>
+                    <td>吕雉</td>
+                    <td>英语</td>
+                    <td>100</td>
+                </tr>
+                <tr>
+                    <td>
+                        6
+                    </td>
+                    <td>吕奉恩</td>
+                    <td>嗓门</td>
+                    <td>120</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        /*
+
+            #ff0000
+            f  :15
+
+            10
+            20
+            30
+            f0 :240
+            ff:255
+
+
+         */
+
+
+
+        var tbody=document.getElementById("target");
+        var trArr=tbody.getElementsByTagName("tr");
+        for(var i=0;i<trArr.length;i++){
+            //隔行变色
+            if(i%2===0){
+                trArr[i].style.backgroundColor="#ccc";
+            }else{
+                trArr[i].style.backgroundColor="#A3A3A3";
+            }
+            
+            //给每一个tr添加鼠标移入事件
+            //记录器
+            var color="";
+            trArr[i].onmouseover= function () {
+                //鼠标移入之前先把之前的背景颜色记住
+                color=this.style.backgroundColor;
+                console.log(color);
+                this.style.backgroundColor="#fff";
+            }
+            //给每一个tr添加鼠标移出事件
+            trArr[i].onmouseout= function () {
+
+                this.style.backgroundColor=color;
+            }
+            
+        }
+
+
+
+
+    </script>
+
+
+
+</body>
+</html>

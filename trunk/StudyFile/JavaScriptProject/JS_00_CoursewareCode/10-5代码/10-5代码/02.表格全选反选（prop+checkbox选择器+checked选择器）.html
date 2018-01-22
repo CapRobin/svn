@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .wrap {
+            width: 300px;
+            margin: 100px auto 0;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            border: 1px solid #c0c0c0;
+        }
+
+        th,
+        td {
+            border: 1px solid #d0d0d0;
+            color: #404060;
+            padding: 10px;
+        }
+
+        th {
+            background-color: #09c;
+            font: bold 16px "微软雅黑";
+            color: #fff;
+        }
+
+        td {
+            font: 14px "微软雅黑";
+        }
+
+        tbody tr {
+            background-color: #f0f0f0;
+        }
+
+        tbody tr:hover {
+            cursor: pointer;
+            background-color: #fafafa;
+        }
+    </style>
+    <script src="jquery-1.11.1.js"></script>
+    <script>
+       
+
+        $(function () {
+            //需求:  点击上面下面全选  点击下面  如果都选中 上面全选 如果有一个没选中上面不选中
+            //步骤
+            //1.上面的checkbox点击事件 选中或取消选中下面所有
+            //2.下面的每一个checkbox点击事件 每点击一次 就要判断 如果全选 上面选中 否则相反
+
+            //1.上面的checkbox点击事件 选中或取消选中下面所有
+            $("#j_cbAll").click(function () {
+//                alert(1);
+                //$("#j_cbAll").prop("checked") 获取被选中后状态
+                $("#j_tb input:checkbox").prop("checked",$("#j_cbAll").prop("checked"));
+
+            });
+
+
+            //2.下面的每一个checkbox点击事件 每点击一次 就要判断 如果全选 上面选中 否则相反
+
+            $("#j_tb input:checkbox").click(function () {
+                //如果下面的全部是选中 则上面的 是true  否则是false
+                //如果选中的checkbox的长度跟所有的checkedbox的长度一致  表示 所有的都是选中的
+                //否则 就至少有一个没选中
+                if($("#j_tb input:checkbox").length===$("#j_tb input:checked").length){
+                    $("#j_cbAll").prop("checked",true);
+                }else{
+                    $("#j_cbAll").prop("checked",false);
+                }
+//                console.log($("#j_tb input:checked").length);
+
+
+                
+            });
+            
+        })
+        
+
+
+    </script>
+</head>
+
+<body>
+    <div class="wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        <input type="checkbox" id="j_cbAll"/>
+                    </th>
+                    <th>课程名称</th>
+                    <th>所属学院</th>
+                </tr>
+            </thead>
+            <tbody id="j_tb">
+                <tr>
+                    <td>
+                        <input type="checkbox"/>
+                    </td>
+                    <td>JavaScript</td>
+                    <td>善知教育前端课程</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox"/>
+                    </td>
+                    <td>css</td>
+                    <td>善知教育前端课程</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox"/>
+                    </td>
+                    <td>html</td>
+                    <td>善知教育前端课程</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox"/>
+                    </td>
+                    <td>jQuery</td>
+                    <td>善知教育前端课程</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

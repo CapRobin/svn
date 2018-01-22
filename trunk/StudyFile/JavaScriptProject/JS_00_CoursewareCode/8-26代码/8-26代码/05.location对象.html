@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="btn">按钮</button>
+<script>
+    var btn=document.getElementById("btn");
+    /*
+     window.location
+     location相当于浏览器地址栏
+     可以将url解析成独立的片段
+     location对象的属性
+     href
+     hash   返回url中#后面的内容，包含#
+     host    主机名，包括端口
+     hostname   主机名
+     pathname     url中的路径部分
+     protocol    协议 一般是http、https
+     search	     查询字符串
+
+     */
+    
+    btn.onclick= function () {
+        //相当于超链接  在当前选项卡打开一个url路径  访问一个网址
+//        location.href = "http://www.baidu.com#asdfkjh";
+
+        console.log(location.hash);
+        console.log(location.host);
+        console.log(location.hostname);
+        console.log(location.pathname);
+        console.log(location.protocol);
+
+    }
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="jquery-1.11.1.js"></script>
+<script>
+    $(function () {
+//        jQuery创建节点的两种方式  1.$("标签") 2.html() 参考js的innerHTML
+
+//        var newLi=$("<li>我是一个JQ的li</li>");
+////        console.log($("#ll"));
+////        console.log(newLi);
+//        $(".box").html("<p>我是一个生成的p</p>");//跟js的innerHTML对应
+        
+        var num=0;
+        $("button").eq(0).click(function () {
+            var newLi=$("<li>我是一个JQ的li"+(num++)+"</li>");
+            //拼接子节点 在最后一个子元素后
+//            $(".box").append(newLi);//还可以写字符串节点
+            //appendTo  也是拼接子节点  也是拼到最后  调用者和被调用者换位  -了解
+//            newLi.appendTo($(".box"));
+
+
+            //拼接字节点 在第一个子元素前
+//            $(".box").prepend(newLi);
+
+            //prependTo 反过来调用 ---了解
+
+//            newLi.prependTo($(".box"));
+
+
+            //after  before
+            //在当前元素之前拼接
+//            $(".box>div").before(newLi);
+            //在当前元素之后
+            $(".box>div").after(newLi);
+
+
+
+        });
+
+        $("button").eq(1).click(function () {
+            //清空元素    empty   html("")  自己.remove()自杀
+//            $(".box").empty();
+//            $(".box").html("");
+
+        //自杀
+//        $("#ll").remove();
+        $(".box").remove();
+
+
+        });
+        $("button").eq(2).click(function () {
+            //clone 复制元素  只能深层复制
+
+            var newP=$(".box>p").clone();
+            $(".box").append(newP);
+
+
+
+        });
+    });
+    
+    
+</script>
+<button>创建拼接</button>
+<button>清空元素</button>
+<button>复制元素</button>
+<div class="box">
+    <li id="ll">我是原生的li</li>
+    <div>我是原生的div</div>
+    <p>我是原生的p标签
+    <span>我是p里面的span</span>
+    </p>
+
+
+    
+</div>
+
+<!--<div class="box">-->
+    <!--握手一个哈哈-->
+
+<!--</div>-->
+
+
+</body>
+</html>

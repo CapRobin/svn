@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="jQuery-1.0.0-my.js"></script>
+<script>
+    //大小每改变一像素 就会触发一次
+    //    window.onresize= function () {
+    //
+    ////        console.log(1);
+    //
+    //        document.title=getBrowserClient().width+"  "+getBrowserClient().height;
+    //
+    //    }
+
+
+
+
+    fn();
+
+    window.onresize = fn;
+    function fn() {
+
+        var w = getBrowserClient().width;
+        if (w > 960) {
+            document.body.style.backgroundColor = "red";
+        } else if (w > 640) {
+            document.body.style.backgroundColor = "pink";
+        } else {
+            document.body.style.backgroundColor = "green";
+        }
+
+
+    }
+
+
+</script>
+
+</body>
+</html>

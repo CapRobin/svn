@@ -1,0 +1,171 @@
+﻿<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="checkDemo.css"/>
+    <script src="jquery-1.11.1.js"></script>
+    <script>
+        $(function () {
+            //bug: 1.添加数据 课程名不能为空
+            //2.添加完数据 要把input清空
+            //3.新添加的数据无法删除
+
+
+            //需求:
+            //1.点击添加数据按钮  显示遮罩层和输入课程的盒子
+            //2.点击盒子的关闭按钮 关闭当前盒子
+            //3.点击get删除当前行数据
+            //4.点击弹出盒子的添加按钮,将输入的数据动态添加到表格上面 隐藏盒子和遮罩层
+
+
+
+            //1.点击添加数据按钮  显示遮罩层和输入课程的盒子
+            $("#j_btnAddData").click(function () {
+               $("#j_mask").show();
+                $("#j_formAdd").show();
+
+
+            });
+            
+            
+            
+            
+            //2.点击盒子的关闭按钮 关闭当前盒子
+            $("#j_hideFormAdd").click(function () {
+                $("#j_mask").hide();
+                $("#j_formAdd").hide();
+            });
+
+
+            //3.点击get删除当前行数据
+//            $("#j_tb .get").click(function () {
+//                //删除当前get所在的tr
+//                $(this).parent().parent().remove();
+//            });
+            //事件委托的方式 给table加点击事件
+            $("#tab").click(function (event) {
+//                console.log(this);//是table
+//                console.log(event.target);
+                //ta是JS对象
+                var ta=event.target;
+                if(ta.className==="get"){
+                    //转换成JQ对象
+                    $(ta).parent().parent().remove();
+
+                }
+
+            });
+
+
+
+
+            //4.点击弹出盒子的添加按钮,将输入的数据动态添加到表格上面 隐藏盒子和遮罩层
+            $("#j_btnAdd").click(function () {
+                if($("#j_txtLesson").val()===""){
+                        alert("课程不能为空!");
+                    return;
+                }
+
+
+                var str="<tr>"
+                        +"<td>"+$('#j_txtLesson').val()+"</td>"
+                        +"<td>"+$('#j_txtBelSch').val()+"</td>"
+                        +"<td><a href='javascrip:;' class='get'>GET</a></td>"
+                        +" </tr>";
+
+
+
+
+//            $("#j_tb").html(str);//会把之前所有的数据覆盖掉
+//                $("#j_tb").append(str);//可以实现  append一个字符串标签
+                $("#j_tb").append($(str));//JQ的创建元素
+
+                //添加完数据 把input清空
+                $("#j_txtLesson").val("");
+
+                $("#j_mask").hide();
+                $("#j_formAdd").hide();
+
+
+                //点击事件执行以后 再遍历所有的get重新添加click事件  不推荐
+                //推荐 事件委托
+//                $("#j_tb .get").click(function () {
+//                    //删除当前get所在的tr
+//                    $(this).parent().parent().remove();
+//                });
+
+
+
+            });
+
+
+
+
+
+        });
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <div>
+            <input type="button" value="添加数据" id="j_btnAddData" class="btnAdd"/>
+        </div>
+        <table id="tab">
+            <thead>
+                <tr>
+                    <!-- <th><input type="checkbox" id="j_cbAll" /></th> -->
+                    <th>课程名称</th>
+                    <th>所属学院</th>
+                    <th>已学会</th>
+                </tr>
+            </thead>
+            <tbody id="j_tb">
+                <tr>
+                    <!-- <td><input type="checkbox"/></td> -->
+                    <td>JavaScript</td>
+                    <td>善知教育-一个高薪就业的平台</td>
+                    <td><a href="javascrip:;" class="get">GET</a></td>
+                </tr>
+                <tr>
+                    <!-- <td><input type="checkbox"/></td> -->
+                    <td>css</td>
+                    <td>善知教育-一个高薪就业的平台</td>
+                    <td><a href="javascrip:;" class="get">GET</a></td>
+                </tr>
+                <tr>
+                    <!-- <td><input type="checkbox"/></td> -->
+                    <td>html</td>
+                    <td>善知教育-一个高薪就业的平台</td>
+                    <td><a href="javascrip:;" class="get">GET</a></td>
+                </tr>
+                <tr>
+                    <!-- <td><input type="checkbox"/></td> -->
+                    <td>jQuery</td>
+                    <td>善知教育-一个高薪就业的平台</td>
+                    <td><a href="javascrip:;" class="get">GET</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div id="j_mask" class="mask"></div>
+    <div id="j_formAdd" class="form-add">
+        <div class="form-add-title">
+            <span>添加数据</span>
+            <div id="j_hideFormAdd">x</div>
+        </div>
+        <div class="form-item">
+            <label class="lb" for="j_txtLesson">课程名称：</label>
+            <input class="txt" type="text" id="j_txtLesson" placeholder="请输入课程名称">
+        </div>
+        <div class="form-item">
+            <label class="lb" for="j_txtBelSch">所属学院：</label>
+            <input class="txt" type="text" id="j_txtBelSch" value="善知教育-一个高薪就业的平台">
+        </div>
+        <div class="form-submit">
+            <input type="button" value="添加" id="j_btnAdd">
+        </div>
+    </div>
+
+</body>
+</html>

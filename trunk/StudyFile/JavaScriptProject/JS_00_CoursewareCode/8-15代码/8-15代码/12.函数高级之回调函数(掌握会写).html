@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+       /*
+          回调:  回来调用
+
+          程序中 : 函数作为参数使用
+
+          意义:  把函数作为参数使用 并且作为当前的一个规则来用
+          传入不同的函数  执行不同的事情
+
+
+
+         */
+//        fn(test);
+        function fn(demo){
+            alert("我是fn函数");
+            //回调
+//            demo();
+            test();
+        }
+
+
+
+        function test(){
+            alert("我是test函数");
+
+        }
+
+        //要求 函数有三个参数  前两个是整数 后一个是规则  规则规定了 这两个参数在函数中是计算了加减乘除哪一个算法
+        /*
+                用目前所学的知识我们的规则只能通过字符串或者 整数来简单判断
+                而且 函数里面还要写好多判断 非常之麻烦
+                所以我们想的是 能不能把规则封装成一个函数呢?
+
+
+         */
+//       suan(10,5,"乘");
+
+//        function suan(a,b,rule){
+//            if(rule==="加"){
+//                alert(plus(a,b));
+//
+//            }
+//            if(rule==="减"){
+//                alert(minus(a,b));
+//
+//            }
+//            if(rule==="乘"){
+//                alert(ride(a,b));
+//
+//            }
+//            if(rule==="除"){
+//                alert(chu(a,b));
+//
+//            }
+//
+//        }
+
+
+       var m=suan(10,5,plus);
+       var n=suan(10,5,minus);
+       var k=suan(10,5,  function (a,b) {
+           return a%b;
+       });
+       alert(m);
+       alert(n);
+       alert(k);
+
+//       回调改进版
+        function  suan(a,b,operation){
+
+         var num=operation(a,b);
+            return num;
+        }
+
+        function plus(a,b){
+            return a+b;
+        }
+        function minus(a,b){
+            return a-b;
+        }
+        function ride(a,b){
+            return a*b;
+        }
+        function chu(a,b){
+            return a/b;
+        }
+
+        function qq(){
+            alert("我是qq");
+        }
+
+//        var ww=qq;
+//        ww();
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

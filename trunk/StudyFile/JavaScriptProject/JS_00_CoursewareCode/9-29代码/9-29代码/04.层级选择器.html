@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="jquery-1.11.1.js"></script>
+<script>
+    $(function () {
+        //层级选择器  子代(>)  后代(空格) 子子孙孙
+
+        //后代
+        $("ul li").css({
+            "background-color":"pink",
+            "margin-bottom":"10px"
+        });
+
+        $("ul>li").css({
+            "background-color":"red",
+        });
+
+
+        
+    });
+    
+    
+    
+</script>
+<ul>
+    <li>天凉好个秋</li>
+    <li>天凉好个秋</li>
+    <li>天凉好个秋</li>
+    <li>天凉好个秋</li>
+    <li>天凉好个秋</li>
+    <li>天凉好个秋</li>
+    <ol>
+        <li>我是ol里面的li</li>
+        <li>我是ol里面的li</li>
+        <li>我是ol里面的li</li>
+        <li>我是ol里面的li</li>
+    </ol>
+</ul>
+
+
+
+</body>
+</html>

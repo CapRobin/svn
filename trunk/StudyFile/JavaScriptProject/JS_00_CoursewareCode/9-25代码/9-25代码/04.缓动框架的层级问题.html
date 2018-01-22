@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            position: absolute;
+            top: 50px;
+            left: 0;
+        }
+
+
+
+    </style>
+</head>
+<body>
+<button id="btn">按钮</button>
+
+<div></div>
+<script src="jQuery-1.0.0-my.js"></script>
+<script>
+    var btn=document.getElementById("btn");
+    var box=getEle("div")[0];
+    btn.onclick= function () {
+        var json={
+            width:300,
+            height:300,
+            top:100,
+            left:100,
+            opacity:30,
+            zIndex:1,
+
+
+        };
+        slowSpeedAnimate(box,json);
+
+
+
+    }
+    //缓动框架的封装
+    function  slowSpeedAnimate(ele,json,callback){
+        clearInterval(ele.timer);
+        ele.timer=setInterval(function () {
+            var boo=true;
+            for(var k in json){
+                var nowState;
+                //针对 传入json属性是opacity 单独判断
+                if(k==="opacity"){
+                    //每次我们操作的都是百分制的opacity
+                    //因为小数直接运算会有精度丢失问题,尽量避免小数进行计算
+                    //而且 百分制的也方便我们后面代码步长以及缓动的实现
+                    nowState=parseInt(getStyle(ele,k)*100) || 100;
+                }else{
+                    nowState =parseFloat(getStyle(ele,k)) || 0;
+                    nowState=Math.round(nowState);
+
+                }
+                //在IE8中  getStyle(ele,"opacity)的结果是一个精确很多位的小数
+                //我们需要转换成
+//                console.log(nowState);
+
+                var step=(json[k]-nowState)/10;
+                step=step>0?Math.ceil(step):Math.floor(step);
+                //把本次计算出来的步长 加入到下一次要移动的目标上面去
+                nowState=nowState+step;
+                if(k==="opacity"){
+                    ele.style[k]=nowState/100;
+                    //兼容IE8
+                    ele.style.filter="alpha(opacity="+nowState+")";
+
+                }else if(k==="zIndex"){
+                    ele.style[k]=json[k];
+                }else{
+                    //开始移动
+                    ele.style[k]=nowState+"px";
+                }
+
+                if(nowState!==json[k]){
+                    boo=false;
+                }
+
+            }
+            if(boo){
+
+
+                clearInterval(ele.timer);
+
+                if(callback){
+                    callback();
+                }
+            }
+
+        },25);
+
+
+
+
+    }
+    
+</script>
+</body>
+</html>

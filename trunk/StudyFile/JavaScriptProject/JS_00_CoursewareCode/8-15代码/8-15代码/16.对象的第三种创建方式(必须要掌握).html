@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //第三种创建对象的方式
+        function Person(name,age){
+            //当前对象绑定属性
+            this.name=name;
+            this.age=age;
+
+
+
+            //当前对象绑定函数
+            this.sayHi=function(){
+                alert(this.name+":说:地球你好!");
+            }
+//            console.log(this);
+
+        }
+        /*
+
+        new关键字:
+         开辟内存空间  存储新创建的对象(new Object())
+         把this设置为当前对象
+         执内行部代码,设置对象属性和方法
+         返回新创建的对象
+
+
+         创建对象为什么要用new  去调用函数   因为new是再调用构造函数(下节课讲)
+         并且 那个四步骤↑
+
+         如果没有new  就是调用一个普通函数 执行以下里面代码即可
+         有return就有返回值
+         没有return  就返回值为undefined
+
+         总结起来:
+                函数可以new
+                    一般要被new的函数 大写 表示一个类型  就是为了 new(创建)对象
+                还可以直接函数名()直接调用
+                    就是一个普通函数调用 跟变量名的命名规则一样的函数名
+
+
+
+         */
+        //创建对象  引用数据类型 复杂数据类型  复合数据类型
+//        var per=new Person("阿三",65);
+//        var per1=new Person("阿三",65);
+////        alert(per);
+//        console.log(per);
+
+
+//            var kk= Person("xx",60);
+//             console.log(kk);
+
+            function fn(){
+                alert("普通函数");
+            }
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

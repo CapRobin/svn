@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+        .kk{
+            font-size: 30px;
+        }
+        input{
+            width: 50px;
+            height: 50px;
+        }
+
+
+    </style>
+
+
+
+</head>
+<body>
+<script src="jquery-1.11.1.js"></script>
+<script>
+    $(function () {
+        $("button").eq(0).click(function () {
+//            $(".box")[0].className+=" kk";
+//            $(".box").className="box kk"
+//            $(".box")[0].id="hehe";
+//            $(".box").id="oo";
+//            $(".box")[0].title="我是提示";
+//            $(".box").title="我是提示JQ";
+
+//            $(".box")[0].aaa="sdekjfhswdekij";
+
+//            var jsobj=$(".box")[0];
+//            jsobj.aaa=50;
+//            console.log(jsobj.aaa);
+//            console.log($(jsobj).aaa);
+
+//            var jqobj=$(".box");
+//            jqobj.aaa="呵呵";
+//            console.log(jqobj.aaa);
+//            console.log(jqobj[0].aaa);
+
+
+            //JQ中操作页面元素属性的方法 attr()
+            //一个参数传入属性名  获取属性值
+            //传入2个参数   添加指定属性
+
+//            $(".box").attr("id","卡卡");
+//            $(".box").attr("title","我不是盒子");
+
+
+            //添加或修改执行属性的值
+//            $(".box").attr("class","box kk");
+//            console.log($(".box").attr("style"));
+//            console.log($(".box").attr("class"));
+            //移除属性  根据属性名
+            $(".box").removeAttr("style");
+
+
+        });
+        $("button").eq(1).click(function () {
+            //直接选择input元素下面type为checkbox的元素
+//            $("input:checkbox").attr("checked","checked");
+            //checked  selected  disabled
+            $("input:checkbox").prop("checked",true);
+        });
+    });
+    
+    
+</script>
+<button>添加类</button>
+
+<div class="box" style="font-size: 20px;margin: 20px">呵呵</div>
+<button>选中</button>
+<input type="checkbox">我是多选
+
+</body>
+</html>

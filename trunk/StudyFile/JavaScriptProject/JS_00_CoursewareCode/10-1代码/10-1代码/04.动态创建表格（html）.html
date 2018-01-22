@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            border: 1px solid #c0c0c0;
+        }
+
+        th,
+        td {
+            border: 1px solid #d0d0d0;
+            color: #404060;
+            padding: 10px;
+        }
+
+        th {
+            background-color: #09c;
+            font: bold 16px "微软雅黑";
+            color: #fff;
+        }
+
+        td {
+            font: 14px "微软雅黑";
+        }
+
+        tbody tr {
+            background-color: #f0f0f0;
+        }
+
+        tbody tr:hover {
+            cursor: pointer;
+            background-color: #fafafa;
+        }
+    </style>
+    <script src="jquery-1.11.1.js"></script>
+    <script>
+        $(function () {
+            // 模拟从后台拿到的数据
+            var data = [{
+                name: "善知教育",
+                url: "http://www.itszt.com",
+                type: "IT最强培训机构"
+            }, {
+                name: "善知科技",
+                url: "http://www.itszt.com",
+                type: "大学生IT培训机构"
+            }, {
+                name: "善知堂",
+                url: "http://www.itszt.com",
+                type: "前端的黄埔军校"
+            }];
+
+            //需求:点击按钮 根据后台拿到的数据动态生成表格行和列
+            //步骤
+            //1.按钮点击事件
+            //2.遍历数组,根据数据长度for循环  生成每一行每一列
+            //3.把生成出来的每一列和每一行拼接到tbody里面
+            $("#j_btnGetData").click(function () {
+//                alert(data.length);
+                //每一次点击创建一个str对象
+                var str="";
+                for(var i=0;i<data.length;i++){
+                    //for循环 不停往里面拼接tr+td
+                    str+="<tr>"
+                            +"<td>"+data[i].name+"</td>"
+                            +"<td>"+data[i].url+"</td>"
+                            +"<td>"+data[i].type+"</td>"
+                            +"</tr>";
+
+
+                }
+                console.log(str);
+                //for循环执行完 str里面会有好多拼接完的tr+td  一次性放到tbody里面
+                $("#j_tbData").html(str);
+
+            });
+
+
+
+        })
+    </script>
+</head>
+
+<body>
+<input type="button" value="获取数据" id="j_btnGetData"/>
+<table>
+    <thead>
+    <tr>
+        <th>标题</th>
+        <th>地址</th>
+        <th>说明</th>
+    </tr>
+    </thead>
+    <tbody id="j_tbData">
+
+    <!--这是一行数据  data数组长度有多少就生成几行-->
+    <!--<tr>-->
+    <!--<td>1</td>-->
+    <!--<td>2</td>-->
+    <!--<td>3</td>-->
+    <!--</tr>-->
+    </tbody>
+</table>
+</body>
+
+</html>

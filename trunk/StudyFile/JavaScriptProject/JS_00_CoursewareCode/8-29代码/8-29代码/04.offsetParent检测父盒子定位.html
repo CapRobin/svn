@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .p1{
+            height: 500px;
+            background-color: #ccc;
+            position: relative;
+            top: 50px;
+            left: 50px;
+
+        }
+
+        .p2{
+            width: 500px;
+            height: 200px;
+            background-color: blue;
+            position: absolute;
+
+
+
+        }
+
+        .child{
+            width: 50px;
+            height: 50px;
+            margin: 20px;
+            background-color: red;
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="p1">
+    <div class="p2">
+        <div class="child"></div>
+
+    </div>
+</div>
+<script>
+    var child=document.getElementsByClassName("child")[0];
+    //返回是一个节点对象(带有定位的父盒子)
+    console.log(child.offsetParent);
+    console.log(typeof child.offsetParent);
+    /*
+     1、返回该对象的父级 （带有定位）
+     如果当前元素的父级元素没有进行CSS定位
+     （position为absolute或relative，fixed）， 不包含static
+
+
+     */
+
+
+
+</script>
+
+
+
+</body>
+</html>

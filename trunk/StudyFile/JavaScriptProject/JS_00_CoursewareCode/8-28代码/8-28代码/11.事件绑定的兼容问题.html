@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button>按钮</button>
+
+<script>
+    var btn=document.getElementsByTagName("button")[0];
+    
+//    btn.addEventListener("click", fn);// IE8 对象不支持“addEventListener”属性或方法
+//        IE8时代
+
+//    btn.attachEvent("on事件名称",事件驱动函数);
+//    btn.attachEvent("onclick",fn);
+    function fn(){
+        alert("三大运营商9月实现国内无漫游!!");
+
+    }
+//    console.log(btn.addEventListener);//IE9 火狐谷歌 有值   IE8  undefined
+//    console.log(btn.attachEvent);
+
+    //兼容写法
+    EvenetListener={
+        addEvent: function (ele,eventName,func) {
+                if(ele.addEventListener){
+                    ele.addEventListener(eventName,func);
+                }else if(ele.attachEvent){
+                    ele.attachEvent("on"+eventName,func);
+                }else{
+                    //但是 有层叠覆盖问题  需要自己写解决层叠覆盖问题
+                    ele["on"+eventName]=func;
+                }
+
+        }
+
+
+    };
+
+    EvenetListener.addEvent(btn,"click",fn);
+
+
+</script>
+
+
+
+</body>
+</html>

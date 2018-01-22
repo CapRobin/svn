@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+
+        }
+        .box{
+            width: 500px;
+            height: 400px;
+            margin: 100px  auto;
+            overflow: hidden;
+        }
+        li{
+            list-style: none;
+            float: left;
+            width: 100px;
+            height:50px;
+            text-align: center;
+            font:700 25px/50px "simsun";
+            background-color: pink;
+            cursor:pointer;
+            color: #d6191d;
+
+
+
+
+        }
+
+        span{
+            width: 500px;
+            background-color: blue;
+            height:400px;
+            font:700 90px/400px "simsun";
+            display: block;
+            text-align: center;
+            display: none;
+
+
+
+
+
+        }
+
+        .current{
+            background-color: blue;
+
+        }
+        .show{
+            display: block;
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+<div class="box">
+    <ul>
+        <li class="current">鞋子</li>
+        <li>袜子</li>
+        <li>裤子</li>
+        <li>裙子</li>
+        <li>帽子</li>
+    </ul>
+    <span class="show">鞋子</span>
+    <span>袜子</span>
+    <span>裤子</span>
+    <span>裙子</span>
+    <span>帽子</span>
+
+
+</div>
+
+<script>
+    //获取所有li放入数组  然后 添加鼠标移入事件  排他思想
+    var liArr=document.getElementsByTagName("li");
+    //获取span数组
+    var spArr=document.getElementsByTagName("span");
+
+
+    for(var i=0;i<liArr.length;i++){
+        //给所有li绑定index
+        liArr[i].index=i;
+        liArr[i].onmouseover= function () {
+
+            for(var i=0;i<liArr.length;i++){
+                //熄灭所有li
+//                liArr[i].className="";
+                liArr[i].removeAttribute("class")
+                //让所有span隐藏  干掉所有
+//                spArr[i].className="";
+                spArr[i].removeAttribute("class")
+
+            }
+            //点亮自己li
+//            this.className="current";
+            this.setAttribute("class","current");
+
+            //点亮自己 span
+//            spArr[this.index].className="show";
+            spArr[this.index].setAttribute("class","show");
+        }
+    }
+
+
+</script>
+
+
+</body>
+</html>

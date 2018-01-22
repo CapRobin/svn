@@ -1,0 +1,31 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Title</title>
+    <style>
+        body{
+            height: 5000px;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<script>
+    window.onscroll= function () {
+        //var scrollTop =  document.documentElement.scrollTop+ document.body.scrollTop；
+
+        var top1=window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+        document.title=parseInt(top1);
+    }
+
+
+
+</script>
+
+
+
+</body>
+</html>

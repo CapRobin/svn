@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+            构造函数:一个创建对象的函数
+                构造:创建
+
+
+              作用: 跟new关键字一样    一般用作数据初始化
+              目的:就是为了对象初始化
+
+
+         */
+
+        function  Person(name,age){
+            this.name=name;
+            this.age=age;
+
+
+            this.sayHi= function () {
+                alert(this.name+":说:地球,你好!!!");
+            };
+
+
+            console.log("我被调用到了");
+
+        }
+                    //  new 函数名 ()  调用构造函数
+//        var per=new Person("酷酷",23);
+
+//        var per=Person();//无意义
+//        console.log(per);
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

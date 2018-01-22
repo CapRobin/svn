@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .right {
+            color: green;
+        }
+
+        .wrong {
+            color: red;
+        }
+
+
+    </style>
+</head>
+<body>
+<input type="text" id="inp">
+<span id="sp"></span>
+<script>
+    var inp = document.getElementById("inp");
+    var sp = document.getElementById("sp");
+    inp.onblur= function () {
+            //匹配中文  unicode编码
+        if (/^[\u4e00-\u9fa5]{2,4}$/.test(this.value)) {
+            sp.innerHTML = "姓名正确!";
+            sp.className = "right";
+
+        } else {
+            sp.innerHTML = "姓名格式错误!";
+            sp.className = "wrong";
+
+        }
+        
+    }
+
+
+    </script>
+
+</body>
+</html>

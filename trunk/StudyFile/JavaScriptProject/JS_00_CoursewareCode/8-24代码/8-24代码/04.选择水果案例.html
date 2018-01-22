@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    select {
+        width: 150px;
+        height: 300px;
+        background-color: pink;
+        font:700 30px "simsun";
+
+    }
+
+    </style>
+</head>
+<body>
+<select name="" id="se1" multiple>
+    <option value="">1香蕉</option>
+    <option value="">2苹果</option>
+    <option value="">3西瓜</option>
+    <option value="">4葡萄</option>
+    <option value="">5番茄</option>
+
+
+</select>
+<button>>>></button>
+<button><<<</button>
+<button>></button>
+<button><</button>
+
+<select name="" id="se2" multiple>
+
+
+
+</select>
+
+<script>
+    var bt1=document.getElementsByTagName("button")[0];
+    var bt2=document.getElementsByTagName("button")[1];
+    var bt3=document.getElementsByTagName("button")[2];
+    var bt4=document.getElementsByTagName("button")[3];
+    var se1=document.getElementById("se1");
+    var se2=document.getElementById("se2");
+
+    bt1.onclick= function () {
+        /*
+            //点击按钮 把se1 中的所有option都放入se2中
+           思路:
+                获取se1所有的option  children
+                把所有的option都拼接到se2里面
+
+
+
+
+         */
+        var op1Arr=se1.children;
+
+//        for(var i=0;i<op1Arr.length;i){/*每次移除第0号元素*/
+//            //拼接  se2.append(所有se1里面的)
+//            se2.appendChild(op1Arr[i]);
+//
+//        }
+
+        for(var i=op1Arr.length-1;i>=0;i--){/*每次移除第0号元素*/
+//            //拼接  se2.append(所有se1里面的)
+//            se2.appendChild(op1Arr[op1Arr.length-1-i]);
+            se2.appendChild(op1Arr[0]);
+
+        }
+
+        clear(se2);
+
+
+        
+    }
+
+    bt2.onclick= function () {
+        var op2Arr=se2.children;
+        for(var i=op2Arr.length-1;i>=0;i--){/*每次移除第0号元素*/
+//            //拼接  se2.append(所有se1里面的)
+//            se2.appendChild(op1Arr[op1Arr.length-1-i]);
+            se1.appendChild(op2Arr[0]);
+
+        }
+
+        clear(se1)
+
+
+    }
+    
+    bt3.onclick= function () {
+        //先获取se1里面的所有子元素
+        var op1Arr=se1.children;
+        //然后挨个判断是不是被选中的
+        for(var i=0;i<op1Arr.length;i++){
+//            console.log(op1Arr[i].selected);
+            if(op1Arr[i].selected){
+                //        如果是 拼接到se2里面
+                se2.appendChild(op1Arr[i]);
+                //因为 被[拼接走的元素 后面的所有的元素索引值 -1
+                //而我们的i是+1的 这样就走了两格  所以要把i减1
+                i--;
+            }
+        }
+        clear(se2);
+
+
+    }
+
+    bt4.onclick= function () {
+        //先获取se1里面的所有子元素
+        var op1Arr=se2.children;
+        //然后挨个判断是不是被选中的
+        for(var i=0;i<op1Arr.length;i++){
+//            console.log(op1Arr[i].selected);
+            if(op1Arr[i].selected){
+                //        如果是 拼接到se2里面
+                se1.appendChild(op1Arr[i]);
+                //因为 被[拼接走的元素 后面的所有的元素索引值 -1
+                //而我们的i是+1的 这样就走了两格  所以要把i减1
+                i--;
+            }
+        }
+        clear(se1);
+
+
+    }
+
+    function  clear(ele){
+        var arr=ele.children;
+        for(var i=0;i<arr.length;i++){
+            arr[i].selected=false;
+        }
+    }
+
+
+
+
+</script>
+
+
+</body>
+</html>

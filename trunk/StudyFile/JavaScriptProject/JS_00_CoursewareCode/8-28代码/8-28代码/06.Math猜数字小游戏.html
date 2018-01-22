@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<button>开始游戏</button>
+
+<script>
+    var i=0;
+    var btn=document.getElementsByTagName("button")[0];
+    btn.onclick= function () {
+
+
+//        while (i<100){
+//            var ranNum=parseInt(Math.random()*101)
+//            console.log(ranNum);
+//            i++;
+//        }
+
+        var ranNum=parseInt(Math.random()*101);
+
+        while(true){
+
+            var guessNum=prompt("请输入要猜的数字(0~100):");
+            if(guessNum>ranNum){
+                alert("你输入的数字大了!!!!!");
+                continue;
+            }else if(guessNum<ranNum){
+                alert("你输入的数字小了!!!!!");
+                continue;
+            }else{
+                alert("恭喜你, 猜对了!!!!");
+                break;
+            }
+
+
+        }
+
+        
+    }
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            font-size:20px;
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="box" style="width: 200px;height: 200px;background-color: pink;">呵呵</div>
+<div class="box1"></div>
+<script>
+    var box=document.getElementsByClassName("box")[0];
+    var box1=document.getElementsByClassName("box1")[0];
+    //元素.style.样式名 只能获取行内样式
+//    console.log(typeof box.style.width);
+//    console.log(box.style.width);
+//    console.log(box.style.height);
+//    console.log(box.style.backgroundColor);
+//    console.log(box.style.fontSize);
+
+
+    /*
+     1.样式少的时候使用  如果样式比较多 推荐使用class设置
+     2.style是对象（其他大部分标签的属性是字符串）
+     3.值是字符串，没有设置值是“”； .width行内设置过则有值 没设置过 返回空字符串
+     4.命名规则，驼峰命名。和css不一样    -变驼峰
+     5.设置了类样式不能获取。（只和行内式交互，和内嵌和外链无关）
+     6.box.style.cssText = “字符串形式的样式”；
+
+
+     */
+
+    console.log(box.style);
+    console.log(typeof box.style);
+    console.log(box.className);
+    console.log(box.style.width);
+    console.log(box.style.border);
+    console.log(box.style.cssText);
+    console.log(typeof box.style.cssText);
+    //通过字符串方式 设置样式
+    var str="width:400px;height:400px;background-color:#0F0;border:2px solid #999";
+//    $(".box").css({
+//        width:"200px",
+//        height:"200px"
+//    });
+
+    box1.style.cssText=str;
+
+
+</script>
+</body>
+</html>

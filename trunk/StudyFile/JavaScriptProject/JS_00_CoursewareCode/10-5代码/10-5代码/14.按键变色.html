@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        h1{
+            text-align: center;
+            font: 700 35px "simsun";
+
+        }
+        div{
+            width: 400px;
+            height: 400px;
+            background-color: pink;
+            margin: 100px auto;
+            text-align: center;
+            font: 100 30px/400px "simsun";
+        }
+
+    </style>
+</head>
+<body>
+<script src="jquery-1.11.1.js"></script>
+<script>
+    $(function () {
+        // b66  y89  r82  p 80 g71
+            $(document).on("keyup", function (event) {
+                $("div").text("当前键盘的keyCode为: "+event.keyCode);
+
+                switch(event.keyCode){
+                    case 66:
+                        $("div").css("background-color","blue");
+                        break;
+                    case 89:
+                        $("div").css("background-color","yellow");
+                        break;
+                    case 82:
+                        $("div").css("background-color","red");
+                        break;
+                    case 80:
+                        $("div").css("background-color","pink");
+                        break;
+                    case 71:
+                        $("div").css("background-color","green");
+                        break;
+                    default:
+                        alert("系统不存在此颜色");
+                        break;
+
+                }
+
+            })
+
+    });
+    
+    
+</script>
+
+<h1>按键改变颜色</h1>
+<div>当前键盘的keyCode为: 80</div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            height: 5000px;
+            width: 5000px;
+        }
+        .box{
+            position: relative;
+            left: 300px;
+            top:100px;
+            width: 300px;
+            height: 300px;
+            background-color: pink;
+            padding: 100px;
+            /*margin: 100px auto;*/
+        }
+        .content{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            top: 50px;
+            left: 100px;
+        }
+
+
+
+    </style>
+</head>
+<body>
+<div class="box" id="box">
+    <div class="content" id="content"></div>
+</div>
+
+
+<script>
+
+    /*
+
+     区别2：（offset/scroll/client上下）
+     offsetTop/offsetLeft ：
+     调用者：任意元素。(盒子为主)
+     嘛作用：距离父系盒子中带有定位的距离。
+
+     scrollTop/scrollLeft:(盒子也可以调用，必须有滚动条)
+     调用者：document.body.scrollTop/.....(window)
+     嘛作用：浏览器无法显示的部分（被卷去的部分）。
+
+     clientY/clientX:（clientTop/clientLeft 值的是border）
+     调用者：event.clientX(event)
+     嘛作用：鼠标距离浏览器可视区域的距离（左、上）
+
+     */
+
+    var box=document.getElementById("box");
+    var content=document.getElementById("content");
+    //距离有定位的父盒子的 left和top值
+    console.log(content.offsetLeft+"   "+content.offsetTop);
+    //被卷去的头部或者左侧的距离  一般都是这样用 盒子要想调用 需要父容器有滚动条
+    console.log(document.body.scrollTop+"    "+document.body.scrollLeft);
+//    clientTop/clientLeft 值的是border  了解  上和左border
+//    clientY/clientX:调用者：event.clientX(event)
+//  嘛作用：鼠标距离浏览器可视区域的距离（左、上）
+
+
+
+
+</script>
+
+
+</body>
+</html>

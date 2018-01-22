@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload= function () {
+            var btn=document.getElementsByTagName("button")[0];
+            //事件层叠的覆盖问题
+//            btn.onclick= function () {
+//                alert("在天愿作比翼鸟,大难临头各自飞.");
+//            };
+//
+//            btn.onclick= function () {
+//                alert("天堂有路你不走,学海无涯苦作舟.");
+//            };
+
+//            btn.addEventListener("事件名称不带on",事件驱动函数);
+            //添加事件监听  注册多个事件  没有层叠覆盖问题
+            //事件就用addEventListener
+            btn.addEventListener("click", function () {
+                alert("在天愿作比翼鸟,大难临头各自飞.");
+            });
+            btn.addEventListener("click", function () {
+                alert("天堂有路你不走,学海无涯苦作舟.");
+            });
+
+
+        }
+
+
+    </script>
+
+</head>
+<body>
+<button>按钮</button>
+</body>
+</html>

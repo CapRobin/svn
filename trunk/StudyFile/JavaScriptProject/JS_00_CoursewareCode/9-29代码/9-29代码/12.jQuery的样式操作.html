@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            padding: 20px;
+        }
+
+
+    </style>
+</head>
+<body>
+<script src="jquery-1.11.1.js"></script>
+<script>
+    $(function () {
+        //jq的css方法 有三种使用  并且最后设置的样式都是行内样式
+        //1.传入两个值 css属性名 属性值  设置样式  一般用于单个样式设置
+        $("div").css("border","1px solid red");
+        //2. 传入一个值  css属性名   获取单个属性的值
+
+        $("button:eq(0)").click(function () {
+            //JQ获取的  宽高 就是盒子本身css设置的值
+//            alert( $("div").css("width"));
+            alert( $("div").css("border"));
+        });
+        //3.传入一个json  一般用来设置多个简单样式  如果样式太多且复杂 推荐使用class
+        $("div").css({
+            "background-color":"blue",
+            "position":"absolute",
+            "top":"50px",
+            "left":"50px",
+        });
+        
+    });
+    
+    
+</script>
+<button>获取</button>
+<button>切换</button>
+<div>
+
+
+</div>
+</body>
+</html>

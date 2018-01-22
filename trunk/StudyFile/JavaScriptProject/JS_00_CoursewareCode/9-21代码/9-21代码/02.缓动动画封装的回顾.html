@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box{
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            top: 50px;
+            left:0px;
+            background-color: pink;
+
+
+        }
+
+
+    </style>
+</head>
+<body>
+<button>运动到400</button>
+<button>运动到800</button>
+<div id="box"></div>
+
+<script>
+    var btn0=document.getElementsByTagName("button")[0];
+    var btn1=document.getElementsByTagName("button")[1];
+    var box=document.getElementById("box");
+
+    btn0.onclick= function () {
+        slowSpeedAnimate(box,400);
+//        console.log(box.offsetLeft);
+
+    }
+    btn1.onclick= function () {
+        slowSpeedAnimate(box,800);
+    }
+
+    //弊端:1.只能获取行内样式 不能获取内嵌和外链样式 所以我们用offset来模拟获取
+//    2.一个方法只能操作一个属性    如果想要一个方法操作多个属性呢?  现在这个不行
+    function slowSpeedAnimate(ele,target){
+        //缓动动画老五步
+        clearInterval(ele.timer);
+        ele.timer=setInterval(function () {
+            var step=(target-box.offsetLeft)/10;
+
+            step=step>0?Math.ceil(step):Math.floor(step);
+
+            box.style.left=box.offsetLeft+step+"px";
+            
+            console.log(box.style.left+" "+box.offsetLeft);
+            if(Math.abs(target-box.offsetLeft)<=Math.abs(step)){
+                box.style.left=target+"px";
+                clearInterval(ele.timer);
+            }
+
+
+
+
+            
+        },25);
+
+
+
+    }
+
+
+
+</script>
+
+
+
+</body>
+</html>

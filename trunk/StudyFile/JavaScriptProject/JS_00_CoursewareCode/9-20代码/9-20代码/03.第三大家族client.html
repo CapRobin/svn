@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            width: 300px;
+            height: 300px;
+            background-color: pink;
+            margin: 100px auto;
+            padding: 50px;
+            border: 10px solid #000;
+            
+        }
+        
+        
+    </style>
+</head>
+<body>
+<button id="btn">按钮</button>
+<div class="box" id="box">
+
+    
+</div>
+<script>
+    var btn=document.getElementById("btn");
+    var box=document.getElementById("box");
+//    document.onclick= function (event) {
+//        var event=event ||window.event;
+//            //获取鼠标点击位置的 可视区域   鼠标位置距离body的可视区域大小
+//        console.log(event.clientX+"   "+event.clientY)
+//
+//
+//
+//
+//    }
+
+//        box.onclick= function () {
+//
+//
+//    }
+    //client家族  调用者有两种  盒子调用和 body/html调用
+    //盒子调用   获取盒子本身的宽高 clientWidth/Height=盒子的宽高+padding  不包括border和margin
+        console.log(box.clientWidth+"   "+box.clientHeight);
+    //offsetWidth/Height =盒子本身的宽高+border+padding
+        console.log(box.offsetWidth+"   "+box.offsetHeight);
+    //获取盒子的上和左border  用的非常少   了解
+        console.log(box.clientTop+"     "+box.clientLeft);
+
+
+</script>
+
+</body>
+</html>

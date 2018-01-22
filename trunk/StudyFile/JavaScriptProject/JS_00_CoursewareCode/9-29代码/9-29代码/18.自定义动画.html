@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            position: absolute;
+            top: 50px;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+
+
+    </style>
+</head>
+<body>
+<script src="jquery-1.11.1.js"></script>
+<script>
+    $(function () {
+       $("button").eq(0).click(function () {
+//           var json={
+//               left:400,
+//               width:400,
+//               height:400,
+//               "border-radius":200,
+//               opacity:0.3,
+//               "z-index":5,
+//
+////               borderLeftTopRadius:200
+//           };
+
+           //三个参数:1.json(动画最终位置(必选)) 2.时长(可选)  3.回调(可选)
+//           $("div").animate(json,5000);
+//           $("div").animate(json,5000);
+           var json1={
+               left:400,
+           };
+
+           $("div").animate(json1,1000);
+       });
+
+        $("button").eq(1).click(function () {
+
+            var json2={
+                left:800,
+            };
+            $("div").animate(json2,1000);
+        });
+    });
+
+
+</script>
+<button>运动到400</button>
+<button>运动到800</button>
+
+<div></div>
+</body>
+</html>

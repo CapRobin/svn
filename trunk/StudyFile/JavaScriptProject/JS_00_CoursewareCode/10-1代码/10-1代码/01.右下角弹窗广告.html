@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        .ad {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            width: 492px;
+            height: 333px;
+            background-image: url(image/ad.jpg);
+            display: none;
+        }
+
+        .ad span {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 40px;
+            height: 18px;
+            background-image: url(image/h.jpg);
+            cursor: pointer;
+        }
+    </style>
+    <script src="jquery-1.11.1.js"></script>
+    <script>
+        $(function () {
+            //需求  广告先滑入 再滑出  在淡入  点击关闭按钮 淡出
+
+            //链式编程写法也可以 但是 推荐使用回调,表示上一个执行完再执行下一个
+            $(".ad").slideDown(10000).slideUp(3000).fadeIn(1000, function () {
+                $(".ad").click(function () {
+                $(this).parent().hide();
+                });
+            });
+
+//            $(".ad").slideDown(5000);
+//            $(".ad").slideUp(1000);
+//            $(".ad").click(function () {
+//                $(this).parent().hide();
+//            });
+            //这个叫滑入 不叫向下滑
+//            $(".ad").slideDown(3000, function () {
+//                $(".ad").slideUp(1000, function () {
+//                    $(".ad").fadeIn(1000, function () {
+//                        //只有动画执行完 才有点击事件  也就是广告展示出来才可以关闭
+//                        $("span").click(function () {
+//                            $(this).parent().fadeOut(2000);
+//                        });
+//                    });
+//                });
+//            })
+
+
+        })
+    </script>
+</head>
+
+<body>
+
+    <div class="ani">我是内容</div>
+    <div class="ad">
+        <span></span>
+    </div>
+
+
+</body>
+</html>

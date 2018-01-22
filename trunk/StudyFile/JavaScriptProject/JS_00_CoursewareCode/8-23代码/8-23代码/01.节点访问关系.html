@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    <li class="box1">我是box1</li>
+    <li class="box2">我是box2</li>
+    <li class="box3">我是box3</li>
+
+    <li class="box4" id="box4">我是box4</li>
+    <li class="box5">我是box5</li>
+    <li class="box6">我是box6</li>
+</ul>
+<script>
+    /*
+        获取父节点
+        element.parentNode;
+        获取兄弟节点
+      上一个兄弟
+            element.previousSibling(在IE9+ 火狐 谷歌 此方法获取包含文本节点,
+                                    在IE6,7,8中是直接获取元素节点)
+             element.previousElementSibling(在IE9+ 火狐谷歌 获取的是元素节点
+                                    在IE6.7.8中获取不到)
+
+             兼容写法:
+             上一个兄弟节点=节点.previousElementSibling || 节点.previousSibling
+
+
+        下一个兄弟
+             element.nextSibling(在IE9+ 火狐 谷歌 此方法获取包含文本节点,
+                                    在IE6,7,8中是直接获取元素节点)
+             element.nextElementSibling(在IE9+ 火狐谷歌 获取的是元素节点
+                                    在IE6.7.8中获取不到)
+
+             兼容写法:
+             下一个兄弟节点=节点.nextElementSibling || 节点.nextSibling
+
+
+
+
+        获取单个节点
+           获取第一个子节点
+                parent.firstChild(IE9+ 火狐谷歌包含文本节点)
+                                   IE6.7.8只获取元素节点
+
+                parent.firstElementChild(IE9+ 火狐谷歌获取元素节点)
+                                        IE6.7.8获取不到
+
+                兼容写法:
+     第一个子节点=父节点.firstElementChild || 父节点.firstChild
+
+            获取最后一个子节点
+     parent.lastChild(IE9+ 火狐谷歌包含文本节点)
+     IE6.7.8只获取元素节点
+     parent.lasttElementChild(IE9+ 火狐谷歌获取元素节点)
+     IE6.7.8获取不到
+
+     兼容写法:
+     第一个子节点=父节点.lastElementChild || 父节点.lastChild
+
+
+
+
+
+        获取所有子节点
+
+
+
+     */
+
+//    var div=document.getElementsByTagName("div")[0];
+    //获取父节点
+//    var ul=div.parentNode;
+//    var ul=document.getElementsByTagName("ul")[0];
+//    console.log(ul);
+//    console.log(ul);
+//        ul.style.backgroundColor="red";
+    //获取兄弟节点
+    //哥哥  上一个兄弟
+//    var box3=div.nextSibling;
+//    console.log(box3);
+//    box3.style.backgroundColor="blue";
+
+        var box4=document.getElementById("box4");
+////        var box3=box4.previousSibling;
+//        var box3=box4.previousElementSibling || box4.previousSibling;
+//
+//        console.log(box3);
+//        box3.style.backgroundColor="blue";
+//
+//        var box5=box4.nextElementSibling || box4.nextSibling;
+//        box5.style.backgroundColor="yellow";
+
+    var ul=box4.parentNode;
+   var first= ul.firstElementChild || ul.firstChild;
+//    console.log(first);
+    first.style.backgroundColor="green";
+
+    var last=ul.lastElementChild || ul.lastChild
+    last.style.backgroundColor="green";
+
+
+
+
+</script>
+
+
+
+</body>
+</html>

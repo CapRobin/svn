@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        input{
+            width: 150px;
+            height: 30px;
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+<script src="jquery-1.11.1.js"></script>
+<script>
+    $(function () {
+        //keydown事件 只能获取输入框上一次输入进去的内容 本次输入的内容 需要再事件执行完以后下一次获取
+//        $("body").on("keydown","input:text", function (event) {
+////            alert("输入了");
+//            alert(event.keyCode);
+//            if(event.keyCode===101){
+//                return;
+//            }
+////            alert($(this).val());
+//        })
+
+
+        $("body").on("keyup","input:text", function (event) {
+//            alert(event.keyCode);
+            //回车的键盘码  13
+            if(event.keyCode===13){
+                $(this).next().focus();
+            }
+
+
+        });
+        $("input:text").mouseenter(function () {
+//            alert(1);
+            //选中当前文本框内容
+            $(this).select();
+        });
+        
+
+        
+    });
+    
+    
+</script>
+<input type="text" value="我的中国心">
+<input type="text" value="我的中国心">
+<input type="text" value="我的中国心">
+<input type="text" value="我的中国心">
+<input type="text" value="我的中国心">
+<input type="text" value="我的中国心">
+<input type="text" value="我的中国心">
+<input type="text" value="我的中国心">
+</body>
+</html>

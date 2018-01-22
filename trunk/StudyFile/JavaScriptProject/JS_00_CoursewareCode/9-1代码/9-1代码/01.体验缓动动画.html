@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            position: absolute;
+            top: 50px;
+            left: 0;
+        }
+
+
+    </style>
+</head>
+<body>
+<button>缓动到200</button>
+<button>缓动到400</button>
+<div></div>
+<script>
+    var bts = document.getElementsByTagName("button");
+    var div = document.getElementsByTagName("div")[0];
+    var timer = null;
+    bts[0].onclick = function () {
+        /*
+         动画步骤
+         1.定义终点
+         2.启动定时器(先清除定时器)
+         3.计算步长
+         4.改变盒子的距离  移动
+         5.停止
+
+         缓动动画  如何缓动?   步长越来越小
+
+         步长=(终点位置-当前位置)/10
+
+         缓动动画=盒子当前距离+步长
+
+         通过观察  我们发现 定时器没有停止   我们明明写了停止的代码 是我们写错了么
+        不是停止定时器的代码写错了,而是缓动动画本身的bug  需要解决
+        bug:
+            我们需要观察缓动动画结束后  盒子的位置
+
+
+         */
+        var endX = 200;
+        clearInterval(timer);
+        timer = setInterval(function () {
+
+            var step = (endX - div.offsetLeft) / 10;
+            div.style.left = div.offsetLeft + step + "px";
+
+            console.log(step);
+            console.log(div.offsetLeft + step + "px");
+            console.log("---------------------------------")
+
+
+
+
+            if(Math.abs(endX-div.offsetLeft)<Math.abs(step)){
+                div.style.left=endX+"px";
+                clearInterval(timer);
+            }
+
+
+//            if (div.offsetLeft>200) {
+//                clearInterval(timer);
+//            }
+
+        }, 30)
+
+
+    }
+
+    bts[1].onclick = function () {
+        var endX = 400;
+        clearInterval(timer);
+        timer = setInterval(function () {
+            var step = (endX - div.offsetLeft) / 10;
+            div.style.left = div.offsetLeft + step + "px";
+//            if(Math.abs(endX-div.offsetLeft)<Math.abs(step)){
+//                div.style.left=endX+"px";
+//                clearInterval(timer);
+//            }
+            //查看定时器是否停止
+            console.log(step);
+            console.log(div.offsetLeft + step + "px");
+            console.log("---------------------------------")
+            if (div.offsetLeft>endX) {
+                clearInterval(timer);
+            }
+
+        }, 30)
+    }
+
+
+</script>
+
+</body>
+</html>

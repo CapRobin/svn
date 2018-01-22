@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+
+    /*
+
+    url编码
+     encodeURIComponent() 函数可把字符串作为 URI 组件进行编码
+     decodeURIComponent() 函数可把字符串作为 URI 组件进行解码
+
+
+     */
+//    var  urlStr="http://www.baidu.com?username=呵呵&userpwd=123456";
+//    var ens=encodeURIComponent(urlStr);
+//    console.log(ens);
+//    console.log(decodeURIComponent(ens));
+
+
+    //字符串截取
+//    var str="HelloitsztWorldhehe";
+    /*
+     substring(start,end) //从start位置开始，截取到end位置，end取不到
+     substr(start,length)   //从start位置开始，截取length个字符
+
+     */
+    //从指定位置开始截取到指定位置 包含头不包含尾
+//    console.log(str.substring(2,5));
+    //如果一个参数 是从指定位置开始截取到末尾
+//    console.log(str.substring(2));
+    //从指定位置开始,截取指定长度
+//    console.log(str.substr(2,5));
+    //如果一个参数 是从指定位置开始截取到末尾
+//    console.log(str.substr(2));
+//    总结:
+        //传入一个参数时,substr和substring效果一样 都是从开始位置截取到末尾
+
+    //替换
+//    var str="HelloitsztWorLdhehe";
+//    replace(srcChar,destChar)//替换
+//    把字符串中srcChar的字符或者字符串  替换成 destChar字符或者字符串
+
+    //替换指定字符  只能替换第一个出现的
+//    console.log(str.replace("l","x"));
+//    console.log(str.replace("llo","xxx"));
+    //简单了解(以后讲) 把所有出现的字符都替换
+//    console.log(str.replace(/l/g,"x"));
+    //g  全局替换  i忽略大小写
+//    console.log(str.replace(/l/gi,"你好"));
+
+
+    //拆分 --->数组
+//    split()  拆分
+//    var arr=["张飞","张翼德","刘备"];
+    //数组转换成字符串
+//    console.log(arr.join("|"));
+
+//    var str="Hello5itsz5tWorL5dhehe";
+    //字符串转换成数组  如果不传参数 则整个字符串就是数组的一个元素
+//    console.log(str.split());
+    //如果传入"" 则字符串的每一个字符都是数组的一个元素
+//    console.log(str.split(""));
+    //根据指定字符序列(字符或者字符串) 拆分 不包含拆分规则本身的字符序列
+    //多个部分是数组的每一个元素
+//    console.log(str.split("5"));
+    //拆分 只取前两个元素放入数组
+//    console.log(str.split("5",2));
+//    console.log(str.split("5",8));
+
+//    console.log(str);
+
+    //str[0]   //HTML5，IE8+支持 和charAt()等效
+
+    var str="Hello5itsz5tWorL5dhehe";
+//    console.log(typeof str);
+//    console.log(str);
+//    var newStr=new String(str);
+//    console.log(newStr);
+//    console.log(typeof newStr);
+
+//    console.log(str[0]);
+
+    var str1="qixihappyno";
+    //字符串拼接
+//    console.log(str.concat(str1));
+//    console.log(str+str1);
+
+    //slice()    //从start位置开始，截取到end位置，end取不到
+//    //从start开始 截取到end 包含头不包含尾
+//    console.log(str.slice(5,7));//5i
+//    //从开始位置截取到末尾
+//    console.log(str.slice(5));//5itsz5tWorL5dhehe
+//    //-2  表示从后数 第二个
+//    console.log(str.slice(5,-2));//5itsz5tWorL5dhe
+//    //不传参数 截取所有  或者 传入错误参数
+//    console.log(str.slice());//Hello5itsz5tWorL5dhehe
+//    //传入不存在索引  返回""
+//    console.log(str.slice(896));//""
+
+//    var str1="     username      ";
+//    console.log(str1);
+//    //去掉首尾空格  用在注册登录
+//    console.log(str1.trim())
+    //转换大小写
+
+    var  str2="HElloWorld";
+    var str3="helloworld";
+    var str4="HELLOWORLD";
+
+
+//    console.log(str2===str3);//false 因为大小写敏感
+        //转换成小写
+//    console.log(str2.toLowerCase());
+//    console.log(str2.toLowerCase()===str3);
+    //转换成大写
+//    console.log(str2.toUpperCase()===str4);
+
+
+//    console.log(str2.toLocaleLowerCase());
+
+    //一下方法 把字符串转换成标签
+
+
+    //转换成a标签 带name属性(参数 给name设置值)
+    console.log(str2.anchor());
+    console.log(str2.anchor("我是a标签"))
+
+
+    //big标签
+    console.log(str2.big())
+    console.log(str2.sub())
+    console.log(str2.sup())
+    //a标签 带href属性 (参数  给href传值)
+    console.log(str2.link());
+    console.log(str2.link("http://www.baidu.com"))
+
+    //b标签
+    console.log(str2.bold())
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

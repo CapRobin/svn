@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        li{
+            margin:20px 0 0 0;
+
+        }
+
+    </style>
+
+
+
+</head>
+<body>
+<div class="box" id="parent">
+    <p>我是一个p</p>
+    <div class="son">我不是son</div>
+</div>
+
+
+<div class="box">我是凑份子的box</div>
+<button id="bt">改变</button>
+
+<ul>
+    <li>中方驳日驻印大使言论:搞清事实前不要信口开河</li>
+    <li>中方驳日驻印大使言论:搞清事实前不要信口开河</li>
+    <li>中方驳日驻印大使言论:搞清事实前不要信口开河</li>
+    <li>中方驳日驻印大使言论:搞清事实前不要信口开河</li>
+    <li>中方驳日驻印大使言论:搞清事实前不要信口开河</li>
+    <li>中方驳日驻印大使言论:搞清事实前不要信口开河</li>
+</ul>
+
+
+
+
+<script>
+    var parent=document.getElementById("parent");
+//    document.getElementsByTagName()
+//    document.getElementsByClassName()
+//    console.log(document);
+//    console.log(parent);
+        //该方法 无论获取的class元素有几个  返回值都是数组
+//        var qq=document.getElementsByClassName("box");
+//
+////    console.log(qq.style);
+//    console.log(qq);
+//    //操作元素数组的0号元素   只有数组的每一个元素才能去操作dom的方法
+//        qq[1].style.background="red";
+
+
+    //点击按钮把所有的li背景颜色 文字大小改变
+
+
+    //事件源
+    var bt=document.getElementById("bt");
+    //根据标签名获取dom对象
+   var liArr= document.getElementsByTagName("li");
+
+
+
+
+    //添加事件
+    bt.onclick= function () {
+//        console.log(liArr);
+    for(var i=0;i<liArr.length;i++){
+        liArr[i].style.background="pink";
+        liArr[i].style.fontSize="22px";
+    }
+
+
+        
+    }
+    //事件驱动函数
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

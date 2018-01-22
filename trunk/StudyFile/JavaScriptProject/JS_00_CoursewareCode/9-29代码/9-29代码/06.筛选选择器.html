@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+
+<body>
+<script src="jquery-1.11.1.js"></script>
+<script>
+    $(function () {
+        //.find()不传参数 表示所有后代 如果传入选择器(find方法参数只能是选择器)
+            //就是找到父元素里面子子孙孙的符合该选择器的元素
+        $("ul").find("li").css({
+            "background-color":"pink",
+            "margin-bottom":"10px"
+        });
+        //children()查找指定元素的直接子元素（亲儿子元素）
+        //参数可传入选择器 跟上同理
+        $("ul").children("span").css("background-color","red");
+        //.eq(index)根据索引 选择指定
+
+        $("ul").children().eq($("ul").children().length-2).css("background-color","yellow");
+//        alert($("ul").children().length);
+
+        $("ul").children().eq($("ul").children().length-1).children("span").parent().css({
+            "border":"1px solid red"
+        });
+        $("ul").children(".bo").siblings("li").css("font-size","30px");
+
+    });
+    
+    
+</script>
+<ul>
+    <li>我是ul的li</li>
+    <li>我是ul的li</li>
+    <div>ul中的div</div>
+    <li>我是ul的li</li>
+    <li class="bo">我是ul的li</li>
+    <span>我是ul中的span</span>
+    <li>我是ul的li</li>
+    <li>我是ul的li</li>
+    <a href="">ul中的a</a>
+    <ol>
+        <li>我是ol的li</li>
+        <li>我是ol的li</li>
+        <span>我是ol中span</span>
+
+
+        <li>我是ol的li</li>
+        <li>我是ol的li</li>
+    </ol>
+</ul>
+
+</body>
+</html>

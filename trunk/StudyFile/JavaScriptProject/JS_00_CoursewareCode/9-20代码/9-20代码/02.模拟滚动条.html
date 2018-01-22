@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .box{
+            width: 300px;
+            height: 500px;
+            border: 1px solid red;
+            margin: 100px auto;
+            position: relative;
+            overflow: hidden;
+
+        }
+        .content{
+            width: 260px;
+            /*height: 500px;*/
+            padding: 10px;
+            font: 15px/30px "simsun";
+
+        }
+
+        .scroll{
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 30px;
+            height: 500px;
+            background-color: rgba(0, 0, 0, 0.15);
+        }
+        .bar{
+            width: 30px;
+            /*height: 100px;*/
+            background-color: red;
+            border-radius: 15px;
+            cursor: pointer;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        .bar:active{
+            background-color: darkred;
+        }
+
+
+    </style>
+    <script src="jQuery-1.0.0-my.js"></script>
+    <script>
+        window.onload= function () {
+
+            //需求: 点击红色bar  向下拖动  整个内容 进行滚动
+            //步骤
+            //1.动态计算bar的高度
+            //2.老三步
+            //3.获取鼠标位置
+            //4.让bar跟着鼠标移动
+            //5.让内容按bar的移动比例进行 滚动
+
+            var box=document.getElementById("box");
+            var content=box.children[0];
+            var scroll=box.children[1];
+            var bar=scroll.children[0];
+
+            console.log(content.offsetHeight);
+
+            //1.动态计算bar的高度
+            //动态设置滚动条的高度 scrollBarHeight =
+//            （ 容器的高度 / 内容的高度*容器的高度 ）
+            //盒子高度/内容高度=bar高度/灰色背景(盒子)高一度
+            //盒子/内容=bar/盒子
+//            bar=(盒子/内容)*盒子
+
+            var barHeight=box.offsetHeight/content.offsetHeight*box.offsetHeight;
+            bar.style.height=barHeight+"px";
+            //2.老三步  bar的拖拽监听
+            bar.onmousedown= function (event) {
+                //获取鼠标在bar中的位置
+                var event=event || window.event;
+                var pagey=event.pageY || scroll().top +event.clientY;
+
+                var y=pagey-bar.offsetTop;
+
+
+                document.onmousemove= function (event) {
+                    var event=event || window.event;
+
+
+//                    console.log("鼠标拖拽")
+                    //3.获取鼠标位置
+                    var mouseMoveY=event.pageY || scroll().top +event.clientY;
+//                    console.log(mouseMoveY+"  "+y+"  "+pagey+"  "+box.offsetTop+"  "+bar.offsetTop);
+                    mouseMoveY=mouseMoveY-y;
+                    if(mouseMoveY<=0){
+                        mouseMoveY=0;
+                    }
+                    if(mouseMoveY>=box.offsetHeight-bar.offsetHeight){
+                        mouseMoveY=box.offsetHeight-bar.offsetHeight;
+                    }
+
+
+
+
+                    //4.让bar跟着鼠标移动
+                    bar.style.top=mouseMoveY+"px";
+
+                    //5.让内容按bar的移动比例进行 滚动
+                    //滚动条滚动一次    内容移动的距离
+//                    (内容的高度 - 容器的高度)   / (容器的高度 - 滚动条的高度)* 滚动条移动的距离
+
+var contentScrollHeight=(content.offsetHeight-box.offsetHeight)/(box.offsetHeight-bar.offsetHeight)*mouseMoveY;
+
+                content.style.marginTop=-contentScrollHeight+"px";
+
+
+
+                    clearTextSelection();
+                }
+                
+            }
+
+
+            //鼠标抬起 解绑事件 
+            document.onmouseup= function () {
+//                console.log("鼠标抬起")
+                document.onmousemove=null;
+            }
+
+
+
+
+        }
+        
+
+
+    </script>
+</head>
+<body>
+<div class="box" id="box">
+    <div class="content">
+        ---------清明------------ <br>
+        清明时节雨纷纷,路上行人欲断魂.<br>
+        借问酒家何处有,牧童遥指杏花村.<br>
+        清明时节雨纷纷,路上行人欲断魂.<br>
+        借问酒家何处有,牧童遥指杏花村.<br>
+        清明时节雨纷纷,路上行人欲断魂.<br>
+        借问酒家何处有,牧童遥指杏花村.<br>
+        清明时节雨纷纷,路上行人欲断魂.<br>
+        借问酒家何处有,牧童遥指杏花村.<br>
+        清明时节雨纷纷,路上行人欲断魂.<br>
+        借问酒家何处有,牧童遥指杏花村.<br>
+        清明时节雨纷纷,路上行人欲断魂.<br>
+        借问酒家何处有,牧童遥指杏花村.<br>
+        清明时节雨纷纷,路上行人欲断魂.<br>
+        借问酒家何处有,牧童遥指杏花村.<br>
+        清明时节雨纷纷,路上行人欲断魂.<br>
+        借问酒家何处有,牧童遥指杏花村.<br>
+        清明时节雨纷纷,路上行人欲断魂.<br>
+        借问酒家何处有,牧童遥指杏花村.<br>
+        清明时节雨纷纷,路上行人欲断魂.<br>
+        借问酒家何处有,牧童遥指杏花村.<br>
+        清明时节雨纷纷,路上行人欲断魂.<br>
+        借问酒家何处有,牧童遥指杏花村.<br>
+        清明时节雨纷纷,路上行人欲断魂.<br>
+        借问酒家何处有,牧童遥指杏花村.<br>
+        清明时节雨纷纷,路上行人欲断魂.<br>
+        借问酒家何处有,牧童遥指杏花村.<br>
+        清明时节雨纷纷,路上行人欲断魂.<br>
+        借问酒家何处有,牧童遥指杏花村.<br>
+        清明时节雨纷纷,路上行人欲断魂.<br>
+        借问酒家何处有,牧童遥指杏花村.<br>
+        清明时节雨纷纷,路上行人欲断魂.<br>
+        借问酒家何处有,牧童遥指杏花村.<br>
+        清明时节雨纷纷,路上行人欲断魂.<br>
+        借问酒家何处有,牧童遥指杏花村.<br>
+        清明时节雨纷纷,路上行人欲断魂.<br>
+        借问酒家何处有,牧童遥指杏花村.<br>
+        清明时节雨纷纷,路上行人欲断魂.<br>
+        借问酒家何处有,牧童遥指杏花村.<br>
+        清明时节雨纷纷,路上行人欲断魂.<br>
+        借问酒家何处有,牧童遥指杏花村.<br>
+        清明时节雨纷纷,路上行人欲断魂.<br>
+        借问酒家何处有,牧童遥指杏花村.<br>
+        清明时节雨纷纷,路上行人欲断魂.<br>
+        借问酒家何处有,牧童遥指杏花村.<br>
+        清明时节雨纷纷,路上行人欲断魂.<br>
+        借问酒家何处有,牧童遥指杏花村.<br>
+        清明时节雨纷纷,路上行人欲断魂.<br>
+        借问酒家何处有,牧童遥指杏花村.<br>
+        清明时节雨纷纷,路上行人欲断魂.<br>
+        借问酒家何处有,牧童遥指杏花村.<br>
+        清明时节雨纷纷,路上行人欲断魂.<br>
+        借问酒家何处有,牧童遥指杏花村.<br>
+        清明时节雨纷纷,路上行人欲断魂.<br>
+        借问酒家何处有,牧童遥指杏花村.<br>
+        清明时节雨纷纷,路上行人欲断魂.<br>
+        借问酒家何处有,牧童遥指杏花村.<br>
+        清明时节雨纷纷,路上行人欲断魂.<br>
+        借问酒家何处有,牧童遥指杏花村.<br>
+        清明时节雨纷纷,路上行人欲断魂.<br>
+        借问酒家何处有,牧童遥指杏花村.<br>
+        清明时节雨纷纷,路上行人欲断魂.<br>
+        借问酒家何处有,牧童遥指杏花村.<br>
+        清明时节雨纷纷,路上行人欲断魂.<br>
+        借问酒家何处有,牧童遥指杏花村.<br>
+        清明时节雨纷纷,路上行人欲断魂.<br>
+        借问酒家何处有,牧童遥指杏花村.<br>
+        清明时节雨纷纷,路上行人欲断魂.<br>
+        借问酒家何处有,牧童遥指杏花村.<br>
+        清明时节雨纷纷,路上行人欲断魂.<br>
+        借问酒家何处有,牧童遥指杏花村.<br>
+        清明时节雨纷纷,路上行人欲断魂.<br>
+        借问酒家何处有,牧童遥指杏花村.<br>
+        清明时节雨纷纷,路上行人欲断魂.<br>
+        借问酒家何处有,牧童遥指杏花村.<br>
+        清明时节雨纷纷,路上行人欲断魂.<br>
+        借问酒家何处有,牧童遥指杏花村.<br>
+        清明时节雨纷纷,路上行人欲断魂.<br>
+        借问酒家何处有,牧童遥指杏花村.<br>
+        清明时节雨纷纷,路上行人欲断魂.<br>
+        借问酒家何处有,牧童遥指杏花村.<br>
+        清明时节雨纷纷,路上行人欲断魂.<br>
+        借问酒家何处有,牧童遥指杏花村.<br>
+        清明时节雨纷纷,路上行人欲断魂.<br>
+        借问酒家何处有,牧童遥指杏花村.<br>
+        清明时节雨纷纷,路上行人欲断魂.<br>
+        借问酒家何处有,牧童遥指杏花村.<br>
+        清明时节雨纷纷,路上行人欲断魂.<br>
+        借问酒家何处有,牧童遥指杏花村.<br>
+        清明时节雨纷纷,路上行人欲断魂.<br>
+        借问酒家何处有,牧童遥指杏花村.<br>
+        清明时节雨纷纷,路上行人欲断魂.<br>
+        借问酒家何处有,牧童遥指杏花村.<br>
+        清明时节雨纷纷,路上行人欲断魂.<br>
+        借问酒家何处有,牧童遥指杏花村.<br>
+        清明时节雨纷纷,路上行人欲断魂.<br>
+        借问酒家何处有,牧童遥指杏花村.<br>
+        清明时节雨纷纷,路上行人欲断魂.<br>
+        借问酒家何处有,牧童遥指杏花村.<br>
+        清明时节雨纷纷,路上行人欲断魂.<br>
+        借问酒家何处有,牧童遥指杏花村.<br>
+        清明时节雨纷纷,路上行人欲断魂.<br>
+        借问酒家何处有,牧童遥指杏花村.<br>
+        清明时节雨纷纷,路上行人欲断魂.<br>
+        借问酒家何处有,牧童遥指杏花村.<br>
+        清明时节雨纷纷,路上行人欲断魂.<br>
+        借问酒家何处有,牧童遥指杏花村.<br>
+        清明时节雨纷纷,路上行人欲断魂.<br>
+        借问酒家何处有,牧童遥指杏花村.<br>
+        清明时节雨纷纷,路上行人欲断魂.<br>
+        借问酒家何处有,牧童遥指杏花村.<br>
+
+        ---------结束------------ <br>
+
+
+    </div>
+    <div class="scroll">
+        <div class="bar"></div>
+
+    </div>
+</div>
+
+</body>
+</html>

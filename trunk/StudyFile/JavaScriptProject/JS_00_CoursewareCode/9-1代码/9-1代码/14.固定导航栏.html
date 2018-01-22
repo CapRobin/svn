@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0
+        }
+
+        .top {
+            text-align: center;
+        }
+
+        img {
+            vertical-align: top;
+        }
+
+        .main {
+            margin: 0 auto;
+            width: 1000px;
+            margin-top: 10px;
+
+
+        }
+
+        #Q-nav1 {
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .fixed1 {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+        }
+    </style>
+    <script src="jQuery-1.0.0-my.js"></script>
+
+    <script>
+        /*
+         思路:  被卷曲的头部  一旦大于当前导航栏到顶端的距离 就把当前导航栏设置成fixed
+
+         1.三板斧
+         2.获取当前滚动高度
+         3.和原本的距离顶部的高度判断 大于 则fixed  小于 移除
+
+
+
+
+
+
+         */
+
+        window.onload = function () {
+            var middleBox = document.getElementById("Q-nav1");
+            var topVal = middleBox.offsetTop;
+            var main=document.getElementById("main");
+            console.log(topVal);
+            window.onscroll= function () {
+
+//                console.log(scroll().top);
+                if(scroll().top>topVal){
+                    middleBox.setAttribute("class","fixed1");
+                    main.style.paddingTop=middleBox.offsetHeight+"px";
+                }else{
+                    middleBox.removeAttribute("class");
+                    main.style.paddingTop=0;
+                }
+
+                
+            }
+            
+            
+
+        }
+
+
+    </script>
+
+
+</head>
+<body>
+<div class="top" id="top">
+    <img src="images/top.png" alt=""/>
+</div>
+<div id="Q-nav1">
+    <img src="images/nav.png" alt=""/>
+</div>
+<div class="main" id="main">
+    <img src="images/main.png" alt=""/>
+</div>
+</body>
+</html>

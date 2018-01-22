@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+//        for (var i = 1; i < 10; i++) {//行数
+//            for (var j = 1; j <= i; j++) {
+//                document.write(i + "X" + j + "=" + i * j + "&nbsp;&nbsp;&nbsp;");
+//
+//            }
+//            document.write("<br/>");
+//
+//        }
+
+        //思考   九九乘法表 表格
+        /*
+            1.table需要输出几遍?  不需要 开头结尾拼接上就可以
+            2.tr呢? tr代表行数  要放到  外层循环
+            3.td呢? td放入内层循环
+
+
+         */
+
+        //作业   16日晚自习交  时间  10分钟  录制视频 备注写名字
+        document.write("<table border='1' cellspacing='3'>");
+            for(var i=1;i<10;i++){
+                document.write("<tr>");
+                    for(var j=1;j<=i;j++){
+                        document.write("<td>");
+                        document.write(i+"X"+j+"="+i*j);
+                        document.write("</td>");
+                    }
+
+                document.write("</tr>");
+            }
+
+
+
+        document.write("</table>")
+
+
+
+
+    </script>
+</head>
+<body>
+<table border="1" cellspacing="3">
+    <tr>
+        <td>1X1=1</td>
+
+    </tr>
+    <tr>
+        <td>2X1=2</td>
+        <td>2X2=4</td>
+
+    </tr>
+    <tr>
+        <td>3X1=3</td>
+        <td>3X2=6</td>
+        <td>3X3=9</td>
+
+    </tr>
+</table>
+
+</body>
+</html>

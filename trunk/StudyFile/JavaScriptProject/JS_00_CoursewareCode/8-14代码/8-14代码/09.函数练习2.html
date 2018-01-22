@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //翻转数组，返回一个新数组
+
+        function myRevers(arr){
+            for(var i=0;i<arr.length/2;i++){
+                var temp=arr[i];
+                arr[i]=arr[arr.length-1-i];
+                arr[arr.length-1-i]=temp;
+            }
+
+            return arr;
+
+
+
+        }
+
+//        var arr=[1,2,3,4,5,6];
+//        alert('翻转前:'+arr);
+//        alert('翻转后:'+myRevers(arr));
+
+//        对数组排序，从小到大
+
+        function bubble(arr){
+            for(var i=0;i<arr.length-1;i++){
+                var boo=true;
+                for(var j=0;j<arr.length-1-i;j++){
+                    if(arr[j]<arr[j+1]){
+                        boo=false;
+                        var temp=arr[j];
+                        arr[j]=arr[j+1];
+                        arr[j+1]=temp;
+
+
+                    }
+                }
+
+                if(boo){
+                    break;
+                }
+
+            }
+
+            return arr;
+        }
+//        var arr=[1,8,5,3,6,7,4,9]
+//        console.log("排序前:"+arr);
+//        console.log("排序后:"+bubble(arr));
+
+
+        /*
+        做程序 数据要考虑三种情况
+
+        1.正确数据
+        2.错误数据
+        3.边界数据
+
+
+         */
+//        求阶乘
+        function jie(n){
+            var num=1;//已经是1的阶乘了
+            //所以  i从2开始
+            for(var i=2;i<=n;i++){
+                num=num*i;
+            }
+
+//            console.log(num);
+
+            return num;
+
+
+        }
+//        jie();
+//    alert(jie(6));
+
+        //阶乘的和
+//        jie(1)+jie(2)+jie(3)+jie(4);
+
+        function jieSum(sn){
+            var total=0;
+            for(var i=1;i<=sn;i++){
+                total+=jie(i);
+            }
+            return total;
+        }
+
+        alert(jieSum(10));
+
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

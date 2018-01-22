@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            position: absolute;
+            top: 100px;
+            left: 0;
+        }
+
+
+    </style>
+</head>
+<body>
+<button>匀速到200</button>
+<button>匀速到400</button>
+<div class="box"></div>
+
+<script>
+    var bts=document.getElementsByTagName("button");
+    var div=document.getElementsByTagName("div")[0];
+    bts[0].onclick= function () {
+//        contantSpeedAnimateX(div,200);
+        contantSpeedAnimateY(div,200);
+
+    }
+    bts[1].onclick= function () {
+//        contantSpeedAnimateX(div,400);
+        contantSpeedAnimateY(div,400);
+    }
+
+
+    function contantSpeedAnimateX(ele,endX){
+        clearInterval(ele.timer);
+        ele.timer=setInterval(function () {
+            var step;
+            var chaVal=endX-ele.offsetLeft;
+            if(chaVal>0){
+                step=10;
+            }else if (chaVal<0){
+                step=-10;
+            }else {
+                step=0
+            }
+            console.log(1);
+            ele.style.left=ele.offsetLeft+step+"px";
+            if(Math.abs(endX-ele.offsetLeft)<=Math.abs(step)){
+                ele.style.left=endX+"px";
+                clearInterval(ele.timer);
+            }
+
+
+            
+        },30)
+
+    }
+
+    function contantSpeedAnimateY(ele,endY){
+        clearInterval(ele.timer);
+        ele.timer=setInterval(function () {
+            var step;
+            var chaVal=endY-ele.offsetTop;
+            if(chaVal>0){
+                step=10;
+            }else if (chaVal<0){
+                step=-10;
+            }else {
+                step=0
+            }
+            console.log(1);
+            ele.style.top=ele.offsetTop+step+"px";
+            if(Math.abs(endY-ele.offsetTop)<=Math.abs(step)){
+                ele.style.top=endY+"px";
+                clearInterval(ele.timer);
+            }
+
+
+
+        },30)
+
+    }
+
+
+</script>
+
+</body>
+</html>

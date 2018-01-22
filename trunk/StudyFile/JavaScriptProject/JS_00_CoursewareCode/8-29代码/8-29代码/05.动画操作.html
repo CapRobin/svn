@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /**{*/
+            /*padding: 0;*/
+            /*margin: 0;*/
+        /*}*/
+        .wrap{
+            height: 300px;
+            background-color: #ccc;
+
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            top: 30px;
+        }
+
+
+
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <button>运动到200</button>
+    <button>运动到400</button>
+    <div class="box"></div>
+    
+    
+    
+</div>
+<script>
+
+    var btns=document.getElementsByTagName("button");
+    var box=document.getElementsByClassName("box")[0];
+//    btns[0].onclick= function () {
+//        //第一步 要想让当前盒子距离左边去位移  先得有定位
+//        //闪动动画
+////        box.style.left="200px";
+//        //匀速动画  定时器  去匀速变化
+//
+//        setInterval(function () {
+//
+////     当前的left值(style.left能赋值) =盒子本身的位置+步长+"单位"
+//            //步长 每次移动的距离
+//            //当前的left值(style.left能赋值)=当前left值(offsetleft只能获取)+步长+"单位"
+//            box.style.left=box.offsetLeft+1+"px";
+////            console.log(typeof box.style.left);
+//        },10)
+//    }
+
+    //bug
+   /*
+    1.停不下来
+    2.点的次数越多 位移越来越快
+
+
+    */
+
+    btns[0].onclick= function () {
+
+        timer=setInterval(function () {
+
+
+            box.style.left=box.offsetLeft+10+"px";
+            console.log(box.offsetLeft);
+            if(box.offsetLeft>=200){
+                clearInterval(timer);
+            }
+        },50)
+    }
+    btns[1].onclick= function () {
+        timer=setInterval(function () {
+            box.style.left=box.offsetLeft+10+"px";
+            console.log(box.offsetLeft);
+            if(box.offsetLeft>=400){
+                clearInterval(timer);
+            }
+
+            
+        },50)
+    }
+
+
+</script>
+
+
+
+
+</body>
+</html>

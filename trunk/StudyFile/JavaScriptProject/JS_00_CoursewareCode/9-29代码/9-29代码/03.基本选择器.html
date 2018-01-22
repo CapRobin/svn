@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="jquery-1.11.1.js"></script>
+<script>
+    $(function () {
+        //基本选择器:  ID   类   标签
+
+        $("div").css("background-color","pink");
+        $("div").css("width","100px").css("margin",10).css("height","100px");
+
+        $("#dv").css("background-color","red");
+        $(".box").css("background-color","yellow");
+
+        
+    });
+</script>
+<body>
+<div>我是一个div</div>
+<div class="box">我是一个div</div>
+<div id="dv">我是一个div</div>
+<div class="box">我是一个div</div>
+<div>我是一个div</div>
+
+</body>
+</html>

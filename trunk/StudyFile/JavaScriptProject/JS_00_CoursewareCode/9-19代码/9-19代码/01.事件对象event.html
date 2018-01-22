@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="btn">我是按钮</button>
+<script>
+    /*
+     事件对象    在事件触发时 我们需要获取一些当前事件的属性和状态,这时候需要
+     用到事件对象
+
+
+     事件对象的获取:  event
+
+     */
+
+//    btn.onclick = function (e) {
+//        //直接打印event  就是打印事件源   谁触发了事件
+////        console.log(event);
+//        //直接打印事件对象就是event  其他都不对
+////        console.log(e);
+//
+//        //把事件驱动函数的形参定义上 那么系统会自动把事件对象传入参数
+//        //这时候事件对象作为局部变量  可以自定义名字
+//        //有兼容问题
+////        console.log(e);
+//
+//
+//    }
+    //事件对象获取的兼容写法
+    btn.onclick = function (event) {
+        var event=event || window.event;
+//        console.log(window.event);
+        console.log(event);
+    }
+
+
+//    btn.onmouseover = function () {
+//        console.log(event);
+//
+//    }
+
+
+</script>
+
+</body>
+</html>
