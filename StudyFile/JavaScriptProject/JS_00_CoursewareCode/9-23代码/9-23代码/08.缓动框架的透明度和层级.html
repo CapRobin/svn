@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            position: absolute;
+            top: 50px;
+            left: 0;
+        }
+
+
+
+    </style>
+</head>
+<body>
+<button id="btn">按钮</button>
+
+<div></div>
+<script src="jQuery-1.0.0-my.js"></script>
+<script>
+    var btn=document.getElementById("btn");
+    var box=getEle("div")[0];
+    btn.onclick= function () {
+        var json={
+            width:400,
+            height:400,
+            top:150,
+            left:150,
+//            borderRadius:200
+            borderTopLeftRadius:200,
+            borderTopRightRadius:200,
+            borderBottomRightRadius:200,
+            borderBottomLeftRadius:200,
+
+        };
+        slowSpeedAnimate(box,json);
+
+//        box.style["borderRadius"]="200px";
+//        box.style["borderTopLeftRadius"]="200px";
+
+    }
+    
+    
+    
+</script>
+</body>
+</html>

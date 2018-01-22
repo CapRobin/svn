@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        li{
+            height:30px;
+
+            line-height: 30px;
+            cursor:pointer;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<button id="btn">创建</button>
+<ul id="box"></ul>
+<script>
+
+    var btn=document.getElementById("btn");
+    var ul=document.getElementById("box");
+    btn.onclick= function () {
+//        ul.innerHTML="";
+        var arr=["贵妃醉酒","西施浣纱","昭君出塞","貂蝉拜月"];
+
+        for(var i=0;i<arr.length;i++){
+            var li=document.createElement("li");
+            li.innerHTML=arr[i];
+            ul.appendChild(li);
+            //每次创建出来一个li直接添加点击事件
+            li.onmouseover= function () {
+                var liArr=ul.children;
+                for(var i=0;i<liArr.length;i++){
+                    liArr[i].style.opacity="0.2";
+                }
+                this.style.opacity="1";
+            }
+        }
+        
+    }
+    //鼠标离开ul 把所有的li设置成显示
+ul.onmouseout= function () {
+    var liArr=ul.children;
+    for(var i=0;i<liArr.length;i++){
+        liArr[i].style.opacity="1";
+    }
+}
+   
+
+    
+
+    
+    
+    
+    
+</script>
+
+
+
+</body>
+</html>

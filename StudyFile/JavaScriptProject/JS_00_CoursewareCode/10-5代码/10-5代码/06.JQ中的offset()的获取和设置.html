@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 100px;
+            height:150px;
+            background-color: pink;
+            /*padding:50px;*/
+            /*margin: 10px;*/
+            /*border: 10px solid #000;*/
+            /*position: absolute;*/
+            /*top: 50px;*/
+            /*left: 100px;*/
+        }
+
+
+    </style>
+</head>
+<body>
+<script src="jquery-1.11.1.js"></script>
+<script>
+    $(function () {
+        $("button").eq(0).click(function () {
+//            console.log($(".box").offset().top);
+//            console.log($(".box").offset().left);
+            console.log($(".box").offset());
+//            console.log($(".box")[0].offsetTop);
+
+
+        });
+        $("button").eq(1).click(function () {
+            $(".box").offset({
+                top:150,
+                left:10
+            });
+
+
+        });
+        
+    });
+    
+</script>
+<button>获取offset()</button>
+<button>设置offset()</button>
+<div class="box"></div>
+
+
+</body>
+</html>

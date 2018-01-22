@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+
+    <!--作业:
+            美女相册 时间20分钟
+             要求 a标签的return   按照上课讲的思路实现
+            24日晚自习之前交
+
+
+
+
+
+    -->
+    <style>
+        body {
+            background-color: #ccc;
+        }
+
+        #box {
+            margin-left: 200px;
+            margin-top: 50px;
+
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+
+        }
+
+        ul > li {
+            float: left;
+            list-style: none;
+            margin: 20px 10px 20px 0;
+
+        }
+
+        li img {
+            width: 100px;;
+        }
+
+        .reg {
+            text-decoration: none;
+            color: #ff666d;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        #showGirl img {
+            width: 400px;
+            height: 250px;
+        }
+
+
+    </style>
+
+</head>
+<body>
+<div id="box">
+    <h2>美女画廊</h2>
+    <a href="#" class="reg">注册</a>
+
+    <ul>
+        <li>
+            <a href="imgs/1.jpg" title="美女A">
+                <img src="imgs/1-small.jpg" alt="">
+            </a>
+        </li>
+        <li>
+            <a href="imgs/2.jpg" title="美女B">
+                <img src="imgs/2-small.jpg" alt="">
+            </a>
+        </li>
+        <li>
+            <a href="imgs/3.jpg" title="美女C">
+                <img src="imgs/3-small.jpg" alt="">
+            </a>
+        </li>
+        <li>
+            <a href="imgs/4.jpg" title="美女D">
+                <img src="imgs/4-small.jpg" alt="">
+            </a>
+        </li>
+    </ul>
+
+    <div style="clear: both"></div>
+
+    <div id="showGirl">
+
+        <img src="imgs/placeholder.png" id="girlImg" alt="">
+    </div>
+
+    <p id="girlName">请选择一张图片</p>
+
+
+</div>
+<script>
+    /*
+     找到指定元素对象 我们可以按照选择器的方式实现
+     先找到父元素  通过父元素对象点getElement... 获取 当前父元素下面的指定子元素或者子元素数组
+
+
+
+     */
+    //我们找到页面某一个或一些元素 不止可以通过document点 找到
+    //因为document 是封装了整个页面 所以document去get也就是去整个页面去找
+    //那我如果单纯通过一个ul或者其他标签去getElement呢?  是不是就获取指定元素下面的元素呢?
+    //答案是 肯定的!!!
+    //先找到ul
+    var ul = document.getElementsByTagName("ul")[0];
+    //通过ul去找a标签 就是找到ul下面的所有a标签
+    var aArr = ul.getElementsByTagName("a");
+    //找到显示美女的img标签
+    var girlImg = document.getElementById("girlImg");
+
+    //找到显示美女名字的p标签
+    var girlName = document.getElementById("girlName");
+
+    //    console.log(aArr[1]);
+    //给每一个a标签添加事件
+    //通过循环的方式给多个元素添加事件
+    for (var i = 0; i < aArr.length; i++) {
+
+//添加点击事件
+        aArr[i].onclick = function () {
+
+//            alert(1);
+//            点击对应a标签 则或得到当前点击的a标签的href值 设置到下面的img的src上面即可
+            girlImg.src = this.href;
+            //美女名字的p标签显示 当前a标签的title值
+            girlName.innerHTML = this.title;
+
+            //防止a标签点击跳转的href对应的地址
+            return false;
+
+
+        };
+
+        console.log(i);
+
+
+    }
+
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        li{
+            height:30px;
+            width: 500px;
+            background-color: #888;
+            list-style: none;
+            margin-bottom: 10px;
+            font:700 20px/30px "simsun";
+        }
+
+
+
+    </style>
+</head>
+<body>
+<ul>
+    <li>4分钟速览《法治中国》第五集《公正司法》下</li>
+    <li>首次曝光！海军新型战机在南海上空夜航单飞</li>
+    <li>4分钟速览《法治中国》第五集《公正司法》下</li>
+    <li>首次曝光！海军新型战机在南海上空夜航单飞</li>
+    <li>4分钟速览《法治中国》第五集《公正司法》下</li>
+    <li>首次曝光！海军新型战机在南海上空夜航单飞</li>
+    <li>4分钟速览《法治中国》第五集《公正司法》下</li>
+    <li>首次曝光！海军新型战机在南海上空夜航单飞</li>
+    <li>4分钟速览《法治中国》第五集《公正司法》下</li>
+    <li>首次曝光！海军新型战机在南海上空夜航单飞</li>
+</ul>
+
+<script>
+    //简单版
+//    var liArr=document.getElementsByTagName("li");
+//    for(var i=0;i<liArr.length;i++){
+//        if(i%2===0){
+//            liArr[i].style.backgroundColor="red";
+//        }
+//    }
+
+    var ul=document.getElementsByTagName("ul")[0];
+    var nodeArr= ul.childNodes;
+    var newArr=[];
+    for(var i=0;i<nodeArr.length;i++){
+        if(nodeArr[i].nodeType===1){
+            newArr.push(nodeArr[i]);
+        }
+    }
+
+    for(var i=0;i<newArr.length;i++){
+        if(i%2===0){
+            newArr[i].style.backgroundColor="#ccc";
+        }
+    }
+
+
+
+
+
+</script>
+
+</body>
+</html>

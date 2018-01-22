@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 300px;
+            background-color: pink;
+            margin: 100px auto;
+            padding: 50px;
+            border: 10px solid #000;
+
+        }
+
+
+    </style>
+</head>
+<body>
+<button id="btn">按钮</button>
+<div class="box" id="box">
+    清明时节雨纷纷,路上行人欲断魂.<br>
+    借问酒家何处有,牧童遥指杏花村.<br>
+    清明时节雨纷纷,路上行人欲断魂.<br>
+    借问酒家何处有,牧童遥指杏花村.<br>
+    清明时节雨纷纷,路上行人欲断魂.<br>
+    借问酒家何处有,牧童遥指杏花村.<br>
+    清明时节雨纷纷,路上行人欲断魂.<br>
+    借问酒家何处有,牧童遥指杏花村.<br>
+    清明时节雨纷纷,路上行人欲断魂.<br>
+    借问酒家何处有,牧童遥指杏花村.<br>
+    清明时节雨纷纷,路上行人欲断魂.<br>
+    借问酒家何处有,牧童遥指杏花村.<br>
+    清明时节雨纷纷,路上行人欲断魂.<br>
+    借问酒家何处有,牧童遥指杏花村.<br>
+    清明时节雨纷纷,路上行人欲断魂.<br>
+    借问酒家何处有,牧童遥指杏花村.<br>
+    借问酒家何处有,牧童遥指杏花村.<br>
+    清明时节雨纷纷,路上行人欲断魂.<br>
+    借问酒家何处有,牧童遥指杏花村.<br>
+    清明时节雨纷纷,路上行人欲断魂.<br>
+    借问酒家何处有,牧童遥指杏花村.<br>
+    清明时节雨纷纷,路上行人欲断魂.<br>
+    借问酒家何处有,牧童遥指杏花村.<br>
+    清明时节雨纷纷,路上行人欲断魂.<br>
+    借问酒家何处有,牧童遥指杏花村.<br>
+    借问酒家何处有,牧童遥指杏花村.<br>
+    清明时节雨纷纷,路上行人欲断魂.<br>
+    借问酒家何处有,牧童遥指杏花村.<br>
+    清明时节雨纷纷,路上行人欲断魂.<br>
+    借问酒家何处有,牧童遥指杏花村.<br>
+    清明时节雨纷纷,路上行人欲断魂.<br>
+    借问酒家何处有,牧童遥指杏花村.<br>
+    清明时节雨纷纷,路上行人欲断魂.<br>
+    借问酒家何处有,牧童遥指杏花村.<br>
+    借问酒家何处有,牧童遥指杏花村.<br>
+    清明时节雨纷纷,路上行人欲断魂.<br>
+    借问酒家何处有,牧童遥指杏花村.<br>
+    清明时节雨纷纷,路上行人欲断魂.<br>
+    借问酒家何处有,牧童遥指杏花村.<br>
+    清明时节雨纷纷,路上行人欲断魂.<br>
+    借问酒家何处有,牧童遥指杏花村.<br>
+    清明时节雨纷纷,路上行人欲断魂.<br>
+    借问酒家何处有,牧童遥指杏花村.<br>
+
+
+</div>
+<!--400   400-->
+<!--420   420-->
+<!--400   957-->
+
+<script>
+    var box = document.getElementById("box");
+    //width/height+padding不包括 border
+    console.log(box.clientWidth+"   "+box.clientHeight);
+    //width+height+padding+border
+    console.log(box.offsetWidth+"   "+box.offsetHeight);
+    //IE9+ 内容超出  内容的宽高   不超出盒子本身宽高
+    // IE8及以下  超不超出 都是内容本身高度  (可能比盒子小)
+    console.log(box.scrollWidth+"   "+box.scrollHeight);
+
+
+</script>
+</body>
+</html>

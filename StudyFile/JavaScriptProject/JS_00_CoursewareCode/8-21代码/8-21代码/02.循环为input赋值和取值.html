@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload= function () {
+            var bt1=document.getElementsByTagName("button")[0];
+            var bt2=document.getElementsByTagName("button")[1];
+            var inArr=document.getElementsByTagName("input");
+
+            bt1.onclick= function () {
+                for(var i=0;i<inArr.length;i++){
+                    inArr[i].value="呵呵"+i;
+                }
+
+
+                
+            }
+             bt2.onclick= function () {
+                 var arr=[];
+                 for(var i=0;i<inArr.length;i++){
+                     arr.push(inArr[i].value);
+
+
+
+                 }
+
+                 console.log(arr.join("|"));
+
+
+
+            }
+
+            
+            
+        }
+        
+        
+    </script>
+</head>
+<body>
+<input type="text"><br>
+<input type="text"><br>
+<input type="text"><br>
+<input type="text"><br>
+<input type="text"><br>
+<input type="text"><br>
+<button>赋值</button>
+<button>取值</button>
+
+
+</body>
+</html>

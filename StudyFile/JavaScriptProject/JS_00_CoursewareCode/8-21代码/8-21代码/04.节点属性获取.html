@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #boxid{
+            height:200px;
+            background-color: pink;
+        }
+
+
+    </style>
+    <script>
+        window.onload= function () {
+            var box=document.getElementById("boxid");
+            //这是在操作一个对象  给对象绑定属性
+            //而跟页面的标签没有半毛钱关系
+            box.aaa="哈哈";
+            box.name="网二";
+            //这个属性是系统给我们绑定好的   很好心的帮助我们顺便修改了标签的class
+            box.className="kk";
+
+
+            //操作标签属性(键,值)
+            box.setAttribute("kkk","呵呵");
+            console.log(box.aaa);
+//            console.log(box.kkk);
+            //获取标签属性
+            console.log(box.getAttribute("kkk"));
+            //移除标签属性  根据标签属性的键 移除值
+            box.removeAttribute("kkk");
+            //根据一个不存在的标签属性的键获取值 返回值是null
+            console.log(box.getAttribute("kkk"));
+
+
+
+
+
+        }
+
+
+
+    </script>
+
+</head>
+<body>
+<div id="boxid"></div>
+
+</body>
+</html>

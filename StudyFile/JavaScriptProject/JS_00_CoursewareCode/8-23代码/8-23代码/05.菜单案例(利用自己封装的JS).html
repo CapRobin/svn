@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            margin: 20px 0 0 20px;
+        }
+
+        li {
+            height: 30px;
+            width: 80px;
+            list-style: none;
+            float: left;
+            margin-right: 5px;
+            background-color: #F5F5DC;
+            font: 100 18px/30px "simsun";
+            text-align: center;
+
+        }
+
+        a {
+            text-decoration: none;
+
+        }
+
+        a:active {
+            color: red;
+        }
+
+        .current {
+            background-color: #DEB887;
+        }
+
+
+    </style>
+    <script src="NodeUtils.js"></script>
+    <script>
+        window.onload = function () {
+            /*
+             设计: 通过操作我们看出 是a连接点击才会切换背景颜色
+             而不是li被点击
+             a连接点击 去切换li的class
+             我们可以通过a连接的父节点去切换class
+
+
+
+
+
+
+             */
+
+            //利用排他思想实现
+            //1获取所有的a标签
+//            var aArr=document.getElementsByTagName("a");
+//            var liArr=document.getElementsByTagName("li");
+//            for(var i=0;i<aArr.length;i++){
+//                aArr[i].onclick= function () {
+//                    //点击a连接 让所有的liclass都取消
+//                    //排他思想
+//                    for(var j=0;j<liArr.length;j++){
+//                            liArr[j].removeAttribute("class");
+//                    }
+//                    this.parentNode.setAttribute("class","current");
+//
+//
+//                }
+//            }
+
+            var box = gid("box");
+//            console.log(box);
+            var aArr=box.getElementsByTagName("a");
+            for(var i=0;i<aArr.length;i++){
+                aArr[i].onclick= function () {
+                    this.parentNode.setAttribute("class","current");
+                    //获取当前点击的a连接的父节点(li)的其他兄弟节点(其他li)
+                    //把他们都干死
+                    var ortherLiArr=getAllSibling(this.parentNode);
+                    for(var j=0;j<ortherLiArr.length;j++){
+                        ortherLiArr[j].removeAttribute("class");
+                    }
+                }
+            }
+
+
+        }
+
+
+    </script>
+
+</head>
+<body>
+<ul id="box">
+    <li class="current"><a href="javaScript:void(0)">首页</a></li>
+    <li><a href="javaScript:void(0)">播客</a></li>
+    <li><a href="javaScript:void(0)">博客</a></li>
+    <li><a href="javaScript:void(0)">相册</a></li>
+    <li><a href="javaScript:void(0)">关于</a></li>
+    <li><a href="javaScript:void(0)">帮助</a></li>
+</ul>
+
+</body>
+</html>

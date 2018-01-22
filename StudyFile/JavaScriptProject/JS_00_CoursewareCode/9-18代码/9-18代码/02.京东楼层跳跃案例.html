@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+       ol,ul{
+           list-style: none;
+       }
+       ol{
+           position: fixed;
+           left: 200px;
+           top: 100px;
+       }
+        ol li{
+            width: 70px;
+            height: 70px;
+            height: 70px;
+            border: 1px solid #000;
+            text-align: center;
+            font: 20px/70px "simsun";
+            cursor: pointer;
+
+        }
+        body,html,ul{
+            height: 100%;
+        }
+
+        ul li{
+            font-size: 30px;
+            height: 100%;
+        }
+        .box{
+            height: 300px;
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+<div class="box">我是一个捣乱的box</div>
+<ul>
+    <li>导航专区</li>
+    <li>鞋帽专区</li>
+    <li>家电专区</li>
+    <li>电子专区</li>
+    <li>妇婴专区</li>
+</ul>
+
+<ol>
+    <li>导航</li>
+    <li>鞋帽</li>
+    <li>家电</li>
+    <li>电子</li>
+    <li>妇婴</li>
+</ol>
+<script src="jQuery-1.0.0-my.js"></script>
+<script>
+
+    // 需求:  点击对应ol中的li 跳转到对应的ul 中li区域  楼层跳跃
+    //颜色设置:  ul中的专区li  和ol中 导航li的对应  背景颜色一致
+            //思路:  for循环  分别把两个li对应设置成 颜色数组的对应值
+    //楼层跳跃思路: 点击ol中li  去让当前页面缓动到ul对应的li位置去
+
+    //步骤
+    //1.获取元素
+    //2.设置背景颜色 对应设置
+    //3.事件老三步
+    //4.获取点击的是哪一个li
+    //5.利用缓动动画 让页面缓动到对应的li专区
+
+    //1.获取元素
+    var ul=document.getElementsByTagName("ul")[0];
+    var ol=document.getElementsByTagName("ol")[0];
+    var olLiArr=ol.children;
+    var ulLiArr=ul.children;
+    var timer=null;
+    var target=0;
+    var nowY=0;
+
+
+    //2.设置背景颜色 对应设置
+    var colorArr=["red","blue","pink","orange","yellow"];
+    for(var i=0;i<ulLiArr.length;i++){
+        ulLiArr[i].style.backgroundColor=colorArr[i];
+        olLiArr[i].style.backgroundColor=colorArr[i];
+        //给ol中的li绑定index索引 为了获取点击的是哪一个
+        olLiArr[i].index=i;
+        //3.事件老三步
+        olLiArr[i].onclick= function () {
+        //4.获取点击的是哪一个li(绑定index)
+//            alert(this.index);
+            //5.利用缓动动画 让页面缓动到对应的li专区
+            //自己写缓动动画
+            //缓动动画五步骤:
+            //1.要用定时器先清除定时器
+            //2.获取步长
+            //3.二次计算步长
+            //4.缓动到指定位置
+            //5.清除定时器
+
+
+            //每次点击要确定终点位置    点击对应li   终点就是当前点击的li到页面顶端的距离
+            target=ulLiArr[this.index].offsetTop;
+
+
+
+            //1.要用定时器先清除定时器
+            clearInterval(timer);
+
+            timer=setInterval(function () {
+                //2.获取步长
+                var step=(target-nowY)/10;
+
+                //3.二次计算步长
+                step=step>0?Math.ceil(step):Math.floor(step);
+
+                nowY=nowY+step;
+
+
+                //4.缓动到指定位置
+                window.scrollTo(0,nowY);
+
+
+
+                //5.清除定时器
+                console.log(1);
+                if(Math.abs(target-nowY)<=Math.abs(step)){
+                    window.scrollTo(0,target);
+                    clearInterval(timer)
+
+                }
+
+            },25);
+
+
+
+
+
+
+
+        }
+    }
+//获取当前y的位置  根据页面滚动事件 实时赋值
+    window.onscroll= function () {
+        nowY=scroll().top;
+    }
+    
+
+
+</script>
+
+
+</body>
+</html>

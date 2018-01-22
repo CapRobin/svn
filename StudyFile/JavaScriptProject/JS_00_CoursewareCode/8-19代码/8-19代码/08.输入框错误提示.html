@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        input{
+            width: 300px;
+            height: 35px;
+            font-size: 20px;
+
+            outline: none;
+
+        }
+        .wrong{
+            border:1px solid #F00;
+
+        }
+        .current{
+            border:1px solid #0F0;
+        }
+
+
+    </style>
+</head>
+<body>
+用户名:
+<input type="text" id="jdtext" onblur="check(this)" >
+
+<script>
+
+    //在行内事件 的函数里面 this表示的是当前window对象 this无法获取 当前触发该事件的事件源
+    //所以需要在行内样式的函数 的参数上面 传入一个this
+
+
+
+    function check(aaa){
+//        console.log(this);
+//        console.log(aaa);
+//        console.log(aaa.value);
+        var str=aaa.value;
+        if(str.length<6 || str.length>12){
+            aaa.className="wrong";
+        }else{
+            aaa.className="current";
+        }
+
+    }
+
+
+
+</script>
+
+
+</body>
+</html>

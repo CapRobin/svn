@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .box{
+            width: 490px;
+            height: 170px;
+            border: 1px solid #ccc;
+            padding: 5px;
+            margin: 100px auto;
+
+
+        }
+        .box>.inner{
+            width: 490px;
+            height: 170px;
+            overflow: hidden;
+            position: relative;
+        }
+        .inner>ul{
+            list-style: none;
+            width:500%;
+            position: absolute;
+            left: 0;
+
+        }
+        ul>li{
+            float: left;
+        }
+        .inner>.square{
+
+            position: absolute;
+            right: 10px;
+            bottom:10px;
+
+
+
+        }
+        .square span{
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            background-color: white;
+            text-align: center;
+            line-height: 16px;
+            font-size: 12px;
+            margin-left: 5px;
+            cursor: pointer;
+        }
+        .square .current{
+            background-color: darkorange;
+            color: white;
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="inner" id="inner">
+        <ul>
+            <li><img src="images/01.jpg" alt=""></li>
+            <li><img src="images/02.jpg" alt=""></li>
+            <li><img src="images/03.jpg" alt=""></li>
+            <li><img src="images/04.jpg" alt=""></li>
+            <li><img src="images/05.jpg" alt=""></li>
+        </ul>
+        <div class="square">
+            <span class="current">1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <span>5</span>
+
+        </div>
+
+
+    </div>
+</div>
+<script>
+    /*
+        思路:
+              获取元素可以通过父容器去挨个获取
+
+            第一步: span 添加鼠标移入监听 点亮盒子
+
+
+
+     */
+
+    //获取元素可以通过父容器去挨个获取
+    var inner=document.getElementById("inner");
+    var ul=inner.children[0];
+    var spanArr=inner.children[1].children;
+
+//    第一步: span 添加鼠标移入监听 点亮盒子
+    for(var i=0;i<spanArr.length;i++){
+        spanArr[i].index=i;
+        spanArr[i].onmouseover= function () {
+            for(var i=0;i<spanArr.length;i++){
+                spanArr[i].removeAttribute("class")
+            }
+            this.setAttribute("class","current");
+            //分析ul要移动的宽度 如果选中的第nspan 是n-1个长度
+            translateAnimate(ul,-this.index*490,10);
+
+
+        }
+    }
+
+    function translateAnimate(ele,endX,speed){
+        clearInterval(ele.timer);
+        var s;
+        if(endX>ele.offsetLeft){
+            s=speed;
+        }else if(endX<ele.offsetLeft){
+            s=-speed;
+        }else{
+            s=0;
+        }
+        ele.timer=setInterval(function () {
+            var offVal=endX-ele.offsetLeft;
+
+            ele.style.left=ele.offsetLeft+s+"px";
+
+
+            if(Math.abs(offVal)<=Math.abs(s)){
+                ele.style.left=endX;
+                clearInterval(ele.timer);
+            }
+
+        },1)
+    }
+
+
+
+
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        li{
+            height: 30px;
+            margin-bottom: 30px;
+            background-color: pink;
+            cursor:pointer;
+        }
+
+
+    </style>
+</head>
+<body>
+<script src="jquery-1.11.1.js"></script>
+<script>
+    $(function () {
+//        $("ul").delegate("li","click mouseleave", function () {
+//            alert("delegate的事件");
+//        })
+        
+//        $("ul").on("click mouseleave","li", function () {
+//            alert("最流行的on");
+//        })
+        $("ul li").click(function () {
+            alert("click的方式");
+        });
+        $("ul li").mouseleave(function () {
+            alert("mouseleave的方式");
+        });
+        
+        $("button").click(function () {
+            //解绑事件
+            /*
+             $( selector ).undelegate(); //解绑所有的delegate事件
+             $( selector).undelegate( “click” ); //解绑所有的click事件
+
+             */
+            //传入两个参数 只能解绑指定事件
+//            $("ul").undelegate("li","click");
+            //通过父元素 直接解绑 子元素的所有事件
+//            $("ul").undelegate();
+
+//            $("ul").off();
+//            $("ul").off("mouseleave","li");
+
+
+            //off可以解绑 通过click或者其他直接绑定的事件
+            //解绑事件 需要具体选择到哪一个带事件的元素对象上面去
+            //不传参数就是解绑所有 传入参数 解绑参数对应的事件
+            $("ul li").off("click");
+
+
+
+        });
+
+
+
+    })
+
+
+</script>
+<button>解绑事件</button>
+
+<ul>
+    <li class="hh">我是一个li</li>
+    <li>我是一个li</li>
+    <li>我是一个li</li>
+</ul>
+
+</body>
+</html>

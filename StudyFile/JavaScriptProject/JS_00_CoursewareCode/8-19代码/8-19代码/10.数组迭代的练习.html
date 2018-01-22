@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //    工资的数组[1500,1200,2000,2100,1800],把工资超过2000的删除
+    //    var arr=[1500,1200,2000,2100,1800];
+    //
+    //    var newArr=arr.filter(function (item,index,arr) {
+    //            if(item<2000){
+    //                return true;
+    //            }
+    //        return false;
+    //    });
+    //    arr=newArr;
+    //    console.log(arr);
+    //["c","a","z","a","x","a"]找到数组中每一个元素出现的次数
+    /*
+     我们可以把元素名以及对应的次数 看做一个json
+     遍历数组  看每一个元素  去判断json中是否有这个元素对应的键
+     如果没有  则把json里面添加上该元素 值为1
+     如果有  则把对应json里面的这个元素的键的值+1
+
+
+
+     */
+
+    var json = {};
+    var arr = ["c", "a", "z", "a", "x", "a"];
+    arr.forEach(function (item, index, arr) {
+//        console.log(item+"   "+json[item]);
+        if (json[item] === undefined) {
+            //表示json不存在这个键
+            //那么在json先声明这个键 然后次数等于一
+            json[item] = 1;
+
+        } else {
+            //表示json中原本就存在这个键
+            //吧这个键对应的值的次数+1
+            json[item] += 1;
+        }
+
+
+    });
+
+    //            var qq=5;
+    //
+    //        console.log(json[qq]);
+    console.log(json);
+
+
+</script>
+
+</body>
+</html>

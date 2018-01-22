@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            height: 100px;
+            color: red;
+            font: 700 60px/100px "simsun";
+            text-align: center;
+            width: 1100px;
+            margin: 100px auto;
+        }
+
+
+
+    </style>
+</head>
+<body>
+<div class="box">
+    <div>距离七夕节还有:</div>
+    <div id="show"></div>
+    
+    
+</div>
+
+<script>
+    var str="2017-08-28 00:00:00";
+    var show=document.getElementById("show");
+    var futureTime=new Date(str);
+    //获取现在的毫秒值
+
+//    console.log(futureTime-nowTime);
+    //定时器  每一毫秒执行一次  刷新页面
+    setInterval(fn,1);
+
+    function fn(){
+        var nowTime=Date.now();
+        var chaTimeMS=futureTime-nowTime;
+//        console.log("还剩多少秒:"+chaTime/1000);
+        var day=parseInt(chaTimeMS/1000/60/60/24);
+        var hours=parseInt(chaTimeMS/1000/60/60%24);
+        var minutes=parseInt(chaTimeMS/1000/60%60);
+        var seconds=parseInt(chaTimeMS/1000%60);
+        var ms=parseInt(chaTimeMS%1000);
+//        console.log(hours);
+
+        //如果天数  小时数  分钟数  秒数  小于10  则前边+"0"
+        //如果毫秒值<10 则+"00" 如果毫秒值<100  +"0"
+        day=day<10?"0"+day:day;
+        hours=hours<10?"0"+hours:hours;
+        minutes=minutes<10?"0"+minutes:minutes;
+        seconds=seconds<10?"0"+seconds:seconds;
+       if(ms<10){
+           ms="00"+ms;
+       }else if(ms<100){
+           ms="0"+ms;
+
+       }
+
+
+
+
+        show.innerHTML=day+"天"+hours+"小时"+minutes+"分钟"+seconds+"秒"+ms+"毫秒";
+
+
+    }
+
+
+
+
+
+</script>
+
+</body>
+</html>

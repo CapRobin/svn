@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        //第二种创建方式:  通过函数批量创建对象
+        /*
+            优点:  解决了第一种创建方式的缺点
+
+             缺点:  代码冗余   类型是空白
+
+
+         */
+        /*
+                this 关键字:
+         this只出现在函数中
+
+         表示当前对象  当前表示的是谁调用这个函数 就表示那个对象
+
+
+         */
+
+        /*
+            new
+
+
+
+
+         */
+
+        function createStudent(name,age){
+            var stu=new Object();
+            stu.name=name;
+            stu.age=age;
+            stu.sayHi= function () {
+                alert(this.name+"地球,你好!!");
+            };
+
+            return stu;
+
+        }
+
+
+        var stu1=createStudent("阿黑蛋",65);
+        var stu2=createStudent("炮哥",13);
+        var stu3=createStudent("酷酷的滕",25);
+
+//        console.log(stu1);
+//        console.log(stu2);
+//        console.log(stu3);
+        stu1.sayHi();
+        stu2.sayHi();
+        stu3.sayHi();
+
+        //
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

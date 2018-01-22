@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="jquery-1.11.1.js"></script>
+<script>
+    $(function () {
+        $("li").css({
+            "margin-bottom":"10px",
+            "cursor":"pointer"
+        });
+        $("li:odd").css("background-color","red");
+        $("li:even").css("background-color","yellow");
+        //需求  鼠标移入变成蓝色 鼠标移出变成原来的颜色
+
+        //记录器
+        var color;
+        $("li").mouseenter(function () {
+            //css方法 如果传入两个参数 是设置样式 如果是一个参数 则获取样式
+            color=$(this).css("background-color");
+//            alert(color);
+            $(this).css("background-color","blue");
+
+
+        });
+        $("li").mouseleave(function () {
+            $(this).css("background-color",color);
+        });
+
+        
+    });
+
+
+</script>
+<ul>
+    <li>蒹葭苍苍,白露为霜.何以解忧,唯有杜康.</li>
+    <li>蒹葭苍苍,白露为霜.何以解忧,唯有杜康.</li>
+    <li>蒹葭苍苍,白露为霜.何以解忧,唯有杜康.</li>
+    <li>蒹葭苍苍,白露为霜.何以解忧,唯有杜康.</li>
+    <li>蒹葭苍苍,白露为霜.何以解忧,唯有杜康.</li>
+    <li>蒹葭苍苍,白露为霜.何以解忧,唯有杜康.</li>
+    <li>蒹葭苍苍,白露为霜.何以解忧,唯有杜康.</li>
+    <li>蒹葭苍苍,白露为霜.何以解忧,唯有杜康.</li>
+</ul>
+
+</body>
+</html>

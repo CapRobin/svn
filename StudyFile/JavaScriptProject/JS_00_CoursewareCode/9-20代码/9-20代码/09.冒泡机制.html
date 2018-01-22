@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+
+
+
+        .box3 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+
+
+        }
+        .box2 {
+            width: 250px;
+            height: 250px;
+            background-color: blue;
+
+        }
+        .box1 {
+            width: 500px;
+            height: 500px;
+            background-color: pink;
+
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="box1" id="box1">
+    <div class="box2" id="box2">
+        <div class="box3" id="box3"></div>
+    </div>
+</div>
+
+
+<script>
+    var box1 = document.getElementById("box1");
+    var box2 = document.getElementById("box2");
+    var box3 = document.getElementById("box3");
+
+    //在内层的盒子事件被触发时   外层的父盒子的同样事件也会被触发
+    //同理 在往上一样被触发  ......到祖先
+
+        box1.onclick = function () {
+            alert("我是box1");
+            if(event && event.stopPropagation){
+                event.stopPropagation();
+            }else{
+                event.cancelBubble = true;
+            }
+
+
+        }
+        box2.onclick = function () {
+            alert("我是box2");
+    //        console.log(1111);
+        }
+        box3.onclick = function (event) {
+            alert("我是box3");
+            event=event || window.event;
+            if(event && event.stopPropagation){
+                event.stopPropagation();
+            }else{
+                event.cancelBubble = true;
+            }
+        }
+
+        document.onclick= function (event) {
+            event=event || window.event;
+    //        alert("我是document");
+    //        alert("document是否支持冒泡"+event.bubbles);
+            //如果是事件冒泡 则 target会返回 第一次触发事件的那一个元素
+            console.log(event.target);
+        }
+
+    //事件捕获
+    //三个参数: 1.事件名称(没有on)  2.驱动函数  3. 是否支持事件捕获 true表示捕获 不冒泡  false或者不写  表示冒泡 不捕获
+//    box1.addEventListener("click", function () {
+//        alert("我是box1");
+//
+//    }, true);
+//    box2.addEventListener("click", function () {
+//        alert("我是box2");
+//    }, true);
+//    box3.addEventListener("click", function () {
+//        alert("我是box3");
+//    }, true);
+//
+//    document.addEventListener("click", function () {
+//        alert("我是document");
+//    }, true);
+
+
+</script>
+
+
+</body>
+</html>

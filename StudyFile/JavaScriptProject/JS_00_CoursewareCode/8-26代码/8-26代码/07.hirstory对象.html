@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>我是要跳过去的网页</h1>
+<button onclick="go()">跳转</button>
+<button onclick="forward()">前进</button>
+<script>
+    function go(){
+        window.location.href="des.html";
+    }
+
+    function forward(){
+//        history.go(1);
+        history.forward();
+    }
+
+
+</script>
+
+</body>
+</html>

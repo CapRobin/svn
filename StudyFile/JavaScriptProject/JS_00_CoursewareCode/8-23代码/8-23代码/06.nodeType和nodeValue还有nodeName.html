@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box">
+    <div value="呵呵" title="提示">我是内部div1</div>
+    <div>我是内部div2</div>
+    <P>我是一个p</P>
+
+</div>
+<script>
+    var box=document.getElementById("box");
+    var arr=box.childNodes;
+//    for(var i=0;i<arr.length;i++){
+//        console.log(arr[i].nodeType+"   "+arr[i].nodeName+"  "+arr[i].nodeValue);
+//        console.log("-----------");
+//    }
+
+    var box1=box.firstElementChild || box.firstChild;
+    //根据元素对象获取属性节点(传入属性节点的键)
+    var att=box1.getAttributeNode("value");
+    var att1=box1.getAttributeNode("title");
+//    console.log(att);
+        console.log(att.nodeValue);
+        console.log(att1.nodeValue);
+        console.log(att1.nodeName);
+        console.log(att1.nodeType);
+/*
+
+总结:
+        nodeType当前节点的类型 1  元素节点  2.属性节点  3.文本节点
+        nodeName
+                如果是元素节点 则 元素节点.nodeName返回该节点标签名的大写
+                如果是属性节点  则 属性节点.nodeName返回属性的键
+        nodeValue
+                如果是元素节点  则 元素节点.nodeValue返回null
+                如果是属性节点  则 属性节点.nodeValue返回属性的值
+
+
+
+ */
+
+
+
+</script>
+
+</body>
+</html>

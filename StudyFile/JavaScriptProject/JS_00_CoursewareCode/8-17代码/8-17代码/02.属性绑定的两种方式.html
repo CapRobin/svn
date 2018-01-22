@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+                属性绑定两种方式:
+                1.this.属性名=属性值
+                2.对象名[变量或者字符串或者整数]=属性值
+
+
+
+         */
+
+        var kk="我是属性名";
+
+        function Person(name){
+            this.name=name;
+//            this.arr=arr;
+            //用的少:
+//            this[0]="张飞";
+//            this[1]="关羽";
+//            this["刘玄德"]="刘备"
+
+            //绑定变量
+//            this.我是属性名="闹着玩";
+            this[kk]="继续闹着玩";
+
+
+
+
+
+            this.bubble= function () {
+                alert("冒泡排序代码");
+            }
+        }
+
+        var arr=[31,28,31,30];
+        var per=new Person("冒泡");
+//
+//        per.bubble();
+//        per.arr;
+        //数组也是一个对象
+        console.log(arr);
+        //数组有两种创建方式: 1.字面量2. new
+//        var arr1=[31,28,31,30];//字面量赋值
+//        var arr=new Array(5);
+
+        console.log(per);
+
+
+//        function Array(a){
+//
+//        }
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

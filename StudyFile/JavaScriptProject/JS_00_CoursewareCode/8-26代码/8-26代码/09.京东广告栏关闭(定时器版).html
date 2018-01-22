@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        .banner {
+            height: 100px;
+            background-color: red;
+        }
+
+        .banner > .inner {
+            margin: 0 200px;
+            height: 100px;
+            background-color: pink;
+            position: relative;
+
+        }
+
+        .banner a {
+            width: 20px;
+            height: 20px;
+            text-decoration: none;
+            color: white;
+            background-color: black;
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            text-align: center;
+            line-height: 20px;
+        }
+
+        .content {
+            width: 900px;
+            height: 200px;
+            margin: 0 auto;
+            background-color: yellow;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<div class="banner" style="opacity:1;">
+    <div class="inner">
+        <a href="javaScript:void(0)" id="close">×</a>
+
+    </div>
+
+
+</div>
+
+
+<div class="content"></div>
+<script>
+    var a = document.getElementById("close");
+    var banner = document.getElementsByClassName("banner")[0];
+    a.onclick = function () {
+        /*
+         思路:
+         启动定时器
+         每过100毫秒  把透明度-0.1
+         判断  透明度小于等于0
+         把display="none"
+         清除定时器
+
+
+
+         */
+        var timer = setInterval(function () {
+//            启动定时器
+            //每过100毫秒  把透明度-0.1
+            banner.style.opacity -= 0.1;
+            //判断  透明度小于等于0
+            if (banner.style.opacity <= 0) {
+                // 把display="none"
+                a.parentNode.parentNode.style.display = "none";
+//                清除定时器
+                clearInterval(timer);
+
+            }
+
+
+        }, 100)
+
+
+    }
+
+
+</script>
+
+</body>
+</html>

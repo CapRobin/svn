@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            width: 300px;
+            height: 250px;
+            position: absolute;
+            top: 100px;
+            left: 100px;
+            background-color: yellow;
+            text-align: center;
+            font: 18px/80px "simsun";
+            padding-top: 50px;
+            cursor: pointer;
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="box">
+    当前鼠标在盒子中的x坐标:100px <br>
+    当前鼠标在盒子中的y坐标:100px
+</div>
+<script src="jQuery-1.0.0-my.js"></script>
+<script>
+
+    //需求: 获取鼠标在盒子中的坐标位置
+    //实现思路:  当前鼠标page距离 - 盒子的offset距离
+
+    var box=document.getElementsByClassName("box")[0];
+    //鼠标移动事件   每次移动一像素 都会触发
+    
+    box.onmousemove= function (event) {
+        var event=event||window.event;
+//        console.log(10);
+
+        var pagex=getPagex(event);
+        var pagey=getPagey(event);
+
+        var x=pagex-box.offsetLeft;
+        var y=pagey-box.offsetTop;
+        box.innerHTML="当前鼠标在盒子中的x坐标:"+x+"px <br>当前鼠标在盒子中的y坐标:"+y+"px";
+
+
+    }
+
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 300px;
+            height: 300px;
+            margin: 100px auto;
+            padding:50px;
+            border: 10px solid #000;
+            background-color: pink;
+            font: 100 20px/20px "simsun";
+        }
+        
+        
+    </style>
+</head>
+<body>
+<div id="box"></div>
+<script>
+    //如何获取内嵌样式呢?
+    var box=document.getElementById("box");
+    box.style.width="500px";
+//    console.log(box.style.width);
+//    console.log(box.style.border);
+//    console.log(box.style.height);
+    //获取内嵌样式
+//    IE9+ 火狐 谷歌
+//    console.log(typeof window.getComputedStyle);
+    //window.getComputedStyle() 两个参数  1.目标(要获取哪一个元素的样式)
+    // 2.该元素的伪类(字符串类型   例如(":active"))
+//    console.log(window.getComputedStyle(box,null));
+//    console.log(window.getComputedStyle(box,null).height);
+//    console.log(window.getComputedStyle(box,null).width);
+//    console.log(window.getComputedStyle(box,null).padding);
+//    console.log(window.getComputedStyle(box,null).paddingLeft);
+//    console.log(window.getComputedStyle(box,null).color);
+//    console.log(window.getComputedStyle(box,null).margin);
+//    console.log(window.getComputedStyle(box,null).border);
+//    console.log(window.getComputedStyle(box,null)["background-color"]);
+        //兼容写法
+//        console.log(box.currentStyle.height);
+//        console.log(box.currentStyle.width);
+//        console.log(box.currentStyle["background-color"]);
+
+
+    //获取行内和内嵌样式的封装
+function getStyle(ele,attrName){
+
+    if(window.getComputedStyle){
+        return window.getComputedStyle(ele,null)[attrName];
+    }
+
+    return ele.currentStyle[attrName];
+
+}
+
+    console.log(window.getComputedStyle);
+    console.log(box.currentStyle);
+
+    //火狐里面连写属性获取不到 需要具体写属性的 样式
+console.log(getStyle(box,"height"));
+console.log(getStyle(box,"margin-top"));
+console.log(getStyle(box,"font"));
+console.log(getStyle(box,"padding-left"));
+
+
+
+</script>
+</body>
+</html>

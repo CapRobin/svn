@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: deeppink;
+        }
+        
+        
+    </style>
+
+</head>
+<body>
+
+<div class="box" id="boxid"></div>
+<script>
+    /*
+     DOM需要结合事件才能使用
+     所以要了解DOM  就要先了解 事件
+
+     事件:  在什么时候做什么事情
+
+     事件三要素:
+     1.事件源:   谁触发了什么事
+     2.事件:  什么事(系统已经提供好了)
+     3.事件驱动函数   事情被触发了 要做什么事  匿名函数
+
+     需求:   点击div 执行alert(1);
+
+
+     事件源:div
+     事件:点击事件
+     事件驱动函数:   匿名函数:执行alert(1);
+
+
+
+
+     */
+
+    //          ` 事件源:div   获取div对象  通过dom对象获取页面标签对象 (方式:5种  以后慢慢学)
+    //  通过id获取标签对象
+    var div=document.getElementById("boxid");
+    //点击事件   元素对象点事件=匿名函数(事件驱动函数) function(){ 3.事件驱动函数的代码}
+//    alert(div);
+                div.onclick = function () {
+//                    alert(1);
+                    //修改盒子的宽高
+                    div.style.width="400px";
+                    div.style.height="800px";
+                    //修改背景颜色   JS中  变量名 不能有-  所以CSS的横杠在 JS 中变驼峰
+                    div.style.backgroundColor="red";
+                }
+
+
+
+
+
+</script>
+
+</body>
+</html>

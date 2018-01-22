@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            height: 5000px;
+            width: 5000px;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<script>
+    //必须有滚动条
+    //每滚动一像素就触发一次
+    //不同浏览器的 滚动高度不一样
+    window.onscroll= function () {
+//        console.log(1);
+//        scrollHeight 子元素所在的父元素(带滚动条的) 中滚动以后被卷曲的头部
+//        console.log(window.scrollTop);
+//        console.log(document.body.scrollTop);
+        var top1=parseInt(document.body.scrollTop);
+        var left1=parseInt(document.body.scrollLeft);
+        document.title=top1+"  "+left1;
+        //如果获取其他子元素 那么该子元素 必须再一个可滚动的父元素里面
+    }
+    
+    
+</script>
+
+
+</body>
+</html>

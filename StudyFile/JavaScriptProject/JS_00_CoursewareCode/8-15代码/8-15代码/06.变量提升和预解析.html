@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //        var num=60;
+        //        alert(num);
+
+
+        //      var  num=30;
+        //        alert(num);
+        /*
+         小知识:
+
+         函数的参数相当于局部变量
+         成员变量和局部变量之间同名变量不冲突
+         不同函数之间的局部变量不冲突
+         就近原则使用变量(内部有就不去外部找)
+         两个平级的函数中的变量不会互相影响(可以使用相同的形参名)
+
+
+
+
+
+         */
+
+        //        function fn(a,b){
+        //            alert(a+"  "+b);
+        //        }
+        //
+        //        fn(50,60);
+        //        alert(a);
+        //        alert(b);
+
+        var num = 30;
+        function fn(k) {
+            var num = 20;
+            var a = 99;
+            alert(num);
+        }
+        function fn1(k) {
+            var a = 88;
+        }
+
+        fn();
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

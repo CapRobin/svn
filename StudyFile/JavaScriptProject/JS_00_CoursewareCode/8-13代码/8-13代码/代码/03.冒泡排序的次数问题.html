@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //        var arr = [1,  5, 2, 8,3];
+        var arr = [1,8, 5, 3, 2];
+        console.log(arr);
+        var innerNum = 0;
+        var outerNum = 0;
+
+        //从大到小
+        //1遍历整个数组  每次执行完本数组 会冒出一个最小值
+        //第二次优化   5个数 只需要冒泡四次即可
+        for (var i = 0; i < arr.length-1; i++) {
+            //第三次优化 每次比较一轮以后  下一次都要少比较一次 因为每次都已经产生了一个最小值
+            //下一次就没必要和上一次产生的最小值再比较一次
+            var boo=true;
+            for (var j = 0; j < arr.length - 1-i; j++) {
+                //2.两两比较 大的往前放  小的 往后面放
+                //第一次优化 比较的时候是 倒数第二个元素和倒数第一个元素 进行比较
+//                console.log("后面的值:"+arr[j+1]);
+                if (arr[j] < arr[j + 1]) {
+                    //前边的比后面小  变量交换
+                    boo=false;
+                    var temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+
+                }
+
+                innerNum++;
+
+
+            }
+
+
+            outerNum++;
+            if(boo){
+                break;
+            }
+
+        }
+
+        console.log(arr);
+        console.log("内层循环次数:" + innerNum);
+        console.log("外层循环次数:" + outerNum);
+        //冒泡排序的 时间复杂度和空间复杂度
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        .box{
+            width: 200px;
+            height: 400px;
+            background-color: pink;
+            padding: 5px;
+            border:10px solid pink;
+            margin: 20px;
+
+        }
+
+    </style>
+</head>
+<body>
+<button>获取</button>
+<div class="box"></div>
+<script>
+    var btn=document.getElementsByTagName("button");
+    var box=document.getElementsByClassName("box")[0];
+
+    btn[0].onclick=function (){
+        //offset宽/高  =  盒子自身的宽/高 + padding +border；
+        //不包含margin
+
+        //获取当前盒子的宽度  返回值是number why?  要计算  所以是number方便计算
+        console.log(box.offsetWidth);
+        console.log(typeof box.offsetWidth);
+        console.log(box.offsetHeight);
+        console.log(typeof box.offsetHeight);
+
+
+
+    }
+
+
+
+</script>
+
+
+
+</body>
+</html>

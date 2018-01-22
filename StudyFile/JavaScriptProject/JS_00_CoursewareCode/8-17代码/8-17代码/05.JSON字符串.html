@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+            JSON字符串
+            应用广泛   例如:  JS中有一个per对象 包括年龄  姓名 身高 体重等等 属性
+            还有一堆函数  这些都是我们的数据要传给服务器
+            如果服务器是java获取其他语言写的  那么不支持 JS的对象 怎么传给你它呢?
+            JS对象不支持 但是支持字符串  那么我们就可以找一个大家都支持的方式互相传递
+            所以传输过程:
+                    JS对象---->JSON字符串发给服务器--->到服务器 从JSON字符串解析成对应语言的对象或数据
+                //java 解析JSON字符串
+
+
+                json:  就是服务器和前端相互传递的那个字符串变量的名字
+              Gson g=new Gson();
+              Person per=g.fromJSON(json);
+
+             那么java服务器的对象要发给前端JS呢?
+
+             java对象转换成JSON---->发送到前端--->JS接收到  解析成JS对象
+
+             JS解析json
+             var per=JSON.parse(json);
+             var per=json;
+
+
+
+
+           {"键1":"值1","键2":"值2",....}
+
+           JSON和字面量的区别:
+
+                字面量的键和值可以不加双引号
+                JSON必须键值都要加双引号,按照字符串处理  因为服务器和前端之间传输的就是字符串
+                所以双引号是JSON的标准格式 一旦格式不对 解析报错
+
+
+         JSON由{}和key:value以及逗号组成,三部分
+
+
+
+
+         */
+
+        //标准JSON
+
+        var json={
+            "name":"四炮",
+            "age":"26",
+            "length":"185",
+
+        };
+
+        var user={
+            "name":"13512345678",
+            "pwd":"123456",
+            "imgHead":"imgs/qq.jpg",
+            "order":"5",
+
+
+
+        };
+
+        var kk={"width":"500px"};
+
+
+
+
+
+
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

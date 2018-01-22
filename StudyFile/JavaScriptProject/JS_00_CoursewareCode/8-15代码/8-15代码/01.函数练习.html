@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //求斐波那契数列Fibonacci中的第n个数是多少？
+        function fib(n){
+            var n1=1;
+            var n2=1;
+            for(var i=3;i<=n;i++){
+                var temp=n2;
+                n2=n1+n2;
+                n1=temp;
+
+
+            }
+            return n2;
+        }
+
+//        alert(fib(14));
+
+        //输入某年某月某日，判断这一天是这一年的第几天？
+        //闰年 :四年一闰 百年不闰 四百年一润
+    /*
+        设计:
+        1.判断是否是闰年  --封装成函数   因为要反复调用
+
+
+
+
+
+        2.计算天数
+                1) 先把每个月的天数封装到数组里面
+                2)根据月份算出当前天数 先把2月当做 28天
+                3) 判断是否是闰年并且是否超过了二月
+                        如果超过二月则计算出来的天数+1
+
+
+
+     */
+        // 1.判断是否是闰年  --封装成函数   因为要反复调用
+        //闰年 :四年一闰 百年不闰 四百年一润
+        function isRun(year){
+            if(year%4===0 && year%100!==0 || year%400===0){
+                return true;
+            }
+
+            return false;
+
+        }
+
+//        alert(isRun(4));
+//        alert(isRun(8));
+//        alert(isRun(100));
+//        alert(isRun(200));
+//        alert(isRun(400));
+//        alert(isRun(2016));
+//        alert(isRun(2017));
+
+        function getDay(year,month,day){
+
+           // 1) 先把每个月的天数封装到数组里面
+            var arr=[31,28,31,30,31,30,31,31,30,31,30,31];
+//            2)根据月份算出当前天数 先把2月当做 28天
+            for(var i=0;i<month-1;i++){
+               day= day+arr[i]
+
+            }
+//            3) 判断是否是闰年并且是否超过了二月
+//                  如果超过二月则计算出来的天数+1
+            if(month>2 && isRun(year)){
+                day+=1;
+            }
+
+            return day;
+        }
+
+        alert(getDay(2017,3,1));
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

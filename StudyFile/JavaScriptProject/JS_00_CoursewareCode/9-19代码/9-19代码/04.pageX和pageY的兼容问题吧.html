@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            height: 5000px;
+        }
+
+
+    </style>
+</head>
+<body>
+<script src="jQuery-1.0.0-my.js"></script>
+    <script>
+        //pageX和pageY  IE8及以下有兼容问题
+        //如何解决呢?
+
+        //页面高度=当前可视区域高度+被卷去的头部
+        //pageX同理
+        document.onclick= function (event) {
+            var event=event || window.event;
+//            console.log(event.pageY);
+//            var pagey=event.pageY || event.clientY+scroll().top;
+//            console.log(pagey);
+
+            var pagey=getPagey(event);
+            console.log(pagey);
+
+        }
+    
+    </script>
+
+</body>
+</html>

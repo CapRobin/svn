@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<!--
+
+rows                          (只读，table和textarea能用)
+insertRow(index)              (只有table能调用)
+deleteRow()	          (只有table能调用)
+cells		        tr调用
+insertCell()               (只有tr能调用)
+deleteCell()              (只有tr能调用)
+
+
+
+-->
+<body>
+<table id="tab">
+    <tr>
+        <td>我是第一行第一格</td>
+        <td>我是第一行第二格</td>
+    </tr>
+    <tr>
+        <td>我是第二行第一格</td>
+    </tr>
+</table>
+<script>
+var tab=document.getElementById("tab");
+    //返回当前table里面的每一个tr对象
+    console.log(tab.rows);
+    //伪数组  调用不了迭代方法  包含  rows   getElementByClassName/TagName
+//    var arr=tab.rows;
+//    arr.push("xx");
+//    console.log(arr);
+    //index表示 参考索引值 在指定index之前插入  index不存在则插入失败
+    var newTr=tab.insertRow(0);
+    newTr.innerHTML="<td>文字</td>";
+//删除指定索引的tr
+//    tab.deleteRow(2);
+//获取当前tr下面的所有td
+//console.log(tab.children[0].children[1].cells);
+//console.log(tab.children[0]);
+var td=tab.children[0].children[1].insertCell(0);
+    td.innerHTML="我是倒插门";
+var td=tab.children[0].children[1].deleteCell(2);
+
+
+</script>
+
+</body>
+</html>

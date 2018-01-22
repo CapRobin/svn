@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <!-- 作业:  百度搜索下拉提示框
+            功能以上课代码为准
+            判断要完善 功能齐全
+
+            时间:40分钟
+
+            9月3日晚自习之前交
+
+    -->
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+
+        }
+        .box{
+            width: 500px;
+            height: 500px;
+            margin: 200px auto;
+            text-align: center;
+        }
+        .box .inp{
+            width: 300px;
+            height: 30px;
+            text-indent: 5px;
+
+        }
+        .box .btn{
+            width: 100px;
+            height: 33px;
+            background-color: #317EF3;
+            color: white;
+            border: none;
+            margin-left: -5px;
+            margin-top: -2px;
+            border-bottom: 2px solid #317EF3;
+        }
+
+        .box ul{
+            border: 1px solid #ccc;
+            list-style: none;
+            width: 302px;
+            margin-left: 47px;
+
+
+
+        }
+        .box ul>li{
+            text-align: left;
+            height:25px;
+            font: 100 20px/25px "simsun";
+            padding-left: 5px;
+            cursor:default;
+
+        }
+        .box ul>li:hover{
+            background-color: #ccc;
+        }
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="serch">
+        <input type="text" class="inp">
+        <button class="btn">百度一下哦</button>
+
+
+    </div>
+    <!--<ul>-->
+        <!--<li>aaa</li>-->
+        <!--<li>abb</li>-->
+        <!--<li>acc</li>-->
+    <!--</ul>-->
+
+
+
+</div>
+<script>
+    /*
+            已知bug:
+                   输入两次 则会创建两次ul 等等等
+                   删除清空 ul还在
+                   输入不存在的则也会创建ul
+
+
+
+        设计思路:当输入的时候动态创建ul  然后获取输入内容
+        跟服务器获取到的数据(模拟)进行挨个筛选 只要是以当前输入数据开头的字符串
+        分别创建一个li 放入ul中 在页面上显示
+        步骤:
+            1.数据库获取数据(假数据)
+            2.输入框加 oninput 或者onkeyup 监听
+            3.遍历数据(从服务器获取的)数组  挨个筛选是否以当前输入的数据开头
+                        如果是创建li  每一个li都放入一个符合标准的字符串
+                          把当前创建出来的li当做字符串放入新数组
+            4.创建ul  把数组中多个li放入ul中 ul.innerHTML
+
+            5.把ul插入到父容器中
+
+
+
+     */
+        //获取父容器
+    var  box=document.getElementsByClassName("box")[0];
+//    1.数据库获取数据(假数据)
+    var data=["a","aab","abc","abcd","aaa","bab","cba","ccb","cbc","bba","bbb","aaaaa","ahe"];
+
+//2.输入框加 oninput 或者onkeyup 监听
+    var inp=document.getElementsByClassName("inp")[0];
+    inp.oninput= function () {
+        //用来显示内容的新数组  放入多个li字符串
+        //每次输入都要重新创建一个数组 放入本次搜索出来的数据
+        var  newArr=[];
+//        alert(this.value);
+        //3.遍历数据(从服务器获取的)数组  挨个筛选是否以当前输入的数据开头
+        for(var i=0;i<data.length;i++){
+            //判断当前输入框里面的数据 跟数组里面的每一个元素对比
+            //是不是以当前输入数据开头 如果是  房不如新数组
+            if(data[i].indexOf(this.value)===0){
+                //放入的是一个li字符串 并且懈携带了符合标准的字符串内容
+//                如果是创建li  每一个li都放入一个符合标准的字符串
+                //把当前创建出来的li当做字符串放入新数组
+                newArr.push("<li>"+data[i]+"</li>");
+                //当匹配的结果超过3个也就是4个  直接终止循环不在添加
+                if(newArr.length>3){
+                    break;
+                }
+            }
+//            str="<li>a</li><li>a</li><li>a</li><li>a</li>"
+//            ul.innerHTML=str;
+        }
+       //把数组转换成字符串 中间没有间隔
+        var str=newArr.join("");
+//        console.log(str);
+        console.log(box.children[1]);
+        //解决bug输入两次 则会创建两次ul 等等等
+        //每次要创建ul之前判断  box有几个子元素
+        //如果当前box的1号元素不是undefined 那么证明有ul 把ul删除  重现创建一个
+        //否则  不执行创建
+        if(box.children[1]!==undefined){
+            //自杀
+            box.children[1].parentNode.removeChild(box.children[1]);
+
+
+        }
+        //解决bug 输入不存在的则也会创建ul
+        // 一旦 输入结果没有 则不创建ul
+        //一旦输入的结果为空 表述newArr里面没有放入任何东西   length===0
+        //删除清空 ul还在  inp的value.length===0  表示没有输入或者删除清空
+        //则 不创建ul
+
+        if(newArr.length===0 || this.value.length===0){
+            //终止函数
+            return;
+        }
+
+
+        // 4.创建ul  把数组中多个li放入ul中 ul.innerHTML
+        var ul=document.createElement("ul");
+        ul.innerHTML=str;
+        box.appendChild(ul);
+
+        //只有用户输入以后 才会产生ul  所以我们把ul下面的li的监听放到了inp输入监听里面
+        //获取ul所有的子元素 遍历添加点击事件
+
+        var liArr=ul.children;
+        for(var i=0;i<liArr.length;i++){
+            liArr[i].onmousedown= function () {
+               inp.value=this.innerHTML;
+                box.removeChild(ul);
+            }
+        }
+
+
+
+    }
+    //在input框失去焦点时  判断box里面要有没有ul如果有 移除
+    inp.onblur= function () {
+        if(box.children[1]){
+            box.removeChild(box.children[1]);
+        }
+    }
+    //坑    onblur会在onlick之前执行
+    //解决 用onmousedown去替换onclick 因为onmousedown是鼠标一按下就会执行
+    //而onblur是鼠标按完了  input才失去焦点 所以onmousedown优先级比onblur要高
+
+
+
+
+</script>
+
+
+
+</body>
+</html>

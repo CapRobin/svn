@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 606px;
+            height: 595px;
+            margin: 100px auto;
+            border: 1px solid red;
+        }
+
+
+    </style>
+</head>
+<body>
+<script src="jquery-1.11.1.js"></script>
+<script>
+    $(function () {
+        var bd=$("body");
+        $("button").eq(0).click(function () {
+//            alert(1);
+            bd[0].style.backgroundColor="white";
+
+        });
+        $("button").eq(1).click(function () {
+//            alert(2);
+            bd[0].style.backgroundColor="#333";
+        });
+        
+    });
+    
+</script>
+
+
+<button>白天模式</button>
+<button>夜间模式</button>
+<div><img src="image/bug.png" alt=""></div>
+
+</body>
+</html>

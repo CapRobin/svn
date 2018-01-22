@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //        var s=null;
+        //        alert(typeof s);
+        /*
+         内置对象
+         JS本身已经给我们提供好了很多对象 我们直接拿来new 就可以使用了
+
+         API（Application Programming Interface,应用程序编程接口）---帮助文档
+
+         查看帮助文档
+         1.离线文档:  老师发
+         2.在线文档  W3C
+         3.百度 搜索
+         4.MDN  https://developer.mozilla.org/zh-CN/  开发者网站
+
+
+         */
+
+        //        function  Array(){
+        //            this.length=
+        //        }
+        //        var arr = new Array();
+        //        var arr1 = [];
+        //        var arr2 = 56;
+        //        var arr3 = {};
+        //        function kk(arr) {
+        //            //一个对象 instanceof类型   返回是是boolean
+        //            console.log(arr instanceof Array);
+        //        }
+        //        kk(arr2);
+        //        kk(arr1);
+        //        kk(arr3);
+        //        kk(arr);
+
+        //        function Person(){
+        //
+        //        }
+        //
+        //
+        //        function fn(p){
+        //            console.log(p instanceof Person);
+        //        }
+        //
+        //
+        //        var per=new Person();
+        //        var p="xx";
+        //        fn(per);
+        //        fn(p);
+        //
+        //        var arr=[];
+        //        //HTML5新增 判断当前对象是不是数组类型
+        //        console.log(Array.isArray(arr));
+        //        var arr1="xx";
+        //        console.log(Array.isArray(arr1));
+
+
+        //        var arr=["张飞","关羽","关二爷","关云长","费雷亚","詹姆斯"];
+        //        //数组对象本身
+        //        console.log(arr.valueOf())
+
+        var arr1 = [];
+        //堆栈操作
+//        for (var i = 0; i < 10; i++) {
+//            arr1.push("呵呵" + i);
+//        }
+//        console.log(arr1);
+//        for (var i = 0; i < 10; i++) {
+//            console.log(arr1.pop());
+//        }
+
+
+        //队列结构
+//        for (var i = 0; i < 10; i++) {
+//            arr1.unshift("呵呵" + i);
+//        }
+//        console.log(arr1);
+//        for (var i = 0; i < 10; i++) {
+//            console.log(arr1.shift());
+//        }
+
+
+        var arr=[1,15,18,14,7,3];
+        //排序有弊端  按照 unicode码 去排列  先比较第一位 按照第一位的排序 第一位如果相等 则 排序第二位
+//        arr.sort();
+//        console.log(arr);
+
+//        console.log("8".charCodeAt())
+        //sort高级使用
+//        arr.sort(function (a,b) {
+//            return a-b;
+//        });
+//        arr.sort(function (a,b) {
+//            return b-a;
+//        });
+//        console.log(arr);
+        /*
+        看当前回调函数的返回值
+         小于 0 ，那么 a 会被排列到 b 之前；
+         等于 0 ， a 和 b 的相对位置不变
+         大于 0 ， b 会被排列到 a 之前。
+         */
+
+        var arr5=[1,2,2,3];
+        arr.sort(function (a,b) {
+            return b-a;
+        });
+        console.log(arr);
+
+
+
+        function bubble(arr){
+            for(var i=0;i<arr.length-1;i++){
+                var boo=true;
+                for(var j=0;j<arr.length-1-i;j++){
+                    if(arr[j]>arr[j+1]){
+                        boo=false;
+                        var temp=arr[j];
+                        arr[j]=arr[j+1];
+                        arr[j+1]=temp;
+
+
+                    }
+                }
+
+                if(boo){
+                    break;
+                }
+
+            }
+
+            return arr;
+        }
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .box{
+            width: 322px;
+            position: fixed;
+            bottom:0;
+            right:0;
+        }
+        span{
+            position: absolute;
+            top:0;
+            right:10px;
+            width:45px;
+            height: 20px;
+            cursor: pointer;
+        }
+    </style>
+    <script src="jQuery-1.0.0-my.js"></script>
+    <script>
+       window.onload= function () {
+           var hd=document.getElementById("t");
+           var box=hd.parentNode;
+           var bd=document.getElementById("b");
+
+            var close=document.getElementById("guanbi");
+           close.onclick= function () {
+               slowSpeedAnimate(bd,{"height":0}, function () {
+                   slowSpeedAnimate(box,{"width":0});
+               });
+               
+
+           }
+
+
+       }
+        
+        
+        
+    </script>
+
+</head>
+<body>
+    <div class="box">
+        <span id="guanbi"></span>
+        <div class="hd" id="t">
+            <img src="images/tt.jpg" alt=""/>
+        </div>
+        <div class="bd" id="b">
+            <img src="images/b.jpg" alt=""/>
+        </div>
+    </div>
+</body>
+</html>

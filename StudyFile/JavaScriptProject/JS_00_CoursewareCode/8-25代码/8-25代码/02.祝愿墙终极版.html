@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body {
+            margin: 0 auto;
+            padding: 0px;
+            font-size: 12px;
+            background: url(image/bg.gif) repeat center 36px;
+            text-align: center;
+            background-color: #c30230;
+        }
+
+        #content {
+            margin: 0 auto;
+            width: 960px;
+            background: url(image/content_bg.jpg) no-repeat left top;
+            height: 627px;
+            position: relative;
+        }
+
+        #content .tip1, #content .tip2, #content .tip3, #content .tip4, #content .tip5, #content .tip6, #content .tip7, #content .tip8 {
+            position: absolute;
+            width: 227px;
+            left: 200px;
+            top: 100px;
+        }
+
+        #content .tip1 .tip_h {
+            background: url(image/tip1_h.gif) no-repeat left top;
+        }
+
+        #content .tip1 .tip_h, #content .tip2 .tip_h, #content .tip3 .tip_h, #content .tip4 .tip_h, #content .tip5 .tip_h, #content .tip6 .tip_h, #content .tip7 .tip_h, #content .tip8 .tip_h {
+            width: 227px;
+            padding-top: 45px;
+            height: 23px;
+            text-align: left;
+            cursor: move;
+        }
+
+        #content .tip1 .tip_c {
+            background: url(image/tip1_c.gif) repeat-y;
+        }
+
+        #content .tip1 .tip_c, #content .tip2 .tip_c, #content .tip3 .tip_c, #content .tip4 .tip_c, #content .tip5 .tip_c, #content .tip6 .tip_c, #content .tip7 .tip_c, #content .tip8 .tip_c {
+            width: 200px;
+            padding-left: 12px;
+            padding-right: 15px;
+            min-height: 40px;
+            text-align: left;
+            line-height: 20px;
+            max-height: 160px;
+            word-wrap: break-word;
+            word-break: break-all;
+            overflow: hidden;
+        }
+
+        #content .tip1 .tip_f {
+            background: url(image/tip1_f.gif) no-repeat left top;
+        }
+
+        #content .tip1 .tip_f, #content .tip2 .tip_f, #content .tip3 .tip_f, #content .tip4 .tip_f, #content .tip5 .tip_f, #content .tip6 .tip_f, #content .tip7 .tip_f, #content .tip8 .tip_f {
+            width: 227px;
+            height: 53px;
+            padding-top: 20px;
+        }
+
+        #content .close, #content .close2 {
+            float: left;
+            font-size: 12px;
+            cursor: pointer;
+            color: #000000;
+        }
+
+        .clr {
+            clear: both;
+            overflow: auto;
+            display: block;
+            height: 0px;
+        }
+
+        #content .icon {
+            float: left;
+            width: 35px;
+            padding-left: 15px;
+            height: 35px;
+            text-align: center;
+        }
+
+        #content .name {
+            float: right;
+            padding-right: 15px;
+            text-align: right;
+            font-size: 14px;
+            line-height: 35px;
+            color: #C0F;
+        }
+
+        #content .num {
+            float: left;
+            padding-left: 7px;
+            width: 195px;
+        }
+    </style>
+</head>
+<body>
+<!--
+    作业:  样式直接复制   JS里面的message可以复制 其他所有代码一律录制视频 自己写  不用谢备注
+    功能齐全  时间:25分钟  8月31日晚自习之前交  可以提前交
+    录制视频 备注写名字
+
+-->
+
+
+
+<!--纸条墙-->
+<div id="content">
+    <!--纸条-->
+    <!--<div class="tip1" id="tip">-->
+        <!--<div class="tip_h" title="双击关闭纸条">-->
+            <!--<div class="num">第[49568]条 2016-07-7 22:51:52</div>-->
+            <!--<div class="close" title="关闭纸条">×</div>-->
+            <!--<div class="clr"></div>-->
+        <!--</div>-->
+        <!--<div class="tip_c">-->
+            <!--普天同庆，天下大同！-->
+        <!--</div>-->
+        <!--<div class="tip_f">-->
+            <!--<div class="icon">-->
+                <!--<img src="image/bpic_1.gif" alt="" title="">-->
+            <!--</div>-->
+            <!--<div class="name">不愿意透露姓名的吕先生</div>-->
+            <!--<div class="clr"></div>-->
+        <!--</div>-->
+    <!--</div>-->
+</div>
+<script>
+    //模拟服务器获得到的数据
+    //1.从服务器获取数据(假设已经完成 并且放入了message数组)
+    var messages = [
+        {"id": 1, "name": "mahu", "content": "今天你拿苹果支付了么", "time": "2016-02-17 00:00:00"},
+        {"id": 2, "name": "haha", "content": "今天天气不错，风和日丽的", "time": "2016-02-18 12:40:00"},
+        {"id": 3, "name": "jjjj", "content": "常要说的事儿是乐生于苦", "time": "2016-03-18 12:40:00"},
+        {"id": 4, "name": "9.8的妹纸", "content": "把朋友家厕所拉堵了 不敢出去 掏了半小时了都", "time": "2016-03-18 12:40:00"},
+        {"id": 5, "name": "雷锋ii.", "content": "元宵节快乐", "time": "2016-02-22 12:40:00"},
+        {"id": 6, "name": "哎呦哥哥.", "content": "据说今晚央视的元宵晚会导演和春晚导演是同一个人，真是躲得过初一，躲不过十五。", "time": "2016-02-22 01:30:00"},
+        {
+            "id": 7,
+            "name": "没猴哥，不春晚",
+            "content": "班主任:“小明，你都十二岁了，还是三年级，不觉得羞愧吗”？。小明:“一点也不觉得，老师你都四十多岁了，不也是年年在三年级混日子吗？羞愧的应该是你”。老师:……",
+            "time": "2016-02-22 01:30:00"
+        },
+        {"id": 8, "name": "哎呦杰杰.", "content": "真搞不懂你们地球人，月亮有什么好看的，全是坑，还是对面那哥们好看，", "time": "2016-02-22 01:30:00"},
+        {"id": 9, "name": "哎呦哎呦", "content": "今天哪里的烟花最好看！！？答：朋友圈。。。", "time": "2016-02-22 02:30:00"}];
+
+
+    /*
+
+     1.从服务器获取数据(假设已经完成 并且放入了message数组)
+     2.数组有多少条 就显示多少张纸条 遍历数组
+     3.创建div(class=tip1 id=message[i].id)纸条  数据放入纸条 绑定 随机top 随机 left
+     4.纸条放入父容器中
+     5.加监听   层级监听
+     6.添加关闭监听
+
+
+
+
+
+     */
+    //获取父容器
+    var content = document.getElementById("content");
+    //    2.数组有多少条 就显示多少张纸条 遍历数组
+    for (var i = 0; i < messages.length; i++) {
+        //3.创建div(class=tip1 id=message[i].id)纸条  数据放入纸条
+        var newDiv = document.createElement("div");
+        newDiv.setAttribute("class", "tip1");
+        newDiv.setAttribute("id", messages[i].id);
+//            console.log(messages[i].name);
+        newDiv.innerHTML = '<div class="tip_h" title="双击关闭纸条">' +
+                '<div class="num">第[49568]条 ' + messages[i].time + '</div>' +
+                '<div class="close" title="关闭纸条">×</div>' +
+                '<div class="clr"></div>' +
+                '</div>' +
+                '<div class="tip_c">' +
+                messages[i].content +
+                '</div>' +
+                '<div class="tip_f">' +
+                '<div class="icon">' +
+                '<img src="image/bpic_1.gif" alt="" title="">' +
+                '</div>' +
+                '<div class="name">' + messages[i].name + '</div>' +
+                '<div class="clr"></div>' +
+                ' </div>';
+        //绑定 随机top 随机 left
+        newDiv.style.top = parseInt(Math.random() * 400) + "px";
+        newDiv.style.left = parseInt(Math.random() * 700) + "px";
+
+//        4.纸条放入父容器中
+        content.appendChild(newDiv);
+
+//        5.加监听   层级监听
+
+        newDiv.onclick = indexPlus;
+
+
+//        6.添加x关闭监听
+
+        var cl = newDiv.getElementsByClassName("close")[0];
+        cl.onclick = function () {
+            //根据父容器的content去移除 removerChild(tip纸条)
+//            content.removeChild(newDiv);
+            //x的父容器是 双击关闭的div  还得在父容器  才是tip
+            content.removeChild(this.parentNode.parentNode);
+        }
+        //添加双击关闭监听
+        var dbClose=newDiv.getElementsByClassName("tip_h")[0];
+        //双击监听
+        dbClose.ondblclick= function () {
+            content.removeChild(this.parentNode);
+        }
+
+    }
+
+    //层级变化的变量
+    var index = 0;
+
+    function indexPlus() {
+        this.style.zIndex = ++index;
+
+    }
+
+
+</script>
+
+
+</body>
+</html>

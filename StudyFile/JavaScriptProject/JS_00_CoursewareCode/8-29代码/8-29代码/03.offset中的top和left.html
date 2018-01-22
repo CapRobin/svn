@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .parentBox {
+            height: 300px;
+            margin: 50px;
+            background-color: #ccc;
+            padding: 20px;
+            /*position: relative;*/
+        }
+
+        .kk {
+            height: 800px;
+            position: relative;
+            margin: 100px;
+            background-color: blue;
+            border: 20px solid black;
+
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            position: absolute;
+            top: 100px;
+            left: 100px;
+
+        }
+
+        .hh{
+            height: 200px;
+            background-color: #ccc;
+            margin: 20px;
+            padding: 50px;
+            position: relative;
+            top: 50px;
+            left:50px;
+        }
+        .ww{
+            width: 100px;
+            height: 100px;
+            /*margin: 10px;*/
+            background-color: red;;
+
+        }
+
+
+    </style>
+</head>
+<body>
+<button>获取</button>
+<!--<div class="kk">-->
+    <!--<div class="parentBox">-->
+        <!--<div class="box">-->
+
+        <!--</div>-->
+
+
+    <!--</div>-->
+<!--</div>-->
+
+<div class="hh">
+        <div class="ww" style="position: absolute; left: 100px;top: 100px;"></div>
+
+</div>
+
+
+<script>
+    //返回距离父盒子（带有定位）左边和上边的距离
+    //    如果父级都没有定位则以body 为准
+
+    var btn = document.getElementsByTagName("button");
+    var box = document.getElementsByClassName("box")[0];
+    var ww = document.getElementsByClassName("ww")[0];
+
+    btn[0].onclick = function () {
+//        console.log(box.offsetTop);
+//        console.log(box.offsetLeft);
+        console.log(ww.offsetTop);//只读
+        console.log(ww.offsetLeft);
+        //只能获取行内样式   并且本身已经在行内定义过 top  和left
+        //在父盒子有定位的情况下，offsetLeft == style.left(去掉px)
+        //获取的值 是带px 的string类型  一般我们使用styletop和left 是用来赋值
+        console.log(ww.style.top);
+        console.log(ww.style.left);
+
+
+    }
+
+
+</script>
+
+
+</body>
+</html>

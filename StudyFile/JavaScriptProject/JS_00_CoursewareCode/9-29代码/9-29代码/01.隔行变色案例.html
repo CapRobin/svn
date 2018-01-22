@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="jquery-1.11.1.js"></script>
+<script>
+    $(function () {
+//        var liArr=document.getElementsByTagName("li");
+        var jqLi=$("li");
+        alert(jqLi.length);
+
+        for(var i=0;i<jqLi.length;i++){
+            if(i%2==0){
+                //JQ对象转换成JS对象
+                jqLi[i].style.background="red";
+            }else{
+                jqLi.get(i).style.background="yellow";
+            }
+        }
+
+
+        
+    });
+    
+    
+</script>
+<ul>
+    <li>借问酒家何处有,牧童遥指杏花村</li>
+    <li>借问酒家何处有,牧童遥指杏花村</li>
+    <li>借问酒家何处有,牧童遥指杏花村</li>
+    <li>借问酒家何处有,牧童遥指杏花村</li>
+    <li>借问酒家何处有,牧童遥指杏花村</li>
+    <li>借问酒家何处有,牧童遥指杏花村</li>
+    <li>借问酒家何处有,牧童遥指杏花村</li>
+    <li>借问酒家何处有,牧童遥指杏花村</li>
+</ul>
+
+</body>
+</html>

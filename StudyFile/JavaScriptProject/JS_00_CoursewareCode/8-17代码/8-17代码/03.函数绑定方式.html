@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+         函数绑定
+         1.对象名.函数名=匿名函数
+         2.对象名.函数名=已经存在的函数的名字
+
+
+
+         */
+        //        function Person(){
+        //
+        //
+        //            //函数绑定
+        //            this.sayHi= function () {
+        //
+        //            }
+        //
+        //        }
+        //        var kk="haha";
+        //        var per=new Person();
+        //        //不通过构造器绑定  等对象创建出来以后绑定也是可以的
+        //        per.name="张三";
+        //        per[kk]="heihei";
+        //
+        //
+        //        console.log(per.name);
+        //        console.log(per.haha);
+
+        var people = new People();
+
+//        people.skill();
+//        people.ck();
+        console.log(people.kk);
+
+
+        function People() {
+            //这是调用一个函数 把函数的返回值作为当前绑定属性的初始值
+            this.kk=fn();
+
+
+            //第一种函数绑定
+            this.skill = function () {
+                alert("大跳!!!!");
+            };
+            //第二种绑定方式
+            this.ck = check;
+
+
+        }
+        function check() {
+            alert("检查身体");
+        }
+
+        function fn(){
+            console.log("我是一个函数");
+            return 100;
+        }
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

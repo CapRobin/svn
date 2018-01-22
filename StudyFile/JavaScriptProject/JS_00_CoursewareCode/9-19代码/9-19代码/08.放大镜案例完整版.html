@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .box{
+            position: relative;
+            left: 100px;
+            top: 100px;
+            border: 1px solid #999;
+            width: 350px;
+            height: 350px;
+
+        }
+        .small{
+            width: 350px;
+            height: 350px;
+        }
+        .mask{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 175px;
+            height: 175px;
+            background-color: rgba(255, 255, 0, 0.4);
+            cursor: move;
+            display: none;
+        }
+
+
+
+        .big{
+            position: absolute;
+            top:0;
+            left: 360px;
+            width: 400px;
+            height: 400px;
+            border: 1px solid #999;
+            overflow: hidden;
+            display: none;
+        }
+        img{
+            vertical-align: top;
+        }
+
+
+
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="small">
+        <img src="image/001.jpg" alt="">
+        <div class="mask"></div>
+        
+
+    </div>
+    <div class="big">
+        <img src="image/0001.jpg" alt="">
+
+    </div>
+    
+    
+    
+</div>
+<script src="jQuery-1.0.0-my.js"></script>
+<script>
+    //作业 30分钟  放大镜   比例计算正确   效果实现  样式和JS  都要写
+    //封装可以不用写   getpageX   show  hide  不用写
+    //24日晚自习之前交
+
+
+
+    //需求: 鼠标在小盒子移动 让大图片在大盒子中按比例显示
+    //步骤
+    //1.老三步 (包括显示与隐藏遮罩层)
+    //2.获取鼠标在小盒子中的坐标
+    //3.移动遮罩层
+    //4.大图片按比例移动显示
+
+
+
+    //1.老三步 (包括显示与隐藏遮罩层)
+    var box=document.getElementsByClassName("box")[0];
+    var small=box.firstElementChild || box.firstChild;
+    var big=box.children[1];
+    var mask=small.children[1];
+    var bigImg=big.children[0];
+
+    //显示与隐藏
+   //onmouseenter===onmouseover  前者没有冒泡弊端
+    //onmouseleave===onmouseout  前者没有冒泡弊端
+    
+    box.onmouseenter= function () {
+
+        show(mask);
+        show(big);
+        
+    }
+    box.onmouseleave= function () {
+        hide(mask);
+        hide(big);
+
+    }
+
+    //2.获取鼠标在小盒子中的坐标
+    //鼠标在盒子中 移动时  获取坐标
+    box.onmousemove= function (event) {
+        var event=event || window.event;
+
+        var mousex=getPagex(event)-box.offsetLeft;
+        var mousey=getPagey(event)-box.offsetTop;
+
+//        console.log(mousex+"  "+mousey);
+        console.log(mousex+"  "+mousey);
+
+        //获取遮罩层的位置  默认左上角  要减去宽高一半
+        var x=mousex-mask.offsetWidth/2;
+        var y=mousey-mask.offsetHeight/2;
+        //遮罩层最后要移动的坐标位置的最小范围
+        if(x<=0){
+            x=0;
+        }
+        if(y<=0){
+            y=0;
+        }
+
+        //遮罩层最后要移动的坐标位置的最大范围
+        if(x>=small.offsetWidth-mask.offsetWidth){
+            x=small.offsetWidth-mask.offsetWidth;
+        }
+        if(y>=small.offsetHeight-mask.offsetHeight){
+            y=small.offsetHeight-mask.offsetHeight;
+        }
+
+
+
+
+        //3.移动遮罩层
+        mask.style.left=x+"px";
+        mask.style.top=y+"px";
+
+
+        //大图片走的距离/小图片走的距离=大图片/小图片
+        //小图片移动距离 *  比例(大图片/小图片)
+        //求出  大图片和小图片的比例
+
+        var  bili=bigImg.offsetWidth/small.offsetWidth;
+
+        var bigx=x*bili;
+        var bigy=y*bili;
+
+
+        bigImg.style.marginLeft=-bigx+"px";
+        bigImg.style.marginTop=-bigy+"px";
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

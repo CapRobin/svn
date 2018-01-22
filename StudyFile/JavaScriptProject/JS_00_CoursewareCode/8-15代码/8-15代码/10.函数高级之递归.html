@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //递归:   是一种思想     从前有座山....老和尚对小和尚说...
+        //程序中: 函数自己调用自己
+        //很容易就停不下来  所以递归必不可少的 就是 结束条件
+
+//        function say(){
+//            alert("从前有座山,山里有座庙,庙里一个老和尚对小和尚说:");
+//            say();
+//        }
+        var num=0;
+        function say(){
+            alert("从前有座山,山里有座庙,庙里一个老和尚对小和尚说:");
+            num++;
+            if(num<5){
+                say();
+            }else{
+                alert("老和尚死了....:");
+            }
+
+        }
+
+        say();
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

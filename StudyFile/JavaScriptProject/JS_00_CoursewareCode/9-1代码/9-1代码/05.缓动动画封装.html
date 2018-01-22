@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            position: absolute;
+            top: 100px;
+            left: 0;
+        }
+
+
+    </style>
+</head>
+<body>
+<button>缓动到200</button>
+<button>缓动到400</button>
+<button>缓动到900</button>
+<div class="box"></div>
+
+<script>
+    var bts = document.getElementsByTagName("button");
+    var div = document.getElementsByTagName("div")[0];
+    bts[0].onclick= function () {
+        linearSpeedAnimateX(div,200);
+        linearSpeedAnimateY(div,200);
+    }
+
+    bts[1].onclick= function () {
+        linearSpeedAnimateX(div,400);
+        linearSpeedAnimateY(div,400);
+    }
+    bts[2].onclick= function () {
+//        linearSpeedAnimateX(div,900);
+        linearSpeedAnimateY(div,900);
+    }
+    
+    
+    
+    /*
+        400-396=+4  步长=+0.4     396+0.4=396.4~~=396  ...400-396...
+
+        200-209=-9  步长-0.9 =ceil(步长)~~=0     209+(0)=209 ....200-209...
+
+
+
+
+
+
+     */
+    
+
+    function linearSpeedAnimateX(ele, endX) {
+        clearInterval(ele.timer);
+        ele.timer = setInterval(function () {
+            //步长=(终点位置-当前位置)/10
+            var step = (endX - ele.offsetLeft) / 10;
+//            if (step < 1) {
+//                step = Math.ceil(step);
+//            }
+            //分析得知 大于0 应该是向上取整 小于0是向下取整
+            step=step>0?Math.ceil(step):Math.floor(step);
+
+
+            ele.style.left = ele.offsetLeft + step + "px";
+//            console.log( div.offsetLeft +"   "+step);
+
+            console.log(1);
+            if (Math.abs(endX - ele.offsetLeft) <= Math.abs(step)) {
+                ele.style.left = endX + "px";
+                clearInterval(ele.timer);
+            }
+
+
+        }, 60)
+
+
+    }
+
+    function linearSpeedAnimateY(ele, endY) {
+        clearInterval(ele.timer);
+        ele.timer = setInterval(function () {
+            //步长=(终点位置-当前位置)/10
+            var step = (endY - ele.offsetTop) / 10;
+//            if (step < 1) {
+//                step = Math.ceil(step);
+//            }
+            //分析得知 大于0 应该是向上取整 小于0是向下取整
+            step=step>0?Math.ceil(step):Math.floor(step);
+
+
+            ele.style.top = ele.offsetTop + step + "px";
+//            console.log( div.offsetLeft +"   "+step);
+
+            console.log(1);
+            if (Math.abs(endY - ele.offsetTop) <= Math.abs(step)) {
+                ele.style.Top = endY + "px";
+                clearInterval(ele.timer);
+            }
+
+
+        }, 60)
+
+
+    }
+
+
+</script>
+
+</body>
+</html>

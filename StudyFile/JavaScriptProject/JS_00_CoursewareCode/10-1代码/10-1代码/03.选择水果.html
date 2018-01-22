@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        select{
+            width: 200px;
+            height: 300px;
+            background-color: pink;
+            font-size: 22px;
+        }
+
+
+    </style>
+</head>
+<body>
+<script src="jquery-1.11.1.js"></script>
+<script>
+   $(function () {
+       //需求: 全部到左右两边切换  选中谁切换谁
+
+       $("button").eq(0).click(function () {
+           //右边拼接左边所有的option
+           $("#se2").append($("#se1>option"));
+
+       });
+       $("button").eq(1).click(function () {
+           //左边拼接右边所有的
+           $("#se1").append($("#se2>option"));
+
+       });
+       $("button").eq(2).click(function () {
+           //右边拼接左边选中的
+           $("#se2").append($("#se1>option:selected"));
+
+       });
+       $("button").eq(3).click(function () {
+        //左边拼接右边被选中的
+           $("#se1").append($("#se2>option:selected"));
+
+//           $("#se1>option").prop("selected",false);
+
+       });
+
+       
+   });
+
+
+
+
+
+</script>
+
+<select name="" id="se1" multiple>
+    <option value="">香蕉</option>
+    <option value="">草莓</option>
+    <option value="">火龙果</option>
+    <option value="">西红柿</option>
+    <option value="">豆包</option>
+    
+</select>
+<button>>>></button>
+<button><<<</button>
+<button>></button>
+<button><</button>
+<select name="" id="se2" multiple>
+
+
+</select>
+
+</body>
+</html>

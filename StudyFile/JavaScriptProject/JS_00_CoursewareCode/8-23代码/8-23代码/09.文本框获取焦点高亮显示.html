@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        input{
+            display: block;
+            outline: none;
+        }
+
+
+
+    </style>
+</head>
+<body>
+<div id="box">
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    <button>设置</button>
+</div>
+<script>
+    //页面展开 获取焦点没有高亮显示
+    //点击按钮给input注册一个获取焦点事件  然后获取焦点高亮显示
+    //谁获取焦点谁高亮  失去焦点 失去高亮
+
+    var box=document.getElementById("box");
+    var bt=box.lastElementChild || box.lastChild;
+    var inArr=box.getElementsByTagName("input");
+//    console.log(bt);
+    bt.onclick= function () {
+        //点击按钮 给所有的input注册获取焦点事件
+        for(var i=0;i<inArr.length;i++){
+            inArr[i].onfocus= function () {
+//                alert(1);
+                //获取焦点的高亮显示
+                this.style.border="2px solid red";
+                this.style.backgroundColor="#ccc";
+            }
+            
+            //其他input失去焦点 失去高亮
+            inArr[i].onblur= function () {
+//                this.style.border="";
+//                this.style.backgroundColor="";
+                //一句话实现
+                this.removeAttribute("style");
+            }
+            
+        }
+    }
+
+</script>
+
+
+</body>
+</html>

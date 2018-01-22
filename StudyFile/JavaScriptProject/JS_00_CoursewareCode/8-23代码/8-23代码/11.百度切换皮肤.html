@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: url("image/1.jpg") no-repeat;
+            background-size: 100%;
+        }
+
+        #banner {
+            height: 200px;
+
+            background-color: rgba(255, 255, 255, 0.2);
+            text-align: center;
+        }
+
+        .box {
+            width: 800px;
+            margin: auto;
+        }
+
+        img {
+
+            float: left;
+            margin: 50px 5px 0 5px;
+            cursor:pointer;
+
+        }
+
+
+    </style>
+</head>
+<body>
+<div id="banner">
+
+    <div class="box">
+        <img src="image/1.jpg" alt="" width="150px">
+        <img src="image/2.jpg" alt="" width="150px">
+        <img src="image/3.jpg" alt="" width="150px">
+        <img src="image/4.jpg" alt="" width="150px">
+        <img src="image/5.jpg" alt="" width="150px">
+
+
+    </div>
+
+
+</div>
+
+<script>
+    var imgArr=document.getElementsByTagName("img");
+    //找到body  JS帮我们封装好了
+//     console.log(body);
+    var body=document.body;
+    console.log(body);
+
+
+
+    for(var i=0;i<imgArr.length;i++){
+        imgArr[i].onclick= function () {
+            body.style.backgroundImage="url('"+this.src+"')";
+
+            var num=10;
+
+        }
+        
+    }
+
+
+</script>
+
+</body>
+</html>

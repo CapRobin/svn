@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        input{
+            width: 200px;
+            height: 35px;
+            padding-left: 10px;
+
+
+
+        }
+        #la{
+            position:absolute;
+            left: 61px;
+
+            top:20px;
+            font-size: 13px;
+            color: #999;
+            cursor:text;
+        }
+        .hide{
+            display: none;
+        }
+        .show{
+            display: inline-block;
+        }
+        #jd{
+            color:#999;
+        }
+
+
+
+    </style>
+
+
+
+
+</head>
+<body>
+淘宝:
+<label for="tao" id="la" >我是淘宝</label>
+<input type="text" id="tao"><br><br>
+京东:
+<input type="text" value="我是京东" id="jd"><br><br>
+placeholder:
+<input type="text" placeholder="placeholder">
+
+
+<script>
+    /*
+            一夜页面只有一个焦点
+            谁获得焦点谁响应事件
+
+
+            label的for=""  关联哪一个input的id  那么点击该label就是哪一个input获得焦点
+
+
+     */
+    //淘宝输入框
+    var tao=document.getElementById("tao");
+    //获取label元素
+    var la=document.getElementById("la");
+
+    //页面加载时 淘宝输入框获取焦点
+//    tao.focus();
+    
+    //输入框添加输入监听
+    tao.oninput= function () {
+       //我们用一层label盖住输入框
+        //一旦输入任何东西就把 label隐藏掉
+        //一旦删除清空了,输入框没有内容 把label显示回来
+//        console.log(1);
+
+        /*
+            思路:
+                获取输入框的value
+                一旦value==="" b表示没有内容在里面
+                把我是淘宝显示出来
+
+                一旦value!==""表示有输入的内容
+                把我是淘宝隐藏
+
+
+
+         */
+        if(this.value===""){
+            la.className="show";
+        }else{
+            la.className="hide";
+        }
+
+
+    }
+
+    //京东输入框
+    var jd=document.getElementById("jd");
+    //添加焦点事件
+    jd.onfocus= function () {
+        if(this.value==="我是京东"){
+            this.style.color="black";
+            this.value="";
+
+        }
+
+
+    };
+
+    //添加 失去焦点事件
+    jd.onblur= function () {
+        if(this.value===""){
+            this.style.color="#999";
+            this.value="我是京东";
+
+        }
+    }
+
+
+
+
+
+
+</script>
+
+
+
+</body>
+</html>

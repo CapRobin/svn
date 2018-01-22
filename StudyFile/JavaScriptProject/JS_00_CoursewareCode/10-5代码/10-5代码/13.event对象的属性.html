@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+
+
+    </style>
+</head>
+<body>
+<script src="jquery-1.11.1.js"></script>
+<script>
+    $(function () {
+        var json = {
+            "username": "hehehe",
+            "userpwd": "123456"
+
+        };
+        $("body").on("click contextmenu", ".box", json, function (event) {
+//            console.log(event.data);
+            //当前事件作用在哪一个元素上面
+//            console.log(event.currentTarget);
+            //JS的pageX或者pageY 兼容性很好
+//            console.log(event.pageY);
+            //JS中的target
+//            console.log(event.target);
+            //事件类型
+//            console.log(event.type);
+//            console.log(event.which );
+            //event.stopPropagation()；
+            alert("点击了");
+            //阻止浏览器默认事件
+           event.preventDefault()
+
+        })
+
+    })
+
+
+</script>
+<button>点击</button>
+<div class="box"></div>
+
+</body>
+</html>

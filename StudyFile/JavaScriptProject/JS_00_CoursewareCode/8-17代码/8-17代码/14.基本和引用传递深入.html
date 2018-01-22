@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var num=25;
+        var str="小白";
+        //基本数据类型 作为参数传递给函数时  相当于复制出来一份 传递到函数里面去
+        function fn1(n,s){
+            n=999;
+            s="大黄";
+
+
+
+        }
+
+//        fn1(num,str);
+//        console.log(num+"   "+str);
+        function Person(name){
+            this.name=name;
+        }
+        //引用数据类型作为参数传递时  传递过去的是地址
+        function fn2(p){
+//            p=per;
+            p.name="大黄";
+        }
+
+
+        var per=new Person("小白");
+
+        console.log(per.name);
+        fn2(per);
+        console.log(per.name);
+        /*
+            总结:
+                参数传递相当于把一个变量的栈内存中的值给函数中另一个变量使用
+                两个变量使用的是同一个值
+
+             基本数据类型 赋值给另一个变量的是具体的值 相当于复制出来一份
+             引用数据类型 赋值给另一个变量的是地址值  而如果两个对象使用同一个地址值 则证明 堆内存空间所指向的是同一块
+                    指向同一块   一改全改
+
+
+
+
+
+         */
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

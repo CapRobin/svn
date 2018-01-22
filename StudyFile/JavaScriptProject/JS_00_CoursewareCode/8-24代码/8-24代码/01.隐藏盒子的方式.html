@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            position:absolute ;
+            left:50px;
+            top:50px;
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+        img{
+            position: absolute;
+            top: 50px;
+            left: 50px;
+
+        }
+
+
+
+    </style>
+
+
+</head>
+<body>
+
+<img src="imgs/fly.jpg" alt="" width="200px" height="400px" id="img">
+<div class="box"></div>
+
+<button>我是小按钮</button>
+<script>
+    var box=document.getElementsByClassName("box")[0];
+    var bt=document.getElementsByTagName("button")[0];
+    var img=document.getElementById("img");
+    box.onclick= function () {
+////        this.style.display="none";
+//        this.style.visibility="hidden";
+////        this.style.opacity="0";
+//        this.style.position="absolute";
+////        this.style.top="-50px";
+//        this.style.left="-500px";
+//
+    }
+    
+    bt.onclick= function () {
+        img.style.zIndex="666";
+    }
+
+
+</script>
+
+</body>
+</html>

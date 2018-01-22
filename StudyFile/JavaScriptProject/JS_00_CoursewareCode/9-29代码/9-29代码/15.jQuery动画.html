@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            /*display: none;*/
+        }
+
+
+    </style>
+</head>
+<body>
+<script src="jquery-1.11.1.js"></script>
+<script>
+    $(function () {
+        //JQ动画:  show  hide fade  slide  自定义动画
+        $("button").eq(0).click(function () {
+            //show() 四种用法
+            //1.没有任何参数  直接显示没有动画过渡  控制的是display行内属性 block
+//            $("div").show();
+            //2.一个参数  传入毫秒值  表示:多少毫秒显示出来
+                    //控制的额属性 width  height  opacity
+//            $("div").show(20000);
+            //3.传入一个字符串 表示固定的速度  slow600  fast200 normal 400
+                //如果字符串写错了,就是normal
+//            $("div").show("hehehel");
+            //4.两个参数  1.毫秒值或者字符串速度  2.回调函数
+//            $("div").show(2000, function () {
+//                alert("动画完了????");
+//            });
+
+
+
+        });
+        $("button").eq(1).click(function () {
+            //hide  跟show一样 四种用法
+                    //控制display none
+//            $("div").hide();
+//            $("div").hide(3000);
+//            $("div").hide("xxxx");
+//            $("div").hide(1000, function () {
+//                alert("跑没影了??");
+//            });
+
+        });
+
+        $("button").eq(2).click(function () {
+            //滑入动画  slideDown  四种用法
+            //跟show不传参数的区别  有动画效果  控制height
+//            $("div").slideDown();
+            //控制height
+//            $("div").slideDown(10000);
+//            $("div").slideDown("slow");
+//            $("div").slideDown(1000, function () {
+//                alert("溜进来了?");
+//            });
+
+
+        });
+        $("button").eq(3).click(function () {
+//            $("div").slideUp();
+//            $("div").slideUp(3000);
+//            $("div").slideUp("fast");
+//            $("div").slideUp(1000, function () {
+//                alert("溜走了?");
+//            });
+
+        });
+
+        $("button").eq(4).click(function () {
+            //如果元素本身是隐藏的 就是滑入 如果是不隐藏的 则滑出
+            //四种用法
+            $("div").slideToggle(2000, function () {
+//                alert("表演完了???");
+            });
+
+        });
+        $("button").eq(5).click(function () {
+            //淡入效果 四种用法
+            //display block   opacity 0~1
+            $("div").fadeIn(1000);
+
+
+        });
+        $("button").eq(6).click(function () {
+            //淡出 四种用法
+            //  先opacity 1~0  后display none
+            $("div").fadeOut(3000);
+
+
+        });
+
+        $("button").eq(7).click(function () {
+            //淡入淡出切换  四种用法
+            $("div").fadeToggle(1000);
+
+        });
+
+        $("button").eq(8).click(function () {
+            //切换到指定透明度
+            $("div").fadeTo(5000,0.3);
+
+        });
+
+
+    });
+
+
+</script>
+
+<button>显示show</button>
+<button>隐藏hide</button>
+<button>滑入slideDown</button>
+<button>滑出slideUp</button>
+<button>滑入滑出切换slideToggle</button>
+<button>淡入fadeIn</button>
+<button>淡出fadeOut</button>
+<button>淡入淡出切换fadeToggle</button>
+<button>切换到指定透明度</button>
+<div></div>
+
+</body>
+</html>

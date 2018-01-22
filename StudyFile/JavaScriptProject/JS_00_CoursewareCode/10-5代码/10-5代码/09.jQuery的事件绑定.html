@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        li{
+            height: 30px;
+            margin-bottom: 10px;
+            background-color: pink;
+            cursor:pointer;
+        }
+
+
+    </style>
+</head>
+<body>
+<script src="jquery-1.11.1.js"></script>
+<script>
+    $(function () {
+//        //事件绑定  4种方式 1. click...  2.bind 1.7以后用on代替了 3.delegate
+//        $("button").click(function () {
+//            alert("我是一个点金");
+//
+//        });
+//        $("button").click(function () {
+//            alert("我又是一个点击");
+//        });
+        //父元素点delegate("子元素选择器","事件名称不带on",驱动函数)
+        //优点:效率高   新创建的元素也会绑定事件
+        /*$("ul").delegate("li","click", function () {
+            alert("被点击到了li");
+        })
+         */
+        //创建元素
+        $("button").eq(1).click(function () {
+            $("ul").append("<li>我是新来的</li>");
+        });
+        var aaa={
+            "username":"hehehe",
+            "userpwd":"123456"
+        };
+//        $("ul").on("click","li",aaa, function () {
+//            alert("我是最现代的绑定方式on");
+//
+//        });
+        //如果不通过父元素on(子元素)绑定事件 那么事件可以成功 但是新创建出来的元素没有事件
+//        $("ul li").on("click",aaa, function () {
+//            alert("我是最现代的绑定方式on");
+//
+//        });
+
+
+    })
+
+
+</script>
+<button>点击</button>
+<button>创建li</button>
+<ul>
+    <li class="hh">我是一个li</li>
+    <li>我是一个li</li>
+    <li>我是一个li</li>
+</ul>
+
+</body>
+</html>

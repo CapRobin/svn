@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+//    var str="Hello Ni nihao k-5 hehe  hello kkk55";
+//    console.log(str.replace(/hello/ig,"gun"));
+//    //模糊查找
+////    console.log(str.search(/ni/));
+//    console.log(str.search(/[a-z]+[0-9]+/));
+//    //精确查找
+//    console.log(str.indexOf("ni"))
+
+String.prototype.aaa= trim;
+
+    var str="             hello  itszt            ";
+    console.log(str);
+//    console.log(str.trim());
+//    console.log(trim(str));
+    console.log(str.aaa(str));
+
+
+    function trim(str){
+        var s=str.replace(/(^\s+)|(\s+$)/g,"");
+        return s;
+
+    }
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .cu{
+            background-color: red;
+        }
+
+    </style>
+</head>
+<body>
+<button id="btn">创建</button>
+<ul id="box">
+    <li id="li1">我是一个列表</li>
+    <div id="dvp">我是呵呵
+
+        <p>我是一个p</p>
+    </div>
+    <p>我是一个兄弟p</p>
+
+
+</ul>
+
+<script>
+    var btn=document.getElementById("btn");
+    var ul=document.getElementById("box");
+    var li1=document.getElementById("li1");
+    var dvp=document.getElementById("dvp");
+//    document.write("<div>我是document.write创建</div>");
+/*
+        调试程序 console.log  alert()  document.write
+            如果是大量输出  需要console.log
+            alert();简单弹出看一下数据的值
+
+        document.write  根据文档流对象去输出当前文档的内容
+        在页面加载时   会自动创建一个document对象 然后用该对象去加载页面各项标签
+        同时也会执行我们自己写的write标签  把内容按加载顺序打印到页面
+        一旦页面加载完成 document对象就没了
+        此时我们点击按钮需要用到document对象 所以他很好心的帮我们重新创建了一个
+        跟之前的不是同一个对象  那么代表 不是同一个页面
+
+        重新创建文档流对象  重新输出一个页面结构
+*/
+
+    btn.onclick= function () {
+        /*
+                dom操作:
+                    对页面元素的
+                    创建  createElement
+                    增  appendChild  insertBefore
+                    删  removeChild()
+                    改  replaceChild()
+                    查 获取页面元素  id class TagName  子节点 父节点
+
+                    克隆   复制节点  cloneNode();
+
+
+            创建元素三种方式:
+            1.document.write();
+            2.innerHTML
+            3.document.createElement("标签名")  推荐使用
+                    一般和appendChild  insertBefore  replaceChild结合使用
+
+
+         */
+        //弊端  一旦页面加载完成以后通过事件输出则会覆盖原来页面所有
+//        document.write("<div>我是点击按钮创建</div>");
+        //弊端 如果父元素原来里面有内容则会全部覆盖掉
+//        ul.innerHTML="<div class='cu'>我是inner创建</div>";
+        //和innerHTML的区别就是 text不会解析字符串里面的标签 只会当做普通的字符串处理
+        //innerHTML会解析里面的字符串 把字符串当做HTML标签解析
+//        var a=ul.innerText="<div class='cu'>我是inner创建</div>";
+//        alert(a);
+        //这是创建乐一个对象 跟页面半毛钱关系都没有
+//        var li=document.createElement("li");
+//        li.innerHTML="我是一个create创建出来的";
+//        li.style.backgroundColor="red";
+//
+//        //在父节点的最后拼接一个子节点
+//        ul.appendChild(li);
+//        //删除一个子节点 参数:传入一个子节点对象
+//        ul.removeChild(li1);
+//
+//        var p=document.createElement("p");
+//        p.innerHTML="我是创建出来的p";
+//        p.style.backgroundColor="yellow";
+//
+//        //修改标签:  参数(新元素对象,被替换的元素对象)
+//        ul.replaceChild(p ,dvp);
+        var dv1=document.createElement("div");
+        dv1.innerHTML="我是第一位插班生";
+        dv1.style.backgroundColor="green";
+
+        //在指定元素之前插入  参数: 新插入的元素对象  被参考对象
+        ul.insertBefore(dv1,li1);
+        //新克隆的元素作为返回值体现  参数布尔值  true表示深层复制  false表示浅层复制
+        //false只是复制标签 不带内容(内部子节点和内部文本) 一般我们都是深层复制
+        var newDV=dv1.cloneNode(false);
+        ul.appendChild(newDV);
+
+
+
+
+
+    }
+
+
+
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        li{
+            height: 50px;
+            background-color: red;
+            margin-bottom: 30px;
+            font: 700 20px/50px "simsun";
+            cursor: pointer;
+        }
+
+
+    </style>
+</head>
+<body>
+<button id="btn">创建元素</button>
+<ul>
+    <li>我是原住民li</li>
+    <li>我是原住民li</li>
+    <li>我是原住民li</li>
+    <li>我是原住民li</li>
+</ul>
+<script>
+    //页面加载是通过 on的方式绑定的事件  不会给新创建出来的元素也绑定上
+    //所以我们要做的事情就是事件委托
+    //我们可以把点击事件 不交给li来做  交给ul来完成
+    //ul进行点击事件的判断
+    var btn=document.getElementById("btn");
+    btn.onclick= function () {
+        for(var i=0;i<4;i++){
+            var newLi=document.createElement("li");
+            newLi.innerHTML="我是伪装的li";
+            ul.appendChild(newLi);
+        }
+    }
+    
+    
+    
+    var ul=document.getElementsByTagName("ul")[0];
+    var liArr=ul.children;
+//    for(var i=0;i<liArr.length;i++){
+//        liArr[i].onclick= function () {
+//            alert("我是原住民li");
+//        }
+//    }
+    
+
+    
+    
+    
+    ul.onclick= function (event) {
+        var event=event || window.event;
+
+//        alert("我是li");
+//        console.log(event.target);
+
+        var tar=event.target;
+//        console.log(tar);
+        if(tar.tagName==="LI"){
+//            alert("我是原住民li呵呵");
+            alert(tar.innerHTML);
+
+
+        }
+//        console.log(tar.tagName);
+
+        
+    }
+    
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            position: absolute;
+            top: 50px;
+            left: 0;
+        }
+
+
+    </style>
+</head>
+<body>
+<button>缓动到200</button>
+<button>缓动到400</button>
+<div></div>
+<script>
+    var bts = document.getElementsByTagName("button");
+    var div = document.getElementsByTagName("div")[0];
+    var timer = null;
+
+/*
+        如何解决四舍五入到不了终点的问题
+
+        我们可以对步长进行判断:
+            如果步长小于1(剩余距离小于10)  我让步长等于1
+
+
+
+ */
+
+    bts[1].onclick = function () {
+        var endX = 400;
+        clearInterval(timer);
+        timer = setInterval(function () {
+            var step = (endX - div.offsetLeft) / 10;
+            if(step<1){
+                step=Math.ceil(step);
+            }
+            div.style.left = div.offsetLeft + step + "px";
+
+//            console.log(step);
+//            console.log(div.offsetLeft + step + "px");
+//            console.log("---------------------------------");
+            console.log(1);
+//            if (div.offsetLeft>=endX) {
+//                clearInterval(timer);
+//            }
+            if(Math.abs(endX-div.offsetLeft)<Math.abs(step)){
+                div.style.left=endX+"px";
+                clearInterval(timer);
+            }
+
+        }, 30)
+    }
+
+
+</script>
+
+</body>
+</html>

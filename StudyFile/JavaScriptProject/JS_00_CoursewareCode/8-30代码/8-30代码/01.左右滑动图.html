@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .box{
+            width: 490px;
+            height: 170px;
+            border: 1px solid #ccc;
+            padding: 5px;
+            margin: 100px auto;
+
+
+        }
+        .box>.inner{
+            width: 490px;
+            height: 170px;
+            overflow: hidden;
+            position: relative;
+        }
+        .inner>ul{
+            list-style: none;
+            width:500%;
+            position: absolute;
+            left: 0;
+
+        }
+        ul>li{
+            float: left;
+        }
+        .switchBox{
+            position: relative;
+            display: none;
+        }
+        .switchBox>span{
+            display: block;
+            width: 30px;
+            height: 40px;
+            background-color: rgba(179, 186, 184, 0.45);
+            color: rgba(255, 255, 255, 0.49);
+            font:100 50px/40px "simsun";
+            text-align: center;
+            position: absolute;
+            top:60px;
+            cursor:pointer;
+        }
+
+        .switchBox>.right{
+                right:0;
+        }
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="inner" id="inner">
+        <ul>
+            <li><img src="images/01.jpg" alt=""></li>
+            <li><img src="images/02.jpg" alt=""></li>
+            <li><img src="images/03.jpg" alt=""></li>
+            <li><img src="images/04.jpg" alt=""></li>
+            <li><img src="images/05.jpg" alt=""></li>
+        </ul>
+
+        <div class="switchBox">
+            <span class="left"><</span>
+            <span class="right">></span>
+
+
+        </div>
+
+
+
+    </div>
+</div>
+<script>
+    //获取inner
+    var inner=document.getElementById("inner");
+    var box=inner.parentNode;
+    var switchBox=inner.children[1];
+    var bts=switchBox.children;
+    var ul=inner.children[0];
+
+    //获取图片宽度
+    var imgWidth=inner.offsetWidth;
+
+    //输入移入box 显示剪头 移除box隐藏剪头
+    box.onmouseover= function () {
+        switchBox.style.display="block";
+        
+    }
+    box.onmouseout= function () {
+        switchBox.style.display="none";
+    }
+    /*
+
+        左右切换图
+            思路: 点击右边按箭头 让index++ 去乘以图片宽度
+                点击左边箭头   让index--  去乘以图片宽度
+
+              步骤:
+                1.两个箭头分别加点击监听
+                2.定义一个index
+                3.右边的是index++  左边的是index--
+                4.针对index范围的判断
+
+
+     */
+//    2.定义一个index
+        var index=0;
+
+//    1.两个箭头分别加点击监听
+    bts[0].onclick= function () {
+        index--;
+        if(index<0){
+            index=0;
+            alert("第一张");
+        }
+        translateAnimate(ul,-index*imgWidth);
+
+
+
+    }
+    
+    bts[1].onclick= function () {
+        index++;
+//        console.log(index);
+        if(index>ul.children.length-1){
+            index=ul.children.length-1;
+
+            alert("到最后一张了!!!");
+        }
+        translateAnimate(ul,-index*imgWidth);
+    }
+
+
+
+
+
+
+    function translateAnimate(ele,endX){
+        clearInterval(ele.timer);
+        var speed;
+        if(endX>ele.offsetLeft){
+            speed=10;
+        }else if(endX<ele.offsetLeft){
+            speed=-10;
+        }else{
+            speed=0;
+        }
+        ele.timer=setInterval(function () {
+            var offVal=endX-ele.offsetLeft;
+
+            ele.style.left=ele.offsetLeft+speed+"px";
+
+
+            if(Math.abs(offVal)<=Math.abs(speed)){
+                ele.style.left=endX;
+                clearInterval(ele.timer);
+            }
+
+        },5)
+    }
+
+
+
+
+</script>
+
+
+
+</body>
+</html>

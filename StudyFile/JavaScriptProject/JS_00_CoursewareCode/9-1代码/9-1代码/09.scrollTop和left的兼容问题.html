@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+</html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+</html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            height: 5000px;
+            width: 5000px;
+        }
+        /*div{*/
+            /*height: 5000px;*/
+        /*}*/
+
+
+    </style>
+</head>
+<body>
+<div></div>
+<script>
+    //    console.log(document.body);
+
+//    document.body.scrollTop:
+    //在谷歌中 不论是否声明DTD document.body.scrollTop; 都可以获取
+//                谷歌只认识document.body.scrollTop
+    //火狐中声明了DTD则 获取不到  如果没声明 可以获取
+    //IE  无论是否声明了DTD  都获取不到
+//
+    //   window.onscroll= function () {
+    ////       document.title=document.body.scrollTop;
+    //
+    //
+    //   }
+
+//    document.documentElement.scrollTop:
+    //谷歌 中  无论是否声明DTD  该方法获取不到
+    //火狐 跟上一个方法相反
+    //IE 无论是否声明 都可以获取
+//            IE只认识documentElement.scrollTop;
+// window.onscroll= function () {
+//       document.title=document.documentElement.scrollTop;
+//
+//
+//   }
+        //火狐 谷歌 IE9+  兼容
+        //IE8及以下  不兼容  结果不是0  是undefined
+    window.onscroll= function () {
+       document.title=window.pageYOffset;
+
+
+
+    }
+
+</script>
+
+</body>
+</html>

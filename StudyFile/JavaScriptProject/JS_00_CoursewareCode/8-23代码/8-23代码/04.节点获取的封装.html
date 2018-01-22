@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        li{
+            width:100px;
+            height: 100px;
+            background-color: pink;
+            list-style: none;
+            margin-bottom: 5px;
+        }
+
+
+    </style>
+</head>
+<body>
+<ul>
+    <li></li>
+    <li></li>
+    <li id="box"></li>
+    <li></li>
+    <li></li>
+
+</ul>
+<script src="NodeUtils.js"></script>
+<script>
+    var box=gid("box");
+//    console.log(box);
+    box.style.backgroundColor="red";
+
+    getFirstChild(box.parentNode).style.backgroundColor="blue";
+    getLastChild(box.parentNode).style.backgroundColor="blue";
+
+    getPreviousdSibling(box).style.backgroundColor="yellow";
+    getNextSibling(box).style.backgroundColor="yellow";
+
+    var arr=getAllSibling(box);
+    for(var i=0;i<arr.length;i++){
+        arr[i].style.backgroundColor="black";
+    }
+
+    getSiblingByIndex(box,0).style.backgroundColor="orange";
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+
+
+    </style>
+</head>
+<body>
+<script src="jquery-1.11.1.js"></script>
+<script>
+        $(function () {
+//            $(".box").click(function () {
+//                alert("我是盒子的点击事件");
+//            });
+
+//            $(".box").contextmenu(function () {
+//                alert("我是盒子的右击事件");
+//            });
+            $("input:text").focus(function () {
+                alert("获取焦点了!!!");
+            });
+            
+            
+            $("button").click(function () {
+                //我想调用上面的那个匿名的函数  只能通过去点盒子调用
+                //执行指定的事件驱动函数 还不去操作指定事件
+//                $(".box").click();
+                //触发右击事件
+//                $(".box").contextmenu();
+
+                //触发浏览器行为
+                $("input:text").focus();
+                    //触发事件 会触发浏览器默认行为
+//                $("input:text").trigger("focus");
+                //不会触发浏览器默认行为
+//                $("input:text").triggerHandler("focus");
+
+//
+            });
+            
+            
+        })
+
+    
+</script>
+<button>触发</button>
+<div class="box"></div>
+<input type="text">
+
+
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+        padding: 0;
+        margin: 0;
+        }
+        .wrap{
+            height: 300px;
+            background-color: #ccc;
+
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            top: 30px;
+        }
+
+
+
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <button>运动到200</button>
+    <button>运动到400</button>
+    <div class="box"></div>
+
+
+
+</div>
+
+<script>
+    var btns=document.getElementsByTagName("button");
+    var box=document.getElementsByClassName("box")[0];
+    var  timer=null;
+    /*
+        bug  多次点击启动多个定时器
+            修改:  每次启动把之前的定时器清除
+
+
+     */
+
+    btns[0].onclick= function () {
+
+        translateAnimate(200);
+
+
+    };
+    btns[1].onclick=function(){
+        translateAnimate(400);
+
+    };
+    //改bug
+    function translateAnimate(endX){
+        //timer如果为undefined或者null  正常清除即可 不会报错
+        clearInterval(timer);
+        //分析
+        /*
+            如果目标位置大于当前位置   +步长
+            如果目标位置小于当前位置   -步长
+         */
+        var speed;
+        if(endX>box.offsetLeft){
+            speed=10;
+        }else if(endX<box.offsetLeft){
+            speed=-10;
+        }else{
+            speed=0;
+        }
+        timer=setInterval(function () {
+
+            //获取终点和当前位置的差值
+            var offVal=endX-box.offsetLeft;
+
+            box.style.left=box.offsetLeft+speed+"px";
+            /*
+                如何停止动画
+                思路:
+                    先获取当前传入的终点值 和当前盒子的位置值的差值
+                       如果小于步长  把当前盒子直接手动修改成重点(闪动动画 但是因为距离短 所以看不出来)
+                            然后清除定时器
+
+                       如果大于步长  不清除定时器  正常位移
+             */
+            if(Math.abs(offVal)<=Math.abs(speed)){
+                box.style.left=endX;
+                clearInterval(timer);
+            }
+
+        },50)
+    }
+
+
+</script>
+</body>
+</html>

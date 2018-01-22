@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            height: 50px;
+            margin-bottom: 20px;
+            background-color: pink;
+            font-size: 20px;
+            display: none;
+        }
+
+
+    </style>
+</head>
+<body>
+<script src="jquery-1.1.1.js"></script>
+    <script>
+//        window.onload= function () {
+//            var btn=document.getElementsByTagName("button")[0];
+//            var divArr=document.getElementsByTagName("div");
+//            btn.onclick= function () {
+//                for(var i=0;i<divArr.length;i++){
+//                    divArr[i].style.display="block";
+//                    divArr[i].innerHTML="虽远必诛!";
+//                }
+//            }
+//        }
+        
+        //入口函数
+        $(function () {
+            $("button").click(function () {
+//                alert(1);
+//                $("div").html("变态的JQ");
+//                $("div").show(3000);
+
+                //JQ两大特点:  隐式迭代   看不见的迭代(遍历)
+                //
+                // 链式编程
+
+                $("div").show(1000).html("更精简的").css({"color":"red"});
+
+            });
+        });
+        
+        
+    </script>
+
+
+    <button>显示盒子</button>
+    <div>扬我国威</div>
+    <div>扬我国威</div>
+    <div>扬我国威</div>
+    <div>扬我国威</div>
+    <div>扬我国威</div>
+
+
+
+</body>
+</html>

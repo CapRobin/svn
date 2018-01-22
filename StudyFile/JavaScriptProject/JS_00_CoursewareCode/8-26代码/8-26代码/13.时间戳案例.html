@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 1100px;
+          color: red;
+            font-size: 60px;
+            height: 50px;
+            margin: 100px auto;
+        }
+
+
+
+    </style>
+</head>
+<body>
+<div>2017年8月26日 16点15分23秒 星期六</div>
+<script>
+    var date=new Date();
+    var year=date.getFullYear();
+    var month=date.getMonth();
+    var day=date.getDate();
+
+    var week=date.getDay();
+
+    var hour=date.getHours();
+    var minute=date.getMinutes();
+    var second=date.getSeconds();
+
+    var dv=document.getElementsByTagName("div")[0];
+    var weArr=["星期日","星期一","星期二","星期三","星期四","星期五","星期六"];
+
+    dv.innerHTML=year+"年"+(month+1)+"月"+day+"日 "+hour+"点"+minute+"分"+second+"秒 "+weArr[week];
+
+
+
+
+</script>
+
+</body>
+</html>

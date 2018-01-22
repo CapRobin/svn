@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*
+        定时器:
+
+            setInterval(函数,毫秒值)  连环炸  相隔毫秒值重复执行
+            setTimeOut(函数,毫秒值)   一次炸  在毫秒值后 爆炸 执行一次
+     函数定义方式有三种:  两个都是同理
+
+     */
+
+    //第一种方式
+//    var num=0;
+//   setInterval(function () {
+//        console.log(++num);
+//   },1000)
+    //第二种定义方式
+//        var num=0;
+//       setInterval(fn,1000)
+//        function fn(){
+//            console.log(++num);
+//        }
+//    var num=0;
+//    //第三种第一方式  字符串可以直接写简单JS代码
+////    setInterval("console.log(++num)",1000);
+//    setInterval("fn()",1000);  /*双引号不能省略 省略就是简单调用一次函数*/
+//
+//            function fn(){
+//                console.log(++num);
+//            }
+
+
+//    setInterval(function () {
+//        console.log("连环炸")
+//    },1000);
+
+//    console.log("敌军还有5秒钟到达战场!")
+//    setTimeout(function () {
+//        console.log("跟它丫的拼了!!")
+//    },5000);
+//        timer的值表示的是当前页面的第几个定时器  从1开始
+
+    //清除定时器
+        var num=0;
+       var timer=setInterval(function () {
+            console.log("我是timer-->"+(++num));
+           if(num>=5){
+            clearInterval(timer)
+               console.log("我是timer-->"+timer);
+               console.log("我是timer-->"+typeof timer);
+           }
+       },1000);
+    var num1=0
+    var timer1=setInterval(function () {
+        console.log("我是timer1-->"+(++num1));
+        if(num>=5){
+            clearInterval(timer1)
+            console.log("我是timer1-->"+timer1);
+            console.log("我是timer1-->"+typeof timer1);
+        }
+    },1000)
+
+
+</script>
+
+</body>
+</html>

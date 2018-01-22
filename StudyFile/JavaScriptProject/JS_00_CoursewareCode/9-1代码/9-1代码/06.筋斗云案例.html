@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: rgba(0, 0, 0, 0.76);
+        }
+
+        .banner{
+            width: 800px;
+            height: 45px;
+            position: relative;
+            border-radius: 10px;
+            margin: 100px auto;
+            background: url("imgs/wifi.png") white right no-repeat;
+        }
+        .banner ul{
+            list-style: none;
+            position: relative;
+        }
+        ul li{
+            float: left;
+            width: 83px;
+            height: 45px;
+            text-align: center;
+            font: 100 15px/45px "simsun";
+            cursor:pointer;
+
+        }
+        span{
+            display: inline-block;
+            width: 83px;
+            height: 45px;
+            background: url("imgs/cloud.gif") no-repeat;
+            position: absolute;
+            left: 0;
+        }
+
+
+
+
+    </style>
+
+
+</head>
+<body>
+
+<div class="banner">
+    <span></span>
+    <ul>
+        <li>首页新闻</li>
+        <li>活动策划</li>
+        <li>师资力量</li>
+        <li>企业文化</li>
+        <li>招聘信息</li>
+        <li>公司简介</li>
+        <li>学员信息</li>
+        <li>建议反馈</li>
+    </ul>
+
+
+</div>
+<script>
+    /*
+           思路:
+                鼠标移动把span缓动到对应位置 鼠标离开 span缓动到原来位置
+                鼠标点击 记录当前位置  然后span移动到当前位置  鼠标离开 span 回到记录位置
+
+
+            步骤:
+            //1.三板斧
+            //2.鼠标移入缓动span
+            //3.鼠标移除 返回原来位置
+            //4.点击记录位置 span移动对应位置
+            //5.鼠标离开 回到记录位置
+
+
+     */
+    var span=document.getElementsByTagName("span")[0];
+    var liArr=document.getElementsByTagName("li");
+
+    var liWidth=liArr[0].offsetWidth;
+    //记录器
+    var nowIndex=0;
+
+
+    //1.三板斧
+    for(var i=0;i<liArr.length;i++){
+        //绑定 索引值
+        liArr[i].index=i;
+        liArr[i].onmouseover= function () {
+            linearSpeedAnimateX(span,this.index*liWidth);
+
+        }
+        liArr[i].onmouseout= function () {
+            linearSpeedAnimateX(span,nowIndex*liWidth);
+        }
+        liArr[i].onclick= function () {
+            nowIndex=this.index;
+//            console.log(nowIndex);
+//            linearSpeedAnimateX(span,nowIndex*liWidth);
+            
+        }
+        
+    }
+
+
+
+    //缓动动画
+    function linearSpeedAnimateX(ele, endX) {
+
+        clearInterval(ele.timer);
+        ele.timer = setInterval(function () {
+            var step = (endX - ele.offsetLeft) / 10;
+            step=step>0?Math.ceil(step):Math.floor(step);
+            ele.style.left = ele.offsetLeft + step + "px";
+            console.log(1);
+            if (Math.abs(endX - ele.offsetLeft) <= Math.abs(step)) {
+                ele.style.left = endX + "px";
+                clearInterval(ele.timer);
+            }
+        }, 20)
+    }
+
+
+</script>
+
+</body>
+</html>

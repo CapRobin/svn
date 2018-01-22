@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            height: 5000px;
+        }
+        img{
+            border: 1px solid #999;
+            padding: 10px;
+            position: absolute;
+            cursor: pointer;
+        }
+
+
+    </style>
+</head>
+<body>
+<img src="image/img.jpg" alt="" width="150">
+<script src="jQuery-1.0.0-my.js"></script>
+<script>
+    //需求:  点击页面任意位置 让当前图片缓动到点击位置
+    //步骤
+    //1.老三步  给document添加点击事件
+    //2.获取鼠标点击的位置
+    //3.利用缓动动画  将图片移动到指定位置
+
+    //1.老三步  给document添加点击事件
+    var img=document.getElementsByTagName("img")[0];
+    var timer=null;
+    var targetX=0;
+    var nowX=img.offsetLeft;
+    var targetY=0;
+    var nowY=img.offsetTop;
+//    document.onmousemove= function () {
+//        console.log(1);
+//    }
+    
+    document.onclick= function (event) {
+        var event=event || window.event;
+        //2.获取鼠标点击的位置
+        //鼠标点击时横坐标位置
+        var mousex=getPagex(event);
+        var mousey=getPagey(event);
+//        console.log(mousex);
+
+
+        //3.利用缓动动画  将图片移动到指定位置
+        //缓动动画新五步
+        //1.要用定时器 先清除定时器
+        //2.获取步长
+        //3.二次计算步长
+        //4.将盒子缓动到指定位置
+        //5.清除定时器
+
+
+        //每次点击获取目标X位置
+
+        //每次缓动到目标位置 默认是按照图片左上角定位 需要减去图片宽高各一半
+        targetX=mousex-img.offsetWidth/2;
+        targetY=mousey-img.offsetHeight/2;
+
+
+        //1.要用定时器 先清除定时器
+        clearInterval(timer);
+        timer=setInterval(function () {
+            //2.获取步长
+            var stepx=(targetX-nowX)/10;
+            var stepy=(targetY-nowY)/10;
+            //3.二次计算步长
+            stepx=stepx>0?Math.ceil(stepx):Math.floor(stepx);
+            stepy=stepy>0?Math.ceil(stepy):Math.floor(stepy);
+
+
+
+            //4.将盒子缓动到指定位置
+
+
+            nowX=nowX+stepx;
+            nowY=nowY+stepy;
+
+            img.style.left=nowX+"px";
+            img.style.top=nowY+"px";
+
+
+            //5.清除定时器
+            console.log(1);
+            if(Math.abs(targetX-nowX)<=Math.abs(stepx) && Math.abs(targetY-nowY)<=Math.abs(stepy)){
+                img.style.left=targetX+"px";
+                img.style.top=targetY+"px";
+                clearInterval(timer);
+            }
+
+            
+        },25);
+
+
+
+
+
+
+    }
+    
+    
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        ul{list-style: none}
+        *{margin:0; padding:0;}
+        div{
+            width: 1200px;
+            height: 400px;
+            margin:50px auto;
+            border:1px solid red;
+            overflow: hidden;
+
+
+        }
+        div li {
+            width: 240px;
+            height: 400px;
+            float: left;
+        }
+        div ul {
+            width: 1300px;
+        }
+    </style>
+
+
+</head>
+<body>
+<div id="box">
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+<script src="jQuery-1.0.0-my.js"></script>
+<script>
+    //需求:  鼠标移入哪一张图片  就显示哪一张 其他图片变窄
+    //步骤
+    //1.动态给每一个li设置背景图片
+    //2.老三步  添加鼠标移入事件
+    //3.鼠标移入 该图片利用缓动变宽
+    //4.鼠标移除盒子 图片效果还原
+    var box=document.getElementById("box");
+    var ul=box.children[0];
+    var liArr=ul.children;
+    //1.动态给每一个li设置背景图片
+    for(var i=0;i<liArr.length;i++){
+        liArr[i].style.background="url('images/"+(i+1)+".jpg') no-repeat";
+        //2.老三步  添加鼠标移入事件
+        liArr[i].onmouseenter= function () {
+            //3.鼠标移入 该图片利用缓动变宽   利用排他思想
+                for(var i=0;i<liArr.length;i++){
+//                    把所有li变窄
+                    slowSpeedAnimate(liArr[i],{"width":100});
+
+                }
+            //把当前的li变宽
+            slowSpeedAnimate(this,{"width":800})
+
+        }
+    }
+    //4.鼠标移除盒子 图片效果还原
+    box.onmouseleave= function () {
+        for(var i=0;i<liArr.length;i++){
+            slowSpeedAnimate(liArr[i],{"width":240});
+        }
+    }
+
+
+
+
+
+</script>
+</body>
+</html>

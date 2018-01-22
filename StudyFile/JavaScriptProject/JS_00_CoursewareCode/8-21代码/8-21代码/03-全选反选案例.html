@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .wrap {
+            width: 300px;
+            margin: 100px auto 0;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            border: 1px solid #c0c0c0;
+            width: 300px;
+        }
+
+        th,
+        td {
+            border: 1px solid #d0d0d0;
+            color: #404060;
+            padding: 10px;
+        }
+
+        th {
+            background-color: #09c;
+            font: bold 16px "微软雅黑";
+            color: #fff;
+        }
+
+        td {
+            font: 14px "微软雅黑";
+        }
+
+        tbody tr {
+            background-color: #f0f0f0;
+        }
+
+        tbody tr:hover {
+            cursor: pointer;
+            background-color: #fafafa;
+        }
+    </style>
+
+    <script>
+        window.onload= function () {
+        /*
+            实现思路:
+            1.先找到  thead里面的单独多选  id class
+
+            2.想要找到下面四个多选就不能通过document去找 因为这样整个页面的所有多选都选中了
+                    所以我们要先找到tbody 然后tbody.getEle....
+             3.给上面的多选加点击事件
+             4.循环遍历下面四个多选 一旦上面的是选中下面全部选中  上面没选 下面全部取消全选
+
+             5.给下面每一个多选添加点击事件 无论点击哪一个都要判断所有多选是否被选中
+             6.点击任意一个多选去遍历所有多选是否全选
+             7.是否全选:  遍历四个  多选一旦有一个的checked是false 上面的就是false
+                    相反 都没有false  表示都是true都选中 上面也选中
+
+         */
+            //1.先找到  thead里面的单独多选  id class
+            var topCb=document.getElementById("theadInp");
+            //所以我们要先找到tbody
+            var tbody=document.getElementById("tbody");
+            //然后tbody.getEle....
+            var cbArr=tbody.getElementsByTagName("input");
+            //给上面的多选加点击事件
+            topCb.onclick= function () {
+                //循环遍历下面四个多选
+                //初步实现麻烦版
+//                for(var i=0;i<cbArr.length;i++){
+//                    if(topCb.checked===true){
+//                        cbArr[i].checked=true;
+//                    }else{
+//                        cbArr[i].checked=false;
+//                    }
+//
+//                }
+
+                //改进版
+//                if(topCb.checked){
+//                    for(var i=0;i<cbArr.length;i++){
+//                        cbArr[i].checked=true;
+//                    }
+//                }else{
+//                    for(var i=0;i<cbArr.length;i++){
+//                        cbArr[i].checked=false;
+//                    }
+//                }
+
+                //精简版
+                for(var i=0;i<cbArr.length;i++){
+                    cbArr[i].checked=this.checked;
+                }
+//                alert(this.checked);
+
+
+
+
+                
+            }
+            //写的位置要在上面的点击事件之外
+            //给下面每一个多选添加点击事件
+            for(var i=0;i<cbArr.length;i++){
+                cbArr[i].onclick= function () {
+                    //开闭原则
+                    var boo=true;
+//                    点击任意一个多选去遍历所有多选是否全选
+                    for(var i=0;i<cbArr.length;i++){
+                        if(cbArr[i].checked===false){
+                            boo=false;
+                            break;
+
+                        }
+                    }
+
+                    topCb.checked=boo;
+
+                }
+
+
+            }
+
+
+
+
+
+
+
+        }
+
+
+
+
+
+    </script>
+
+</head>
+<body>
+<div class="wrap">
+    <table>
+        <thead>
+        <tr>
+            <th>
+                <input type="checkbox" id="theadInp"/>
+            </th>
+            <th>菜名</th>
+            <th>饭店</th>
+        </tr>
+        </thead>
+        <tbody id="tbody">
+        <tr>
+            <td>
+                <input type="checkbox"/>
+            </td>
+            <td>地三鲜</td>
+            <td>华科</td>
+        </tr>
+        <tr>
+            <td>
+                <input type="checkbox"/>
+            </td>
+            <td>西红柿鸡蛋</td>
+            <td>防灾</td>
+        </tr>
+        <tr>
+            <td>
+                <input type="checkbox"/>
+            </td>
+            <td>醋溜土豆丝</td>
+            <td>善知堂</td>
+        </tr>
+        <tr>
+            <td>
+                <input type="checkbox"/>
+            </td>
+            <td>萝卜干炒黄豆儿</td>
+            <td>燕京理工</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

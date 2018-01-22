@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button>我是一个按钮</button>
+<script>
+
+    /*
+     绑定事件
+     ele[事件]=function(){
+     }
+
+
+     */
+    //    function Person(){
+    //
+    //    }
+    //    var per=new Person();
+    //    per["hehe"]="xx";
+    //    per["hehe"]="kkkkk";
+    //    console.log(per.hehe);
+
+    //    console.log(EventeListener);
+
+
+    EventeListener = {
+        addEvent: function (ele, eventName, func) {
+//            btn["onclick"]= function () {
+//            }
+//            思路:
+            /*
+                后来刚添加的onlick会把之前覆盖掉 那么在添加下一个事件之前能不能
+                把之前添加过的保存下来呢?  然后再触发事件的时候
+                第一步 先接收之前的
+                第二步  把现在的事件添加上去
+                        触发事件时 先判断之前的有没有绑定过函数
+                第三步  如果有   先执行之前的 再执行之后的
+                第四步  如果没有 直接执行现在的
+             */
+//            第一步 先接收之前的
+            var oldEvent=ele["on" + eventName];
+            console.log(oldEvent);
+
+
+//            第二步  把现在的事件添加上去
+            ele["on" + eventName] = function () {
+//                触发事件时 先判断之前的有没有绑定过函数
+                //执行到这 证明被点击了
+                    if(oldEvent){//不是undefined 就是true 表示以前绑定过这个事件
+                        // 第三步  如果有   先执行之前的 再执行之后的
+                        oldEvent();
+                        //再执行之后的
+                        func();
+                    }else{
+                        //如果没有 直接执行现在的
+                        func();
+                    }
+            };
+        }
+    };
+
+
+
+
+
+//    btn.onclick=fn;
+//    function fn (){
+//            qq();
+//    }
+//
+//    function  qq(){
+//
+//    }
+
+    var btn=document.getElementsByTagName("button")[0];
+    
+
+
+
+    EventeListener.addEvent(btn,"click", function () {
+        alert("井水不犯河水,驴唇不对马嘴.");
+    });
+    EventeListener.addEvent(btn,"click", function () {
+        alert("有朋自远方来,非奸即盗.");
+    });
+    EventeListener.addEvent(btn,"click", function () {
+        alert("有朋自远方来,虽远必诛.");
+    });
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color:pink;
+        }
+        
+        
+    </style>
+</head>
+<body>
+<div class="box" id="box">我没有文字</div>
+<script>
+//    var box=document.getElementsByClassName("box")[0];
+    var box=document.getElementById("box");
+    box.onclick= function () {
+        this.style.width="400px"
+        this.style.height="400px"
+        this.style.backgroundColor="orange";
+        this.style.color="white";
+        this.style.border="10px dashed #ccc";
+        //兼容问题  IE9+ 可以用
+//        this.style.opacity="0.3";
+
+        //filter: alpha(opacity=xx) IE8及以下  值是百分比
+//
+
+//        console.log(this.style.opacity )
+
+        if(this.style.opacity===undefined){
+            this.style.filter="alpha(opacity=30)";
+        }else{
+            this.style.opacity="0.3";
+        }
+    }
+
+
+
+
+</script>
+
+</body>
+</html>

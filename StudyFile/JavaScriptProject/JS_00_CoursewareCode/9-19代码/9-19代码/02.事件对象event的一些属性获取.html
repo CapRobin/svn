@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="btn">按钮</button>
+
+<script>
+    btn.onclick= function (event) {
+        var event=event || window.event;
+        //事件触发时间  从页面展开那一刻开始计时 到触发时间那一刻的时间
+        //毫秒值
+        console.log(event.timeStamp);
+        //事件冒泡  是否支持冒泡 默认是true 支持
+        console.log(event.bubbles);
+        //触发事件的按钮类型   左键是0  中间是1
+        console.log(event.button);
+        //事件作用在哪一个元素上面 就打印哪一个元素对象
+        console.log(event.target);
+        console.log(event.type);
+
+
+
+
+
+    }
+    
+    document.onclick= function (event) {
+        var event=event || window.event;
+        console.log(event);
+    }
+
+
+</script>
+</body>
+</html>

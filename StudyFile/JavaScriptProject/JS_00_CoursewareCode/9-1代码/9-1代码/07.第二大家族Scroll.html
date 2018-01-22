@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width:200px;
+            height: 200px;
+            border: 5px solid black;
+            background: pink;
+            /*padding-top: 10px;*/
+        }
+
+
+    </style>
+</head>
+<body>
+<div>
+    国破山河在,家和万事兴.
+    国破山河在,家和万事兴.
+    国破山河在,家和万事兴.
+    国破山河在,家和万事兴.
+    国破山河在,家和万事兴.
+    国破山河在,家和万事兴.
+    国破山河在,家和万事兴.
+    国破山河在,家和万事兴.
+    国破山河在,家和万事兴.
+    国破山河在,家和万事兴.
+    国破山河在,家和万事兴.
+    国破山河在,家和万事兴.
+    国破山河在,家和万事兴.
+    国破山河在,家和万事兴.
+    国破山河在,家和万事兴.
+    国破山河在,家和万事兴.
+    国破山河在,家和万事兴.
+    国破山河在,家和万事兴.
+    国破山河在,家和万事兴.
+    国破山河在,家和万事兴.
+
+</div>
+<script>
+    var div=document.getElementsByTagName("div");
+    //scrollWidth和crollHeight 是包含padding 其他不包含
+    //火狐 谷歌 IE8+  都是以下效果
+    //如果 盒子内容没有超出盒子范围 则scrollHeight 就是盒子本身的高度
+    //如果 盒子内容超出盒子范围  则scrollHeight 就是 内容整个的高度
+
+
+//    IE7及一下  超不超出都是内容高度
+//    scrollWidth同上
+    console.log(div[0].scrollHeight);
+</script>
+
+</body>
+</html>

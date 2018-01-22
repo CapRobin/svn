@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+         //对数组中每一项运行以下函数，如果都返回true，every返回true，如果有一项返回false，
+         则停止遍历 every返回false
+         array.every(function(item,index,arr) {
+
+         })
+
+
+
+         */
+        //        var arr=["张飞","刘备","关云长","擎天柱","斯巴达","擎天","撼天","抗天","张翼德"];
+        //        var arr=["张飞","刘备","关羽","擎天","撼天","抗天"];
+
+        //        arr.every()function (item,index,arr) {
+        //            console.log(item+"   "+index+"   "+arr);
+        //            return true;
+        //
+        //
+        //
+        //        };
+        //需求  遍历数组   数组一旦有某一个元素长度大于2则表示数组不符合规范
+
+        //        var boo=arr.every(function (item,index,arr) {
+        //            if(item.length>2){
+        //                return false;
+        //            }
+        //
+        //            return true;
+        //        });
+        //        if(boo){
+        //            alert("哇塞,好数组");
+        //        }else{
+        //            alert("哇塞,烂数组");
+        //        }
+        /*
+
+
+         //对数组中每一项运行以下函数，
+         该函数返回结果是true的项组成的新数组
+         var arr = array.filter(function(item,index,arr) {});
+         console.log(arr);
+
+
+         */
+
+//        var arr = ["张飞", "刘备", "关云长", "擎天柱", "斯巴达", "擎天", "撼天", "抗天", "张翼德"];
+//
+//        var newArr=arr.filter(function (item, index, arr) {
+////                return true;
+//            if(item.length>2){
+//                return true;
+//            }
+//
+//            return false;
+//        });
+//        console.log(newArr)
+
+        /*
+
+
+         //遍历数组array.forEach(function(item,index,arr){});
+
+
+
+         */
+//        var arr = ["张飞", "刘备", "关云长", "擎天柱", "斯巴达", "擎天", "撼天", "抗天", "张翼德"];
+//        var newArr1=[];
+//        arr.forEach(function(item,index,arr){
+////            console.log(arr);
+//            console.log(item);
+//            newArr1.push(item);
+//        })
+
+
+        /*
+
+         //对数组中每一项运行以下函数，
+         返回该函数的结果组成的新数组
+         var arr = array.map(function(item,index,arr) {    return "\"" + item + "\"";})
+
+
+
+
+         */
+
+//        var arr = ["张飞", "刘备", "关云长", "擎天柱", "斯巴达", "擎天", "撼天", "抗天", "张翼德"];
+//        var newArr2=arr.map(function (item,index,arr) {
+////            return "hehe";
+//            return "你好:"+item+" 呵呵";
+//        })
+//        console.log(newArr2);
+
+        /*
+
+         //对数组中每一项运行以下函数，
+         如果该函数对某一项返回true，则some返回true
+         var b =  array.some(function(item,index,arr) {    if (item == "ww") {
+           return true;    }    return false;});
+
+            跟every的区别:  every遇到false则every方法停止执行 返回false
+            some 方法里面遇到true 返回true  但是some里面的遍历还会继续向后面遍历
+
+
+         */
+
+        var arr = ["张飞", "刘备", "关云长", "擎天柱", "斯巴达", "擎天", "撼天", "抗天", "张翼德"];
+        console.log("清空前:"+arr);
+//        清空数组
+        //1 array.splice(0,array.length); //删除数组中所有项目
+        //splice(start,length) 从start开始 删除数组length个元素
+
+//        arr.splice(0,arr.length);
+
+        //2.array.length = 0; //length属性可以赋值，其它语言中length是只读
+//       arr.length=0;
+
+        //3.array = [];  //推荐
+        arr=[];
+
+        console.log("清空后:"+arr);
+
+
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+
+
+</body>
+</html>

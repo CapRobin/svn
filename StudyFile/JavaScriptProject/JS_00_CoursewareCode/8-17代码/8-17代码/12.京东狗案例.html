@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        img{
+            border: 1px solid #999;
+            cursor:pointer;
+        }
+
+
+
+    </style>
+    <script>
+        window.onload= function () {
+            //获取事件源对象
+            var img=document.getElementById("jdimg");
+//            //添加事件 鼠标移入事件
+//            img.onmouseover= function () {
+//                //事件驱动函数
+//                img.src="imgs/jd2.png";
+//            }
+//
+//            //添加事件 鼠标移出事件
+//            img.onmouseout= function () {
+//                img.src="imgs/jd1.png";
+//            }
+
+
+            //添加事件 鼠标移入事件
+            img.onmouseover= function () {
+                //事件驱动函数
+                this.src="imgs/jd2.png";
+            };
+
+            //添加事件 鼠标移出事件
+            img.onmouseout= function () {
+                this.src="imgs/jd1.png";
+            };
+
+
+        }
+        
+        
+        
+    </script>
+    
+    
+</head>
+<body>
+<img src="imgs/jd1.png" alt="" id="jdimg">
+
+</body>
+</html>

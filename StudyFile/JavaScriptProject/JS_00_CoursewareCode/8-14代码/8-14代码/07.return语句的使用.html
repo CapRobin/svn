@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function go(){
+            for(var i=0;i<10;i++){
+                if(i===5){
+//                    break;
+                    //return后面如果写结果那么就是终止函数并返回结果
+                    //如果没有写结果 就是单纯终止函数
+                    return;//终止函数
+                    console.log("我是return后面")
+                }
+                console.log(i);
+            }
+            console.log("循环被终止了");
+        }
+
+        go();
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

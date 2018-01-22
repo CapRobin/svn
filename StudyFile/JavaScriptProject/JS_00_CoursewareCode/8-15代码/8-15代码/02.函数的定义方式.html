@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+            函数定义方式:
+            1.普通
+            2.直接等于  在对象使用中经常用
+            3.字符串
+
+
+            第二种和第三种 用的较少  有弊端
+
+            不能提前调用
+
+
+
+         */
+
+        go();
+//        alert(fn);
+        //fn is not a function
+//        fn();
+        fnObj();
+
+
+        function  go(){
+            alert("我是一个gogoigo");
+        }
+        var fn =function(){
+            alert("我是变量定义函数");
+        };
+
+        var fnObj=new Function("alert('我是字符串定义函数')");
+
+
+
+
+//        kk();
+//        go();
+//        fn();
+//        fnObj();
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
