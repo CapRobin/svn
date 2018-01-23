@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+            switch 分支语句
+            switch(判断条件){
+                //分支
+                   case 固定值1(所匹配的标准):
+                        语句体n多句
+                        break;中止  中断 打断
+                 //分支
+                   case 固定值2(所匹配的标准):
+                        语句体n多句
+                        break;中止
+                .
+                .
+                .
+                default:
+                        默认语句;
+                        break;
+
+
+                 分支语句注意点:
+                        switch()都可以放什么   只要有值即可
+
+                        多个case 条件可以重复 但是不推荐  因为条件一样也只会匹配第一个出现的case
+
+                        分支语句的结束条件是 default 么? 不是  是break
+
+                        break 可以省略不写么? 绝对不能!
+                            原因: 省略会引起case穿透
+
+                        default 可以省略么?  可以  但是不推荐  因为程序要考虑完整性
+                                除非接收值是单选
+
+                         switch  比较值时  底层用的是全等 ===  switch 不会强制转换类型去比较
+
+
+
+
+
+
+
+
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+        var key=15;
+        switch(key){
+            case 1:
+                console.log("拨打110");
+                break;
+            case 2:
+                console.log("拨打120");
+                break;
+            case 3:
+                console.log("拨打119");
+                break;
+            case 4:
+                console.log("拨打亲爱的");
+                break;
+            case 5:
+                console.log("拨打父母的");
+                break;
+            default:
+                console.log("按错了,瞎按啥!!");
+                break;
+
+
+
+        }
+
+
+         */
+
+
+        var key=1;
+        switch("100"){
+            case 100:
+                console.log("拨打110");
+                break;
+            case 2:
+                console.log("拨打120");
+                break;
+            case 3:
+                console.log("拨打119");
+                break;
+            case 4:
+                console.log("拨打亲爱的");
+                break;
+            case 5:
+                console.log("拨打父母的");
+                break;
+            default:
+                console.log("按错了,瞎按啥!!");
+                break;
+
+
+
+        }
+
+
+    </script>
+
+
+
+</head>
+<body>
+
+</body>
+</html>
