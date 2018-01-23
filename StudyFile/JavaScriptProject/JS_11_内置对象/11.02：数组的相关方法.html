@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>11.02：数组的相关方法</title>
+    <style type="text/css"></style>
+    <script type="text/javascript">
+        /*******every方法：*******
+         *
+         * 1：对数组的每一项都执行function函数，如果每一项都返回true，则结果返回true，
+         *    如果有一项返回false，则函数立即停止执行，结果返回false
+         * 2：该方法必须要有返回值，如果没有返回值则数组第一项执行完函数之后默认返回
+         *    false，则整个遍历立即停止
+         *
+         * */
+        var array01 = ["张飞", "刘备", "关云长", "擎天柱", "斯巴达", "擎天", "撼天", "抗天", "张翼德"];
+        array01.every(function (item, index, array) {
+            console.log("元素值:" + item + "---元素索引:" + index + "---数组:[" + array + "]");
+            return true;
+        });
+
+        /*every方法应用
+        * 需求：数组中如果有元素长度大于2，则表示该数组不符合规定
+        * */
+        console.log("~~~~~~~~~~every方法使用~~~~~~~~~~");
+        var array02 = ["张飞", "刘备", "擎天", "撼天", "抗天", "关云长", "擎天柱", "斯巴达", "张翼德"];
+        var isTrue = array02.every(function (item, index, array) {
+            console.log("元素值:" + item + "---元素索引:" + index + "---数组:[" + array + "]");
+            if (item.length > 2) {
+                return false;
+            } else {
+                return true;
+            }
+        });
+
+        if (isTrue) {
+            alert("该数组符合要求！");
+        } else {
+            alert("该数组不符合要求！");
+        }
+
+        /*******filter方法*******
+         * 1：该方法是用来筛选数组中得元素的
+         *    元素符合相关要求则保留返回true；元素不符合相关要求则
+         *    不被保留返回false；最终将符合要求的所有元素组成新的数组
+         * 注意：使用该方法时不论元素是否符合要求(返回true)，每个元素都会执行一遍函数
+         *
+         * */
+        var array03 = ["张飞", "乔布斯", "抗天", "擎天柱", "撼天", "斯巴达", "擎天", "张翼德", "关云长"];
+        var newArray01 = array03.filter(function (item, index, arr) {
+            if (item.length > 2) {
+                return true;
+            } else {
+                return false;
+            }
+        });
+        console.log("~~~~~~~~~~filter方法使用~~~~~~~~~~");
+        console.log("原数组：" + array03);
+        console.log("新数组：" + newArray01);
+
+
+        /*******foreach方法*******
+         * 1：该方法的使用会使数组中的没有个元素都执行一次函数
+         * 2：使用场景：为数组中的一些元素绑定相同的事件或属性
+         *
+         * */
+        console.log("~~~~~~~~~~filter方法使用~~~~~~~~~~");
+        var array04 = ["张飞", "刘备", "关云长", "擎天柱", "斯巴达", "擎天", "撼天", "抗天", "张翼德"];
+        var newArray02 = [];
+        array04.forEach(function (item, index, array) {
+            console.log(item);
+            //在数组结尾处添加元素
+            newArray02.push(item);
+            console.log("新数组：" + newArray02);
+        });
+        console.log("原数组：" + array04);
+
+        /*******map方法*******
+         * 该方法创建一个新数组，其结果是该数组中的每个元素都调用一个提供的函数后返回的结果。
+         *
+         * */
+        var array05 = ["张飞", "乔布斯", "抗天", "擎天柱", "撼天", "斯巴达", "擎天", "张翼德", "关云长"];
+        var newArray03 = array05.map(function (item, index, array) {
+            return "你好" + item;
+        });
+        console.log("~~~~~~~~~~map方法使用~~~~~~~~~~");
+        console.log("原数组：" + array05);
+        console.log("新数组：" + newArray03);
+
+        /*******some方法*******
+         * 数组中的每一个元素执行函数时如果返回true，那么array.some返回true
+         * 如果返回false，那么array.some返回false
+         * some方法与every方法区别：
+         *      every方法遇见false则every方法停止执行，返回false
+         *      some方法遇见true，返回true，但是some方法还会继续执行
+         * */
+        var array06 = ["张飞", "乔布斯", "抗天", "擎天柱", "撼天", "斯巴达", "擎天", "张翼德", "关云长"];
+        var num = 0;
+        //所有数组元素执行方法后，有一个返回true那么isBool=true
+        var isBool = array06.some(
+            function (item, index, array) {
+                if (item.length > 2) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        );
+        console.log("~~~~~~~~~~some方法使用~~~~~~~~~~");
+        if (isBool) {
+            console.log("数组中存在元素长度大于2的元素");
+        } else {
+            console.log("数组中不存在存在元素长度大于2的元素");
+        }
+
+
+        /*******清空数组的方法*******
+         *
+         * */
+        var array07 = ["张飞", "乔布斯", "抗天", "擎天柱", "撼天", "斯巴达", "擎天", "张翼德", "关云长"];
+        console.log("清空前：" + array07);
+        //方法一
+        //        array07.splice(0, array07.length);
+        //方法二：只有在JS中.length方法可被修改(特权)
+        //        array07.length = 0;
+        /*
+        * 方法三：推荐使用；
+        * 因为前两种方法基本上都是障眼法，并没有真正的从内存中清理掉数据
+        * 使用该方法清理数组内存后，内存中的数据也将会被立即清除
+        * */
+        array07 = [];
+        console.log("清空后：" + array07);
+
+    </script>
+</head>
+<body>
+<h1 style="text-align: center">11.02：数组的相关方法</h1><br><br>
+
+</body>
+</html>

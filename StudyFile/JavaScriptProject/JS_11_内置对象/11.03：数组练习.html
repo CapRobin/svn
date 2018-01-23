@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>11.03：数组练习</title>
+    <style type="text/css">
+        table {
+            width: 1000px;
+            height: 400px;
+            border: 1px solid #26bbff;
+            align-content: center;
+        }
+
+        .content {
+            height: 100px;
+            padding-left: 20px;
+            color: red;
+            font-size: 20px;
+
+        }
+
+        div {
+            color: #18a600;
+            height: 200px;
+            font-size: 25px;
+            vertical-align: middle;
+        }
+
+    </style>
+    <script type="text/javascript">
+        var array = [];
+        var qId = null;
+        var showView = null;
+        window.onload = function () {
+            pId = document.getElementById("qId");
+            showView = document.getElementById("showView");
+            array[0] = practice01 = "练习一：工资的数组[1500,1200,2000,2100,1800,6300,1700];把工资超过2000的删除";
+            array[1] = practice02 = "练习二：查看数组[c,a,z,a,x,a,c]中每一个元素出现的次数";
+            array[2] = practice03 = "练习三：编写一个方法去掉数组中的重复元素";
+        };
+
+        //练习一：
+        function clickAction01() {
+            pId.innerText = array[0];
+            var array01 = [1500, 1200, 2000, 2100, 1800, 6300, 1700];
+            var newArray01 = array01.filter(function (item, index, array) {
+                if (item < 2000) {
+                    return true;
+                } else {
+                    return false;
+                }
+            });
+            showView.innerHTML = "原数组：[" + array01 + "]<br>新数组：[" + newArray01 + "]";
+
+        }
+
+        //练习二：
+        function clickAction02() {
+            pId.innerText = array[1];
+            var json01 = {};
+            var array02 = ["c", "a", "z", "a", "x", "a", "c", "a", "z", "z", "a", "x", "c"];
+            array02.forEach(function (item, index, array) {
+                //如果json中没有某个元素则直接返回undefined
+                if (json01[item] === undefined) {
+                    json01[item] = 1;
+                } else {
+                    //如果json中有某个元素则元素的值直接+1
+                    json01[item] += 1;
+                }
+            });
+            showView.innerHTML = "原数组：[" + array02 + "]<br>\"a\"出现：" + json01["a"] + "次<br>\"c\"出现：" + json01["c"] + "次<br>\"z\"出现：" + json01["z"] + "次<br>\"x\"出现：" + json01["x"] + "次";
+            console.log(json[1]);
+        }
+
+        //练习三：
+        function clickAction03() {
+            pId.innerText = array[2];
+            var json02 = {};
+            var array03 = ["c", "a", "z", "a", "x", "a", "c", "a", "z", "z", "a", "x", "c"];
+            var newArray02 = array03.filter(function (item, index, array) {
+                if (json02[item] === undefined) {
+                    json02[item] = item;
+                    return true;
+                } else {
+                    return false;
+                }
+            });
+            showView.innerHTML = "原数组：[" + array03 + "]<br>新数组：[" + newArray02 + "]";
+
+        }
+    </script>
+</head>
+<body>
+<h1 style="text-align: center">11.03：数组练习</h1><br><br>
+
+<table border="1px" align="center" style="border: 1px solid #31caff" cellspacing="0">
+    <tr style="height: 50px">
+        <th>
+            <button onclick="clickAction01()">练习01</button>
+        </th>
+        <th>
+            <button onclick="clickAction02()">练习02</button>
+        </th>
+        <th>
+            <button onclick="clickAction03()">练习03</button>
+        </th>
+    </tr>
+    <tr>
+        <td class="content" colspan="3">
+            <p id="qId">点击按钮查看练习题目</p>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="5" style="padding: 20px">
+            <div id="showView">
+                请点击按钮查看练习运行结果
+            </div>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>
