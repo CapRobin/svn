@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>12.06：输入框正确性验证</title>
+    <style type="text/css">
+        div {
+            width: 300px;
+            height: 200px;
+            margin: auto;
+            border: 1px solid blue;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        input {
+            width: 200px;
+            height: 30px;
+            outline: none;
+            border: 1px solid green;
+            padding: 5px;
+            margin-top: 10px;
+        }
+    </style>
+    <script type="text/javascript">
+        /*
+        * 注意：此处getThis是通过行内调用函数传递过来的this(Input)对象
+        *      如果不传递该参数直接在函数体内使用this则操作不了Input对象，
+        *      直接使用this获取到的是Windows对象，不能直接使用
+        * */
+        function checkInput(getThis) {
+            var p = document.getElementsByTagName("p")[0];
+            var sLength = getThis.value.length;
+            if (sLength < 6 || sLength > 12) {
+                getThis.style.border = "1px solid red";
+                p.innerText = "您的输入有误，请重新输入";
+                p.style.color = "red";
+            } else {
+                getThis.style.border = "1px solid green";
+                p.innerText = "恭喜您！输入正确";
+                p.style.color = "green";
+            }
+        }
+    </script>
+</head>
+<body>
+<h1 style="text-align: center">12.06：输入框正确性验证</h1><br><br>
+<div>
+    <h3>请输入内容进行验证</h3>
+    <input type="text" onblur="checkInput(this)" placeholder="6个字符<=输入内容<=12个字符">
+    <p></p>
+</div>
+</body>
+</html>
