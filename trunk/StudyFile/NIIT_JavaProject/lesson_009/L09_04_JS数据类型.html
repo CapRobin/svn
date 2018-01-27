@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>L09_04_JS数据类型</title>
+    <style type="text/css"></style>
+    <script type="text/javascript">
+        /*字符串操作*/
+        function testStr() {
+            var str01 = "双引号";
+            var str02 = '单引号';
+            var string = str01+str02;
+            console.info(string);
+            /*查看数据类型*/
+            console.info("类型："+typeof str01,typeof str02,typeof string);
+            /*判断是否是某一个数据类型*/
+//            console.info("是否为字符串数字"+instanceOf);
+        }
+        /*执行函数*/
+        testStr();
+
+        /*数字类型*/
+        function testNumber() {
+            var numInt = 100;
+            var numFloat = 3.14;
+            var number = numInt+numFloat;
+            console.info("数字:"+numInt,numFloat,number);
+            console.info("类型："+typeof numInt,typeof numFloat,typeof number)
+        }
+        testNumber();
+
+        /*布尔类型*/
+        function testBoolean() {
+            var bool01 = true;
+            var bool02 = false;
+            console.info("布尔类型:"+bool01,bool02);
+            console.info("类型："+typeof bool01,typeof bool02)
+        }
+        testBoolean();
+
+        /*数组
+        * 1：var array01 = [];定义一个空数组
+        * 2：var array02 = [1,"字符串",true,12];定义一个有值、初始化的数组
+        *   数组长度为3
+        * 3：访问：数组可以通过下表访问数组(其中一种方式)
+        * 4：数组的长度：数组.length(array01.length)获得
+        * 5：访问数组之后可以赋值或获取
+        * 6：可以通过Key-Value的方式访问或设置，该方法设置的值不计入数组的长度计算(即设置后数组长度不变)
+        * */
+        function testArray() {
+            var array01 = [];   //定义一个空数组
+            var array02 = [1,"字符串",true,12]; //定义一个有值、初始化的数组
+            console.info("数组的长度为："+array01.length,array02.length);
+            console.info("数组01：",array01);
+            console.info("数组02：",array02);
+            console.info("数组类型："+typeof array02);
+            array01[0] = 10;
+            array01[1] = 20;
+            array01[2] = 30;
+            console.info("数组01：",array01);
+            console.info("数组02：",array02);
+            /*Key-Value的方式访问或设置*/
+            array01["userName"] = "NIIT";
+            console.info("数组01的值：",array01["userName"]);
+
+            var array03 = new Array();
+            console.info("array03类型："+typeof array03,array03 instanceof Array);
+            console.info("array03是否是数组类型："+array03 instanceof Array);
+        }
+        testArray();
+
+
+        /*二维数组*/
+        function testArray02() {
+            var array04 = [
+                [1,2,3],
+                [4,5,6],
+                [7,8,9]
+            ];
+            console.info("打印书array04",array04);
+        }
+        testArray02();
+
+        /*对象
+        *
+        * 1：通过{定义}；如{name:"张三"}
+        * 2：内容是通过Key-Value的方式定义；以逗号分隔
+        *
+        * */
+
+        function testObject() {
+            var stu = {};
+            var people = {
+                name:"张三",
+                isMale:true,
+                walk:function () {
+                //匿名函数
+                console.info(this.name+"在行走","他是男生吗？"+this.isMuted);
+            }};
+            people.walk();
+//            console.info(people.walk());
+            console.info("people:",people);
+        }
+        testObject();
+    </script>
+</head>
+<body>
+<h1 style="text-align: center">L09_04_JS数据类型</h1><br><br>
+
+</body>
+</html>
