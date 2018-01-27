@@ -17,8 +17,17 @@
     3）for循环
     4）while循环
 
-6、JS对象
-
+6、JS对象（基本数据类型）
+    所有对象的顶级父类都是Object(object)
+    1、数据类型
+        1）字符串()
+        2）数字(Number|Number)，有整数和小数
+        3）布尔型 (Boolean) 只有true|false
+        4）数组 (Array|array)
+        5）对象
+    备注：
+        1、使用typeOf可以输出数据的类型
+        2、使用instanceOf来判断变量时什么数据类型
 7、JS事件
 
 7、Html里面的标签
