@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>10.06：内置对象_Number</title>
+    <style type="text/css"></style>
+    <script type="text/javascript">
+        /*
+        * 1、
+        * 2、
+        * 3、isNaN()方法是检测数字是否非法
+        * 4、perseFloat();把字符串转换成小数的数字，其他和parseInt方法雷同
+        *
+        *
+        *
+        *
+        * */
+        function testNumber() {
+            console.info("数字的最大值：",Number.MAX_VALUE);
+            console.info("数字的最大值：",Number.MIN_VALUE);
+
+            //基本数据类型
+            var num =100;
+            var num01 = new Number(100);
+            console.info(typeof  num,typeof num01,num==num01,num===num01,num01 instanceof Object);
+
+            //类型转换
+            var num02 = Number("100");
+            num02 = "100";
+        }
+
+        function testNumber02() {
+            var num03 = new Number(100);
+            console.info(typeof num03);//返回Object对象
+            var num04 = 200;
+            console.info(typeof num04);//返回Number对象
+            console.info(num04,num04.toString(),typeof num04.toString());
+            var num05 = 100.158;
+            console.info(num05,num05.toFixed(3),typeof num05.toFixed(3));
+        }
+
+        function testNumber03() {
+            var nb01 = parseInt("100");
+            console.info(nb01,nb01+10,typeof nb01);
+            nb01 = parseInt("100px");
+            console.info(nb01,nb01+10,typeof nb01);//遇到第一个字符就停止解析
+            nb01 = parseInt("s100px");
+            console.info(nb01,nb01+10,typeof nb01);
+            nb01 = parseInt("101",8);//101按照8进制输出结果
+            console.info(nb01,typeof nb01);
+        }
+
+
+
+
+
+
+//        testNumber();
+//        testNumber02();
+        testNumber03();
+    </script>
+</head>
+<body>
+<h1 style="text-align: center">10.06：内置对象_Number</h1><br><br>
+
+</body>
+</html>

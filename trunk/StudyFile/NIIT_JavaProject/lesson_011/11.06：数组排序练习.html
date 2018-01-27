@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>10.10：数组排序练习</title>
+    <style type="text/css"></style>
+    <script type="text/javascript">
+        function sortTest() {
+            var array =[
+                {name:"zs",no:18},
+                {name:"ls",no:9},
+                {name:"ww",no:40},
+                {name:"tq",no:20},
+                {name:"lb",no:34},
+                {name:"sw",no:20},
+            ];
+
+            console.log(array);
+            array.sort(sortT);
+            console.log(array);
+        }
+        function sortT(m,n) {
+            return n.no-m.no;
+        }
+        sortTest();
+    </script>
+</head>
+<body>
+<h1 style="text-align: center">10.10：数组排序练习</h1><br><br>
+</body>
+</html>

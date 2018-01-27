@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>10.04：流程控制练习</title>
+    <style type="text/css"></style>
+    <script type="text/javascript">
+        function test() {
+            var showId = document.getElementById("showId");
+            var tableStar = "";
+            var trStr = "</tr>";
+            console.log(tableStar);
+            for (var i = 1; i <= 9; i++) {
+                tableStar += "</tr>"
+                var temp ="";
+                temp +="<tr>";
+                for (var j = 1; j <= i; j++) {
+//                    if(i*j <10){
+//                        temp +="<td>"+i+"x"+j+"=0"+i*j+" ";
+//                    }else{
+//                        temp +=i+"x"+j+"="+i*j+" ";
+//                    }
+                    temp +="<td>"+i+"x"+j+"=0"+i*j+" "+"</td>>";
+                }
+                temp +="<tr>";
+//                document.write(temp+"<br>");
+            }
+//            document.write("");
+            showId.innerHTML("<table>"+temp+"</table>");
+        }
+        test();
+    </script>
+</head>
+<body>
+<h1 style="text-align: center">10.04：流程控制练习</h1><br><br>
+<div id="showId">
+
+</div>
+</body>
+</html>

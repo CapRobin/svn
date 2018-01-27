@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>10.07：内置对象_String</title>
+    <style type="text/css"></style>
+    <script type="text/javascript">
+        /*
+        * String
+        * 1：length 长度
+        * 2：方法
+        *   charAt()方法：
+        *   charCodeAt()方法：
+        *   indexOf()：从指定的索引开始查找对应的字符串，找到时返回索引值，没有找到返回-1
+        *
+        * */
+        function testString01() {
+            var str01 = "Niit";
+            var str02 = new String("Niit");
+            var str03 = String(100);
+            console.info(str01==str02,str02===str03);
+            console.info(typeof str01,typeof str02,typeof str03);
+            //属性
+            console.info("str02的长度",str02.length);
+            //该方法可以修改内部的一些属性
+            //String.prototype
+            console.info("str02的长度",str02.length);
+
+        }
+        function testStringMethod() {
+            var str04 = "Hell Niit";
+//            for (var i=0,len = str04.length;i<len;i++){
+//                //循环逐个输出字符串的每一个字符
+//                console.info("~~~~~>>", str04.charAt(i));
+//                //获取指定索引位置字符的Unicode编码
+//                console.info(i+"====>>", str04.charCodeAt(i));
+//            }
+            //检索字符
+            //默认从索引值为0处开始查找
+            console.info("====>>", str04.indexOf("i"));
+            //指定查找位置为第三位开始
+            console.info("====>>", str04.indexOf("N",2));
+            //未找到 返回-1
+            console.info("====>>", str04.indexOf("N",4));
+
+
+            str04 = "test.jsp";
+            console.info("x====>>", str04.lastIndexOf(".jsp"));
+
+        }
+//        testString01();
+        testStringMethod();
+    </script>
+</head>
+<body>
+<h1 style="text-align: center">10.07：内置对象_String</h1><br><br>
+
+</body>
+</html>
