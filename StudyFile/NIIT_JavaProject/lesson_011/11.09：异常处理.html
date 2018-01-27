@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>11.09：异常处理</title>
+    <style type="text/css"></style>
+    <script type="text/javascript">
+        function test01() {
+            try{
+                console.log(m);
+            }catch(e){
+                console.log(e);
+            }
+        }
+        function test02() {
+            try{
+                console.log(m);
+            }catch(e){
+                console.log(e)
+            }finally {
+                console.log("有没有异常都要执行")
+            }
+        }
+        function test03() {
+            throw new Error("我就想让你错！");
+        }
+
+        test01();
+        test02();
+        try{
+            test03();
+        }catch(e){
+            console.log("异常处理------------->"+e.message)
+        }
+    </script>
+</head>
+<body>
+<h1 style="text-align: center">11.09：异常处理</h1><br><br>
+
+</body>
+</html>
