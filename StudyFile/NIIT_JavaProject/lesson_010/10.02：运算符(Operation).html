@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>10.02：运算符(Operation)</title>
+    <style type="text/css"></style>
+    <script type="text/javascript">
+        var a = 100;
+        var b = 200;
+        var c = 3;
+        //加法运算
+        function jiaf() {
+            console.log("a+b = "+(a+b));
+        }
+        //减法运算
+        function jianf() {
+            console.log("a-b = "+(a-b));
+        }
+        //乘法运算
+        function cf() {
+            console.log("a*b = "+(a*b));
+        }
+        //除法运算
+        function ff() {
+            console.log("a/b = "+(a/b));
+        }
+
+        //求余运算
+        function qy() {
+            console.log("a%c = "+(a%c));
+        }
+        /*
+        * 自加：
+        * i++：是先参与当前运算 不进行自加(下次使用i时i+1)
+        * ++i：是i先自+1，然后在进行当前的运算
+        * 自减：
+        * 同上
+        *
+        *
+        * */
+        //自增运算(i++/++i)
+        function zz() {
+            var i = 100;
+            var j = 100;
+            var sum =i++ +100;
+            console.log("sum++ = "+sum);
+            sum = ++j +100;
+            console.log("++sum = "+sum);
+        }
+        //自减运算(i--/--i)
+        function zj() {
+            var i = 100;
+            var j = 100;
+            var sum =i-- +100;
+            console.log("sum-- = "+sum);
+            sum = --j +100;
+            console.log("--sum = "+sum);
+        }
+        //求余运算
+        function qy() {
+            console.log("a%c = "+(a%c));
+        }
+        /*
+        * 赋值运算符
+        *
+        *
+        * */
+        //求余运算
+        function fzys() {
+            var a=100;
+            a+=100;
+            a%=3;
+            console.log("a = "+a);
+        }
+        //字符串运算符(+)
+        function testString() {
+            var str = "";
+            var a = 100;
+            var b = "200";
+            var c = "Niit";
+            var resultStr = str+a+b+c;
+            console.log("resultStr 的结果为--------"+resultStr);
+            str += "Hello";
+            str += ",World！"
+            console.log("str 的结果为--------"+str);
+        }
+
+        /*  比较运算符
+            1）==：值相等
+            2）===全等(值和类型都相等)
+            3）！=：值不同
+            4）！==不全等(值或者数据类型不等)
+            5）>、>=、<、<=：
+        */
+        function testCompare() {
+            var a =100;
+            var b ="100";
+            console.info("a==b",a==b);
+            console.info("a==b",a===b);
+            console.info("a==b",a!=b);
+            console.info("a==b",a!==b);
+        }
+        //逻辑运算
+        function ljys() {
+            var a =100;
+            var b = 100;
+            var c = 200;
+            console.info("&&",a==b&& b < 200);
+            console.info("&&",a==b && b>200 && a<c && c>150);
+            console.info("||",a==b|| b < 200);
+            console.info("||",a==b || b>200 || a<c || c>150);
+
+            var result = 100 != 200;
+            console.info("!",!result);
+        }
+
+        /*三元运算符
+        * 如果三元运算符的结果需要参与左边变量赋值，表达式必须给出一个结果
+        *
+        *
+        * */
+        function syys() {
+            var a=100, b = 100, c = 200;
+            var result;
+            result = (a==b && b<c)? ("满足条件"):(false);
+            console.info("result01:"+result)
+            result = (a==b && b>c)? ("满足条件"):(false);
+            console.info("result02:"+result)
+        }
+        //调用函数
+//        jiaf();
+//        jianf();
+//        cf();
+//        ff();
+//        qy();
+//        zz();
+//        zj();
+//        fzys();
+//        testString();
+//        testCompare();
+        ljys();
+        syys();
+    </script>
+</head>
+<body>
+<h1 style="text-align: center">10.02：运算符(Operation)</h1><br><br>
+
+</body>
+</html>
