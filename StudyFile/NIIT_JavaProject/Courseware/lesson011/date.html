@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        /**
+         * Date对象的方法对应的get基本上都会对应一个set方法
+         */
+        function testDate() {
+            //getDay() 0-6
+            var date = new Date();
+
+            var dateStr = "";
+
+            dateStr += getDateFormatStr(date.getFullYear());
+            dateStr += "-";
+            dateStr += getDateFormatStr((date.getMonth() + 1)); //month 0-11
+            dateStr += "-";
+            dateStr += getDateFormatStr(date.getDate());
+            dateStr += " ";
+            dateStr += getDateFormatStr(date.getHours());
+            dateStr += ":";
+            dateStr += getDateFormatStr(date.getMinutes());
+            dateStr += ":";
+            dateStr += getDateFormatStr(date.getSeconds());
+
+            dateStr += " " + date.getMilliseconds() + "ms";
+
+//				date.getMilliseconds();
+
+            console.info(dateStr);
+        }
+
+        function getDateFormatStr(num) {
+            return num > 9 ? num : ("0" + num);
+        }
+
+        function testDateTime() {
+            // %  /
+            //getTime : 返回自1970年1月1日到至今的毫秒数
+            console.info(Math.floor(5 / 2), 5 % 2);
+
+            var startTime = new Date().getTime();
+
+            var arr = [];
+            for (var i = 0; i < 1000000; i++) {
+                arr.push("==>" + i);
+            }
+
+            console.info(new Date().getTime() - startTime, "ms");
+        }
+
+        testDateTime();
+    </script>
+</head>
+<body>
+</body>
+</html>

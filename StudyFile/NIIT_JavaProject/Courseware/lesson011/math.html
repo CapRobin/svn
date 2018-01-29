@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        /**
+         * Math：数学方法
+         */
+
+        function testMath() {
+            console.info("PI：", Math.PI);
+            //取绝对值
+            console.info("abs：", Math.abs(-100), _abs(-100));
+            //向上取整数值
+            console.info("ceil：", Math.ceil(1.1));
+            //四舍五入
+            console.info("round：", Math.round(1.5));
+            //向下取整数值
+            console.info("floor：", Math.floor(1.6));
+            //取一个随机数(0[包含]-1)
+            console.info("random：", Math.random());
+            /*
+             * min(x,y...) max(x,y...)  pow(x,y) sqrt(x)
+             */
+        }
+
+        /**
+         * 返回x-y之间的整数值
+         * @param {Object} x 大于等于0的整数
+         * @param {Object} y 大于等于0的整数
+         */
+        function getRandom(x, y) {
+
+        }
+
+        function testRandom() {
+            for (var i = 0; i < 1000; i++) {
+                console.info("random：", 100 * Math.random());
+            }
+        }
+
+        function _abs(x) {
+            return x >= 0 ? x : -x;
+        }
+
+        testRandom();
+    </script>
+</head>
+<body>
+</body>
+</html>

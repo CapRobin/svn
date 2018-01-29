@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="result"></div>
+
+<button id="ajaxBtn">发送Ajax请求</button>
+
+<script>
+    function ajaxReadFile() {
+        // 创建XMLHttpRequest对象
+        var xmlHttpObj = new XMLHttpRequest();
+
+        // 发送请求
+        xmlHttpObj.open("GET", "http://127.0.0.1:8020/web_class_c/lesson12/demo.json", true);
+        xmlHttpObj.send();
+
+        // 接收响应
+        xmlHttpObj.onreadystatechange = function () {
+            if (xmlHttpObj.readyState == 4 && xmlHttpObj.status == 200) {
+                var jsonStr = xmlHttpObj.responseText;
+                var jsonObj = JSON.parse(jsonStr);
+
+                document.getElementById('result').innerHTML = jsonStr;
+                console.info(jsonObj.name)
+                console.info(jsonObj.age)
+                console.info(jsonObj.carrer)
+            }
+        }
+    }
+
+    document.getElementById('ajaxBtn').onclick = ajaxReadFile;
+</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        ul {
+            width: 1000px;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li name='menu' class="mi">首页</li>
+    <li name='menu' id="music" abc='123'>音乐<span>123</span></li>
+    <li name='menu' class="mi">图片</li>
+    <span><a>测试</a></span>
+</ul>
+<input placeholder=""/>
+<script>
+    //console.info(document.getElementById('music'))
+
+    //var menu = document.getElementsByName('menu');
+    //var menu = document.getElementsByTagName('li')
+
+    //var menu = document.getElementsByClassName('mi')
+    //for(var i=0; i< menu.length; i++){
+    //	console.info(menu[i]);
+    //}
+
+    var ulObj = document.getElementsByTagName('ul')[0];
+    //console.info(ulObj.innerHTML)
+    var liObj = ulObj.getElementsByTagName('li')[1];
+    //console.info(liObj.innerHTML)
+    //console.info(liObj.innerText)
+    //console.info(ulObj.innerText)
+    //liObj.innerText = '视频'
+
+    //console.info(liObj.parentElement)
+
+    //for(var i=0;i<ulObj.childNodes.length;i++){
+    //	console.info(ulObj.childNodes[i])
+    //}
+
+    //console.info(liObj.attributes['abc'])
+
+    //console.info(ulObj.childNodes[0].innerText)
+
+    liObj.style = 'font-size: larger;color: red;'
+</script>
+</body>
+</html>

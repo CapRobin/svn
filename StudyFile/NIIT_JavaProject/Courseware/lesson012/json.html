@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<input type="button" id="testBtn" value="测试按钮"/>
+
+<script>
+    var obj1 = {"name": "胡明明", age: "34", carrer: "讲师"};
+    var obj2;
+    var json1;
+    var json2 = '{"name":"田振希","age":"38","carrer": "讲师"}';
+
+    //var arr = [obj1, obj2];
+
+    function stringifyTest() {
+        json1 = JSON.stringify(obj1);
+        console.info(json1)
+    }
+
+    stringifyTest();
+
+    function parseTest() {
+        obj2 = JSON.parse(json2);
+        console.info('name:' + obj2.carrer)
+    }
+
+    document.getElementById('testBtn').onclick = parseTest;
+</script>
+</body>
+</html>

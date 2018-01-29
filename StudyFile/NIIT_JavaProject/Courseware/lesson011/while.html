@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        /**
+         * while(条件) 条件满足才执行一次，然后再次循环
+         */
+        function testWhile() {
+            var i = 0;
+            while (i < 10) {
+                //语句块
+                console.info("i:", i);
+                i++;
+            }
+            //死循环
+            while (true) {
+                console.info("i:", i);
+                i++;
+                if (i >= 20) {
+                    break;
+                }
+            }
+        }
+
+        /**
+         * do{
+			 * 	//语句块
+			 * }while(条件)
+         * 不管条件满足不满足，都会先执行一次，然后等同while
+         */
+        /**
+         * while 和 do while，都可以使用break，continue，return
+         */
+        function testDoWhile() {
+            var i = 0;
+
+            while (i != 0) {
+                console.info("while");
+            }
+
+            do {
+                console.info("do while");
+            } while (i != 0);
+
+            do {
+                console.info("do while");
+                while (i != 0) {
+                    console.info("while");
+                }
+                break;
+            } while (i != 0);
+
+        }
+
+        testDoWhile();
+    </script>
+</head>
+<body>
+</body>
+</html>
