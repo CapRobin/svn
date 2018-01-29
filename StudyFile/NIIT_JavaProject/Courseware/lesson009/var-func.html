@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			/*
+			 * 局部变量和全局变量
+			 */
+			
+			//全局变量
+			var count = 100;
+			var tempCount = count;
+			
+			function test(){
+				//局部变量
+				var count = 200;
+				console.info("内部1:" ,count);
+				
+				/**
+				 * 访问外部变量（内部变量重名）
+				 * 1、外部再定义一个变量，指向访问的外部的变量
+				 * 2、this对象访问
+				 */
+				/**
+				 * this对象
+				 * 1、调用此方法的对象
+				 */
+				console.info("内部11:" ,count, tempCount);
+				console.info("内部12:" ,count, this.count);
+				console.info(this);
+			}
+			
+			function test01(){
+				//局部变量
+				var userName = "Niit";
+				console.info("内部2:" ,count);
+			}
+			
+			test();
+			test01();
+			
+			console.info("外部:" ,count);
+			//userName内部变量，外部访问不到
+			console.info("外部:" ,userName);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			//常规的函数定义
+			function test(){
+				console.info("test1");
+			}
+			
+			/**
+			 * 变量的方式定义匿名函数
+			 */
+			var test01 = function(){
+				console.info("test2");
+			}
+			
+			function manyParams(...args){
+				console.info(args);
+			}
+			
+			test();
+			test01();
+			manyParams(1,2,3);
+			manyParams("ddd", 123);
+			manyParams(1,2,3,"test", [12,21], { name:"321" });
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

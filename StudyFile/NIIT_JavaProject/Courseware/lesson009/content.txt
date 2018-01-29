@@ -1,0 +1,46 @@
+1、如何使用js
+	1、内部脚本 script内容体里写代码
+	2、外部脚本 
+		<script type="text/javascript" src="" ></script>
+		加载外部定义的js文件
+	注意的地方：
+		1)内部和外部结合使用时，全局变量和函数 不要同名，如果同名会覆盖|或者报错
+		2)访问dom(html树形结构)元素时，要等待元素被浏览器加载完成
+		
+	核心的概念：
+		1、变量
+		2、函数
+		3、对象
+		4、dom
+		5、事件
+	
+	输出语句：
+		1、console对象，info()方法； 控制台输出
+		2、document.write(字符串)； 在页面显示
+	
+2、js变量
+	
+3、js函数
+
+4、运算符
+
+5、js语句
+	1）if条件
+	2）switch开关
+	3）for循环
+	4）while循环
+	
+6、js对象（基本数据类型）
+	所有对象的顶级父类：Object(object)
+	1、数据类型
+		1)字符串（String|string） ，以"",或者''括起来；
+		2)数字 （Number|Number），有整数，有小数
+		3)布尔型 （Boolean|boolean），只有两个值true|false
+		4)数组  （Array|object）
+		5)对象   （Object | object）
+	备注：
+		1、使用typeof，可以输出数据类型的字符串
+		2、使用instanceof来判断变量是什么数据类型,结果是布尔值
+7、js事件
+
+8、html5里面的标签元素

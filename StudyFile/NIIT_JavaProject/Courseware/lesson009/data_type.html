@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			/**
+			 * 字符串
+			 */
+			function testStr(){
+				var str01 = "双引号";
+				var str02 = '单引号'; //java里面代表的是单个字符
+				var str = str01 + "," + str02;
+				console.info("字符串:" + str);
+				console.info("字符串类型:", typeof str01, typeof str02, typeof str);
+				console.info("字符串类型:",str instanceof String);
+			}
+			
+			testStr();
+			
+			/**
+			 * 数字
+			 */
+			function testNumber(){
+				var _int = 100;
+				var _float = 100.05;
+				console.info("数字:", _int, _float);
+				console.info("数字类型:", typeof _int, typeof _float);
+			}
+			
+			testNumber();
+			
+			/**
+			 * 布尔型
+			 */
+			function testBool(){
+				var boolTrue = true;
+				var boolFalse = false;
+				console.info("布尔:", boolTrue, boolFalse);
+				console.info("布尔类型:", typeof boolTrue, typeof boolFalse);
+			}
+			
+			testBool();
+			
+			/**
+			 * 函数的数据类型：function
+			 */
+			console.info("函数类型:", typeof testBool);
+			
+			/**
+			 * 数组(可以存储不同的数据类型)
+			 * 1、以[]定义
+			 * 2、在定义的时候可以初始化，例如[1, "Niit", true]，这个代表数字的长度是3
+			 * 3、数组可以通过下标访问，下标从0开始，例如第一个元素arr[0]
+			 * 4、数组的长度: 属性length
+			 * 5、访问之后，可以赋值或者获取
+			 * 6、可以通过key-value方式访问|设置，不计入数组长度
+			 */
+			
+			function testArr(){
+				var arr01 = [];//定义了一个空数组
+				var arr02 = [1, "Niit", true]; //定义了一个初始化的数组
+				var arr03 = new Array();
+				
+				arr01[0] = 100;
+				arr01[1] = 200;
+				arr01[4] = 500;
+				
+				arr02["userName"] = "Niit!!";
+				
+				console.info("数组1:", arr01);
+				console.info("数组2:", arr02);
+				console.info("数组的长度:", arr01.length, arr02.length);
+				console.info("数组类型:", typeof arr02, arr02 instanceof Array);//object
+				console.info("数组值:", arr01[2], arr01[2] === undefined);
+				console.info("数组值:", arr02["userName"]);
+				console.info("数组类型:", typeof arr03, arr03 instanceof Array);//object
+			}
+			testArr();
+			
+			/**
+			 * 二维数组：数组的元素是一个一维数组
+			 */
+			function testArr2(){
+				var arr = [
+					[1,2,3],
+					[4,5,6],
+					[7,8,9]
+				];
+				console.info("二维数组：", arr);
+			}
+			testArr2();
+			
+			/**
+			 * 对象
+			 * 1、通过{}定义,例如 { name : 'zhangsan'}进行初始化
+			 * 2、内容是key-value方式定义，以逗号分隔
+			 * 3、遇到(),首先想到在调用一个函数|方法
+			 * 4、访问属性的方式
+			 * 		1)obj.key
+			 * 		2)obj["key"]
+			 */
+			function testObj(){
+				var stu = {}; //空定义
+				var people = {
+					name:'张三',
+					isMale:false,
+					walk:function(){
+						//匿名函数
+						console.info(this.name + "在行走", ",他是男的吗:" + this["isMale"]);
+					},
+					list:[
+						{
+							userName:"lisi",
+							password:"123123"
+						}
+					]
+				};
+				people.walk();
+				console.info("people:" , people.name, people.isMale);
+			}
+			testObj();
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

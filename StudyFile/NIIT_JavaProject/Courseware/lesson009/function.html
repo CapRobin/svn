@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			/**
+			 * 函数： function funcName(参数1,参数2,...)
+			 * 1、命名规范：和var变量定义相似
+			 * 2、函数一般分有返回值和无返回值，有返回值使用return data;无返回值时也可以使用return中断函数
+			 * 3、函数可以有0-n个参数
+			 * 4、执行函数|调用函数: funcName(value1,value2,...)
+			 */
+			
+			/**
+			 * + : 可以拼接字符串
+			 */
+			
+			//函数定义如下（这个有返回结果）
+			function sum(a, b, c){
+				//函数体，逻辑代码写在这个地方
+				var result = a + b + c;
+				return result;
+			}
+			
+			function test(){
+				console.info("Hello Niit!");
+				return;
+				console.info("Hello Niit2!");
+			}
+			
+			var result = sum(100,200,300);
+			console.info("求和结果:", result);
+			document.write("<p style='color: red;font-weight: bold;'>求和结果: " + result + "</p>");
+			
+			test();
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
