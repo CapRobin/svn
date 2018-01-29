@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>12.06：Ajax_考试重点</title>
+    <style type="text/css"></style>
+    <script type="text/javascript">
+        /*
+        * 12.06：Ajax
+        * Ajax 即“Asynchronous Javascript And XML”（异步 JavaScript 和 XML），是指一种创建交互式网页应用的网页开发技术。
+        * */
+        window.onload = function () {
+            var btnId = document.getElementById("btnId");
+            var h3Str = document.getElementById("h3Id");
+            btnId.onclick = function ajaxTest() {
+                var xmlHttpObj = new XMLHttpRequest();
+                xmlHttpObj.open("Get","http://localhost:63342/NiitProject/NIIT_JavaProject/lesson_012/test.json",true);
+                xmlHttpObj.send();
+
+                /*接收响应*/
+                xmlHttpObj.onreadystatechange = function () {
+                    if(xmlHttpObj.readyState == 4 && xmlHttpObj.status ==200){
+                        var jsonStr = xmlHttpObj.responseText;
+                        h3Str.innerHTML = jsonStr;
+                        console.log(jsonStr);
+                    }
+                }
+            }
+
+        }
+
+    </script>
+</head>
+<body>
+<h1 style="text-align: center">12.06：Ajax_考试重点</h1><br><br>
+<h3 id="h3Id"></h3>
+<button id="btnId">测试按钮</button>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>12.03：点击事件</title>
+    <style type="text/css"></style>
+    <script type="text/javascript">
+        window.onload = function () {
+            var btnObj = document.getElementById("clickTest");
+            var bodyObj = document.getElementsByTagName("body")[0];
+            var ageObj = document.getElementById("age");
+            btnObj.onclick = function () {
+                alert("你点到我了！！！");
+            }
+            btnObj.oncontextmenu = function () {
+                alert("鼠标右键又点了我一下！！！")
+            }
+
+            ageObj.onChange =function () {
+                alert("年龄开始变化了");
+            }
+        }
+        function ochange() {
+
+        }
+    </script>
+</head>
+<body>
+<h1 style="text-align: center">12.03：点击事件</h1><br><br>
+<button id="clickTest">点击测试</button>
+
+<form action="#">
+    <input type="text" id="iId" onchange="ochange">
+    <select name="" id="age">
+        <option value="">A班</option>
+        <option value="">B班</option>
+        <option value="">C班</option>
+    </select>
+    <input type="submit" id="submitId" value="提交">
+</form>
+</body>
+</html>

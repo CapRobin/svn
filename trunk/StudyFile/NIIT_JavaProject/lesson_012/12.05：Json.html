@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>12.05：Json</title>
+    <style type="text/css"></style>
+    <script type="text/javascript">
+        window.onload = function () {
+            /*obj01和obj02都是Json字符串
+            * 标准的Json串的键和值都是用双引号括起来的
+            *
+            * */
+            var btn = document.getElementById("testBtn");
+            var obj01 = {"name":"张三","age":"28","js":"讲师"};
+            var obj02 = {"name":"李四","age":"38","js":"讲师"};
+            var array = [obj01,obj02];
+            /*Json对象转字符串*/
+            var jsonStr = JSON.stringify(obj01);
+            console.log(jsonStr);
+
+            btn.onclick = function () {
+                var jsonObj = JSON.parse(jsonStr);
+                console.info(jsonObj.name,jsonObj.age,jsonObj.js);
+                alert(jsonObj.name+"---"+jsonObj.age+"---"+jsonObj.js)
+            };
+
+            /*右键点击事件*/
+            btn.oncontextmenu = function () {
+                var jsonObj = JSON.parse(jsonStr);
+                jsonObj.name = "我是被改的名字";
+                alert(jsonObj.name+"---"+jsonObj.age+"---"+jsonObj.js)
+            }
+        }
+    </script>
+</head>
+<body>
+<h1 style="text-align: center">12.05：Json</h1><br><br>
+<button id="testBtn">点击测试</button>
+
+</body>
+</html>
