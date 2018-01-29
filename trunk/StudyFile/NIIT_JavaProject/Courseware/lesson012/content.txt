@@ -1,0 +1,88 @@
+一、什么是DOM？
+1.文档对象模型
+2.有什么用？把html纯文本文档 映射成 js能够理解的对象
+3.每一个html元素就是一个dom对象的节点
+
+二、如何获取到dom元素
+1.根据id：document.getElementById('')
+2.根据name: document.getElementsByName('')
+3.根据TagName: document.getElementsByName('')
+4.根据ClassName: document.getElementsByClassName('')
+
+三、常用属性
+innerHTML:就是内部的html
+innerText:内部所有的文本自动连接起来
+
+style:通过js给html元素来设置样式
+
+parentElement:找到父元素
+childNodes:找到直接的子元素
+attributes:html元素的属性（可以是自定义的任何属性）
+
+四、dom事件
+1.什么是事件？就像个传感器，感知在你身上发生的事件，做出反应
+2.鼠标事件
+onclick：鼠标左键单击[常用]
+ondblclick:鼠标双击
+oncontextmenu:右键
+
+onmouseover:鼠标进入
+onmouseout:鼠标离开
+onmousedown:鼠标按下
+onmouseup:鼠标松开
+
+3.键盘事件
+onkeydown:按键按下去了
+onkeyup:按键弹起
+onkeypress:按键按完了
+
+onfocus:获取焦点
+onfocusin:元素焦点进入
+onfocusout:元素焦点离开
+
+onchange:元素值发生变化[表单验证专门使用]
+onsubmit:表单提交的时候
+onblur:焦点离开
+
+五、json
+1.是什么？javascript对象表示形式
+2.干什么？把js对象 <=> json字符串（联想：组装家具）
+3.什么样子？
+{
+	"键1":"值1",
+	"键2":"值2"
+}
+[
+	{
+	"键1":"值1"
+	},
+	{
+	"键1":"值1"
+	}
+]
+4.js对象 和 json字符串 的转换方法
+js对象 => json字符串：JSON.stringify(js对象)
+json字符串 => js对象：JSON.parse(json字符串)
+
+六、Ajax
+1.是什么？异步javascript和xml
+2.干什么？减少请求的数据量（响应更迅速，减少了带宽的使用）
+3.怎么用？
+// 创建XMLHttpRequest对象
+var xmlHttpObj = new XMLHttpRequest();
+
+// 发送请求
+xmlHttpObj.open("get/post", "url", true);
+xmlHttpObj.send();
+
+// 接收响应
+xmlHttpObj.onreadystatechage = function(){
+	if(xmlHttpObj.readyState == 4 && xmlHttpObj.status == 200){
+	  // xmlHttpObj.responseText
+	  
+	}
+}
+
+[作业：js联动 市、县]
+
+

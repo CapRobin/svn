@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        var a = 100,
+            b = 200,
+            c = 3;
+
+        /**
+         * 加、减、乘、除
+         */
+        function testJia() {
+            console.info("a+b=", a + b);
+        }
+
+        function testJian() {
+            console.info("a-b=", a - b);
+        }
+
+        function testCheng() {
+            console.info("a*b=", a * b);
+        }
+
+        function testChu() {
+            console.info("a/b=", a / b);
+        }
+
+        /**
+         * 求余
+         */
+        function testQiuYu() {
+            console.info("a求余c=", a % c);
+        }
+
+        /**
+         * 自增：
+         *    ++i : i先自加，然后参与当前的运算
+         *    i++ : i先参与当前的运算，然后自加
+         * 自减:
+         *    --i : i先自减，然后参与当前的运算
+         *    i-- : i先参与当前的运算，然后自减
+         */
+        function testAutoIncrement() {
+            var i = 100, j = 100;
+            var sum = i++ + 100;
+            console.info("sum+:" + sum);
+            console.info("i:", i);
+
+            sum = ++j + 100;
+            console.info("+sum:" + sum);
+            console.info("j:", j);
+        }
+
+        function testAutoDecrement() {
+            var i = 100, j = 100;
+            var sum = i-- + 100;
+            console.info("sum-:" + sum);
+            console.info("i:", i);
+
+            sum = --j + 100;
+            console.info("-sum:" + sum);
+            console.info("j:", j);
+        }
+
+        /**
+         * 赋值运算符
+         */
+        function testSetValue() {
+            var a = 100; //赋值
+            a += 100;    // += 赋值
+            a %= 3;
+            console.info("a:", a);
+        }
+
+        /**
+         * 字符串的+运算
+         * +=: 用于字符串是也是进行自我拼接
+         * str += "" : str = str + "";
+         */
+        function testAddString() {
+            var str = ""; //空字符串
+            var a = 100;
+            var b = "200";
+            var c = "Niit!";
+            var str2;
+
+            var result = str + a + b + c;
+            console.info("result:" + result);
+
+            str += "Hello";
+            str += ", Niit!";
+
+            str2 += "error!";
+            console.info("str:" + str);
+            console.info("str2:" + str2);
+        }
+
+        /**
+         * 比较运算符
+         1)==  : 值相等
+         2)=== : 全等(值和数据类型都相等)
+         3)!=  : 值不同
+         4)!== : 不全等(值或者数据类型不等等)
+         5)>、>=、<、<=
+         */
+        function testCompareTo() {
+            var a = 100;
+            var b = "100";
+
+            console.info("a==b", a == b);
+            console.info("a===b", a === b);
+
+            console.info("a!=b", a != b);
+            console.info("a!==b", a !== b);
+
+            var str = "hello";
+            var str2 = new String("hello");
+            console.info("字符串==:", str == str2);
+            console.info("字符串===:", str === str2);
+            console.info(typeof str, typeof str2, str instanceof String, str2 instanceof String);
+        }
+
+        /**
+         * &&:所有条件都满足， 条件为false的概率高，就优先放在最前面
+         * ||:一个条件满足即可， 条件为true的概率高，就优先放在最前面
+         */
+        function testLogic() {
+            var a = 100, b = 100, c = 200;
+            console.info("&&:", a == b && b < 200);
+            console.info("&&:", a == b && b > 200 && a < c && c > 150);
+
+            console.info("||:", a == b || b < 200);
+            console.info("||:", a == b || b > 200 || a < c || c > 150);
+
+            var result = 100 != 200 && false;
+            console.info("!:", !result);
+        }
+
+        /**
+         * 三元运算符
+         * （条件判断）? （express01） : （express02）；
+         * 如果三元运算符结果需要给左边变量赋值， 表达式一定要给到一个结果
+         */
+        function testThreeOperators() {
+            var a = 100, b = 100, c = 200;
+
+            var result;
+
+            result = (a == b && b < c) ? ("满足条件") : (false);
+
+            console.info("result：", result);
+
+            result = (a == b && b > c) ? ("满足条件") : (a + b + c);
+
+            console.info("result：", result);
+
+            var sum = function (m, n) {
+                return m + n;
+            }
+
+            result = (sum(a, b) == c) ? (sum(b, c)) : (a + b + c);
+
+            console.info("result：", result);
+
+            var parse = function () {
+                console.info("没有返回值！");
+            }
+
+            result = (sum(a, b) == c) ? (parse()) : (a + b + c);
+
+            console.info("result：", result);
+
+            (sum(a, b) == c) ? (parse()) : (sum(a + b + c));
+        }
+
+        /*
+        testJia();
+        testJian();
+        testCheng();
+        testQiuYu();
+        qiuYu();
+
+        testAutoIncrement();
+        testAutoDecrement();
+        testSetValue();
+        testAddString();
+
+        testCompareTo();
+
+        testLogic()
+        */
+        testThreeOperators();
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

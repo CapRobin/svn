@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        function testForIn() {
+            var arr = [0, 1, 2, 4, 10];
+            arr.userName = "zhangsan";
+            for (var value in arr) {
+                console.info("value:", value, arr[value]);
+            }
+        }
+
+        function testForIn02() {
+            var people = {
+                name: "lisi",
+                sex: 1,
+                address: "育成中心"
+            }
+            /*
+             * 这种循环时prop是个字符串
+             * 常规访问对象属性： obj.userName 或者 obj["userName"]
+             */
+            for (var prop in people) {
+                console.info(prop + "=" + people[prop]);
+            }
+        }
+
+        function testFor() {
+            var arr = [0, 1, 2, 4, 10];
+            arr.userName = "zhangsan";
+            for (var index = 0, len = arr.length; index < len; index++) {
+                console.info("元素值:", arr[index]);
+            }
+        }
+
+        testForIn02();
+    </script>
+</head>
+<body>
+</body>
+</html>

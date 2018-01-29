@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        /**
+         * Number
+         * Number.MAX_VALUE : 类的属性（最大值）
+         * Number.MIN_VALUE : 类的属性（最大值）
+         * toString() : new Number(100).toString(),把数字转换成字符串
+         * toFixed(n) : n代表保留几位小数，注意四舍五入
+         * valueOf()  : 返回Number对象的基本数据类型number
+         */
+        function testNumber() {
+            console.info("数字最大值:", Number.MAX_VALUE);
+            console.info("数字最小值:", Number.MIN_VALUE);
+
+            //基本数据类型定义
+            var num = 100;
+            //Number类定义
+            var num01 = new Number(100);
+            console.info(typeof num, typeof num01, num == num01, num === num01, num01 instanceof Object);
+
+            //类型转换（字符串转换成数字类型,前提是字符串不能出现非数字）
+            var num02 = Number("100");
+            num02 = Number("100");
+//				num02 = Number("100s");//错误的
+            console.info("Num02:", typeof num02, num02 instanceof Number, num02);
+
+            var str = "100";
+            console.info(str == num, Number(str) === num);
+        }
+
+        /**
+         * 如果要成为类对象，必须要进过实例化（new这个关键字）
+         */
+
+        function testNumber01() {
+            var num = new Number(100);
+            num = 200;//重新赋值了，不是object,是number
+            console.info(num, num.toString());
+
+            var num2 = new Number(100.124);
+            var temp = num2.toFixed(2);
+
+            var num3 = num2.valueOf();
+
+            console.info("toFixed:", temp, typeof temp, typeof num3);
+        }
+
+        /**
+         * NaN        : 非正常数字
+         * parseInt(str, radix)
+         *    1、str     :首字符是数字开头的字符串
+         *    2、radix   :按多少进制转换（十进制数字） 2 8 10 16
+         *
+         * isNaN(num)  : 检测数字是否非法
+         *
+         * parseFloat():把字符串转成带有小数的数字, 其他和parseInt相似
+         */
+
+        function testNumber02() {
+            var num = parseInt("100");
+
+            num = parseInt("100px");  //遇到第一个字符就停止解析
+
+//				num = parseInt("s100px"); // 转换的字符串，首字符必须有数字
+
+            num = parseInt("101", 2);
+
+            num = parseInt("101", 10);
+
+            num = parseInt("101", 8);
+
+            num = parseInt("101", 16);
+
+            num = parseInt("s100px");
+
+            console.info(num, num + 10, typeof num, isNaN(num));
+        }
+
+        function testNumber03() {
+            var num = parseFloat("100.04ss");
+
+            console.info(num, num + 10, typeof num, isNaN(num));
+        }
+
+        testNumber03();
+    </script>
+</head>
+<body>
+</body>
+</html>

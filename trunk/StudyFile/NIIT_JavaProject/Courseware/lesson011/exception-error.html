@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        /**
+         * throw : 抛出异常
+         */
+        function testError() {
+            var result
+
+            try {
+                result = 100 / str;
+            } catch (e) {
+                console.info(e);
+            }
+
+            console.info(result);
+        }
+
+        function testError02() {
+            var result;
+
+            try {
+//					result = 100/str;
+                result = 100 / 20;
+            } catch (e) {
+                console.info(e);
+            } finally {
+                console.info("不管你有没有错误都得到我这里来！");
+            }
+
+            console.info(result);
+        }
+
+        function testThrow() {
+            throw new Error("我就想让你出错！");
+        }
+
+        function testApp(count) {
+            var msg;
+            if (count == 100) {
+                msg = "你的用户名错了";
+            } else if (count == 200) {
+                msg = "你的密码错了";
+            } else if (count == 300) {
+                msg = "没有选择用户协议";
+            } else {
+                msg = "异常";
+            }
+            throw new Error(msg);
+        }
+
+        function testApp(form) {
+            var msg;
+            if (form == 100) {
+                msg = "1000";
+            } else if (form == 200) {
+                msg = "1001";
+            } else if (form == 300) {
+                msg = "1002";
+            } else {
+                msg = "404";
+            }
+            throw new Error(msg);
+        }
+
+        try {
+            testApp(34440);
+        } catch (e) {
+            if (e.message == "404") {
+                alert("错误提示");
+            }
+            console.info(e.message);
+        }
+
+
+    </script>
+</head>
+<body>
+</body>
+</html>

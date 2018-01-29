@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="result">
+
+</div>
+<button id="btn">读文件</button>
+
+<script>
+
+    function ajaxRead() {
+        var xmlObj = new XMLHttpRequest();
+
+        xmlObj.open("GET", "http://127.0.0.1:8020/web_class_c/lesson12/test.txt", true)
+        xmlObj.send();
+
+        xmlObj.onreadystatechange = function () {
+            if (xmlObj.readyState == 4 && xmlObj.status == 200) {
+                document.getElementById('result').innerText = xmlObj.responseText;
+            }
+        }
+    }
+
+    document.getElementById('btn').onclick = ajaxRead;
+</script>
+
+</body>
+</html>

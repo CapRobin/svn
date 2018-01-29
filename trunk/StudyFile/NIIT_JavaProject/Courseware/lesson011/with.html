@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        /**
+         * with(对象){
+			 * 		直接使用对象的属性
+			 * }
+         */
+        function testWith() {
+            var people = {
+                userName: "wangwu",
+                password: "123123"
+            }
+
+            console.info(people.userName, people["password"]);
+
+            with (people) {
+                console.info("==>", userName, password);
+            }
+        }
+
+        function checkUserLogin($form) {
+            console.info($form);
+            with ($form) {
+                console.info(userName);
+                console.info(password);
+                checkInput(userName);
+                checkInput(password);
+            }
+            return false;
+        }
+
+        function checkInput($input) {
+            with ($input) {
+                console.info(name, type, value);
+                if (name == "userName") {
+                    if (value == "zhangsan") alert("用户名合法");
+                    else alert("用户名不合法");
+                } else if (name == "password") {
+                    if (value == "123123") alert("密码合法");
+                    else alert("密码不合法");
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<form onsubmit="return checkUserLogin(this);" action="">
+    <input type="text" name="userName"/>
+    <input type="password" name="password"/>
+    <input type="submit" value="验证"/>
+</form>
+</body>
+</html>

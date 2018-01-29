@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<body>
+<button id='testBtn'>测试点击事件</button>
+
+<form action="www.baidu1.com" method="post">
+    <input type="text" id="age"/>
+    <select id="class">
+        <option>A班</option>
+        <option selected="selected">B班</option>
+        <option>C班</option>
+    </select>
+    <div>
+        <input type="checkbox" name="sex" value="male"/>男
+        <input type="checkbox" name="sex" value="famale" checked="checked"/>女
+    </div>
+
+    <input type="submit" value="提交"/>
+</form>
+
+<script>
+    function testOnClick() {
+        var btnObj = document.getElementById('testBtn');
+        btnObj.onclick = function () {
+            alert('你点我了')
+        }
+
+    }
+
+    function testOnContextMenu() {
+        var bodyObj = document.getElementsByTagName('body')[0]
+        bodyObj.style = "width:300px; height:100px;";
+        bodyObj.oncontextmenu = function () {
+            console.info('捕获到鼠标右键点击')
+            return false;
+        }
+    }
+
+    //testOnContextMenu();
+
+    function inputOnChange() {
+        document.getElementById('age').onchange = function () {
+            console.info('我的值变化了:' + this.value)
+        }
+
+        document.getElementById('age').onblur = function () {
+            console.info('onblur:' + this.value)
+        }
+    }
+
+    inputOnChange();
+
+    function selectOnChange() {
+        //document.getElementById('class').onselect = function() {
+        //	console.info('我的值变化了:' + this.value)
+        //}
+
+        var sexObjArr = document.getElementsByName('sex');
+        for (var i = 0; i < sexObjArr.length; i++) {
+            sexObjArr[i].onchecking = function () {
+                console.info('onchecking')
+            }
+        }
+
+    }
+
+    //selectOnChange();
+</script>
+</body>
+
+</html>

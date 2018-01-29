@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        /**
+         * String
+         * 属性：
+         * 1、length
+         * 方法：
+         * 1、charAt(index)    :获取指定索引位置的字符
+         * 2、charCodeAt(index):获取指定索引位置的字符Unicode编码
+         * 3、indexOf(sub_str, startIndex = 0):从前往后找
+         * 从指定的索引开始查找对应的字符串，找到返回对应的索引位置,否则返回-1
+         * 4、lastIndexOf(sub_str, startIndex)：从后往前找
+         * 5、substr(startIndex, len): 从startIndex位置开始取len长度的子字符串
+         * 6、substring(startIndex, endIndex):
+         *        从startIndex位置开始取直到endIndex子字符串
+         *        取得值不包含endIndex所指向的字符
+         * 7、split(separator, arrLen) :以separator分隔字符串，返回<=arrLen指定数组
+         *        separator:分隔符
+         *        arrLen   :最大数组长度
+         */
+        function testString() {
+            var str01 = "Niit"; //基本数据类型
+            var str02 = new String("Niit"); //定义一个对象
+            var str03 = String(100);    //类型转换
+
+            console.info(str01 == str02, str01 === str02);
+            console.info(typeof str01, typeof str02, typeof str03);
+            //属性
+            console.info("长度", str02.length);
+        }
+
+        function testStringMethod() {
+            /*
+             * 字符串的索引也是从0开始
+             */
+            var str = "Hello,Niit!测试";
+
+            str = ".jsPtest.jsp";
+
+            /*
+            for(var i=0, len=str.length; i < len; i++){
+                console.info(i + "=>1=>", str.charAt(i));
+                console.info(i + "=>2=>", str.charCodeAt(i));
+            }
+            */
+
+            console.info("index1:", str.indexOf("Niit", 7));
+            console.info("index2:", str.indexOf(".jsp", 0));
+            console.info("index3:", str.lastIndexOf(".jsp", str.length - 1));
+            console.info("substr:", str.substr(4, 4));
+            console.info("substring:", str.substring(0, 2));
+            console.info("toLowerCase:", str.toLowerCase());
+            console.info("toUpperCase:", str.toUpperCase());
+
+            var str2 = "userName=zhansan&pass=123";
+            var arr = str2.split("&", 3);
+            arr = str2.split("&", 2);
+            arr = str2.split("&", 1);
+            console.info(arr);
+        }
+
+        testStringMethod();
+    </script>
+</head>
+<body>
+</body>
+</html>
