@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			/**
+			 * switch语句
+			 * 	
+			 */
+			function testSwitch(count){
+				switch(count){
+					case 1:{
+						console.info("数字值较小" + count);
+						break;
+					}
+					case 5:{
+						console.info("数字值较小"+ count);
+						break;
+						console.info(123); //这个语句不执行
+					}
+					case 1000:{
+						console.info("数字值适中"+ count);
+						break;
+					}
+					case 100000:{
+						console.info("数字值很大"+ count);
+						break;
+					}
+					default:{
+						console.info("数字值异常"+ count);
+					}
+				}
+			}
+			function testSwitch01(status){
+				switch(status){
+					case "ok":{
+						console.info(status);
+						break;
+					}
+					case "error":{
+						console.info(status);
+						break;
+					}
+					case "net-exception":{
+						console.info(status);
+						break;
+					}
+					default:{
+						console.info(status);
+					}
+				}
+			}
+			//不需要break
+			function ifSwitch(status){
+				if(status == "ok"){
+					
+				}else if(status == "error"){
+					
+				}else if(status == "net-exception"){
+					
+				}else{
+					
+				}
+			}
+			
+			testSwitch(1);
+			testSwitch(5);
+			testSwitch(1000);
+			testSwitch(100000);
+			testSwitch(3131312);
+			
+			testSwitch01("ok");
+			testSwitch01("error");
+			testSwitch01("net-exception");
+			testSwitch01("notfoundclass");
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

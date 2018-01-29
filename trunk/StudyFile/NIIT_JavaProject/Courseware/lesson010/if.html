@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			/**
+			 * if条件语句
+			 */
+			function testIf(){
+				var a = 100, b = 100, c = 200;
+				
+				if(a > b){
+					console.info("a>b");
+				}
+				
+				if(a != b){
+					console.info("a!=b");
+				}else{
+					console.info("a==b");
+					if(a < c){
+						console.info("a<c");
+					}else{
+						console.info("a>=c");
+					}
+				}
+				
+				if( a != b){
+					console.info("a!=b");
+				}else if(a > c){
+					console.info("a > c");
+				}else if(b > c){
+					console.info("a > c");
+				}else{
+					//以上条件都不满足可以进入
+					console.info("以上条件都不满足！")
+				}
+				
+				if(a > b){
+					
+				}else if(a == b){
+					
+				}else{
+					
+				}
+			}
+			testIf();
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

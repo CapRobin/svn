@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>12.01：DOM对象</title>
+    <style type="text/css"></style>
+    <script type="text/javascript">
+        window.onload = function () {
+            var ulObj =document.getElementsByTagName('ul')[0];
+            console.info(ulObj.innerHTML);
+            var liObj =document.getElementsByTagName('li')[0];
+            console.info(liObj.innerHTML);
+            /*获取父元素标签*/
+            console.log(liObj.parentElement);
+            /*获取子元素*/
+            console.log(liObj.parentElement);
+            for(var i = 0;i<ulObj.length;i++){
+                console.log(liObj.childNodes[i]);
+            }
+            var liObj =document.getElementsByTagName('li')[1];
+            console.log(liObj.attributes['name']);
+
+        }
+
+    </script>
+</head>
+<body>
+<h1 style="text-align: center">12.01：DOM对象</h1><br><br>
+<div>
+    <ul>
+        <li>首页</li>
+        <li class="liClass" id="liId" name="liName">图片</li>
+        <li>音乐</li>
+        <span>百度贴吧</span>
+    </ul>
+</div>
+</body>
+</html>
