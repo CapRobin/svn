@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>13.01：JS联动练习</title>
+    <style type="text/css"></style>
+    <script type="text/javascript">
+        window.onload = function () {
+            var cityObj = document.getElementById("city");
+            var countyObj = document.getElementById("county");
+            var cityArray;
+
+            //一：加载市县数据
+            function getData() {
+
+                /*利用Ajax异步请求处理*/
+                //1、创建XMLHttpRequest对象
+                var xmlHttpObj = new XMLHttpRequest();
+                //2、打开对象并配置请求参数
+                xmlHttpObj.open("GET", "../file/region.json", true);
+                //3、发送对象
+                xmlHttpObj.send();
+                //4、(回调函数)接受响应
+                xmlHttpObj.onreadystatechange = function () {
+                    //判断响应是否完成并且连接是否成功!
+                    if (xmlHttpObj.readyState == 4 && xmlHttpObj.status == 200) {
+                        cityArray = JSON.parse(xmlHttpObj.responseText);
+                        var cityHtml;
+                        var cityOption = '<option>{0}</option>';
+
+                        for (var idex in cityArray) {
+                            var city = cityArray[idex];
+                            cityHtml += cityOption.replace('{0}', city.市);
+                        }
+                        cityObj.innerHTML = cityHtml;
+
+                        //初次加载
+                        cityObj.onchange();
+                    }
+                };
+            }
+
+            //二：为市县列表定义OnChange处理函数
+            function setAction() {
+                cityObj.onchange = function () {
+                    var cityName = this.value;
+                    var countyArray;
+                    var countyHtml;
+                    var countyOption = '<option>{0}</option>';
+                    for (var index in cityArray) {
+                        var city = cityArray[index];
+                        //查找当前市所对应的县区并赋值给县区数组
+                        if (city.市 == cityName) {
+                            countyArray = city.县;
+                            break;
+                        }
+                    }
+                    //为县区设置对应的值
+                    for (var index in countyArray) {
+                        var county = countyArray[index];
+                        countyHtml += countyOption.replace('{0}', county);
+                    }
+                    countyObj.innerHTML = countyHtml;
+                }
+            }
+
+            //三：调用函数执行操作
+            getData();
+            setAction();
+        }
+    </script>
+</head>
+<body>
+<h1 style="text-align: center">13.01：JS联动练习</h1><br><br>
+<div>
+    <div>
+        <lable>市：</lable>
+        <select name="" id="city"></select></div>
+    <div>
+        <lable>县：</lable>
+        <select name="" id="county"></select></div>
+</div>
+</body>
+</html>
