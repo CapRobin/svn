@@ -41,8 +41,8 @@
 						}
 
 						cityObj.innerHTML = cityHtml;
-						
-						// 初次加载
+
+                        // 初次加载
 						cityObj.onchange();
 					}
 
@@ -67,12 +67,12 @@
 							break;
 						}
 					}
-					
-					for(var index in countyArr){
+
+                    for (var index in countyArr) {
 						countyHtml += optionTemplate.replace('{0}', countyArr[index]);
 					}
-				
-					countyObj.innerHTML = countyHtml;
+
+                    countyObj.innerHTML = countyHtml;
 				}
 			}
 
