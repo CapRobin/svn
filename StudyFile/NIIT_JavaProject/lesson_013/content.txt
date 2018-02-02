@@ -1,0 +1,71 @@
+一、jQuery简介
+1.是什么？开源的js类库，就是一个js文件
+2.有什么用？兼容不同浏览器 && 简化了js编程
+3.特点：
+	一切的操作都在jQuery对象上
+	链式操作
+	通过插件的方式，扩展jQuery的函数
+	
+二、获取jQuery对象
+1.$('css选择器')
+2.$('js对象')
+3.$('html文本')
+
+三、选择dom元素
+1.基本特征
+	#id
+	.class
+	tag
+
+2.元素之间的关系
+	后代关系：祖先元素     element
+	父子关系：    父元素 > element
+	所有兄弟：兄长元素 ~ element
+	相邻兄弟：兄长元素 + element
+	
+	:first-child	子元素中的老大
+	:last-child		子元素中的老小
+	:nth-child(序号) 老几
+	:only-child		独生子
+	
+	:first-of-type	[父元素下]这一类tag中的老大
+	:last-of-type	[父元素下]这一类tag中的老小
+	:nth-of-type(序号) 老几
+	:only-of-type	独生子
+
+3.attribute特征
+		[attr]: 存在
+	[attr = value]: 存在 且 值=value
+	[attr != value]: 存在 且 值!=value
+	
+	[attr *= value]: 存在 且 值包含value
+	[attr ~= value]: 存在 且 （以空格分隔的）值包含value	
+	
+	[attr ^= value]: 存在 且 value是前缀
+	[attr |= value]: 存在 且 value或value-是前缀
+	[attr $= value]: 存在 且 value是后缀
+
+4.元素状态
+	:focus	焦点
+	:enabled	启用
+	:disabled  	禁用
+	
+	:checked	选中的（只要是能选的都行）
+	:selected	下拉选中的
+	
+	:visible	visibility:hidden 或者 opacity:0 （认为可见，只要占空间就算）
+	:hidden		width:0 或者 height:0
+	
+
+6.在结果中进行二次筛选（不是css选择器 && 只能应用于dom对象）
+	:first	第一个
+	:last   最后一个
+	:even	偶数
+	:odd	奇数
+	:eq(index)	第几个
+	:lt(index)  前几个 less than
+	:gt(index)	后几个 greater than
+	
+
+
+
