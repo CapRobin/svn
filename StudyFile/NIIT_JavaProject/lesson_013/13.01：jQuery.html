@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>13.01：jQuery</title>
+    <style type="text/css"></style>
+    <script type="text/javascript"></script>
+</head>
+<body>
+<h1 style="text-align: center">13.01：jQuery</h1><br><br>
+<h3>Hello world</h3>
+<div>
+    你好 世界！
+</div>
+<script src="../js/jquery-3.3.1.min.js"></script>
+<script>
+    <!--页面加载完成后执行其他操作-->
+    $(function () {
+        $('h3').on('click', function () {
+            $(this).siblings().slideDown().animate({
+                "font-size":"50px",
+                "text-indent":"200px"
+            },300);
+        }).siblings('div').hide();
+    })
+</script>
+</body>
+</html>

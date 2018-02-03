@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>12.08：JS三级联动_test</title>
+    <style type="text/css"></style>
+    <script type="text/javascript">
+        var cityArry;
+        window.onload = function () {
+
+        function getCityInfo() {
+            var xmlHttp = new XMLHttpRequest();
+            xmlHttp.open("GET","region.json",true);
+            xmlHttp.send();
+            xmlHttp.onreadystatechange = function () {
+                if (xmlHttp.readyState == 4 && xmlHttp.status ==200){
+//                    console.info(xmlHttp.responseText);
+                    cityArry = JSON.parse(xmlHttp.responseText);
+                    //把市的数据加载到列表之上
+                    var cityObj = document.getElementById("city");
+                    var cityHtml;
+                    var optionTemplate = '<option>{0}</option>';
+                    for (var index in cityArry){
+                        var city = cityArry[index];
+                        cityHtml += optionTemplate.replace('{0}',city.市);
+                        console.info(optionTemplate.replace('{0}',city.市));
+                    }
+                    cityObj.innerHTML = cityHtml;
+                }
+            }
+
+        }
+        
+        function onchangeSelect() {
+            var changeId = document.getElementById("city");
+            changeId.onChange = function () {
+                var countyObj = document.getElementById("county");
+                var cityName = this.value;
+                var countyArray;
+                var countyHtml;
+                for (var index in cityArry){
+                    var city = cityArry[index];
+                    if (city.市 == cityName){
+                        countyArray =
+                    }
+                }
+
+            }
+        }
+            getCityInfo();
+        }
+    </script>
+</head>
+<body>
+<h1 style="text-align: center">12.08：JS三级联动_test</h1><br><br>
+<div>
+    <lable>市：</lable>
+    <select name="" id="city">
+        <option></option>
+    </select>
+</div>
+<div>
+    <lable>县：</lable>
+    <select name="" id="county"></select>
+</div>
+</body>
+</html>
