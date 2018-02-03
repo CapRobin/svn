@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>14.03：JQuery事件监听</title>
+    <style type="text/css"></style>
+    <script type="text/javascript"></script>
+</head>
+<body>
+<h1 style="text-align: center">14.03：JQuery事件监听</h1><br><br>
+<div>
+    <h3>事件监听</h3>
+    <span>测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字</span>
+</div>
+<input type="button" value="取消监听"></input>
+
+
+<script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+<script>
+    $(function () {
+        ysEventDemo();
+        listenEventDemo();
+        cancelEventDemo();
+    })
+
+    function listenEventDemo() {
+
+        $('div').on('click', 'h3', function () {
+            $(this).siblings().empty();
+        });
+
+        $('div').append('<h3>Hello world！</h3>')
+    }
+
+    function ysEventDemo() {
+        //不加子元素的时间，只能在子元素出现后才能绑定事件
+        $('h3').on('click', function () {
+            alert("原始事件");
+        });
+    }
+
+    function cancelEventDemo() {
+        $('input').on('click',function () {
+            $('div').off('click');
+        })
+    }
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+
+1、Ajax
+
+2、JS联动案例
+
+3、CSS选择器
+
+4、JQuery标签(查一查具体使用方法)
+    :visible	visibility:hidden 或者 opacity:0 （认为可见，只要占空间就算）
+  	:hidden
+5、JQuery标签(对比两个的区别)重点
+    .attribute('参数'，'值') 返回能看到的文本
+    .property('参数'，'值')  返回一个DOM对象
+
+6://$(function () {}) 和$(document).ready(function () {});良种方式等价
