@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>14.01：DOM结构</title>
+    <script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+    <script>
+        window.onload = function () {
+            /*添加元素到容器内部*/
+            addDomElementInToContainer();
+            /*添加元素到容器外部*/
+            addDomElementOutToContainer();
+            
+            
+            function addDomElementInToContainer() {
+                /*在容器内部的最后面添加元素*/
+                $('#classC').append('<span style="color: #00BFFF">王五</span>');
+                $('<span style="color: #00BFFF">赵六</span>').appendTo('#classC');
+
+                /*在容器内部的最前面添加元素*/
+                $('#classC').prepend($('#classC > span:contains(张三)').clone().css('color','blue'));
+                $('<span style="color: red">刘一 </span>').prependTo('#classC');
+            }
+            
+            function addDomElementOutToContainer() {
+                $('#classC').before('<div class="classB"><span>学员01</span></div>');
+                $('#classB').append('<span>学员02</span>');
+                $('#classB').append('<span>学员03</span>');
+            }
+        }
+    </script>
+</head>
+<body>
+<h1 style="text-align: center">14.01：DOM结构</h1><br><br>
+<div id="classC">
+    <span>张三</span>
+    <span>李四</span>
+</div>
+
+</body>
+</html>
