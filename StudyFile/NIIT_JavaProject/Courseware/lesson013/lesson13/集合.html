@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<body>
+
+<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+<script>
+    $(document).ready(function () {
+        //foreachCollection();
+        grepCollection();
+    })
+
+    function foreachCollection() {
+        $.each(["大武口区", "惠农区", "平罗县"], function (index, obj) {
+            console.info('数组下标：' + index + '   数组元素：' + obj)
+        });
+    }
+
+    function grepCollection() {
+        console.info($.grep(["大武口区", "惠农区", "平罗县"], function (obj, index) {
+            return obj.length == 4;
+        }));
+    }
+</script>
+</body>
+
+</html>

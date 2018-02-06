@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .input_visible {
+            /*人眼看不见*/
+            visibility: hidden;
+            opacity: 0;
+        }
+
+        .input_hidden {
+            /*display: none;*/
+        }
+
+        form label {
+            width: 120px;
+            height: 40px;
+            display: inline-block;
+        }
+
+        form label:after {
+            content: ":";
+        }
+
+        form label:empty:after {
+            content: none;
+        }
+    </style>
+</head>
+
+<body>
+<form action="www.baidu1.com" method="post">
+    <input type="hidden" name="{主键的名称}" value="{}"/>
+    <fieldset>
+        <legend>填的</legend>
+        <div class="input_visible" id="test">
+            <label>姓名</label>
+            <input type="text" name="userName"/>
+        </div>
+        <div>
+            <label>密码</label>
+            <input type="password" name="password"/>
+        </div>
+        <div class="input_hidden">
+            <label>邮箱</label>
+            <input type="email" name="email" autofocus="autofocus"/>
+        </div>
+        <div>
+            <label>工作年限</label>
+            <input type="number" name="workAge" disabled="disabled"/>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>选的</legend>
+        <div>
+            <label>爱好</label>
+            <input type="checkbox" checked="checked" name="favorite" value="乒乓 球"/>乒乓球
+            <input type="checkbox" name="favorite" value="篮球"/>篮球
+            <input type="checkbox" name="favorite" value="足 球"/>足球
+        </div>
+        <div>
+            <label>特长</label>
+            <select name="skilled">
+                <option data-test="test-hair">头发</option>
+                <option selected="selected" data-test="testhair">腿</option>
+                <option data-test="test">胳膊</option>
+            </select>
+        </div>
+
+        <div>
+            <label></label>
+            <input type="submit" value="提交"/>
+        </div>
+    </fieldset>
+
+</form>
+
+<script src="jquery-3.3.1.min.js"></script>
+<script>
+    $(function () {
+        // 页面全部加在完成，执行以下代码
+        $('[value]').each(function (index, obj) {
+            //console.info(obj)
+        });
+        $('[value=篮球]').each(function (index, obj) {
+            //console.info(obj)
+        });
+        $('[value]').filter('[value!=篮球]').each(function (index, obj) {
+            //console.info(obj)
+        });
+        $('[value*=球]').each(function (index, obj) {
+            //console.info(obj)
+        });
+        $('[value~=球]').each(function (index, obj) {
+            //console.info(obj)
+        });
+        $('[value^=乒]').each(function (index, obj) {
+            //console.info(obj)
+        });
+        $('[class^=input]').each(function (index, obj) {
+            //console.info(obj)
+        });
+        $('[data-test^=test]').each(function (index, obj) {
+            //console.info(obj)
+        });
+        $('[data-test|=test]').each(function (index, obj) {
+            //console.info(obj)
+        });
+
+        $('input:focus').css("border", "3px solid red")
+        $('form *:disabled').css("border", "3px solid blue")
+        $('form *:enabled').css("color", "orange")
+
+        $('form').on('submit', function () {
+            $('[name=favorite]:checked').each(function (index, obj) {
+                //console.info(obj)
+            })
+
+            $('[name=skilled] > option:selected').each(function (index, obj) {
+                //console.info(obj)
+            })
+
+            return false;
+        })
+
+        $('.input_visible:visible').each(function (index, obj) {
+            //console.info('visible: ' +obj.outerHTML)
+        })
+
+        $('.input_hidden:hidden').each(function (index, obj) {
+            //console.info('hidden:' +obj.outerHTML)
+        })
+        $('.input_hidden > label:hidden').each(function (index, obj) {
+            //console.info('hidden:' +obj.outerHTML)
+        })
+
+        $('legend:contains(的)').each(function (index, obj) {
+            //console.info(obj.outerHTML)
+        })
+
+        $('div:has([type=checkbox])').each(function (index, obj) {
+            //console.info(obj.outerHTML)
+        })
+
+        $('div:has(:focus)').each(function (index, obj) {
+            //console.info(obj.outerHTML)
+        })
+
+        $('form label:empty').css('background-color', 'red')
+
+        $('label:parent').each(function (index, obj) {
+            //console.info(obj.outerHTML)
+        })
+
+        //console.info($('div.input_visible').html())
+        //console.info($('div.input_visible').text())
+        //$('div.input_hidden').html('<a>mingming.hu@niit.com.cn</a>')
+
+        //$('div.input_hidden > label').text('email')
+
+        //				$('form [type=submit]').on('click', function(){
+        //					$('form [type=password]').val('niit1234')
+        //					alert($('form [type=password]').val())
+        //					return false;
+        //				})
+
+        //console.info($('form [type=password]').prop('type', 'text').prop('style'))
+
+        //$('div:has(label:contains(爱好))').addClass('input_visible')
+
+        //$('div#test').removeClass('input_visible')
+
+        //$('fieldset > div').toggleClass('input_visible')
+
+        //$('form fieldset:first-of-type legend').css('font-size', 'larger')
+
+        console.info($('form fieldset:first-of-type legend').css('font-size'))
+    })
+</script>
+</body>
+
+</html>

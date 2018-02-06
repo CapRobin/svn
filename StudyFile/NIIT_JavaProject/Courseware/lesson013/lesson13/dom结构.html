@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>dom结构</title>
+
+</head>
+<body>
+<div id="classC"><span>张三</span><span>李四</span></div>
+
+
+<input type="button" value="测试按钮" id="testBtn"/>
+<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+<script>
+    $(function () {
+        addDomElementToContainer();
+        addDomElementAfterElement();
+        replaceDomElement();
+        removeDomElement();
+    })
+
+
+    function addDomElementToContainer() {
+        $('#classC').append('<span style="color:blue">王五</span>') // 通过html文本添加
+        $('#classC').prepend($('#classC > span:contains(张三)').clone().css('color', 'blue')) // 通过jquery对象添加
+
+        $('<span style="color:blue">王五2</span>').prependTo('#classC')
+        $('#classC > span:contains(李四)').clone().css('color', 'blue').appendTo('#classC')
+    }
+
+    function addDomElementAfterElement() {
+        $('#classC').after('<div id="classD"><span>王五</span></div>')
+        $('#classC').before('<div id="classE"><span>E班学员001</span></div>')
+    }
+
+    function replaceDomElement() {
+        $('#testBtn').on('click', function () {
+            $('#classE span:first-child').replaceWith('<h1>田老师</h1>')
+        })
+
+    }
+
+    function removeDomElement() {
+        $('#testBtn').on('click', function () {
+            $('#classC span:first-child').remove()
+        })
+
+    }
+
+</script>
+</body>
+</html>
