@@ -1,84 +1,84 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-    <meta charset="UTF-8">
-    <title></title>
-</head>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
 
-<body>
-<div>
-    <label>市：</label>
-    <select id="city">
-    </select>
-</div>
+	<body>
+		<div>
+			<label>市：</label>
+			<select id="city">
+			</select>
+		</div>
 
-<div>
-    <label>县：</label>
-    <select id="county"></select>
-</div>
+		<div>
+			<label>县：</label>
+			<select id="county"></select>
+		</div>
 
-<script>
-    // 1.加载市、县的数据
-    var cityArr;
+		<script>
+			// 1.加载市、县的数据
+			var cityArr;
 
-    function getCityInfoByAjax() {
-        var xmlHtpp = new XMLHttpRequest();
-        xmlHtpp.open("GET", "region.json", true);
-        xmlHtpp.send();
-        xmlHtpp.onreadystatechange = function () {
-            if (xmlHtpp.readyState == 4 && xmlHtpp.status == 200) {
-                cityArr = JSON.parse(xmlHtpp.responseText);
+			function getCityInfoByAjax() {
+				var xmlHtpp = new XMLHttpRequest();
+				xmlHtpp.open("GET", "region.json", true);
+				xmlHtpp.send();
+				xmlHtpp.onreadystatechange = function() {
+					if(xmlHtpp.readyState == 4 && xmlHtpp.status == 200) {
+						cityArr = JSON.parse(xmlHtpp.responseText);
 
-                // 把市的数据加载到列表上
-                var cityObj = document.getElementById('city');
-                var cityHtml;
-                var optionTemplate = '<option>{0}</option>';
+						// 把市的数据加载到列表上
+						var cityObj = document.getElementById('city');
+						var cityHtml;
+						var optionTemplate = '<option>{0}</option>';
 
-                for (var index in cityArr) {
-                    var city = cityArr[index];
-                    cityHtml += optionTemplate.replace('{0}', city.市);
-                }
+						for(var index in cityArr) {
+							var city = cityArr[index];
+							cityHtml += optionTemplate.replace('{0}', city.市);
+						}
 
-                cityObj.innerHTML = cityHtml;
+						cityObj.innerHTML = cityHtml;
+						
+						// 初次加载
+						cityObj.onchange();
+					}
 
-                // 初次加载
-                cityObj.onchange();
-            }
+				}
 
-        }
+			}
 
-    }
+			// 2.给市列表 定义onchange事件处理函数
+			function addCityChangeEvent() {
+				document.getElementById('city').onchange = function() {
+					// 根据当前的市，加载县的数据
+					var countyObj = document.getElementById('county');
+					var cityName = this.value;
+					var countyArr;
+					var countyHtml;
+					var optionTemplate = '<option>{0}</option>';
 
-    // 2.给市列表 定义onchange事件处理函数
-    function addCityChangeEvent() {
-        document.getElementById('city').onchange = function () {
-            // 根据当前的市，加载县的数据
-            var countyObj = document.getElementById('county');
-            var cityName = this.value;
-            var countyArr;
-            var countyHtml;
-            var optionTemplate = '<option>{0}</option>';
+					for(var index in cityArr) {
+						var city = cityArr[index];
+						if(city.市 == cityName) {
+							countyArr = city.县;
+							break;
+						}
+					}
+					
+					for(var index in countyArr){
+						countyHtml += optionTemplate.replace('{0}', countyArr[index]);
+					}
+				
+					countyObj.innerHTML = countyHtml;
+				}
+			}
 
-            for (var index in cityArr) {
-                var city = cityArr[index];
-                if (city.市 == cityName) {
-                    countyArr = city.县;
-                    break;
-                }
-            }
-
-            for (var index in countyArr) {
-                countyHtml += optionTemplate.replace('{0}', countyArr[index]);
-            }
-
-            countyObj.innerHTML = countyHtml;
-        }
-    }
-
-    getCityInfoByAjax();
-    addCityChangeEvent();
-</script>
-</body>
+			getCityInfoByAjax();
+			addCityChangeEvent();
+		</script>
+	</body>
 
 </html>

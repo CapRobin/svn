@@ -1,53 +1,53 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
-<div>
-    <h1>事件监听demo</h1>
-    <span>的数据菲利克斯蝶恋蜂狂胜多负少的路口附近看见的电视付了款</span>
-
-
-</div>
-
-<input type="button" value="取消监听"/>
-
-<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
-<script>
-    $(function () {
-        originalEventDemo();
-        listenEventDemo();
-        cancelEvent();
-        triggerDemo();
-    })
-
-    function listenEventDemo() {
-        $('div').on('click', 'h1', function () {
-            // 对于未来新添加的元素，也能自动绑定事件
-            $(this).siblings().empty()
-        })
-
-        $('div').append('<h1>hello world</h1>')
-    }
-
-    function originalEventDemo() {
-        $('h1').on('click', function () {
-            // 不加子元素的事件，只能是在元素出现后，才能绑定事件
-            alert('原始事件')
-        })
-    }
-
-    function cancelEvent() {
-        $('input').on('click', function () {
-            $('div').off('click', 'h1')
-        })
-    }
-
-    function triggerDemo() {
-        $('input').trigger('click') // 模拟人的手动点击
-    }
-</script>
-</body>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div>
+			<h1>事件监听demo</h1>
+			<span>的数据菲利克斯蝶恋蜂狂胜多负少的路口附近看见的电视付了款</span>
+			
+			
+		</div>
+		
+		<input type="button" value="取消监听" />
+		
+		<script type="text/javascript" src="jquery-3.3.1.min.js" ></script>
+		<script>
+			$(function(){
+				originalEventDemo();
+				listenEventDemo();
+				cancelEvent();
+				triggerDemo();
+			})
+			
+			function listenEventDemo(){
+				$('div').on('click', 'h1', function(){
+					// 对于未来新添加的元素，也能自动绑定事件
+					$(this).siblings().empty()
+				})
+				
+				$('div').append('<h1>hello world</h1>')
+			}
+			
+			function originalEventDemo(){
+				$('h1').on('click', function(){
+					// 不加子元素的事件，只能是在元素出现后，才能绑定事件
+					alert('原始事件')
+				})
+			}
+			
+			function cancelEvent(){
+				$('input').on('click', function(){
+					$('div').off('click', 'h1')
+				})
+			}
+			
+			function triggerDemo(){
+				$('input').trigger('click') // 模拟人的手动点击
+			}
+		</script>
+	</body>
 </html>

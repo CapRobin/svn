@@ -1,71 +1,71 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-    <meta charset="UTF-8">
-    <title>jquery动画效果</title>
-    <style>
-        div {
-            position: fixed;
-            left: 30%;
-            top: 0;
-            width: 40%;
-            height: 500px;
-            background-color: #4791FF;
-        }
-    </style>
-</head>
+	<head>
+		<meta charset="UTF-8">
+		<title>jquery动画效果</title>
+		<style>
+			div{
+				position: fixed;
+				left: 30%;
+				top:0;
+				width: 40%;
+				height: 500px;
+				background-color: #4791FF;
+			}
+		</style>
+	</head>
 
-<body>
-<h1>Hello World</h1>
-<div>
-    大家下午好
-</div>
+	<body>
+		<h1>Hello World</h1>
+		<div>
+			大家下午好
+		</div>
 
-<input type="button" value="动画按钮"/>
-<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
-<script>
-    $(function () {
-        //animateDemo();
-        //showHideDemo();
-        //slideDemo();
-        fadeDemo();
-    })
+		<input type="button" value="动画按钮" />
+		<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+		<script>
+			$(function() {
+				//animateDemo();
+				//showHideDemo();
+				//slideDemo();
+				fadeDemo();
+			})
 
-    function animateDemo() {
-        $('input').on('click', function () {
-            $('h1').animate({
-                "font-size": "100px",
-                "text-indent": "800px"
-            }, 3000, function () {
-                alert('动画完成了')
-            });
-        })
-    }
-
-    function showHideDemo() {
-        var $h1 = $('h1').hide();
-        $('input').on('click', function () {
-            $h1.show(2000)
-        })
-    }
-
-    function slideDemo() {
-        var $div = $('div').slideUp(3000)
-        $('input').on('click', function () {
-            //$div.slideDown(3000)
-            $div.slideToggle(3000)
-        })
-    }
-
-    function fadeDemo() {
-        var $div = $('div')
-        $('input').on('click', function () {
-            $div.fadeToggle(3000)
-        })
-    }
-
-</script>
-</body>
+			function animateDemo() {
+				$('input').on('click', function() {
+					$('h1').animate({
+						"font-size": "100px",
+						"text-indent": "800px"
+					}, 3000, function() {
+						alert('动画完成了')
+					});
+				})
+			}
+			
+			function showHideDemo(){
+				var $h1 = $('h1').hide();
+				$('input').on('click', function() {
+					$h1.show(2000)
+				})
+			}
+			
+			function slideDemo(){
+				var $div = $('div').slideUp(3000)
+				$('input').on('click', function() {
+					//$div.slideDown(3000)
+					$div.slideToggle(3000)
+				})
+			}
+			
+			function fadeDemo(){
+				var $div = $('div')
+				$('input').on('click', function() {
+					$div.fadeToggle(3000)
+				})
+			}
+			
+		</script>
+	</body>
 
 </html>
