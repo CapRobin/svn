@@ -1,0 +1,122 @@
+body {
+    font-family: "微软雅黑";
+}
+
+a {
+    color: #666666;
+}
+
+a:focus,
+a:hover {
+    color: #3b72f0;
+}
+
+.navbar-default {
+    background-color: #4379f5;
+    box-shadow: rgba(0, 0, 0, .3) 0px 2px 4px;
+}
+
+.navbar {
+    margin: 20px auto;
+}
+
+.logo {
+    margin-top: 20px;
+}
+
+.navbar-default .navbar-nav > li > a,
+.navbar-default .navbar-nav > li > a:visited,
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:active {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    border-right: #6a95f8 solid 1px;
+    white-space: nowrap;
+    /*文字不换行*/
+    padding: 5px 45px;
+}
+
+.navbar-nav > li {
+    line-height: 46px;
+    display: inline;
+    padding: 14px 0px;
+}
+
+.carousel-caption {
+    right: 0;
+    left: 0;
+    bottom: 0;
+    padding-bottom: 0px;
+}
+
+.carousel-caption > a {
+    display: block;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    text-indent: 10px;
+    height: 30px;
+    line-height: 30px;
+    background: rgba(0, 0, 0, .4);
+    color: #fff;
+    margin-bottom: 0px;
+}
+
+.carousel-inner img {
+    height: 300px;
+}
+
+footer {
+}
+
+.friendlink {
+    border-bottom: 1px solid #bababa;
+    border-top: #3b72f0 solid 7px;
+    padding-top: 15px;
+}
+
+.friendlink dl {
+    float: left;
+    padding-right: 40px;
+}
+
+.friendlink dl dt {
+    color: #000;
+    font-size: 1.1em;
+    line-height: 2em;
+    font-weight: 600;
+}
+
+.friendlink dl dd a {
+    line-height: 1.67em;
+    /*1em代表font-size的大小*/
+}
+
+.friendlink .link-group > ul {
+    margin-left: -40px;
+}
+
+.friendlink .link-group > ul > li {
+    list-style-type: none;
+    float: left;
+    padding: 15px 15px 15px 0px;
+    line-height: 25px;
+}
+
+.copyright {
+    text-align: center;
+    border-top: 1px solid #bababa;
+    padding-top: 15px;
+}
+
+.copyright * {
+    color: #989898;
+    line-height: 2em;
+}
+
+.copyright .info {
+    display: inline-block;
+    width: 700px;
+    background: url(../img/red.png) no-repeat 25px 5px, url(../img/jiucuo.png) no-repeat 598px 12px;
+}

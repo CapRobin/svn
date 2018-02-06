@@ -1,0 +1,70 @@
+一、html5简介
+1.是什么？html的最新标准，扩充和规范了一些标签
+2.有什么用？使前端开发更容易，取代了一部分js插件
+3.怎么用？
+	记忆新的tag
+	掌握概念
+	
+	
+二、拖拽实现
+1.让li元素可以被拖动 draggable="true"
+2.在元素拖动时dragstart， 把它记住  var drapObj = event.obj
+3.当拖到目标容器时dragover，使其能够放置return false;
+4.当元素放下时drop，改变dom结构、移动到目标容器中 $(目标容器).append(拖动元素)
+
+
+三、画布
+1.画直线
+.moveTo(x1, y1)
+.lineTo(x2, y2)
+
+2.画矩形
+.fillRect(x1,y1, x2,y2)
+
+3.画圆弧
+.arc(x1,y1, 半径, 起始角, 结束角, 顺时针/逆时针)
+
+
+四、Web存储
+localStorage / sessionStorage
+
+1.用法相同
+.setItem("键", "值")  新增、修改
+.getItem("键")			读
+.removeItem("键")		移除
+
+2.作用域相同：本网站
+
+3.生命周期不同：
+localStorage 永久
+sessionStorage 浏览器关闭就删除
+
+
+五、BOM简介
+1.BOM是什么？浏览器对象
+2.有什么用？浏览器把自己的组件保留给js，增强网页的交互能力
+
+window
+	location 页面地址
+		href 完整url
+		protocal 协议
+		host 主机+端口号
+		hostname 主机
+		port 端口号
+		pathname 域名 {路径部分} ？  
+		search 查询部分
+		hash 锚
+	.reload(true/false)
+
+	.setTimeOut('js语句', 延迟时间)
+	.setInterval('js语句', 间隔时间)
+	.clearTimeOut()
+	.clearInterval()
+
+ 	document
+ 		.cookie
+ 			.domain 属于哪个网站
+ 			.path	网站下哪个目录
+ 			.expires 过期时间（过期自动删除）
+			.max-age 还剩多少秒（过期自动删除）
+			.secure	是否使用https传输

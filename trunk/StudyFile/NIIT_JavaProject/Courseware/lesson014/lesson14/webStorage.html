@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<body>
+<span id="test"></span>
+
+<input type="button" value="读取webStorage" id="readBtn"/>
+<input type="button" value="移除webStorage" id="removeBtn"/>
+<script type="text/javascript" src="../lesson13/jquery-3.3.1.min.js"></script>
+<script>
+    $(function () {
+        addsessionStorage();
+        removesessionStorage();
+
+    })
+
+    function addsessionStorage() {
+        sessionStorage.setItem('班级', 'C') // 可以新增、修改
+
+        $('#readBtn').on('click', function () {
+            sessionStorage.setItem('班级', 'D班')
+            $('#test').text(sessionStorage.getItem('班级')) // 读取
+        })
+    }
+
+    function removesessionStorage() {
+        $('#removeBtn').on('click', function () {
+            sessionStorage.removeItem('班级')
+        })
+
+    }
+</script>
+</body>
+
+</html>
