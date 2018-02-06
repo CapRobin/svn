@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<body>
+<h1 name='top'>顶端</h1>
+<div style="height: 1000px;">
+    dsfsdfsd
+</div>
+
+<a href="#top">到上方</a>
+<script type="text/javascript" src="../lesson13/jquery-3.3.1.min.js"></script>
+<script>
+    $(function () {
+        console.info(window.location)
+        $('[name=top]').on('click', function () {
+            alert('hi')
+            window.setTimeout('location.reload(true)', 3000)
+
+        })
+    })
+</script>
+</body>
+
+</html>

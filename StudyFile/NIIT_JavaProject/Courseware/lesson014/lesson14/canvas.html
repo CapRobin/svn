@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<canvas id='test' width="500px" height="500px"></canvas>
+<script>
+    var cxt = document.getElementById('test').getContext('2d');
+    // 直线
+    cxt.moveTo(10, 10)
+    cxt.lineTo(300, 400)
+    cxt.lineTo(10, 400)
+    cxt.lineTo(10, 10)
+    cxt.stroke();
+
+    // 矩形
+    cxt.fillStyle = "#2B99FF"
+    cxt.fillRect(300, 400, 500, 500)
+
+    // 圆形
+    cxt.arc(300, 400, 100, Math.PI * 3 / 4, Math.PI, true)
+    cxt.stroke()
+
+
+</script>
+</body>
+</html>
