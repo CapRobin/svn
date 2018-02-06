@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<body>
+
+<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+<script>
+    //$(function(){})
+    $(document).ready(function () {
+        $('body').on('keypress', {
+            "demo": "version3.0"
+        }, function (event) {
+            var evObj = event.data;
+            //alert(evObj["demo"])
+
+            console.info('您按下键的代码是：' + event.which + '  windows键按下：' + event.metaKey)
+        })
+    })
+</script>
+</body>
+
+</html>
