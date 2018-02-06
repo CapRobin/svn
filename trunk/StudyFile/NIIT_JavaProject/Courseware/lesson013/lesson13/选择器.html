@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        ul li {
+            border-bottom: 1px solid orange;
+        }
+    </style>
+    <script></script>
+</head>
+
+<body>
+<nav class="navigation">
+    <ul>
+        <li>首页</li>
+        <li>音乐</li>
+        <li id="test">图片</li>
+        <li>视频</li>
+        <li>贴吧</li>
+    </ul>
+</nav>
+
+<h2 id="breadcrumb" class="navigation"></h2>
+
+<script src="jquery-3.3.1.min.js"></script>
+<script>
+    $(function () {
+        $('#breadcrumb').text('我在哪里？');
+        $('.navigation').css('background-color', 'red');
+        $('nav').css('background-color', 'transparent');
+
+        $('ul > li').css('list-style-type', 'none');
+        $('#test ~ *').css('color', 'blue');
+        $('#test + *').css('color', 'yellow');
+
+        $('ul > li:first-child').css('font-size', 'large')
+        $('ul > li:last-child').css('border-bottom', 'none')
+        $('ul > li:nth-child(2)').css('font-size', 'small')
+        $('ul > li:odd').css('background-color', 'gray')
+        $('* :only-child').attr('only-child', '就是我')
+
+        $('script:first-of-type').attr('type', 'text/javascript')
+        $('body *:only-of-type').attr('only-of-type', '这一类只有我一个')
+        $('li').filter(':first').css('color', 'red')
+
+        $([
+            "大武口区",
+            "惠农区",
+            "平罗县",
+            "兴庆区",
+            "西夏区",
+            "金凤区"
+        ]).each(function (index, obj) {
+            console.info(obj)
+        });
+    })
+</script>
+</body>
+
+</html>

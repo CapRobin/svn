@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>L01.04：表格(table)</title>
+    <style type="text/css">
+        table {
+            width: 700px;
+            height: 200px;
+            margin: 0 auto;
+            text-align: center;
+
+            border: 1px solid #2b99ff;
+        }
+    </style>
+    <script type="text/javascript"></script>
+</head>
+<body>
+<h1 style="text-align: center">L01.04：表格(table)</h1><br><br>
+<div>
+    <table border="1" cellspacing="0">
+        <caption>表格一</caption>
+        <tr>
+            <th>第一列</th>
+            <th colspan="2">第二列+第三列</th>
+        <tr>
+            <td>第一行第一列</td>
+            <td>第一行第二列</td>
+            <td>第一行第三列</td>
+        </tr>
+        <tr>
+            <td>第二行第一列</td>
+            <td>第二行第二列</td>
+            <td>第二行第三列</td>
+        </tr>
+        <tr>
+            <td>第三行第一列</td>
+            <td>第三行第二列</td>
+            <td>第三行第三列</td>
+        </tr>
+    </table>
+    <br><br>
+    <table border="1" cellspacing="0">
+        <caption>表格二</caption>
+        <tr>
+            <th>第一列</th>
+            <th>第二列</th>
+            <th>第三列</th>
+        </tr>
+        <tr>
+            <td>第一行第一列</td>
+            <td>第一行第二列</td>
+            <td rowspan="3">第一行+第二行+第三行</td>
+        </tr>
+        <tr>
+            <td>第二行第一列</td>
+            <td>第二行第二列</td>
+        </tr>
+        <tr>
+            <td>第三行第一列</td>
+            <td>第三行第二列</td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
