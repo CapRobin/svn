@@ -1,13 +1,13 @@
-1.Ŀ�꣺��������վ
+1.目标：做个人网站
 
-2.Ҫ��
-	1���õ��γ̴���н��ܵ�����Ԫ��
-	header:logo, nav, banner, 
+2.要求：
+	1）用到课程大纲中介绍的所有元素
+	header:logo, nav, banner,
 	content:column
 	footer:friendlink, copyright
 
-	2��ʹ��������ʽ��js��css���������ļ���ʽ���룬ͨ��cssѡ��������dom����
+	2）使用无侵入式的js和css（即：以文件形式引入，通过css选择器处理dom对象）
 
-	3����ҳ��Ч��û��Ҫ�󣬹������ɷ���
+	3）对页面效果没有要求，鼓励自由发挥
 
-3.����ҵʱ�䣺3��12��
+3.交作业时间：3月12号
