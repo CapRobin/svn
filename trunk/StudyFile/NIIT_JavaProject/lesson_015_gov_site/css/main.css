@@ -2,6 +2,15 @@ body {
     font-family: "微软雅黑";
 }
 
+a {
+    color: #666666;
+}
+
+a:focus,
+a:hover {
+    color: #3b72f0;
+}
+
 .navbar-default {
     background-color: #4379f5;
     box-shadow: rgba(0, 0, 0, .3) 0px 2px 4px;
@@ -9,6 +18,10 @@ body {
 
 .navbar {
     margin: 20px auto;
+}
+
+.logo {
+    margin-top: 20px;
 }
 
 .navbar-default .navbar-nav>li>a,
@@ -30,43 +43,160 @@ body {
     padding: 14px 0px;
 }
 
+.banner {
+    text-align: center;
+    height: 46px;
+    overflow: hidden;
+}
 
-.carousel-caption{
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
+.banner ul {
+    position: relative;
+}
+
+.banner ul li {
+    list-style-type: none;
+    font-size: 23pt;
+    line-height: 46px;
+    color: red;
+    font-weight: bold;
+}
+
+.content {
+    margin: 20px auto;
+}
+
+.column {
+}
+
+.column-header ul li {
+    list-style-type: none;
+    float: left;
+    border-right: 2px solid black;
+    padding: 0px 10px;
+    font-size: 22px;
+    font-family: "宋体", serif;
+    font-weight: 700;
+    color: #747474;
+    line-height: 22px;
+}
+
+.column-header ul li.active {
+    color: #000;
+    cursor: pointer;
+}
+
+.column-header ul li:last-child {
+    border-right: none;
+}
+
+.column-body {
+    border-top: 1px solid #bbb;
+    margin: 10px auto;
+    padding: 10px;
+    height: 325px;
+    overflow-y: hidden;
+}
+
+.column-body.scrollable {
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.column-body.scrollable * {
+    font-size: 14px;
+    line-height: 28px;
+}
+
+.column-body ul {
+    padding: 0;
+}
+
+.column-body ul li {
+    font-size: 18px;
+    line-height: 35px;
+    list-style-type: none;
+    background: url(../img/new_arrow.png) no-repeat 0px 14px;
+    padding: 0px 10px;
+}
+
+.column-body ul li span.right {
+    float: right;
+}
+
+.carousel-caption {
+    right: 0;
+    left: 0;
+    bottom: 0;
     padding-bottom: 0px;
 }
-.carousel-caption >a{
+
+.carousel-caption > a {
     display: block;
     width: 100%;
     position: absolute;
-    bottom: 0px;
+    bottom: 0;
     text-indent: 10px;
     height: 30px;
     line-height: 30px;
-    background: rgba(0,0,0,.4);
+    background: rgba(0, 0, 0, .4);
     color: #fff;
     margin-bottom: 0px;
 }
 
-
-.friendlink {
+.carousel-inner img {
     width: 100%;
 }
+
+footer {
+}
+
+.friendlink {
+    border-bottom: 1px solid #bababa;
+    border-top: #3b72f0 solid 7px;
+    padding-top: 15px;
+}
+
 .friendlink dl {
     float: left;
-    width: 20%;
+    padding-right: 40px;
 }
+
 .friendlink dl dt {
     color: #000;
     font-size: 1.1em;
     line-height: 2em;
     font-weight: 600;
 }
+
 .friendlink dl dd a {
     line-height: 1.67em;
+    /*1em代表font-size的大小*/
 }
-.friendlink .link-group {
-    line-height: 1.67em;
+
+.friendlink .link-group > ul {
+    margin-left: -40px;
+}
+
+.friendlink .link-group > ul > li {
+    list-style-type: none;
+    float: left;
+    padding: 15px 15px 15px 0px;
+    line-height: 25px;
+}
+
+.copyright {
+    text-align: center;
+    border-top: 1px solid #bababa;
+    padding-top: 15px;
+}
+
+.copyright * {
+    color: #989898;
+    line-height: 2em;
+}
+
+.copyright .info {
+    display: inline-block;
+    width: 700px;
+    background: url(../img/red.png) no-repeat 25px 5px, url(../img/jiucuo.png) no-repeat 598px 12px;
 }
