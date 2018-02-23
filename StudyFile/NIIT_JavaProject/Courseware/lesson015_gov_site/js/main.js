@@ -1,37 +1,37 @@
-$(document).ready(function () {
-    //	事件:onmouseover
-    //	对象:li
-    //	响应:变色 + 切换内容
-    $('.column-header ul li').on('mouseover', function () {
-        $(this).addClass('active').siblings().removeClass('active');
+$(document).ready(function() {
+	//	事件:onmouseover
+	//	对象:li
+	//	响应:变色 + 切换内容
+	$('.column-header ul li').on('mouseover', function() {
+		$(this).addClass('active').siblings().removeClass('active');
 
-        // 找到我的序号 -> 根据序号找到对应的div -> 让其显示 & 让他的兄弟们隐藏
-        var index = $.inArray(this, $(this).parent().children().toArray());
-        var $div = $(this).parent().parent()
-            .siblings('.column-body')
-            .children(':nth-child({0})'.replace('{0}', index + 1));
+		// 找到我的序号 -> 根据序号找到对应的div -> 让其显示 & 让他的兄弟们隐藏
+		var index = $.inArray(this, $(this).parent().children().toArray());
+		var $div = $(this).parent().parent()
+			.siblings('.column-body')
+			.children(':nth-child({0})'.replace('{0}', index + 1));
 
-        $div.show().siblings().hide();
-    });
+		$div.show().siblings().hide();
+	});
 
-    $('.column-header ul li:first-child').trigger('mouseover');
+	$('.column-header ul li:first-child').trigger('mouseover');
 
-    slideBanner(cnt);
+	slideBanner(cnt);
 
-    $('.banner ul li').on('mouseover', function () {
-        clearTimeout(timeHandler)
-    }).on('mouseout', function () {
-        slideBanner(cnt);
-    })
+	$('.banner ul li').on('mouseover',function(){
+		clearTimeout(timeHandler)
+	}).on('mouseout',function(){
+		slideBanner(cnt);
+	})
 })
 
 function slideBanner(ratio) {
-    var liHeight = 46;
-    $('.banner ul').animate({
-        "top": "-{0}px".replace('{0}', liHeight * (ratio % total))
-    }, 1000);
+	var liHeight = 46;
+	$('.banner ul').animate({
+		"top": "-{0}px".replace('{0}', liHeight * (ratio % total))
+	}, 1000);
 
-    timeHandler = window.setTimeout('slideBanner(++cnt)', 2000);
+	timeHandler = window.setTimeout('slideBanner(++cnt)', 2000);
 }
 
 var timeHandler;
