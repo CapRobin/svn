@@ -19,69 +19,91 @@
     <![endif]-->
 </head>
 <body>
-
-<header>
-    <div class="container header">
-        <div class="col-lg-4">
-            <a class="logoHreo" href="http://www.baidu.com">
-                <img src="img/baidu.gif" alt="logo">
-                |&ensp;注册百度账号
-            </a>
+<div class="container">
+    <!--头部导航-->
+    <header>
+        <div class="container header">
+            <div class="col-lg-6 logo">
+                <a href="http://www.baidu.com">
+                    <img src="img/baidu.gif" alt="logo">
+                </a>
+                <a href="http://www.baidu.com">注册百度账号</a>
+            </div>
+            <div class="col-lg-6 login">
+                我已注册，现在就
+                <button class="btn btn-default btn-sm">登&emsp;录</button>
+            </div>
         </div>
-        <div class="col-lg-5"></div>
-        <div class="col-lg-3">
-            我已注册，现在就
-            <button class="btn btn-default btn-sm">登&emsp;录</button>
-        </div>
-        <div>
+        <div class="container">
             <hr>
         </div>
-    </div>
-</header>
-<div class="content container">
-    <div class="row">
-        <div class="col-lg-8">
-            <form class="form-horizontal">
-                <div class="form-group form-inline">
-                    <label for="userName" class="col-lg-2 control-label">用户名</label>
-                    <div class="col-lg-10">
-                        <input type="text" class="form-control" id="userName" placeholder="请设置用户名">
-                    </div>
-                </div>
-                <div class="form-group form-inline">
-                    <label for="phoneNum" class="col-lg-2 control-label">手机号码</label>
-                    <div class="col-lg-10">
-                        <input type="text" class="form-control" id="phoneNum" placeholder="用于登录和找回密码">
-                    </div>
+    </header>
 
-                </div>
-                <div class="form-group form-inline">
-                    <label for="pwd" class="col-lg-2 control-label">密码</label>
-                    <div class="col-lg-10">
-                        <input type="password" class="form-control" id="pwd" placeholder="请设置登录密码">
-                    </div>
+    <!--内容显示-->
+    <div class="content container">
 
-                </div>
-                <div class="form-group form-inline">
-                    <label for="yzm" class="col-lg-2 control-label">验证码</label>
-                    <div class="col-lg-10">
-                        <input type="text" class="form-control" id="yzm" placeholder="请输入验证码">
+        <div class="row">
+            <div class="col-lg-8">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label for="userName" class="col-lg-2 control-label">用户名</label>
+                        <div class="col-lg-6">
+                            <input type="text" class="form-control" id="userName" placeholder="请设置用户名">
+                        </div>
+                        <div class="col-lg-4">提示文字</div>
                     </div>
-                </div>
-                <div class="checkbox form-inline">
-                    <label class="col-lg-9">
-                        <input type="checkbox"> 阅读并接受《百度用户协议》及《百度隐私权保护声明》
-                    </label>
-                </div>
-                <button type="submit" class="btn btn-default">Submit</button>
-            </form>
+                    <div class="form-group">
+                        <label for="phoneNum" class="col-lg-2 control-label">手机号码</label>
+                        <div class="col-lg-6">
+                            <input type="text" class="form-control" id="phoneNum" placeholder="用于登录和找回密码">
+                        </div>
+                        <div class="col-lg-4">提示文字</div>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="pwd" class="col-lg-2 control-label">密码</label>
+                        <div class="col-lg-6">
+                            <input type="password" class="form-control" id="pwd" placeholder="请设置登录密码">
+                        </div>
+                        <div class="col-lg-4">提示文字</div>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="yzm" class="col-lg-2 control-label">验证码</label>
+                        <div class="col-lg-3">
+                            <input type="text" class="form-control" id="yzm" placeholder="请输入验证码">
+                        </div>
+                        <div class="col-lg-3">
+                            <input type="button" class="form-control btn-default" value="获取验证码">
+                        </div>
+                    </div>
+                    <div class="checkbox">
+                        <div class="col-lg-2"></div>
+                        <label class="col-lg-6">
+                            <input type="checkbox"><span>阅读并接受<a
+                                href="https://passport.baidu.com/static/passpc-account/html/protocal.html"
+                                target="_blank">《百度用户协议》</a>及<a href="https://www.baidu.com/duty/yinsiquan.html"
+                                                                target="_blank">《百度隐私权保护声明》</a></span>
+                        </label>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <div class="col-lg-2"></div>
+                        <div class="col-lg-6">
+                            <input type="submit" class="form-control btn-info" id="btn" value="提交">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-4">输入框</div>
         </div>
-        <div class="col-lg-4">输入框</div>
+
     </div>
+
+    <!--版权信息-->
+    <footer></footer>
 
 </div>
-<footer></footer>
-
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="js/jquery-3.3.1.min.js"></script>
