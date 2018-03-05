@@ -101,5 +101,17 @@ hr {
     font-size: 13px;
 }
 
-.btn-info {
+.logo > a:hover {
+    display: inline-block;
+    text-decoration: none;
+}
+
+span {
+    font-size: xx-small;
+    color: #cccccc;
+}
+
+.form-group {
+    height: 50px;
+    vertical-align: middle;
 }
