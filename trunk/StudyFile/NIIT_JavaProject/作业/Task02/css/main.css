@@ -1,0 +1,10 @@
+.container {
+    border: 2px slateblue solid;
+    height: 200px;
+}
+
+.container-fluid {
+    border: 2px green solid;
+    height: 200px;
+    margin-top: 50px;
+}
