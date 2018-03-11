@@ -6,11 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
     <title>宁夏华鸿科技有限公司</title>
-
     <!-- Bootstrap -->
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
-    <script src="js/main.js"></script>
+    <link href="css/font-awesome.min.css" rel="stylesheet">
 
     <!-- 引入html5shiv和respond两个文件是为了IE8及以下版本的浏览器能够更好地支持HTML5元素和每天展示效果 -->
     <!-- 警告: respond.min.js文件必须以 http://respond.min.js的方式引入；不支持file://respond.min.js方式引入 -->
@@ -20,15 +19,40 @@
     <![endif]-->
 </head>
 <body>
-<div class="container">
-    我是显示容器01
-</div>
 <div class="container-fluid">
-    我是显示容器02
+    <div class="row mBody">
+        <!--导航开始-->
+        <div class="col-lg-12 header">
+            <div class="col-lg-6 logo">
+                <a href="#">华鸿科技</a>
+            </div>
+            <nav class="col-lg-6">
+                <div class="row">
+                    <ul class="mNav list-inline">
+                        <li class="col-lg-2"><a href="#">公司首页</a></li>
+                        <li class="col-lg-2"><a href="#">关于我们</a></li>
+                        <li class="col-lg-2"><a href="#">团队建设</a></li>
+                        <li class="col-lg-2"><a href="#">提供服务</a></li>
+                        <li class="col-lg-2"><a href="#">企业咨询</a></li>
+                        <li class="col-lg-2"><a href="#">联系我们</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!--导航结束-->
+
+        <div id="home" class="col-lg-12">软件开发 我们更专业</div>
+        <div id="about" class="col-lg-12">关于我们</div>
+        <div id="team" class="col-lg-12">团队建设</div>
+        <div id="service" class="col-lg-12">提供服务</div>
+        <div id="portfolio" class="col-lg-12">企业咨询</div>
+        <div id="contact" class="col-lg-12">联系我们</div>
+    </div>
 </div>
 
 <!-- 使用bootstrap插件必须要引入的两个Js文件 -->
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>
