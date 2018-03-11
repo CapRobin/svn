@@ -1,10 +1,88 @@
-.container {
-    border: 2px slateblue solid;
-    height: 200px;
+
+body {
+    background-color: #303030;
 }
 
-.container-fluid {
-    border: 2px green solid;
-    height: 200px;
-    margin-top: 50px;
+.logo a {
+    text-align: left;
+    word-spacing: 20px;
+    font-weight: bold;
+    font-size: 45px;
+    text-decoration: none;
+    display: inline-block;
+    line-height: 90px;
+    font-family: "华文行楷", "arial black", "微软雅黑", "century gothic";
+
+}
+
+.mNav li {
+    line-height: 70px;
+    text-align: center;
+}
+
+.mNav li a {
+    text-decoration: none;
+    color: #777;
+    font-size: 16px;
+}
+
+.mNav li a:hover {
+    text-decoration: none;
+    color: black;
+    padding: 5px;
+    border: 1px;
+    font-size: 20px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.header {
+    height: 70px;
+    background-color: transparent;
+    padding-left: 50px;
+    padding-right: 50px;
+    position: fixed;
+    top: 0px;
+    z-index: 9999;
+}
+
+.header-bg {
+    background-color: #111;
+}
+
+#home, #about, #team, #service, #portfolio, #contact {
+    padding-top: 70px;
+    padding-bottom: 40px;
+    border: 1px solid gainsboro;
+    box-sizing: border-box;
+    color: white;
+}
+
+#home {
+    min-height: 650px;
+    background: url("../img/wallpaper2.jpg") no-repeat;
+    background-size: cover;
+    font-size: 50px;
+    text-align: center;
+    padding-top: 300px;
+}
+
+#about {
+    height: 500px;
+}
+
+#team {
+    height: 500px;
+}
+
+#service {
+    height: 500px;
+}
+
+#portfolio {
+    height: 500px;
+}
+
+#contact {
+    height: 500px;
 }
